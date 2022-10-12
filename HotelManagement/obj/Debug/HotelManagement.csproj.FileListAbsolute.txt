@@ -1,0 +1,12 @@
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.exe.config
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.exe
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\bin\Debug\HotelManagement.pdb
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.AssemblyReference.cache
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.SuggestedBindingRedirects.cache
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Form1.resources
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Properties.Resources.resources
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.GenerateResource.cache
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.CoreCompileInputs.cache
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.exe
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.pdb
+C:\Users\thanh\source\repos\HotelManagement\HotelManagement\obj\Debug\HotelManagement.Form2.resources
