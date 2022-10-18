@@ -46,39 +46,121 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormChamCong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormChamCong.Designer.cs">
+      <DependentUpon>FormChamCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="FormChinhSuaNhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="FormChinhSuaNhanSu.Designer.cs">
+      <DependentUpon>FormChinhSuaNhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCongNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCongNo.Designer.cs">
+      <DependentUpon>FormCongNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoanhThu.Designer.cs">
+      <DependentUpon>FormDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKho.Designer.cs">
+      <DependentUpon>FormKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoaiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoaiPhong.Designer.cs">
+      <DependentUpon>FormLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSoDoPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSoDoPhong.Designer.cs">
+      <DependentUpon>FormSoDoPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSoLuongKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSoLuongKhach.Designer.cs">
+      <DependentUpon>FormSoLuongKhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThoiGian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThoiGian.Designer.cs">
+      <DependentUpon>FormThoiGian.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormChamCong.resx">
+      <DependentUpon>FormChamCong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="FormChinhSuaNhanSu.resx">
+      <DependentUpon>FormChinhSuaNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCongNo.resx">
+      <DependentUpon>FormCongNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDoanhThu.resx">
+      <DependentUpon>FormDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKho.resx">
+      <DependentUpon>FormKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoaiPhong.resx">
+      <DependentUpon>FormLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSoDoPhong.resx">
+      <DependentUpon>FormSoDoPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSoLuongKhach.resx">
+      <DependentUpon>FormSoLuongKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThoiGian.resx">
+      <DependentUpon>FormThoiGian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -87,6 +169,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="database\img\room-map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="database\img\menu-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

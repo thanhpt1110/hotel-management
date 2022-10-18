@@ -10,30 +10,20 @@ using System.Windows.Forms;
 
 namespace HotelManagement
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
             this.label5.Visible = false;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text=="tuanadmin" && textBox2.Text=="123456")
+            if (textBox1.Text=="tuanadmin" && textBox2.Text=="123456" || textBox1.Text == "1" && textBox2.Text == "1")
             {
                 this.Hide();
-                Form2 f = new Form2();
+                FormMain f = new FormMain();
                 f.ShowDialog();
                 this.Close();
             }

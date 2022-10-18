@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace HotelManagement
 {
-    public partial class Form2 : Form
+    public partial class FormCongNo : Form
     {
-        public Form2()
+        public FormCongNo()
         {
             InitializeComponent();
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
