@@ -159,8 +159,8 @@
             this.buttonNhanSu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonNhanSu.Size = new System.Drawing.Size(262, 50);
             this.buttonNhanSu.TabIndex = 7;
-            this.buttonNhanSu.Text = "          Quản lý nhân sự          ▼";
-            this.buttonNhanSu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNhanSu.Text = "       Quản lý nhân sự         ▼        ";
+            this.buttonNhanSu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNhanSu.UseVisualStyleBackColor = true;
             this.buttonNhanSu.Click += new System.EventHandler(this.buttonNhanSu_Click);
             // 
@@ -220,8 +220,8 @@
             this.buttonThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonThongKe.Size = new System.Drawing.Size(262, 50);
             this.buttonThongKe.TabIndex = 5;
-            this.buttonThongKe.Text = "          Thống kê                      ▼";
-            this.buttonThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonThongKe.Text = "          Thống kê                     ▼        ";
+            this.buttonThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonThongKe.UseVisualStyleBackColor = true;
             this.buttonThongKe.Click += new System.EventHandler(this.buttonThongKe_Click);
             // 
@@ -281,8 +281,8 @@
             this.buttonQuanLyThuChi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonQuanLyThuChi.Size = new System.Drawing.Size(262, 50);
             this.buttonQuanLyThuChi.TabIndex = 3;
-            this.buttonQuanLyThuChi.Text = "          Quản lý thu chi            ▼";
-            this.buttonQuanLyThuChi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonQuanLyThuChi.Text = "       Quản lý thu chi           ▼        ";
+            this.buttonQuanLyThuChi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonQuanLyThuChi.UseVisualStyleBackColor = true;
             this.buttonQuanLyThuChi.Click += new System.EventHandler(this.buttonQuanLyThuChi_Click);
             // 
