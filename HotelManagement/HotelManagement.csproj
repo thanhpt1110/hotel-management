@@ -171,10 +171,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="database\img\room-map.png" />
+    <None Include="img\room-map.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="database\img\menu-icon.png" />
+    <None Include="img\menu-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
