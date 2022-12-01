@@ -46,105 +46,109 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormChamCong.cs">
+    <Compile Include="BUS\KhachHangBUS.cs" />
+    <Compile Include="CTControls\CTControl.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="GUI\FormChamCong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChamCong.Designer.cs">
+    <Compile Include="GUI\FormChamCong.Designer.cs">
       <DependentUpon>FormChamCong.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChinhSuaNhanSu.cs">
+    <Compile Include="GUI\FormChinhSuaNhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChinhSuaNhanSu.Designer.cs">
+    <Compile Include="GUI\FormChinhSuaNhanSu.Designer.cs">
       <DependentUpon>FormChinhSuaNhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCongNo.cs">
+    <Compile Include="GUI\FormCongNo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCongNo.Designer.cs">
+    <Compile Include="GUI\FormCongNo.Designer.cs">
       <DependentUpon>FormCongNo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDoanhThu.cs">
+    <Compile Include="GUI\FormDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDoanhThu.Designer.cs">
+    <Compile Include="GUI\FormDoanhThu.Designer.cs">
       <DependentUpon>FormDoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormKho.cs">
+    <Compile Include="GUI\FormKho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormKho.Designer.cs">
+    <Compile Include="GUI\FormKho.Designer.cs">
       <DependentUpon>FormKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLoaiPhong.cs">
+    <Compile Include="GUI\FormLoaiPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLoaiPhong.Designer.cs">
+    <Compile Include="GUI\FormLoaiPhong.Designer.cs">
       <DependentUpon>FormLoaiPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSoDoPhong.cs">
+    <Compile Include="GUI\FormSoDoPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSoDoPhong.Designer.cs">
+    <Compile Include="GUI\FormSoDoPhong.Designer.cs">
       <DependentUpon>FormSoDoPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="GUI\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="GUI\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
+    <Compile Include="GUI\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="GUI\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSoLuongKhach.cs">
+    <Compile Include="GUI\FormSoLuongKhach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSoLuongKhach.Designer.cs">
+    <Compile Include="GUI\FormSoLuongKhach.Designer.cs">
       <DependentUpon>FormSoLuongKhach.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormThoiGian.cs">
+    <Compile Include="GUI\FormThoiGian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormThoiGian.Designer.cs">
+    <Compile Include="GUI\FormThoiGian.Designer.cs">
       <DependentUpon>FormThoiGian.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormChamCong.resx">
+    <EmbeddedResource Include="GUI\FormChamCong.resx">
       <DependentUpon>FormChamCong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChinhSuaNhanSu.resx">
+    <EmbeddedResource Include="GUI\FormChinhSuaNhanSu.resx">
       <DependentUpon>FormChinhSuaNhanSu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCongNo.resx">
+    <EmbeddedResource Include="GUI\FormCongNo.resx">
       <DependentUpon>FormCongNo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDoanhThu.resx">
+    <EmbeddedResource Include="GUI\FormDoanhThu.resx">
       <DependentUpon>FormDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormKho.resx">
+    <EmbeddedResource Include="GUI\FormKho.resx">
       <DependentUpon>FormKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLoaiPhong.resx">
+    <EmbeddedResource Include="GUI\FormLoaiPhong.resx">
       <DependentUpon>FormLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSoDoPhong.resx">
+    <EmbeddedResource Include="GUI\FormSoDoPhong.resx">
       <DependentUpon>FormSoDoPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="GUI\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="GUI\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSoLuongKhach.resx">
+    <EmbeddedResource Include="GUI\FormSoLuongKhach.resx">
       <DependentUpon>FormSoLuongKhach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormThoiGian.resx">
+    <EmbeddedResource Include="GUI\FormThoiGian.resx">
       <DependentUpon>FormThoiGian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -171,13 +175,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\room-map.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\menu-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="database\" />
+    <Folder Include="img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
