@@ -40,7 +40,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            //this.ctButton1 = new HotelManagement.CTControl.CTButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -167,30 +166,11 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Thông tin đăng nhập không đúng";
             // 
-            // ctButton1
-            // 
-            this.ctButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.ctButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.ctButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.ctButton1.BorderRadius = 20;
-            this.ctButton1.BorderSize = 0;
-            this.ctButton1.FlatAppearance.BorderSize = 0;
-            this.ctButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ctButton1.ForeColor = System.Drawing.Color.White;
-            this.ctButton1.Location = new System.Drawing.Point(409, 404);
-            this.ctButton1.Name = "ctButton1";
-            this.ctButton1.Size = new System.Drawing.Size(150, 40);
-            this.ctButton1.TabIndex = 11;
-            this.ctButton1.Text = "ctButton1";
-            this.ctButton1.TextColor = System.Drawing.Color.White;
-            this.ctButton1.UseVisualStyleBackColor = false;
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 456);
-            this.Controls.Add(this.ctButton1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
