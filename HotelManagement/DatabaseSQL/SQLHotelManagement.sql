@@ -114,3 +114,26 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email) VALUES ('NV006',N'Nguyễn Văn F', '24/02/1998',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','5500000',N'Nhân viên vệ sinh', '072000009012','090111231','NV52015119@gmail.com')
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email) VALUES ('NV007',N'Phạm Thị P', '02/08/2001',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nữ','5500000',N'Nhân viên vệ sinh', '072000002134','090311232','NV15205119@gmail.com')
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email) VALUES ('NV008',N'Nguyễn Văn G', '12/09/2002',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','5500000',N'Bảo vệ', '072000028912','090311233','NV215595119@gmail.com')
+
+-- Tai Khoan
+	
+	INSERT INTO TaiKhoan (TenTK,Password,MaNV,"CapDoQuyen") VALUES ('admin','1234','QL001',3) 
+	INSERT INTO TaiKhoan (TenTK,Password,MaNV,"CapDoQuyen") VALUES ('admin1','5678','QL002',3) 
+	INSERT INTO TaiKhoan (TenTK,Password,MaNV,"CapDoQuyen") VALUES ('admin2','3456','QL003',3) 
+	INSERT INTO TaiKhoan (TenTK,Password,MaNV,"CapDoQuyen") VALUES ('Quanly','1234','NV001',2) 
+	INSERT INTO TaiKhoan (TenTK,Password,MaNV,"CapDoQuyen") VALUES ('NhanVien','1234','NV002',1) 
+
+-- Khach Hang
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH001',N'Nguyễn Văn A', N'Nam', 'Việt Nam', '072001056912', '092391233')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH002',N'Nguyễn Văn B', N'Nam', 'Việt Nam', '072001056913', '092391234')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH003',N'Nguyễn Văn C', N'Nam', 'Việt Nam', '072001056914', '092391235')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH004',N'Phạm Thi P', N'Nữ', 'Việt Nam', '072001546231', '092361213')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH005',N'Phạm Thi G', N'Nữ', 'Việt Nam', '072001012231', '082361233')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH006',N'Nguyễn Văn D', N'Nam', 'Việt Nam', '072001056952', '092391236')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH007',N'Nguyễn Văn E', N'Nam', 'Việt Nam', '072001056911', '092391237')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH008',N'Phạm Thi H', N'Nữ', 'Việt Nam', '072001078231', '096361233')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH009',N'Nguyễn Văn F', N'Nam', 'Việt Nam', '072001056976', '092391238')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH010',N'Nguyễn Văn G', N'Nam', 'Việt Nam', '072001056919', '092391229')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH011',N'Phạm Thi U', N'Nữ', 'Việt Nam', '072071756231', '071236123')
+	INSERT INTO KhachHang (MaKH,TenKH, GioiTinh, QuocTich, "CCCD/Passport", SDT) VALUES ('KH012',N'Phạm Thi T', N'Nữ', 'Việt Nam', '072041056231', '022361233')
+-- Dich Vu
