@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\KhachHang_DAO.cs" />
+    <Compile Include="CTControl\CTButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="GUI\FormChamCong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,10 +173,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BUS\" />
-    <Folder Include="CTControl\" />
     <Folder Include="database\" />
     <Folder Include="DTO\" />
-    <Folder Include="img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\calendarDark.png" />
+    <Content Include="img\calendarWhite.png" />
+    <Content Include="img\clock.png" />
+    <Content Include="img\fixedCloseResize.png" />
+    <Content Include="img\fixedGreenResize.png" />
+    <Content Include="img\fixedMaxResize.png" />
+    <Content Include="img\fixedMinResize.png" />
+    <Content Include="img\fixedNone.png" />
+    <Content Include="img\fixedRedResize.png" />
+    <Content Include="img\fixedYellowResize.png" />
+    <Content Include="img\tick.png" />
+    <Content Include="img\tickBlack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
