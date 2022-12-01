@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -202,5 +203,38 @@ namespace HotelManagement
             disableButtonSubmenu(this.panelThongKeSubmenu);
             disableButtonSubmenu(this.panelNhanSuSubmenu);
         }
+
+        private void ctMinimize1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void ctMaximize1_Click(object sender, EventArgs e)
+        {
+            if(this.WindowState!=FormWindowState.Maximized)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState=FormWindowState.Normal;
+        }
+        private void panelControlBox_MouseHover(object sender, EventArgs e)
+        {
+            ctClose1.turnOn();
+            ctMinimize1.turnOn();
+            ctMaximize1.turnOn();
+        }
+
+        private void panelControlBox_MouseLeave(object sender, EventArgs e)
+        {
+            ctClose1.turnOff();
+            ctMinimize1.turnOff();
+            ctMaximize1.turnOff();
+        }
+
+        private void panelControlBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            ctClose1.turnOn();
+            ctMinimize1.turnOn();
+            ctMaximize1.turnOn();
+        }
+
     }
 }

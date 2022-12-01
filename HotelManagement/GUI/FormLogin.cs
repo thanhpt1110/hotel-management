@@ -221,7 +221,10 @@ namespace HotelManagement
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-
+            FormMain formMain = new FormMain();
+            this.Hide();
+            formMain.ShowDialog();
+            this.Close();
         }
     }
 }
