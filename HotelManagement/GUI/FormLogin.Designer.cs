@@ -159,6 +159,7 @@
             this.buttonLogin.Text = "LOG IN";
             this.buttonLogin.TextColor = System.Drawing.Color.White;
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // textBoxPassword
             // 

@@ -66,6 +66,7 @@
     <Content Include="img\fixedYellowResize.png" />
     <Content Include="img\tick.png" />
     <Content Include="img\tickBlack.png" />
+    <None Include="Resources\pictureIconNoneBackGroundResize.png" />
     <None Include="Resources\pictureIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

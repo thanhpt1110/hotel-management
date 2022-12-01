@@ -218,5 +218,10 @@ namespace HotelManagement
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
