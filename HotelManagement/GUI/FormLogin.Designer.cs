@@ -50,7 +50,7 @@
             // 
             // panelBackground
             // 
-            this.panelBackground.BackColor = System.Drawing.Color.Transparent;
+            this.panelBackground.BackColor = System.Drawing.Color.White;
             this.panelBackground.Controls.Add(this.panelLogin);
             this.panelBackground.Controls.Add(this.pictureBoxIcon);
             this.panelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -58,9 +58,11 @@
             this.panelBackground.Name = "panelBackground";
             this.panelBackground.Size = new System.Drawing.Size(909, 538);
             this.panelBackground.TabIndex = 0;
+            this.panelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             // 
             // panelLogin
             // 
+            this.panelLogin.BackColor = System.Drawing.Color.White;
             this.panelLogin.Controls.Add(this.buttonLogin);
             this.panelLogin.Controls.Add(this.textBoxPassword);
             this.panelLogin.Controls.Add(this.textBoxUsername);
@@ -72,11 +74,14 @@
             this.panelLogin.Location = new System.Drawing.Point(518, 0);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(391, 538);
-            this.panelLogin.TabIndex = 13;
+            this.panelLogin.TabIndex = 10;
+            this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
+            this.panelLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogin_MouseDown);
             // 
             // labelForgotPassword
             // 
             this.labelForgotPassword.AutoSize = true;
+            this.labelForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelForgotPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelForgotPassword.ForeColor = System.Drawing.Color.Gray;
             this.labelForgotPassword.Location = new System.Drawing.Point(209, 350);
@@ -87,6 +92,7 @@
             // 
             // panelControlBox
             // 
+            this.panelControlBox.BackColor = System.Drawing.Color.White;
             this.panelControlBox.Controls.Add(this.ctMaximize1);
             this.panelControlBox.Controls.Add(this.ctMinimize1);
             this.panelControlBox.Controls.Add(this.ctClose1);
@@ -123,6 +129,8 @@
             // 
             // pictureBoxIcon
             // 
+            this.pictureBoxIcon.BackColor = System.Drawing.Color.White;
+            this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBoxIcon.Image = global::HotelManagement.Properties.Resources.pictureIcon;
             this.pictureBoxIcon.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
@@ -130,6 +138,7 @@
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxIcon.TabIndex = 12;
             this.pictureBoxIcon.TabStop = false;
+            this.pictureBoxIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIcon_MouseDown);
             // 
             // buttonLogin
             // 
@@ -146,7 +155,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(118, 394);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(146, 47);
-            this.buttonLogin.TabIndex = 4;
+            this.buttonLogin.TabIndex = 0;
             this.buttonLogin.Text = "LOG IN";
             this.buttonLogin.TextColor = System.Drawing.Color.White;
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -214,6 +223,7 @@
             this.ctMinimize1.Name = "ctMinimize1";
             this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
             this.ctMinimize1.TabIndex = 1;
+            this.ctMinimize1.Click += new System.EventHandler(this.ctMinimize1_Click);
             // 
             // ctClose1
             // 
@@ -227,8 +237,7 @@
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(909, 538);
@@ -242,6 +251,10 @@
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khách sạn - Đăng nhập";
+            this.Activated += new System.EventHandler(this.FormLogin_Activated);
+            this.SizeChanged += new System.EventHandler(this.FormLogin_SizeChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormLogin_Paint);
+            this.Resize += new System.EventHandler(this.FormLogin_Resize);
             this.panelBackground.ResumeLayout(false);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
