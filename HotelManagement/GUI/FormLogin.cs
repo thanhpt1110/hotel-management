@@ -7,30 +7,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Drawing.Drawing2D;
+using HotelManagement.CTControls;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace HotelManagement
 {
     public partial class FormLogin : Form
     {
+
+        //Constructor
         public FormLogin()
         {
+            /*this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);*/
             InitializeComponent();
-            this.label5.Visible = false;
+            /*this.panelBackground.BringToFront();
+            this.BackColor = borderColor;*/
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Control Box
+        private void panelControlBox_MouseHover(object sender, EventArgs e)
         {
-            if (textBox1.Text=="tuanadmin" && textBox2.Text=="123456" || textBox1.Text == "1" && textBox2.Text == "1")
-            {
-                this.Hide();
-                FormMain f = new FormMain();
-                f.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                this.label5.Visible = true;
-            }
+            ctClose1.turnOn();
+            ctMinimize1.turnOn();
+            ctMaximize1.turnOn();
         }
+
+        private void panelControlBox_MouseLeave(object sender, EventArgs e)
+        {
+            ctClose1.turnOff();
+            ctMinimize1.turnOff();
+            ctMaximize1.turnOff();
+        }
+
+        private void panelControlBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            ctClose1.turnOn();
+            ctMinimize1.turnOn();
+            ctMaximize1.turnOn();
+        }
+
     }
 }

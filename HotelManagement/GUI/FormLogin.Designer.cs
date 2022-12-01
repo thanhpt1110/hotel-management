@@ -29,186 +29,243 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelBackground = new System.Windows.Forms.Panel();
+            this.panelLogin = new System.Windows.Forms.Panel();
+            this.labelForgotPassword = new System.Windows.Forms.Label();
+            this.panelControlBox = new System.Windows.Forms.Panel();
+            this.labelCorporation = new System.Windows.Forms.Label();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.buttonLogin = new HotelManagement.CTControls.CTButton();
+            this.textBoxPassword = new HotelManagement.CTControls.CTTextBox();
+            this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
+            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
+            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
+            this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.panelBackground.SuspendLayout();
+            this.panelLogin.SuspendLayout();
+            this.panelControlBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // panelBackground
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(542, 50);
-            this.label1.MaximumSize = new System.Drawing.Size(1000, 1000);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Đăng nhập";
+            this.panelBackground.BackColor = System.Drawing.Color.Transparent;
+            this.panelBackground.Controls.Add(this.panelLogin);
+            this.panelBackground.Controls.Add(this.pictureBoxIcon);
+            this.panelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBackground.Location = new System.Drawing.Point(0, 0);
+            this.panelBackground.Name = "panelBackground";
+            this.panelBackground.Size = new System.Drawing.Size(909, 538);
+            this.panelBackground.TabIndex = 0;
             // 
-            // label2
+            // panelLogin
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(491, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tên đăng nhập";
+            this.panelLogin.Controls.Add(this.buttonLogin);
+            this.panelLogin.Controls.Add(this.textBoxPassword);
+            this.panelLogin.Controls.Add(this.textBoxUsername);
+            this.panelLogin.Controls.Add(this.labelForgotPassword);
+            this.panelLogin.Controls.Add(this.panelControlBox);
+            this.panelLogin.Controls.Add(this.labelCorporation);
+            this.panelLogin.Controls.Add(this.labelLogin);
+            this.panelLogin.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelLogin.Location = new System.Drawing.Point(518, 0);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(391, 538);
+            this.panelLogin.TabIndex = 13;
             // 
-            // label3
+            // labelForgotPassword
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(491, 228);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Mật khẩu";
+            this.labelForgotPassword.AutoSize = true;
+            this.labelForgotPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelForgotPassword.ForeColor = System.Drawing.Color.Gray;
+            this.labelForgotPassword.Location = new System.Drawing.Point(209, 350);
+            this.labelForgotPassword.Name = "labelForgotPassword";
+            this.labelForgotPassword.Size = new System.Drawing.Size(127, 20);
+            this.labelForgotPassword.TabIndex = 3;
+            this.labelForgotPassword.Text = "Forgot password?";
             // 
-            // textBox1
+            // panelControlBox
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(493, 161);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 30);
-            this.textBox1.TabIndex = 4;
+            this.panelControlBox.Controls.Add(this.ctMaximize1);
+            this.panelControlBox.Controls.Add(this.ctMinimize1);
+            this.panelControlBox.Controls.Add(this.ctClose1);
+            this.panelControlBox.Location = new System.Drawing.Point(293, 3);
+            this.panelControlBox.Name = "panelControlBox";
+            this.panelControlBox.Size = new System.Drawing.Size(95, 30);
+            this.panelControlBox.TabIndex = 5;
+            this.panelControlBox.MouseLeave += new System.EventHandler(this.panelControlBox_MouseLeave);
+            this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
+            this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
             // 
-            // textBox2
+            // labelCorporation
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(491, 250);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '•';
-            this.textBox2.Size = new System.Drawing.Size(290, 30);
-            this.textBox2.TabIndex = 5;
+            this.labelCorporation.AutoSize = true;
+            this.labelCorporation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorporation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(152)))), ((int)(((byte)(162)))));
+            this.labelCorporation.Location = new System.Drawing.Point(224, 508);
+            this.labelCorporation.Name = "labelCorporation";
+            this.labelCorporation.Size = new System.Drawing.Size(155, 21);
+            this.labelCorporation.TabIndex = 4;
+            this.labelCorporation.Text = "TBT CORPORATION";
             // 
-            // button1
+            // labelLogin
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(563, 345);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 48);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Đăng nhập";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.labelLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.Font = new System.Drawing.Font("Brush Script MT", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
+            this.labelLogin.Location = new System.Drawing.Point(105, 100);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(160, 79);
+            this.labelLogin.TabIndex = 1;
+            this.labelLogin.Text = "Login";
             // 
-            // label4
+            // pictureBoxIcon
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(691, 294);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 18);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Quên mật khẩu?";
+            this.pictureBoxIcon.Image = global::HotelManagement.Properties.Resources.pictureIcon;
+            this.pictureBoxIcon.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(518, 538);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxIcon.TabIndex = 12;
+            this.pictureBoxIcon.TabStop = false;
             // 
-            // label5
+            // buttonLogin
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(505, 314);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(248, 19);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Thông tin đăng nhập không đúng";
+            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.buttonLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.buttonLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.buttonLogin.BorderRadius = 25;
+            this.buttonLogin.BorderSize = 0;
+            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogin.FlatAppearance.BorderSize = 0;
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.buttonLogin.ForeColor = System.Drawing.Color.White;
+            this.buttonLogin.Location = new System.Drawing.Point(118, 394);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(146, 47);
+            this.buttonLogin.TabIndex = 4;
+            this.buttonLogin.Text = "LOG IN";
+            this.buttonLogin.TextColor = System.Drawing.Color.White;
+            this.buttonLogin.UseVisualStyleBackColor = false;
             // 
-            // pictureBox3
+            // textBoxPassword
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(448, 228);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
+            this.textBoxPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.textBoxPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.textBoxPassword.BorderRadius = 20;
+            this.textBoxPassword.BorderSize = 1;
+            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.textBoxPassword.IsFocused = false;
+            this.textBoxPassword.Location = new System.Drawing.Point(50, 290);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Multiline = false;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
+            this.textBoxPassword.PasswordChar = false;
+            this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxPassword.PlaceholderText = "Enter your password";
+            this.textBoxPassword.Size = new System.Drawing.Size(286, 45);
+            this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.Texts = "";
+            this.textBoxPassword.UnderlineedStyle = false;
             // 
-            // pictureBox2
+            // textBoxUsername
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(450, 147);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.textBoxUsername.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.textBoxUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.textBoxUsername.BorderRadius = 20;
+            this.textBoxUsername.BorderSize = 1;
+            this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.textBoxUsername.IsFocused = false;
+            this.textBoxUsername.Location = new System.Drawing.Point(50, 207);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUsername.Multiline = false;
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
+            this.textBoxUsername.PasswordChar = false;
+            this.textBoxUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxUsername.PlaceholderText = "Enter your username";
+            this.textBoxUsername.Size = new System.Drawing.Size(286, 45);
+            this.textBoxUsername.TabIndex = 1;
+            this.textBoxUsername.Texts = "";
+            this.textBoxUsername.UnderlineedStyle = false;
             // 
-            // pictureBox1
+            // ctMaximize1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 59);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(399, 314);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
+            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMaximize1.Location = new System.Drawing.Point(10, 7);
+            this.ctMaximize1.Name = "ctMaximize1";
+            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMaximize1.TabIndex = 2;
+            // 
+            // ctMinimize1
+            // 
+            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
+            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMinimize1.Location = new System.Drawing.Point(40, 6);
+            this.ctMinimize1.Name = "ctMinimize1";
+            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMinimize1.TabIndex = 1;
+            // 
+            // ctClose1
+            // 
+            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
+            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
+            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctClose1.Location = new System.Drawing.Point(71, 6);
+            this.ctClose1.Name = "ctClose1";
+            this.ctClose1.Size = new System.Drawing.Size(15, 15);
+            this.ctClose1.TabIndex = 0;
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 456);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(909, 538);
+            this.ControlBox = false;
+            this.Controls.Add(this.panelBackground);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(852, 495);
+            this.MaximumSize = new System.Drawing.Size(909, 538);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khách sạn - Đăng nhập";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelBackground.ResumeLayout(false);
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
+            this.panelControlBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
-        #endregion
+        private System.Windows.Forms.Panel panelBackground;
+        private System.Windows.Forms.Panel panelLogin;
+        private CTControls.CTButton buttonLogin;
+        private CTControls.CTTextBox textBoxPassword;
+        private CTControls.CTTextBox textBoxUsername;
+        private System.Windows.Forms.Label labelForgotPassword;
+        private System.Windows.Forms.Panel panelControlBox;
+        private System.Windows.Forms.Label labelCorporation;
+        private System.Windows.Forms.Label labelLogin;
+        private System.Windows.Forms.PictureBox pictureBoxIcon;
+        private CTControls.CTMaximize ctMaximize1;
+        private CTControls.CTMinimize ctMinimize1;
+        private CTControls.CTClose ctClose1;
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        #endregion
         //private CTControl.CTButton ctButton1;
     }
 }
