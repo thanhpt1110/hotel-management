@@ -13,13 +13,12 @@ CREATE TABLE NhanVien(
     "NgaySinh" DATE NOT NULL,
     "GioiTinh" NVARCHAR(3) NOT NULL,
     "DiaChi" NVARCHAR(100) NOT NULL,
-	 Email NVARCHAR(100) UNIQUE
-   -- "TenTK" NVARCHAR(50)  UNIQUE,
+     Email NVARCHAR(100) UNIQUE
 );
 CREATE TABLE TaiKhoan
 (
     TenTK NVARCHAR(50) NOT NULL PRIMARY KEY,
-	Password NVARCHAR(1000) NOT NULL,	
+    Password NVARCHAR(1000) NOT NULL,	
     "CapDoQuyen" INT NOT NULL,
     "MaNV" NVARCHAR(5) NOT NULL
 );
@@ -30,23 +29,21 @@ CREATE TABLE "KhachHang"(
     "CCCD/Passport" NCHAR(12) NOT NULL UNIQUE,
     "QuocTich" NVARCHAR(30) NOT NULL,
     "GioiTinh" NVARCHAR(3) NOT NULL,
-   -- "DiaChi" NVARCHAR(100) ,
 );
 CREATE TABLE "Phong"(
     "MaPH" NVARCHAR(5) NOT NULL PRIMARY KEY,
     "TTPH" NVARCHAR(20) NOT NULL,
     "TTDD" NVARCHAR(20) NOT NULL,
-	GhiChu NVARCHAR(100),
+     GhiChu NVARCHAR(100),
     "MaLPH" NVARCHAR(5) NOT NULL,
 );
 CREATE TABLE "CTDP"(
-	"MaCTDP" NVARCHAR(7) PRIMARY KEY,
+    "MaCTDP" NVARCHAR(7) PRIMARY KEY,
     "MaPT" NVARCHAR(5) NOT NULL,
     "MaPH" NVARCHAR(5) NOT NULL,
     "CheckIn" SMALLDATETIME NOT NULL,
     "CheckOut" SMALLDATETIME NOT NULL,
-	"ThanhTien" MONEY DEFAULT 0
-	--CONSTRAINT PK_CTDP PRIMARY KEY("MaPT",MaPH)
+    "DatCoc" MONEY DEFAULT 0
 );
 CREATE TABLE "PhieuThue"(
     "MaPT" NVARCHAR(5) NOT NULL PRIMARY KEY,
@@ -60,10 +57,8 @@ CREATE TABLE "HoaDon"(
     "NgHD" SMALLDATETIME ,
     "TriGia" MONEY DEFAULT 0,
     "MaNV" NVARCHAR(5),
-    --"MaPH" NVARCHAR(5) NOT NULL,
-    --"MaPT" NVARCHAR(5) NOT NULL,
-	"TrangThai" NVARCHAR(20) NOT NULL,
-	"MaCTDP" NVARCHAR(7) NOT NULL
+    "TrangThai" NVARCHAR(20) NOT NULL,
+    "MaCTDP" NVARCHAR(7) NOT NULL
 );
 CREATE TABLE "TienNghi"(
     "MaTN" NVARCHAR(5) PRIMARY KEY,
@@ -73,7 +68,7 @@ CREATE TABLE "LoaiPhong"(
     "MaLPH" NVARCHAR(5) PRIMARY KEY,
     "TenLPH" NVARCHAR(20) NOT NULL,
     "SoGiuong" INT NOT NULL,
-	"SoNguoiToiDa" INT NOT NULL,
+    "SoNguoiToiDa" INT NOT NULL,
     "GiaNgay" MONEY NOT NULL,
     "GiaGio" MONEY NOT NULL
 );
@@ -81,25 +76,20 @@ CREATE TABLE "CTTN"(
     "MaLPH" NVARCHAR(5) NOT NULL,
     "MaTN" NVARCHAR(5) NOT NULL,
     "SL" INT DEFAULT -1
-	CONSTRAINT PK_CTTN PRIMARY KEY(MaLPH,MaTN)
+    CONSTRAINT PK_CTTN PRIMARY KEY(MaLPH,MaTN)
 );
---CREATE TABLE "LoaiDichVu"(
---  "MaLDV" NVARCHAR(5) PRIMARY KEY,
---"TenLDV" NVARCHAR(20) NOT NULL
---);
 CREATE TABLE "DichVu"(
     "MaDV" NVARCHAR(5) PRIMARY KEY,
     "TenDV" NVARCHAR(20) NOT NULL,
     "DonGia" MONEY NOT NULL,
-	"SLConLai" INT DEFAULT -1,
+    "SLConLai" INT DEFAULT -1,
     "LoaiDV" NVARCHAR(20) NOT NULL
 );
 CREATE TABLE "CTDV"(
     "MaHD" NVARCHAR(5) NOT NULL,
     "MaDV" NVARCHAR(5) NOT NULL,
     "SL" INT NOT NULL,
-	"ThanhTien" MONEY DEFAULT 0,
-	CONSTRAINT PK_CTDV PRIMARY KEY(MaHD,MaDV)
+    CONSTRAINT PK_CTDV PRIMARY KEY(MaHD,MaDV)
 );
 -- Nhân viên
 
@@ -238,11 +228,11 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP004','PT003','P104','16/11/2022','20/11/2022') -- Đã thuê xong
 	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP005','PT004','P101','28/11/2022','02/12/2022') -- Đang thuê
 -- HoaDon
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD001','15/11/2022','NV001','CTDP001',N'Đã thanh toán') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD002','15/11/2022','NV001','CTDP002',N'Đã thanh toán') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD003','18/11/2022','NV001','CTDP003',N'Đã thanh toán') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD004','20/11/2022','NV001','CTDP004',N'Đã thanh toán') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD005',null,null,'CTDP005',N'Chưa thanh toán')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD001','15/11/2022','NV001','CTDP001',N'Đã thanh toán','1350000.00') 
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD002','15/11/2022','NV001','CTDP002',N'Đã thanh toán','1730000.00') 
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD003','18/11/2022','NV001','CTDP003',N'Đã thanh toán','1220000.00') 
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD004','20/11/2022','NV001','CTDP004',N'Đã thanh toán','1225000.00') 
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD005',null,null,'CTDP005',N'Chưa thanh toán','0')
 -- CTDV
 	
 	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD001','DV01','2')
@@ -274,8 +264,6 @@ ALTER TABLE
 ALTER TABLE 
 	"CTDP" ADD CONSTRAINT "CTDP_MaPH_Forein" FOREIGN  KEY("MaPH") REFERENCES "Phong"("MaPH")
 
---ALTER TABLE
---    "DichVu" ADD CONSTRAINT "dichvu_maldv_foreign" FOREIGN KEY("MaLDV") REFERENCES "LoaiDichVu"("MaLDV");
 ALTER TABLE 
 	"CTTN" ADD CONSTRAINT "CTTN_MaLPH_foreign" FOREIGN KEY ("MaLPH") REFERENCES LoaiPhong("MaLPH")
 ALTER TABLE 
@@ -285,31 +273,3 @@ ALTER TABLE
 ALTER TABLE 
 	"CTDV" ADD CONSTRAINT "CTDV_MaDV_foreign" FOREIGN KEY (MaDV) REFERENCES DichVu(MaDV)
 
-UPDATE CTDV 
-SET ThanhTien = CT.SL * DV.DonGia
-FROM CTDV CT JOIN DichVu DV ON CT.MaDV = DV.MaDV 
-WHERE CT.MaDV = DV.MaDV AND CT.MaHD =MaHD
-
-UPDATE CTDP
-SET ThanhTien = GiaNgay * DATEDIFF(DAY,CT.CheckIn, CT.CheckOut) 
-FROM CTDP CT JOIN Phong PH ON PH.MaPH=CT.MaPH JOIN LoaiPhong LPH ON LPH.MaLPH=PH.MaLPH 
-
-UPDATE HoaDon 
-SET TriGia = CTDP1.ThanhTien + (SELECT SUM(CTDV1.ThanhTien) FROM CTDV CTDV1 WHERE CTDV1.MaHD=HoaDon.MaHD GROUP BY CTDV1.MaHD)
-FROM CTDP CTDP1
-WHERE CTDP1.MaCTDP = HoaDon.MaCTDP 
-GO
--- Truy Xuất hóa đơn thông qua phòng và ngày thanh toán hóa đơn
-CREATE PROC TimHoaDonThongQuaPhong -- Hàm để Truy Xuất hóa đơn thông qua phòng và ngày thanh toán hóa đơn
-@MaPhong NVARCHAR(5),
-@NgayThanhToan SMALLDATETIME
-AS
-BEGIN
- SELECT HD.MaHD, KH.TenKH, DV.TenDV, CTDV1.SL, CTDV1.ThanhTien 'Tổng tiền dịch vụ', CTDP1.ThanhTien 'Tổng tiền Phòng', HD.TriGia 'Tổng tiền Hóa đơn', HD.TrangThai 'Trạng thái hóa đơn'
- FROM HoaDon HD JOIN CTDP CTDP1 ON HD.MaCTDP=CTDP1.MaCTDP JOIN PhieuThue PT ON CTDP1.MaPT = PT.MaPT JOIN KhachHang KH ON KH.MaKH=PT.MaKH JOIN CTDV CTDV1 ON CTDV1.MaHD=HD.MaHD JOIN DichVu DV ON DV.MaDV = CTDV1.MaDV
- WHERE @MaPhong=CTDP1.MaPH AND @NgayThanhToan > CTDP1.CheckIn AND @NgayThanhToan < CTDP1.CheckOut
-END
-GO
-EXEC TimHoaDonThongQuaPhong @MaPhong='P101', @NgayThanhToan = '13/11/2022'
-
---DROP PROC TimHoaDonThongQuaPhong
