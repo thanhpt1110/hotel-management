@@ -298,3 +298,18 @@ UPDATE HoaDon
 SET TriGia = CTDP1.ThanhTien + (SELECT SUM(CTDV1.ThanhTien) FROM CTDV CTDV1 WHERE CTDV1.MaHD=HoaDon.MaHD GROUP BY CTDV1.MaHD)
 FROM CTDP CTDP1
 WHERE CTDP1.MaCTDP = HoaDon.MaCTDP 
+GO
+-- Truy Xuất hóa đơn thông qua phòng và ngày thanh toán hóa đơn
+CREATE PROC TimHoaDonThongQuaPhong -- Hàm để Truy Xuất hóa đơn thông qua phòng và ngày thanh toán hóa đơn
+@MaPhong NVARCHAR(5),
+@NgayThanhToan SMALLDATETIME
+AS
+BEGIN
+ SELECT HD.MaHD, KH.TenKH, DV.TenDV, CTDV1.SL, CTDV1.ThanhTien 'Tổng tiền dịch vụ', CTDP1.ThanhTien 'Tổng tiền Phòng', HD.TriGia 'Tổng tiền Hóa đơn', HD.TrangThai 'Trạng thái hóa đơn'
+ FROM HoaDon HD JOIN CTDP CTDP1 ON HD.MaCTDP=CTDP1.MaCTDP JOIN PhieuThue PT ON CTDP1.MaPT = PT.MaPT JOIN KhachHang KH ON KH.MaKH=PT.MaKH JOIN CTDV CTDV1 ON CTDV1.MaHD=HD.MaHD JOIN DichVu DV ON DV.MaDV = CTDV1.MaDV
+ WHERE @MaPhong=CTDP1.MaPH AND @NgayThanhToan > CTDP1.CheckIn AND @NgayThanhToan < CTDP1.CheckOut
+END
+GO
+EXEC TimHoaDonThongQuaPhong @MaPhong='P101', @NgayThanhToan = '13/11/2022'
+
+--DROP PROC TimHoaDonThongQuaPhong
