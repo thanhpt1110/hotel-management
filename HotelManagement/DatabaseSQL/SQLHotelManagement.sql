@@ -172,4 +172,58 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD") VALUES ('P501', 'VIP02', N'Phòng trống', N'Sửa chữa')
 	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD") VALUES ('P502', 'VIP02', N'Phòng trống', N'Sửa chữa')
 
--- Tiện nghi
+-- Tiện nghi	
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN001', 'Máy lạnh')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN002', 'Máy quạt')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN003', 'Tủ lạnh')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN004', 'Tivi')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN005', 'Đèn ngủ')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN006', 'Bàn')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN007', 'Ghế')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN008', 'Bàn trang điểm')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN009', 'Bồn tắm')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN010', 'Vòi sen')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN011', 'Máy sấy tóc')
+	INSERT INTO TienNghi (MaTN,TenTN) VALUES ('TN012', 'Máy nước nóng')
+	
+
+-- CTTN
+	-- Phòng Thường 1 giường
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR01','TN002','2') -- Máy quạt
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR01','TN004','1') -- Tivi
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR01','TN005','1') -- Đèn ngủ
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR01','TN006','1') -- Bàn 
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR01','TN007','1') -- Ghế
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR01','TN010','1') -- Vòi sen
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR01','TN011','1') -- Máy sấy tóc
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR01','TN012','1') -- Máy nước nóng
+	-- Phòng thường 2 giường
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR02','TN002','3') -- Máy quạt
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR02','TN004','1') -- Tivi
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR02','TN005','2') -- Đèn ngủ
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR02','TN006','1') -- Bàn 
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR02','TN007','2') -- Ghế
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR02','TN010','1') -- Vòi sen
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR02','TN011','1') -- Máy sấy tóc
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'NOR02','TN012','1') -- Máy nước nóng
+	-- Phòng VIP 1 giường
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP01','TN001','1') -- Máy lạnh
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP01','TN004','1') -- Tivi
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP01','TN005','1') -- Đèn ngủ
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP01','TN006','1') -- Bàn 
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP01','TN007','1') -- Ghế
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP01','TN009','1') -- Bồn tắm
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP01','TN010','1') -- Vòi sen
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP01','TN011','1') -- Máy sấy tóc
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP01','TN012','1') -- Máy nước nóng
+	-- Phòng VIP 2 giường
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN001','1') -- Máy lạnh
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN004','1') -- Tivi
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN005','2') -- Đèn ngủ
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN006','1') -- Bàn 
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN007','2') -- Ghế
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN009','1') -- Bồn tắm
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN010','1') -- Vòi sen
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN011','2') -- Máy sấy tóc
+	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN012','1') -- Máy nước nóng
+-- Phiếu Thuê
