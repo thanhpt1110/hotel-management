@@ -227,3 +227,33 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN011','2') -- Máy sấy tóc
 	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN012','1') -- Máy nước nóng
 -- Phiếu Thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT001', '10/11/2022','KH002','NV002') -- Đã thuê xong
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT002', '12/11/2022','KH004','QL001') -- Đã thuê xong
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT003', '15/11/2022','KH003','NV001') -- Đã thuê xong
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT004', '28/11/2022','KH001','NV001') -- Đang thuê
+-- CTDP
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP001','PT001','P101','11/11/2022','15/11/2022') -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP002','PT001','P103','11/11/2022','15/11/2022') -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP003','PT002','P201','15/11/2022','18/11/2022') -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP004','PT003','P104','16/11/2022','20/11/2022') -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP005','PT004','P101','28/11/2022','02/12/2022') -- Đang thuê
+-- HoaDon
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD001','15/11/2022','NV001','CTDP001',N'Đã thanh toán') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD002','15/11/2022','NV001','CTDP002',N'Đã thanh toán') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD003','18/11/2022','NV001','CTDP003',N'Đã thanh toán') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD004','20/11/2022','NV001','CTDP004',N'Đã thanh toán') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai") VALUES('HD005',null,null,'CTDP005',N'Chưa thanh toán')
+-- CTDV
+	
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD001','DV01','2')
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD001','DV02','2')
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD001','DV06','1')
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD002','DV01','1')
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD002','DV04','1')
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD002','DV06','1')
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD003','DV04','1')
+
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD004','DV07','1')
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD005','DV01','2')
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD005','DV02','2')
+	INSERT INTO CTDV("MaHD","MaDV","SL") VALUES('HD005','DV04','2')
