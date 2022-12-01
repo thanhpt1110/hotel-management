@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagement.DAO
 {
-    internal class KhachHang_DAO
+    internal class KhachHangDAO
     {
     }
 }
