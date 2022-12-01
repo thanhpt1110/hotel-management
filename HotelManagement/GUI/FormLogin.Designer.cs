@@ -40,7 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.ctButton1 = new HotelManagement.CTControl.CTButton();
+            //this.ctButton1 = new HotelManagement.CTControl.CTButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -229,7 +229,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private CTControl.CTButton ctButton1;
+        //private CTControl.CTButton ctButton1;
     }
 }
 
