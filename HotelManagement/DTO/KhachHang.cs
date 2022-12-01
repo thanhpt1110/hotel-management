@@ -8,5 +8,6 @@ namespace HotelManagement.DTO
 {
     internal class KhachHang_DTO
     {
+        private string testKhachHangDTO;
     }
 }

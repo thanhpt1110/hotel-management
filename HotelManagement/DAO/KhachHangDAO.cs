@@ -8,5 +8,6 @@ namespace HotelManagement.DAO
 {
     internal class KhachHangDAO
     {
+        private string testKhachHangDAO;
     }
 }

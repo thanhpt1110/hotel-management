@@ -8,5 +8,6 @@ namespace HotelManagement.BUS
 {
     internal class KhachHangBUS
     {
+        private string testKhachHangBUS;
     }
 }
