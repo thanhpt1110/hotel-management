@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelManagement.CTControls
+namespace HotelManagement.DAO
 {
-    internal class CTControl
+    internal class KhachHang_DAO
     {
     }
 }
