@@ -52,6 +52,7 @@
             this.panel1.Controls.Add(this.LabelTrangThaiLon);
             this.panel1.Controls.Add(this.LabelLoaiPhong);
             this.panel1.Controls.Add(this.LabelMaPhong);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(277, 123);
@@ -74,6 +75,7 @@
             // 
             // PictureBoxTrangThai
             // 
+            this.PictureBoxTrangThai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureBoxTrangThai.Image = global::HotelManagement.Properties.Resources.DangThue;
             this.PictureBoxTrangThai.Location = new System.Drawing.Point(25, 63);
             this.PictureBoxTrangThai.Name = "PictureBoxTrangThai";
@@ -114,6 +116,7 @@
             // 
             this.LabelMaPhong.AutoSize = true;
             this.LabelMaPhong.BackColor = System.Drawing.Color.Transparent;
+            this.LabelMaPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LabelMaPhong.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelMaPhong.ForeColor = System.Drawing.Color.White;
             this.LabelMaPhong.Location = new System.Drawing.Point(17, 14);
@@ -166,6 +169,7 @@
             // 
             // PictureBoxThoiGian
             // 
+            this.PictureBoxThoiGian.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureBoxThoiGian.Image = global::HotelManagement.Properties.Resources.clock;
             this.PictureBoxThoiGian.Location = new System.Drawing.Point(28, 131);
             this.PictureBoxThoiGian.Name = "PictureBoxThoiGian";
@@ -183,6 +187,7 @@
             this.Controls.Add(this.PictureBoxTrangThaiDonDep);
             this.Controls.Add(this.LabelThoiGian);
             this.Controls.Add(this.PictureBoxThoiGian);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "CTRoomDangSuaChua";
             this.Size = new System.Drawing.Size(280, 155);
             this.Load += new System.EventHandler(this.CTRoomDangSuaChua_Load);

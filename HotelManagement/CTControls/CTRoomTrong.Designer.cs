@@ -168,7 +168,7 @@
             this.PictureBoxThoiGian.TabStop = false;
             this.PictureBoxThoiGian.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
             // 
-            // CTRoomPhongTrong
+            // CTRoomTrong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
@@ -177,7 +177,8 @@
             this.Controls.Add(this.PictureBoxTrangThaiDonDep);
             this.Controls.Add(this.LabelThoiGian);
             this.Controls.Add(this.PictureBoxThoiGian);
-            this.Name = "CTRoomPhongTrong";
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Name = "CTRoomTrong";
             this.Size = new System.Drawing.Size(280, 155);
             this.Load += new System.EventHandler(this.CTRoomPhongTrong_Load);
             this.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
