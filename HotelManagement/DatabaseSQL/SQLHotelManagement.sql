@@ -36,6 +36,7 @@ CREATE TABLE "Phong"(
     "TTDD" NVARCHAR(20) NOT NULL,
      GhiChu NVARCHAR(100),
     "MaLPH" NVARCHAR(5) NOT NULL,
+    SoNguoi INT,
 );
 CREATE TABLE "CTDP"(
     "MaCTDP" NVARCHAR(7) PRIMARY KEY,
@@ -222,11 +223,11 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT003', '15/11/2022','KH003','NV001') -- Đã thuê xong
 	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT004', '28/11/2022','KH001','NV001') -- Đang thuê
 -- CTDP
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP001','PT001','P101','11/11/2022','15/11/2022') -- Đã thuê xong
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP002','PT001','P103','11/11/2022','15/11/2022') -- Đã thuê xong
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP003','PT002','P201','15/11/2022','18/11/2022') -- Đã thuê xong
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP004','PT003','P104','16/11/2022','20/11/2022') -- Đã thuê xong
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut") VALUES('CTDP005','PT004','P101','28/11/2022','02/12/2022') -- Đang thuê
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut",SoNguoi) VALUES('CTDP001','PT001','P101','11/11/2022','15/11/2022','2') -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut",SoNguoi) VALUES('CTDP002','PT001','P103','11/11/2022','15/11/2022','2') -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut",SoNguoi) VALUES('CTDP003','PT002','P201','15/11/2022','18/11/2022','2') -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut",SoNguoi) VALUES('CTDP004','PT003','P104','16/11/2022','20/11/2022','2') -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut",SoNguoi) VALUES('CTDP005','PT004','P101','28/11/2022','02/12/2022','2') -- Đang thuê
 -- HoaDon
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD001','15/11/2022','NV001','CTDP001',N'Đã thanh toán','1350000.00') 
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD002','15/11/2022','NV001','CTDP002',N'Đã thanh toán','1730000.00') 
