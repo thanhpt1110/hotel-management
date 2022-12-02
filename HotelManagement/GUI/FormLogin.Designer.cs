@@ -71,9 +71,9 @@
             this.panelLogin.Controls.Add(this.labelCorporation);
             this.panelLogin.Controls.Add(this.labelLogin);
             this.panelLogin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelLogin.Location = new System.Drawing.Point(518, 0);
+            this.panelLogin.Location = new System.Drawing.Point(519, 0);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(391, 538);
+            this.panelLogin.Size = new System.Drawing.Size(390, 538);
             this.panelLogin.TabIndex = 10;
             this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             this.panelLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogin_MouseDown);
@@ -134,7 +134,7 @@
             this.pictureBoxIcon.Image = global::HotelManagement.Properties.Resources.pictureIcon;
             this.pictureBoxIcon.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(518, 538);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(516, 538);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxIcon.TabIndex = 12;
             this.pictureBoxIcon.TabStop = false;

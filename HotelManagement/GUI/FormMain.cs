@@ -236,5 +236,10 @@ namespace HotelManagement
             ctMaximize1.turnOn();
         }
 
+        private void ctRoomPhongTrong1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click OK!");
+        }
+
     }
 }

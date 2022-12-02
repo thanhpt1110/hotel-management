@@ -5,64 +5,18 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Net.NetworkInformation;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HotelManagement.CTControls
 {
-    public partial class CTRoom : UserControl
+    public partial class CTRoomDaDat : UserControl
     {
-        //Methods Set Value
-        public void setMaPhong(string maPhong)
-        {
-            this.LabelMaPhong.Text = maPhong;
-        }
-        public void setTrangThai(string trangThai)
-        {
-            this.LabelTrangThaiNho.Text = trangThai;
-            this.LabelTrangThaiLon.Text = trangThai;
-        }
-        public void setThoiGianNone()
-        {
-            LabelThoiGian.Text = "";
-        }
-        public void setThoiGian(string thoiGian)
-        {
-            this.LabelThoiGian.Text = thoiGian;
-        }
-        public void setPhongTrong()
-        {
-            setThoiGianNone();
-            setTrangThai("Phòng trống");
-            pictureBoxTrangThai.Image = Properties.Resources.tick;
-        }
-        public void setChuaDonDep()
-        {
-            PictureBoxTrangThaiDonDep.Image = Properties.Resources.x;
-            LabelTrangThaiDonDep.Text = "Chưa dọn dẹp";
-        }
-        public void setDaDonDep()
-        {
-            PictureBoxTrangThaiDonDep.Image = Properties.Resources.tickBlack;
-            LabelTrangThaiDonDep.Text = "Đã dọn dẹp";
-        }
-        public void setDangSuaChua()
-        {
-            setThoiGianNone();
-            setTrangThai("Đang sửa chữa");
-            pictureBoxTrangThai.Image= Properties.Resources.fix50;
-            PictureBoxTrangThaiDonDep.Image = Properties.Resources.fix;
-            LabelTrangThaiDonDep.Text = "Đang sửa chữa";
-        }
         //Fields
         private int borderSize = 0;
         private int borderRadius = 20;
-        private Color borderColor = Color.FromArgb(230, 222, 224);
+        private Color borderColor = Color.FromArgb(227, 196, 68);
 
         public int BorderSize
         {
@@ -102,11 +56,11 @@ namespace HotelManagement.CTControls
             set { this.ForeColor = value; }
         }
         //Constructor
-        public CTRoom()
+        public CTRoomDaDat()
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.Size = new Size(280, 155);
-            this.BackColor = Color.FromArgb(230, 222, 224);
+            this.BackColor = Color.FromArgb(227, 196, 68);
             this.ForeColor = Color.White;
             InitializeComponent();
         }
@@ -196,47 +150,17 @@ namespace HotelManagement.CTControls
         }
 
         //Private methods
-
-
-
-
-        //Touch Color Change
-        private void setChildColorAsParent()
-        {
-            LabelMaPhong.BackColor = panelTop.BackColor;
-            LabelTrangThaiLon.BackColor = panelTop.BackColor;
-            pictureBoxTrangThai.BackColor = panelTop.BackColor;
-            LabelTrangThaiNho.BackColor = panelTop.BackColor;
-            LabelTrangThaiDonDep.BackColor = this.BackColor;
-            LabelThoiGian.BackColor = this.BackColor;
-            pictureBoxThoiGian.BackColor = this.BackColor;
-            PictureBoxTrangThaiDonDep.BackColor = this.BackColor;
-        }
-        private void normal(object sender, EventArgs e)
-        {
-
-        }
-        private void touch(object sender, EventArgs e)
-        {
-
-        }
-
-        private void touch(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void CTRoom_VisibleChanged(object sender, EventArgs e)
+        private void CTRoomDaDat_VisibleChanged(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void CTRoom_Load(object sender, EventArgs e)
+        private void CTRoomDaDat_Load(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void CTRoom_Click(object sender, EventArgs e)
+        private void CTRoomDaDat_Click(object sender, EventArgs e)
         {
 
         }
