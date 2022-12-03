@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panelName = new System.Windows.Forms.Panel();
             this.panelControlBox = new System.Windows.Forms.Panel();
+            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
+            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
+            this.ctClose1 = new HotelManagement.CTControls.CTClose();
             this.labelTenKhachSan = new System.Windows.Forms.Label();
             this.Sidebar = new System.Windows.Forms.Panel();
             this.panelNhanSuSubmenu = new System.Windows.Forms.Panel();
@@ -53,9 +56,10 @@
             this.labelBanQuyen = new System.Windows.Forms.Label();
             this.panelMainChildForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
-            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
-            this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.ctRoomDaDat1 = new HotelManagement.CTControls.CTRoomDaDat();
+            this.ctRoomDangSuaChua1 = new HotelManagement.CTControls.CTRoomDangSuaChua();
+            this.ctRoomDangThue1 = new HotelManagement.CTControls.CTRoomDangThue();
+            this.ctRoomTrong1 = new HotelManagement.CTControls.CTRoomTrong();
             this.panelName.SuspendLayout();
             this.panelControlBox.SuspendLayout();
             this.Sidebar.SuspendLayout();
@@ -92,6 +96,38 @@
             this.panelControlBox.MouseLeave += new System.EventHandler(this.panelControlBox_MouseLeave);
             this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
             this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
+            // 
+            // ctMaximize1
+            // 
+            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
+            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMaximize1.Location = new System.Drawing.Point(10, 6);
+            this.ctMaximize1.Name = "ctMaximize1";
+            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMaximize1.TabIndex = 2;
+            this.ctMaximize1.Click += new System.EventHandler(this.ctMaximize1_Click);
+            // 
+            // ctMinimize1
+            // 
+            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
+            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMinimize1.Location = new System.Drawing.Point(40, 6);
+            this.ctMinimize1.Name = "ctMinimize1";
+            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMinimize1.TabIndex = 1;
+            this.ctMinimize1.Click += new System.EventHandler(this.ctMinimize1_Click);
+            // 
+            // ctClose1
+            // 
+            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
+            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
+            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctClose1.Location = new System.Drawing.Point(71, 6);
+            this.ctClose1.Name = "ctClose1";
+            this.ctClose1.Size = new System.Drawing.Size(15, 15);
+            this.ctClose1.TabIndex = 0;
             // 
             // labelTenKhachSan
             // 
@@ -409,6 +445,10 @@
             // panelMainChildForm
             // 
             this.panelMainChildForm.BackColor = System.Drawing.Color.White;
+            this.panelMainChildForm.Controls.Add(this.ctRoomTrong1);
+            this.panelMainChildForm.Controls.Add(this.ctRoomDangThue1);
+            this.panelMainChildForm.Controls.Add(this.ctRoomDangSuaChua1);
+            this.panelMainChildForm.Controls.Add(this.ctRoomDaDat1);
             this.panelMainChildForm.Controls.Add(this.pictureBox1);
             this.panelMainChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainChildForm.Location = new System.Drawing.Point(262, 60);
@@ -428,37 +468,65 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // ctMaximize1
+            // ctRoomDaDat1
             // 
-            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
-            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMaximize1.Location = new System.Drawing.Point(10, 6);
-            this.ctMaximize1.Name = "ctMaximize1";
-            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMaximize1.TabIndex = 2;
-            this.ctMaximize1.Click += new System.EventHandler(this.ctMaximize1_Click);
+            this.ctRoomDaDat1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.ctRoomDaDat1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.ctRoomDaDat1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.ctRoomDaDat1.BorderRadius = 20;
+            this.ctRoomDaDat1.BorderSize = 0;
+            this.ctRoomDaDat1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctRoomDaDat1.ForeColor = System.Drawing.Color.White;
+            this.ctRoomDaDat1.Location = new System.Drawing.Point(170, 88);
+            this.ctRoomDaDat1.Name = "ctRoomDaDat1";
+            this.ctRoomDaDat1.Size = new System.Drawing.Size(280, 155);
+            this.ctRoomDaDat1.TabIndex = 1;
+            this.ctRoomDaDat1.TextColor = System.Drawing.Color.White;
             // 
-            // ctMinimize1
+            // ctRoomDangSuaChua1
             // 
-            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
-            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMinimize1.Location = new System.Drawing.Point(40, 6);
-            this.ctMinimize1.Name = "ctMinimize1";
-            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMinimize1.TabIndex = 1;
-            this.ctMinimize1.Click += new System.EventHandler(this.ctMinimize1_Click);
+            this.ctRoomDangSuaChua1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.ctRoomDangSuaChua1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.ctRoomDangSuaChua1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.ctRoomDangSuaChua1.BorderRadius = 20;
+            this.ctRoomDangSuaChua1.BorderSize = 0;
+            this.ctRoomDangSuaChua1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctRoomDangSuaChua1.ForeColor = System.Drawing.Color.White;
+            this.ctRoomDangSuaChua1.Location = new System.Drawing.Point(690, 145);
+            this.ctRoomDangSuaChua1.Name = "ctRoomDangSuaChua1";
+            this.ctRoomDangSuaChua1.Size = new System.Drawing.Size(280, 155);
+            this.ctRoomDangSuaChua1.TabIndex = 2;
+            this.ctRoomDangSuaChua1.TextColor = System.Drawing.Color.White;
             // 
-            // ctClose1
+            // ctRoomDangThue1
             // 
-            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
-            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
-            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctClose1.Location = new System.Drawing.Point(71, 6);
-            this.ctClose1.Name = "ctClose1";
-            this.ctClose1.Size = new System.Drawing.Size(15, 15);
-            this.ctClose1.TabIndex = 0;
+            this.ctRoomDangThue1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.ctRoomDangThue1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.ctRoomDangThue1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(107)))), ((int)(((byte)(104)))));
+            this.ctRoomDangThue1.BorderRadius = 20;
+            this.ctRoomDangThue1.BorderSize = 0;
+            this.ctRoomDangThue1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctRoomDangThue1.ForeColor = System.Drawing.Color.White;
+            this.ctRoomDangThue1.Location = new System.Drawing.Point(198, 351);
+            this.ctRoomDangThue1.Name = "ctRoomDangThue1";
+            this.ctRoomDangThue1.Size = new System.Drawing.Size(280, 155);
+            this.ctRoomDangThue1.TabIndex = 3;
+            this.ctRoomDangThue1.TextColor = System.Drawing.Color.White;
+            // 
+            // ctRoomTrong1
+            // 
+            this.ctRoomTrong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.ctRoomTrong1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
+            this.ctRoomTrong1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(201)))), ((int)(((byte)(103)))));
+            this.ctRoomTrong1.BorderRadius = 20;
+            this.ctRoomTrong1.BorderSize = 0;
+            this.ctRoomTrong1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctRoomTrong1.ForeColor = System.Drawing.Color.White;
+            this.ctRoomTrong1.Location = new System.Drawing.Point(580, 355);
+            this.ctRoomTrong1.Name = "ctRoomTrong1";
+            this.ctRoomTrong1.Size = new System.Drawing.Size(280, 155);
+            this.ctRoomTrong1.TabIndex = 4;
+            this.ctRoomTrong1.TextColor = System.Drawing.Color.White;
             // 
             // FormMain
             // 
@@ -523,5 +591,9 @@
         private CTControls.CTMaximize ctMaximize1;
         private CTControls.CTMinimize ctMinimize1;
         private CTControls.CTClose ctClose1;
+        private CTControls.CTRoomTrong ctRoomTrong1;
+        private CTControls.CTRoomDangThue ctRoomDangThue1;
+        private CTControls.CTRoomDangSuaChua ctRoomDangSuaChua1;
+        private CTControls.CTRoomDaDat ctRoomDaDat1;
     }
 }

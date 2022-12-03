@@ -118,17 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Address" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Address.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calendarDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\calendardark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CalendarPick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CalendarPick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calendarWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\calendarwhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CCCD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CCCD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ChuaDonDep" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClockPick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClockPick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DaDat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DaDat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,11 +181,26 @@
   <data name="fixedYellowResize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\fixedyellowresize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Gender" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gender.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NameKH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Name.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pictureIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pictureIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pictureIconNoneBackGroundResize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pictureIconNoneBackGroundResize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TimePickerBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TimePickerBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TimePickerWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TimePickerWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Trong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
