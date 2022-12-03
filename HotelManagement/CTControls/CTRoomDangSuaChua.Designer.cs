@@ -76,7 +76,7 @@
             // PictureBoxTrangThai
             // 
             this.PictureBoxTrangThai.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxTrangThai.Image = global::HotelManagement.Properties.Resources.DangThue;
+            this.PictureBoxTrangThai.Image = global::HotelManagement.Properties.Resources.DangSuaChua;
             this.PictureBoxTrangThai.Location = new System.Drawing.Point(25, 63);
             this.PictureBoxTrangThai.Name = "PictureBoxTrangThai";
             this.PictureBoxTrangThai.Size = new System.Drawing.Size(50, 50);
