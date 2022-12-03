@@ -146,7 +146,7 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD") VALUES ('P101', 'NOR01', N'Bình thường', N'Đã dọn dẹp')
 	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD") VALUES ('P102', 'NOR01', N'Bình thường', N'Đã dọn dẹp')
 	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD") VALUES ('P103', 'NOR02', N'Bình thường', N'Chưa dọn dẹp')
-	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD", "GhiChu") VALUES ('P104', 'NOR01', N'Phòng đang sửa', N'Đã dọn dẹp', N'Hư điều hòa')
+	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD", "GhiChu") VALUES ('P104', 'NOR01', N'Đang sửa chữa', N'Đã dọn dẹp', N'Hư điều hòa')
 	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD") VALUES ('P105', 'NOR02', N'Bình thường', N'Đã dọn dẹp')
 	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD") VALUES ('P106', 'VIP01', N'Bình thường', N'Đã dọn dẹp')
 	INSERT INTO PHONG ("MaPH", "MaLPH", "TTPH", "TTDD") VALUES ('P201', 'NOR02', N'Bình thường', N'Chưa dọn dẹp')
