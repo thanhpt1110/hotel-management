@@ -223,6 +223,16 @@ namespace HotelManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DichVu {
+            get {
+                object obj = ResourceManager.GetObject("DichVu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fixedCloseResize {
             get {
                 object obj = ResourceManager.GetObject("fixedCloseResize", resourceCulture);
@@ -396,6 +406,16 @@ namespace HotelManagement.Properties {
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SoLuong {
+            get {
+                object obj = ResourceManager.GetObject("SoLuong", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -473,5 +473,9 @@ namespace HotelManagement
         {
             openChildForm(new FormDanhSachLoaiPhong());
         }
+        private void ButtonDichVu_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormDanhSachDichVu());
+        }
     }
 }
