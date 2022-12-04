@@ -623,7 +623,7 @@
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDatPhong";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormDatPhong";
             this.Activated += new System.EventHandler(this.FormDatPhong_Activated);
             this.SizeChanged += new System.EventHandler(this.FormDatPhong_SizeChanged);

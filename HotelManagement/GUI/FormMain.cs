@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +28,7 @@ namespace HotelManagement
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
-            customDesign();
+            //customDesign();
         }
         //Control Box
 
@@ -140,7 +141,15 @@ namespace HotelManagement
             }
             return fbColor;
         }
-
+        private FormBoundsColors SameColor()
+        {
+            var fbColor = new FormBoundsColors();
+            fbColor.TopLeftColor = Color.FromArgb(72, 145, 153);
+            fbColor.TopRightColor = Color.FromArgb(72, 145, 153);
+            fbColor.BottomLeftColor = Color.FromArgb(72, 145, 153);
+            fbColor.BottomRightColor = Color.FromArgb(72, 145, 153);
+            return fbColor;
+        }
         //Event Methods
         private void FormMain_Paint(object sender, PaintEventArgs e)
         {
@@ -149,6 +158,7 @@ namespace HotelManagement
             Rectangle rectForm = this.ClientRectangle;
             int mWidht = rectForm.Width / 2;
             int mHeight = rectForm.Height / 2;
+            //var fbColors = SameColor();
             var fbColors = GetFormBoundsColors();
             //Top Left
             DrawPath(rectForm, e.Graphics, fbColors.TopLeftColor);
@@ -186,8 +196,21 @@ namespace HotelManagement
         {
             //WindowState = FormWindowState.Maximized;
         }
-
-        private void customDesign()
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelMainChildForm.Controls.Add(childForm);
+            panelMainChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        /*private void customDesign()
         {
             this.panelThuChiSubmenu.Visible = false;
             this.panelThongKeSubmenu.Visible = false;
@@ -366,17 +389,17 @@ namespace HotelManagement
             disableButtonSubmenu(this.panelThongKeSubmenu);
             disableButtonSubmenu(this.panelNhanSuSubmenu);
         }
-
+*/
         private void ctMinimize1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
         private void ctMaximize1_Click(object sender, EventArgs e)
         {
-            if(this.WindowState!=FormWindowState.Maximized)
-                this.WindowState = FormWindowState.Maximized;
+            if (this.WindowState != FormWindowState.Maximized)
+                this.WindowState = FormWindowState.Maximized;            
             else
-                this.WindowState=FormWindowState.Normal;
+                this.WindowState = FormWindowState.Normal;
         }
         private void panelControlBox_MouseHover(object sender, EventArgs e)
         {
@@ -404,5 +427,20 @@ namespace HotelManagement
             MessageBox.Show("Click OK!");
         }
 
+        private void panelName_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonDatPhong_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormQLDatPhong());
+        }
     }
 }

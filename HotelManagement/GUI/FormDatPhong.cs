@@ -16,7 +16,7 @@ namespace HotelManagement.GUI
     public partial class FormDatPhong : Form
     {
         //Fields
-        private int borderRadius = 20;
+        private int borderRadius = 15;
         private int borderSize = 2;
         private Color borderColor = Color.White;
 
@@ -139,7 +139,15 @@ namespace HotelManagement.GUI
             }
             return fbColor;
         }
-
+        private FormBoundsColors GetSame()
+        {
+            var fbColor = new FormBoundsColors();
+            fbColor.BottomLeftColor = Color.Black;
+            fbColor.BottomRightColor = Color.Black;
+            fbColor.TopLeftColor = Color.Black;
+            fbColor.TopRightColor = Color.Black;
+            return fbColor;
+        }
         //Event Methods
         private void FormDatPhong_Paint(object sender, PaintEventArgs e)
         {
@@ -149,6 +157,7 @@ namespace HotelManagement.GUI
             int mWidht = rectForm.Width / 2;
             int mHeight = rectForm.Height / 2;
             var fbColors = GetFormBoundsColors();
+            //fbColors = GetSame();
             //Top Left
             DrawPath(rectForm, e.Graphics, fbColors.TopLeftColor);
             //Top Right
@@ -191,7 +200,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonHuy_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
     }
 }
