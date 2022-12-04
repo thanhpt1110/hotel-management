@@ -440,7 +440,23 @@ namespace HotelManagement
 
         private void ButtonDatPhong_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormQLDatPhong());
+            openChildForm(new FormQuanLyDatPhong());
+        }
+
+        private void ButtonSoDoPhong_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormSoDoPhong());
+        }
+
+
+        private void ButtonDanhSachHoaDon_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormDanhSachHoaDon());
+        }
+
+        private void ButtonTrangChu_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormTrangChu());
         }
     }
 }

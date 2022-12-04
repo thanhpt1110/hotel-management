@@ -57,10 +57,10 @@
             this.ButtonTrangChu = new System.Windows.Forms.Button();
             this.panelName = new System.Windows.Forms.Panel();
             this.panelControlBox = new System.Windows.Forms.Panel();
+            this.labelTenKhachSan = new System.Windows.Forms.Label();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
-            this.labelTenKhachSan = new System.Windows.Forms.Label();
             this.PanelBackground.SuspendLayout();
             this.panelInfomation.SuspendLayout();
             this.Sidebar.SuspendLayout();
@@ -389,9 +389,10 @@
             this.ButtonHoaDon.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.ButtonHoaDon.Size = new System.Drawing.Size(262, 48);
             this.ButtonHoaDon.TabIndex = 3;
-            this.ButtonHoaDon.Text = "Hóa đơn";
+            this.ButtonHoaDon.Text = "Danh sách hóa đơn";
             this.ButtonHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonHoaDon.UseVisualStyleBackColor = true;
+            this.ButtonHoaDon.Click += new System.EventHandler(this.ButtonDanhSachHoaDon_Click);
             // 
             // ButtonDatPhong
             // 
@@ -423,6 +424,7 @@
             this.ButtonSoDoPhong.Text = "Sơ đồ phòng";
             this.ButtonSoDoPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonSoDoPhong.UseVisualStyleBackColor = true;
+            this.ButtonSoDoPhong.Click += new System.EventHandler(this.ButtonSoDoPhong_Click);
             // 
             // ButtonTrangChu
             // 
@@ -438,6 +440,7 @@
             this.ButtonTrangChu.Text = "Trang chủ";
             this.ButtonTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonTrangChu.UseVisualStyleBackColor = true;
+            this.ButtonTrangChu.Click += new System.EventHandler(this.ButtonTrangChu_Click);
             // 
             // panelName
             // 
@@ -465,6 +468,18 @@
             this.panelControlBox.MouseLeave += new System.EventHandler(this.panelControlBox_MouseLeave);
             this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
             this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
+            // 
+            // labelTenKhachSan
+            // 
+            this.labelTenKhachSan.AutoSize = true;
+            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
+            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenKhachSan.ForeColor = System.Drawing.Color.White;
+            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
+            this.labelTenKhachSan.Name = "labelTenKhachSan";
+            this.labelTenKhachSan.Size = new System.Drawing.Size(123, 21);
+            this.labelTenKhachSan.TabIndex = 2;
+            this.labelTenKhachSan.Text = "Khách sạn IT008";
             // 
             // ctMaximize1
             // 
@@ -497,18 +512,6 @@
             this.ctClose1.Name = "ctClose1";
             this.ctClose1.Size = new System.Drawing.Size(15, 15);
             this.ctClose1.TabIndex = 0;
-            // 
-            // labelTenKhachSan
-            // 
-            this.labelTenKhachSan.AutoSize = true;
-            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
-            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenKhachSan.ForeColor = System.Drawing.Color.White;
-            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
-            this.labelTenKhachSan.Name = "labelTenKhachSan";
-            this.labelTenKhachSan.Size = new System.Drawing.Size(123, 21);
-            this.labelTenKhachSan.TabIndex = 2;
-            this.labelTenKhachSan.Text = "Khách sạn IT008";
             // 
             // FormMain
             // 

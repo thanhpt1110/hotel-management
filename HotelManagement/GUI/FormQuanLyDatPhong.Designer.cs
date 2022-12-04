@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement.GUI
 {
-    partial class FormQLDatPhong
+    partial class FormQuanLyDatPhong
     {
         /// <summary>
         /// Required designer variable.
