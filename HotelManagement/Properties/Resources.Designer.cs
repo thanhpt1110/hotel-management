@@ -323,6 +323,16 @@ namespace HotelManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SoNguoi {
+            get {
+                object obj = ResourceManager.GetObject("SoNguoi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TimePickerBlack {
             get {
                 object obj = ResourceManager.GetObject("TimePickerBlack", resourceCulture);

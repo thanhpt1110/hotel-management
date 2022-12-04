@@ -1,5 +1,4 @@
-﻿using HotelManagement.CTControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +12,7 @@ using System.Windows.Forms;
 
 namespace HotelManagement.GUI
 {
-    public partial class FormDatPhong : Form
+    public partial class FormThongTinPhong : Form
     {
         //Fields
         private int borderRadius = 20;
@@ -21,7 +20,7 @@ namespace HotelManagement.GUI
         private Color borderColor = Color.White;
 
         //Constructor
-        public FormDatPhong()
+        public FormThongTinPhong()
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -29,7 +28,7 @@ namespace HotelManagement.GUI
             InitializeComponent();
         }
         //Control Box
-        
+
         //Form Move
 
         //Drag Form
@@ -141,7 +140,7 @@ namespace HotelManagement.GUI
         }
 
         //Event Methods
-        private void FormDatPhong_Paint(object sender, PaintEventArgs e)
+        private void FormThongTinPhong_Paint(object sender, PaintEventArgs e)
         {
             //-> SMOOTH OUTER BORDER
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -163,17 +162,17 @@ namespace HotelManagement.GUI
             //-> SET ROUNDED REGION AND BORDER
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
-        private void FormDatPhong_Resize(object sender, EventArgs e)
+        private void FormThongTinPhong_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void FormDatPhong_SizeChanged(object sender, EventArgs e)
+        private void FormThongTinPhong_SizeChanged(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void FormDatPhong_Activated(object sender, EventArgs e)
+        private void FormThongTinPhong_Activated(object sender, EventArgs e)
         {
             this.Invalidate();
         }
@@ -188,10 +187,15 @@ namespace HotelManagement.GUI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void CTButtonHuy_Click(object sender, EventArgs e)
+        private void PanelTop_MouseDown(object sender, MouseEventArgs e)
         {
-            Application.Exit();
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void CTButtonThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
