@@ -30,16 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDon));
             this.PanelBackground = new System.Windows.Forms.Panel();
+            this.Printer = new System.Windows.Forms.PictureBox();
+            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
+            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
+            this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TextBoxTenNV = new System.Windows.Forms.TextBox();
             this.TextBoxSoNgay = new System.Windows.Forms.TextBox();
             this.TextBoxLoaiPhong = new System.Windows.Forms.TextBox();
             this.TextBoxMaPhong = new System.Windows.Forms.TextBox();
             this.TextBoxSoHD = new System.Windows.Forms.TextBox();
+            this.PictureIcon = new System.Windows.Forms.PictureBox();
             this.TextBoxNgayHD = new System.Windows.Forms.TextBox();
             this.TextBoxTenKH = new System.Windows.Forms.TextBox();
             this.LabelTongTien = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.DataGridViewDichVu = new System.Windows.Forms.DataGridView();
+            this.DichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,21 +59,11 @@
             this.LabelTenKH = new System.Windows.Forms.Label();
             this.LabelHoaDon = new System.Windows.Forms.Label();
             this.LabelTitle = new System.Windows.Forms.Label();
-            this.Printer = new System.Windows.Forms.PictureBox();
-            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
-            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
-            this.ctClose1 = new HotelManagement.CTControls.CTClose();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PictureIcon = new System.Windows.Forms.PictureBox();
-            this.DichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Printer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDichVu)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelBackground
@@ -101,72 +101,146 @@
             this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
+            // Printer
+            // 
+            this.Printer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Printer.Image = global::HotelManagement.Properties.Resources.printer;
+            this.Printer.Location = new System.Drawing.Point(445, 61);
+            this.Printer.Name = "Printer";
+            this.Printer.Size = new System.Drawing.Size(40, 40);
+            this.Printer.TabIndex = 37;
+            this.Printer.TabStop = false;
+            // 
+            // ctMaximize1
+            // 
+            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
+            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMaximize1.Location = new System.Drawing.Point(470, 10);
+            this.ctMaximize1.Name = "ctMaximize1";
+            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMaximize1.TabIndex = 36;
+            // 
+            // ctMinimize1
+            // 
+            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
+            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMinimize1.Location = new System.Drawing.Point(503, 10);
+            this.ctMinimize1.Name = "ctMinimize1";
+            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMinimize1.TabIndex = 35;
+            // 
+            // ctClose1
+            // 
+            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
+            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
+            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctClose1.Location = new System.Drawing.Point(536, 10);
+            this.ctClose1.Name = "ctClose1";
+            this.ctClose1.Size = new System.Drawing.Size(15, 15);
+            this.ctClose1.TabIndex = 34;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.heart;
+            this.pictureBox1.Location = new System.Drawing.Point(360, 626);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
             // TextBoxTenNV
             // 
+            this.TextBoxTenNV.BackColor = System.Drawing.Color.White;
             this.TextBoxTenNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxTenNV.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxTenNV.Location = new System.Drawing.Point(109, 268);
             this.TextBoxTenNV.Name = "TextBoxTenNV";
+            this.TextBoxTenNV.ReadOnly = true;
             this.TextBoxTenNV.Size = new System.Drawing.Size(199, 18);
             this.TextBoxTenNV.TabIndex = 30;
             this.TextBoxTenNV.Text = "Họ tên nhân viên";
             // 
             // TextBoxSoNgay
             // 
+            this.TextBoxSoNgay.BackColor = System.Drawing.Color.White;
             this.TextBoxSoNgay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxSoNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxSoNgay.Location = new System.Drawing.Point(426, 267);
             this.TextBoxSoNgay.Name = "TextBoxSoNgay";
+            this.TextBoxSoNgay.ReadOnly = true;
             this.TextBoxSoNgay.Size = new System.Drawing.Size(72, 18);
             this.TextBoxSoNgay.TabIndex = 29;
             this.TextBoxSoNgay.Text = "0 ngày";
             // 
             // TextBoxLoaiPhong
             // 
+            this.TextBoxLoaiPhong.BackColor = System.Drawing.Color.White;
             this.TextBoxLoaiPhong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxLoaiPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxLoaiPhong.Location = new System.Drawing.Point(440, 225);
             this.TextBoxLoaiPhong.Name = "TextBoxLoaiPhong";
+            this.TextBoxLoaiPhong.ReadOnly = true;
             this.TextBoxLoaiPhong.Size = new System.Drawing.Size(72, 18);
             this.TextBoxLoaiPhong.TabIndex = 28;
             this.TextBoxLoaiPhong.Text = "Phòng đơn";
             // 
             // TextBoxMaPhong
             // 
+            this.TextBoxMaPhong.BackColor = System.Drawing.Color.White;
             this.TextBoxMaPhong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxMaPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxMaPhong.Location = new System.Drawing.Point(440, 187);
             this.TextBoxMaPhong.Name = "TextBoxMaPhong";
+            this.TextBoxMaPhong.ReadOnly = true;
             this.TextBoxMaPhong.Size = new System.Drawing.Size(72, 18);
             this.TextBoxMaPhong.TabIndex = 27;
             this.TextBoxMaPhong.Text = "P000";
             // 
             // TextBoxSoHD
             // 
+            this.TextBoxSoHD.BackColor = System.Drawing.Color.White;
             this.TextBoxSoHD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxSoHD.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxSoHD.Location = new System.Drawing.Point(109, 227);
             this.TextBoxSoHD.Name = "TextBoxSoHD";
+            this.TextBoxSoHD.ReadOnly = true;
             this.TextBoxSoHD.Size = new System.Drawing.Size(72, 18);
             this.TextBoxSoHD.TabIndex = 26;
             this.TextBoxSoHD.Text = "Số HD";
             // 
+            // PictureIcon
+            // 
+            this.PictureIcon.BackColor = System.Drawing.Color.Transparent;
+            this.PictureIcon.Image = global::HotelManagement.Properties.Resources.pictureIconLogoHD;
+            this.PictureIcon.Location = new System.Drawing.Point(70, 54);
+            this.PictureIcon.Name = "PictureIcon";
+            this.PictureIcon.Size = new System.Drawing.Size(72, 50);
+            this.PictureIcon.TabIndex = 32;
+            this.PictureIcon.TabStop = false;
+            // 
             // TextBoxNgayHD
             // 
+            this.TextBoxNgayHD.BackColor = System.Drawing.Color.White;
             this.TextBoxNgayHD.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxNgayHD.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxNgayHD.Location = new System.Drawing.Point(144, 186);
             this.TextBoxNgayHD.Name = "TextBoxNgayHD";
+            this.TextBoxNgayHD.ReadOnly = true;
             this.TextBoxNgayHD.Size = new System.Drawing.Size(210, 18);
             this.TextBoxNgayHD.TabIndex = 31;
             this.TextBoxNgayHD.Text = "dd/MM/yyyy hh:mm:ss AM";
             // 
             // TextBoxTenKH
             // 
+            this.TextBoxTenKH.BackColor = System.Drawing.Color.White;
             this.TextBoxTenKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxTenKH.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxTenKH.Location = new System.Drawing.Point(139, 130);
             this.TextBoxTenKH.Name = "TextBoxTenKH";
+            this.TextBoxTenKH.ReadOnly = true;
             this.TextBoxTenKH.Size = new System.Drawing.Size(245, 28);
             this.TextBoxTenKH.TabIndex = 25;
             this.TextBoxTenKH.Text = "Tên khách hàng";
@@ -205,6 +279,34 @@
             this.DataGridViewDichVu.RowHeadersVisible = false;
             this.DataGridViewDichVu.Size = new System.Drawing.Size(503, 181);
             this.DataGridViewDichVu.TabIndex = 22;
+            // 
+            // DichVu
+            // 
+            this.DichVu.FillWeight = 119.1806F;
+            this.DichVu.HeaderText = "Dịch vụ";
+            this.DichVu.Name = "DichVu";
+            this.DichVu.Width = 160;
+            // 
+            // GiaTien
+            // 
+            this.GiaTien.FillWeight = 88.25601F;
+            this.GiaTien.HeaderText = "Giá tiền";
+            this.GiaTien.Name = "GiaTien";
+            this.GiaTien.Width = 110;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.FillWeight = 94.03709F;
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Width = 110;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.FillWeight = 98.5263F;
+            this.ThanhTien.HeaderText = "Thành tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.Width = 120;
             // 
             // label4
             // 
@@ -297,94 +399,6 @@
             this.LabelTitle.TabIndex = 13;
             this.LabelTitle.Text = "Hóa đơn";
             // 
-            // Printer
-            // 
-            this.Printer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Printer.Image = global::HotelManagement.Properties.Resources.printer;
-            this.Printer.Location = new System.Drawing.Point(445, 61);
-            this.Printer.Name = "Printer";
-            this.Printer.Size = new System.Drawing.Size(40, 40);
-            this.Printer.TabIndex = 37;
-            this.Printer.TabStop = false;
-            // 
-            // ctMaximize1
-            // 
-            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
-            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMaximize1.Location = new System.Drawing.Point(470, 10);
-            this.ctMaximize1.Name = "ctMaximize1";
-            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMaximize1.TabIndex = 36;
-            // 
-            // ctMinimize1
-            // 
-            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
-            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMinimize1.Location = new System.Drawing.Point(503, 10);
-            this.ctMinimize1.Name = "ctMinimize1";
-            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMinimize1.TabIndex = 35;
-            // 
-            // ctClose1
-            // 
-            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
-            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
-            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctClose1.Location = new System.Drawing.Point(536, 10);
-            this.ctClose1.Name = "ctClose1";
-            this.ctClose1.Size = new System.Drawing.Size(15, 15);
-            this.ctClose1.TabIndex = 34;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.heart;
-            this.pictureBox1.Location = new System.Drawing.Point(360, 626);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
-            // PictureIcon
-            // 
-            this.PictureIcon.BackColor = System.Drawing.Color.Transparent;
-            this.PictureIcon.Image = global::HotelManagement.Properties.Resources.pictureIconLogoHD;
-            this.PictureIcon.Location = new System.Drawing.Point(70, 54);
-            this.PictureIcon.Name = "PictureIcon";
-            this.PictureIcon.Size = new System.Drawing.Size(72, 50);
-            this.PictureIcon.TabIndex = 32;
-            this.PictureIcon.TabStop = false;
-            // 
-            // DichVu
-            // 
-            this.DichVu.FillWeight = 119.1806F;
-            this.DichVu.HeaderText = "Dịch vụ";
-            this.DichVu.Name = "DichVu";
-            this.DichVu.Width = 160;
-            // 
-            // GiaTien
-            // 
-            this.GiaTien.FillWeight = 88.25601F;
-            this.GiaTien.HeaderText = "Giá tiền";
-            this.GiaTien.Name = "GiaTien";
-            this.GiaTien.Width = 110;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.FillWeight = 94.03709F;
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Width = 110;
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.FillWeight = 98.5263F;
-            this.ThanhTien.HeaderText = "Thành tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.Width = 120;
-            // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,10 +416,10 @@
             this.Resize += new System.EventHandler(this.FormHoaDon_Resize);
             this.PanelBackground.ResumeLayout(false);
             this.PanelBackground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Printer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewDichVu)).EndInit();
             this.ResumeLayout(false);
 
         }
