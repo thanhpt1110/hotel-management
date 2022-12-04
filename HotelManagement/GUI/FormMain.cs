@@ -477,5 +477,15 @@ namespace HotelManagement
         {
             openChildForm(new FormDanhSachDichVu());
         }
+
+        private void ButtonTienNghi_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormDanhSachTienNghi());
+        }
+
+        private void ButtonChiTietTIenNghi_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormDanhSachChiTietTienNghi());
+        }
     }
 }
