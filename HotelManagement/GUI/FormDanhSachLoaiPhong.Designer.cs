@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridViewKhachHang = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MaLoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenLoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoGiuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +40,7 @@
             this.GiaGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonSua = new System.Windows.Forms.DataGridViewImageColumn();
             this.ButtonXoa = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CTButtonThemLoaiPhong = new HotelManagement.CTControls.CTButton();
             this.CTTextBoxTimPhongTheoMa = new HotelManagement.CTControls.CTTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewKhachHang)).BeginInit();
@@ -67,16 +67,6 @@
             this.DataGridViewKhachHang.RowHeadersVisible = false;
             this.DataGridViewKhachHang.Size = new System.Drawing.Size(1115, 655);
             this.DataGridViewKhachHang.TabIndex = 15;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 30);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
             // 
             // MaLoaiPhong
             // 
@@ -126,6 +116,16 @@
             this.ButtonXoa.HeaderText = "Xóa";
             this.ButtonXoa.Name = "ButtonXoa";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
+            this.pictureBox1.Location = new System.Drawing.Point(71, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 30);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // CTButtonThemLoaiPhong
             // 
             this.CTButtonThemLoaiPhong.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -146,6 +146,7 @@
             this.CTButtonThemLoaiPhong.Text = "Thêm loại phòng";
             this.CTButtonThemLoaiPhong.TextColor = System.Drawing.Color.White;
             this.CTButtonThemLoaiPhong.UseVisualStyleBackColor = false;
+            this.CTButtonThemLoaiPhong.Click += new System.EventHandler(this.CTButtonThemLoaiPhong_Click);
             // 
             // CTTextBoxTimPhongTheoMa
             // 

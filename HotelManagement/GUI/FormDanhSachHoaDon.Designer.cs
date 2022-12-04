@@ -45,6 +45,7 @@
             // 
             // CTDatePickerChonNgayHD
             // 
+            this.CTDatePickerChonNgayHD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CTDatePickerChonNgayHD.BorderColor = System.Drawing.Color.Silver;
             this.CTDatePickerChonNgayHD.BorderSize = 1;
             this.CTDatePickerChonNgayHD.CustomFormat = "dd MMMM, yyyy";
@@ -60,6 +61,7 @@
             // 
             // LabelChonNgay
             // 
+            this.LabelChonNgay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelChonNgay.AutoSize = true;
             this.LabelChonNgay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelChonNgay.Location = new System.Drawing.Point(87, 13);
@@ -70,6 +72,7 @@
             // 
             // CTTextBoxTimTheoCCCD
             // 
+            this.CTTextBoxTimTheoCCCD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CTTextBoxTimTheoCCCD.BackColor = System.Drawing.SystemColors.Window;
             this.CTTextBoxTimTheoCCCD.BorderColor = System.Drawing.Color.DarkGray;
             this.CTTextBoxTimTheoCCCD.BorderFocusColor = System.Drawing.Color.Black;
@@ -92,6 +95,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
             this.pictureBox1.Location = new System.Drawing.Point(878, 29);
             this.pictureBox1.Name = "pictureBox1";
@@ -101,6 +105,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(197)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

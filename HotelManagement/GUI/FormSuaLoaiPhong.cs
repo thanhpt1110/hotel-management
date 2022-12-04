@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace HotelManagement.GUI
 {
-    public partial class FormThemPhong : Form
+    public partial class FormSuaLoaiPhong : Form
     {
         //Fields
         private int borderRadius = 20;
@@ -20,7 +20,7 @@ namespace HotelManagement.GUI
         private Color borderColor = Color.White;
 
         //Constructor
-        public FormThemPhong()
+        public FormSuaLoaiPhong()
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -140,7 +140,7 @@ namespace HotelManagement.GUI
         }
 
         //Event Methods
-        private void FormThemPhong_Paint(object sender, PaintEventArgs e)
+        private void FormSuaLoaiPhong_Paint(object sender, PaintEventArgs e)
         {
             //-> SMOOTH OUTER BORDER
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -162,28 +162,29 @@ namespace HotelManagement.GUI
             //-> SET ROUNDED REGION AND BORDER
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
-        private void FormThemPhong_Resize(object sender, EventArgs e)
+        private void FormSuaLoaiPhong_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void FormThemPhong_SizeChanged(object sender, EventArgs e)
+        private void FormSuaLoaiPhong_SizeChanged(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void FormThemPhong_Activated(object sender, EventArgs e)
+        private void FormSuaLoaiPhong_Activated(object sender, EventArgs e)
         {
             this.Invalidate();
-        }
-        private void PanelBackground_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         private void PanelBackground_Paint(object sender, PaintEventArgs e)
         {
             ControlRegionAndBorder(PanelBackground, borderRadius - (borderSize / 2), e.Graphics, borderColor);
+        }
+
+        private void PanelBackground_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {

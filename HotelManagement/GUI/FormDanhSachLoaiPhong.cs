@@ -16,5 +16,11 @@ namespace HotelManagement.GUI
         {
             InitializeComponent();
         }
+
+        private void CTButtonThemLoaiPhong_Click(object sender, EventArgs e)
+        {
+            FormThemLoaiPhong formThemLoaiPhong = new FormThemLoaiPhong();
+            formThemLoaiPhong.ShowDialog();
+        }
     }
 }
