@@ -48,7 +48,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ButtonPhong = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.ButtonQLKH = new System.Windows.Forms.Button();
             this.ButtonHoaDon = new System.Windows.Forms.Button();
@@ -311,7 +311,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(197)))));
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.ButtonPhong);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 288);
             this.panel1.Name = "panel1";
@@ -333,20 +333,21 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ButtonPhong
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(262, 48);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Phòng";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.ButtonPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonPhong.FlatAppearance.BorderSize = 0;
+            this.ButtonPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPhong.Location = new System.Drawing.Point(0, 0);
+            this.ButtonPhong.Name = "ButtonPhong";
+            this.ButtonPhong.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.ButtonPhong.Size = new System.Drawing.Size(262, 48);
+            this.ButtonPhong.TabIndex = 6;
+            this.ButtonPhong.Text = "Phòng";
+            this.ButtonPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonPhong.UseVisualStyleBackColor = true;
+            this.ButtonPhong.Click += new System.EventHandler(this.ButtonPhong_Click);
             // 
             // button1
             // 
@@ -377,6 +378,7 @@
             this.ButtonQLKH.Text = "Quản lý khách hàng";
             this.ButtonQLKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonQLKH.UseVisualStyleBackColor = true;
+            this.ButtonQLKH.Click += new System.EventHandler(this.ButtonQLKH_Click);
             // 
             // ButtonHoaDon
             // 
@@ -563,7 +565,7 @@
         private System.Windows.Forms.Label labelTenKhachSan;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ButtonPhong;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ButtonQLKH;
         private System.Windows.Forms.Button ButtonHoaDon;

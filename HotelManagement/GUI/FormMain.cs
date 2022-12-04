@@ -458,5 +458,15 @@ namespace HotelManagement
         {
             openChildForm(new FormTrangChu());
         }
+
+        private void ButtonQLKH_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormQuanLyKhachHang());
+        }
+
+        private void ButtonPhong_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormDanhSachPhong());
+        }
     }
 }
