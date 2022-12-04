@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace HotelManagement.GUI
 {
-    public partial class FormDanhSachPhong : Form
+    public partial class FormDanhSachLoaiPhong : Form
     {
-        public FormDanhSachPhong()
+        public FormDanhSachLoaiPhong()
         {
             InitializeComponent();
-        }
-
-        private void CTButtonThemPhong_Click(object sender, EventArgs e)
-        {
-            FormThemPhong formThemPhong = new FormThemPhong();
-            formThemPhong.ShowDialog();
         }
     }
 }
