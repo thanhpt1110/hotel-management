@@ -174,6 +174,7 @@
             this.ButtonQuanLyNhanVien.Text = "Quản lý nhân viên";
             this.ButtonQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonQuanLyNhanVien.UseVisualStyleBackColor = true;
+            this.ButtonQuanLyNhanVien.Click += new System.EventHandler(this.ButtonQuanLyNhanVien_Click);
             // 
             // ButtonQuanLyTaiKhoan
             // 

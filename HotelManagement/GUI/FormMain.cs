@@ -500,5 +500,10 @@ namespace HotelManagement
         {
             openChildForm(new FormDanhSachTaiKhoan());
         }
+
+        private void ButtonQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormDanhSachNhanVien());
+        }
     }
 }
