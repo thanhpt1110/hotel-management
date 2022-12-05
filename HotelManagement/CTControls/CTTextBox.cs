@@ -23,6 +23,7 @@ namespace HotelManagement.CTControls
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
+        private bool isReadOnly = false;
         //Constructor
         public CTTextBox()
         {
@@ -33,6 +34,19 @@ namespace HotelManagement.CTControls
         public event EventHandler _TextChanged;
 
         //Properties
+        public bool ReadOnly
+        {
+            get
+            {
+                return isReadOnly;
+            }
+            set
+            {
+                isReadOnly = value;
+                textBox1.ReadOnly = isReadOnly;
+                this.Invalidate();
+            }
+        }
         public Color BorderColor
         {
             get

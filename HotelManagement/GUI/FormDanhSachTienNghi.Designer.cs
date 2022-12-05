@@ -35,8 +35,8 @@
             this.TenTienNghi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ButtonSua = new System.Windows.Forms.DataGridViewImageColumn();
             this.ButtonXoa = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CTButtonThemTienNghi = new HotelManagement.CTControls.CTButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CTButtonThemTienNghi = new HotelManagement.CTControls.CTButton();
             this.CTTextBoxTimTenTienNghi = new HotelManagement.CTControls.CTTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -85,6 +85,16 @@
             this.ButtonXoa.HeaderText = "Xóa";
             this.ButtonXoa.Name = "ButtonXoa";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
+            this.pictureBox1.Location = new System.Drawing.Point(71, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 30);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // CTButtonThemTienNghi
             // 
             this.CTButtonThemTienNghi.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -106,16 +116,6 @@
             this.CTButtonThemTienNghi.TextColor = System.Drawing.Color.White;
             this.CTButtonThemTienNghi.UseVisualStyleBackColor = false;
             this.CTButtonThemTienNghi.Click += new System.EventHandler(this.CTButtonThemTienNghi_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 30);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
             // 
             // CTTextBoxTimTenTienNghi
             // 

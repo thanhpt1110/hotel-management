@@ -189,6 +189,7 @@
             this.ButtonQuanLyTaiKhoan.Text = "Quản lý tài khoản";
             this.ButtonQuanLyTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonQuanLyTaiKhoan.UseVisualStyleBackColor = true;
+            this.ButtonQuanLyTaiKhoan.Click += new System.EventHandler(this.ButtonQuanLyTaiKhoan_Click);
             // 
             // PanelTienNghi
             // 
