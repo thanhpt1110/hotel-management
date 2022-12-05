@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HotelManagement.GUI
 {
-    public partial class FormQuanLyDatPhong : Form
+    public partial class FormDanhSachDatPhong : Form
     {
-        public FormQuanLyDatPhong()
+        public FormDanhSachDatPhong()
         {
             InitializeComponent();
         }

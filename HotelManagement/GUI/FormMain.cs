@@ -440,7 +440,7 @@ namespace HotelManagement
 
         private void ButtonDatPhong_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormQuanLyDatPhong());
+            openChildForm(new FormDanhSachDatPhong());
         }
 
         private void ButtonSoDoPhong_Click(object sender, EventArgs e)
@@ -461,7 +461,7 @@ namespace HotelManagement
 
         private void ButtonQLKH_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormQuanLyKhachHang());
+            openChildForm(new FormDanhSachKhachHang());
         }
 
         private void ButtonPhong_Click(object sender, EventArgs e)

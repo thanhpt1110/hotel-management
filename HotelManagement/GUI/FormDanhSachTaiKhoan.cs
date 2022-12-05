@@ -19,13 +19,9 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemTaiKhoan_Click(object sender, EventArgs e)
         {
-            /*using(FormThemTaiKhoan formThemTaiKhoan = new FormThemTaiKhoan())
+            using (FormThemTaiKhoan formThemTaiKhoan = new FormThemTaiKhoan())
             {
                 formThemTaiKhoan.ShowDialog();
-            }*/
-            using(FormSuaTaiKhoan formSuaTaiKhoan = new FormSuaTaiKhoan())
-            {
-                formSuaTaiKhoan.ShowDialog();
             }
         }
     }
