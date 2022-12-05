@@ -40,6 +40,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ctPanel1 = new CTPanel.CTPanel();
+            this.buttonExport = new HotelManagement.CTControls.CTButton();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grid.DefaultCellStyle = dataGridViewCellStyle2;
             this.grid.EnableHeadersVisualStyles = false;
-            this.grid.Location = new System.Drawing.Point(54, 32);
+            this.grid.Location = new System.Drawing.Point(80, 124);
             this.grid.MultiSelect = false;
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
@@ -100,7 +101,7 @@
             this.grid.RowTemplate.Height = 40;
             this.grid.RowTemplate.ReadOnly = true;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(1121, 620);
+            this.grid.Size = new System.Drawing.Size(1059, 544);
             this.grid.TabIndex = 1;
             // 
             // Column1
@@ -164,16 +165,36 @@
             this.ctPanel1.GradientAngle = 90F;
             this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel1.Location = new System.Drawing.Point(37, 24);
+            this.ctPanel1.Location = new System.Drawing.Point(63, 116);
             this.ctPanel1.Name = "ctPanel1";
-            this.ctPanel1.Size = new System.Drawing.Size(1166, 653);
+            this.ctPanel1.Size = new System.Drawing.Size(1104, 577);
             this.ctPanel1.TabIndex = 0;
+            // 
+            // buttonExport
+            // 
+            this.buttonExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.buttonExport.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.buttonExport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.buttonExport.BorderRadius = 20;
+            this.buttonExport.BorderSize = 0;
+            this.buttonExport.FlatAppearance.BorderSize = 0;
+            this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExport.ForeColor = System.Drawing.Color.White;
+            this.buttonExport.Location = new System.Drawing.Point(63, 40);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(151, 40);
+            this.buttonExport.TabIndex = 2;
+            this.buttonExport.Text = "Xuất file Excel";
+            this.buttonExport.TextColor = System.Drawing.Color.White;
+            this.buttonExport.UseVisualStyleBackColor = false;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // FormCustomDgv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 715);
+            this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.ctPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,5 +218,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewImageColumn Column6;
         private System.Windows.Forms.DataGridViewImageColumn Column7;
+        private CTControls.CTButton buttonExport;
     }
 }
