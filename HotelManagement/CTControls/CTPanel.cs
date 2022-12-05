@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CTPanel
 {
-    public partial class CTPanel : UserControl
+    public partial class CTPanel : Panel
     {
         // Fields
         private int borderRadius = 30;
