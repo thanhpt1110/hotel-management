@@ -118,9 +118,9 @@
             this.labelBanQuyen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBanQuyen.Location = new System.Drawing.Point(6, 11);
             this.labelBanQuyen.Name = "labelBanQuyen";
-            this.labelBanQuyen.Size = new System.Drawing.Size(358, 21);
+            this.labelBanQuyen.Size = new System.Drawing.Size(398, 21);
             this.labelBanQuyen.TabIndex = 0;
-            this.labelBanQuyen.Text = "Copyright © 2022 Super Team. All rights reserved.";
+            this.labelBanQuyen.Text = "Copyright © 2022 TBT Coorporation. All rights reserved.";
             // 
             // Sidebar
             // 
@@ -469,7 +469,7 @@
             this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
             this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTenKhachSan.ForeColor = System.Drawing.Color.White;
-            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
+            this.labelTenKhachSan.Location = new System.Drawing.Point(44, 22);
             this.labelTenKhachSan.Name = "labelTenKhachSan";
             this.labelTenKhachSan.Size = new System.Drawing.Size(123, 21);
             this.labelTenKhachSan.TabIndex = 2;

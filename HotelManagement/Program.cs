@@ -1,4 +1,5 @@
-﻿using HotelManagement.GUI;
+﻿using HotelManagement.CTControls;
+using HotelManagement.GUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;

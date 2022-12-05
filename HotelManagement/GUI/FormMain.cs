@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace HotelManagement
 {
@@ -63,6 +64,7 @@ namespace HotelManagement
             path.CloseFigure();
             return path;
         }
+
         private void ControlRegionAndBorder(Control control, float radius, Graphics graph, Color borderColor)
         {
             using (GraphicsPath roundPath = GetRoundedPath(control.ClientRectangle, radius))
@@ -73,6 +75,7 @@ namespace HotelManagement
                 graph.DrawPath(penBorder, roundPath);
             }
         }
+
         private void FormRegionAndBorder(Form form, float radius, Graphics graph, Color borderColor, float borderSize)
         {
             if (this.WindowState != FormWindowState.Minimized)
@@ -96,6 +99,7 @@ namespace HotelManagement
                 }
             }
         }
+
         private void DrawPath(Rectangle rect, Graphics graph, Color color)
         {
             using (GraphicsPath roundPath = GetRoundedPath(rect, borderRadius))
@@ -104,6 +108,7 @@ namespace HotelManagement
                 graph.DrawPath(penBorder, roundPath);
             }
         }
+
         private struct FormBoundsColors
         {
             public Color TopLeftColor;
@@ -111,6 +116,7 @@ namespace HotelManagement
             public Color BottomLeftColor;
             public Color BottomRightColor;
         }
+
         private FormBoundsColors GetFormBoundsColors()
         {
             var fbColor = new FormBoundsColors();
@@ -141,6 +147,7 @@ namespace HotelManagement
             }
             return fbColor;
         }
+
         private FormBoundsColors SameColor()
         {
             var fbColor = new FormBoundsColors();
@@ -150,6 +157,7 @@ namespace HotelManagement
             fbColor.BottomRightColor = Color.FromArgb(72, 145, 153);
             return fbColor;
         }
+
         //Event Methods
         private void FormMain_Paint(object sender, PaintEventArgs e)
         {
@@ -174,6 +182,7 @@ namespace HotelManagement
             //-> SET ROUNDED REGION AND BORDER
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
+
         private void FormMain_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
@@ -195,6 +204,8 @@ namespace HotelManagement
         private void FormMain_Load(object sender, EventArgs e)
         {
             //WindowState = FormWindowState.Maximized;
+            int time = 500;
+            WinAPI.AnimateWindow(this.Handle, time, WinAPI.CENTER);
         }
         private Form activeForm = null;
         private void openChildForm(Form childForm)
@@ -210,6 +221,7 @@ namespace HotelManagement
             childForm.BringToFront();
             childForm.Show();
         }
+
         /*private void customDesign()
         {
             this.panelThuChiSubmenu.Visible = false;
@@ -390,6 +402,7 @@ namespace HotelManagement
             disableButtonSubmenu(this.panelNhanSuSubmenu);
         }
 */
+
         private void ctMinimize1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -420,11 +433,6 @@ namespace HotelManagement
             ctClose1.turnOn();
             ctMinimize1.turnOn();
             ctMaximize1.turnOn();
-        }
-
-        private void ctRoomPhongTrong1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Click OK!");
         }
 
         private void panelName_MouseDown(object sender, MouseEventArgs e)

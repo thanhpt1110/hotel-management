@@ -178,6 +178,7 @@
             this.textBoxPassword.PasswordChar = false;
             this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxPassword.PlaceholderText = "Enter your password";
+            this.textBoxPassword.ReadOnly = false;
             this.textBoxPassword.Size = new System.Drawing.Size(286, 45);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.Texts = "";
@@ -200,6 +201,7 @@
             this.textBoxUsername.PasswordChar = false;
             this.textBoxUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.textBoxUsername.PlaceholderText = "Enter your username";
+            this.textBoxUsername.ReadOnly = false;
             this.textBoxUsername.Size = new System.Drawing.Size(286, 45);
             this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.Texts = "";
