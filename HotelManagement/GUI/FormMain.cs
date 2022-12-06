@@ -18,16 +18,18 @@ namespace HotelManagement
     public partial class FormMain : Form
     {
         //Fields
+        int LoaiTK;
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.FromArgb(72, 145, 153);
 
         //Constructor
-        public FormMain()
+        public FormMain(int LoaiTK)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
+            this.LoaiTK = LoaiTK;
             InitializeComponent();
             //customDesign();
         }
