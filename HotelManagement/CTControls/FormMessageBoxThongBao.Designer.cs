@@ -35,7 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.CTButtonOK = new HotelManagement.CTControls.CTButton();
             this.PanelTitleBar = new System.Windows.Forms.Panel();
-            this.labelCaption = new System.Windows.Forms.Label();
+            this.LabelCaption = new System.Windows.Forms.Label();
             this.LabelMessage = new System.Windows.Forms.Label();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
