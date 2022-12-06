@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CTButtonDatPhong = new HotelManagement.CTControls.CTButton();
@@ -65,6 +65,7 @@
             this.ctTextBox1.PasswordChar = false;
             this.ctTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.ctTextBox1.PlaceholderText = "Tìm khách hàng theo tên";
+            this.ctTextBox1.ReadOnly = false;
             this.ctTextBox1.Size = new System.Drawing.Size(244, 36);
             this.ctTextBox1.TabIndex = 0;
             this.ctTextBox1.TabStop = false;
@@ -123,31 +124,31 @@
             // 
             // SoPhieuThue
             // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
-            this.SoPhieuThue.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            this.SoPhieuThue.DefaultCellStyle = dataGridViewCellStyle1;
             this.SoPhieuThue.HeaderText = "Số phiếu thuê";
             this.SoPhieuThue.Name = "SoPhieuThue";
             // 
             // TenKH
             // 
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenKH.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenKH.DefaultCellStyle = dataGridViewCellStyle2;
             this.TenKH.HeaderText = "Tên khách hàng";
             this.TenKH.Name = "TenKH";
             // 
             // NgayLapPhieu
             // 
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgayLapPhieu.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgayLapPhieu.DefaultCellStyle = dataGridViewCellStyle3;
             this.NgayLapPhieu.HeaderText = "Ngày lập phiếu";
             this.NgayLapPhieu.Name = "NgayLapPhieu";
             // 
             // TenNhanVien
             // 
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenNhanVien.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenNhanVien.DefaultCellStyle = dataGridViewCellStyle4;
             this.TenNhanVien.HeaderText = "Tên nhân viên";
             this.TenNhanVien.Name = "TenNhanVien";
             // 
@@ -163,7 +164,7 @@
             this.Xoa.HeaderText = "Xóa";
             this.Xoa.Name = "Xoa";
             // 
-            // FormQLDatPhong
+            // FormDanhSachDatPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
@@ -175,7 +176,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ctTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormQLDatPhong";
+            this.Name = "FormDanhSachDatPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormQLDatPhong";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

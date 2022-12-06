@@ -122,7 +122,7 @@
             this.CTButtonThemChiTietTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThemChiTietTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThemChiTietTienNghi.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThemChiTietTienNghi.Location = new System.Drawing.Point(987, 26);
+            this.CTButtonThemChiTietTienNghi.Location = new System.Drawing.Point(984, 26);
             this.CTButtonThemChiTietTienNghi.Name = "CTButtonThemChiTietTienNghi";
             this.CTButtonThemChiTietTienNghi.Size = new System.Drawing.Size(197, 36);
             this.CTButtonThemChiTietTienNghi.TabIndex = 22;
@@ -150,6 +150,7 @@
             this.CTTextBoxTimTenLoaiPhong.PasswordChar = false;
             this.CTTextBoxTimTenLoaiPhong.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.CTTextBoxTimTenLoaiPhong.PlaceholderText = "Nhập theo tên loại phòng";
+            this.CTTextBoxTimTenLoaiPhong.ReadOnly = false;
             this.CTTextBoxTimTenLoaiPhong.Size = new System.Drawing.Size(244, 36);
             this.CTTextBoxTimTenLoaiPhong.TabIndex = 20;
             this.CTTextBoxTimTenLoaiPhong.TabStop = false;

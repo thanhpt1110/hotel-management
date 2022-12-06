@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGridViewKhachHang = new System.Windows.Forms.DataGridView();
             this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,31 +71,31 @@
             // 
             // MaKhachHang
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            this.MaKhachHang.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            this.MaKhachHang.DefaultCellStyle = dataGridViewCellStyle1;
             this.MaKhachHang.HeaderText = "Mã khách hàng";
             this.MaKhachHang.Name = "MaKhachHang";
             // 
             // TenKH
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenKH.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenKH.DefaultCellStyle = dataGridViewCellStyle2;
             this.TenKH.HeaderText = "Tên khách hàng";
             this.TenKH.Name = "TenKH";
             // 
             // SoCCCD
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoCCCD.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoCCCD.DefaultCellStyle = dataGridViewCellStyle3;
             this.SoCCCD.HeaderText = "Số CCCD";
             this.SoCCCD.Name = "SoCCCD";
             // 
             // SoDT
             // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoDT.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoDT.DefaultCellStyle = dataGridViewCellStyle4;
             this.SoDT.HeaderText = "Số điện thoại";
             this.SoDT.Name = "SoDT";
             // 
@@ -134,9 +134,9 @@
             this.CTButtonThemKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThemKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThemKhachHang.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThemKhachHang.Location = new System.Drawing.Point(1028, 26);
+            this.CTButtonThemKhachHang.Location = new System.Drawing.Point(1015, 26);
             this.CTButtonThemKhachHang.Name = "CTButtonThemKhachHang";
-            this.CTButtonThemKhachHang.Size = new System.Drawing.Size(161, 36);
+            this.CTButtonThemKhachHang.Size = new System.Drawing.Size(166, 36);
             this.CTButtonThemKhachHang.TabIndex = 6;
             this.CTButtonThemKhachHang.Text = "Thêm khách hàng";
             this.CTButtonThemKhachHang.TextColor = System.Drawing.Color.White;
@@ -172,13 +172,14 @@
             this.CTTextBoxTimKhachHangTheoTen.PasswordChar = false;
             this.CTTextBoxTimKhachHangTheoTen.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.CTTextBoxTimKhachHangTheoTen.PlaceholderText = "Tìm khách hàng theo tên";
-            this.CTTextBoxTimKhachHangTheoTen.Size = new System.Drawing.Size(244, 36);
+            this.CTTextBoxTimKhachHangTheoTen.ReadOnly = false;
+            this.CTTextBoxTimKhachHangTheoTen.Size = new System.Drawing.Size(243, 36);
             this.CTTextBoxTimKhachHangTheoTen.TabIndex = 4;
             this.CTTextBoxTimKhachHangTheoTen.TabStop = false;
             this.CTTextBoxTimKhachHangTheoTen.Texts = "";
             this.CTTextBoxTimKhachHangTheoTen.UnderlineedStyle = false;
             // 
-            // FormQuanLyKhachHang
+            // FormDanhSachKhachHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -188,7 +189,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CTTextBoxTimKhachHangTheoTen);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormQuanLyKhachHang";
+            this.Name = "FormDanhSachKhachHang";
             this.Text = "FormQuanLyKhachHang";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
