@@ -18,7 +18,7 @@ namespace HotelManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMessageBoxThongBao());
+            Application.Run(new FormCustomDgv());
         }
     }
 }

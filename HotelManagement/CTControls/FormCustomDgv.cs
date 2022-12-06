@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.CTControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,39 +25,57 @@ namespace HotelManagement
             Image PT = Properties.Resources.PhieuThue;
             Image details = Properties.Resources.details;
             Image delete = Properties.Resources.delete;
+
+           /* grid.Rows.Add(new object[] { PT, "PT001", "11/10/2003 19:45:00", "Phan Tuấn Thành", "Phan Tuấn Thành", details, delete });
             grid.Rows.Add(new object[] { PT, "PT001", "11/10/2003 19:45:00", "Phan Tuấn Thành", "Phan Tuấn Thành", details, delete });
             grid.Rows.Add(new object[] { PT, "PT001", "11/10/2003 19:45:00", "Phan Tuấn Thành", "Phan Tuấn Thành", details, delete });
-            grid.Rows.Add(new object[] { PT, "PT001", "11/10/2003 19:45:00", "Phan Tuấn Thành", "Phan Tuấn Thành", details, delete });
-            grid.Rows.Add(new object[] { PT, "PT001", "11/10/2003 19:45:00", "Phan Tuấn Thành", "Phan Tuấn Thành", details, delete });
+            grid.Rows.Add(new object[] { PT, "PT001", "11/10/2003 19:45:00", "Phan Tuấn Thành", "Phan Tuấn Thành", details, delete });*/
+
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            if (grid.Rows.Count > 0)
+            try
             {
-                Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
-                XcelApp.Application.Workbooks.Add(Type.Missing);
-
-                // Custom properties
-                //XcelApp.Columns.ColumnWidth = 20;
-
-                // 2 biến i, j tự custom lại theo Datagridview của form đó
-                // Get Header text of Column
-                for (int i = 1; i < grid.Columns.Count + 1; i++)
+                if (grid.Rows.Count > 0)
                 {
-                    XcelApp.Cells[1, i] = grid.Columns[i - 1].HeaderText;
-                }
+                    Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
+                    XcelApp.Application.Workbooks.Add(Type.Missing);
 
-                // Get data of cells
-                for (int i = 0; i < grid.Rows.Count; i++)
-                {
-                    for (int j = 0; j < grid.Columns.Count; j++)
+                    // Custom properties
+                    //XcelApp.Columns.ColumnWidth = 20;
+
+                    // 2 biến i, j tự custom lại theo Datagridview của form đó
+                    // Get Header text of Column
+                    for (int i = 1; i < grid.Columns.Count + 1; i++)
                     {
-                        XcelApp.Cells[i + 2, j + 1] = grid.Rows[i].Cells[j].Value.ToString();
+                        XcelApp.Cells[1, i] = grid.Columns[i - 1].HeaderText;
+                    }
+
+                    // Get data of cells
+                    for (int i = 0; i < grid.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < grid.Columns.Count; j++)
+                        {
+                            XcelApp.Cells[i + 2, j + 1] = grid.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                    XcelApp.Columns.AutoFit();
+                    XcelApp.Visible = true;
+                }
+                else
+                {
+                    string mess = "Chưa có dữ liệu trong bảng!";
+                    int x = 105, y = 60;
+                    using(FormMessageBoxThongBao frm =  new FormMessageBoxThongBao(mess, x, y))
+                    {
+                        frm.ShowDialog();
                     }
                 }
-                XcelApp.Columns.AutoFit();
-                XcelApp.Visible = true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
