@@ -42,24 +42,25 @@ namespace HotelManagement
                     Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
                     XcelApp.Application.Workbooks.Add(Type.Missing);
 
-                    // Custom properties
-                    //XcelApp.Columns.ColumnWidth = 20;
+                    int row = grid.Rows.Count;
+                    int col = grid.Columns.Count;
 
-                    // 2 biến i, j tự custom lại theo Datagridview của form đó
                     // Get Header text of Column
-                    for (int i = 1; i < grid.Columns.Count + 1; i++)
+                    for (int i = 1; i < col - 2 + 1; i++)
                     {
-                        XcelApp.Cells[1, i] = grid.Columns[i - 1].HeaderText;
+                        if (i == 1) continue;
+                        XcelApp.Cells[1, i - 1] = grid.Columns[i - 1].HeaderText;
                     }
 
                     // Get data of cells
-                    for (int i = 0; i < grid.Rows.Count; i++)
+                    for (int i = 0; i < row; i++)
                     {
-                        for (int j = 0; j < grid.Columns.Count; j++)
+                        for (int j = 1; j < col - 2; j++)
                         {
-                            XcelApp.Cells[i + 2, j + 1] = grid.Rows[i].Cells[j].Value.ToString();
+                            XcelApp.Cells[i + 2, j] = grid.Rows[i].Cells[j].Value.ToString();
                         }
                     }
+
                     XcelApp.Columns.AutoFit();
                     XcelApp.Visible = true;
                 }
