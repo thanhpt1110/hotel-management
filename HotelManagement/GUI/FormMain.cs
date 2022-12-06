@@ -450,7 +450,7 @@ namespace HotelManagement
 
         private void ButtonDatPhong_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormDanhSachDatPhong());
+            openChildForm(new FormDanhSachPhieuThue());
         }
 
         private void ButtonSoDoPhong_Click(object sender, EventArgs e)
