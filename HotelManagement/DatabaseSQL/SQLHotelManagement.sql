@@ -13,7 +13,8 @@ CREATE TABLE NhanVien(
     "NgaySinh" DATE NOT NULL,
     "GioiTinh" NVARCHAR(3) NOT NULL,
     "DiaChi" NVARCHAR(100) NOT NULL,
-     Email NVARCHAR(100) UNIQUE
+     Email NVARCHAR(100) UNIQUE,
+	 AnhDaiDien VARCHAR(200)
 );
 CREATE TABLE TaiKhoan
 (

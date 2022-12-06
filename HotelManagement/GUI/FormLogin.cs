@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
 using HotelManagement.CTControls;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+using HotelManagement.BUS;
 
 namespace HotelManagement
 {
@@ -221,10 +222,39 @@ namespace HotelManagement
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            FormMain formMain = new FormMain();
-            this.Hide();
-            formMain.ShowDialog();
-            this.Close();
+            try
+            {
+                if (TaiKhoanBUS.Instance.checkLogin(textBoxUsername.Texts, textBoxPassword.Texts))
+                {
+                    FormMain formMain = new FormMain(TaiKhoanBUS.Instance.getQuyenTruyCap(textBoxUsername.Texts));
+                    this.Hide();
+                    formMain.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Sai tài khoản hoặc password", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch(Exception Bug)
+            {
+                MessageBox.Show(Bug.Message);
+            }
+        }
+
+        private void textBoxPassword__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if(textBox.Text == "")
+            {
+                textBox.UseSystemPasswordChar = false;
+            }    
+            else
+            {
+                textBox.UseSystemPasswordChar = true;
+            }    
+
         }
     }
 }

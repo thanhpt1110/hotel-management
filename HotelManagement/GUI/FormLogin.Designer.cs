@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.labelForgotPassword = new System.Windows.Forms.Label();
-            this.panelControlBox = new System.Windows.Forms.Panel();
-            this.labelCorporation = new System.Windows.Forms.Label();
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.buttonLogin = new HotelManagement.CTControls.CTButton();
             this.textBoxPassword = new HotelManagement.CTControls.CTTextBox();
             this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
+            this.labelForgotPassword = new System.Windows.Forms.Label();
+            this.panelControlBox = new System.Windows.Forms.Panel();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.labelCorporation = new System.Windows.Forms.Label();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelBackground.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.panelControlBox.SuspendLayout();
@@ -78,6 +78,74 @@
             this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             this.panelLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogin_MouseDown);
             // 
+            // buttonLogin
+            // 
+            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.buttonLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.buttonLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.buttonLogin.BorderRadius = 25;
+            this.buttonLogin.BorderSize = 0;
+            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogin.FlatAppearance.BorderSize = 0;
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.buttonLogin.ForeColor = System.Drawing.Color.White;
+            this.buttonLogin.Location = new System.Drawing.Point(118, 394);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(146, 47);
+            this.buttonLogin.TabIndex = 0;
+            this.buttonLogin.Text = "LOG IN";
+            this.buttonLogin.TextColor = System.Drawing.Color.White;
+            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.textBoxPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.textBoxPassword.BorderRadius = 20;
+            this.textBoxPassword.BorderSize = 1;
+            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.textBoxPassword.IsFocused = false;
+            this.textBoxPassword.Location = new System.Drawing.Point(50, 290);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Multiline = false;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
+            this.textBoxPassword.PasswordChar = true;
+            this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxPassword.PlaceholderText = "Enter your password";
+            this.textBoxPassword.ReadOnly = false;
+            this.textBoxPassword.Size = new System.Drawing.Size(286, 45);
+            this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.Texts = "";
+            this.textBoxPassword.UnderlineedStyle = false;
+            this.textBoxPassword._TextChanged += new System.EventHandler(this.textBoxPassword__TextChanged);
+            // 
+            // textBoxUsername
+            // 
+            this.textBoxUsername.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.textBoxUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.textBoxUsername.BorderRadius = 20;
+            this.textBoxUsername.BorderSize = 1;
+            this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.textBoxUsername.IsFocused = false;
+            this.textBoxUsername.Location = new System.Drawing.Point(50, 207);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUsername.Multiline = false;
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
+            this.textBoxUsername.PasswordChar = false;
+            this.textBoxUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxUsername.PlaceholderText = "Enter your username";
+            this.textBoxUsername.ReadOnly = false;
+            this.textBoxUsername.Size = new System.Drawing.Size(286, 45);
+            this.textBoxUsername.TabIndex = 1;
+            this.textBoxUsername.Texts = "";
+            this.textBoxUsername.UnderlineedStyle = false;
+            // 
             // labelForgotPassword
             // 
             this.labelForgotPassword.AutoSize = true;
@@ -103,6 +171,37 @@
             this.panelControlBox.MouseLeave += new System.EventHandler(this.panelControlBox_MouseLeave);
             this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
             this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
+            // 
+            // ctMaximize1
+            // 
+            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
+            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMaximize1.Location = new System.Drawing.Point(10, 7);
+            this.ctMaximize1.Name = "ctMaximize1";
+            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMaximize1.TabIndex = 2;
+            // 
+            // ctMinimize1
+            // 
+            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
+            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMinimize1.Location = new System.Drawing.Point(40, 6);
+            this.ctMinimize1.Name = "ctMinimize1";
+            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMinimize1.TabIndex = 1;
+            this.ctMinimize1.Click += new System.EventHandler(this.ctMinimize1_Click);
+            // 
+            // ctClose1
+            // 
+            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
+            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
+            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctClose1.Location = new System.Drawing.Point(71, 6);
+            this.ctClose1.Name = "ctClose1";
+            this.ctClose1.Size = new System.Drawing.Size(15, 15);
+            this.ctClose1.TabIndex = 0;
             // 
             // labelCorporation
             // 
@@ -139,104 +238,6 @@
             this.pictureBoxIcon.TabIndex = 12;
             this.pictureBoxIcon.TabStop = false;
             this.pictureBoxIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIcon_MouseDown);
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.buttonLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.buttonLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.buttonLogin.BorderRadius = 25;
-            this.buttonLogin.BorderSize = 0;
-            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogin.FlatAppearance.BorderSize = 0;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(118, 394);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(146, 47);
-            this.buttonLogin.TabIndex = 0;
-            this.buttonLogin.Text = "LOG IN";
-            this.buttonLogin.TextColor = System.Drawing.Color.White;
-            this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.textBoxPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
-            this.textBoxPassword.BorderRadius = 20;
-            this.textBoxPassword.BorderSize = 1;
-            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.textBoxPassword.IsFocused = false;
-            this.textBoxPassword.Location = new System.Drawing.Point(50, 290);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxPassword.Multiline = false;
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
-            this.textBoxPassword.PasswordChar = false;
-            this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxPassword.PlaceholderText = "Enter your password";
-            this.textBoxPassword.ReadOnly = false;
-            this.textBoxPassword.Size = new System.Drawing.Size(286, 45);
-            this.textBoxPassword.TabIndex = 2;
-            this.textBoxPassword.Texts = "";
-            this.textBoxPassword.UnderlineedStyle = false;
-            // 
-            // textBoxUsername
-            // 
-            this.textBoxUsername.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.textBoxUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
-            this.textBoxUsername.BorderRadius = 20;
-            this.textBoxUsername.BorderSize = 1;
-            this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(50, 207);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxUsername.Multiline = false;
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
-            this.textBoxUsername.PasswordChar = false;
-            this.textBoxUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxUsername.PlaceholderText = "Enter your username";
-            this.textBoxUsername.ReadOnly = false;
-            this.textBoxUsername.Size = new System.Drawing.Size(286, 45);
-            this.textBoxUsername.TabIndex = 1;
-            this.textBoxUsername.Texts = "";
-            this.textBoxUsername.UnderlineedStyle = false;
-            // 
-            // ctMaximize1
-            // 
-            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
-            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMaximize1.Location = new System.Drawing.Point(10, 7);
-            this.ctMaximize1.Name = "ctMaximize1";
-            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMaximize1.TabIndex = 2;
-            // 
-            // ctMinimize1
-            // 
-            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
-            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMinimize1.Location = new System.Drawing.Point(40, 6);
-            this.ctMinimize1.Name = "ctMinimize1";
-            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMinimize1.TabIndex = 1;
-            this.ctMinimize1.Click += new System.EventHandler(this.ctMinimize1_Click);
-            // 
-            // ctClose1
-            // 
-            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
-            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
-            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctClose1.Location = new System.Drawing.Point(71, 6);
-            this.ctClose1.Name = "ctClose1";
-            this.ctClose1.Size = new System.Drawing.Size(15, 15);
-            this.ctClose1.TabIndex = 0;
             // 
             // FormLogin
             // 

@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace HotelManagement.DAO
 {
-    internal class KhachHangDAO
+    internal class CTTN_DAO
     {
         HotelDTO db = new HotelDTO();
-        private static KhachHangDAO instance;
-        public static KhachHangDAO Instance
+        private static CTTN_DAO instance;
+        public static CTTN_DAO Instance
         {
-            get { if (instance == null) instance = new KhachHangDAO(); return instance; }
+            get { if (instance == null) instance = new CTTN_DAO(); return instance; }
             private set { instance = value; }
         }
-        private KhachHangDAO() { }
+        private CTTN_DAO() { }
     }
 }
