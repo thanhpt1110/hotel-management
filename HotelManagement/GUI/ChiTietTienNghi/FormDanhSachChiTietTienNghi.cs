@@ -84,5 +84,24 @@ namespace HotelManagement.GUI
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int x = e.ColumnIndex, y = e.RowIndex;
+            if (y >= 0)
+            { 
+                // If click Update button 
+                if (x == 5)
+                {
+                    MessageBox.Show("Clicked Update button");
+                }
+                if (x == 6)
+                {
+                    // If click Delete button 
+                    MessageBox.Show("Clicked Delete button");
+                }
+            }
+
+        }
     }
 }
