@@ -206,7 +206,7 @@ namespace HotelManagement
         private void FormMain_Load(object sender, EventArgs e)
         {
             //WindowState = FormWindowState.Maximized;
-            int time = 500;
+            int time = 300;
             WinAPI.AnimateWindow(this.Handle, time, WinAPI.CENTER);
         }
         private Form activeForm = null;
