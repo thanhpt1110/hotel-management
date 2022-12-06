@@ -102,5 +102,19 @@ namespace HotelManagement.GUI
                 }
             }
         }
+
+        private void grid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int curCol = e.ColumnIndex;
+            if (curCol == 5 || curCol == 6)
+            {
+                if (e.RowIndex >= 0)
+                    grid.Cursor = Cursors.Hand;
+                else if (grid.CurrentCell.Value == DBNull.Value)
+                    grid.Cursor = Cursors.Default;
+            }
+            else   
+                grid.Cursor = Cursors.Default;
+        }
     }
 }

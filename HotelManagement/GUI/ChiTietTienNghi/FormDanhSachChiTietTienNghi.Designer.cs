@@ -34,9 +34,6 @@
             this.CTButtonThemChiTietTienNghi = new HotelManagement.CTControls.CTButton();
             this.CTTextBoxTimTenLoaiPhong = new HotelManagement.CTControls.CTTextBox();
             this.grid = new System.Windows.Forms.DataGridView();
-            this.buttonExport = new HotelManagement.CTControls.CTButton();
-            this.ctPanel1 = new CTPanel.CTPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +41,9 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.buttonExport = new HotelManagement.CTControls.CTButton();
+            this.ctPanel1 = new CTPanel.CTPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -157,52 +157,7 @@
             this.grid.Size = new System.Drawing.Size(1097, 659);
             this.grid.TabIndex = 25;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
-            // 
-            // buttonExport
-            // 
-            this.buttonExport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
-            this.buttonExport.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
-            this.buttonExport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
-            this.buttonExport.BorderRadius = 10;
-            this.buttonExport.BorderSize = 0;
-            this.buttonExport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExport.FlatAppearance.BorderSize = 0;
-            this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExport.ForeColor = System.Drawing.Color.Black;
-            this.buttonExport.Location = new System.Drawing.Point(834, 29);
-            this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(150, 40);
-            this.buttonExport.TabIndex = 26;
-            this.buttonExport.Text = "Xuất file Excel";
-            this.buttonExport.TextColor = System.Drawing.Color.Black;
-            this.buttonExport.UseVisualStyleBackColor = false;
-            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
-            // 
-            // ctPanel1
-            // 
-            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel1.BackColor = System.Drawing.Color.White;
-            this.ctPanel1.BorderRadius = 50;
-            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel1.GradientAngle = 90F;
-            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel1.Location = new System.Drawing.Point(66, 94);
-            this.ctPanel1.Name = "ctPanel1";
-            this.ctPanel1.Size = new System.Drawing.Size(1142, 704);
-            this.ctPanel1.TabIndex = 24;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(72, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 30);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
+            this.grid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseEnter);
             // 
             // Column1
             // 
@@ -255,6 +210,52 @@
             this.Column7.HeaderText = "Xóa";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            // 
+            // buttonExport
+            // 
+            this.buttonExport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
+            this.buttonExport.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
+            this.buttonExport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
+            this.buttonExport.BorderRadius = 10;
+            this.buttonExport.BorderSize = 0;
+            this.buttonExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExport.FlatAppearance.BorderSize = 0;
+            this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExport.ForeColor = System.Drawing.Color.Black;
+            this.buttonExport.Location = new System.Drawing.Point(834, 29);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(150, 40);
+            this.buttonExport.TabIndex = 26;
+            this.buttonExport.Text = "Xuất file Excel";
+            this.buttonExport.TextColor = System.Drawing.Color.Black;
+            this.buttonExport.UseVisualStyleBackColor = false;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
+            // 
+            // ctPanel1
+            // 
+            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel1.BackColor = System.Drawing.Color.White;
+            this.ctPanel1.BorderRadius = 50;
+            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel1.GradientAngle = 90F;
+            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.Location = new System.Drawing.Point(66, 94);
+            this.ctPanel1.Name = "ctPanel1";
+            this.ctPanel1.Size = new System.Drawing.Size(1142, 704);
+            this.ctPanel1.TabIndex = 24;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
+            this.pictureBox1.Location = new System.Drawing.Point(72, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 30);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // FormDanhSachChiTietTienNghi
             // 
