@@ -31,20 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMessageBoxThongBao));
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CTButtonOK = new HotelManagement.CTControls.CTButton();
             this.PanelTitleBar = new System.Windows.Forms.Panel();
-            this.LabelCaption = new System.Windows.Forms.Label();
+            this.labelCaption = new System.Windows.Forms.Label();
             this.LabelMessage = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
             this.PanelBackground.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.PanelTitleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelBackground
@@ -69,6 +69,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 67);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(49, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -99,6 +109,7 @@
             this.CTButtonOK.Text = "OK";
             this.CTButtonOK.TextColor = System.Drawing.Color.White;
             this.CTButtonOK.UseVisualStyleBackColor = false;
+            this.CTButtonOK.Click += new System.EventHandler(this.CTButtonOK_Click);
             // 
             // PanelTitleBar
             // 
@@ -137,15 +148,17 @@
             this.LabelMessage.TabIndex = 4;
             this.LabelMessage.Text = "Đừng có nhấn bậy nghe hom";
             // 
-            // pictureBox1
+            // LabelMessage
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(49, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.LabelMessage.AutoSize = true;
+            this.LabelMessage.BackColor = System.Drawing.SystemColors.Control;
+            this.LabelMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelMessage.ForeColor = System.Drawing.Color.Black;
+            this.LabelMessage.Location = new System.Drawing.Point(105, 60);
+            this.LabelMessage.Name = "LabelMessage";
+            this.LabelMessage.Size = new System.Drawing.Size(209, 20);
+            this.LabelMessage.TabIndex = 4;
+            this.LabelMessage.Text = "Đừng có nhấn bậy nghe hom";
             // 
             // ctMaximize1
             // 
@@ -189,15 +202,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessageBoxThongBao";
             this.Activated += new System.EventHandler(this.FormMessageBoxThongBao_Activated);
+            this.Load += new System.EventHandler(this.FormMessageBoxThongBao_Load);
             this.SizeChanged += new System.EventHandler(this.FormMessageBoxThongBao_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormMessageBoxThongBao_Paint);
             this.Resize += new System.EventHandler(this.FormMessageBoxThongBao_Resize);
             this.PanelBackground.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.PanelTitleBar.ResumeLayout(false);
             this.PanelTitleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

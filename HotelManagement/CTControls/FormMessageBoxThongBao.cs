@@ -27,6 +27,18 @@ namespace HotelManagement.CTControls
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
+
+        private string mess;
+        private int x, y;
+        public FormMessageBoxThongBao(string mess, int x, int y)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.mess = mess;
+            this.x = x; this.y = y;
+            InitializeComponent();
+        }
         //Control Box
 
         //Form Move
@@ -188,6 +200,17 @@ namespace HotelManagement.CTControls
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         private void CTButtonThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormMessageBoxThongBao_Load(object sender, EventArgs e)
+        {
+            this.LabelMessage.Text = mess;
+            this.LabelMessage.Location = new Point(x, y);
+        }
+
+        private void CTButtonOK_Click(object sender, EventArgs e)
         {
             this.Close();
         }
