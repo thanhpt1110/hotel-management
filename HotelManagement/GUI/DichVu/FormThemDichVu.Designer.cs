@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.PanelBackground = new System.Windows.Forms.Panel();
+            this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
+            this.CTButtonCapNhat = new HotelManagement.CTControls.CTButton();
             this.LabelThemDichVu = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
-            this.CTButtonCapNhat = new HotelManagement.CTControls.CTButton();
             this.ctTextBox2 = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxDonGia = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxSoLuong = new HotelManagement.CTControls.CTTextBox();
@@ -62,72 +62,6 @@
             this.PanelBackground.Size = new System.Drawing.Size(533, 535);
             this.PanelBackground.TabIndex = 3;
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
-            // 
-            // LabelThemDichVu
-            // 
-            this.LabelThemDichVu.AutoSize = true;
-            this.LabelThemDichVu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelThemDichVu.Location = new System.Drawing.Point(173, 9);
-            this.LabelThemDichVu.Name = "LabelThemDichVu";
-            this.LabelThemDichVu.Size = new System.Drawing.Size(188, 37);
-            this.LabelThemDichVu.TabIndex = 0;
-            this.LabelThemDichVu.Text = "Thêm dịch vụ";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.ctTextBox2);
-            this.panel1.Controls.Add(this.CTTextBoxDonGia);
-            this.panel1.Controls.Add(this.CTTextBoxSoLuong);
-            this.panel1.Controls.Add(this.ctTextBox4);
-            this.panel1.Location = new System.Drawing.Point(53, 60);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(424, 404);
-            this.panel1.TabIndex = 0;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::HotelManagement.Properties.Resources.note;
-            this.pictureBox4.Location = new System.Drawing.Point(71, 309);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::HotelManagement.Properties.Resources.SoLuong;
-            this.pictureBox3.Location = new System.Drawing.Point(71, 212);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HotelManagement.Properties.Resources.money;
-            this.pictureBox2.Location = new System.Drawing.Point(69, 123);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.DichVu;
-            this.pictureBox1.Location = new System.Drawing.Point(69, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // CTButtonThoat
             // 
@@ -170,6 +104,72 @@
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
             // 
+            // LabelThemDichVu
+            // 
+            this.LabelThemDichVu.AutoSize = true;
+            this.LabelThemDichVu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelThemDichVu.Location = new System.Drawing.Point(173, 9);
+            this.LabelThemDichVu.Name = "LabelThemDichVu";
+            this.LabelThemDichVu.Size = new System.Drawing.Size(188, 37);
+            this.LabelThemDichVu.TabIndex = 0;
+            this.LabelThemDichVu.Text = "Thêm dịch vụ";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.ctTextBox2);
+            this.panel1.Controls.Add(this.CTTextBoxDonGia);
+            this.panel1.Controls.Add(this.CTTextBoxSoLuong);
+            this.panel1.Controls.Add(this.ctTextBox4);
+            this.panel1.Location = new System.Drawing.Point(53, 60);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(424, 404);
+            this.panel1.TabIndex = 0;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::HotelManagement.Properties.Resources.note;
+            this.pictureBox4.Location = new System.Drawing.Point(69, 304);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::HotelManagement.Properties.Resources.SoLuong;
+            this.pictureBox3.Location = new System.Drawing.Point(69, 212);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HotelManagement.Properties.Resources.money;
+            this.pictureBox2.Location = new System.Drawing.Point(69, 123);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.DichVu;
+            this.pictureBox1.Location = new System.Drawing.Point(69, 41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // ctTextBox2
             // 
             this.ctTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
@@ -187,6 +187,7 @@
             this.ctTextBox2.PasswordChar = false;
             this.ctTextBox2.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBox2.PlaceholderText = "Tên dịch vụ";
+            this.ctTextBox2.ReadOnly = false;
             this.ctTextBox2.Size = new System.Drawing.Size(250, 35);
             this.ctTextBox2.TabIndex = 4;
             this.ctTextBox2.Texts = "";
@@ -209,6 +210,7 @@
             this.CTTextBoxDonGia.PasswordChar = false;
             this.CTTextBoxDonGia.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxDonGia.PlaceholderText = "Đơn giá";
+            this.CTTextBoxDonGia.ReadOnly = false;
             this.CTTextBoxDonGia.Size = new System.Drawing.Size(250, 35);
             this.CTTextBoxDonGia.TabIndex = 4;
             this.CTTextBoxDonGia.Texts = "";
@@ -231,6 +233,7 @@
             this.CTTextBoxSoLuong.PasswordChar = false;
             this.CTTextBoxSoLuong.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxSoLuong.PlaceholderText = "Số lượng còn lại";
+            this.CTTextBoxSoLuong.ReadOnly = false;
             this.CTTextBoxSoLuong.Size = new System.Drawing.Size(250, 35);
             this.CTTextBoxSoLuong.TabIndex = 4;
             this.CTTextBoxSoLuong.Texts = "";
@@ -253,6 +256,7 @@
             this.ctTextBox4.PasswordChar = false;
             this.ctTextBox4.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBox4.PlaceholderText = "Mô tả";
+            this.ctTextBox4.ReadOnly = false;
             this.ctTextBox4.Size = new System.Drawing.Size(250, 35);
             this.ctTextBox4.TabIndex = 4;
             this.ctTextBox4.Texts = "";

@@ -132,7 +132,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::HotelManagement.Properties.Resources.note;
-            this.pictureBox4.Location = new System.Drawing.Point(71, 309);
+            this.pictureBox4.Location = new System.Drawing.Point(69, 304);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -142,7 +142,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::HotelManagement.Properties.Resources.SoLuong;
-            this.pictureBox3.Location = new System.Drawing.Point(71, 212);
+            this.pictureBox3.Location = new System.Drawing.Point(69, 212);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -162,7 +162,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.DichVu;
-            this.pictureBox1.Location = new System.Drawing.Point(69, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(69, 41);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -186,6 +186,7 @@
             this.ctTextBox2.PasswordChar = false;
             this.ctTextBox2.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBox2.PlaceholderText = "Tên dịch vụ";
+            this.ctTextBox2.ReadOnly = false;
             this.ctTextBox2.Size = new System.Drawing.Size(250, 35);
             this.ctTextBox2.TabIndex = 4;
             this.ctTextBox2.Texts = "";
@@ -208,6 +209,7 @@
             this.CTTextBoxDonGia.PasswordChar = false;
             this.CTTextBoxDonGia.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxDonGia.PlaceholderText = "Đơn giá";
+            this.CTTextBoxDonGia.ReadOnly = false;
             this.CTTextBoxDonGia.Size = new System.Drawing.Size(250, 35);
             this.CTTextBoxDonGia.TabIndex = 4;
             this.CTTextBoxDonGia.Texts = "";
@@ -230,6 +232,7 @@
             this.CTTextBoxSoLuong.PasswordChar = false;
             this.CTTextBoxSoLuong.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxSoLuong.PlaceholderText = "Số lượng còn lại";
+            this.CTTextBoxSoLuong.ReadOnly = false;
             this.CTTextBoxSoLuong.Size = new System.Drawing.Size(250, 35);
             this.CTTextBoxSoLuong.TabIndex = 4;
             this.CTTextBoxSoLuong.Texts = "";
@@ -252,6 +255,7 @@
             this.ctTextBox4.PasswordChar = false;
             this.ctTextBox4.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBox4.PlaceholderText = "Mô tả";
+            this.ctTextBox4.ReadOnly = false;
             this.ctTextBox4.Size = new System.Drawing.Size(250, 35);
             this.ctTextBox4.TabIndex = 4;
             this.ctTextBox4.Texts = "";

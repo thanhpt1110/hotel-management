@@ -81,7 +81,7 @@
             this.CTTextBoxTimTenLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxTimTenLoaiPhong.ForeColor = System.Drawing.Color.DimGray;
             this.CTTextBoxTimTenLoaiPhong.IsFocused = false;
-            this.CTTextBoxTimTenLoaiPhong.Location = new System.Drawing.Point(66, 26);
+            this.CTTextBoxTimTenLoaiPhong.Location = new System.Drawing.Point(66, 29);
             this.CTTextBoxTimTenLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxTimTenLoaiPhong.Multiline = false;
             this.CTTextBoxTimTenLoaiPhong.Name = "CTTextBoxTimTenLoaiPhong";
@@ -198,7 +198,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(72, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 30);
             this.pictureBox1.TabIndex = 21;
