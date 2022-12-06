@@ -177,6 +177,7 @@
             this.buttonExport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.buttonExport.BorderRadius = 20;
             this.buttonExport.BorderSize = 0;
+            this.buttonExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExport.FlatAppearance.BorderSize = 0;
             this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExport.ForeColor = System.Drawing.Color.White;

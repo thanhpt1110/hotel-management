@@ -51,10 +51,10 @@
             this.CTDatePickerChonNgayHD.CustomFormat = "dd MMMM, yyyy";
             this.CTDatePickerChonNgayHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.CTDatePickerChonNgayHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CTDatePickerChonNgayHD.Location = new System.Drawing.Point(66, 26);
+            this.CTDatePickerChonNgayHD.Location = new System.Drawing.Point(978, 26);
             this.CTDatePickerChonNgayHD.MinimumSize = new System.Drawing.Size(0, 35);
             this.CTDatePickerChonNgayHD.Name = "CTDatePickerChonNgayHD";
-            this.CTDatePickerChonNgayHD.Size = new System.Drawing.Size(161, 35);
+            this.CTDatePickerChonNgayHD.Size = new System.Drawing.Size(186, 35);
             this.CTDatePickerChonNgayHD.SkinColor = System.Drawing.Color.White;
             this.CTDatePickerChonNgayHD.TabIndex = 0;
             this.CTDatePickerChonNgayHD.TextColor = System.Drawing.Color.Black;
@@ -64,7 +64,7 @@
             this.LabelChonNgay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelChonNgay.AutoSize = true;
             this.LabelChonNgay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChonNgay.Location = new System.Drawing.Point(87, 13);
+            this.LabelChonNgay.Location = new System.Drawing.Point(1024, 13);
             this.LabelChonNgay.Name = "LabelChonNgay";
             this.LabelChonNgay.Size = new System.Drawing.Size(70, 17);
             this.LabelChonNgay.TabIndex = 1;
@@ -80,7 +80,7 @@
             this.CTTextBoxTimTheoCCCD.BorderSize = 1;
             this.CTTextBoxTimTheoCCCD.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxTimTheoCCCD.IsFocused = false;
-            this.CTTextBoxTimTheoCCCD.Location = new System.Drawing.Point(872, 26);
+            this.CTTextBoxTimTheoCCCD.Location = new System.Drawing.Point(66, 26);
             this.CTTextBoxTimTheoCCCD.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxTimTheoCCCD.Multiline = false;
             this.CTTextBoxTimTheoCCCD.Name = "CTTextBoxTimTheoCCCD";
@@ -88,7 +88,8 @@
             this.CTTextBoxTimTheoCCCD.PasswordChar = false;
             this.CTTextBoxTimTheoCCCD.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.CTTextBoxTimTheoCCCD.PlaceholderText = "Tìm theo số CCCD khách hàng";
-            this.CTTextBoxTimTheoCCCD.Size = new System.Drawing.Size(292, 35);
+            this.CTTextBoxTimTheoCCCD.ReadOnly = false;
+            this.CTTextBoxTimTheoCCCD.Size = new System.Drawing.Size(275, 35);
             this.CTTextBoxTimTheoCCCD.TabIndex = 2;
             this.CTTextBoxTimTheoCCCD.Texts = "";
             this.CTTextBoxTimTheoCCCD.UnderlineedStyle = false;
@@ -97,7 +98,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(878, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(72, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 3;

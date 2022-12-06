@@ -122,7 +122,7 @@
             this.CTButtonThemDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThemDichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThemDichVu.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThemDichVu.Location = new System.Drawing.Point(1023, 26);
+            this.CTButtonThemDichVu.Location = new System.Drawing.Point(1025, 26);
             this.CTButtonThemDichVu.Name = "CTButtonThemDichVu";
             this.CTButtonThemDichVu.Size = new System.Drawing.Size(161, 36);
             this.CTButtonThemDichVu.TabIndex = 21;
@@ -160,6 +160,7 @@
             this.CTTextBoxTimPhongTheoMa.PasswordChar = false;
             this.CTTextBoxTimPhongTheoMa.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.CTTextBoxTimPhongTheoMa.PlaceholderText = "Tìm theo tên dịch vụ";
+            this.CTTextBoxTimPhongTheoMa.ReadOnly = false;
             this.CTTextBoxTimPhongTheoMa.Size = new System.Drawing.Size(244, 36);
             this.CTTextBoxTimPhongTheoMa.TabIndex = 19;
             this.CTTextBoxTimPhongTheoMa.TabStop = false;

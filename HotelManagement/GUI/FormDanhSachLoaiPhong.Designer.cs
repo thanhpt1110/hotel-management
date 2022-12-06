@@ -139,7 +139,7 @@
             this.CTButtonThemLoaiPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThemLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThemLoaiPhong.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThemLoaiPhong.Location = new System.Drawing.Point(1023, 26);
+            this.CTButtonThemLoaiPhong.Location = new System.Drawing.Point(1020, 26);
             this.CTButtonThemLoaiPhong.Name = "CTButtonThemLoaiPhong";
             this.CTButtonThemLoaiPhong.Size = new System.Drawing.Size(161, 36);
             this.CTButtonThemLoaiPhong.TabIndex = 14;
@@ -167,6 +167,7 @@
             this.CTTextBoxTimPhongTheoMa.PasswordChar = false;
             this.CTTextBoxTimPhongTheoMa.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.CTTextBoxTimPhongTheoMa.PlaceholderText = "Tìm theo tên loại phòng";
+            this.CTTextBoxTimPhongTheoMa.ReadOnly = false;
             this.CTTextBoxTimPhongTheoMa.Size = new System.Drawing.Size(244, 36);
             this.CTTextBoxTimPhongTheoMa.TabIndex = 12;
             this.CTTextBoxTimPhongTheoMa.TabStop = false;

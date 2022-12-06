@@ -108,7 +108,7 @@
             this.CTButtonThemTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThemTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThemTienNghi.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThemTienNghi.Location = new System.Drawing.Point(1023, 26);
+            this.CTButtonThemTienNghi.Location = new System.Drawing.Point(1020, 26);
             this.CTButtonThemTienNghi.Name = "CTButtonThemTienNghi";
             this.CTButtonThemTienNghi.Size = new System.Drawing.Size(161, 36);
             this.CTButtonThemTienNghi.TabIndex = 18;
@@ -136,6 +136,7 @@
             this.CTTextBoxTimTenTienNghi.PasswordChar = false;
             this.CTTextBoxTimTenTienNghi.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.CTTextBoxTimTenTienNghi.PlaceholderText = "Tìm theo tên tiện nghi";
+            this.CTTextBoxTimTenTienNghi.ReadOnly = false;
             this.CTTextBoxTimTenTienNghi.Size = new System.Drawing.Size(244, 36);
             this.CTTextBoxTimTenTienNghi.TabIndex = 16;
             this.CTTextBoxTimTenTienNghi.TabStop = false;
