@@ -1,4 +1,6 @@
-﻿using System;
+﻿    using HotelManagement.GUI;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +17,18 @@ namespace HotelManagement.CTControls
         private bool mouseHover = false;
         private bool mouseMove = false;
         private bool mouseLeave = false;
+        private int Case = 0;
+        private object form;
         public CTClose()
         {
             this.DoubleBuffered = true;
+            InitializeComponent();
+        }
+        public CTClose(int Case,object form)
+        {
+            this.DoubleBuffered = true;
+            this.Case = Case;
+            this.form = form;
             InitializeComponent();
         }
 

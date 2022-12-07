@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDon));
             this.PanelBackground = new System.Windows.Forms.Panel();
+            this.ctClose1 = new HotelManagement.CTControls.CTClose(1,this);
             this.Printer = new System.Windows.Forms.PictureBox();
+            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
+            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TextBoxTenNV = new System.Windows.Forms.TextBox();
             this.TextBoxSoNgay = new System.Windows.Forms.TextBox();
@@ -101,6 +104,16 @@
             this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
+            // ctClose1
+            // 
+            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
+            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
+            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctClose1.Location = new System.Drawing.Point(536, 10);
+            this.ctClose1.Name = "ctClose1";
+            this.ctClose1.Size = new System.Drawing.Size(15, 15);
+            this.ctClose1.TabIndex = 38;
+            // 
             // Printer
             // 
             this.Printer.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -110,6 +123,26 @@
             this.Printer.Size = new System.Drawing.Size(40, 40);
             this.Printer.TabIndex = 37;
             this.Printer.TabStop = false;
+            // 
+            // ctMaximize1
+            // 
+            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
+            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMaximize1.Location = new System.Drawing.Point(470, 10);
+            this.ctMaximize1.Name = "ctMaximize1";
+            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMaximize1.TabIndex = 36;
+            // 
+            // ctMinimize1
+            // 
+            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
+            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMinimize1.Location = new System.Drawing.Point(503, 10);
+            this.ctMinimize1.Name = "ctMinimize1";
+            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMinimize1.TabIndex = 35;
             // 
             // pictureBox1
             // 
@@ -457,5 +490,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private CTControls.CTClose ctClose1;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
