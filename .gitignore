@@ -377,4 +377,4 @@ InteropTests/NativeTests/out
 *.received.*
 
 # Ignore App.config
-App.config
+HotelManagement/App.config
