@@ -40,7 +40,6 @@
             this.Name = "CTClose";
             this.Size = new System.Drawing.Size(15, 15);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.close_Paint);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CTClose_MouseClick);
             this.MouseLeave += new System.EventHandler(this.close_MouseLeave);
             this.MouseHover += new System.EventHandler(this.close_MouseHover);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.close_MouseMove);

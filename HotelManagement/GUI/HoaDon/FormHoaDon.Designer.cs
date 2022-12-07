@@ -56,9 +56,9 @@
             this.LabelTenKH = new System.Windows.Forms.Label();
             this.LabelHoaDon = new System.Windows.Forms.Label();
             this.LabelTitle = new System.Windows.Forms.Label();
+            this.ctClose1 = new HotelManagement.CTControls.CTClose();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
-            this.ctClose1 = new HotelManagement.CTControls.CTClose();
             this.PanelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Printer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -369,6 +369,17 @@
             this.LabelTitle.TabIndex = 13;
             this.LabelTitle.Text = "Hóa đơn";
             // 
+            // ctClose1
+            // 
+            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
+            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
+            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctClose1.Location = new System.Drawing.Point(536, 10);
+            this.ctClose1.Name = "ctClose1";
+            this.ctClose1.Size = new System.Drawing.Size(15, 15);
+            this.ctClose1.TabIndex = 38;
+            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
+            // 
             // ctMaximize1
             // 
             this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
@@ -388,16 +399,6 @@
             this.ctMinimize1.Name = "ctMinimize1";
             this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
             this.ctMinimize1.TabIndex = 35;
-            // 
-            // ctClose1
-            // 
-            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
-            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
-            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctClose1.Location = new System.Drawing.Point(536, 10);
-            this.ctClose1.Name = "ctClose1";
-            this.ctClose1.Size = new System.Drawing.Size(15, 15);
-            this.ctClose1.TabIndex = 38;
             // 
             // FormHoaDon
             // 

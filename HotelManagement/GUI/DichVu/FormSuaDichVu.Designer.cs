@@ -82,6 +82,7 @@
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
+            this.CTButtonThoat.Click += new System.EventHandler(this.CTButtonThoat_Click);
             // 
             // CTButtonCapNhat
             // 
@@ -270,6 +271,7 @@
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSuaDichVu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaDichVu";
             this.Activated += new System.EventHandler(this.FormSuaDichVu_Activated);
             this.SizeChanged += new System.EventHandler(this.FormSuaDichVu_SizeChanged);

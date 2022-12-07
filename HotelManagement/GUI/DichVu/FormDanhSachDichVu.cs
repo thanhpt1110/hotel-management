@@ -20,8 +20,10 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemDichVu_Click(object sender, EventArgs e)
         {
-            FormThemDichVu formThemDichVu = new FormThemDichVu();
-            formThemDichVu.ShowDialog();
+            using (FormThemDichVu formThemDichVu = new FormThemDichVu())
+            {
+                formThemDichVu.ShowDialog();
+            }
         }
 
         private void FormDanhSachDichVu_Load(object sender, EventArgs e)
@@ -92,7 +94,10 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 5)
                 {
-                    MessageBox.Show("Clicked Update button");
+                    using (FormSuaDichVu formSuaDichVu = new FormSuaDichVu())
+                    {
+                        formSuaDichVu.ShowDialog();
+                    }
                 }
                 if (x == 6)
                 {

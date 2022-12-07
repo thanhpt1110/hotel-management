@@ -463,6 +463,7 @@
             this.ctClose1.Name = "ctClose1";
             this.ctClose1.Size = new System.Drawing.Size(15, 15);
             this.ctClose1.TabIndex = 0;
+            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
             // 
             // labelTenKhachSan
             // 

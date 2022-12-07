@@ -507,5 +507,10 @@ namespace HotelManagement
         {
             openChildForm(new FormDanhSachNhanVien());
         }
+
+        private void ctClose1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

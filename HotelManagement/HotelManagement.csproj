@@ -99,8 +99,6 @@
     <None Include="Resources\DichVu1.png" />
     <None Include="Resources\edit.png" />
     <None Include="Resources\TienNghi.png" />
-    <None Include="Resources\edit2.png" />
-    <None Include="Resources\edit1.png" />
     <None Include="Resources\selection.png" />
     <None Include="Resources\warning.png" />
     <None Include="Resources\message.png" />

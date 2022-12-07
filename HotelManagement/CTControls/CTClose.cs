@@ -75,10 +75,5 @@ namespace HotelManagement.CTControls
             mouseLeave = true;
             this.Invalidate();
         }
-
-        private void CTClose_MouseClick(object sender, MouseEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

@@ -84,9 +84,9 @@ namespace HotelManagement.GUI
             // If click details button
             if (x == 7 && y >= 0)
             {
-                using (FormHoaDon frm = new FormHoaDon())
+                using (FormHoaDon formHoaDon = new FormHoaDon())
                 {
-                    frm.ShowDialog();
+                    formHoaDon.ShowDialog();
                 }
             }
         }
