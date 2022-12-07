@@ -1,8 +1,10 @@
-﻿using System;
+﻿using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HotelManagement.DAO;
 
 namespace HotelManagement.BUS
 {
@@ -15,5 +17,13 @@ namespace HotelManagement.BUS
             private set { instance = value; }
         }
         private LoaiPhongBUS() { }
+        public List<LoaiPhong> GetLoaiPhongs()
+        {
+            return LoaiPhongDAO.Instance.GetLoaiPhongs();
+        }
+        public LoaiPhong getLoaiPhong(string MaLP)
+        {
+            return LoaiPhongDAO.Instance.getLoaiPhong(MaLP);
+        }
     }
 }

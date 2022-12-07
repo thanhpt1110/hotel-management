@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,12 +10,15 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BUS;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HotelManagement.GUI
 {
     public partial class FormHoaDon : Form
     {
         //Fields
+        HoaDon HD;
         private int borderRadius = 10;
         private int borderSize = 2;
         private Color borderColor = Color.White;
@@ -26,6 +30,44 @@ namespace HotelManagement.GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+        }
+        public FormHoaDon(HoaDon HD)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.HD = HD;
+            InitializeComponent();
+            LoadHD();
+        }
+        void LoadHD()
+        {
+            DichVu dichvu;
+            int days = CTDP_BUS.Instance.getKhoangTG(HD.MaCTDP);
+            decimal TongTienHD = 0;
+            this.TextBoxSoHD.Text = HD.MaHD;
+            this.TextBoxTenKH.Text = HD.CTDP.PhieuThue.KhachHang.TenKH;
+            this.TextBoxSoNgay.Text = days.ToString() + " ngày";
+            this.TextBoxMaPhong.Text = HD.CTDP.MaPH;
+            this.TextBoxTenNV.Text = HD.NhanVien.TenNV;
+            this.TextBoxNgayHD.Text = HD.NgHD.ToString();
+            Phong phong = PhongBUS.Instance.FindePhong(HD.CTDP.MaPH);
+            LoaiPhong loaiphong = LoaiPhongBUS.Instance.getLoaiPhong(phong.MaLPH);
+            this.TextBoxLoaiPhong.Text = loaiphong.TenLPH;
+            List<CTDV> ctdvs = CTDV_BUS.Instance.FindCTDV(HD.MaHD);
+            foreach(CTDV ctdv in ctdvs)
+            {
+                dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
+                decimal TongTien = dichvu.DonGia * ctdv.SL;
+                TongTienHD += TongTien;
+                DataGridViewDichVu.Rows.Add(dichvu.TenDV, dichvu.DonGia.ToString("#,#"), ctdv.SL.ToString(), TongTien.ToString("#,#"));
+            }
+            
+            
+            decimal Tongtienphong = loaiphong.GiaNgay * days;
+            DataGridViewDichVu.Rows.Add(days, loaiphong.GiaNgay.ToString(), this.TextBoxSoNgay.Text, Tongtienphong.ToString("#,#"));
+            this.LabelTongTien.Text += Tongtienphong.ToString("#,#");
+
         }
         //Control Box
 

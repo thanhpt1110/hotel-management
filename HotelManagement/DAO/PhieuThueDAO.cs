@@ -17,5 +17,9 @@ namespace HotelManagement.DAO
             private set { instance = value; }
         }
         private PhieuThueDAO() { }
+        public List<PhieuThue> GetPhieuThues()
+        {
+            return db.PhieuThues.ToList();
+        }
     }
 }

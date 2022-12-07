@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using HotelManagement.DTO;
+using HotelManagement.DAO;
 namespace HotelManagement.BUS
 {
     internal class CTDV_BUS
@@ -15,5 +16,10 @@ namespace HotelManagement.BUS
             private set { instance = value; }
         }
         private CTDV_BUS() { }
+
+        public List<CTDV> FindCTDV(string MaHD)
+        {
+            return CTDV_DAO.Instance.FindCTDV(MaHD);
+        }    
     }
 }

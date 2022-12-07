@@ -17,5 +17,13 @@ namespace HotelManagement.DAO
             private set { instance = value; }
         }
         private HoaDonDAO() { }
+        public List<HoaDon> GetHoaDons()
+        {
+            return db.HoaDons.ToList();
+        } 
+        public HoaDon FindHD(string MaHD)
+        {
+            return db.HoaDons.Find(MaHD);
+        }
     }
 }

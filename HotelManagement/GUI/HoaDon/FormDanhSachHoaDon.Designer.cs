@@ -133,6 +133,7 @@
             this.grid.Size = new System.Drawing.Size(1097, 659);
             this.grid.TabIndex = 31;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
+//            this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
             this.grid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseEnter);
             // 
             // Column1

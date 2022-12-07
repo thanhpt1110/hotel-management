@@ -8,29 +8,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BUS;
+using HotelManagement.DTO;
+using System.Net.Http.Headers;
 
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachHoaDon : Form
     {
+        private Image HD = Properties.Resources.HoaDon;
+        private Image details = Properties.Resources.details;
         public FormDanhSachHoaDon()
         {
             InitializeComponent();
+            LoadDataGrid();
         }
 
         private void FormDanhSachHoaDon_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            Image HD = Properties.Resources.HoaDon;
-            Image details = Properties.Resources.details;
 
-            //Test 
-            grid.Rows.Add(new object[] { HD, "HD001", "11/10/2003 19:45:00", "Nguyễn Văn A", "Phan Tuấn Thành", "0", "Chưa thanh toán", details});
-            grid.Rows.Add(new object[] { HD, "HD002", "11/10/2003 19:45:00", "Nguyễn Văn B", "Phan Tuấn Thành", "100,000", "Đã thanh toán", details});
-            grid.Rows.Add(new object[] { HD, "HD003", "11/10/2003 19:45:00", "Nguyễn Văn C", "Phan Tuấn Thành", "2,000,000", "Chưa thanh toán", details});
-            grid.Rows.Add(new object[] { HD, "HD004", "11/10/2003 19:45:00", "Nguyễn Văn D", "Phan Tuấn Thành", "0", "Đã thanh toán", details});
+
+            /*  //Test 
+              grid.Rows.Add(new object[] { HD, "HD001", "11/10/2003 19:45:00", "Nguyễn Văn A", "Phan Tuấn Thành", "0", "Chưa thanh toán", details});
+              grid.Rows.Add(new object[] { HD, "HD002", "11/10/2003 19:45:00", "Nguyễn Văn B", "Phan Tuấn Thành", "100,000", "Đã thanh toán", details});
+              grid.Rows.Add(new object[] { HD, "HD003", "11/10/2003 19:45:00", "Nguyễn Văn C", "Phan Tuấn Thành", "2,000,000", "Chưa thanh toán", details});
+              grid.Rows.Add(new object[] { HD, "HD004", "11/10/2003 19:45:00", "Nguyễn Văn D", "Phan Tuấn Thành", "0", "Đã thanh toán", details});*/
         }
 
+        public void LoadDataGrid()
+        {
+            List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
+            foreach (HoaDon hoadon in hoaDons)
+            {
+                string tennv = null;
+                if (hoadon.MaNV != null)
+                    tennv = hoadon.NhanVien.TenNV;
+                grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, hoadon.CTDP.PhieuThue.KhachHang.TenKH, hoadon.TriGia, hoadon.TrangThai, details);
+            }
+        }
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try
@@ -84,7 +100,9 @@ namespace HotelManagement.GUI
             // If click details button
             if (x == 7 && y >= 0)
             {
-                using (FormHoaDon formHoaDon = new FormHoaDon())
+                string MaHD = grid.Rows[y].Cells[1].Value.ToString();
+                HoaDon HD = HoaDonBUS.Instance.FindHD(MaHD);
+                using (FormHoaDon formHoaDon = new FormHoaDon(HD))
                 {
                     formHoaDon.ShowDialog();
                 }
@@ -104,5 +122,7 @@ namespace HotelManagement.GUI
             else
                 grid.Cursor = Cursors.Default;
         }
+
+
     }
 }

@@ -20,5 +20,7 @@ namespace HotelManagement.DTO
         public string MaDV { get; set; }
 
         public int SL { get; set; }
+
+        
     }
 }

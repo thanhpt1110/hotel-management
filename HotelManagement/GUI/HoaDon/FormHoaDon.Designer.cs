@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDon));
             this.PanelBackground = new System.Windows.Forms.Panel();
-            this.ctClose1 = new HotelManagement.CTControls.CTClose();
             this.Printer = new System.Windows.Forms.PictureBox();
-            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
-            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TextBoxTenNV = new System.Windows.Forms.TextBox();
             this.TextBoxSoNgay = new System.Windows.Forms.TextBox();
@@ -59,6 +58,9 @@
             this.LabelTenKH = new System.Windows.Forms.Label();
             this.LabelHoaDon = new System.Windows.Forms.Label();
             this.LabelTitle = new System.Windows.Forms.Label();
+            this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
+            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.PanelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Printer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,6 +70,7 @@
             // 
             // PanelBackground
             // 
+            this.PanelBackground.AutoScroll = true;
             this.PanelBackground.Controls.Add(this.ctClose1);
             this.PanelBackground.Controls.Add(this.Printer);
             this.PanelBackground.Controls.Add(this.ctMaximize1);
@@ -101,17 +104,6 @@
             this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
-            // ctClose1
-            // 
-            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
-            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
-            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctClose1.Location = new System.Drawing.Point(536, 10);
-            this.ctClose1.Name = "ctClose1";
-            this.ctClose1.Size = new System.Drawing.Size(15, 15);
-            this.ctClose1.TabIndex = 38;
-            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
-            // 
             // Printer
             // 
             this.Printer.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -121,26 +113,6 @@
             this.Printer.Size = new System.Drawing.Size(40, 40);
             this.Printer.TabIndex = 37;
             this.Printer.TabStop = false;
-            // 
-            // ctMaximize1
-            // 
-            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
-            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMaximize1.Location = new System.Drawing.Point(470, 10);
-            this.ctMaximize1.Name = "ctMaximize1";
-            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMaximize1.TabIndex = 36;
-            // 
-            // ctMinimize1
-            // 
-            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
-            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMinimize1.Location = new System.Drawing.Point(503, 10);
-            this.ctMinimize1.Name = "ctMinimize1";
-            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMinimize1.TabIndex = 35;
             // 
             // pictureBox1
             // 
@@ -184,7 +156,7 @@
             this.TextBoxLoaiPhong.Location = new System.Drawing.Point(440, 225);
             this.TextBoxLoaiPhong.Name = "TextBoxLoaiPhong";
             this.TextBoxLoaiPhong.ReadOnly = true;
-            this.TextBoxLoaiPhong.Size = new System.Drawing.Size(72, 18);
+            this.TextBoxLoaiPhong.Size = new System.Drawing.Size(88, 18);
             this.TextBoxLoaiPhong.TabIndex = 28;
             this.TextBoxLoaiPhong.Text = "Phòng đơn";
             // 
@@ -252,9 +224,9 @@
             this.LabelTongTien.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTongTien.Location = new System.Drawing.Point(226, 543);
             this.LabelTongTien.Name = "LabelTongTien";
-            this.LabelTongTien.Size = new System.Drawing.Size(110, 30);
+            this.LabelTongTien.Size = new System.Drawing.Size(116, 30);
             this.LabelTongTien.TabIndex = 24;
-            this.LabelTongTien.Text = "Tổng tiền:";
+            this.LabelTongTien.Text = "Tổng tiền: ";
             // 
             // label8
             // 
@@ -268,6 +240,7 @@
             // 
             // DataGridViewDichVu
             // 
+            this.DataGridViewDichVu.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.DataGridViewDichVu.BackgroundColor = System.Drawing.Color.White;
             this.DataGridViewDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -275,9 +248,21 @@
             this.GiaTien,
             this.SoLuong,
             this.ThanhTien});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewDichVu.DefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridViewDichVu.Location = new System.Drawing.Point(25, 340);
             this.DataGridViewDichVu.Name = "DataGridViewDichVu";
             this.DataGridViewDichVu.RowHeadersVisible = false;
+            this.DataGridViewDichVu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewDichVu.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridViewDichVu.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.DataGridViewDichVu.Size = new System.Drawing.Size(503, 181);
             this.DataGridViewDichVu.TabIndex = 22;
             // 
@@ -399,6 +384,37 @@
             this.LabelTitle.Size = new System.Drawing.Size(61, 17);
             this.LabelTitle.TabIndex = 13;
             this.LabelTitle.Text = "Hóa đơn";
+            // 
+            // ctClose1
+            // 
+            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
+            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
+            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctClose1.Location = new System.Drawing.Point(536, 10);
+            this.ctClose1.Name = "ctClose1";
+            this.ctClose1.Size = new System.Drawing.Size(15, 15);
+            this.ctClose1.TabIndex = 38;
+            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
+            // 
+            // ctMaximize1
+            // 
+            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
+            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMaximize1.Location = new System.Drawing.Point(470, 10);
+            this.ctMaximize1.Name = "ctMaximize1";
+            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMaximize1.TabIndex = 36;
+            // 
+            // ctMinimize1
+            // 
+            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
+            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMinimize1.Location = new System.Drawing.Point(503, 10);
+            this.ctMinimize1.Name = "ctMinimize1";
+            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMinimize1.TabIndex = 35;
             // 
             // FormHoaDon
             // 

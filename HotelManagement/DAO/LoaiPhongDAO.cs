@@ -17,5 +17,13 @@ namespace HotelManagement.DAO
             private set { instance = value; }
         }
         private LoaiPhongDAO() { }
+        public List<LoaiPhong> GetLoaiPhongs()
+        {
+            return db.LoaiPhongs.ToList();
+        }    
+        public LoaiPhong getLoaiPhong(string MaLP)
+        {
+            return db.LoaiPhongs.Find(MaLP);
+        }
     }
 }

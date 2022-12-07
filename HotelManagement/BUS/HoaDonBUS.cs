@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HotelManagement.DAO;
+using HotelManagement.DTO;
 
 namespace HotelManagement.BUS
 {
@@ -15,5 +17,13 @@ namespace HotelManagement.BUS
             private set { instance = value; }
         }
         private HoaDonBUS() { }
+        public List<HoaDon> GetHoaDons()
+        {
+            return HoaDonDAO.Instance.GetHoaDons();
+        }
+        public HoaDon FindHD(string MaHD)
+        {
+            return HoaDonDAO.Instance.FindHD(MaHD);
+        }
     }
 }
