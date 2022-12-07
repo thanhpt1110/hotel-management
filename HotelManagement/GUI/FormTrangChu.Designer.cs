@@ -48,6 +48,8 @@
             this.Controls.Add(this.LabelTrangChu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormTrangChu";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormTrangChu";
             this.ResumeLayout(false);
             this.PerformLayout();

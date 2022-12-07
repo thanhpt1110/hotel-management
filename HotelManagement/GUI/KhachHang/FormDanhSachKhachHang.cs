@@ -108,7 +108,7 @@ namespace HotelManagement.GUI
         private void grid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             int curCol = e.ColumnIndex;
-            if (curCol == 5 || curCol == 6)
+            if (curCol == 7 || curCol == 8)
             {
                 if (e.RowIndex >= 0)
                     grid.Cursor = Cursors.Hand;

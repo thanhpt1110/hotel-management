@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDon));
             this.PanelBackground = new System.Windows.Forms.Panel();
-            this.ctClose1 = new HotelManagement.CTControls.CTClose(1,this);
+            this.ctClose1 = new HotelManagement.CTControls.CTClose();
             this.Printer = new System.Windows.Forms.PictureBox();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
@@ -59,9 +59,6 @@
             this.LabelTenKH = new System.Windows.Forms.Label();
             this.LabelHoaDon = new System.Windows.Forms.Label();
             this.LabelTitle = new System.Windows.Forms.Label();
-            this.ctClose1 = new HotelManagement.CTControls.CTClose();
-            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
-            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.PanelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Printer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -113,6 +110,7 @@
             this.ctClose1.Name = "ctClose1";
             this.ctClose1.Size = new System.Drawing.Size(15, 15);
             this.ctClose1.TabIndex = 38;
+            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
             // 
             // Printer
             // 
@@ -402,37 +400,6 @@
             this.LabelTitle.TabIndex = 13;
             this.LabelTitle.Text = "Hóa đơn";
             // 
-            // ctClose1
-            // 
-            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
-            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
-            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctClose1.Location = new System.Drawing.Point(536, 10);
-            this.ctClose1.Name = "ctClose1";
-            this.ctClose1.Size = new System.Drawing.Size(15, 15);
-            this.ctClose1.TabIndex = 38;
-            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
-            // 
-            // ctMaximize1
-            // 
-            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
-            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMaximize1.Location = new System.Drawing.Point(470, 10);
-            this.ctMaximize1.Name = "ctMaximize1";
-            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMaximize1.TabIndex = 36;
-            // 
-            // ctMinimize1
-            // 
-            this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
-            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMinimize1.Location = new System.Drawing.Point(503, 10);
-            this.ctMinimize1.Name = "ctMinimize1";
-            this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMinimize1.TabIndex = 35;
-            // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,6 +409,8 @@
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHoaDon";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHoaDon";
             this.Activated += new System.EventHandler(this.FormHoaDon_Activated);

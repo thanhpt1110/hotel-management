@@ -40,6 +40,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
             this.ctTextBox2 = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxDiaChi = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxNhapCCCD = new HotelManagement.CTControls.CTTextBox();
@@ -51,7 +52,6 @@
             this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
             this.CTButtonCapNhat = new HotelManagement.CTControls.CTButton();
             this.PanelBackground = new System.Windows.Forms.Panel();
-            this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -208,6 +208,29 @@
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
+            // 
+            // ctTextBox1
+            // 
+            this.ctTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ctTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.ctTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
+            this.ctTextBox1.BorderRadius = 0;
+            this.ctTextBox1.BorderSize = 2;
+            this.ctTextBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctTextBox1.IsFocused = false;
+            this.ctTextBox1.Location = new System.Drawing.Point(110, 332);
+            this.ctTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctTextBox1.Multiline = false;
+            this.ctTextBox1.Name = "ctTextBox1";
+            this.ctTextBox1.Padding = new System.Windows.Forms.Padding(7);
+            this.ctTextBox1.PasswordChar = false;
+            this.ctTextBox1.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.ctTextBox1.PlaceholderText = "Nhập số điện thoại";
+            this.ctTextBox1.ReadOnly = false;
+            this.ctTextBox1.Size = new System.Drawing.Size(210, 35);
+            this.ctTextBox1.TabIndex = 4;
+            this.ctTextBox1.Texts = "";
+            this.ctTextBox1.UnderlineedStyle = true;
             // 
             // ctTextBox2
             // 
@@ -379,7 +402,7 @@
             this.CTButtonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThoat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThoat.Location = new System.Drawing.Point(787, 524);
+            this.CTButtonThoat.Location = new System.Drawing.Point(772, 524);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
             this.CTButtonThoat.TabIndex = 0;
@@ -400,17 +423,19 @@
             this.CTButtonCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonCapNhat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonCapNhat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonCapNhat.Location = new System.Drawing.Point(627, 524);
+            this.CTButtonCapNhat.Location = new System.Drawing.Point(610, 524);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
             this.CTButtonCapNhat.TabIndex = 10;
-            this.CTButtonCapNhat.Text = "Cập nhật";
+            this.CTButtonCapNhat.Text = "Lưu";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
             // 
             // PanelBackground
             // 
+            this.PanelBackground.Controls.Add(this.CTButtonThoat);
             this.PanelBackground.Controls.Add(this.LabelThemNhanVien);
+            this.PanelBackground.Controls.Add(this.CTButtonCapNhat);
             this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBackground.Location = new System.Drawing.Point(0, 0);
             this.PanelBackground.Name = "PanelBackground";
@@ -418,44 +443,22 @@
             this.PanelBackground.TabIndex = 9;
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
-            // ctTextBox1
-            // 
-            this.ctTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.ctTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.ctTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
-            this.ctTextBox1.BorderRadius = 0;
-            this.ctTextBox1.BorderSize = 2;
-            this.ctTextBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctTextBox1.IsFocused = false;
-            this.ctTextBox1.Location = new System.Drawing.Point(110, 332);
-            this.ctTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctTextBox1.Multiline = false;
-            this.ctTextBox1.Name = "ctTextBox1";
-            this.ctTextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.ctTextBox1.PasswordChar = false;
-            this.ctTextBox1.PlaceholderColor = System.Drawing.Color.DimGray;
-            this.ctTextBox1.PlaceholderText = "Nhập số điện thoại";
-            this.ctTextBox1.ReadOnly = false;
-            this.ctTextBox1.Size = new System.Drawing.Size(210, 35);
-            this.ctTextBox1.TabIndex = 4;
-            this.ctTextBox1.Texts = "";
-            this.ctTextBox1.UnderlineedStyle = true;
-            // 
             // FormThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(959, 574);
-            this.Controls.Add(this.CTButtonThoat);
-            this.Controls.Add(this.CTButtonCapNhat);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThemNhanVien";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormThemNhanVien";
             this.Activated += new System.EventHandler(this.FormThemNhanVien_Activated);
+            this.Load += new System.EventHandler(this.FormThemNhanVien_Load);
             this.SizeChanged += new System.EventHandler(this.FormThemNhanVien_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormThemNhanVien_Paint);
             this.Resize += new System.EventHandler(this.FormThemNhanVien_Resize);

@@ -164,7 +164,7 @@
             this.Xoa.HeaderText = "Xóa";
             this.Xoa.Name = "Xoa";
             // 
-            // FormDanhSachDatPhong
+            // FormDanhSachPhieuThue
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
@@ -176,7 +176,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ctTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormDanhSachDatPhong";
+            this.Name = "FormDanhSachPhieuThue";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormQLDatPhong";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

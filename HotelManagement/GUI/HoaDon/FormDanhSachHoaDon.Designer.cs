@@ -284,6 +284,8 @@
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachHoaDon";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormDanhSachHoaDon";
             this.Load += new System.EventHandler(this.FormDanhSachHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

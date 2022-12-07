@@ -185,6 +185,8 @@
             this.Controls.Add(this.CTTextBoxTimPhongTheoMa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachLoaiPhong";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormDanhSachLoaiPhong";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -197,6 +197,7 @@
             this.CTTextBoxNhapDiaChi.PasswordChar = false;
             this.CTTextBoxNhapDiaChi.PlaceholderColor = System.Drawing.Color.Gray;
             this.CTTextBoxNhapDiaChi.PlaceholderText = "Nhập địa chỉ";
+            this.CTTextBoxNhapDiaChi.ReadOnly = false;
             this.CTTextBoxNhapDiaChi.Size = new System.Drawing.Size(205, 36);
             this.CTTextBoxNhapDiaChi.TabIndex = 18;
             this.CTTextBoxNhapDiaChi.TabStop = false;
@@ -220,6 +221,7 @@
             this.CTTextBoxNhapSDT.PasswordChar = false;
             this.CTTextBoxNhapSDT.PlaceholderColor = System.Drawing.Color.Gray;
             this.CTTextBoxNhapSDT.PlaceholderText = "Nhập số điện thoại";
+            this.CTTextBoxNhapSDT.ReadOnly = false;
             this.CTTextBoxNhapSDT.Size = new System.Drawing.Size(205, 36);
             this.CTTextBoxNhapSDT.TabIndex = 17;
             this.CTTextBoxNhapSDT.TabStop = false;
@@ -243,6 +245,7 @@
             this.CTTextBoxNhapCCCD.PasswordChar = false;
             this.CTTextBoxNhapCCCD.PlaceholderColor = System.Drawing.Color.Gray;
             this.CTTextBoxNhapCCCD.PlaceholderText = "Nhập số CCCD";
+            this.CTTextBoxNhapCCCD.ReadOnly = false;
             this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(205, 36);
             this.CTTextBoxNhapCCCD.TabIndex = 16;
             this.CTTextBoxNhapCCCD.TabStop = false;
@@ -266,6 +269,7 @@
             this.CTTextBoxNhapHoTen.PasswordChar = false;
             this.CTTextBoxNhapHoTen.PlaceholderColor = System.Drawing.Color.Gray;
             this.CTTextBoxNhapHoTen.PlaceholderText = "Nhập họ tên khách hàng";
+            this.CTTextBoxNhapHoTen.ReadOnly = false;
             this.CTTextBoxNhapHoTen.Size = new System.Drawing.Size(205, 36);
             this.CTTextBoxNhapHoTen.TabIndex = 14;
             this.CTTextBoxNhapHoTen.TabStop = false;
@@ -563,7 +567,7 @@
             this.CTButtonHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonHuy.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonHuy.ForeColor = System.Drawing.Color.White;
-            this.CTButtonHuy.Location = new System.Drawing.Point(820, 529);
+            this.CTButtonHuy.Location = new System.Drawing.Point(836, 529);
             this.CTButtonHuy.Name = "CTButtonHuy";
             this.CTButtonHuy.Size = new System.Drawing.Size(150, 40);
             this.CTButtonHuy.TabIndex = 2;
@@ -584,7 +588,7 @@
             this.CTButtonNhanPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonNhanPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonNhanPhong.ForeColor = System.Drawing.Color.White;
-            this.CTButtonNhanPhong.Location = new System.Drawing.Point(454, 529);
+            this.CTButtonNhanPhong.Location = new System.Drawing.Point(458, 529);
             this.CTButtonNhanPhong.Name = "CTButtonNhanPhong";
             this.CTButtonNhanPhong.Size = new System.Drawing.Size(150, 40);
             this.CTButtonNhanPhong.TabIndex = 2;
@@ -604,7 +608,7 @@
             this.CTButtonDatTruoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonDatTruoc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonDatTruoc.ForeColor = System.Drawing.Color.White;
-            this.CTButtonDatTruoc.Location = new System.Drawing.Point(638, 529);
+            this.CTButtonDatTruoc.Location = new System.Drawing.Point(643, 529);
             this.CTButtonDatTruoc.Name = "CTButtonDatTruoc";
             this.CTButtonDatTruoc.Size = new System.Drawing.Size(150, 40);
             this.CTButtonDatTruoc.TabIndex = 2;
@@ -623,6 +627,8 @@
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDatPhong";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormDatPhong";
             this.Activated += new System.EventHandler(this.FormDatPhong_Activated);

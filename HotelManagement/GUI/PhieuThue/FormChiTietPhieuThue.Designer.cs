@@ -30,6 +30,11 @@
         {
             this.LabelChiTietPhieuThueTieuDe = new System.Windows.Forms.Label();
             this.PanelChuaThongTin = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoNguoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LabelNhanVienLapPhieu = new System.Windows.Forms.Label();
             this.LabelThoiGianLapPhieu = new System.Windows.Forms.Label();
             this.LabelTen = new System.Windows.Forms.Label();
@@ -40,17 +45,12 @@
             this.CTButtonThanhToan = new HotelManagement.CTControls.CTButton();
             this.CTButtonLuu = new HotelManagement.CTControls.CTButton();
             this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoNguoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelChuaThongTin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSoNguoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNgayCheckin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).BeginInit();
             this.PanelBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelChiTietPhieuThueTieuDe
@@ -79,6 +79,42 @@
             this.PanelChuaThongTin.Size = new System.Drawing.Size(883, 435);
             this.PanelChuaThongTin.TabIndex = 11;
             this.PanelChuaThongTin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SoPhong,
+            this.NgayBatDau,
+            this.NgayKetThuc,
+            this.SoNguoi});
+            this.dataGridView1.Location = new System.Drawing.Point(31, 78);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(828, 325);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // SoPhong
+            // 
+            this.SoPhong.HeaderText = "Số phòng";
+            this.SoPhong.Name = "SoPhong";
+            // 
+            // NgayBatDau
+            // 
+            this.NgayBatDau.HeaderText = "Ngày bắt đầu";
+            this.NgayBatDau.Name = "NgayBatDau";
+            // 
+            // NgayKetThuc
+            // 
+            this.NgayKetThuc.HeaderText = "Ngày kết thúc";
+            this.NgayKetThuc.Name = "NgayKetThuc";
+            // 
+            // SoNguoi
+            // 
+            this.SoNguoi.HeaderText = "Số người";
+            this.SoNguoi.Name = "SoNguoi";
             // 
             // LabelNhanVienLapPhieu
             // 
@@ -142,6 +178,8 @@
             // PanelBackground
             // 
             this.PanelBackground.Controls.Add(this.LabelChiTietPhieuThueTieuDe);
+            this.PanelBackground.Controls.Add(this.CTButtonLuu);
+            this.PanelBackground.Controls.Add(this.CTButtonThoat);
             this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBackground.Location = new System.Drawing.Point(0, 0);
             this.PanelBackground.Name = "PanelBackground";
@@ -182,7 +220,7 @@
             this.CTButtonLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonLuu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonLuu.ForeColor = System.Drawing.Color.White;
-            this.CTButtonLuu.Location = new System.Drawing.Point(621, 499);
+            this.CTButtonLuu.Location = new System.Drawing.Point(601, 499);
             this.CTButtonLuu.Name = "CTButtonLuu";
             this.CTButtonLuu.Size = new System.Drawing.Size(150, 40);
             this.CTButtonLuu.TabIndex = 13;
@@ -202,7 +240,7 @@
             this.CTButtonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThoat.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThoat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThoat.Location = new System.Drawing.Point(817, 499);
+            this.CTButtonThoat.Location = new System.Drawing.Point(781, 499);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(150, 40);
             this.CTButtonThoat.TabIndex = 12;
@@ -211,55 +249,19 @@
             this.CTButtonThoat.UseVisualStyleBackColor = false;
             this.CTButtonThoat.Click += new System.EventHandler(this.CTButtonThoat_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SoPhong,
-            this.NgayBatDau,
-            this.NgayKetThuc,
-            this.SoNguoi});
-            this.dataGridView1.Location = new System.Drawing.Point(31, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(828, 325);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // SoPhong
-            // 
-            this.SoPhong.HeaderText = "Số phòng";
-            this.SoPhong.Name = "SoPhong";
-            // 
-            // NgayBatDau
-            // 
-            this.NgayBatDau.HeaderText = "Ngày bắt đầu";
-            this.NgayBatDau.Name = "NgayBatDau";
-            // 
-            // NgayKetThuc
-            // 
-            this.NgayKetThuc.HeaderText = "Ngày kết thúc";
-            this.NgayKetThuc.Name = "NgayKetThuc";
-            // 
-            // SoNguoi
-            // 
-            this.SoNguoi.HeaderText = "Số người";
-            this.SoNguoi.Name = "SoNguoi";
-            // 
-            // FormCTPhieuThue
+            // FormChiTietPhieuThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(979, 550);
             this.Controls.Add(this.CTButtonThanhToan);
-            this.Controls.Add(this.CTButtonLuu);
-            this.Controls.Add(this.CTButtonThoat);
             this.Controls.Add(this.PanelChuaThongTin);
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormCTPhieuThue";
+            this.Name = "FormChiTietPhieuThue";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormCTPhieuThue";
             this.Activated += new System.EventHandler(this.FormCTPhieuThue_Activated);
@@ -268,12 +270,12 @@
             this.Resize += new System.EventHandler(this.FormCTPhieuThue_Resize);
             this.PanelChuaThongTin.ResumeLayout(false);
             this.PanelChuaThongTin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSoNguoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNgayCheckin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).EndInit();
             this.PanelBackground.ResumeLayout(false);
             this.PanelBackground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

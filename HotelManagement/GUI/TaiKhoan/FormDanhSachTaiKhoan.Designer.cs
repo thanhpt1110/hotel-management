@@ -173,6 +173,7 @@
             this.CTTextBoxTimTheoTenTaiKhoan.PasswordChar = false;
             this.CTTextBoxTimTheoTenTaiKhoan.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.CTTextBoxTimTheoTenTaiKhoan.PlaceholderText = "Tìm theo tên tài khoản";
+            this.CTTextBoxTimTheoTenTaiKhoan.ReadOnly = false;
             this.CTTextBoxTimTheoTenTaiKhoan.Size = new System.Drawing.Size(244, 36);
             this.CTTextBoxTimTheoTenTaiKhoan.TabIndex = 12;
             this.CTTextBoxTimTheoTenTaiKhoan.TabStop = false;
@@ -191,6 +192,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachTaiKhoan";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormDanhSachTaiKhoan";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

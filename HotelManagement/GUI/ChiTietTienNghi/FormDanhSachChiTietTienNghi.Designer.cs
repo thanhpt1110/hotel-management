@@ -271,6 +271,8 @@
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachChiTietTienNghi";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormDanhSachChiTietTienNghi";
             this.Load += new System.EventHandler(this.FormDanhSachChiTietTienNghi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();

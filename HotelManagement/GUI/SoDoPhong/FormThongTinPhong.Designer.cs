@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.PanelBackground = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.CTButtonThemDichVu = new HotelManagement.CTControls.CTButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.CTButtonThanhToan = new HotelManagement.CTControls.CTButton();
             this.PanelChuaButtonDatPhongNay = new System.Windows.Forms.Panel();
             this.CTButtonDatPhongNay = new HotelManagement.CTControls.CTButton();
             this.PanelChuaButtonNhanPhong = new System.Windows.Forms.Panel();
@@ -54,11 +58,9 @@
             this.PictureBoxTen = new System.Windows.Forms.PictureBox();
             this.PanelBackgroundTop = new System.Windows.Forms.Panel();
             this.LabelMaPhong = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.CTButtonThemDichVu = new HotelManagement.CTControls.CTButton();
-            this.CTButtonThanhToan = new HotelManagement.CTControls.CTButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.PanelBackground.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.PanelChuaButtonDatPhongNay.SuspendLayout();
             this.PanelChuaButtonNhanPhong.SuspendLayout();
             this.PanelChuaButtonLuu.SuspendLayout();
@@ -71,8 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNgayCheckin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).BeginInit();
             this.PanelBackgroundTop.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelBackground
@@ -92,6 +92,64 @@
             this.PanelBackground.TabIndex = 0;
             this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.CTButtonThemDichVu);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(-149, 488);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(188, 62);
+            this.panel3.TabIndex = 17;
+            // 
+            // CTButtonThemDichVu
+            // 
+            this.CTButtonThemDichVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.CTButtonThemDichVu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.CTButtonThemDichVu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.CTButtonThemDichVu.BorderRadius = 10;
+            this.CTButtonThemDichVu.BorderSize = 0;
+            this.CTButtonThemDichVu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTButtonThemDichVu.FlatAppearance.BorderSize = 0;
+            this.CTButtonThemDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CTButtonThemDichVu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTButtonThemDichVu.ForeColor = System.Drawing.Color.White;
+            this.CTButtonThemDichVu.Location = new System.Drawing.Point(20, 9);
+            this.CTButtonThemDichVu.Name = "CTButtonThemDichVu";
+            this.CTButtonThemDichVu.Size = new System.Drawing.Size(150, 40);
+            this.CTButtonThemDichVu.TabIndex = 0;
+            this.CTButtonThemDichVu.Text = "Thêm dịch vụ";
+            this.CTButtonThemDichVu.TextColor = System.Drawing.Color.White;
+            this.CTButtonThemDichVu.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.CTButtonThanhToan);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(39, 488);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(188, 62);
+            this.panel1.TabIndex = 16;
+            // 
+            // CTButtonThanhToan
+            // 
+            this.CTButtonThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.CTButtonThanhToan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.CTButtonThanhToan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.CTButtonThanhToan.BorderRadius = 10;
+            this.CTButtonThanhToan.BorderSize = 0;
+            this.CTButtonThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTButtonThanhToan.FlatAppearance.BorderSize = 0;
+            this.CTButtonThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CTButtonThanhToan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTButtonThanhToan.ForeColor = System.Drawing.Color.White;
+            this.CTButtonThanhToan.Location = new System.Drawing.Point(20, 9);
+            this.CTButtonThanhToan.Name = "CTButtonThanhToan";
+            this.CTButtonThanhToan.Size = new System.Drawing.Size(150, 40);
+            this.CTButtonThanhToan.TabIndex = 0;
+            this.CTButtonThanhToan.Text = "Thanh toán";
+            this.CTButtonThanhToan.TextColor = System.Drawing.Color.White;
+            this.CTButtonThanhToan.UseVisualStyleBackColor = false;
             // 
             // PanelChuaButtonDatPhongNay
             // 
@@ -404,64 +462,6 @@
             this.LabelMaPhong.TabIndex = 4;
             this.LabelMaPhong.Text = "Mã Phòng";
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.CTButtonThemDichVu);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(-149, 488);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(188, 62);
-            this.panel3.TabIndex = 17;
-            // 
-            // CTButtonThemDichVu
-            // 
-            this.CTButtonThemDichVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.CTButtonThemDichVu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.CTButtonThemDichVu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.CTButtonThemDichVu.BorderRadius = 10;
-            this.CTButtonThemDichVu.BorderSize = 0;
-            this.CTButtonThemDichVu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CTButtonThemDichVu.FlatAppearance.BorderSize = 0;
-            this.CTButtonThemDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CTButtonThemDichVu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTButtonThemDichVu.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThemDichVu.Location = new System.Drawing.Point(20, 9);
-            this.CTButtonThemDichVu.Name = "CTButtonThemDichVu";
-            this.CTButtonThemDichVu.Size = new System.Drawing.Size(150, 40);
-            this.CTButtonThemDichVu.TabIndex = 0;
-            this.CTButtonThemDichVu.Text = "Thêm dịch vụ";
-            this.CTButtonThemDichVu.TextColor = System.Drawing.Color.White;
-            this.CTButtonThemDichVu.UseVisualStyleBackColor = false;
-            // 
-            // CTButtonThanhToan
-            // 
-            this.CTButtonThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
-            this.CTButtonThanhToan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
-            this.CTButtonThanhToan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
-            this.CTButtonThanhToan.BorderRadius = 10;
-            this.CTButtonThanhToan.BorderSize = 0;
-            this.CTButtonThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CTButtonThanhToan.FlatAppearance.BorderSize = 0;
-            this.CTButtonThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CTButtonThanhToan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTButtonThanhToan.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThanhToan.Location = new System.Drawing.Point(20, 9);
-            this.CTButtonThanhToan.Name = "CTButtonThanhToan";
-            this.CTButtonThanhToan.Size = new System.Drawing.Size(150, 40);
-            this.CTButtonThanhToan.TabIndex = 0;
-            this.CTButtonThanhToan.Text = "Thanh toán";
-            this.CTButtonThanhToan.TextColor = System.Drawing.Color.White;
-            this.CTButtonThanhToan.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.CTButtonThanhToan);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(39, 488);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 62);
-            this.panel1.TabIndex = 16;
-            // 
             // FormThongTinPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,6 +471,8 @@
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThongTinPhong";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormThongTinPhong";
             this.Activated += new System.EventHandler(this.FormThongTinPhong_Activated);
@@ -478,6 +480,8 @@
             this.Resize += new System.EventHandler(this.FormThongTinPhong_Resize);
             this.StyleChanged += new System.EventHandler(this.FormThongTinPhong_SizeChanged);
             this.PanelBackground.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.PanelChuaButtonDatPhongNay.ResumeLayout(false);
             this.PanelChuaButtonNhanPhong.ResumeLayout(false);
             this.PanelChuaButtonLuu.ResumeLayout(false);
@@ -493,8 +497,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).EndInit();
             this.PanelBackgroundTop.ResumeLayout(false);
             this.PanelBackgroundTop.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
