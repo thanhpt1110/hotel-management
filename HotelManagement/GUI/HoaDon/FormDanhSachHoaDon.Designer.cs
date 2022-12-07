@@ -55,7 +55,7 @@
             this.LabelChonNgay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelChonNgay.AutoSize = true;
             this.LabelChonNgay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChonNgay.Location = new System.Drawing.Point(1068, 19);
+            this.LabelChonNgay.Location = new System.Drawing.Point(1050, 19);
             this.LabelChonNgay.Name = "LabelChonNgay";
             this.LabelChonNgay.Size = new System.Drawing.Size(70, 17);
             this.LabelChonNgay.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(73, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 3;
@@ -112,7 +112,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grid.DefaultCellStyle = dataGridViewCellStyle2;
             this.grid.EnableHeadersVisualStyles = false;
-            this.grid.Location = new System.Drawing.Point(85, 107);
+            this.grid.Location = new System.Drawing.Point(70, 100);
             this.grid.MultiSelect = false;
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
@@ -206,7 +206,7 @@
             this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExport.ForeColor = System.Drawing.Color.Black;
-            this.buttonExport.Location = new System.Drawing.Point(845, 26);
+            this.buttonExport.Location = new System.Drawing.Point(820, 30);
             this.buttonExport.Name = "buttonExport";
             this.buttonExport.Size = new System.Drawing.Size(150, 40);
             this.buttonExport.TabIndex = 32;
@@ -224,7 +224,7 @@
             this.ctPanel1.GradientAngle = 90F;
             this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel1.Location = new System.Drawing.Point(66, 98);
+            this.ctPanel1.Location = new System.Drawing.Point(45, 95);
             this.ctPanel1.Name = "ctPanel1";
             this.ctPanel1.Size = new System.Drawing.Size(1142, 704);
             this.ctPanel1.TabIndex = 30;
@@ -239,7 +239,7 @@
             this.CTTextBoxTimTheoCCCD.BorderSize = 1;
             this.CTTextBoxTimTheoCCCD.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxTimTheoCCCD.IsFocused = false;
-            this.CTTextBoxTimTheoCCCD.Location = new System.Drawing.Point(66, 29);
+            this.CTTextBoxTimTheoCCCD.Location = new System.Drawing.Point(45, 30);
             this.CTTextBoxTimTheoCCCD.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxTimTheoCCCD.Multiline = false;
             this.CTTextBoxTimTheoCCCD.Name = "CTTextBoxTimTheoCCCD";
@@ -261,7 +261,7 @@
             this.CTDatePickerChonNgayHD.CustomFormat = "dd MMMM, yyyy";
             this.CTDatePickerChonNgayHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.CTDatePickerChonNgayHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CTDatePickerChonNgayHD.Location = new System.Drawing.Point(1022, 29);
+            this.CTDatePickerChonNgayHD.Location = new System.Drawing.Point(1001, 30);
             this.CTDatePickerChonNgayHD.MinimumSize = new System.Drawing.Size(0, 35);
             this.CTDatePickerChonNgayHD.Name = "CTDatePickerChonNgayHD";
             this.CTDatePickerChonNgayHD.Size = new System.Drawing.Size(186, 35);
