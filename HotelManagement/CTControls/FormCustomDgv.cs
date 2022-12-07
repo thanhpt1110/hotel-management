@@ -25,6 +25,7 @@ namespace HotelManagement
             Image details = Properties.Resources.details;
             Image delete = Properties.Resources.delete;
 
+            //Test
             grid.Rows.Add(new object[] { PT, "PT001", "11/10/2003 19:45:00", "Phan Tuấn Thành", "Phan Tuấn Thành", details, delete });
             grid.Rows.Add(new object[] { PT, "PT001", "11/10/2003 19:45:00", "Phan Tuấn Thành", "Phan Tuấn Thành", details, delete });
             grid.Rows.Add(new object[] { PT, "PT001", "11/10/2003 19:45:00", "Phan Tuấn Thành", "Phan Tuấn Thành", details, delete });
