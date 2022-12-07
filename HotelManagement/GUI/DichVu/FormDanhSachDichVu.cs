@@ -31,7 +31,6 @@ namespace HotelManagement.GUI
             Image edit = Properties.Resources.edit;
             Image delete = Properties.Resources.delete;
 
-            //Test 
             grid.Rows.Add(new object[] { DV, "DV001", "Pepsi", "10,000", "100", edit, delete });
             grid.Rows.Add(new object[] { DV, "DV002", "Mì xào", "20,000", "55", edit, delete });
             grid.Rows.Add(new object[] { DV, "DV003", "Bún bò", "25,000", "20", edit, delete });
