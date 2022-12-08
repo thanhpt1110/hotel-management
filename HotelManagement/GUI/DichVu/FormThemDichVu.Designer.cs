@@ -37,10 +37,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ctTextBox2 = new HotelManagement.CTControls.CTTextBox();
+            this.ctTextBoxTenDV = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxDonGia = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxSoLuong = new HotelManagement.CTControls.CTTextBox();
-            this.ctTextBox4 = new HotelManagement.CTControls.CTTextBox();
+            this.ctTextBoxMoTa = new HotelManagement.CTControls.CTTextBox();
             this.PanelBackground.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -103,6 +103,7 @@
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
+            this.CTButtonCapNhat.Click += new System.EventHandler(this.CTButtonCapNhat_Click);
             // 
             // LabelThemDichVu
             // 
@@ -121,10 +122,10 @@
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.ctTextBox2);
+            this.panel1.Controls.Add(this.ctTextBoxTenDV);
             this.panel1.Controls.Add(this.CTTextBoxDonGia);
             this.panel1.Controls.Add(this.CTTextBoxSoLuong);
-            this.panel1.Controls.Add(this.ctTextBox4);
+            this.panel1.Controls.Add(this.ctTextBoxMoTa);
             this.panel1.Location = new System.Drawing.Point(53, 60);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(424, 404);
@@ -170,28 +171,28 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // ctTextBox2
+            // ctTextBoxTenDV
             // 
-            this.ctTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.ctTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.ctTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
-            this.ctTextBox2.BorderRadius = 0;
-            this.ctTextBox2.BorderSize = 2;
-            this.ctTextBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctTextBox2.IsFocused = false;
-            this.ctTextBox2.Location = new System.Drawing.Point(107, 41);
-            this.ctTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.ctTextBox2.Multiline = false;
-            this.ctTextBox2.Name = "ctTextBox2";
-            this.ctTextBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.ctTextBox2.PasswordChar = false;
-            this.ctTextBox2.PlaceholderColor = System.Drawing.Color.DimGray;
-            this.ctTextBox2.PlaceholderText = "Tên dịch vụ";
-            this.ctTextBox2.ReadOnly = false;
-            this.ctTextBox2.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBox2.TabIndex = 4;
-            this.ctTextBox2.Texts = "";
-            this.ctTextBox2.UnderlineedStyle = true;
+            this.ctTextBoxTenDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ctTextBoxTenDV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.ctTextBoxTenDV.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
+            this.ctTextBoxTenDV.BorderRadius = 0;
+            this.ctTextBoxTenDV.BorderSize = 2;
+            this.ctTextBoxTenDV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctTextBoxTenDV.IsFocused = false;
+            this.ctTextBoxTenDV.Location = new System.Drawing.Point(107, 41);
+            this.ctTextBoxTenDV.Margin = new System.Windows.Forms.Padding(4);
+            this.ctTextBoxTenDV.Multiline = false;
+            this.ctTextBoxTenDV.Name = "ctTextBoxTenDV";
+            this.ctTextBoxTenDV.Padding = new System.Windows.Forms.Padding(7);
+            this.ctTextBoxTenDV.PasswordChar = false;
+            this.ctTextBoxTenDV.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.ctTextBoxTenDV.PlaceholderText = "Tên dịch vụ";
+            this.ctTextBoxTenDV.ReadOnly = false;
+            this.ctTextBoxTenDV.Size = new System.Drawing.Size(250, 35);
+            this.ctTextBoxTenDV.TabIndex = 4;
+            this.ctTextBoxTenDV.Texts = "";
+            this.ctTextBoxTenDV.UnderlineedStyle = true;
             // 
             // CTTextBoxDonGia
             // 
@@ -215,6 +216,7 @@
             this.CTTextBoxDonGia.TabIndex = 4;
             this.CTTextBoxDonGia.Texts = "";
             this.CTTextBoxDonGia.UnderlineedStyle = true;
+            this.CTTextBoxDonGia._TextChanged += new System.EventHandler(this.CTTextBoxDonGia__TextChanged);
             // 
             // CTTextBoxSoLuong
             // 
@@ -238,29 +240,30 @@
             this.CTTextBoxSoLuong.TabIndex = 4;
             this.CTTextBoxSoLuong.Texts = "";
             this.CTTextBoxSoLuong.UnderlineedStyle = true;
+            this.CTTextBoxSoLuong._TextChanged += new System.EventHandler(this.CTTextBoxSoLuong__TextChanged);
             // 
-            // ctTextBox4
+            // ctTextBoxMoTa
             // 
-            this.ctTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.ctTextBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.ctTextBox4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
-            this.ctTextBox4.BorderRadius = 0;
-            this.ctTextBox4.BorderSize = 2;
-            this.ctTextBox4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctTextBox4.IsFocused = false;
-            this.ctTextBox4.Location = new System.Drawing.Point(107, 304);
-            this.ctTextBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.ctTextBox4.Multiline = false;
-            this.ctTextBox4.Name = "ctTextBox4";
-            this.ctTextBox4.Padding = new System.Windows.Forms.Padding(7);
-            this.ctTextBox4.PasswordChar = false;
-            this.ctTextBox4.PlaceholderColor = System.Drawing.Color.DimGray;
-            this.ctTextBox4.PlaceholderText = "Mô tả";
-            this.ctTextBox4.ReadOnly = false;
-            this.ctTextBox4.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBox4.TabIndex = 4;
-            this.ctTextBox4.Texts = "";
-            this.ctTextBox4.UnderlineedStyle = true;
+            this.ctTextBoxMoTa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ctTextBoxMoTa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.ctTextBoxMoTa.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
+            this.ctTextBoxMoTa.BorderRadius = 0;
+            this.ctTextBoxMoTa.BorderSize = 2;
+            this.ctTextBoxMoTa.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctTextBoxMoTa.IsFocused = false;
+            this.ctTextBoxMoTa.Location = new System.Drawing.Point(107, 304);
+            this.ctTextBoxMoTa.Margin = new System.Windows.Forms.Padding(4);
+            this.ctTextBoxMoTa.Multiline = false;
+            this.ctTextBoxMoTa.Name = "ctTextBoxMoTa";
+            this.ctTextBoxMoTa.Padding = new System.Windows.Forms.Padding(7);
+            this.ctTextBoxMoTa.PasswordChar = false;
+            this.ctTextBoxMoTa.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.ctTextBoxMoTa.PlaceholderText = "Mô tả";
+            this.ctTextBoxMoTa.ReadOnly = false;
+            this.ctTextBoxMoTa.Size = new System.Drawing.Size(250, 35);
+            this.ctTextBoxMoTa.TabIndex = 4;
+            this.ctTextBoxMoTa.Texts = "";
+            this.ctTextBoxMoTa.UnderlineedStyle = true;
             // 
             // FormThemDichVu
             // 
@@ -301,8 +304,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CTControls.CTTextBox ctTextBox4;
-        private CTControls.CTTextBox ctTextBox2;
+        private CTControls.CTTextBox ctTextBoxMoTa;
+        private CTControls.CTTextBox ctTextBoxTenDV;
         private CTControls.CTTextBox CTTextBoxDonGia;
         private CTControls.CTTextBox CTTextBoxSoLuong;
     }

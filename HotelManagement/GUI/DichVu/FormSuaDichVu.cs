@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HotelManagement.BUS;
+using HotelManagement.CTControls;
+using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +21,8 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        private DichVu dichVu;
+        FormDanhSachDichVu formDanhSachDichVu;
         //Constructor
         public FormSuaDichVu()
         {
@@ -27,6 +31,32 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
+        public FormSuaDichVu(DichVu dichVu,FormDanhSachDichVu formDanhSachDichVu)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.dichVu = dichVu;
+            this.formDanhSachDichVu = formDanhSachDichVu;
+            InitializeComponent();
+            LoadDV();
+
+        }
+
+        public void LoadDV()
+        {
+
+            this.CTTextBoxDonGia.RemovePlaceholder();
+            this.ctTextBoxTenDV.RemovePlaceholder();
+            this.ctTextBoxMoTa.RemovePlaceholder();
+            this.CTTextBoxSoLuong.RemovePlaceholder();
+            this.CTTextBoxDonGia.Texts = dichVu.DonGia.ToString("#,#");
+            this.ctTextBoxTenDV.Texts = dichVu.TenDV;
+            this.ctTextBoxMoTa.Texts = dichVu.LoaiDV;
+            this.CTTextBoxSoLuong.Texts = dichVu.SLConLai.ToString();
+
+        }
+
         //Control Box
 
         //Form Move
@@ -188,6 +218,51 @@ namespace HotelManagement.GUI
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(dialogResult == DialogResult.Yes)
+            {
+                this.dichVu.TenDV = this.ctTextBoxTenDV.Texts;
+                this.dichVu.SLConLai = int.Parse(this.CTTextBoxSoLuong.Texts);
+                this.dichVu.DonGia = decimal.Parse(this.CTTextBoxDonGia.Texts.Trim(','));
+                dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
+                DichVuBUS.Instance.UpdateORAdd(dichVu);
+                this.formDanhSachDichVu.LoadALLDV();
+                this.Close();
+            }    
+        }
+
+        private void CTTextBoxDonGia__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            textBox.KeyPress += TextBox_KeyPress;
+        }
+
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void CTTextBoxSoLuong__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            textBox.KeyPress += TextBox_KeyPress1;
+        }
+
+        private void TextBox_KeyPress1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
