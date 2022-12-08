@@ -1,4 +1,5 @@
 ﻿using HotelManagement.CTControls;
+using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BUS;
 
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachLoaiPhong : Form
     {
+        private Image LP = Properties.Resources.Giuong;
+        private Image edit = Properties.Resources.edit;
+        private Image delete = Properties.Resources.delete;
         public FormDanhSachLoaiPhong()
         {
             InitializeComponent();
@@ -27,15 +32,25 @@ namespace HotelManagement.GUI
         private void FormDanhSachLoaiPhong_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            Image LP = Properties.Resources.Giuong;
-            Image edit = Properties.Resources.edit;
-            Image delete = Properties.Resources.delete;
 
-            grid.Rows.Add(new object[] { LP, "LP001", "Phòng đơn", "1", "2", "100,000", "50,000", edit, delete });
+            LoadAllDataGrid();
+            /*grid.Rows.Add(new object[] { LP, "LP001", "Phòng đơn", "1", "2", "100,000", "50,000", edit, delete });
             grid.Rows.Add(new object[] { LP, "LP002", "Phòng đôi", "2", "4", "200,000", "100,000", edit, delete });
-            grid.Rows.Add(new object[] { LP, "LP003", "Phòng VIP", "3", "8", "400,000", "200,000", edit, delete });
+            grid.Rows.Add(new object[] { LP, "LP003", "Phòng VIP", "3", "8", "400,000", "200,000", edit, delete });*/
         }
 
+        public void LoadAllDataGrid()
+        {
+            LoadDataGrid(LoaiPhongBUS.Instance.GetLoaiPhongs());
+        }    
+        private void LoadDataGrid(List<LoaiPhong> loaiPhongs)
+        {
+            grid.Rows.Clear();
+            foreach(LoaiPhong loaiPhong in loaiPhongs)
+            {
+                grid.Rows.Add(LP, loaiPhong.MaLPH, loaiPhong.TenLPH, loaiPhong.SoGiuong, loaiPhong.SoNguoiToiDa, loaiPhong.GiaNgay.ToString("#,#"), loaiPhong.GiaGio.ToString("#,#"), edit, delete);
+            }    
+        }    
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try

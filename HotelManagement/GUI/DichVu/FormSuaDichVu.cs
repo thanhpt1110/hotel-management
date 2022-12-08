@@ -222,7 +222,12 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == "" || this.CTTextBoxDonGia.Texts == "" || this.ctTextBoxMoTa.Texts == "")
+            {            
+                MessageBox.Show("Bạn vui lòng điền đầy đủ thông tin", "THÔNG BÁO");
+                return;
+            }
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if(dialogResult == DialogResult.Yes)
             {
                 this.dichVu.TenDV = this.ctTextBoxTenDV.Texts;

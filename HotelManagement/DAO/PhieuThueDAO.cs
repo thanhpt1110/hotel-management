@@ -1,6 +1,7 @@
 ﻿using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,14 @@ namespace HotelManagement.DAO
         public List<PhieuThue> GetPhieuThues()
         {
             return db.PhieuThues.ToList();
+        }
+        public PhieuThue GetPhieuThue(string MaPT)
+        {
+            return db.PhieuThues.Find(MaPT);
+        }
+        public void UpdatePhieuThue(PhieuThue phieuThue)
+        {
+            db.PhieuThues.AddOrUpdate(phieuThue);
         }
     }
 }

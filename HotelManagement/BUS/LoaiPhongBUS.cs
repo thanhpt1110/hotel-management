@@ -25,5 +25,13 @@ namespace HotelManagement.BUS
         {
             return LoaiPhongDAO.Instance.getLoaiPhong(MaLP);
         }
+        public void AddOrUpdate(LoaiPhong loaiPhong)
+        {
+            LoaiPhongDAO.Instance.AddOrUpdate(loaiPhong);
+        }
+        public void RemoveLoaiPhong(LoaiPhong loaiPhong)
+        {
+            LoaiPhongDAO.Instance.RemoveLoaiPhong(loaiPhong);
+        }
     }
 }

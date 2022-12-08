@@ -1,9 +1,12 @@
-﻿using HotelManagement.CTControls;
+﻿using HotelManagement.BUS;
+using HotelManagement.CTControls;
+using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +16,9 @@ namespace HotelManagement.GUI
 {
     public partial class FormDanhSachNhanVien : Form
     {
+        private Image NV = Properties.Resources.NhanVien;
+        private Image edit = Properties.Resources.edit;
+        private Image delete = Properties.Resources.delete;
         public FormDanhSachNhanVien()
         {
             InitializeComponent();
@@ -29,16 +35,26 @@ namespace HotelManagement.GUI
         private void FormDanhSachNhanVien_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            Image NV = Properties.Resources.NhanVien;
-            Image edit = Properties.Resources.edit;
-            Image delete = Properties.Resources.delete;
 
-            grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Giám đốc", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
+            LoadAllGrid();
+           /* grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Giám đốc", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
             grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Quản lý", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
             grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Nhân viên", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
-            grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Giám đốc", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
+            grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Giám đốc", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });*/
         }
-
+        public void LoadAllGrid()
+        {
+            LoadGrid(NhanVienBUS.Instance.GetNhanViens());
+        }    
+        private void LoadGrid(List<NhanVien> nhanViens)
+        {
+            grid.Rows.Clear();
+            foreach(NhanVien nhanvien in nhanViens)
+            {
+                
+                grid.Rows.Add(NV, nhanvien.MaNV, nhanvien.TenNV, nhanvien.ChucVu, String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh), nhanvien.GioiTinh, nhanvien.SDT, nhanvien.Email, edit, delete);
+            }    
+        }
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try

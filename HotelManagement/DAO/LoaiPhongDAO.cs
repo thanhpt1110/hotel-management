@@ -1,6 +1,7 @@
 ﻿using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,16 @@ namespace HotelManagement.DAO
         public LoaiPhong getLoaiPhong(string MaLP)
         {
             return db.LoaiPhongs.Find(MaLP);
+        }
+        public void AddOrUpdate(LoaiPhong loaiPhong)
+        {
+            db.LoaiPhongs.AddOrUpdate(loaiPhong);
+            db.SaveChanges();
+        }
+        public void RemoveLoaiPhong(LoaiPhong loaiPhong)
+        {
+            db.LoaiPhongs.Remove(loaiPhong);
+            db.SaveChanges();
         }
     }
 }

@@ -203,22 +203,28 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            DichVu dichVu = new DichVu();
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dialogResult == DialogResult.Yes)
+
+            if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == "" || this.CTTextBoxDonGia.Texts == "" || this.ctTextBoxMoTa.Texts == "")
             {
-             
+                MessageBox.Show("Bạn vui lòng điền đầy đủ thông tin", "THÔNG BÁO");
+                return;
+            }
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DichVu dichVu = new DichVu();
                     dichVu.TenDV = this.ctTextBoxTenDV.Texts;
                     dichVu.SLConLai = int.Parse(this.CTTextBoxSoLuong.Texts);
                     dichVu.DonGia = decimal.Parse(this.CTTextBoxDonGia.Texts);
                     dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
-                    dichVu.MaDV = DichVuBUS.Instance.GetMaDVNext(); 
-                
+                    dichVu.MaDV = DichVuBUS.Instance.GetMaDVNext();
 
-                DichVuBUS.Instance.UpdateORAdd(dichVu);
-                this.formDanhSachDichVu.LoadALLDV();
-                this.Close();
-            }
+
+                    DichVuBUS.Instance.UpdateORAdd(dichVu);
+                    this.formDanhSachDichVu.LoadALLDV();
+                    this.Close();
+                }
+            
         }
 
         private void CTTextBoxDonGia__TextChanged(object sender, EventArgs e)

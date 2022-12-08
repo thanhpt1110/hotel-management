@@ -1,4 +1,5 @@
 ﻿using HotelManagement.CTControls;
+using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BUS;
 
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachTaiKhoan : Form
     {
+        private Image TK = Properties.Resources.TaiKhoan;
+        private Image edit = Properties.Resources.edit;
+        private Image delete = Properties.Resources.delete;
         public FormDanhSachTaiKhoan()
         {
             InitializeComponent();
@@ -29,16 +34,25 @@ namespace HotelManagement.GUI
         private void FormDanhSachTaiKhoan_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            Image TK = Properties.Resources.TaiKhoan;
-            Image edit = Properties.Resources.edit;
-            Image delete = Properties.Resources.delete;
 
-            grid.Rows.Add(new object[] { TK, "admin", "Phan Tuấn Thành", "1", edit, delete });
+            LoadAllGrid();
+           /* grid.Rows.Add(new object[] { TK, "admin", "Phan Tuấn Thành", "1", edit, delete });
             grid.Rows.Add(new object[] { TK, "admin2", "Phan Tuấn Thành", "2", edit, delete });
             grid.Rows.Add(new object[] { TK, "xyz123", "Phan Tuấn Thành", "3", edit, delete });
-            grid.Rows.Add(new object[] { TK, "abc123", "Phan Tuấn Thành", "3", edit, delete });
+            grid.Rows.Add(new object[] { TK, "abc123", "Phan Tuấn Thành", "3", edit, delete });*/
         }
-
+        public void LoadAllGrid()
+        {
+            LoadGrid(TaiKhoanBUS.Instance.GetTaiKhoans());
+        }   
+        private void LoadGrid(List<TaiKhoan> taiKhoans)
+        {
+            grid.Rows.Clear();
+            foreach(TaiKhoan taiKhoan in taiKhoans)
+            {
+                grid.Rows.Add(TK, taiKhoan.TenTK, taiKhoan.NhanVien.TenNV, taiKhoan.CapDoQuyen, edit, delete);
+            }    
+        }
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try

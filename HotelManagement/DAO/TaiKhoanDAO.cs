@@ -30,5 +30,9 @@ namespace HotelManagement.DAO
             TaiKhoan tk = db.TaiKhoans.Find(username);
             return tk.CapDoQuyen;
         }
+        public List<TaiKhoan> GetTaiKhoans()
+        {
+            return db.TaiKhoans.ToList();
+        }
     }
 }

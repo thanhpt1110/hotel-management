@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HotelManagement.DAO;
+using HotelManagement.DTO;
+
 namespace HotelManagement.BUS
 {
     internal class TaiKhoanBUS
@@ -16,13 +18,17 @@ namespace HotelManagement.BUS
         }
         private TaiKhoanBUS() { }
 
-        public bool checkLogin(string username,string password)
+        public bool checkLogin(string username, string password)
         {
             return TaiKhoanDAO.Instance.CheckLogin(username, password);
         }
         public int getQuyenTruyCap(string username)
         {
             return TaiKhoanDAO.Instance.GetQuyenTruyCap(username);
+        }
+        public List<TaiKhoan> GetTaiKhoans()
+        {
+            return TaiKhoanDAO.Instance.GetTaiKhoans();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HotelManagement.CTControls;
+using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,12 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BUS;
 
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachKhachHang : Form
     {
-        
+        private Image KH = Properties.Resources.KhachHang;
+        private Image edit = Properties.Resources.edit;
+        private Image delete = Properties.Resources.delete;
         public FormDanhSachKhachHang()
         {
             InitializeComponent();
@@ -27,15 +31,31 @@ namespace HotelManagement.GUI
         private void FormDanhSachKhachHang_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            Image KH = Properties.Resources.KhachHang;
-            Image edit = Properties.Resources.edit;
-            Image delete = Properties.Resources.delete;
 
-            grid.Rows.Add(new object[] { KH, "KH001", "Phan Tuấn Thành", "123456789101", "0956093276", "Việt Nam", "Nam", edit, delete });
+            LoadAllGrid();
+            /*grid.Rows.Add(new object[] { KH, "KH001", "Phan Tuấn Thành", "123456789101", "0956093276", "Việt Nam", "Nam", edit, delete });
             grid.Rows.Add(new object[] { KH, "KH002", "Trần Văn C", "123456789101", "0956093276", "Singapore", "Nữ", edit, delete });
             grid.Rows.Add(new object[] { KH, "KH003", "Nguyễn Thị B", "123456789101", "0956093276", "Thái Lan", "Nữ", edit, delete });
-            grid.Rows.Add(new object[] { KH, "KH004", "Nguyễn Văn A", "123456789101", "0956093276", "Mỹ", "Nam", edit, delete });
+            grid.Rows.Add(new object[] { KH, "KH004", "Nguyễn Văn A", "123456789101", "0956093276", "Mỹ", "Nam", edit, delete });*/
         }
+        public void LoadAllGrid()
+        {
+            LoadGrid(KhachHangBUS.Instance.GetKhachHangs());
+                
+        }    
+        private void LoadGrid(List<KhachHang> khachHangs)
+        {
+            grid.Rows.Clear();
+            foreach (KhachHang khachHang in khachHangs)
+            {
+                grid.Rows.Add(this.KH, khachHang.MaKH, khachHang.TenKH, khachHang.CCCD_Passport, khachHang.SDT, khachHang.QuocTich, khachHang.GioiTinh, edit, delete);
+            }    
+        }
+        private void LoadGridWithCCCD()
+        {
+            List<KhachHang> khachHangs = KhachHangBUS.Instance.FindKhachHangWithName(this.CTTextBoxTimKhachHangTheoTen.Texts);
+             LoadGrid(khachHangs);
+        }    
 
         private void buttonExport_Click(object sender, EventArgs e)
         {

@@ -18,5 +18,25 @@ namespace HotelManagement.BUS
             private set { instance = value; }
         }
         private KhachHangBUS() { }
+        public List<KhachHang> GetKhachHangs()
+        {
+            return KhachHangDAO.Instance.GetKhachHangs();
+        }
+        public KhachHang FindKhachHang(string MaKH)
+        {
+            return KhachHangDAO.Instance.FindKhachHang(MaKH);
+        }
+        public void UpdateOrAdd(KhachHang khachHang)
+        {
+            KhachHangDAO.Instance.UpdateOrAdd(khachHang);
+        }
+        public void RemoveKH(KhachHang khachHang)
+        {
+            KhachHangDAO.Instance.RemoveKH(khachHang);
+        }
+        public List<KhachHang> FindKhachHangWithName(string TenKH)
+        {
+            return KhachHangDAO.Instance.FindKhachHangWithName(TenKH);
+        }
     }
 }
