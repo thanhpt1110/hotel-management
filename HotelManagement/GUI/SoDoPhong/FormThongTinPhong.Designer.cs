@@ -58,6 +58,9 @@
             this.PictureBoxTen = new System.Windows.Forms.PictureBox();
             this.PanelBackgroundTop = new System.Windows.Forms.Panel();
             this.LabelMaPhong = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.LabelGhiChu = new System.Windows.Forms.Label();
+            this.TextBoxGhiChu = new System.Windows.Forms.TextBox();
             this.PanelBackground.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNgayCheckin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).BeginInit();
             this.PanelBackgroundTop.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelBackground
@@ -275,6 +279,7 @@
             // PanelChuaThongTin
             // 
             this.PanelChuaThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.PanelChuaThongTin.Controls.Add(this.panel4);
             this.PanelChuaThongTin.Controls.Add(this.LabelSoNguoi);
             this.PanelChuaThongTin.Controls.Add(this.LabelThoiGianThue);
             this.PanelChuaThongTin.Controls.Add(this.LabelNgayCheckin);
@@ -340,7 +345,7 @@
             this.panel2.Controls.Add(this.LabelCapNhatTinhTrangPhong);
             this.panel2.Location = new System.Drawing.Point(468, 123);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(369, 270);
+            this.panel2.Size = new System.Drawing.Size(369, 177);
             this.panel2.TabIndex = 2;
             // 
             // ComboBoxTinhTrangDonDep
@@ -351,7 +356,7 @@
             this.ComboBoxTinhTrangDonDep.Items.AddRange(new object[] {
             "  Đã dọn dẹp",
             "  Đang dọn dẹp"});
-            this.ComboBoxTinhTrangDonDep.Location = new System.Drawing.Point(129, 168);
+            this.ComboBoxTinhTrangDonDep.Location = new System.Drawing.Point(129, 133);
             this.ComboBoxTinhTrangDonDep.Name = "ComboBoxTinhTrangDonDep";
             this.ComboBoxTinhTrangDonDep.Size = new System.Drawing.Size(192, 29);
             this.ComboBoxTinhTrangDonDep.TabIndex = 4;
@@ -367,7 +372,7 @@
             "  Phòng đang thuê",
             "  Phòng trống",
             "  Phòng đang sửa chữa"});
-            this.ComboBoxTinhTrangPhong.Location = new System.Drawing.Point(129, 63);
+            this.ComboBoxTinhTrangPhong.Location = new System.Drawing.Point(129, 51);
             this.ComboBoxTinhTrangPhong.Name = "ComboBoxTinhTrangPhong";
             this.ComboBoxTinhTrangPhong.Size = new System.Drawing.Size(192, 29);
             this.ComboBoxTinhTrangPhong.TabIndex = 4;
@@ -377,7 +382,7 @@
             // 
             this.LabelCapNhatTinhTrangDonDep.AutoSize = true;
             this.LabelCapNhatTinhTrangDonDep.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCapNhatTinhTrangDonDep.Location = new System.Drawing.Point(18, 117);
+            this.LabelCapNhatTinhTrangDonDep.Location = new System.Drawing.Point(18, 96);
             this.LabelCapNhatTinhTrangDonDep.Name = "LabelCapNhatTinhTrangDonDep";
             this.LabelCapNhatTinhTrangDonDep.Size = new System.Drawing.Size(254, 25);
             this.LabelCapNhatTinhTrangDonDep.TabIndex = 3;
@@ -387,7 +392,7 @@
             // 
             this.LabelCapNhatTinhTrangPhong.AutoSize = true;
             this.LabelCapNhatTinhTrangPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCapNhatTinhTrangPhong.Location = new System.Drawing.Point(18, 17);
+            this.LabelCapNhatTinhTrangPhong.Location = new System.Drawing.Point(22, 13);
             this.LabelCapNhatTinhTrangPhong.Name = "LabelCapNhatTinhTrangPhong";
             this.LabelCapNhatTinhTrangPhong.Size = new System.Drawing.Size(239, 25);
             this.LabelCapNhatTinhTrangPhong.TabIndex = 3;
@@ -399,7 +404,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(42, 123);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(360, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(362, 283);
             this.dataGridView1.TabIndex = 1;
             // 
             // PictureBoxSoNguoi
@@ -462,6 +467,38 @@
             this.LabelMaPhong.TabIndex = 4;
             this.LabelMaPhong.Text = "Mã Phòng";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel4.Controls.Add(this.TextBoxGhiChu);
+            this.panel4.Controls.Add(this.LabelGhiChu);
+            this.panel4.Location = new System.Drawing.Point(468, 317);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(369, 89);
+            this.panel4.TabIndex = 4;
+            // 
+            // LabelGhiChu
+            // 
+            this.LabelGhiChu.AutoSize = true;
+            this.LabelGhiChu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelGhiChu.Location = new System.Drawing.Point(5, 5);
+            this.LabelGhiChu.Name = "LabelGhiChu";
+            this.LabelGhiChu.Size = new System.Drawing.Size(68, 21);
+            this.LabelGhiChu.TabIndex = 0;
+            this.LabelGhiChu.Text = "Ghi chú:";
+            // 
+            // TextBoxGhiChu
+            // 
+            this.TextBoxGhiChu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TextBoxGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxGhiChu.Location = new System.Drawing.Point(77, 6);
+            this.TextBoxGhiChu.Multiline = true;
+            this.TextBoxGhiChu.Name = "TextBoxGhiChu";
+            this.TextBoxGhiChu.Size = new System.Drawing.Size(281, 80);
+            this.TextBoxGhiChu.TabIndex = 1;
+            this.TextBoxGhiChu.Text = "Ghi chú nha cả nhà";
+            // 
             // FormThongTinPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,6 +534,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).EndInit();
             this.PanelBackgroundTop.ResumeLayout(false);
             this.PanelBackgroundTop.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -533,5 +572,8 @@
         private CTControls.CTButton CTButtonThemDichVu;
         private System.Windows.Forms.Panel panel1;
         private CTControls.CTButton CTButtonThanhToan;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox TextBoxGhiChu;
+        private System.Windows.Forms.Label LabelGhiChu;
     }
 }
