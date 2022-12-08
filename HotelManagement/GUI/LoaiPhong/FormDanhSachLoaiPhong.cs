@@ -27,7 +27,7 @@ namespace HotelManagement.GUI
         private void FormDanhSachLoaiPhong_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            Image LP = Properties.Resources.Giuong;
+            Image LP = Properties.Resources.LoaiPhong;
             Image edit = Properties.Resources.edit;
             Image delete = Properties.Resources.delete;
 
