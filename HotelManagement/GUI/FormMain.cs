@@ -671,6 +671,7 @@ namespace HotelManagement
             ButtonQuanLyTaiKhoan.Text = "    Quản lý tài khoản";
             ButtonQuanLyNhanVien.Text = "    Quản lý nhân viên";
             ButtonThongKe.Text = "    Thống kê";
+            PanelUser.Visible = true;
         }
         private void NotDisplayTextMenu()
         {
@@ -689,6 +690,7 @@ namespace HotelManagement
             ButtonQuanLyTaiKhoan.Text = "";
             ButtonQuanLyNhanVien.Text = "";
             ButtonThongKe.Text = "";
+            PanelUser.Visible = false;
         }
         private bool isDisplayed = true;
         private void PictureBoxMenu_Click(object sender, EventArgs e)
