@@ -202,5 +202,74 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+
+        private void FormDatPhong_Load(object sender, EventArgs e)
+        {
+            // Custom Dgv when loading Form
+            DataGridView grid1 = gridPhongTrong;
+            DataGridView grid2 = gridPhongDaChon;
+            grid1.ColumnHeadersDefaultCellStyle.Font = new Font(grid1.Font, FontStyle.Bold);
+            grid2.ColumnHeadersDefaultCellStyle.Font = new Font(grid2.Font, FontStyle.Bold);
+                
+            Image Add = Properties.Resources.Add; // Image for Button Thêm
+            Image Del = Properties.Resources.delete1; // Image for Button Hủy
+            grid1.Rows.Add(new object[] { "P101", "Phòng vip", Add });
+            grid1.Rows.Add(new object[] { "P101", "Phòng vip", Add });
+
+            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", Del });
+            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", Del });
+            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", Del });
+            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", Del });
+        }
+
+        private void gridPhongTrong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int x = e.ColumnIndex, y = e.RowIndex;
+            if (y >= 0 && x == 2)
+            {
+                // If click Add new room
+                MessageBox.Show("Add new room");
+            }
+        }
+
+        private void gridPhongTrong_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView grid = gridPhongTrong;
+            int curCol = e.ColumnIndex;
+            if (curCol == 2)
+            {
+                if (e.RowIndex >= 0)
+                    grid.Cursor = Cursors.Hand;
+                else if (grid.CurrentCell.Value == DBNull.Value)
+                    grid.Cursor = Cursors.Default;
+            }
+            else
+                grid.Cursor = Cursors.Default;
+        }
+
+        private void gridPhongDaChon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int x = e.ColumnIndex, y = e.RowIndex;
+            if (y >= 0 && x == 4)
+            {
+                // If click Add new room
+                MessageBox.Show("Delete this room");
+            }
+        }
+
+        private void gridPhongDaChon_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView grid = gridPhongDaChon;
+            int curCol = e.ColumnIndex;
+            if (curCol == 4)
+            {
+                if (e.RowIndex >= 0)
+                    grid.Cursor = Cursors.Hand;
+                else if (grid.CurrentCell.Value == DBNull.Value)
+                    grid.Cursor = Cursors.Default;
+            }
+            else
+                grid.Cursor = Cursors.Default;
+        }
     }
 }

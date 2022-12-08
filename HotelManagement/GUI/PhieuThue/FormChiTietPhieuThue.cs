@@ -197,5 +197,14 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+
+        private void FormChiTietPhieuThue_Load(object sender, EventArgs e)
+        {
+            grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
+
+            grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
+            grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
+            grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
+        }
     }
 }
