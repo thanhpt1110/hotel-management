@@ -74,6 +74,7 @@
             this.PanelBackground.Size = new System.Drawing.Size(538, 615);
             this.PanelBackground.TabIndex = 1;
             this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
+            this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
             // CTButtonThoat
             // 
