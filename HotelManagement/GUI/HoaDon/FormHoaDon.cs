@@ -60,12 +60,12 @@ namespace HotelManagement.GUI
                 dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
                 decimal TongTien = dichvu.DonGia * ctdv.SL;
                 TongTienHD += TongTien;
-                DataGridViewDichVu.Rows.Add(dichvu.TenDV, dichvu.DonGia.ToString("#,#"), ctdv.SL.ToString(), TongTien.ToString("#,#"));
+                DataGridViewDichVu.Rows.Add(dichvu.TenDV, dichvu.DonGia.ToString("#,#"), ctdv.SL, TongTien.ToString("#,#"));
             }
             
             
             decimal Tongtienphong = loaiphong.GiaNgay * days;
-            DataGridViewDichVu.Rows.Add(days, loaiphong.GiaNgay.ToString(), this.TextBoxSoNgay.Text, Tongtienphong.ToString("#,#"));
+            DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));
             this.LabelTongTien.Text += Tongtienphong.ToString("#,#");
 
         }
