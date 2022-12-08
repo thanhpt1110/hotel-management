@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.CTControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,92 @@ namespace HotelManagement.GUI
 
         private void CTButtonDatPhong_Click(object sender, EventArgs e)
         {
-            FormDatPhong formDatPhong = new FormDatPhong();
-            formDatPhong.ShowDialog();
+            using (FormDatPhong formDatPhong = new FormDatPhong())
+                formDatPhong.ShowDialog();
+        }
+
+        private void FormDanhSachPhieuThue_Load(object sender, EventArgs e)
+        {
+            grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
+            Image PT = Properties.Resources.PhieuThueDgv;
+            Image details = Properties.Resources.details;
+
+            grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
+            grid.Rows.Add(new object[] { PT, "PT002", "Nguyễn Phúc Bình", "10/11/2003 15:45:00", "Nguyễn Văn Anh",  details});
+            grid.Rows.Add(new object[] {PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
+            grid.Rows.Add(new object[] {PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
+        }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (grid.Rows.Count > 0)
+                {
+                    Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
+                    XcelApp.Application.Workbooks.Add(Type.Missing);
+
+                    int row = grid.Rows.Count;
+                    int col = grid.Columns.Count;
+
+                    // Get Header text of Column
+                    for (int i = 1; i < col - 1 + 1; i++)
+                    {
+                        if (i == 1) continue;
+                        XcelApp.Cells[1, i - 1] = grid.Columns[i - 1].HeaderText;
+                    }
+
+                    // Get data of cells
+                    for (int i = 0; i < row; i++)
+                    {
+                        for (int j = 1; j < col - 1; j++)
+                        {
+                            XcelApp.Cells[i + 2, j] = grid.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+
+                    XcelApp.Columns.AutoFit();
+                    XcelApp.Visible = true;
+                }
+                else
+                {
+                    string mess = "Chưa có dữ liệu trong bảng!";
+                    int x = 105, y = 60;
+                    using (FormMessageBoxThongBao frm = new FormMessageBoxThongBao(mess, x, y))
+                    {
+                        frm.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int x = e.ColumnIndex, y = e.RowIndex;
+            // If click details button
+            if (y >= 0 && x == 5)
+            {
+                using (FormChiTietPhieuThue formChiTietPhieuThue = new FormChiTietPhieuThue())
+                    formChiTietPhieuThue.ShowDialog();
+            }
+        }
+
+        private void grid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int curCol = e.ColumnIndex;
+            if (curCol == 5)
+            {
+                if (e.RowIndex >= 0)
+                    grid.Cursor = Cursors.Hand;
+                else if (grid.CurrentCell.Value == DBNull.Value)
+                    grid.Cursor = Cursors.Default;
+            }
+            else
+                grid.Cursor = Cursors.Default;
         }
     }
 }
