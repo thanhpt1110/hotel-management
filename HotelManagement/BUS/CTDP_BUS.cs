@@ -1,9 +1,10 @@
-﻿using System;
+﻿using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using HotelManagement.DAO;
 namespace HotelManagement.BUS
 {
     internal class CTDP_BUS
@@ -15,5 +16,13 @@ namespace HotelManagement.BUS
             private set { instance = value; }
         }
         private CTDP_BUS() { }
+        public List<CTDP> GetCTDPs()
+        {
+            return CTDP_DAO.Instance.GetCTDPs();
+        }
+        public int getKhoangTG(string MaCTDP)
+        {
+            return CTDP_DAO.Instance.getKhoangTG(MaCTDP);
+        }
     }
 }

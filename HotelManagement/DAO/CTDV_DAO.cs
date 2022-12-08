@@ -17,5 +17,10 @@ namespace HotelManagement.DAO
             private set { instance = value; }
         }
         private CTDV_DAO() { }
+
+        public List<CTDV> FindCTDV(string MaHD)
+        {
+            return db.CTDVs.Where(p=>p.MaHD==MaHD).ToList();
+        }    
     }
 }

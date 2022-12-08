@@ -17,5 +17,13 @@ namespace HotelManagement.DAO
             private set { instance = value; }
         }
         private PhongDAO() { }
+        public List<Phong> GetAllPhongs()
+        {
+            return db.Phongs.ToList();  
+        }    
+        public Phong FindPhong(string MaPh)
+        {
+            return db.Phongs.Find(MaPh);
+        }    
     }
 }

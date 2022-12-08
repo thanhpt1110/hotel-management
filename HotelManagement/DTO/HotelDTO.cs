@@ -35,11 +35,14 @@ namespace HotelManagement.DTO
                 .HasMany(e => e.HoaDons)
                 .WithRequired(e => e.CTDP)
                 .WillCascadeOnDelete(false);
-
+            modelBuilder.Entity<PhieuThue>()
+                .HasMany(e => e.CTDPs)
+                .WithRequired(e => e.PhieuThue)
+                .WillCascadeOnDelete(false);
             modelBuilder.Entity<DichVu>()
                 .Property(e => e.DonGia)
                 .HasPrecision(19, 4);
-
+               
             modelBuilder.Entity<HoaDon>()
                 .Property(e => e.TriGia)
                 .HasPrecision(19, 4);

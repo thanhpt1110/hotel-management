@@ -17,5 +17,14 @@ namespace HotelManagement.DAO
             private set { instance = value; }
         }
         private DichVuDAO() { }
+
+        public List<DichVu> GetDichVus()
+        {
+            return db.DichVus.ToList();
+        }    
+        public DichVu FindDichVu(string MaDV)
+        {
+            return db.DichVus.Find(MaDV);
+        }
     }
 }
