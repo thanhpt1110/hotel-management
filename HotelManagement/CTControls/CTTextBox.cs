@@ -24,6 +24,7 @@ namespace HotelManagement.CTControls
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
         private bool isReadOnly = false;
+        
         //Constructor
         public CTTextBox()
         {
@@ -158,7 +159,7 @@ namespace HotelManagement.CTControls
             }
         }
 
-        private void SetPlaceholder()
+        public void SetPlaceholder()
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
             {
@@ -171,7 +172,7 @@ namespace HotelManagement.CTControls
                 }
             }
         }
-        private void RemovePlaceholder()
+        public void RemovePlaceholder()
         {
             if (isPlaceholder && placeholderText != "")
             {
@@ -227,6 +228,7 @@ namespace HotelManagement.CTControls
             }
         }
 
+        
 
         private GraphicsPath GetFigurePath(Rectangle rect, int radius)
         {

@@ -25,5 +25,17 @@ namespace HotelManagement.BUS
         {
             return DichVuDAO.Instance.FindDichVu(MaDV);     
         }
+        public void UpdateORAdd(DichVu dv)
+        {
+            DichVuDAO.Instance.UpdateORAdd(dv);
+        }
+        public void RemoveDV(DichVu dv)
+        { 
+            DichVuDAO.Instance.RemoveDV(dv);
+        }
+        public string GetMaDVNext()
+        {
+           return DichVuDAO.Instance.GetMaDVNext();
+        }
     }
 }

@@ -13,11 +13,11 @@ namespace HotelManagement.GUI
 {
     public partial class FormDanhSachKhachHang : Form
     {
+        
         public FormDanhSachKhachHang()
         {
             InitializeComponent();
         }
-
         private void CTButtonThemKhachHang_Click(object sender, EventArgs e)
         {
             using (FormThemKhachHang formThemKhachHang = new FormThemKhachHang())
@@ -118,5 +118,6 @@ namespace HotelManagement.GUI
             else
                 grid.Cursor = Cursors.Default;
         }
+
     }
 }

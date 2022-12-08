@@ -18,7 +18,7 @@ namespace HotelManagement.CTControls
         private int borderRadius = 15;
         private int borderSize = 1;
         private Color borderColor = Color.FromArgb(33, 131, 163);
-
+        
         //Constructor
         public FormMessageBoxCanhBao()
         {

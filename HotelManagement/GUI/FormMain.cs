@@ -211,7 +211,7 @@ namespace HotelManagement
             WinAPI.AnimateWindow(this.Handle, time, WinAPI.CENTER);
         }
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();

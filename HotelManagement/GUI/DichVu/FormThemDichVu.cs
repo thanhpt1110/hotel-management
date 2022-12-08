@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelManagement.BUS;
+using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +16,7 @@ namespace HotelManagement.GUI
 {
     public partial class FormThemDichVu : Form
     {
+        FormDanhSachDichVu formDanhSachDichVu;
         //Fields
         private int borderRadius = 20;
         private int borderSize = 2;
@@ -25,6 +28,14 @@ namespace HotelManagement.GUI
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
+            InitializeComponent();
+        }
+        public FormThemDichVu(FormDanhSachDichVu formDanhSachDichVu)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.formDanhSachDichVu = formDanhSachDichVu;
             InitializeComponent();
         }
         //Control Box
@@ -188,6 +199,54 @@ namespace HotelManagement.GUI
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            DichVu dichVu = new DichVu();
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+             
+                    dichVu.TenDV = this.ctTextBoxTenDV.Texts;
+                    dichVu.SLConLai = int.Parse(this.CTTextBoxSoLuong.Texts);
+                    dichVu.DonGia = decimal.Parse(this.CTTextBoxDonGia.Texts);
+                    dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
+                    dichVu.MaDV = DichVuBUS.Instance.GetMaDVNext(); 
+                
+
+                DichVuBUS.Instance.UpdateORAdd(dichVu);
+                this.formDanhSachDichVu.LoadALLDV();
+                this.Close();
+            }
+        }
+
+        private void CTTextBoxDonGia__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            textBox.KeyPress += TextBox_KeyPress;
+        }
+
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void CTTextBoxSoLuong__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            textBox.KeyPress += TextBox_KeyPress1;
+        }
+
+        private void TextBox_KeyPress1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

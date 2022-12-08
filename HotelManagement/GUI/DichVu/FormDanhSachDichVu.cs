@@ -8,11 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.DTO;
+using HotelManagement.BUS;
 
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachDichVu : Form
     {
+        private Image DV = Properties.Resources.DichVuDgv;
+        private Image edit = Properties.Resources.edit;
+        private Image delete = Properties.Resources.delete;
+        
         public FormDanhSachDichVu()
         {
             InitializeComponent();
@@ -20,7 +26,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemDichVu_Click(object sender, EventArgs e)
         {
-            using (FormThemDichVu formThemDichVu = new FormThemDichVu())
+            using (FormThemDichVu formThemDichVu = new FormThemDichVu(this))
             {
                 formThemDichVu.ShowDialog();
             }
@@ -29,16 +35,30 @@ namespace HotelManagement.GUI
         private void FormDanhSachDichVu_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            Image DV = Properties.Resources.DichVuDgv;
-            Image edit = Properties.Resources.edit;
-            Image delete = Properties.Resources.delete;
+            LoadALLDV();
 
-            grid.Rows.Add(new object[] { DV, "DV001", "Pepsi", "10,000", "100", edit, delete });
+           /* grid.Rows.Add(new object[] { this.DV, "DV001", "Pepsi", "10,000", "100", edit, delete });
             grid.Rows.Add(new object[] { DV, "DV002", "Mì xào", "20,000", "55", edit, delete });
             grid.Rows.Add(new object[] { DV, "DV003", "Bún bò", "25,000", "20", edit, delete });
-            grid.Rows.Add(new object[] { DV, "DV004", "Karaoke", "300,000", "10", edit, delete });
+            grid.Rows.Add(new object[] { DV, "DV004", "Karaoke", "300,000", "10", edit, delete });*/
         }
-
+        private void LoadDV(List<DichVu> dichVus)
+        {
+            this.grid.Rows.Clear();
+            foreach(DichVu dichVu in dichVus)
+            {
+                int? SLDV;
+                if (dichVu.SLConLai == null || dichVu.SLConLai == -1)
+                    SLDV = 0;
+                else
+                    SLDV = dichVu.SLConLai;
+                grid.Rows.Add(this.DV, dichVu.MaDV, dichVu.TenDV, dichVu.DonGia.ToString("#,#"),SLDV, this.edit, this.delete);
+            }    
+        }    
+        public void LoadALLDV()
+        {
+            LoadDV(DichVuBUS.Instance.GetDichVus());    
+        }
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try
@@ -94,15 +114,17 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 5)
                 {
-                    using (FormSuaDichVu formSuaDichVu = new FormSuaDichVu())
+                    using (FormSuaDichVu formSuaDichVu1 = new FormSuaDichVu(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()),this))
                     {
-                        formSuaDichVu.ShowDialog();
+                        formSuaDichVu1.ShowDialog();
                     }
                 }
                 if (x == 6)
                 {
                     // If click Delete button 
-                    MessageBox.Show("Clicked Delete button");
+                    
+                    DichVuBUS.Instance.RemoveDV(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()));
+                    LoadALLDV();
                 }
             }
         }
