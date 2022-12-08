@@ -22,7 +22,7 @@ namespace HotelManagement.CTControls
         //Fields
         private int borderSize = 0;
         private int borderRadius = 20;
-        private Color borderColor = Color.FromArgb(153, 214, 214);
+        private Color borderColor = Color.FromArgb(88, 188, 188);
 
         public int BorderSize
         {
@@ -68,7 +68,7 @@ namespace HotelManagement.CTControls
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Size = new Size(150, 40);
-            this.BackColor = Color.FromArgb(153, 214, 214);
+            this.BackColor = Color.FromArgb(88, 188, 188);
             this.ForeColor = Color.White;
             this.Resize += new EventHandler(Button_Resize);
         }
@@ -107,7 +107,7 @@ namespace HotelManagement.CTControls
                 using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
                 using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
                 using (Pen penSurface = new Pen(this.Parent.BackColor, smoothSize))
-                using (Pen penBorder = new Pen(borderColor, borderSize))
+                using (Pen penBorder = new Pen(Color.FromArgb(88, 188, 188), borderSize))
                 {
                     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     //Button surface
@@ -128,7 +128,7 @@ namespace HotelManagement.CTControls
                 //Button border
                 if (borderSize >= 1)
                 {
-                    using (Pen penBorder = new Pen(borderColor, borderSize))
+                    using (Pen penBorder = new Pen(Color.FromArgb(88, 188, 188), borderSize))
                     {
                         penBorder.Alignment = PenAlignment.Inset;
                         pevent.Graphics.DrawRectangle(penBorder, 0, 0, this.Width - 1, this.Height - 1);
