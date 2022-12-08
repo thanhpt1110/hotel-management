@@ -214,9 +214,6 @@
   <data name="Gender" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gender.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Giuong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Giuong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="heart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\heart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -225,6 +222,9 @@
   </data>
   <data name="KhachHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KhachHang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoaiPhong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Giuong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -300,6 +300,9 @@
   </data>
   <data name="Phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Phong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Phong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pictureIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pictureIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

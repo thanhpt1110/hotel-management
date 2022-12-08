@@ -34,6 +34,9 @@
             this.CTButtonThemLoaiPhong = new HotelManagement.CTControls.CTButton();
             this.CTTextBoxTimPhongTheoMa = new HotelManagement.CTControls.CTTextBox();
             this.grid = new System.Windows.Forms.DataGridView();
+            this.ctPanel1 = new CTPanel.CTPanel();
+            this.buttonExport = new HotelManagement.CTControls.CTButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,9 +46,6 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ctPanel1 = new CTPanel.CTPanel();
-            this.buttonExport = new HotelManagement.CTControls.CTButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -163,71 +163,6 @@
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             this.grid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseEnter);
             // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 50F;
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 175F;
-            this.Column2.HeaderText = "Mã loại phòng";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 225F;
-            this.Column3.HeaderText = "Tên loại phòng";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 150F;
-            this.Column4.HeaderText = "Số giường";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 250F;
-            this.Column5.HeaderText = "Số người tối đa";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Giá ngày";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Giá giờ";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 50F;
-            this.Column8.HeaderText = "Sửa";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 50F;
-            this.Column9.HeaderText = "Xóa";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
             // ctPanel1
             // 
             this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -273,6 +208,73 @@
             this.pictureBox1.Size = new System.Drawing.Size(32, 30);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 50F;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 175F;
+            this.Column2.HeaderText = "Mã loại phòng";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 225F;
+            this.Column3.HeaderText = "Tên loại phòng";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 150F;
+            this.Column4.HeaderText = "Số giường";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 175F;
+            this.Column5.HeaderText = "Số người tối đa";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 150F;
+            this.Column6.HeaderText = "Giá ngày";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 150F;
+            this.Column7.HeaderText = "Giá giờ";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 50F;
+            this.Column8.HeaderText = "Sửa";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.FillWeight = 50F;
+            this.Column9.HeaderText = "Xóa";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // FormDanhSachLoaiPhong
             // 

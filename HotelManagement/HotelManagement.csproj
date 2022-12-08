@@ -130,6 +130,7 @@
     <Content Include="img\TimePickerBlack.png" />
     <Content Include="img\TimePickerWhite.png" />
     <Content Include="img\x.png" />
+    <None Include="Resources\Phong.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\delete1.png" />
     <None Include="Resources\Add.png" />

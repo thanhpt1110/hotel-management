@@ -92,6 +92,7 @@
             this.PanelBackground.Controls.Add(this.labelSuaKhachHang);
             this.PanelBackground.Controls.Add(this.panel1);
             this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelBackground.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelBackground.Location = new System.Drawing.Point(0, 0);
             this.PanelBackground.Name = "PanelBackground";
             this.PanelBackground.Size = new System.Drawing.Size(538, 615);
@@ -153,6 +154,7 @@
             this.panel1.Controls.Add(this.ctTextBox3);
             this.panel1.Controls.Add(this.ctTextBox2);
             this.panel1.Controls.Add(this.ctTextBox1);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(53, 60);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(431, 483);
@@ -290,8 +292,10 @@
             // FormSuaKhachHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(538, 615);
             this.Controls.Add(this.PanelBackground);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSuaKhachHang";
             this.ShowIcon = false;
