@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ApplicationSettings;
+using HotelManagement.GUI.ThongKe;
 
 namespace HotelManagement
 {
@@ -447,70 +448,265 @@ namespace HotelManagement
         {
 
         }
+        //Button color change
+        private void SetAllButtonNormalColor()
+        {
+            ButtonTrangChu.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonSoDoPhong.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonDatPhong.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonDanhSachHoaDon.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonQuanLyKhachHang.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonQuanLyPhong.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonPhong.BackColor = Color.FromArgb(131, 189, 197);
+            ButtonLoaiPhong.BackColor = Color.FromArgb(131, 189, 197);
+            ButtonQuanLyDichVu.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonQuanLyTienNghi.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonTienNghi.BackColor = Color.FromArgb(131, 189, 197);
+            ButtonChiTietTienNghi.BackColor = Color.FromArgb(131, 189, 197);
+            ButtonQuanLyTaiKhoan.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonQuanLyNhanVien.BackColor = Color.FromArgb(72, 145, 153);
+            ButtonThongKe.BackColor = Color.FromArgb(72, 145, 153);
 
+            ButtonTrangChu.ForeColor = Color.Black;
+            ButtonSoDoPhong.ForeColor = Color.Black;
+            ButtonDatPhong.ForeColor = Color.Black;
+            ButtonDanhSachHoaDon.ForeColor = Color.Black;
+            ButtonQuanLyKhachHang.ForeColor = Color.Black;
+            ButtonQuanLyPhong.ForeColor = Color.Black;
+            ButtonPhong.ForeColor = Color.Black;
+            ButtonLoaiPhong.ForeColor = Color.Black;
+            ButtonQuanLyDichVu.ForeColor = Color.Black;
+            ButtonQuanLyTienNghi.ForeColor = Color.Black;
+            ButtonTienNghi.ForeColor = Color.Black;
+            ButtonChiTietTienNghi.ForeColor = Color.Black;
+            ButtonQuanLyTaiKhoan.ForeColor = Color.Black;
+            ButtonQuanLyNhanVien.ForeColor = Color.Black;
+            ButtonThongKe.ForeColor = Color.Black;
+        }
         private void ButtonDatPhong_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonDatPhong.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonDatPhong.ForeColor = Color.White;
+            //Open Child Form
             openChildForm(new FormDanhSachPhieuThue());
         }
 
         private void ButtonSoDoPhong_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonSoDoPhong.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonSoDoPhong.ForeColor = Color.White;
+            //Open Child Form
             openChildForm(new FormSoDoPhong());
         }
 
 
         private void ButtonDanhSachHoaDon_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonDanhSachHoaDon.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonDanhSachHoaDon.ForeColor = Color.White;
+            //Open Child Form
             openChildForm(new FormDanhSachHoaDon());
         }
 
         private void ButtonTrangChu_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonTrangChu.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonTrangChu.ForeColor = Color.White;
+            //Open Child Form
             openChildForm(new FormTrangChu());
         }
 
-        private void ButtonQLKH_Click(object sender, EventArgs e)
+        private void ButtonQuanLyKhachHang_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonQuanLyKhachHang.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonQuanLyKhachHang.ForeColor = Color.White;
+            //Open Child Form
             openChildForm(new FormDanhSachKhachHang());
         }
 
         private void ButtonPhong_Click(object sender, EventArgs e)
-        {
+        {   //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonPhong.BackColor = Color.FromArgb(175, 213, 218);
+
+            //Open Child Form
             openChildForm(new FormDanhSachPhong());
         }
 
         private void ButtonLoaiPhong_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonLoaiPhong.BackColor = Color.FromArgb(175, 213, 218);
+
+            //Open Child Form
             openChildForm(new FormDanhSachLoaiPhong());
         }
-        private void ButtonDichVu_Click(object sender, EventArgs e)
+        private void ButtonQuanLyDichVu_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonQuanLyDichVu.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonQuanLyDichVu.ForeColor = Color.White;
+            //Open Child Form
             openChildForm(new FormDanhSachDichVu());
         }
 
         private void ButtonTienNghi_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonTienNghi.BackColor = Color.FromArgb(175, 213, 218);
+
+            //Open Child Form
             openChildForm(new FormDanhSachTienNghi());
         }
 
-        private void ButtonChiTietTIenNghi_Click(object sender, EventArgs e)
+        private void ButtonChiTietTienNghi_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonChiTietTienNghi.BackColor = Color.FromArgb(175, 213, 218);
+
+            //Open Child Form
             openChildForm(new FormDanhSachChiTietTienNghi());
         }
 
         private void ButtonQuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonQuanLyTaiKhoan.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonQuanLyTaiKhoan.ForeColor = Color.White;
+            //Open Child Form
             openChildForm(new FormDanhSachTaiKhoan());
         }
 
         private void ButtonQuanLyNhanVien_Click(object sender, EventArgs e)
         {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonQuanLyNhanVien.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonQuanLyNhanVien.ForeColor = Color.White;
+            //Open Child Form
             openChildForm(new FormDanhSachNhanVien());
         }
 
         private void ctClose1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ButtonQuanLyPhong_Click(object sender, EventArgs e)
+        {
+            if (PanelPhong.Visible == true)
+            {
+                PanelPhong.Visible = false;
+                //Change color button on side bar
+                //SetAllButtonNormalColor();
+                
+            }
+            else
+            {
+                PanelPhong.Visible = true;
+                //Change color button on side bar
+                SetAllButtonNormalColor();
+                ButtonQuanLyPhong.BackColor = Color.FromArgb(64, 126, 134);
+                ButtonQuanLyPhong.ForeColor = Color.White;
+            }
+        }
+
+        private void ButtonQuanLyTienNghi_Click(object sender, EventArgs e)
+        {
+            if (PanelTienNghi.Visible == true)
+            {
+                PanelTienNghi.Visible = false;
+                //Change color button on side bar
+                //SetAllButtonNormalColor();
+
+            }
+            else
+            {
+                PanelTienNghi.Visible = true;
+                //Change color button on side bar
+                SetAllButtonNormalColor();
+                ButtonQuanLyTienNghi.BackColor = Color.FromArgb(64, 126, 134);
+                ButtonQuanLyTienNghi.ForeColor = Color.White;
+            }
+        }
+
+        private void ButtonThongKe_Click(object sender, EventArgs e)
+        {
+            //Change color button on side bar
+            SetAllButtonNormalColor();
+            ButtonThongKe.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonThongKe.ForeColor = Color.White;
+            //Open Child Form
+            openChildForm(new FormThongKe());
+        }
+        private void DisplayTextMenu()
+        {
+            ButtonTrangChu.Text = "    Trang chủ";
+            ButtonSoDoPhong.Text = "    Sơ đồ phòng";
+            ButtonDatPhong.Text = "    Đặt phòng";
+            ButtonDanhSachHoaDon.Text = "    Danh sách hóa đơn";
+            ButtonQuanLyKhachHang.Text = "    Quản lý khách hàng";
+            ButtonQuanLyPhong.Text = "    Quản lý phòng";
+            ButtonPhong.Text = "    Phòng";
+            ButtonLoaiPhong.Text = "    Loại phòng";
+            ButtonQuanLyDichVu.Text = "    Quản lý dịch vụ";
+            ButtonQuanLyTienNghi.Text = "    Quản lý tiện nghi";
+            ButtonTienNghi.Text = "    Tiện nghi";
+            ButtonChiTietTienNghi.Text = "    Chi tiết tiện nghi";
+            ButtonQuanLyTaiKhoan.Text = "    Quản lý tài khoản";
+            ButtonQuanLyNhanVien.Text = "    Quản lý nhân viên";
+            ButtonThongKe.Text = "    Thống kê";
+        }
+        private void NotDisplayTextMenu()
+        {
+            ButtonTrangChu.Text = "";
+            ButtonSoDoPhong.Text = "";
+            ButtonDatPhong.Text = "";
+            ButtonDanhSachHoaDon.Text = "";
+            ButtonQuanLyKhachHang.Text = "";
+            ButtonQuanLyPhong.Text = "";
+            ButtonPhong.Text = "";
+            ButtonLoaiPhong.Text = "";
+            ButtonQuanLyDichVu.Text = "";
+            ButtonQuanLyTienNghi.Text = "";
+            ButtonTienNghi.Text = "";
+            ButtonChiTietTienNghi.Text = "";
+            ButtonQuanLyTaiKhoan.Text = "";
+            ButtonQuanLyNhanVien.Text = "";
+            ButtonThongKe.Text = "";
+        }
+        private bool isDisplayed = true;
+        private void PictureBoxMenu_Click(object sender, EventArgs e)
+        {
+            if (isDisplayed == true)
+            {
+                isDisplayed = false;
+                Size size = new Size(65, Sidebar.Height);
+                NotDisplayTextMenu();
+                Sidebar.Size = size;
+            }
+            else
+            {
+                isDisplayed = true;
+                Size size = new Size(262, Sidebar.Height);
+                DisplayTextMenu();
+                Sidebar.Size = size;
+            }
         }
     }
 }

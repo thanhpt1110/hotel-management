@@ -70,7 +70,11 @@
             // 
             // PanelBackground
             // 
+<<<<<<< Updated upstream
             this.PanelBackground.AutoScroll = true;
+=======
+            this.PanelBackground.BackColor = System.Drawing.Color.White;
+>>>>>>> Stashed changes
             this.PanelBackground.Controls.Add(this.ctClose1);
             this.PanelBackground.Controls.Add(this.Printer);
             this.PanelBackground.Controls.Add(this.ctMaximize1);

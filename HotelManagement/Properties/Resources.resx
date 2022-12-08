@@ -220,6 +220,51 @@
   <data name="KhachHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KhachHang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuChiTietTienNghi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuChiTietTienNghi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuDanhSachHoaDon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuDanhSachHoaDon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuDatPhong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuDatPhong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuLoaiPhong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuLoaiPhong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuPhong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuPhong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuQuanLy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuQuanLy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuQuanLyDichVu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuQuanLyDichVu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuQuanLyKhachHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuQuanLyKhachHang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuQuanLyNhanVien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuQuanLyNhanVien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuQuanLyTaiKhoan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuQuanLyTaiKhoan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuSoDoPhong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuSoDoPhong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuThongKe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuThongKe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuTienNghi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuTienNghi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuTrangChu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuTrangChu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="message" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
