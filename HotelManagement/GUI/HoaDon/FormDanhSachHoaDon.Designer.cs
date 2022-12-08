@@ -70,6 +70,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // grid
             // 
@@ -133,7 +134,6 @@
             this.grid.Size = new System.Drawing.Size(1097, 659);
             this.grid.TabIndex = 31;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
-//            this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
             this.grid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseEnter);
             // 
             // Column1
@@ -253,6 +253,8 @@
             this.CTTextBoxTimTheoCCCD.TabIndex = 2;
             this.CTTextBoxTimTheoCCCD.Texts = "";
             this.CTTextBoxTimTheoCCCD.UnderlineedStyle = false;
+            this.CTTextBoxTimTheoCCCD._TextChanged += new System.EventHandler(this.CTTextBoxTimTheoCCCD__TextChanged);
+            this.CTTextBoxTimTheoCCCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CTTextBoxTimTheoCCCD_KeyDown);
             // 
             // CTDatePickerChonNgayHD
             // 

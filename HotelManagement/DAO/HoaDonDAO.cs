@@ -32,5 +32,9 @@ namespace HotelManagement.DAO
             db.HoaDons.AddOrUpdate(HD);
             db.SaveChanges();
         }
+        public List<HoaDon> FindHoaDonWith_CCCD(string cccd)
+        {
+            return db.HoaDons.Where(p => p.CTDP.PhieuThue.KhachHang.CCCD_Passport == cccd).ToList();
+        }
     }
 }

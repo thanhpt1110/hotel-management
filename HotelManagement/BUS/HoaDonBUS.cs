@@ -29,5 +29,9 @@ namespace HotelManagement.BUS
         {
             HoaDonDAO.Instance.Update_InsertHD(HD);
         }
+        public List<HoaDon> FindHoaDonWith_CCCD(string cccd)
+        {
+            return HoaDonDAO.Instance.FindHoaDonWith_CCCD(cccd);
+        }
     }
 }

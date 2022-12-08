@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.BUS;
 using HotelManagement.DTO;
-using System.Net.Http.Headers;
+
+
 
 namespace HotelManagement.GUI
 {
@@ -21,7 +22,7 @@ namespace HotelManagement.GUI
         public FormDanhSachHoaDon()
         {
             InitializeComponent();
-            LoadDataGrid();
+            LoadAllDataGrid();
         }
 
         private void FormDanhSachHoaDon_Load(object sender, EventArgs e)
@@ -36,10 +37,15 @@ namespace HotelManagement.GUI
               grid.Rows.Add(new object[] { HD, "HD004", "11/10/2003 19:45:00", "Nguyễn Văn D", "Phan Tuấn Thành", "0", "Đã thanh toán", details});*/
         }
 
-        public void LoadDataGrid()
+        public void LoadAllDataGrid()
+        {
+            List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
+            LoadDataGrid(hoaDons);
+        }
+        public void LoadDataGrid(List<HoaDon> hoaDons)
         {
             DichVu dichvu;
-            List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
+            grid.Rows.Clear();
             foreach (HoaDon hoadon in hoaDons)
             {
                 int days = CTDP_BUS.Instance.getKhoangTG(hoadon.MaCTDP);
@@ -60,6 +66,12 @@ namespace HotelManagement.GUI
                         tennv = hoadon.NhanVien.TenNV;
                 grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, hoadon.CTDP.PhieuThue.KhachHang.TenKH, hoadon.TriGia, hoadon.TrangThai, details);
             }
+        }
+        void LoadGridWith_CCCD()
+        {
+            List<HoaDon> hoaDons = HoaDonBUS.Instance.FindHoaDonWith_CCCD(this.CTTextBoxTimTheoCCCD.Texts);
+            LoadDataGrid(hoaDons);
+
         }
         private void buttonExport_Click(object sender, EventArgs e)
         {
@@ -137,6 +149,40 @@ namespace HotelManagement.GUI
                 grid.Cursor = Cursors.Default;
         }
 
+        private void CTTextBoxTimTheoCCCD_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
 
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (this.CTTextBoxTimTheoCCCD.Texts == "")
+            {
+                LoadAllDataGrid();
+            }
+            else
+                LoadGridWith_CCCD();
+        }
+
+        private void CTTextBoxTimTheoCCCD__TextChanged(object sender, EventArgs e)
+        {
+            TextBox text = sender as TextBox;
+            text.KeyDown += Text_KeyDown1;
+        }
+
+        private void Text_KeyDown1(object sender, KeyEventArgs e)
+        {
+            TextBox text = sender as TextBox;
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (this.CTTextBoxTimTheoCCCD.Texts == "")
+                {
+                    LoadAllDataGrid();
+                }
+                else
+                    LoadGridWith_CCCD();
+            }
+        }
     }
 }
