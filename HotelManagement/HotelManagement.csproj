@@ -65,7 +65,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-    <ItemGroup />
+  <ItemGroup />
   <ItemGroup>
     <Content Include="img\Address.png" />
     <Content Include="img\calendarDark.png" />
@@ -95,6 +95,7 @@
     <Content Include="img\TimePickerBlack.png" />
     <Content Include="img\TimePickerWhite.png" />
     <Content Include="img\x.png" />
+    <None Include="Resources\Giuong.png" />
     <None Include="Resources\NhanVien.png" />
     <None Include="Resources\KhachHang.png" />
     <None Include="Resources\HoaDon.png" />

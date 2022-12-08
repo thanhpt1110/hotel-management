@@ -277,6 +277,7 @@
             this.Text = "FormSuaDichVu";
             this.Activated += new System.EventHandler(this.FormSuaDichVu_Activated);
             this.SizeChanged += new System.EventHandler(this.FormSuaDichVu_SizeChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormSuaDichVu_Paint);
             this.Resize += new System.EventHandler(this.FormSuaDichVu_Resize);
             this.PanelBackground.ResumeLayout(false);
             this.PanelBackground.PerformLayout();
