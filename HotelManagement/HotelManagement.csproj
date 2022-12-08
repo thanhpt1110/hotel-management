@@ -128,6 +128,8 @@
     <Content Include="img\TimePickerBlack.png" />
     <Content Include="img\TimePickerWhite.png" />
     <Content Include="img\x.png" />
+    <None Include="Resources\TaiKhoan.png" />
+    <None Include="Resources\Giuong.png" />
     <None Include="Resources\NhanVien.png" />
     <None Include="Resources\KhachHang.png" />
     <None Include="Resources\HoaDon.png" />

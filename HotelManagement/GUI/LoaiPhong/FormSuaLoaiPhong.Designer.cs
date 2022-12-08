@@ -94,6 +94,7 @@
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
+            this.CTButtonThoat.Click += new System.EventHandler(this.CTButtonThoat_Click);
             // 
             // CTButtonCapNhat
             // 
@@ -311,6 +312,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaLoaiPhong";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormSuaLoaiPhong_Paint);
             this.PanelBackground.ResumeLayout(false);
             this.PanelBackground.PerformLayout();
             this.panel1.ResumeLayout(false);
