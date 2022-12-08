@@ -1,9 +1,11 @@
 ﻿using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HotelManagement.DAO
 {
@@ -24,6 +26,11 @@ namespace HotelManagement.DAO
         public HoaDon FindHD(string MaHD)
         {
             return db.HoaDons.Find(MaHD);
+        }
+        public void Update_InsertHD(HoaDon HD)
+        {
+            db.HoaDons.AddOrUpdate(HD);
+            db.SaveChanges();
         }
     }
 }

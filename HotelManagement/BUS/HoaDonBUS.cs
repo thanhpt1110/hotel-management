@@ -25,5 +25,9 @@ namespace HotelManagement.BUS
         {
             return HoaDonDAO.Instance.FindHD(MaHD);
         }
+        public void Update_Inserthd(HoaDon HD)
+        {
+            HoaDonDAO.Instance.Update_InsertHD(HD);
+        }
     }
 }

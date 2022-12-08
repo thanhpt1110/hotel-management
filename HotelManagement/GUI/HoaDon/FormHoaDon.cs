@@ -64,9 +64,9 @@ namespace HotelManagement.GUI
             }
             
             
-            decimal Tongtienphong = loaiphong.GiaNgay * days;
+            decimal Tongtienphong =  loaiphong.GiaNgay * days;
             DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));
-            this.LabelTongTien.Text += Tongtienphong.ToString("#,#");
+            this.LabelTongTien.Text += (TongTienHD + Tongtienphong).ToString("#,#");
 
         }
         //Control Box

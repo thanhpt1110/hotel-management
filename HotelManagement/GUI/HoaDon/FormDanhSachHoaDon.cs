@@ -38,12 +38,26 @@ namespace HotelManagement.GUI
 
         public void LoadDataGrid()
         {
+            DichVu dichvu;
             List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
             foreach (HoaDon hoadon in hoaDons)
             {
+                int days = CTDP_BUS.Instance.getKhoangTG(hoadon.MaCTDP);
+                Phong phong = PhongBUS.Instance.FindePhong(hoadon.CTDP.MaPH);
+                LoaiPhong loaiphong = LoaiPhongBUS.Instance.getLoaiPhong(phong.MaLPH);
+                decimal TongTienHD = 0;
+                TongTienHD += loaiphong.GiaNgay * days;
                 string tennv = null;
-                if (hoadon.MaNV != null)
-                    tennv = hoadon.NhanVien.TenNV;
+                List<CTDV> ctdvs = CTDV_BUS.Instance.FindCTDV(hoadon.MaHD);
+                foreach (CTDV ctdv in ctdvs)
+                {
+                    dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
+                    TongTienHD += dichvu.DonGia * ctdv.SL;
+                }
+                hoadon.TriGia = TongTienHD;
+                HoaDonBUS.Instance.Update_Inserthd(hoadon);
+                    if (hoadon.MaNV != null)
+                        tennv = hoadon.NhanVien.TenNV;
                 grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, hoadon.CTDP.PhieuThue.KhachHang.TenKH, hoadon.TriGia, hoadon.TrangThai, details);
             }
         }
