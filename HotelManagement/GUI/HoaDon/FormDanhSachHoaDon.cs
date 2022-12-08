@@ -26,8 +26,8 @@ namespace HotelManagement.GUI
 
             //Test 
             grid.Rows.Add(new object[] { HD, "HD001", "11/10/2003 19:45:00", "Nguyễn Văn A", "Phan Tuấn Thành", "0", "Chưa thanh toán", details});
-            grid.Rows.Add(new object[] { HD, "HD002", "11/10/2003 19:45:00", "Nguyễn Văn B", "Phan Tuấn Thành", "100", "Đã thanh toán", details});
-            grid.Rows.Add(new object[] { HD, "HD003", "11/10/2003 19:45:00", "Nguyễn Văn C", "Phan Tuấn Thành", "0", "Chưa thanh toán", details});
+            grid.Rows.Add(new object[] { HD, "HD002", "11/10/2003 19:45:00", "Nguyễn Văn B", "Phan Tuấn Thành", "100,000", "Đã thanh toán", details});
+            grid.Rows.Add(new object[] { HD, "HD003", "11/10/2003 19:45:00", "Nguyễn Văn C", "Phan Tuấn Thành", "2,000,000", "Chưa thanh toán", details});
             grid.Rows.Add(new object[] { HD, "HD004", "11/10/2003 19:45:00", "Nguyễn Văn D", "Phan Tuấn Thành", "0", "Đã thanh toán", details});
         }
 
@@ -44,7 +44,7 @@ namespace HotelManagement.GUI
                     int col = grid.Columns.Count;
 
                     // Get Header text of Column
-                    for (int i = 1; i < col - 2 + 1; i++)
+                    for (int i = 1; i < col - 1 + 1; i++)
                     {
                         if (i == 1) continue;
                         XcelApp.Cells[1, i - 1] = grid.Columns[i - 1].HeaderText;
@@ -53,7 +53,7 @@ namespace HotelManagement.GUI
                     // Get data of cells
                     for (int i = 0; i < row; i++)
                     {
-                        for (int j = 1; j < col - 2; j++)
+                        for (int j = 1; j < col - 1; j++)
                         {
                             XcelApp.Cells[i + 2, j] = grid.Rows[i].Cells[j].Value.ToString();
                         }
@@ -84,9 +84,9 @@ namespace HotelManagement.GUI
             // If click details button
             if (x == 7 && y >= 0)
             {
-                using (FormHoaDon frm = new FormHoaDon())
+                using (FormHoaDon formHoaDon = new FormHoaDon())
                 {
-                    frm.ShowDialog();
+                    formHoaDon.ShowDialog();
                 }
             }
         }

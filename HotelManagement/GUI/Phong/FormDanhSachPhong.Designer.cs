@@ -146,6 +146,7 @@
             this.CTTextBoxTimPhongTheoMa.PasswordChar = false;
             this.CTTextBoxTimPhongTheoMa.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.CTTextBoxTimPhongTheoMa.PlaceholderText = "Tìm phòng theo mã phòng";
+            this.CTTextBoxTimPhongTheoMa.ReadOnly = false;
             this.CTTextBoxTimPhongTheoMa.Size = new System.Drawing.Size(244, 36);
             this.CTTextBoxTimPhongTheoMa.TabIndex = 8;
             this.CTTextBoxTimPhongTheoMa.TabStop = false;
@@ -163,6 +164,8 @@
             this.Controls.Add(this.CTTextBoxTimPhongTheoMa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachPhong";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormDanhSachPhong";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

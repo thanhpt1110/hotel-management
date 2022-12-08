@@ -61,7 +61,7 @@
             this.CTButtonThemChiTietTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThemChiTietTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThemChiTietTienNghi.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThemChiTietTienNghi.Location = new System.Drawing.Point(1008, 29);
+            this.CTButtonThemChiTietTienNghi.Location = new System.Drawing.Point(987, 30);
             this.CTButtonThemChiTietTienNghi.Name = "CTButtonThemChiTietTienNghi";
             this.CTButtonThemChiTietTienNghi.Size = new System.Drawing.Size(200, 40);
             this.CTButtonThemChiTietTienNghi.TabIndex = 22;
@@ -81,7 +81,7 @@
             this.CTTextBoxTimTenLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxTimTenLoaiPhong.ForeColor = System.Drawing.Color.DimGray;
             this.CTTextBoxTimTenLoaiPhong.IsFocused = false;
-            this.CTTextBoxTimTenLoaiPhong.Location = new System.Drawing.Point(66, 29);
+            this.CTTextBoxTimTenLoaiPhong.Location = new System.Drawing.Point(45, 30);
             this.CTTextBoxTimTenLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxTimTenLoaiPhong.Multiline = false;
             this.CTTextBoxTimTenLoaiPhong.Name = "CTTextBoxTimTenLoaiPhong";
@@ -136,7 +136,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grid.DefaultCellStyle = dataGridViewCellStyle2;
             this.grid.EnableHeadersVisualStyles = false;
-            this.grid.Location = new System.Drawing.Point(85, 103);
+            this.grid.Location = new System.Drawing.Point(70, 100);
             this.grid.MultiSelect = false;
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
@@ -224,7 +224,7 @@
             this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExport.ForeColor = System.Drawing.Color.Black;
-            this.buttonExport.Location = new System.Drawing.Point(834, 29);
+            this.buttonExport.Location = new System.Drawing.Point(800, 30);
             this.buttonExport.Name = "buttonExport";
             this.buttonExport.Size = new System.Drawing.Size(150, 40);
             this.buttonExport.TabIndex = 26;
@@ -242,7 +242,7 @@
             this.ctPanel1.GradientAngle = 90F;
             this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel1.Location = new System.Drawing.Point(66, 94);
+            this.ctPanel1.Location = new System.Drawing.Point(45, 95);
             this.ctPanel1.Name = "ctPanel1";
             this.ctPanel1.Size = new System.Drawing.Size(1142, 704);
             this.ctPanel1.TabIndex = 24;
@@ -251,7 +251,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(72, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 30);
             this.pictureBox1.TabIndex = 21;
@@ -271,6 +271,8 @@
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachChiTietTienNghi";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormDanhSachChiTietTienNghi";
             this.Load += new System.EventHandler(this.FormDanhSachChiTietTienNghi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();

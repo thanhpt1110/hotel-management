@@ -49,6 +49,8 @@
             this.Controls.Add(this.LabelSoDoPhong);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSoDoPhong";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormSoDoPhong";
             this.ResumeLayout(false);
             this.PerformLayout();

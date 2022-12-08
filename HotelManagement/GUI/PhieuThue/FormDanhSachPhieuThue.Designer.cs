@@ -90,6 +90,7 @@
             this.CTButtonDatPhong.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
             this.CTButtonDatPhong.BorderRadius = 10;
             this.CTButtonDatPhong.BorderSize = 0;
+            this.CTButtonDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTButtonDatPhong.FlatAppearance.BorderSize = 0;
             this.CTButtonDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonDatPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,7 +165,7 @@
             this.Xoa.HeaderText = "Xóa";
             this.Xoa.Name = "Xoa";
             // 
-            // FormDanhSachDatPhong
+            // FormDanhSachPhieuThue
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
@@ -176,7 +177,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ctTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormDanhSachDatPhong";
+            this.Name = "FormDanhSachPhieuThue";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormQLDatPhong";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

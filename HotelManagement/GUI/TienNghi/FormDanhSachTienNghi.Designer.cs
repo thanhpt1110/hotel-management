@@ -154,6 +154,8 @@
             this.Controls.Add(this.CTTextBoxTimTenTienNghi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDanhSachTienNghi";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormDanhSachTienNghi";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

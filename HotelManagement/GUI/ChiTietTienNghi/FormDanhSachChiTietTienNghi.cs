@@ -20,8 +20,8 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemChiTietTienNghi_Click(object sender, EventArgs e)
         {
-            FormThemChiTietTienNghi formThemChiTietTienNghi = new FormThemChiTietTienNghi();
-            formThemChiTietTienNghi.ShowDialog();
+            using (FormThemChiTietTienNghi formThemChiTietTienNghi = new FormThemChiTietTienNghi())
+                formThemChiTietTienNghi.ShowDialog();
         }
 
         private void FormDanhSachChiTietTienNghi_Load(object sender, EventArgs e)
@@ -93,7 +93,10 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 5)
                 {
-                    MessageBox.Show("Clicked Update button");
+                    using (FormSuaChiTietTienNghi formSuaChiTietTienNghi = new FormSuaChiTietTienNghi())
+                    {
+                        formSuaChiTietTienNghi.ShowDialog();
+                    }
                 }
                 if (x == 6)
                 {

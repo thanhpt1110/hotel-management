@@ -87,7 +87,7 @@
             this.CTButtonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThoat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThoat.Location = new System.Drawing.Point(385, 563);
+            this.CTButtonThoat.Location = new System.Drawing.Point(352, 563);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
             this.CTButtonThoat.TabIndex = 0;
@@ -108,7 +108,7 @@
             this.CTButtonCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonCapNhat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonCapNhat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonCapNhat.Location = new System.Drawing.Point(225, 563);
+            this.CTButtonCapNhat.Location = new System.Drawing.Point(192, 563);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
             this.CTButtonCapNhat.TabIndex = 6;
@@ -211,6 +211,7 @@
             this.ctTextBox4.PasswordChar = false;
             this.ctTextBox4.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBox4.PlaceholderText = "Nhập địa chỉ";
+            this.ctTextBox4.ReadOnly = false;
             this.ctTextBox4.Size = new System.Drawing.Size(250, 35);
             this.ctTextBox4.TabIndex = 4;
             this.ctTextBox4.Texts = "";
@@ -233,6 +234,7 @@
             this.ctTextBox3.PasswordChar = false;
             this.ctTextBox3.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBox3.PlaceholderText = "Nhập số điện thoại";
+            this.ctTextBox3.ReadOnly = false;
             this.ctTextBox3.Size = new System.Drawing.Size(250, 35);
             this.ctTextBox3.TabIndex = 3;
             this.ctTextBox3.Texts = "";
@@ -255,6 +257,7 @@
             this.ctTextBox2.PasswordChar = false;
             this.ctTextBox2.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBox2.PlaceholderText = "Nhập số căn cước công dân";
+            this.ctTextBox2.ReadOnly = false;
             this.ctTextBox2.Size = new System.Drawing.Size(250, 35);
             this.ctTextBox2.TabIndex = 2;
             this.ctTextBox2.Texts = "";
@@ -277,6 +280,7 @@
             this.ctTextBox1.PasswordChar = false;
             this.ctTextBox1.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBox1.PlaceholderText = "Nhập họ tên khách hàng";
+            this.ctTextBox1.ReadOnly = false;
             this.ctTextBox1.Size = new System.Drawing.Size(250, 35);
             this.ctTextBox1.TabIndex = 1;
             this.ctTextBox1.Texts = "";
@@ -290,6 +294,8 @@
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThemKhachHang";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormThemKhachHang";
             this.Activated += new System.EventHandler(this.FormThemKhachHang_Activated);

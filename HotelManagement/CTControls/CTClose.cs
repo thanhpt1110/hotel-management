@@ -1,4 +1,4 @@
-﻿using HotelManagement.GUI;
+﻿    using HotelManagement.GUI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -85,18 +85,6 @@ namespace HotelManagement.CTControls
             mouseHover = false;
             mouseLeave = true;
             this.Invalidate();
-        }
-
-        private void CTClose_MouseClick(object sender, MouseEventArgs e)
-        {
-            if(Case==0)
-            Application.Exit();
-            else
-            {
-                FormHoaDon formHoaDon = form as FormHoaDon;
-                formHoaDon.Close();
-            }    
-
         }
     }
 }

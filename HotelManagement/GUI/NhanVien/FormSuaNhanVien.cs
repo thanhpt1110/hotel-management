@@ -191,5 +191,10 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+
+        private void FormSuaNhanVien_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = LabelSuaNhanVien;
+        }
     }
 }

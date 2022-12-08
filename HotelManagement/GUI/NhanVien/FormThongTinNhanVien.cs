@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace HotelManagement.GUI
 {
-    public partial class FormThemNhanVien : Form
+    public partial class FormThongTinNhanVien : Form
     {
         //Fields
         private int borderRadius = 20;
@@ -20,7 +20,7 @@ namespace HotelManagement.GUI
         private Color borderColor = Color.White;
 
         //Constructor
-        public FormThemNhanVien()
+        public FormThongTinNhanVien()
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -140,7 +140,7 @@ namespace HotelManagement.GUI
         }
 
         //Event Methods
-        private void FormThemNhanVien_Paint(object sender, PaintEventArgs e)
+        private void FormThongTinNhanVien_Paint(object sender, PaintEventArgs e)
         {
             //-> SMOOTH OUTER BORDER
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -162,17 +162,17 @@ namespace HotelManagement.GUI
             //-> SET ROUNDED REGION AND BORDER
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
-        private void FormThemNhanVien_Resize(object sender, EventArgs e)
+        private void FormThongTinNhanVien_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void FormThemNhanVien_SizeChanged(object sender, EventArgs e)
+        private void FormThongTinNhanVien_SizeChanged(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void FormThemNhanVien_Activated(object sender, EventArgs e)
+        private void FormThongTinNhanVien_Activated(object sender, EventArgs e)
         {
             this.Invalidate();
         }
@@ -192,9 +192,9 @@ namespace HotelManagement.GUI
             this.Close();
         }
 
-        private void FormThemNhanVien_Load(object sender, EventArgs e)
+        private void FormThongTinNhanVien_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = LabelThemNhanVien;
+            this.ActiveControl = LabelThongTinNhanVien;
         }
     }
 }

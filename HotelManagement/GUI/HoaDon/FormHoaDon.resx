@@ -121,7 +121,7 @@
   <data name="ctClose1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsRAAALEQF/ZF+RAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsPAAALDwGS+QOlAAAAB3RJ
         TUUH5gsaCC0L/VYGCgAAAWRJREFUOE+Vkj1Lw1AUhi8iDo5uOvsXdCnFJDbfIdGk6h/q5Obk5OhPUPAH
         ODgJIgi2pmit9duhtagV4n2CKSg3iMPLDck5ec99zyMunWXRto1c57WlaXnG1565exvYJ3eB0+wF9nHH
         re2ktu6cGdWp9LsWjR9SS5+n6Tny+8P6SvaxHmcjKc5hPcqeIu+l45rbLUub+9FMY8+3D4dJlH1uJKUa
@@ -169,8 +169,5 @@
   </metadata>
   <metadata name="ThanhTien.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
 </root>
