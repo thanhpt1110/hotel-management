@@ -107,7 +107,7 @@ namespace HotelManagement.CTControls
                 using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
                 using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
                 using (Pen penSurface = new Pen(this.Parent.BackColor, smoothSize))
-                using (Pen penBorder = new Pen(Color.FromArgb(88, 188, 188), borderSize))
+                using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
                     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     //Button surface
@@ -120,7 +120,7 @@ namespace HotelManagement.CTControls
                         pevent.Graphics.DrawPath(penBorder, pathBorder);
                 }
             }
-            else //Normal Room
+            else //Normal Button
             {
                 pevent.Graphics.SmoothingMode = SmoothingMode.None;
                 //Button surface
@@ -128,7 +128,7 @@ namespace HotelManagement.CTControls
                 //Button border
                 if (borderSize >= 1)
                 {
-                    using (Pen penBorder = new Pen(Color.FromArgb(88, 188, 188), borderSize))
+                    using (Pen penBorder = new Pen(borderColor, borderSize))
                     {
                         penBorder.Alignment = PenAlignment.Inset;
                         pevent.Graphics.DrawRectangle(penBorder, 0, 0, this.Width - 1, this.Height - 1);

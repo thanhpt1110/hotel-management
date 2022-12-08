@@ -82,7 +82,7 @@
             // 
             this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
             this.buttonLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.buttonLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.buttonLogin.BorderColor = System.Drawing.Color.White;
             this.buttonLogin.BorderRadius = 25;
             this.buttonLogin.BorderSize = 0;
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -90,9 +90,9 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(108, 388);
+            this.buttonLogin.Location = new System.Drawing.Point(118, 394);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(146, 46);
+            this.buttonLogin.Size = new System.Drawing.Size(146, 47);
             this.buttonLogin.TabIndex = 0;
             this.buttonLogin.Text = "LOG IN";
             this.buttonLogin.TextColor = System.Drawing.Color.White;
