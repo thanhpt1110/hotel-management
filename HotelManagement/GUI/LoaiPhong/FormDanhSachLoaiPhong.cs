@@ -15,7 +15,7 @@ namespace HotelManagement.GUI
 {
     public partial class FormDanhSachLoaiPhong : Form
     {
-        private Image LP = Properties.Resources.Giuong;
+        private Image LP = Properties.Resources.LoaiPhong;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         public FormDanhSachLoaiPhong()
