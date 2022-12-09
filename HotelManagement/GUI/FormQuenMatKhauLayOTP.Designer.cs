@@ -30,7 +30,7 @@
         {
             this.PictureBoxBack = new System.Windows.Forms.PictureBox();
             this.ButtonLayOTP = new HotelManagement.CTControls.CTButton();
-            this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
+            this.TextBoxEmail = new HotelManagement.CTControls.CTTextBox();
             this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
             this.LabelForgotPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
@@ -69,28 +69,28 @@
             this.ButtonLayOTP.UseVisualStyleBackColor = false;
             this.ButtonLayOTP.Click += new System.EventHandler(this.ButtonLayOTP_Click);
             // 
-            // ctTextBox1
+            // TextBoxEmail
             // 
-            this.ctTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.ctTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.ctTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
-            this.ctTextBox1.BorderRadius = 20;
-            this.ctTextBox1.BorderSize = 1;
-            this.ctTextBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.ctTextBox1.IsFocused = false;
-            this.ctTextBox1.Location = new System.Drawing.Point(23, 260);
-            this.ctTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctTextBox1.Multiline = false;
-            this.ctTextBox1.Name = "ctTextBox1";
-            this.ctTextBox1.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
-            this.ctTextBox1.PasswordChar = false;
-            this.ctTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ctTextBox1.PlaceholderText = "Enter your email";
-            this.ctTextBox1.ReadOnly = false;
-            this.ctTextBox1.Size = new System.Drawing.Size(286, 45);
-            this.ctTextBox1.TabIndex = 4;
-            this.ctTextBox1.Texts = "";
-            this.ctTextBox1.UnderlineedStyle = false;
+            this.TextBoxEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.TextBoxEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.TextBoxEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.TextBoxEmail.BorderRadius = 20;
+            this.TextBoxEmail.BorderSize = 1;
+            this.TextBoxEmail.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.TextBoxEmail.IsFocused = false;
+            this.TextBoxEmail.Location = new System.Drawing.Point(23, 260);
+            this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.TextBoxEmail.Multiline = false;
+            this.TextBoxEmail.Name = "TextBoxEmail";
+            this.TextBoxEmail.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
+            this.TextBoxEmail.PasswordChar = false;
+            this.TextBoxEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TextBoxEmail.PlaceholderText = "Enter your email";
+            this.TextBoxEmail.ReadOnly = false;
+            this.TextBoxEmail.Size = new System.Drawing.Size(286, 45);
+            this.TextBoxEmail.TabIndex = 4;
+            this.TextBoxEmail.Texts = "";
+            this.TextBoxEmail.UnderlineedStyle = false;
             // 
             // textBoxUsername
             // 
@@ -134,7 +134,7 @@
             this.ClientSize = new System.Drawing.Size(332, 466);
             this.Controls.Add(this.PictureBoxBack);
             this.Controls.Add(this.ButtonLayOTP);
-            this.Controls.Add(this.ctTextBox1);
+            this.Controls.Add(this.TextBoxEmail);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.LabelForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -148,7 +148,7 @@
 
         #endregion
         private CTControls.CTTextBox textBoxUsername;
-        private CTControls.CTTextBox ctTextBox1;
+        private CTControls.CTTextBox TextBoxEmail;
         private CTControls.CTButton ButtonLayOTP;
         private System.Windows.Forms.PictureBox PictureBoxBack;
         private System.Windows.Forms.Label LabelForgotPassword;

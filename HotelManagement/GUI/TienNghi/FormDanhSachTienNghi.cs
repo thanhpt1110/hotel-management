@@ -9,11 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.DTO;
+
 
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachTienNghi : Form
     {
+        List<TienNghi> tienNghis;
+        private Image TN = Properties.Resources.TienNghi;
+        private Image edit = Properties.Resources.edit;
+        private Image delete = Properties.Resources.delete;
         public FormDanhSachTienNghi()
         {
             InitializeComponent();
@@ -28,15 +34,26 @@ namespace HotelManagement.GUI
         private void FormDanhSachTienNghi_Load(object sender, EventArgs e)
         {
              grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-             Image TN = Properties.Resources.TienNghi;
-             Image edit = Properties.Resources.edit;
-             Image delete = Properties.Resources.delete;
-             
-             grid.Rows.Add(new object[] { TN, "TN001", "Ti vi", edit, delete });
-             grid.Rows.Add(new object[] { TN, "TN002", "Máy lạnh", edit, delete });
-             grid.Rows.Add(new object[] {TN, "TN003", "Máy sấy", edit, delete });
-        }
 
+
+            /*            grid.Rows.Add(new object[] { TN, "TN001", "Ti vi", edit, delete });
+                        grid.Rows.Add(new object[] { TN, "TN002", "Máy lạnh", edit, delete });
+                        grid.Rows.Add(new object[] {TN, "TN003", "Máy sấy", edit, delete });*/
+            LoadAllData();
+        }
+        public void LoadAllData()
+        {
+            tienNghis = TienNghiBUS.Instance.GetTienNghis();
+            LoadData();
+        }
+        private void LoadData()
+        {
+            grid.Rows.Clear();
+            foreach (TienNghi tienNghi in tienNghis)
+            {
+                grid.Rows.Add(new object[] { TN, tienNghi.MaTN, tienNghi.TenTN, edit, delete });
+            }
+        }
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try
@@ -115,6 +132,24 @@ namespace HotelManagement.GUI
             }
             else
                 grid.Cursor = Cursors.Default;
+        }
+
+        private void CTTextBoxTimTenTienNghi__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxTienNghi = sender as TextBox;
+            textBoxTienNghi.TextChanged += TextBoxTienNghi_TextChanged;
+        }
+
+        private void TextBoxTienNghi_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxTienNghi = sender as TextBox;
+            if (textBoxTienNghi.Focused == false)
+            {
+                LoadAllData();
+                return;
+            }
+            this.tienNghis = TienNghiBUS.Instance.FindTienNghiWithName(textBoxTienNghi.Text);   
+            LoadData();
         }
     }
 }

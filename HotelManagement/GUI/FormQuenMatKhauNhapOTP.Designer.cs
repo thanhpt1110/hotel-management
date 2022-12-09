@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ButtonContinue = new HotelManagement.CTControls.CTButton();
-            this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
+            this.textBoxOTP = new HotelManagement.CTControls.CTTextBox();
             this.LabelForgotPassword = new System.Windows.Forms.Label();
             this.ButtonResend = new HotelManagement.CTControls.CTButton();
             this.PictureBoxBack = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,28 +59,28 @@
             this.ButtonContinue.UseVisualStyleBackColor = false;
             this.ButtonContinue.Click += new System.EventHandler(this.ButtonContinue_Click);
             // 
-            // textBoxUsername
+            // textBoxOTP
             // 
-            this.textBoxUsername.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.textBoxUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
-            this.textBoxUsername.BorderRadius = 20;
-            this.textBoxUsername.BorderSize = 1;
-            this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(24, 203);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxUsername.Multiline = false;
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
-            this.textBoxUsername.PasswordChar = false;
-            this.textBoxUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxUsername.PlaceholderText = "Enter your OTP";
-            this.textBoxUsername.ReadOnly = false;
-            this.textBoxUsername.Size = new System.Drawing.Size(286, 45);
-            this.textBoxUsername.TabIndex = 8;
-            this.textBoxUsername.Texts = "";
-            this.textBoxUsername.UnderlineedStyle = false;
+            this.textBoxOTP.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxOTP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.textBoxOTP.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.textBoxOTP.BorderRadius = 20;
+            this.textBoxOTP.BorderSize = 1;
+            this.textBoxOTP.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.textBoxOTP.IsFocused = false;
+            this.textBoxOTP.Location = new System.Drawing.Point(24, 203);
+            this.textBoxOTP.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxOTP.Multiline = false;
+            this.textBoxOTP.Name = "textBoxOTP";
+            this.textBoxOTP.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
+            this.textBoxOTP.PasswordChar = false;
+            this.textBoxOTP.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxOTP.PlaceholderText = "Enter your OTP";
+            this.textBoxOTP.ReadOnly = false;
+            this.textBoxOTP.Size = new System.Drawing.Size(286, 45);
+            this.textBoxOTP.TabIndex = 8;
+            this.textBoxOTP.Texts = "";
+            this.textBoxOTP.UnderlineedStyle = false;
             // 
             // LabelForgotPassword
             // 
@@ -111,6 +113,7 @@
             this.ButtonResend.Text = "RESEND";
             this.ButtonResend.TextColor = System.Drawing.Color.White;
             this.ButtonResend.UseVisualStyleBackColor = false;
+            this.ButtonResend.Click += new System.EventHandler(this.ButtonResend_Click);
             // 
             // PictureBoxBack
             // 
@@ -124,6 +127,12 @@
             this.PictureBoxBack.TabStop = false;
             this.PictureBoxBack.Click += new System.EventHandler(this.PictureBoxBack_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormQuenMatKhauNhapOTP
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -132,7 +141,7 @@
             this.Controls.Add(this.PictureBoxBack);
             this.Controls.Add(this.ButtonResend);
             this.Controls.Add(this.ButtonContinue);
-            this.Controls.Add(this.textBoxUsername);
+            this.Controls.Add(this.textBoxOTP);
             this.Controls.Add(this.LabelForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQuenMatKhauNhapOTP";
@@ -146,9 +155,10 @@
         #endregion
 
         private CTControls.CTButton ButtonContinue;
-        private CTControls.CTTextBox textBoxUsername;
+        private CTControls.CTTextBox textBoxOTP;
         private System.Windows.Forms.Label LabelForgotPassword;
         private CTControls.CTButton ButtonResend;
         private System.Windows.Forms.PictureBox PictureBoxBack;
+        private System.Windows.Forms.Timer timer1;
     }
 }

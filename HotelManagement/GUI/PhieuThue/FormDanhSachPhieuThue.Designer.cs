@@ -72,6 +72,7 @@
             this.ctTextBox1.TabStop = false;
             this.ctTextBox1.Texts = "";
             this.ctTextBox1.UnderlineedStyle = false;
+            this.ctTextBox1._TextChanged += new System.EventHandler(this.ctTextBox1__TextChanged);
             // 
             // pictureBox1
             // 

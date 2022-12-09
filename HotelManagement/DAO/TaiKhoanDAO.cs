@@ -1,6 +1,7 @@
 ﻿using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,5 +39,20 @@ namespace HotelManagement.DAO
         {
             return db.TaiKhoans.Where(p=>p.TenTK.Contains(username)).ToList();  
         }    
+        public void AddOrUpdateTK(TaiKhoan taiKhoan)
+        {
+            db.TaiKhoans.AddOrUpdate(taiKhoan);
+            db.SaveChanges();
+        }
+        public void RemoveTk(TaiKhoan taiKhoan)
+        {
+            db.TaiKhoans.Remove(taiKhoan);
+            db.SaveChanges();
+        }
+        public TaiKhoan CheckLegit(string username,string email)
+        {
+            return db.TaiKhoans.Where(p => p.TenTK == username && p.NhanVien.Email == email).SingleOrDefault();
+        }
+        
     }
 }

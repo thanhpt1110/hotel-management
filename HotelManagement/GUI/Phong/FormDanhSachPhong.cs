@@ -8,14 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HotelManagement.DTO;
+using HotelManagement.BUS;
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachPhong : Form
     {
+        private List<Phong> phongs;
+        private Image PH = Properties.Resources.Phong;
+        private Image edit = Properties.Resources.edit;
+        private Image delete = Properties.Resources.delete;
         public FormDanhSachPhong()
         {
             InitializeComponent();
+            LoadFullDataGrid();
         }
 
         private void CTButtonThemPhong_Click(object sender, EventArgs e)
@@ -27,16 +33,27 @@ namespace HotelManagement.GUI
         private void FormDanhSachPhong_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            Image PH = Properties.Resources.Phong;
-            Image edit = Properties.Resources.edit;
-            Image delete = Properties.Resources.delete;
 
-            grid.Rows.Add(new object[] { PH, "PH001", "Trống", "Đang dọn dẹp", "Phòng đơn", edit, delete });
+
+            /*grid.Rows.Add(new object[] { PH, "PH001", "Trống", "Đang dọn dẹp", "Phòng đơn", edit, delete });
             grid.Rows.Add(new object[] { PH, "PH002", "Đang thuê", "Đã dọn dẹp", "Phòng đơn", edit, delete });
             grid.Rows.Add(new object[] { PH, "PH003", "Trống", "Đang dọn dẹp", "Phòng đôi", edit, delete });
-            grid.Rows.Add(new object[] { PH, "PH004", "Đã đặt", "Đang dọn dẹp", "Phòng VIP", edit, delete });
+            grid.Rows.Add(new object[] { PH, "PH004", "Đã đặt", "Đang dọn dẹp", "Phòng VIP", edit, delete });*/
         }
 
+        public void LoadFullDataGrid()
+        {
+            this.phongs = PhongBUS.Instance.GetAllPhong();
+            LoadDataGrid();
+        }
+        private void LoadDataGrid()
+        {
+            grid.Rows.Clear();
+            foreach (Phong phong in this.phongs)
+            {
+                grid.Rows.Add(new object[] { PH, phong.MaPH, phong.TTPH, phong.MaPH, phong.LoaiPhong.TenLPH, edit, delete });
+            }    
+        }
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try
@@ -121,7 +138,21 @@ namespace HotelManagement.GUI
 
         private void CTTextBoxTimPhongTheoMa__TextChanged(object sender, EventArgs e)
         {
+            TextBox textBoxPhong = sender as TextBox;
+            textBoxPhong.TextChanged += TextBoxPhong_TextChanged;
+        }
 
+        private void TextBoxPhong_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxPhong = sender as TextBox;
+
+            if (textBoxPhong.Focused == false)
+            {
+                LoadFullDataGrid();
+                return;
+            }
+            this.phongs = PhongBUS.Instance.FindPhongWithMaPH(textBoxPhong.Text);
+            LoadDataGrid();
         }
     }
 }

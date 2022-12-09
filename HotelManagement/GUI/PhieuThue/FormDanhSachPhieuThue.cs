@@ -1,4 +1,5 @@
-﻿using HotelManagement.CTControls;
+﻿using HotelManagement.BUS;
+using HotelManagement.CTControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.DTO;
+using HotelManagement.DAO;
 
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachPhieuThue : Form
     {
+        private Image PT = Properties.Resources.PhieuThueDgv;
+        private Image details = Properties.Resources.details;
+        private List<PhieuThue> phieuThues;
         public FormDanhSachPhieuThue()
         {
             InitializeComponent();
@@ -27,15 +33,28 @@ namespace HotelManagement.GUI
         private void FormDanhSachPhieuThue_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            Image PT = Properties.Resources.PhieuThueDgv;
-            Image details = Properties.Resources.details;
 
-            grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
-            grid.Rows.Add(new object[] { PT, "PT002", "Nguyễn Phúc Bình", "10/11/2003 15:45:00", "Nguyễn Văn Anh",  details});
-            grid.Rows.Add(new object[] {PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
-            grid.Rows.Add(new object[] {PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
+
+            /*            grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
+                        grid.Rows.Add(new object[] { PT, "PT002", "Nguyễn Phúc Bình", "10/11/2003 15:45:00", "Nguyễn Văn Anh",  details});
+                        grid.Rows.Add(new object[] {PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
+                        grid.Rows.Add(new object[] {PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });*/
+            LoadFullDataGrid();
         }
 
+        public void LoadFullDataGrid()
+        {
+            phieuThues = PhieuThueBUS.Instance.GetPhieuThues();
+            LoadDataGrid();
+        }    
+        public void LoadDataGrid()
+        {
+            this.grid.Rows.Clear();
+            foreach (PhieuThue phieuThue in phieuThues)
+            {
+                grid.Rows.Add(new object[] { PT, phieuThue.MaPT,phieuThue.KhachHang.TenKH,String.Format("dd/MM/yyyy HH:mm:ss" , phieuThue.NgPT),phieuThue.NhanVien.TenNV,details});
+            }
+        }    
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try
@@ -106,6 +125,25 @@ namespace HotelManagement.GUI
             }
             else
                 grid.Cursor = Cursors.Default;
+        }
+
+        private void ctTextBox1__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxPT = sender as TextBox;
+            textBoxPT.TextChanged += TextBoxPT_TextChanged;
+        }
+
+        private void TextBoxPT_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxPT = sender as TextBox;
+
+            if (textBoxPT.Focused == false)
+            {
+                LoadFullDataGrid();
+                return;
+            }
+            this.phieuThues = PhieuThueBUS.Instance.GetPhieuThuesWithNameCus(textBoxPT.Text);
+            LoadDataGrid();
         }
     }
 }

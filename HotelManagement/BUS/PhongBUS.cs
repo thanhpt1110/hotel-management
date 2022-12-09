@@ -19,11 +19,15 @@ namespace HotelManagement.BUS
         private PhongBUS() { }
         public List<Phong> GetAllPhong()
         {
-           return PhongDAO.Instance.GetAllPhongs();
+            return PhongDAO.Instance.GetAllPhongs();
         }
         public Phong FindePhong(string MaPh)
         {
-            return PhongDAO.Instance.FindPhong(MaPh);  
-        }    
+            return PhongDAO.Instance.FindPhong(MaPh);
+        }
+        public List<Phong> FindPhongWithMaPH(string MaPh)
+        {
+            return PhongDAO.Instance.FindPhongWithMaPH(MaPh);
+        }
     }
 }

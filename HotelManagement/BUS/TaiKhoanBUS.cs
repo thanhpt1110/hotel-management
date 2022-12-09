@@ -34,5 +34,17 @@ namespace HotelManagement.BUS
         {
             return TaiKhoanDAO.Instance.GetTaiKhoansWithUserName(username);
         }
+        public TaiKhoan CheckLegit(string username, string email)
+        {
+            return TaiKhoanDAO.Instance.CheckLegit(username, email);
         }
+        public void AddOrUpdateTK(TaiKhoan taiKhoan)
+        {
+            TaiKhoanDAO.Instance.AddOrUpdateTK(taiKhoan);
+        }
+        public void RemoveTk(TaiKhoan taiKhoan)
+        {
+            TaiKhoanDAO.Instance.RemoveTk(taiKhoan);
+        }
+    }
 }

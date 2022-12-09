@@ -24,6 +24,10 @@ namespace HotelManagement.DAO
         public Phong FindPhong(string MaPh)
         {
             return db.Phongs.Find(MaPh);
-        }    
+        }
+        public List<Phong> FindPhongWithMaPH(string MaPh)
+        {
+            return db.Phongs.Where(p => p.MaPH.Contains(MaPh)).ToList();
+        }
     }
 }

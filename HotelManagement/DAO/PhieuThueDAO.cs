@@ -30,5 +30,9 @@ namespace HotelManagement.DAO
         {
             db.PhieuThues.AddOrUpdate(phieuThue);
         }
+        public List<PhieuThue> GetPhieuThuesWithNameCus(string name)
+        {
+            return db.PhieuThues.Where(p => p.KhachHang.TenKH.Contains(name)).ToList();
+        }
     }
 }

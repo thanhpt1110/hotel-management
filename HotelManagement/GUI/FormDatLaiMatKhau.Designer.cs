@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.ButtonOK = new HotelManagement.CTControls.CTButton();
-            this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
+            this.textBoxPassword = new HotelManagement.CTControls.CTTextBox();
             this.LabelForgotPassword = new System.Windows.Forms.Label();
-            this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
+            this.textBoxPassConfirm = new HotelManagement.CTControls.CTTextBox();
             this.PictureBoxBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
             this.SuspendLayout();
@@ -55,29 +55,31 @@
             this.ButtonOK.Text = "OK";
             this.ButtonOK.TextColor = System.Drawing.Color.White;
             this.ButtonOK.UseVisualStyleBackColor = false;
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
-            // textBoxUsername
+            // textBoxPassword
             // 
-            this.textBoxUsername.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.textBoxUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
-            this.textBoxUsername.BorderRadius = 20;
-            this.textBoxUsername.BorderSize = 1;
-            this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(22, 187);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxUsername.Multiline = false;
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
-            this.textBoxUsername.PasswordChar = false;
-            this.textBoxUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxUsername.PlaceholderText = "Enter your new password";
-            this.textBoxUsername.ReadOnly = false;
-            this.textBoxUsername.Size = new System.Drawing.Size(286, 45);
-            this.textBoxUsername.TabIndex = 12;
-            this.textBoxUsername.Texts = "";
-            this.textBoxUsername.UnderlineedStyle = false;
+            this.textBoxPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.textBoxPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.textBoxPassword.BorderRadius = 20;
+            this.textBoxPassword.BorderSize = 1;
+            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.textBoxPassword.IsFocused = false;
+            this.textBoxPassword.Location = new System.Drawing.Point(22, 187);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Multiline = false;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
+            this.textBoxPassword.PasswordChar = false;
+            this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxPassword.PlaceholderText = "Enter your new password";
+            this.textBoxPassword.ReadOnly = false;
+            this.textBoxPassword.Size = new System.Drawing.Size(286, 45);
+            this.textBoxPassword.TabIndex = 12;
+            this.textBoxPassword.Texts = "";
+            this.textBoxPassword.UnderlineedStyle = false;
+            this.textBoxPassword._TextChanged += new System.EventHandler(this.textBoxPassword__TextChanged);
             // 
             // LabelForgotPassword
             // 
@@ -91,28 +93,29 @@
             this.LabelForgotPassword.TabIndex = 11;
             this.LabelForgotPassword.Text = "Forgot password";
             // 
-            // ctTextBox1
+            // textBoxPassConfirm
             // 
-            this.ctTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.ctTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.ctTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
-            this.ctTextBox1.BorderRadius = 20;
-            this.ctTextBox1.BorderSize = 1;
-            this.ctTextBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.ctTextBox1.IsFocused = false;
-            this.ctTextBox1.Location = new System.Drawing.Point(22, 266);
-            this.ctTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctTextBox1.Multiline = false;
-            this.ctTextBox1.Name = "ctTextBox1";
-            this.ctTextBox1.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
-            this.ctTextBox1.PasswordChar = false;
-            this.ctTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ctTextBox1.PlaceholderText = "Confirm your new password";
-            this.ctTextBox1.ReadOnly = false;
-            this.ctTextBox1.Size = new System.Drawing.Size(286, 45);
-            this.ctTextBox1.TabIndex = 12;
-            this.ctTextBox1.Texts = "";
-            this.ctTextBox1.UnderlineedStyle = false;
+            this.textBoxPassConfirm.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxPassConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.textBoxPassConfirm.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.textBoxPassConfirm.BorderRadius = 20;
+            this.textBoxPassConfirm.BorderSize = 1;
+            this.textBoxPassConfirm.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.textBoxPassConfirm.IsFocused = false;
+            this.textBoxPassConfirm.Location = new System.Drawing.Point(22, 266);
+            this.textBoxPassConfirm.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassConfirm.Multiline = false;
+            this.textBoxPassConfirm.Name = "textBoxPassConfirm";
+            this.textBoxPassConfirm.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
+            this.textBoxPassConfirm.PasswordChar = false;
+            this.textBoxPassConfirm.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxPassConfirm.PlaceholderText = "Confirm your new password";
+            this.textBoxPassConfirm.ReadOnly = false;
+            this.textBoxPassConfirm.Size = new System.Drawing.Size(286, 45);
+            this.textBoxPassConfirm.TabIndex = 12;
+            this.textBoxPassConfirm.Texts = "";
+            this.textBoxPassConfirm.UnderlineedStyle = false;
+            this.textBoxPassConfirm._TextChanged += new System.EventHandler(this.textBoxPassConfirm__TextChanged);
             // 
             // PictureBoxBack
             // 
@@ -133,8 +136,8 @@
             this.ClientSize = new System.Drawing.Size(332, 466);
             this.Controls.Add(this.PictureBoxBack);
             this.Controls.Add(this.ButtonOK);
-            this.Controls.Add(this.ctTextBox1);
-            this.Controls.Add(this.textBoxUsername);
+            this.Controls.Add(this.textBoxPassConfirm);
+            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.LabelForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDatLaiMatKhau";
@@ -148,9 +151,9 @@
         #endregion
 
         private CTControls.CTButton ButtonOK;
-        private CTControls.CTTextBox textBoxUsername;
+        private CTControls.CTTextBox textBoxPassword;
         private System.Windows.Forms.Label LabelForgotPassword;
-        private CTControls.CTTextBox ctTextBox1;
+        private CTControls.CTTextBox textBoxPassConfirm;
         private System.Windows.Forms.PictureBox PictureBoxBack;
     }
 }

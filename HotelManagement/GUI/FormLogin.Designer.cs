@@ -33,11 +33,11 @@
             this.panelLogin = new System.Windows.Forms.Panel();
             this.PanelLoginContent = new System.Windows.Forms.Panel();
             this.panelControlBox = new System.Windows.Forms.Panel();
+            this.labelCorporation = new System.Windows.Forms.Label();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
-            this.labelCorporation = new System.Windows.Forms.Label();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelBackground.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.panelControlBox.SuspendLayout();
@@ -92,6 +92,30 @@
             this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
             this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
             // 
+            // labelCorporation
+            // 
+            this.labelCorporation.AutoSize = true;
+            this.labelCorporation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorporation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(152)))), ((int)(((byte)(162)))));
+            this.labelCorporation.Location = new System.Drawing.Point(224, 508);
+            this.labelCorporation.Name = "labelCorporation";
+            this.labelCorporation.Size = new System.Drawing.Size(155, 21);
+            this.labelCorporation.TabIndex = 4;
+            this.labelCorporation.Text = "TBT CORPORATION";
+            // 
+            // pictureBoxIcon
+            // 
+            this.pictureBoxIcon.BackColor = System.Drawing.Color.White;
+            this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxIcon.Image = global::HotelManagement.Properties.Resources.pictureIcon;
+            this.pictureBoxIcon.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(516, 538);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxIcon.TabIndex = 12;
+            this.pictureBoxIcon.TabStop = false;
+            this.pictureBoxIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIcon_MouseDown);
+            // 
             // ctMaximize1
             // 
             this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
@@ -123,30 +147,6 @@
             this.ctClose1.Size = new System.Drawing.Size(15, 15);
             this.ctClose1.TabIndex = 0;
             this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
-            // 
-            // labelCorporation
-            // 
-            this.labelCorporation.AutoSize = true;
-            this.labelCorporation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorporation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(152)))), ((int)(((byte)(162)))));
-            this.labelCorporation.Location = new System.Drawing.Point(224, 508);
-            this.labelCorporation.Name = "labelCorporation";
-            this.labelCorporation.Size = new System.Drawing.Size(155, 21);
-            this.labelCorporation.TabIndex = 4;
-            this.labelCorporation.Text = "TBT CORPORATION";
-            // 
-            // pictureBoxIcon
-            // 
-            this.pictureBoxIcon.BackColor = System.Drawing.Color.White;
-            this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxIcon.Image = global::HotelManagement.Properties.Resources.pictureIcon;
-            this.pictureBoxIcon.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(516, 538);
-            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxIcon.TabIndex = 12;
-            this.pictureBoxIcon.TabStop = false;
-            this.pictureBoxIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIcon_MouseDown);
             // 
             // FormLogin
             // 
