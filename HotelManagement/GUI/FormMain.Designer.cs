@@ -35,21 +35,15 @@
             this.labelPhienBan = new System.Windows.Forms.Label();
             this.labelBanQuyen = new System.Windows.Forms.Label();
             this.Sidebar = new System.Windows.Forms.Panel();
-            this.PanelUser = new System.Windows.Forms.Panel();
-            this.panelName = new System.Windows.Forms.Panel();
-            this.panelControlBox = new System.Windows.Forms.Panel();
-            this.labelTenKhachSan = new System.Windows.Forms.Label();
-            this.PanelTienNghi = new System.Windows.Forms.Panel();
-            this.PanelPhong = new System.Windows.Forms.Panel();
-            this.LabelTenNguoiDung = new System.Windows.Forms.Label();
-            this.ButtonLabelDangXuat = new System.Windows.Forms.LinkLabel();
             this.ButtonThongKe = new System.Windows.Forms.Button();
             this.ButtonQuanLyNhanVien = new System.Windows.Forms.Button();
             this.ButtonQuanLyTaiKhoan = new System.Windows.Forms.Button();
+            this.PanelTienNghi = new System.Windows.Forms.Panel();
             this.ButtonChiTietTienNghi = new System.Windows.Forms.Button();
             this.ButtonTienNghi = new System.Windows.Forms.Button();
             this.ButtonQuanLyTienNghi = new System.Windows.Forms.Button();
             this.ButtonQuanLyDichVu = new System.Windows.Forms.Button();
+            this.PanelPhong = new System.Windows.Forms.Panel();
             this.ButtonLoaiPhong = new System.Windows.Forms.Button();
             this.ButtonPhong = new System.Windows.Forms.Button();
             this.ButtonQuanLyPhong = new System.Windows.Forms.Button();
@@ -58,21 +52,27 @@
             this.ButtonDatPhong = new System.Windows.Forms.Button();
             this.ButtonSoDoPhong = new System.Windows.Forms.Button();
             this.ButtonTrangChu = new System.Windows.Forms.Button();
+            this.PanelUser = new System.Windows.Forms.Panel();
+            this.ButtonLabelDangXuat = new System.Windows.Forms.LinkLabel();
+            this.LabelTenNguoiDung = new System.Windows.Forms.Label();
             this.PictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.panelName = new System.Windows.Forms.Panel();
             this.PictureBoxMenu = new System.Windows.Forms.PictureBox();
+            this.panelControlBox = new System.Windows.Forms.Panel();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.labelTenKhachSan = new System.Windows.Forms.Label();
             this.PanelBackground.SuspendLayout();
             this.panelInfomation.SuspendLayout();
             this.Sidebar.SuspendLayout();
-            this.PanelUser.SuspendLayout();
-            this.panelName.SuspendLayout();
-            this.panelControlBox.SuspendLayout();
             this.PanelTienNghi.SuspendLayout();
             this.PanelPhong.SuspendLayout();
+            this.PanelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUser)).BeginInit();
+            this.panelName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMenu)).BeginInit();
+            this.panelControlBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelBackground
@@ -154,101 +154,6 @@
             this.Sidebar.Size = new System.Drawing.Size(262, 874);
             this.Sidebar.TabIndex = 5;
             // 
-            // PanelUser
-            // 
-            this.PanelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(169)))), ((int)(((byte)(177)))));
-            this.PanelUser.Controls.Add(this.ButtonLabelDangXuat);
-            this.PanelUser.Controls.Add(this.LabelTenNguoiDung);
-            this.PanelUser.Controls.Add(this.PictureBoxUser);
-            this.PanelUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelUser.Location = new System.Drawing.Point(0, 0);
-            this.PanelUser.Name = "PanelUser";
-            this.PanelUser.Size = new System.Drawing.Size(262, 134);
-            this.PanelUser.TabIndex = 0;
-            // 
-            // panelName
-            // 
-            this.panelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
-            this.panelName.Controls.Add(this.PictureBoxMenu);
-            this.panelName.Controls.Add(this.panelControlBox);
-            this.panelName.Controls.Add(this.labelTenKhachSan);
-            this.panelName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelName.Location = new System.Drawing.Point(0, 0);
-            this.panelName.Name = "panelName";
-            this.panelName.Size = new System.Drawing.Size(1522, 60);
-            this.panelName.TabIndex = 4;
-            this.panelName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelName_MouseDown);
-            // 
-            // panelControlBox
-            // 
-            this.panelControlBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControlBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
-            this.panelControlBox.Controls.Add(this.ctMaximize1);
-            this.panelControlBox.Controls.Add(this.ctMinimize1);
-            this.panelControlBox.Controls.Add(this.ctClose1);
-            this.panelControlBox.Location = new System.Drawing.Point(1424, 3);
-            this.panelControlBox.Name = "panelControlBox";
-            this.panelControlBox.Size = new System.Drawing.Size(95, 30);
-            this.panelControlBox.TabIndex = 6;
-            this.panelControlBox.MouseLeave += new System.EventHandler(this.panelControlBox_MouseLeave);
-            this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
-            this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
-            // 
-            // labelTenKhachSan
-            // 
-            this.labelTenKhachSan.AutoSize = true;
-            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
-            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenKhachSan.ForeColor = System.Drawing.Color.White;
-            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
-            this.labelTenKhachSan.Name = "labelTenKhachSan";
-            this.labelTenKhachSan.Size = new System.Drawing.Size(132, 21);
-            this.labelTenKhachSan.TabIndex = 2;
-            this.labelTenKhachSan.Text = "Khách sạn IT008";
-            // 
-            // PanelTienNghi
-            // 
-            this.PanelTienNghi.Controls.Add(this.ButtonChiTietTienNghi);
-            this.PanelTienNghi.Controls.Add(this.ButtonTienNghi);
-            this.PanelTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTienNghi.Location = new System.Drawing.Point(0, 617);
-            this.PanelTienNghi.Name = "PanelTienNghi";
-            this.PanelTienNghi.Size = new System.Drawing.Size(262, 100);
-            this.PanelTienNghi.TabIndex = 30;
-            // 
-            // PanelPhong
-            // 
-            this.PanelPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(197)))));
-            this.PanelPhong.Controls.Add(this.ButtonLoaiPhong);
-            this.PanelPhong.Controls.Add(this.ButtonPhong);
-            this.PanelPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelPhong.Location = new System.Drawing.Point(0, 422);
-            this.PanelPhong.Name = "PanelPhong";
-            this.PanelPhong.Size = new System.Drawing.Size(262, 99);
-            this.PanelPhong.TabIndex = 27;
-            // 
-            // LabelTenNguoiDung
-            // 
-            this.LabelTenNguoiDung.AutoSize = true;
-            this.LabelTenNguoiDung.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTenNguoiDung.Location = new System.Drawing.Point(46, 99);
-            this.LabelTenNguoiDung.Name = "LabelTenNguoiDung";
-            this.LabelTenNguoiDung.Size = new System.Drawing.Size(161, 25);
-            this.LabelTenNguoiDung.TabIndex = 1;
-            this.LabelTenNguoiDung.Text = "Nguyễn Tấn Toàn";
-            // 
-            // ButtonLabelDangXuat
-            // 
-            this.ButtonLabelDangXuat.AutoSize = true;
-            this.ButtonLabelDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonLabelDangXuat.LinkColor = System.Drawing.Color.Black;
-            this.ButtonLabelDangXuat.Location = new System.Drawing.Point(9, 6);
-            this.ButtonLabelDangXuat.Name = "ButtonLabelDangXuat";
-            this.ButtonLabelDangXuat.Size = new System.Drawing.Size(72, 17);
-            this.ButtonLabelDangXuat.TabIndex = 2;
-            this.ButtonLabelDangXuat.TabStop = true;
-            this.ButtonLabelDangXuat.Text = "Đăng xuất";
-            // 
             // ButtonThongKe
             // 
             this.ButtonThongKe.Dock = System.Windows.Forms.DockStyle.Top;
@@ -308,6 +213,16 @@
             this.ButtonQuanLyTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonQuanLyTaiKhoan.UseVisualStyleBackColor = true;
             this.ButtonQuanLyTaiKhoan.Click += new System.EventHandler(this.ButtonQuanLyTaiKhoan_Click);
+            // 
+            // PanelTienNghi
+            // 
+            this.PanelTienNghi.Controls.Add(this.ButtonChiTietTienNghi);
+            this.PanelTienNghi.Controls.Add(this.ButtonTienNghi);
+            this.PanelTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTienNghi.Location = new System.Drawing.Point(0, 617);
+            this.PanelTienNghi.Name = "PanelTienNghi";
+            this.PanelTienNghi.Size = new System.Drawing.Size(262, 100);
+            this.PanelTienNghi.TabIndex = 30;
             // 
             // ButtonChiTietTienNghi
             // 
@@ -390,6 +305,17 @@
             this.ButtonQuanLyDichVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ButtonQuanLyDichVu.UseVisualStyleBackColor = true;
             this.ButtonQuanLyDichVu.Click += new System.EventHandler(this.ButtonQuanLyDichVu_Click);
+            // 
+            // PanelPhong
+            // 
+            this.PanelPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(197)))));
+            this.PanelPhong.Controls.Add(this.ButtonLoaiPhong);
+            this.PanelPhong.Controls.Add(this.ButtonPhong);
+            this.PanelPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelPhong.Location = new System.Drawing.Point(0, 422);
+            this.PanelPhong.Name = "PanelPhong";
+            this.PanelPhong.Size = new System.Drawing.Size(262, 99);
+            this.PanelPhong.TabIndex = 27;
             // 
             // ButtonLoaiPhong
             // 
@@ -552,6 +478,40 @@
             this.ButtonTrangChu.UseVisualStyleBackColor = true;
             this.ButtonTrangChu.Click += new System.EventHandler(this.ButtonTrangChu_Click);
             // 
+            // PanelUser
+            // 
+            this.PanelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(169)))), ((int)(((byte)(177)))));
+            this.PanelUser.Controls.Add(this.ButtonLabelDangXuat);
+            this.PanelUser.Controls.Add(this.LabelTenNguoiDung);
+            this.PanelUser.Controls.Add(this.PictureBoxUser);
+            this.PanelUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelUser.Location = new System.Drawing.Point(0, 0);
+            this.PanelUser.Name = "PanelUser";
+            this.PanelUser.Size = new System.Drawing.Size(262, 134);
+            this.PanelUser.TabIndex = 0;
+            // 
+            // ButtonLabelDangXuat
+            // 
+            this.ButtonLabelDangXuat.AutoSize = true;
+            this.ButtonLabelDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonLabelDangXuat.LinkColor = System.Drawing.Color.Black;
+            this.ButtonLabelDangXuat.Location = new System.Drawing.Point(9, 6);
+            this.ButtonLabelDangXuat.Name = "ButtonLabelDangXuat";
+            this.ButtonLabelDangXuat.Size = new System.Drawing.Size(72, 17);
+            this.ButtonLabelDangXuat.TabIndex = 2;
+            this.ButtonLabelDangXuat.TabStop = true;
+            this.ButtonLabelDangXuat.Text = "Đăng xuất";
+            // 
+            // LabelTenNguoiDung
+            // 
+            this.LabelTenNguoiDung.AutoSize = true;
+            this.LabelTenNguoiDung.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTenNguoiDung.Location = new System.Drawing.Point(46, 99);
+            this.LabelTenNguoiDung.Name = "LabelTenNguoiDung";
+            this.LabelTenNguoiDung.Size = new System.Drawing.Size(161, 25);
+            this.LabelTenNguoiDung.TabIndex = 1;
+            this.LabelTenNguoiDung.Text = "Nguyễn Tấn Toàn";
+            // 
             // PictureBoxUser
             // 
             this.PictureBoxUser.Image = global::HotelManagement.Properties.Resources.user;
@@ -560,6 +520,19 @@
             this.PictureBoxUser.Size = new System.Drawing.Size(80, 80);
             this.PictureBoxUser.TabIndex = 0;
             this.PictureBoxUser.TabStop = false;
+            // 
+            // panelName
+            // 
+            this.panelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
+            this.panelName.Controls.Add(this.PictureBoxMenu);
+            this.panelName.Controls.Add(this.panelControlBox);
+            this.panelName.Controls.Add(this.labelTenKhachSan);
+            this.panelName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelName.Location = new System.Drawing.Point(0, 0);
+            this.panelName.Name = "panelName";
+            this.panelName.Size = new System.Drawing.Size(1522, 60);
+            this.panelName.TabIndex = 4;
+            this.panelName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelName_MouseDown);
             // 
             // PictureBoxMenu
             // 
@@ -572,6 +545,21 @@
             this.PictureBoxMenu.TabIndex = 21;
             this.PictureBoxMenu.TabStop = false;
             this.PictureBoxMenu.Click += new System.EventHandler(this.PictureBoxMenu_Click);
+            // 
+            // panelControlBox
+            // 
+            this.panelControlBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControlBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
+            this.panelControlBox.Controls.Add(this.ctMaximize1);
+            this.panelControlBox.Controls.Add(this.ctMinimize1);
+            this.panelControlBox.Controls.Add(this.ctClose1);
+            this.panelControlBox.Location = new System.Drawing.Point(1424, 3);
+            this.panelControlBox.Name = "panelControlBox";
+            this.panelControlBox.Size = new System.Drawing.Size(95, 30);
+            this.panelControlBox.TabIndex = 6;
+            this.panelControlBox.MouseLeave += new System.EventHandler(this.panelControlBox_MouseLeave);
+            this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
+            this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
             // 
             // ctMaximize1
             // 
@@ -606,6 +594,18 @@
             this.ctClose1.TabIndex = 0;
             this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
             // 
+            // labelTenKhachSan
+            // 
+            this.labelTenKhachSan.AutoSize = true;
+            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
+            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenKhachSan.ForeColor = System.Drawing.Color.White;
+            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
+            this.labelTenKhachSan.Name = "labelTenKhachSan";
+            this.labelTenKhachSan.Size = new System.Drawing.Size(132, 21);
+            this.labelTenKhachSan.TabIndex = 2;
+            this.labelTenKhachSan.Text = "Khách sạn IT008";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -630,15 +630,15 @@
             this.panelInfomation.ResumeLayout(false);
             this.panelInfomation.PerformLayout();
             this.Sidebar.ResumeLayout(false);
-            this.PanelUser.ResumeLayout(false);
-            this.PanelUser.PerformLayout();
-            this.panelName.ResumeLayout(false);
-            this.panelName.PerformLayout();
-            this.panelControlBox.ResumeLayout(false);
             this.PanelTienNghi.ResumeLayout(false);
             this.PanelPhong.ResumeLayout(false);
+            this.PanelUser.ResumeLayout(false);
+            this.PanelUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUser)).EndInit();
+            this.panelName.ResumeLayout(false);
+            this.panelName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMenu)).EndInit();
+            this.panelControlBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
