@@ -42,7 +42,7 @@
             this.labelForgotPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelForgotPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelForgotPassword.ForeColor = System.Drawing.Color.Gray;
-            this.labelForgotPassword.Location = new System.Drawing.Point(211, 349);
+            this.labelForgotPassword.Location = new System.Drawing.Point(193, 304);
             this.labelForgotPassword.Name = "labelForgotPassword";
             this.labelForgotPassword.Size = new System.Drawing.Size(127, 20);
             this.labelForgotPassword.TabIndex = 8;
@@ -55,7 +55,7 @@
             this.labelLogin.AutoSize = true;
             this.labelLogin.Font = new System.Drawing.Font("Brush Script MT", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.labelLogin.Location = new System.Drawing.Point(107, 99);
+            this.labelLogin.Location = new System.Drawing.Point(89, 69);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(160, 79);
             this.labelLogin.TabIndex = 6;
@@ -73,7 +73,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(120, 393);
+            this.buttonLogin.Location = new System.Drawing.Point(103, 356);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(146, 47);
             this.buttonLogin.TabIndex = 4;
@@ -90,7 +90,7 @@
             this.textBoxPassword.BorderSize = 1;
             this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxPassword.IsFocused = false;
-            this.textBoxPassword.Location = new System.Drawing.Point(52, 289);
+            this.textBoxPassword.Location = new System.Drawing.Point(22, 255);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Multiline = false;
             this.textBoxPassword.Name = "textBoxPassword";
@@ -113,7 +113,7 @@
             this.textBoxUsername.BorderSize = 1;
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(52, 206);
+            this.textBoxUsername.Location = new System.Drawing.Point(22, 184);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Multiline = false;
             this.textBoxUsername.Name = "textBoxUsername";
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(390, 538);
+            this.ClientSize = new System.Drawing.Size(332, 466);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);

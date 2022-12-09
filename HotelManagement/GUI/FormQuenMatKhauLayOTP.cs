@@ -12,9 +12,27 @@ namespace HotelManagement.GUI
 {
     public partial class FormQuenMatKhauLayOTP : Form
     {
-        public FormQuenMatKhauLayOTP()
+        private FormLogin formLoginParent;
+        public FormQuenMatKhauLayOTP(FormLogin formMain)
         {
             InitializeComponent();
+            this.formLoginParent = formMain;
+         }
+
+        private void PictureBoxBack_Click(object sender, EventArgs e)
+        {
+            formLoginParent.openChildForm(new FormDangNhap(formLoginParent));
+        }
+        bool checkUsernameAndEmail()
+        {
+            return true;
+        }
+        private void ButtonLayOTP_Click(object sender, EventArgs e)
+        {
+            if (checkUsernameAndEmail())
+            {
+                formLoginParent.openChildForm(new FormQuenMatKhauNhapOTP(formLoginParent));
+            }
         }
     }
 }

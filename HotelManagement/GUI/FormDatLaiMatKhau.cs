@@ -12,9 +12,16 @@ namespace HotelManagement.GUI
 {
     public partial class FormDatLaiMatKhau : Form
     {
-        public FormDatLaiMatKhau()
+        private FormLogin formLoginParent;
+        public FormDatLaiMatKhau(FormLogin formMain)
         {
             InitializeComponent();
+            this.formLoginParent = formMain;
+        }
+
+        private void PictureBoxBack_Click(object sender, EventArgs e)
+        {
+            formLoginParent.openChildForm(new FormQuenMatKhauNhapOTP(formLoginParent));
         }
     }
 }

@@ -21,7 +21,7 @@ namespace HotelManagement.GUI
         
         private void labelForgotPassword_Click(object sender, EventArgs e)
         {
-            formLoginParent.openChildForm(new FormQuenMatKhauLayOTP());
+            formLoginParent.openChildForm(new FormQuenMatKhauLayOTP(formLoginParent));
             formLoginParent.bringControlBoxAndTBTLabelToFront();
         }
     }

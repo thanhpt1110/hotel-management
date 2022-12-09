@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonLogin = new HotelManagement.CTControls.CTButton();
+            this.ButtonOK = new HotelManagement.CTControls.CTButton();
             this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
             this.LabelForgotPassword = new System.Windows.Forms.Label();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
+            this.PictureBoxBack = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonLogin
+            // ButtonOK
             // 
-            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.buttonLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.buttonLogin.BorderColor = System.Drawing.Color.White;
-            this.buttonLogin.BorderRadius = 15;
-            this.buttonLogin.BorderSize = 0;
-            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogin.FlatAppearance.BorderSize = 0;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(140, 393);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(94, 47);
-            this.buttonLogin.TabIndex = 14;
-            this.buttonLogin.Text = "OK";
-            this.buttonLogin.TextColor = System.Drawing.Color.White;
-            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.ButtonOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.ButtonOK.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.ButtonOK.BorderColor = System.Drawing.Color.White;
+            this.ButtonOK.BorderRadius = 15;
+            this.ButtonOK.BorderSize = 0;
+            this.ButtonOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonOK.FlatAppearance.BorderSize = 0;
+            this.ButtonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonOK.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonOK.ForeColor = System.Drawing.Color.White;
+            this.ButtonOK.Location = new System.Drawing.Point(113, 363);
+            this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Size = new System.Drawing.Size(94, 47);
+            this.ButtonOK.TabIndex = 14;
+            this.ButtonOK.Text = "OK";
+            this.ButtonOK.TextColor = System.Drawing.Color.White;
+            this.ButtonOK.UseVisualStyleBackColor = false;
             // 
             // textBoxUsername
             // 
@@ -63,7 +65,7 @@
             this.textBoxUsername.BorderSize = 1;
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(48, 203);
+            this.textBoxUsername.Location = new System.Drawing.Point(22, 187);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Multiline = false;
             this.textBoxUsername.Name = "textBoxUsername";
@@ -83,7 +85,7 @@
             this.LabelForgotPassword.AutoSize = true;
             this.LabelForgotPassword.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.LabelForgotPassword.Location = new System.Drawing.Point(40, 77);
+            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 69);
             this.LabelForgotPassword.Name = "LabelForgotPassword";
             this.LabelForgotPassword.Size = new System.Drawing.Size(295, 59);
             this.LabelForgotPassword.TabIndex = 11;
@@ -98,7 +100,7 @@
             this.ctTextBox1.BorderSize = 1;
             this.ctTextBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.ctTextBox1.IsFocused = false;
-            this.ctTextBox1.Location = new System.Drawing.Point(48, 293);
+            this.ctTextBox1.Location = new System.Drawing.Point(22, 266);
             this.ctTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ctTextBox1.Multiline = false;
             this.ctTextBox1.Name = "ctTextBox1";
@@ -112,18 +114,32 @@
             this.ctTextBox1.Texts = "";
             this.ctTextBox1.UnderlineedStyle = false;
             // 
+            // PictureBoxBack
+            // 
+            this.PictureBoxBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxBack.Image = global::HotelManagement.Properties.Resources.back;
+            this.PictureBoxBack.Location = new System.Drawing.Point(12, 24);
+            this.PictureBoxBack.Name = "PictureBoxBack";
+            this.PictureBoxBack.Size = new System.Drawing.Size(40, 40);
+            this.PictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxBack.TabIndex = 15;
+            this.PictureBoxBack.TabStop = false;
+            this.PictureBoxBack.Click += new System.EventHandler(this.PictureBoxBack_Click);
+            // 
             // FormDatLaiMatKhau
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(374, 499);
-            this.Controls.Add(this.buttonLogin);
+            this.ClientSize = new System.Drawing.Size(332, 466);
+            this.Controls.Add(this.PictureBoxBack);
+            this.Controls.Add(this.ButtonOK);
             this.Controls.Add(this.ctTextBox1);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.LabelForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDatLaiMatKhau";
             this.Text = "FormDatLaiMatKhau";
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,9 +147,10 @@
 
         #endregion
 
-        private CTControls.CTButton buttonLogin;
+        private CTControls.CTButton ButtonOK;
         private CTControls.CTTextBox textBoxUsername;
         private System.Windows.Forms.Label LabelForgotPassword;
         private CTControls.CTTextBox ctTextBox1;
+        private System.Windows.Forms.PictureBox PictureBoxBack;
     }
 }

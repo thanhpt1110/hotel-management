@@ -12,9 +12,27 @@ namespace HotelManagement.GUI
 {
     public partial class FormQuenMatKhauNhapOTP : Form
     {
-        public FormQuenMatKhauNhapOTP()
+        private FormLogin formLoginParent;
+        public FormQuenMatKhauNhapOTP(FormLogin formMain)
         {
             InitializeComponent();
+            this.formLoginParent = formMain;
+        }
+        private bool checkOTPCorrect()
+        {
+            return true;
+        }
+        private void ButtonContinue_Click(object sender, EventArgs e)
+        {
+            if (checkOTPCorrect())
+            {
+                formLoginParent.openChildForm(new FormDatLaiMatKhau(formLoginParent));
+            }
+        }
+
+        private void PictureBoxBack_Click(object sender, EventArgs e)
+        {
+            formLoginParent.openChildForm(new FormQuenMatKhauLayOTP(formLoginParent));
         }
     }
 }

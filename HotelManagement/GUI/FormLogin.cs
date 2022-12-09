@@ -283,8 +283,8 @@ namespace HotelManagement
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelLogin.Controls.Add(childForm);
-            panelLogin.Tag = childForm;
+            PanelLoginContent.Controls.Add(childForm);
+            PanelLoginContent.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }

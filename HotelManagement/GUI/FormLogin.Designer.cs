@@ -30,17 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panelBackground = new System.Windows.Forms.Panel();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
-            this.labelCorporation = new System.Windows.Forms.Label();
-            this.panelControlBox = new System.Windows.Forms.Panel();
-            this.ctClose1 = new HotelManagement.CTControls.CTClose();
-            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
-            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.PanelLoginContent = new System.Windows.Forms.Panel();
+            this.panelControlBox = new System.Windows.Forms.Panel();
+            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
+            this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
+            this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.labelCorporation = new System.Windows.Forms.Label();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
-            this.panelControlBox.SuspendLayout();
             this.panelLogin.SuspendLayout();
+            this.panelControlBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBackground
@@ -55,29 +56,27 @@
             this.panelBackground.TabIndex = 0;
             this.panelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             // 
-            // pictureBoxIcon
+            // panelLogin
             // 
-            this.pictureBoxIcon.BackColor = System.Drawing.Color.White;
-            this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxIcon.Image = global::HotelManagement.Properties.Resources.pictureIcon;
-            this.pictureBoxIcon.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(516, 538);
-            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxIcon.TabIndex = 12;
-            this.pictureBoxIcon.TabStop = false;
-            this.pictureBoxIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIcon_MouseDown);
+            this.panelLogin.BackColor = System.Drawing.Color.White;
+            this.panelLogin.Controls.Add(this.PanelLoginContent);
+            this.panelLogin.Controls.Add(this.panelControlBox);
+            this.panelLogin.Controls.Add(this.labelCorporation);
+            this.panelLogin.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelLogin.Location = new System.Drawing.Point(519, 0);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(390, 538);
+            this.panelLogin.TabIndex = 10;
+            this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
+            this.panelLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogin_MouseDown);
             // 
-            // labelCorporation
+            // PanelLoginContent
             // 
-            this.labelCorporation.AutoSize = true;
-            this.labelCorporation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorporation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(152)))), ((int)(((byte)(162)))));
-            this.labelCorporation.Location = new System.Drawing.Point(224, 508);
-            this.labelCorporation.Name = "labelCorporation";
-            this.labelCorporation.Size = new System.Drawing.Size(155, 21);
-            this.labelCorporation.TabIndex = 4;
-            this.labelCorporation.Text = "TBT CORPORATION";
+            this.PanelLoginContent.BackColor = System.Drawing.Color.White;
+            this.PanelLoginContent.Location = new System.Drawing.Point(29, 39);
+            this.PanelLoginContent.Name = "PanelLoginContent";
+            this.PanelLoginContent.Size = new System.Drawing.Size(332, 466);
+            this.PanelLoginContent.TabIndex = 10;
             // 
             // panelControlBox
             // 
@@ -93,16 +92,15 @@
             this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
             this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
             // 
-            // ctClose1
+            // ctMaximize1
             // 
-            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
-            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
-            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctClose1.Location = new System.Drawing.Point(71, 6);
-            this.ctClose1.Name = "ctClose1";
-            this.ctClose1.Size = new System.Drawing.Size(15, 15);
-            this.ctClose1.TabIndex = 0;
-            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
+            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
+            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMaximize1.Location = new System.Drawing.Point(10, 7);
+            this.ctMaximize1.Name = "ctMaximize1";
+            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMaximize1.TabIndex = 2;
             // 
             // ctMinimize1
             // 
@@ -115,28 +113,40 @@
             this.ctMinimize1.TabIndex = 1;
             this.ctMinimize1.Click += new System.EventHandler(this.ctMinimize1_Click);
             // 
-            // ctMaximize1
+            // ctClose1
             // 
-            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
-            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMaximize1.Location = new System.Drawing.Point(10, 7);
-            this.ctMaximize1.Name = "ctMaximize1";
-            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMaximize1.TabIndex = 2;
+            this.ctClose1.BackColor = System.Drawing.Color.Transparent;
+            this.ctClose1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctClose1.BackgroundImage")));
+            this.ctClose1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctClose1.Location = new System.Drawing.Point(71, 6);
+            this.ctClose1.Name = "ctClose1";
+            this.ctClose1.Size = new System.Drawing.Size(15, 15);
+            this.ctClose1.TabIndex = 0;
+            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
             // 
-            // panelLogin
+            // labelCorporation
             // 
-            this.panelLogin.BackColor = System.Drawing.Color.White;
-            this.panelLogin.Controls.Add(this.panelControlBox);
-            this.panelLogin.Controls.Add(this.labelCorporation);
-            this.panelLogin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelLogin.Location = new System.Drawing.Point(519, 0);
-            this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(390, 538);
-            this.panelLogin.TabIndex = 10;
-            this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
-            this.panelLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogin_MouseDown);
+            this.labelCorporation.AutoSize = true;
+            this.labelCorporation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorporation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(152)))), ((int)(((byte)(162)))));
+            this.labelCorporation.Location = new System.Drawing.Point(224, 508);
+            this.labelCorporation.Name = "labelCorporation";
+            this.labelCorporation.Size = new System.Drawing.Size(155, 21);
+            this.labelCorporation.TabIndex = 4;
+            this.labelCorporation.Text = "TBT CORPORATION";
+            // 
+            // pictureBoxIcon
+            // 
+            this.pictureBoxIcon.BackColor = System.Drawing.Color.White;
+            this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxIcon.Image = global::HotelManagement.Properties.Resources.pictureIcon;
+            this.pictureBoxIcon.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(516, 538);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxIcon.TabIndex = 12;
+            this.pictureBoxIcon.TabStop = false;
+            this.pictureBoxIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIcon_MouseDown);
             // 
             // FormLogin
             // 
@@ -160,10 +170,10 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormLogin_Paint);
             this.Resize += new System.EventHandler(this.FormLogin_Resize);
             this.panelBackground.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
-            this.panelControlBox.ResumeLayout(false);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
+            this.panelControlBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,6 +186,7 @@
         private CTControls.CTMinimize ctMinimize1;
         private CTControls.CTClose ctClose1;
         private System.Windows.Forms.Label labelCorporation;
+        private System.Windows.Forms.Panel PanelLoginContent;
 
         #endregion
         //private CTControl.CTButton ctButton1;
