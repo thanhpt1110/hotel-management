@@ -30,5 +30,9 @@ namespace HotelManagement.BUS
         {
             return TaiKhoanDAO.Instance.GetTaiKhoans();
         }
-    }
+        public List<TaiKhoan> GetTaiKhoansWithUserName(string username)
+        {
+            return TaiKhoanDAO.Instance.GetTaiKhoansWithUserName(username);
+        }
+        }
 }

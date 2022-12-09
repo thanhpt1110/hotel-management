@@ -36,5 +36,9 @@ namespace HotelManagement.DAO
             db.LoaiPhongs.Remove(loaiPhong);
             db.SaveChanges();
         }
+        public List<LoaiPhong> getLoaiPhongWithName(string TenLP)
+        {
+            return db.LoaiPhongs.Where(p => p.TenLPH.Contains(TenLP)).ToList();
+        }
     }
 }

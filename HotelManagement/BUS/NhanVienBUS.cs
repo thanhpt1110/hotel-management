@@ -33,5 +33,9 @@ namespace HotelManagement.BUS
         {
             NhanVienDAO.Instance.RemoveNhanVien(nhanVien);
         }
+        public List<NhanVien> GetNhanViensWithName(string tenNV)
+        {
+            return NhanVienDAO.Instance.GetNhanViensWithName(tenNV);
+        }
     }
 }

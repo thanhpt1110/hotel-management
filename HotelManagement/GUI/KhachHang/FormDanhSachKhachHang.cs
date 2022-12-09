@@ -11,19 +11,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.BUS;
 
+
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachKhachHang : Form
     {
+        List<KhachHang> khachHangs;
         private Image KH = Properties.Resources.KhachHang;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         public FormDanhSachKhachHang()
         {
             InitializeComponent();
+            LoadAllGrid();
         }
         private void CTButtonThemKhachHang_Click(object sender, EventArgs e)
         {
+            LoadGrid();
             using (FormThemKhachHang formThemKhachHang = new FormThemKhachHang())
                 formThemKhachHang.ShowDialog();
         }
@@ -32,7 +36,6 @@ namespace HotelManagement.GUI
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
 
-            LoadAllGrid();
             /*grid.Rows.Add(new object[] { KH, "KH001", "Phan Tuấn Thành", "123456789101", "0956093276", "Việt Nam", "Nam", edit, delete });
             grid.Rows.Add(new object[] { KH, "KH002", "Trần Văn C", "123456789101", "0956093276", "Singapore", "Nữ", edit, delete });
             grid.Rows.Add(new object[] { KH, "KH003", "Nguyễn Thị B", "123456789101", "0956093276", "Thái Lan", "Nữ", edit, delete });
@@ -40,10 +43,17 @@ namespace HotelManagement.GUI
         }
         public void LoadAllGrid()
         {
-            LoadGrid(KhachHangBUS.Instance.GetKhachHangs());
-                
+            try
+            {
+                this.khachHangs = KhachHangBUS.Instance.GetKhachHangs();
+                LoadGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load danh sách khách hàng không thành công", "THÔNG BÁO");
+            }
         }    
-        private void LoadGrid(List<KhachHang> khachHangs)
+        private void LoadGrid()
         {
             grid.Rows.Clear();
             foreach (KhachHang khachHang in khachHangs)
@@ -53,8 +63,15 @@ namespace HotelManagement.GUI
         }
         private void LoadGridWithCCCD()
         {
-            List<KhachHang> khachHangs = KhachHangBUS.Instance.FindKhachHangWithName(this.CTTextBoxTimKhachHangTheoTen.Texts);
-             LoadGrid(khachHangs);
+            try
+            {
+                khachHangs = KhachHangBUS.Instance.FindKhachHangWithName(this.CTTextBoxTimKhachHangTheoTen.Texts);
+                LoadGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
         }    
 
         private void buttonExport_Click(object sender, EventArgs e)
@@ -127,17 +144,48 @@ namespace HotelManagement.GUI
 
         private void grid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            int curCol = e.ColumnIndex;
-            if (curCol == 7 || curCol == 8)
+            try
             {
-                if (e.RowIndex >= 0)
-                    grid.Cursor = Cursors.Hand;
-                else if (grid.CurrentCell.Value == DBNull.Value)
+                int curCol = e.ColumnIndex;
+                if (curCol == 7 || curCol == 8)
+                {
+                    if (e.RowIndex >= 0)
+                        grid.Cursor = Cursors.Hand;
+                    else if (grid.CurrentCell.Value == DBNull.Value)
+                        grid.Cursor = Cursors.Default;
+                }
+                else
                     grid.Cursor = Cursors.Default;
             }
-            else
-                grid.Cursor = Cursors.Default;
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
         }
 
+        private void CTTextBoxTimKhachHangTheoTen_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void CTTextBoxTimKhachHangTheoTen__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxFindName = sender as TextBox;
+            textBoxFindName.TextChanged += TextBoxFindName_TextChanged;
+            
+        }
+
+        private void TextBoxFindName_TextChanged(object sender, EventArgs e)
+        {
+            
+            TextBox textBoxFindName = sender as TextBox;
+            
+            if(textBoxFindName.Focused == false)
+            {
+                LoadAllGrid();
+                return;
+            }    
+            this.khachHangs = KhachHangBUS.Instance.FindKhachHangWithName(textBoxFindName.Text);
+            LoadGrid();
+        }
     }
 }

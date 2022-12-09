@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace HotelManagement.CTControls
 {
+    [DefaultEvent("_TextChanged")]
     public partial class CTTextBox : UserControl
     {
         private Color borderColor = Color.FromArgb(82, 145, 175);

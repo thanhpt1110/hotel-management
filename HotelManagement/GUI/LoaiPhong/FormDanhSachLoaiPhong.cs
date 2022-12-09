@@ -15,9 +15,10 @@ namespace HotelManagement.GUI
 {
     public partial class FormDanhSachLoaiPhong : Form
     {
-        private Image LP = Properties.Resources.Giuong;
+        private Image LP = Properties.Resources.LoaiPhong;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
+        private List<LoaiPhong> loaiPhongs;
         public FormDanhSachLoaiPhong()
         {
             InitializeComponent();
@@ -32,12 +33,9 @@ namespace HotelManagement.GUI
         private void FormDanhSachLoaiPhong_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-<<<<<<< HEAD
-=======
             Image LP = Properties.Resources.LoaiPhong;
             Image edit = Properties.Resources.edit;
             Image delete = Properties.Resources.delete;
->>>>>>> d61b8fb75b1c7da0565a92d92e6d603bd3879302
 
             LoadAllDataGrid();
             /*grid.Rows.Add(new object[] { LP, "LP001", "Phòng đơn", "1", "2", "100,000", "50,000", edit, delete });
@@ -47,12 +45,13 @@ namespace HotelManagement.GUI
 
         public void LoadAllDataGrid()
         {
-            LoadDataGrid(LoaiPhongBUS.Instance.GetLoaiPhongs());
+            this.loaiPhongs = LoaiPhongBUS.Instance.GetLoaiPhongs();
+            LoadDataGrid();
         }    
-        private void LoadDataGrid(List<LoaiPhong> loaiPhongs)
+        private void LoadDataGrid()
         {
             grid.Rows.Clear();
-            foreach(LoaiPhong loaiPhong in loaiPhongs)
+            foreach(LoaiPhong loaiPhong in this.loaiPhongs)
             {
                 grid.Rows.Add(LP, loaiPhong.MaLPH, loaiPhong.TenLPH, loaiPhong.SoGiuong, loaiPhong.SoNguoiToiDa, loaiPhong.GiaNgay.ToString("#,#"), loaiPhong.GiaGio.ToString("#,#"), edit, delete);
             }    
@@ -139,5 +138,23 @@ namespace HotelManagement.GUI
                 grid.Cursor = Cursors.Default;
         }
 
+        private void CTTextBoxTimPhongTheoMa__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxFindNameLP = sender as TextBox;
+            textBoxFindNameLP.TextChanged += TextBoxFindNameLP_TextChanged;
+        }
+
+        private void TextBoxFindNameLP_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxFindNameLP = sender as TextBox;
+
+            if (textBoxFindNameLP.Focused == false)
+            {
+                LoadAllDataGrid();
+                return;
+            }
+            this.loaiPhongs = LoaiPhongBUS.Instance.getLoaiPhongWithName(textBoxFindNameLP.Text);
+            LoadDataGrid();
+        }
     }
 }

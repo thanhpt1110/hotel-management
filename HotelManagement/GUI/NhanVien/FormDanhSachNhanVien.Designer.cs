@@ -108,6 +108,7 @@
             this.CTTextBoxTimTheoTenNhanVien.TabStop = false;
             this.CTTextBoxTimTheoTenNhanVien.Texts = "";
             this.CTTextBoxTimTheoTenNhanVien.UnderlineedStyle = false;
+            this.CTTextBoxTimTheoTenNhanVien._TextChanged += new System.EventHandler(this.CTTextBoxTimTheoTenNhanVien__TextChanged);
             // 
             // grid
             // 

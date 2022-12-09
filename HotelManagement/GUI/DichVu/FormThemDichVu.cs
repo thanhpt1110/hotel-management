@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ApplicationSettings;
 namespace HotelManagement.GUI
 {
     public partial class FormThemDichVu : Form
@@ -203,13 +203,22 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-
-            if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == "" || this.CTTextBoxDonGia.Texts == "" || this.ctTextBoxMoTa.Texts == "")
+            try
             {
-                MessageBox.Show("Bạn vui lòng điền đầy đủ thông tin", "THÔNG BÁO");
-                return;
+                if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == "" || this.CTTextBoxDonGia.Texts == "" || this.ctTextBoxMoTa.Texts == "")
+                {
+                    MessageBox.Show("Bạn vui lòng điền đầy đủ thông tin", "THÔNG BÁO");
+                    return;
+                }
             }
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
                     DichVu dichVu = new DichVu();
@@ -218,41 +227,62 @@ namespace HotelManagement.GUI
                     dichVu.DonGia = decimal.Parse(this.CTTextBoxDonGia.Texts);
                     dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
                     dichVu.MaDV = DichVuBUS.Instance.GetMaDVNext();
-
-
                     DichVuBUS.Instance.UpdateORAdd(dichVu);
                     this.formDanhSachDichVu.LoadALLDV();
                     this.Close();
                 }
-            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CTTextBoxDonGia__TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            textBox.KeyPress += TextBox_KeyPress;
+            TextBox textBoxDonGia = sender as TextBox;
+            textBoxDonGia.KeyPress += TextBoxDonGia_KeyPress;
         }
 
-        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBoxDonGia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
         }
+
 
         private void CTTextBoxSoLuong__TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            textBox.KeyPress += TextBox_KeyPress1;
+            TextBox textBoxSL = sender as TextBox;
+            textBoxSL.KeyPress += TextBoxSL_KeyPress;
         }
 
-        private void TextBox_KeyPress1(object sender, KeyPressEventArgs e)
+        private void TextBoxSL_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
+        }
+
+        private void ctTextBoxTenDV__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxTenDV = sender as TextBox;
+            textBoxTenDV.KeyPress += TextBoxTenDV_KeyPress;
+        }
+
+        private void TextBoxTenDV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
+        }
+
+        private void ctTextBoxMoTa__TextChanged(object sender, EventArgs e)
+        {
+
+            TextBox textBoxThemDV = sender as TextBox;
+            textBoxThemDV.KeyPress += TextBoxThemDV_KeyPress;
+        }
+
+        private void TextBoxThemDV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
+
         }
     }
 }

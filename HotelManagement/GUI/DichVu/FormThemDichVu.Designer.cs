@@ -193,6 +193,7 @@
             this.ctTextBoxTenDV.TabIndex = 4;
             this.ctTextBoxTenDV.Texts = "";
             this.ctTextBoxTenDV.UnderlineedStyle = true;
+            this.ctTextBoxTenDV._TextChanged += new System.EventHandler(this.ctTextBoxTenDV__TextChanged);
             // 
             // CTTextBoxDonGia
             // 
@@ -264,6 +265,7 @@
             this.ctTextBoxMoTa.TabIndex = 4;
             this.ctTextBoxMoTa.Texts = "";
             this.ctTextBoxMoTa.UnderlineedStyle = true;
+            this.ctTextBoxMoTa._TextChanged += new System.EventHandler(this.ctTextBoxMoTa__TextChanged);
             // 
             // FormThemDichVu
             // 

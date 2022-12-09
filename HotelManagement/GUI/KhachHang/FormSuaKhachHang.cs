@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HotelManagement.DTO;
 namespace HotelManagement.GUI
 {
     public partial class FormSuaKhachHang : Form
@@ -18,13 +18,21 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        KhachHang khachHang;
         //Constructor
         public FormSuaKhachHang()
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
+            InitializeComponent();
+        }
+        public FormSuaKhachHang(KhachHang khachHang)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.khachHang = khachHang;
             InitializeComponent();
         }
         //Control Box
@@ -196,6 +204,28 @@ namespace HotelManagement.GUI
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ctTextBox1__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxName = sender as TextBox;
+            textBoxName.KeyDown += TextBoxName_KeyDown;
+        }
+
+        private void TextBoxName_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ctTextBox2__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxCCCD = sender as TextBox;
+            textBoxCCCD.KeyDown += TextBoxCCCD_KeyDown;
+        }
+
+        private void TextBoxCCCD_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }

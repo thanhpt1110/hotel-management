@@ -74,6 +74,7 @@
             this.ctTextBox1.TabIndex = 1;
             this.ctTextBox1.Texts = "";
             this.ctTextBox1.UnderlineedStyle = true;
+            this.ctTextBox1._TextChanged += new System.EventHandler(this.ctTextBox1__TextChanged);
             // 
             // labelSuaKhachHang
             // 
@@ -288,6 +289,7 @@
             this.ctTextBox2.TabIndex = 2;
             this.ctTextBox2.Texts = "";
             this.ctTextBox2.UnderlineedStyle = true;
+            this.ctTextBox2._TextChanged += new System.EventHandler(this.ctTextBox2__TextChanged);
             // 
             // FormSuaKhachHang
             // 

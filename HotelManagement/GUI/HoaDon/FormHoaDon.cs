@@ -42,32 +42,36 @@ namespace HotelManagement.GUI
         }
         void LoadHD()
         {
-            DichVu dichvu;
-            int days = CTDP_BUS.Instance.getKhoangTG(HD.MaCTDP);
-            decimal TongTienHD = 0;
-            this.TextBoxSoHD.Text = HD.MaHD;
-            this.TextBoxTenKH.Text = HD.CTDP.PhieuThue.KhachHang.TenKH;
-            this.TextBoxSoNgay.Text = days.ToString() + " ngày";
-            this.TextBoxMaPhong.Text = HD.CTDP.MaPH;
-            this.TextBoxTenNV.Text = HD.NhanVien.TenNV;
-            this.TextBoxNgayHD.Text = HD.NgHD.ToString();
-            Phong phong = PhongBUS.Instance.FindePhong(HD.CTDP.MaPH);
-            LoaiPhong loaiphong = LoaiPhongBUS.Instance.getLoaiPhong(phong.MaLPH);
-            this.TextBoxLoaiPhong.Text = loaiphong.TenLPH;
-            List<CTDV> ctdvs = CTDV_BUS.Instance.FindCTDV(HD.MaHD);
-            foreach(CTDV ctdv in ctdvs)
+            try
             {
-                dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
-                decimal TongTien = dichvu.DonGia * ctdv.SL;
-                TongTienHD += TongTien;
-                DataGridViewDichVu.Rows.Add(dichvu.TenDV, dichvu.DonGia.ToString("#,#"), ctdv.SL, TongTien.ToString("#,#"));
+                DichVu dichvu;
+                int days = CTDP_BUS.Instance.getKhoangTG(HD.MaCTDP);
+                decimal TongTienHD = 0;
+                this.TextBoxSoHD.Text = HD.MaHD;
+                this.TextBoxTenKH.Text = HD.CTDP.PhieuThue.KhachHang.TenKH;
+                this.TextBoxSoNgay.Text = days.ToString() + " ngày";
+                this.TextBoxMaPhong.Text = HD.CTDP.MaPH;
+                this.TextBoxTenNV.Text = HD.NhanVien.TenNV;
+                this.TextBoxNgayHD.Text = HD.NgHD.ToString();
+                Phong phong = PhongBUS.Instance.FindePhong(HD.CTDP.MaPH);
+                LoaiPhong loaiphong = LoaiPhongBUS.Instance.getLoaiPhong(phong.MaLPH);
+                this.TextBoxLoaiPhong.Text = loaiphong.TenLPH;
+                List<CTDV> ctdvs = CTDV_BUS.Instance.FindCTDV(HD.MaHD);
+                foreach (CTDV ctdv in ctdvs)
+                {
+                    dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
+                    decimal TongTien = dichvu.DonGia * ctdv.SL;
+                    TongTienHD += TongTien;
+                    DataGridViewDichVu.Rows.Add(dichvu.TenDV, dichvu.DonGia.ToString("#,#"), ctdv.SL, TongTien.ToString("#,#"));
+                }
+                decimal Tongtienphong = loaiphong.GiaNgay * days;
+                DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));
+                this.LabelTongTien.Text += (TongTienHD + Tongtienphong).ToString("#,#");
             }
-            
-            
-            decimal Tongtienphong =  loaiphong.GiaNgay * days;
-            DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));
-            this.LabelTongTien.Text += (TongTienHD + Tongtienphong).ToString("#,#");
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
         }
         //Control Box
 

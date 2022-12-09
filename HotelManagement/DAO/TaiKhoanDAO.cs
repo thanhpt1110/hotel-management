@@ -34,5 +34,9 @@ namespace HotelManagement.DAO
         {
             return db.TaiKhoans.ToList();
         }
+        public List<TaiKhoan> GetTaiKhoansWithUserName(string username)
+        {
+            return db.TaiKhoans.Where(p=>p.TenTK.Contains(username)).ToList();  
+        }    
     }
 }

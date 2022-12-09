@@ -37,5 +37,9 @@ namespace HotelManagement.BUS
         {
            return DichVuDAO.Instance.GetMaDVNext();
         }
+        public List<DichVu> FindDichVuWithName(string TenDV)
+        {
+            return DichVuDAO.Instance.FindDichVuWithName(TenDV);
+        }    
     }
 }

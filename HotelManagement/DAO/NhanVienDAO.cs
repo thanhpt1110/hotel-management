@@ -18,7 +18,7 @@ namespace HotelManagement.DAO
             private set { instance = value; }
         }
         private NhanVienDAO() { }
-        
+
         public List<NhanVien> GetNhanViens()
         {
             return db.NhanViens.ToList();
@@ -34,6 +34,10 @@ namespace HotelManagement.DAO
         public void RemoveNhanVien(NhanVien nhanVien)
         {
             db.NhanViens.Remove(nhanVien);
+        }
+        public List<NhanVien> GetNhanViensWithName(string tenNV)
+        {
+            return db.NhanViens.Where(p => p.TenNV.Contains(tenNV)).ToList();
         }
     }
 }

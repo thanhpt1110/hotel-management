@@ -19,6 +19,7 @@ namespace HotelManagement.GUI
         private Image NV = Properties.Resources.NhanVien;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
+        List<NhanVien> nhanViens;
         public FormDanhSachNhanVien()
         {
             InitializeComponent();
@@ -44,16 +45,24 @@ namespace HotelManagement.GUI
         }
         public void LoadAllGrid()
         {
-            LoadGrid(NhanVienBUS.Instance.GetNhanViens());
+            this.nhanViens = NhanVienBUS.Instance.GetNhanViens();
+            LoadGrid();
         }    
-        private void LoadGrid(List<NhanVien> nhanViens)
+        private void LoadGrid()
         {
-            grid.Rows.Clear();
-            foreach(NhanVien nhanvien in nhanViens)
+            try
             {
-                
-                grid.Rows.Add(NV, nhanvien.MaNV, nhanvien.TenNV, nhanvien.ChucVu, String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh), nhanvien.GioiTinh, nhanvien.SDT, nhanvien.Email, edit, delete);
-            }    
+                grid.Rows.Clear();
+                foreach (NhanVien nhanvien in this.nhanViens)
+                {
+
+                    grid.Rows.Add(NV, nhanvien.MaNV, nhanvien.TenNV, nhanvien.ChucVu, String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh), nhanvien.GioiTinh, nhanvien.SDT, nhanvien.Email, edit, delete);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
         }
         private void buttonExport_Click(object sender, EventArgs e)
         {
@@ -143,6 +152,25 @@ namespace HotelManagement.GUI
             }
             else
                 grid.Cursor = Cursors.Default;
+        }
+
+        private void CTTextBoxTimTheoTenNhanVien__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxNhanVien = sender as TextBox;
+            textBoxNhanVien.TextChanged += TextBoxNhanVien_TextChanged;
+        }
+
+        private void TextBoxNhanVien_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxNhanVien = sender as TextBox;
+
+            if (textBoxNhanVien.Focused == false)
+            {
+                LoadAllGrid();
+                return;
+            }
+            this.nhanViens = NhanVienBUS.Instance.GetNhanViensWithName(textBoxNhanVien.Text);
+            LoadGrid();
         }
     }
 }

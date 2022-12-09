@@ -46,25 +46,32 @@ namespace HotelManagement.GUI
         {
             DichVu dichvu;
             grid.Rows.Clear();
-            foreach (HoaDon hoadon in hoaDons)
+            try
             {
-                int days = CTDP_BUS.Instance.getKhoangTG(hoadon.MaCTDP);
-                Phong phong = PhongBUS.Instance.FindePhong(hoadon.CTDP.MaPH);
-                LoaiPhong loaiphong = LoaiPhongBUS.Instance.getLoaiPhong(phong.MaLPH);
-                decimal TongTienHD = 0;
-                TongTienHD += loaiphong.GiaNgay * days;
-                string tennv = null;
-                List<CTDV> ctdvs = CTDV_BUS.Instance.FindCTDV(hoadon.MaHD);
-                foreach (CTDV ctdv in ctdvs)
+                foreach (HoaDon hoadon in hoaDons)
                 {
-                    dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
-                    TongTienHD += dichvu.DonGia * ctdv.SL;
-                }
-                hoadon.TriGia = TongTienHD;
-                HoaDonBUS.Instance.Update_Inserthd(hoadon);
+                    int days = CTDP_BUS.Instance.getKhoangTG(hoadon.MaCTDP);
+                    Phong phong = PhongBUS.Instance.FindePhong(hoadon.CTDP.MaPH);
+                    LoaiPhong loaiphong = LoaiPhongBUS.Instance.getLoaiPhong(phong.MaLPH);
+                    decimal TongTienHD = 0;
+                    TongTienHD += loaiphong.GiaNgay * days;
+                    string tennv = null;
+                    List<CTDV> ctdvs = CTDV_BUS.Instance.FindCTDV(hoadon.MaHD);
+                    foreach (CTDV ctdv in ctdvs)
+                    {
+                        dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
+                        TongTienHD += dichvu.DonGia * ctdv.SL;
+                    }
+                    hoadon.TriGia = TongTienHD;
+                    HoaDonBUS.Instance.Update_Inserthd(hoadon);
                     if (hoadon.MaNV != null)
                         tennv = hoadon.NhanVien.TenNV;
-                grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, hoadon.CTDP.PhieuThue.KhachHang.TenKH, hoadon.TriGia, hoadon.TrangThai, details);
+                    grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, hoadon.CTDP.PhieuThue.KhachHang.TenKH, hoadon.TriGia, hoadon.TrangThai, details);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load danh sách hóa đơn không thành công", "THÔNG BÁO");
             }
         }
         void LoadGridWith_CCCD()

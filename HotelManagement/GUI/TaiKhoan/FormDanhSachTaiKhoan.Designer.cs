@@ -104,6 +104,7 @@
             this.CTTextBoxTimTheoTenTaiKhoan.TabStop = false;
             this.CTTextBoxTimTheoTenTaiKhoan.Texts = "";
             this.CTTextBoxTimTheoTenTaiKhoan.UnderlineedStyle = false;
+            this.CTTextBoxTimTheoTenTaiKhoan._TextChanged += new System.EventHandler(this.CTTextBoxTimTheoTenTaiKhoan__TextChanged);
             // 
             // grid
             // 

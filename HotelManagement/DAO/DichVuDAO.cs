@@ -50,5 +50,9 @@ namespace HotelManagement.DAO
             }
             return "DV" + max.ToString();
         }
+        public List<DichVu> FindDichVuWithName(string TenDV)
+        {
+            return db.DichVus.Where(p=>p.TenDV.Contains(TenDV)).ToList();
+        }
     }
 }

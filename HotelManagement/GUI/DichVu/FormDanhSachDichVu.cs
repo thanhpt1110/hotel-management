@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.DTO;
 using HotelManagement.BUS;
+using ApplicationSettings;
 
 namespace HotelManagement.GUI
 {
@@ -18,7 +19,7 @@ namespace HotelManagement.GUI
         private Image DV = Properties.Resources.DichVuDgv;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
-        
+        private List<DichVu> dichVus;
         public FormDanhSachDichVu()
         {
             InitializeComponent();
@@ -42,22 +43,30 @@ namespace HotelManagement.GUI
             grid.Rows.Add(new object[] { DV, "DV003", "Bún bò", "25,000", "20", edit, delete });
             grid.Rows.Add(new object[] { DV, "DV004", "Karaoke", "300,000", "10", edit, delete });*/
         }
-        private void LoadDV(List<DichVu> dichVus)
+        private void LoadDV()
         {
-            this.grid.Rows.Clear();
-            foreach(DichVu dichVu in dichVus)
+            try
             {
-                int? SLDV;
-                if (dichVu.SLConLai == null || dichVu.SLConLai == -1)
-                    SLDV = 0;
-                else
-                    SLDV = dichVu.SLConLai;
-                grid.Rows.Add(this.DV, dichVu.MaDV, dichVu.TenDV, dichVu.DonGia.ToString("#,#"),SLDV, this.edit, this.delete);
-            }    
+                this.grid.Rows.Clear();
+                foreach (DichVu dichVu in this.dichVus)
+                {
+                    int? SLDV;
+                    if (dichVu.SLConLai == null || dichVu.SLConLai == -1)
+                        SLDV = 0;
+                    else
+                        SLDV = dichVu.SLConLai;
+                    grid.Rows.Add(this.DV, dichVu.MaDV, dichVu.TenDV, dichVu.DonGia.ToString("#,#"), SLDV, this.edit, this.delete);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load danh sách dịch vụ không thành công", "THÔNG BÁO");
+            }
         }    
         public void LoadALLDV()
         {
-            LoadDV(DichVuBUS.Instance.GetDichVus());    
+            this.dichVus = DichVuBUS.Instance.GetDichVus();
+            LoadDV();    
         }
         private void buttonExport_Click(object sender, EventArgs e)
         {
@@ -109,28 +118,36 @@ namespace HotelManagement.GUI
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int x = e.ColumnIndex, y = e.RowIndex;
-            if (y >= 0)
+            try
             {
-                // If click Update button 
-                if (x == 5)
+                if (y >= 0)
                 {
-                    using (FormSuaDichVu formSuaDichVu1 = new FormSuaDichVu(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()),this))
+                    // If click Update button 
+                    if (x == 5)
                     {
-                        formSuaDichVu1.ShowDialog();
+                        using (FormSuaDichVu formSuaDichVu1 = new FormSuaDichVu(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()), this))
+                        {
+                            formSuaDichVu1.ShowDialog();
+                        }
+                    }
+                    if (x == 6)
+                    {
+                        // If click Delete button 
+
+                        DichVuBUS.Instance.RemoveDV(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()));
+                        LoadALLDV();
                     }
                 }
-                if (x == 6)
-                {
-                    // If click Delete button 
-                    
-                    DichVuBUS.Instance.RemoveDV(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()));
-                    LoadALLDV();
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
             }
         }
 
         private void grid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
+
             int curCol = e.ColumnIndex;
             if (curCol == 5 || curCol == 6)
             {
@@ -141,6 +158,32 @@ namespace HotelManagement.GUI
             }
             else   
                 grid.Cursor = Cursors.Default;
+        }
+
+        private void CTTextBoxTimPhongTheoMa__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxTimTheoMaPhong = sender as TextBox;
+            textBoxTimTheoMaPhong.KeyPress += TextBoxTimTheoMaPhong_KeyPress;
+            textBoxTimTheoMaPhong.TextChanged += TextBoxTimTheoMaPhong_TextChanged;
+        }
+
+        private void TextBoxTimTheoMaPhong_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxFindNameDV = sender as TextBox;
+
+            if (textBoxFindNameDV.Focused == false )
+            {
+                LoadALLDV();
+                return;
+            }
+            this.dichVus = DichVuBUS.Instance.FindDichVuWithName(textBoxFindNameDV.Text);
+            LoadDV();
+        }
+
+        private void TextBoxTimTheoMaPhong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
+
         }
     }
 }

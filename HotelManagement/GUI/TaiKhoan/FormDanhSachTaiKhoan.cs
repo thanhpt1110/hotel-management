@@ -18,6 +18,7 @@ namespace HotelManagement.GUI
         private Image TK = Properties.Resources.TaiKhoan;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
+        private List<TaiKhoan> taiKhoans;
         public FormDanhSachTaiKhoan()
         {
             InitializeComponent();
@@ -43,12 +44,13 @@ namespace HotelManagement.GUI
         }
         public void LoadAllGrid()
         {
-            LoadGrid(TaiKhoanBUS.Instance.GetTaiKhoans());
+            this.taiKhoans = TaiKhoanBUS.Instance.GetTaiKhoans();
+            LoadGrid();
         }   
-        private void LoadGrid(List<TaiKhoan> taiKhoans)
+        private void LoadGrid()
         {
             grid.Rows.Clear();
-            foreach(TaiKhoan taiKhoan in taiKhoans)
+            foreach(TaiKhoan taiKhoan in this.taiKhoans)
             {
                 grid.Rows.Add(TK, taiKhoan.TenTK, taiKhoan.NhanVien.TenNV, taiKhoan.CapDoQuyen, edit, delete);
             }    
@@ -133,6 +135,25 @@ namespace HotelManagement.GUI
             }
             else
                 grid.Cursor = Cursors.Default;
+        }
+
+        private void CTTextBoxTimTheoTenTaiKhoan__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxTaiKhoan = sender as TextBox;
+            textBoxTaiKhoan.TextChanged += TextBoxTaiKhoan_TextChanged;
+        }
+
+        private void TextBoxTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxTaiKhoan = sender as TextBox;
+
+            if (textBoxTaiKhoan.Focused == false )
+            {
+                LoadAllGrid();
+                return;
+            }
+            this.taiKhoans = TaiKhoanBUS.Instance.GetTaiKhoansWithUserName(textBoxTaiKhoan.Text);
+            LoadGrid();
         }
     }
 }

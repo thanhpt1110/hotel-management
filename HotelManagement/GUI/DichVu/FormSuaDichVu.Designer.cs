@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.PanelBackground = new System.Windows.Forms.Panel();
+            this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
+            this.CTButtonCapNhat = new HotelManagement.CTControls.CTButton();
             this.LabelSuaDichVu = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
-            this.CTButtonCapNhat = new HotelManagement.CTControls.CTButton();
             this.ctTextBoxTenDV = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxDonGia = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxSoLuong = new HotelManagement.CTControls.CTTextBox();
@@ -62,6 +62,48 @@
             this.PanelBackground.Size = new System.Drawing.Size(533, 535);
             this.PanelBackground.TabIndex = 4;
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
+            // 
+            // CTButtonThoat
+            // 
+            this.CTButtonThoat.BackColor = System.Drawing.Color.DarkGray;
+            this.CTButtonThoat.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.CTButtonThoat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.CTButtonThoat.BorderRadius = 10;
+            this.CTButtonThoat.BorderSize = 0;
+            this.CTButtonThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTButtonThoat.FlatAppearance.BorderSize = 0;
+            this.CTButtonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CTButtonThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTButtonThoat.ForeColor = System.Drawing.Color.White;
+            this.CTButtonThoat.Location = new System.Drawing.Point(345, 480);
+            this.CTButtonThoat.Name = "CTButtonThoat";
+            this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
+            this.CTButtonThoat.TabIndex = 0;
+            this.CTButtonThoat.Text = "Thoát";
+            this.CTButtonThoat.TextColor = System.Drawing.Color.White;
+            this.CTButtonThoat.UseVisualStyleBackColor = false;
+            this.CTButtonThoat.Click += new System.EventHandler(this.CTButtonThoat_Click);
+            // 
+            // CTButtonCapNhat
+            // 
+            this.CTButtonCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.CTButtonCapNhat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.CTButtonCapNhat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.CTButtonCapNhat.BorderRadius = 10;
+            this.CTButtonCapNhat.BorderSize = 0;
+            this.CTButtonCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTButtonCapNhat.FlatAppearance.BorderSize = 0;
+            this.CTButtonCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CTButtonCapNhat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTButtonCapNhat.ForeColor = System.Drawing.Color.White;
+            this.CTButtonCapNhat.Location = new System.Drawing.Point(180, 480);
+            this.CTButtonCapNhat.Name = "CTButtonCapNhat";
+            this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
+            this.CTButtonCapNhat.TabIndex = 6;
+            this.CTButtonCapNhat.Text = "Cập nhật";
+            this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
+            this.CTButtonCapNhat.UseVisualStyleBackColor = false;
+            this.CTButtonCapNhat.Click += new System.EventHandler(this.CTButtonCapNhat_Click);
             // 
             // LabelSuaDichVu
             // 
@@ -129,48 +171,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // CTButtonThoat
-            // 
-            this.CTButtonThoat.BackColor = System.Drawing.Color.DarkGray;
-            this.CTButtonThoat.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.CTButtonThoat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonThoat.BorderRadius = 10;
-            this.CTButtonThoat.BorderSize = 0;
-            this.CTButtonThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CTButtonThoat.FlatAppearance.BorderSize = 0;
-            this.CTButtonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CTButtonThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTButtonThoat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThoat.Location = new System.Drawing.Point(345, 480);
-            this.CTButtonThoat.Name = "CTButtonThoat";
-            this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 0;
-            this.CTButtonThoat.Text = "Thoát";
-            this.CTButtonThoat.TextColor = System.Drawing.Color.White;
-            this.CTButtonThoat.UseVisualStyleBackColor = false;
-            this.CTButtonThoat.Click += new System.EventHandler(this.CTButtonThoat_Click);
-            // 
-            // CTButtonCapNhat
-            // 
-            this.CTButtonCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonCapNhat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonCapNhat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonCapNhat.BorderRadius = 10;
-            this.CTButtonCapNhat.BorderSize = 0;
-            this.CTButtonCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CTButtonCapNhat.FlatAppearance.BorderSize = 0;
-            this.CTButtonCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CTButtonCapNhat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTButtonCapNhat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonCapNhat.Location = new System.Drawing.Point(180, 480);
-            this.CTButtonCapNhat.Name = "CTButtonCapNhat";
-            this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
-            this.CTButtonCapNhat.TabIndex = 6;
-            this.CTButtonCapNhat.Text = "Cập nhật";
-            this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
-            this.CTButtonCapNhat.UseVisualStyleBackColor = false;
-            this.CTButtonCapNhat.Click += new System.EventHandler(this.CTButtonCapNhat_Click);
-            // 
             // ctTextBoxTenDV
             // 
             this.ctTextBoxTenDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
@@ -193,6 +193,7 @@
             this.ctTextBoxTenDV.TabIndex = 4;
             this.ctTextBoxTenDV.Texts = "";
             this.ctTextBoxTenDV.UnderlineedStyle = true;
+            this.ctTextBoxTenDV._TextChanged += new System.EventHandler(this.ctTextBoxTenDV__TextChanged);
             // 
             // CTTextBoxDonGia
             // 
@@ -217,6 +218,7 @@
             this.CTTextBoxDonGia.Texts = "";
             this.CTTextBoxDonGia.UnderlineedStyle = true;
             this.CTTextBoxDonGia._TextChanged += new System.EventHandler(this.CTTextBoxDonGia__TextChanged);
+            this.CTTextBoxDonGia.Load += new System.EventHandler(this.CTTextBoxDonGia_Load);
             // 
             // CTTextBoxSoLuong
             // 
@@ -264,6 +266,8 @@
             this.ctTextBoxMoTa.TabIndex = 4;
             this.ctTextBoxMoTa.Texts = "";
             this.ctTextBoxMoTa.UnderlineedStyle = true;
+            this.ctTextBoxMoTa._TextChanged += new System.EventHandler(this.ctTextBoxMoTa__TextChanged);
+            this.ctTextBoxMoTa.Load += new System.EventHandler(this.ctTextBoxMoTa_Load);
             // 
             // FormSuaDichVu
             // 

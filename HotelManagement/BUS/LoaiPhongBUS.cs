@@ -33,5 +33,9 @@ namespace HotelManagement.BUS
         {
             LoaiPhongDAO.Instance.RemoveLoaiPhong(loaiPhong);
         }
+        public List<LoaiPhong> getLoaiPhongWithName(string TenLP)
+        {
+            return LoaiPhongDAO.Instance.getLoaiPhongWithName(TenLP);
+        }
     }
 }
