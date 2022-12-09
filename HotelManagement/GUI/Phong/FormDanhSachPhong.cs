@@ -118,5 +118,10 @@ namespace HotelManagement.GUI
             else
                 grid.Cursor = Cursors.Default;
         }
+
+        private void CTTextBoxTimPhongTheoMa__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

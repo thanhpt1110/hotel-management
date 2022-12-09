@@ -76,6 +76,7 @@
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
+            this.CTButtonThoat.Click += new System.EventHandler(this.CTButtonThoat_Click);
             // 
             // CTButtonCapNhat
             // 

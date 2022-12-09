@@ -33,9 +33,11 @@ namespace HotelManagement.GUI
         private void FormDanhSachLoaiPhong_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
+
             Image LP = Properties.Resources.LoaiPhong;
             Image edit = Properties.Resources.edit;
             Image delete = Properties.Resources.delete;
+
 
             LoadAllDataGrid();
             /*grid.Rows.Add(new object[] { LP, "LP001", "Phòng đơn", "1", "2", "100,000", "50,000", edit, delete });

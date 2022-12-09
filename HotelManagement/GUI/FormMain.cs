@@ -483,6 +483,11 @@ namespace HotelManagement
             ButtonQuanLyNhanVien.ForeColor = Color.Black;
             ButtonThongKe.ForeColor = Color.Black;
         }
+        private void hideSubMenu()
+        {
+            PanelPhong.Visible = false;
+            PanelTienNghi.Visible = false;
+        }
         private void ButtonDatPhong_Click(object sender, EventArgs e)
         {
             //Change color button on side bar
@@ -491,6 +496,7 @@ namespace HotelManagement
             ButtonDatPhong.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachPhieuThue());
+            hideSubMenu();
         }
 
         private void ButtonSoDoPhong_Click(object sender, EventArgs e)
@@ -501,6 +507,7 @@ namespace HotelManagement
             ButtonSoDoPhong.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormSoDoPhong());
+            hideSubMenu();
         }
 
 
@@ -512,6 +519,7 @@ namespace HotelManagement
             ButtonDanhSachHoaDon.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachHoaDon());
+            hideSubMenu();
         }
 
         private void ButtonTrangChu_Click(object sender, EventArgs e)
@@ -522,6 +530,7 @@ namespace HotelManagement
             ButtonTrangChu.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormTrangChu());
+            hideSubMenu();
         }
 
         private void ButtonQuanLyKhachHang_Click(object sender, EventArgs e)
@@ -532,6 +541,7 @@ namespace HotelManagement
             ButtonQuanLyKhachHang.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachKhachHang());
+            hideSubMenu();
         }
 
         private void ButtonPhong_Click(object sender, EventArgs e)
@@ -560,6 +570,7 @@ namespace HotelManagement
             ButtonQuanLyDichVu.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachDichVu());
+            hideSubMenu();
         }
 
         private void ButtonTienNghi_Click(object sender, EventArgs e)
@@ -570,6 +581,7 @@ namespace HotelManagement
 
             //Open Child Form
             openChildForm(new FormDanhSachTienNghi());
+            PanelPhong.Visible = false;
         }
 
         private void ButtonChiTietTienNghi_Click(object sender, EventArgs e)
@@ -580,6 +592,7 @@ namespace HotelManagement
 
             //Open Child Form
             openChildForm(new FormDanhSachChiTietTienNghi());
+            PanelPhong.Visible = false;
         }
 
         private void ButtonQuanLyTaiKhoan_Click(object sender, EventArgs e)
@@ -590,6 +603,7 @@ namespace HotelManagement
             ButtonQuanLyTaiKhoan.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachTaiKhoan());
+            hideSubMenu();
         }
 
         private void ButtonQuanLyNhanVien_Click(object sender, EventArgs e)
@@ -600,6 +614,7 @@ namespace HotelManagement
             ButtonQuanLyNhanVien.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachNhanVien());
+            hideSubMenu();
         }
 
         private void ctClose1_Click(object sender, EventArgs e)
@@ -624,6 +639,7 @@ namespace HotelManagement
                 ButtonQuanLyPhong.BackColor = Color.FromArgb(64, 126, 134);
                 ButtonQuanLyPhong.ForeColor = Color.White;
             }
+            PanelTienNghi.Visible = false;
         }
 
         private void ButtonQuanLyTienNghi_Click(object sender, EventArgs e)
@@ -643,6 +659,7 @@ namespace HotelManagement
                 ButtonQuanLyTienNghi.BackColor = Color.FromArgb(64, 126, 134);
                 ButtonQuanLyTienNghi.ForeColor = Color.White;
             }
+            PanelPhong.Visible = false;
         }
 
         private void ButtonThongKe_Click(object sender, EventArgs e)
@@ -653,6 +670,7 @@ namespace HotelManagement
             ButtonThongKe.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormThongKe());
+            hideSubMenu();
         }
         private void DisplayTextMenu()
         {

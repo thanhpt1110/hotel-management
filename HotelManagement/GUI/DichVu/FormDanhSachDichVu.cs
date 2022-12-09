@@ -118,30 +118,23 @@ namespace HotelManagement.GUI
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int x = e.ColumnIndex, y = e.RowIndex;
-            try
+            if (y >= 0)
             {
-                if (y >= 0)
+                // If click Update button 
+                if (x == 5)
                 {
-                    // If click Update button 
-                    if (x == 5)
+                    using (FormSuaDichVu formSuaDichVu1 = new FormSuaDichVu(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()),this))
                     {
-                        using (FormSuaDichVu formSuaDichVu1 = new FormSuaDichVu(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()), this))
-                        {
-                            formSuaDichVu1.ShowDialog();
-                        }
-                    }
-                    if (x == 6)
-                    {
-                        // If click Delete button 
-
-                        DichVuBUS.Instance.RemoveDV(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()));
-                        LoadALLDV();
+                        formSuaDichVu1.ShowDialog();
                     }
                 }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                if (x == 6)
+                {
+                    // If click Delete button 
+                    
+                    DichVuBUS.Instance.RemoveDV(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()));
+                    LoadALLDV();
+                }
             }
         }
 
