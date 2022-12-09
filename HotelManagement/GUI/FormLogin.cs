@@ -12,11 +12,19 @@ using System.Drawing.Drawing2D;
 using HotelManagement.CTControls;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 using HotelManagement.BUS;
+using HotelManagement.GUI;
 
 namespace HotelManagement
 {
     public partial class FormLogin : Form
     {
+        //
+        public void bringControlBoxAndTBTLabelToFront()
+        {
+            panelControlBox.BringToFront();
+            labelCorporation.BringToFront();
+        }
+        private Form formMain;
         //Fields
         private int borderRadius = 20;
         private int borderSize = 2;
@@ -224,7 +232,7 @@ namespace HotelManagement
         {
             try
             {
-                if (TaiKhoanBUS.Instance.checkLogin(textBoxUsername.Texts, textBoxPassword.Texts))
+               /* if (TaiKhoanBUS.Instance.checkLogin(textBoxUsername.Texts, textBoxPassword.Texts))
                 {
                     FormMain formMain = new FormMain(TaiKhoanBUS.Instance.getQuyenTruyCap(textBoxUsername.Texts));
                     this.Hide();
@@ -234,7 +242,7 @@ namespace HotelManagement
                 else
                 {
                     MessageBox.Show("Sai tài khoản hoặc password", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                }*/
 
             }
             catch(Exception Bug)
@@ -265,6 +273,33 @@ namespace HotelManagement
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+        Form activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelLogin.Controls.Add(childForm);
+            panelLogin.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        private void labelForgotPassword_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            FormDangNhap formDangNhap = new FormDangNhap(this);
+            openChildForm(formDangNhap);
+            panelControlBox.BringToFront();
+            labelCorporation.BringToFront();
+            
         }
     }
 }
