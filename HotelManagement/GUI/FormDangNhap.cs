@@ -24,5 +24,13 @@ namespace HotelManagement.GUI
             formLoginParent.openChildForm(new FormQuenMatKhauLayOTP(formLoginParent));
             formLoginParent.bringControlBoxAndTBTLabelToFront();
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            FormMain formMain = new FormMain(1);
+            formLoginParent.Hide();
+            formMain.ShowDialog();
+            formLoginParent.Close();
+        }
     }
 }

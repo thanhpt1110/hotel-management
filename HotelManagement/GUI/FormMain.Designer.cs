@@ -156,6 +156,7 @@
             // 
             // ButtonThongKe
             // 
+            this.ButtonThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonThongKe.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonThongKe.FlatAppearance.BorderSize = 0;
             this.ButtonThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -176,6 +177,7 @@
             // 
             // ButtonQuanLyNhanVien
             // 
+            this.ButtonQuanLyNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonQuanLyNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonQuanLyNhanVien.FlatAppearance.BorderSize = 0;
             this.ButtonQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -196,6 +198,7 @@
             // 
             // ButtonQuanLyTaiKhoan
             // 
+            this.ButtonQuanLyTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonQuanLyTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonQuanLyTaiKhoan.FlatAppearance.BorderSize = 0;
             this.ButtonQuanLyTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -227,6 +230,7 @@
             // ButtonChiTietTienNghi
             // 
             this.ButtonChiTietTienNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(197)))));
+            this.ButtonChiTietTienNghi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonChiTietTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonChiTietTienNghi.FlatAppearance.BorderSize = 0;
             this.ButtonChiTietTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -248,6 +252,7 @@
             // ButtonTienNghi
             // 
             this.ButtonTienNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(197)))));
+            this.ButtonTienNghi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonTienNghi.FlatAppearance.BorderSize = 0;
             this.ButtonTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -268,6 +273,7 @@
             // 
             // ButtonQuanLyTienNghi
             // 
+            this.ButtonQuanLyTienNghi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonQuanLyTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonQuanLyTienNghi.FlatAppearance.BorderSize = 0;
             this.ButtonQuanLyTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -288,6 +294,7 @@
             // 
             // ButtonQuanLyDichVu
             // 
+            this.ButtonQuanLyDichVu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonQuanLyDichVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonQuanLyDichVu.FlatAppearance.BorderSize = 0;
             this.ButtonQuanLyDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -319,6 +326,7 @@
             // 
             // ButtonLoaiPhong
             // 
+            this.ButtonLoaiPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonLoaiPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonLoaiPhong.FlatAppearance.BorderSize = 0;
             this.ButtonLoaiPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -339,6 +347,7 @@
             // 
             // ButtonPhong
             // 
+            this.ButtonPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonPhong.FlatAppearance.BorderSize = 0;
             this.ButtonPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -359,6 +368,7 @@
             // 
             // ButtonQuanLyPhong
             // 
+            this.ButtonQuanLyPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonQuanLyPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonQuanLyPhong.FlatAppearance.BorderSize = 0;
             this.ButtonQuanLyPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -379,6 +389,7 @@
             // 
             // ButtonQuanLyKhachHang
             // 
+            this.ButtonQuanLyKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonQuanLyKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonQuanLyKhachHang.FlatAppearance.BorderSize = 0;
             this.ButtonQuanLyKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -399,6 +410,7 @@
             // 
             // ButtonDanhSachHoaDon
             // 
+            this.ButtonDanhSachHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonDanhSachHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonDanhSachHoaDon.FlatAppearance.BorderSize = 0;
             this.ButtonDanhSachHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -419,6 +431,7 @@
             // 
             // ButtonDatPhong
             // 
+            this.ButtonDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonDatPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonDatPhong.FlatAppearance.BorderSize = 0;
             this.ButtonDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -439,6 +452,7 @@
             // 
             // ButtonSoDoPhong
             // 
+            this.ButtonSoDoPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonSoDoPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonSoDoPhong.FlatAppearance.BorderSize = 0;
             this.ButtonSoDoPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -460,6 +474,7 @@
             // ButtonTrangChu
             // 
             this.ButtonTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ButtonTrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonTrangChu.FlatAppearance.BorderSize = 0;
             this.ButtonTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
