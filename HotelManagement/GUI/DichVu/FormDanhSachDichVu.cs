@@ -122,7 +122,6 @@ namespace HotelManagement.GUI
                 if (x == 6)
                 {
                     // If click Delete button 
-                    
                     DichVuBUS.Instance.RemoveDV(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()));
                     LoadALLDV();
                 }
