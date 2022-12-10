@@ -27,7 +27,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemNhanVien_Click(object sender, EventArgs e)
         {
-            using(FormThemNhanVien formThemNhanVien = new FormThemNhanVien())
+            using (FormThemNhanVien formThemNhanVien = new FormThemNhanVien())
             {
                 formThemNhanVien.ShowDialog();
             }
@@ -38,16 +38,16 @@ namespace HotelManagement.GUI
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
 
             LoadAllGrid();
-           /* grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Giám đốc", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
-            grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Quản lý", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
-            grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Nhân viên", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
-            grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Giám đốc", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });*/
+            /* grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Giám đốc", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
+             grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Quản lý", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
+             grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Nhân viên", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });
+             grid.Rows.Add(new object[] { NV, "NV001", "Phan Tuấn Thành", "Giám đốc", "11/10/2003", "Nam", "0123456789", "thanhpt1110@gmail.com", edit, delete });*/
         }
         public void LoadAllGrid()
         {
             this.nhanViens = NhanVienBUS.Instance.GetNhanViens();
             LoadGrid();
-        }    
+        }
         private void LoadGrid()
         {
             try
@@ -172,6 +172,7 @@ namespace HotelManagement.GUI
             }
             this.nhanViens = NhanVienBUS.Instance.GetNhanViensWithName(textBoxNhanVien.Text);
             LoadGrid();
+        } 
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;

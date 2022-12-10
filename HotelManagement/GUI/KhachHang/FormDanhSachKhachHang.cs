@@ -144,7 +144,6 @@ namespace HotelManagement.GUI
 
         private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-<<<<<<< HEAD
             try
             {
                 int curCol = e.ColumnIndex;
@@ -187,24 +186,11 @@ namespace HotelManagement.GUI
             }    
             this.khachHangs = KhachHangBUS.Instance.FindKhachHangWithName(textBoxFindName.Text);
             LoadGrid();
-=======
-            int y = e.RowIndex, x = e.ColumnIndex;
-            int[] arrX = { 1, 5, 6 };
-            bool isExists = false;
-
-            if (Array.IndexOf(arrX, x) != -1)
-                isExists = true;
-
-            if (y >= 0 && x == 7 || y >= 0 && x == 8 || y == -1 && isExists)
-                grid.Cursor = Cursors.Hand;
-            else
-                grid.Cursor = Cursors.Default;
         }
 
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;
->>>>>>> 48f84b0a9bec8015464ee5b6f3c55d8ae4a8d26a
         }
     }
 }

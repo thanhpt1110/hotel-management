@@ -143,8 +143,9 @@ namespace HotelManagement.GUI
                 LoadAllData();
                 return;
             }
-            this.tienNghis = TienNghiBUS.Instance.FindTienNghiWithName(textBoxTienNghi.Text);   
+            this.tienNghis = TienNghiBUS.Instance.FindTienNghiWithName(textBoxTienNghi.Text);
             LoadData();
+        }
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;

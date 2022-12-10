@@ -234,7 +234,6 @@ namespace HotelManagement.GUI
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             // 
-<<<<<<< HEAD
             // ctPanel1
             // 
             this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -321,8 +320,7 @@ namespace HotelManagement.GUI
             this.CTTextBoxTimKhachHangTheoTen._TextChanged += new System.EventHandler(this.CTTextBoxTimKhachHangTheoTen__TextChanged);
             this.CTTextBoxTimKhachHangTheoTen.Load += new System.EventHandler(this.CTTextBoxTimKhachHangTheoTen_Load);
             // 
-=======
->>>>>>> 48f84b0a9bec8015464ee5b6f3c55d8ae4a8d26a
+
             // FormDanhSachKhachHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;

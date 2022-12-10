@@ -154,6 +154,7 @@ namespace HotelManagement.GUI
             }
             this.phongs = PhongBUS.Instance.FindPhongWithMaPH(textBoxPhong.Text);
             LoadDataGrid();
+        }
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;

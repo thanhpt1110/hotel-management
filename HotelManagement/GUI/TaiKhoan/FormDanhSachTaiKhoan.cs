@@ -142,13 +142,14 @@ namespace HotelManagement.GUI
         {
             TextBox textBoxTaiKhoan = sender as TextBox;
 
-            if (textBoxTaiKhoan.Focused == false )
+            if (textBoxTaiKhoan.Focused == false)
             {
                 LoadAllGrid();
                 return;
             }
             this.taiKhoans = TaiKhoanBUS.Instance.GetTaiKhoansWithUserName(textBoxTaiKhoan.Text);
             LoadGrid();
+        }
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;

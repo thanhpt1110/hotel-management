@@ -158,6 +158,7 @@ namespace HotelManagement.GUI
             }
             this.loaiPhongs = LoaiPhongBUS.Instance.getLoaiPhongWithName(textBoxFindNameLP.Text);
             LoadDataGrid();
+        }
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;

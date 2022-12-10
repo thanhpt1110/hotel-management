@@ -66,17 +66,18 @@ namespace HotelManagement.GUI
                 }
                 decimal Tongtienphong = loaiphong.GiaNgay * days;
                 DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));
-                this.LabelTongTien.Text += HD.TriGia.ToString("#,#");
+                //this.LabelTongTien.Text += HD.TriGia.ToString("#,#");
+                money = HD.TriGia.ToString("#,#");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "THÔNG BÁO");
             }
-            
+            /*
             
             decimal Tongtienphong =  loaiphong.GiaNgay * days;
             DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));
-            money = (TongTienHD + Tongtienphong).ToString("#,#");
+            money = (TongTienHD + Tongtienphong).ToString("#,#");*/
         }
         //Control Box
 

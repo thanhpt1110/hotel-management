@@ -132,7 +132,7 @@ namespace HotelManagement.GUI
                 grid.Cursor = Cursors.Default;
         }
 
-<<<<<<< HEAD
+//head
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxPT = sender as TextBox;
@@ -151,11 +151,11 @@ namespace HotelManagement.GUI
             this.phieuThues = PhieuThueBUS.Instance.GetPhieuThuesWithNameCus(textBoxPT.Text);
             LoadDataGrid();
         }
-=======
+//incoming
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;      
         }   
->>>>>>> 48f84b0a9bec8015464ee5b6f3c55d8ae4a8d26a
+//end
     }
 }
