@@ -197,5 +197,12 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+
+        private void FormThongTinPhong_Load(object sender, EventArgs e)
+        {
+            DataGridView grid = gridDichVu;
+            grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
+            this.ActiveControl = LabelMaPhong;
+        }
     }
 }

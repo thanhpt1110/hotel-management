@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.BUS;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Runtime.CompilerServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace HotelManagement.GUI
 {
@@ -22,7 +24,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 10;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        private string money = null;
         //Constructor
         public FormHoaDon()
         {
@@ -66,8 +68,7 @@ namespace HotelManagement.GUI
             
             decimal Tongtienphong =  loaiphong.GiaNgay * days;
             DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));
-            this.LabelTongTien.Text += (TongTienHD + Tongtienphong).ToString("#,#");
-
+            money = (TongTienHD + Tongtienphong).ToString("#,#");
         }
         //Control Box
 
@@ -221,7 +222,8 @@ namespace HotelManagement.GUI
 
         private void PanelBackground_Paint(object sender, PaintEventArgs e)
         {
-            ControlRegionAndBorder(PanelBackground, borderRadius - (borderSize / 2), e.Graphics, borderColor);
+            Graphics g = e.Graphics;
+            ControlRegionAndBorder(PanelBackground, borderRadius - (borderSize / 2), g, borderColor);
         }
 
         private void PanelBackground_MouseDown(object sender, MouseEventArgs e)
@@ -233,6 +235,37 @@ namespace HotelManagement.GUI
         private void ctClose1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormHoaDon_Load(object sender, EventArgs e)
+        {
+            DataGridView grid = DataGridViewDichVu;
+            grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
+            int row, offset, x, y, len;
+            row = grid.Rows.Count;
+            offset = 25 * row;
+            x = 350; y = 0; len = money.Length;
+            if (row < 6)
+                y = 400 + offset;
+            else
+                y = 370 + offset;
+            LabelTongTien.Text += money;
+            LabelTongTien.Location = new Point(x - 10 * len, y);
+        }
+
+        private void DataGridViewDichVu_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            DataGridView grid = DataGridViewDichVu;
+            int topX_left = 0, topY_left = 35, topX_right = 515, topY_right = 35;
+            int row = grid.Rows.Count; // Last row Index
+            int offset = 25 * row + 10;
+            int botX_left = 0, botY_left = 35 + offset, botX_right = 515, botY_right = 35 + offset;
+            using (var pen = new Pen(Color.FromArgb(198, 197, 195), 2))
+            {
+                g.DrawLine(pen, topX_left, topY_left, topX_right, topY_right);
+                g.DrawLine(pen, botX_left, botY_left, botX_right, botY_right);
+            }
         }
     }
 }

@@ -140,6 +140,8 @@
             this.Controls.Add(this.labelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDangNhap";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormDangNhap";
             this.ResumeLayout(false);
             this.PerformLayout();

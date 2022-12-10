@@ -30,10 +30,10 @@ namespace HotelManagement.GUI
             Image PT = Properties.Resources.PhieuThueDgv;
             Image details = Properties.Resources.details;
 
-            grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
-            grid.Rows.Add(new object[] { PT, "PT002", "Nguyễn Phúc Bình", "10/11/2003 15:45:00", "Nguyễn Văn Anh",  details});
-            grid.Rows.Add(new object[] {PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
-            grid.Rows.Add(new object[] {PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
+            grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
+            grid.Rows.Add(new object[] { PT, "PT002", "Nguyễn Phúc Bình", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
+            grid.Rows.Add(new object[] { PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
+            grid.Rows.Add(new object[] { PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
@@ -94,18 +94,24 @@ namespace HotelManagement.GUI
             }
         }
 
-        private void grid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int curCol = e.ColumnIndex;
-            if (curCol == 5)
-            {
-                if (e.RowIndex >= 0)
-                    grid.Cursor = Cursors.Hand;
-                else if (grid.CurrentCell.Value == DBNull.Value)
-                    grid.Cursor = Cursors.Default;
-            }
+            int y = e.RowIndex, x = e.ColumnIndex;
+            int[] arrX = { 1, 3 };
+            bool isExists = false;
+
+            if (Array.IndexOf(arrX, x) != -1)
+                isExists = true;
+
+            if (y >= 0 && x == 5 || y == -1 && isExists)
+                grid.Cursor = Cursors.Hand;
             else
                 grid.Cursor = Cursors.Default;
         }
+
+        private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            grid.Cursor = Cursors.Default;      
+        }   
     }
 }

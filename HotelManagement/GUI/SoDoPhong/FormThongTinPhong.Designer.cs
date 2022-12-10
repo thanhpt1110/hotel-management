@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.CTButtonThemDichVu = new HotelManagement.CTControls.CTButton();
@@ -42,25 +45,29 @@
             this.PanelChuaButtonThoat = new System.Windows.Forms.Panel();
             this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
             this.PanelChuaThongTin = new System.Windows.Forms.Panel();
+            this.TextBoxGhiChu = new System.Windows.Forms.TextBox();
+            this.LabelGhiChu = new System.Windows.Forms.Label();
+            this.ComboBoxTinhTrangDonDep = new System.Windows.Forms.ComboBox();
+            this.ComboBoxTinhTrangPhong = new System.Windows.Forms.ComboBox();
+            this.gridDichVu = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LabelCapNhatTinhTrangDonDep = new System.Windows.Forms.Label();
+            this.ctPanel1 = new CTPanel.CTPanel();
+            this.LabelCapNhatTinhTrangPhong = new System.Windows.Forms.Label();
             this.LabelSoNguoi = new System.Windows.Forms.Label();
             this.LabelThoiGianThue = new System.Windows.Forms.Label();
             this.LabelNgayCheckin = new System.Windows.Forms.Label();
             this.LabelTen = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ComboBoxTinhTrangDonDep = new System.Windows.Forms.ComboBox();
-            this.ComboBoxTinhTrangPhong = new System.Windows.Forms.ComboBox();
-            this.LabelCapNhatTinhTrangDonDep = new System.Windows.Forms.Label();
-            this.LabelCapNhatTinhTrangPhong = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PictureBoxSoNguoi = new System.Windows.Forms.PictureBox();
             this.PictureBoxThoiGianThue = new System.Windows.Forms.PictureBox();
             this.PictureBoxNgayCheckin = new System.Windows.Forms.PictureBox();
             this.PictureBoxTen = new System.Windows.Forms.PictureBox();
+            this.ctPanel2 = new CTPanel.CTPanel();
+            this.ctPanel3 = new CTPanel.CTPanel();
             this.PanelBackgroundTop = new System.Windows.Forms.Panel();
             this.LabelMaPhong = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.LabelGhiChu = new System.Windows.Forms.Label();
-            this.TextBoxGhiChu = new System.Windows.Forms.TextBox();
             this.PanelBackground.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,14 +76,12 @@
             this.PanelChuaButtonLuu.SuspendLayout();
             this.PanelChuaButtonThoat.SuspendLayout();
             this.PanelChuaThongTin.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSoNguoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxThoiGianThue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNgayCheckin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).BeginInit();
             this.PanelBackgroundTop.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelBackground
@@ -279,22 +284,199 @@
             // PanelChuaThongTin
             // 
             this.PanelChuaThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.PanelChuaThongTin.Controls.Add(this.panel4);
+            this.PanelChuaThongTin.Controls.Add(this.TextBoxGhiChu);
+            this.PanelChuaThongTin.Controls.Add(this.LabelGhiChu);
+            this.PanelChuaThongTin.Controls.Add(this.ComboBoxTinhTrangDonDep);
+            this.PanelChuaThongTin.Controls.Add(this.ComboBoxTinhTrangPhong);
+            this.PanelChuaThongTin.Controls.Add(this.gridDichVu);
+            this.PanelChuaThongTin.Controls.Add(this.LabelCapNhatTinhTrangDonDep);
+            this.PanelChuaThongTin.Controls.Add(this.ctPanel1);
+            this.PanelChuaThongTin.Controls.Add(this.LabelCapNhatTinhTrangPhong);
             this.PanelChuaThongTin.Controls.Add(this.LabelSoNguoi);
             this.PanelChuaThongTin.Controls.Add(this.LabelThoiGianThue);
             this.PanelChuaThongTin.Controls.Add(this.LabelNgayCheckin);
             this.PanelChuaThongTin.Controls.Add(this.LabelTen);
-            this.PanelChuaThongTin.Controls.Add(this.panel2);
-            this.PanelChuaThongTin.Controls.Add(this.dataGridView1);
             this.PanelChuaThongTin.Controls.Add(this.PictureBoxSoNguoi);
             this.PanelChuaThongTin.Controls.Add(this.PictureBoxThoiGianThue);
             this.PanelChuaThongTin.Controls.Add(this.PictureBoxNgayCheckin);
             this.PanelChuaThongTin.Controls.Add(this.PictureBoxTen);
+            this.PanelChuaThongTin.Controls.Add(this.ctPanel2);
+            this.PanelChuaThongTin.Controls.Add(this.ctPanel3);
             this.PanelChuaThongTin.Location = new System.Drawing.Point(43, 53);
             this.PanelChuaThongTin.Name = "PanelChuaThongTin";
             this.PanelChuaThongTin.Size = new System.Drawing.Size(883, 435);
             this.PanelChuaThongTin.TabIndex = 10;
             this.PanelChuaThongTin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
+            // 
+            // TextBoxGhiChu
+            // 
+            this.TextBoxGhiChu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TextBoxGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxGhiChu.Location = new System.Drawing.Point(560, 293);
+            this.TextBoxGhiChu.Multiline = true;
+            this.TextBoxGhiChu.Name = "TextBoxGhiChu";
+            this.TextBoxGhiChu.Size = new System.Drawing.Size(281, 80);
+            this.TextBoxGhiChu.TabIndex = 1;
+            this.TextBoxGhiChu.Text = "Ghi chú nha cả nhà";
+            // 
+            // LabelGhiChu
+            // 
+            this.LabelGhiChu.AutoSize = true;
+            this.LabelGhiChu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.LabelGhiChu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelGhiChu.Location = new System.Drawing.Point(492, 293);
+            this.LabelGhiChu.Name = "LabelGhiChu";
+            this.LabelGhiChu.Size = new System.Drawing.Size(68, 21);
+            this.LabelGhiChu.TabIndex = 0;
+            this.LabelGhiChu.Text = "Ghi chú:";
+            // 
+            // ComboBoxTinhTrangDonDep
+            // 
+            this.ComboBoxTinhTrangDonDep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTinhTrangDonDep.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxTinhTrangDonDep.FormattingEnabled = true;
+            this.ComboBoxTinhTrangDonDep.Items.AddRange(new object[] {
+            "  Đã dọn dẹp",
+            "  Đang dọn dẹp"});
+            this.ComboBoxTinhTrangDonDep.Location = new System.Drawing.Point(616, 237);
+            this.ComboBoxTinhTrangDonDep.Name = "ComboBoxTinhTrangDonDep";
+            this.ComboBoxTinhTrangDonDep.Size = new System.Drawing.Size(192, 29);
+            this.ComboBoxTinhTrangDonDep.TabIndex = 4;
+            this.ComboBoxTinhTrangDonDep.Text = "  Tình trạng dọn dẹp";
+            // 
+            // ComboBoxTinhTrangPhong
+            // 
+            this.ComboBoxTinhTrangPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTinhTrangPhong.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxTinhTrangPhong.FormattingEnabled = true;
+            this.ComboBoxTinhTrangPhong.Items.AddRange(new object[] {
+            "  Phòng đã đặt",
+            "  Phòng đang thuê",
+            "  Phòng trống",
+            "  Phòng đang sửa chữa"});
+            this.ComboBoxTinhTrangPhong.Location = new System.Drawing.Point(616, 155);
+            this.ComboBoxTinhTrangPhong.Name = "ComboBoxTinhTrangPhong";
+            this.ComboBoxTinhTrangPhong.Size = new System.Drawing.Size(192, 29);
+            this.ComboBoxTinhTrangPhong.TabIndex = 4;
+            this.ComboBoxTinhTrangPhong.Text = "  Tình trạng phòng";
+            // 
+            // gridDichVu
+            // 
+            this.gridDichVu.AllowUserToAddRows = false;
+            this.gridDichVu.AllowUserToDeleteRows = false;
+            this.gridDichVu.AllowUserToResizeColumns = false;
+            this.gridDichVu.AllowUserToResizeRows = false;
+            this.gridDichVu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gridDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridDichVu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.gridDichVu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridDichVu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridDichVu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridDichVu.ColumnHeadersHeight = 50;
+            this.gridDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.gridDichVu.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridDichVu.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridDichVu.EnableHeadersVisualStyles = false;
+            this.gridDichVu.Location = new System.Drawing.Point(38, 105);
+            this.gridDichVu.MultiSelect = false;
+            this.gridDichVu.Name = "gridDichVu";
+            this.gridDichVu.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDichVu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridDichVu.RowHeadersVisible = false;
+            this.gridDichVu.RowHeadersWidth = 40;
+            this.gridDichVu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gridDichVu.RowTemplate.Height = 40;
+            this.gridDichVu.RowTemplate.ReadOnly = true;
+            this.gridDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridDichVu.Size = new System.Drawing.Size(383, 263);
+            this.gridDichVu.TabIndex = 31;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 125F;
+            this.Column1.HeaderText = "Dịch vụ";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Số lượng";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 125F;
+            this.Column3.HeaderText = "Thành tiền";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // LabelCapNhatTinhTrangDonDep
+            // 
+            this.LabelCapNhatTinhTrangDonDep.AutoSize = true;
+            this.LabelCapNhatTinhTrangDonDep.BackColor = System.Drawing.Color.White;
+            this.LabelCapNhatTinhTrangDonDep.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelCapNhatTinhTrangDonDep.Location = new System.Drawing.Point(505, 200);
+            this.LabelCapNhatTinhTrangDonDep.Name = "LabelCapNhatTinhTrangDonDep";
+            this.LabelCapNhatTinhTrangDonDep.Size = new System.Drawing.Size(254, 25);
+            this.LabelCapNhatTinhTrangDonDep.TabIndex = 3;
+            this.LabelCapNhatTinhTrangDonDep.Text = "Cập nhật tình trạng dọn dẹp";
+            // 
+            // ctPanel1
+            // 
+            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel1.BackColor = System.Drawing.Color.White;
+            this.ctPanel1.BorderRadius = 50;
+            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel1.GradientAngle = 90F;
+            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.Location = new System.Drawing.Point(23, 100);
+            this.ctPanel1.Name = "ctPanel1";
+            this.ctPanel1.Size = new System.Drawing.Size(413, 289);
+            this.ctPanel1.TabIndex = 30;
+            // 
+            // LabelCapNhatTinhTrangPhong
+            // 
+            this.LabelCapNhatTinhTrangPhong.AutoSize = true;
+            this.LabelCapNhatTinhTrangPhong.BackColor = System.Drawing.Color.White;
+            this.LabelCapNhatTinhTrangPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelCapNhatTinhTrangPhong.Location = new System.Drawing.Point(509, 117);
+            this.LabelCapNhatTinhTrangPhong.Name = "LabelCapNhatTinhTrangPhong";
+            this.LabelCapNhatTinhTrangPhong.Size = new System.Drawing.Size(239, 25);
+            this.LabelCapNhatTinhTrangPhong.TabIndex = 3;
+            this.LabelCapNhatTinhTrangPhong.Text = "Cập nhật tình trạng phòng";
             // 
             // LabelSoNguoi
             // 
@@ -336,77 +518,6 @@
             this.LabelTen.TabIndex = 3;
             this.LabelTen.Text = "Họ tên khách hàng";
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.ComboBoxTinhTrangDonDep);
-            this.panel2.Controls.Add(this.ComboBoxTinhTrangPhong);
-            this.panel2.Controls.Add(this.LabelCapNhatTinhTrangDonDep);
-            this.panel2.Controls.Add(this.LabelCapNhatTinhTrangPhong);
-            this.panel2.Location = new System.Drawing.Point(468, 123);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(369, 177);
-            this.panel2.TabIndex = 2;
-            // 
-            // ComboBoxTinhTrangDonDep
-            // 
-            this.ComboBoxTinhTrangDonDep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxTinhTrangDonDep.ForeColor = System.Drawing.Color.Black;
-            this.ComboBoxTinhTrangDonDep.FormattingEnabled = true;
-            this.ComboBoxTinhTrangDonDep.Items.AddRange(new object[] {
-            "  Đã dọn dẹp",
-            "  Đang dọn dẹp"});
-            this.ComboBoxTinhTrangDonDep.Location = new System.Drawing.Point(129, 133);
-            this.ComboBoxTinhTrangDonDep.Name = "ComboBoxTinhTrangDonDep";
-            this.ComboBoxTinhTrangDonDep.Size = new System.Drawing.Size(192, 29);
-            this.ComboBoxTinhTrangDonDep.TabIndex = 4;
-            this.ComboBoxTinhTrangDonDep.Text = "  Tình trạng dọn dẹp";
-            // 
-            // ComboBoxTinhTrangPhong
-            // 
-            this.ComboBoxTinhTrangPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxTinhTrangPhong.ForeColor = System.Drawing.Color.Black;
-            this.ComboBoxTinhTrangPhong.FormattingEnabled = true;
-            this.ComboBoxTinhTrangPhong.Items.AddRange(new object[] {
-            "  Phòng đã đặt",
-            "  Phòng đang thuê",
-            "  Phòng trống",
-            "  Phòng đang sửa chữa"});
-            this.ComboBoxTinhTrangPhong.Location = new System.Drawing.Point(129, 51);
-            this.ComboBoxTinhTrangPhong.Name = "ComboBoxTinhTrangPhong";
-            this.ComboBoxTinhTrangPhong.Size = new System.Drawing.Size(192, 29);
-            this.ComboBoxTinhTrangPhong.TabIndex = 4;
-            this.ComboBoxTinhTrangPhong.Text = "  Tình trạng phòng";
-            // 
-            // LabelCapNhatTinhTrangDonDep
-            // 
-            this.LabelCapNhatTinhTrangDonDep.AutoSize = true;
-            this.LabelCapNhatTinhTrangDonDep.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCapNhatTinhTrangDonDep.Location = new System.Drawing.Point(18, 96);
-            this.LabelCapNhatTinhTrangDonDep.Name = "LabelCapNhatTinhTrangDonDep";
-            this.LabelCapNhatTinhTrangDonDep.Size = new System.Drawing.Size(254, 25);
-            this.LabelCapNhatTinhTrangDonDep.TabIndex = 3;
-            this.LabelCapNhatTinhTrangDonDep.Text = "Cập nhật tình trạng dọn dẹp";
-            // 
-            // LabelCapNhatTinhTrangPhong
-            // 
-            this.LabelCapNhatTinhTrangPhong.AutoSize = true;
-            this.LabelCapNhatTinhTrangPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCapNhatTinhTrangPhong.Location = new System.Drawing.Point(22, 13);
-            this.LabelCapNhatTinhTrangPhong.Name = "LabelCapNhatTinhTrangPhong";
-            this.LabelCapNhatTinhTrangPhong.Size = new System.Drawing.Size(239, 25);
-            this.LabelCapNhatTinhTrangPhong.TabIndex = 3;
-            this.LabelCapNhatTinhTrangPhong.Text = "Cập nhật tình trạng phòng";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(42, 123);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(362, 283);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // PictureBoxSoNguoi
             // 
             this.PictureBoxSoNguoi.Image = global::HotelManagement.Properties.Resources.SoNguoi;
@@ -446,6 +557,32 @@
             this.PictureBoxTen.TabIndex = 0;
             this.PictureBoxTen.TabStop = false;
             // 
+            // ctPanel2
+            // 
+            this.ctPanel2.BackColor = System.Drawing.Color.White;
+            this.ctPanel2.BorderRadius = 30;
+            this.ctPanel2.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel2.GradientAngle = 0F;
+            this.ctPanel2.GradientBottomColor = System.Drawing.Color.White;
+            this.ctPanel2.GradientTopColor = System.Drawing.Color.White;
+            this.ctPanel2.Location = new System.Drawing.Point(477, 100);
+            this.ctPanel2.Name = "ctPanel2";
+            this.ctPanel2.Size = new System.Drawing.Size(370, 177);
+            this.ctPanel2.TabIndex = 32;
+            // 
+            // ctPanel3
+            // 
+            this.ctPanel3.BackColor = System.Drawing.Color.White;
+            this.ctPanel3.BorderRadius = 30;
+            this.ctPanel3.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel3.GradientAngle = 0F;
+            this.ctPanel3.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ctPanel3.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ctPanel3.Location = new System.Drawing.Point(477, 283);
+            this.ctPanel3.Name = "ctPanel3";
+            this.ctPanel3.Size = new System.Drawing.Size(370, 106);
+            this.ctPanel3.TabIndex = 33;
+            // 
             // PanelBackgroundTop
             // 
             this.PanelBackgroundTop.Controls.Add(this.LabelMaPhong);
@@ -467,45 +604,13 @@
             this.LabelMaPhong.TabIndex = 4;
             this.LabelMaPhong.Text = "Mã Phòng";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel4.Controls.Add(this.TextBoxGhiChu);
-            this.panel4.Controls.Add(this.LabelGhiChu);
-            this.panel4.Location = new System.Drawing.Point(468, 317);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(369, 89);
-            this.panel4.TabIndex = 4;
-            // 
-            // LabelGhiChu
-            // 
-            this.LabelGhiChu.AutoSize = true;
-            this.LabelGhiChu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelGhiChu.Location = new System.Drawing.Point(5, 5);
-            this.LabelGhiChu.Name = "LabelGhiChu";
-            this.LabelGhiChu.Size = new System.Drawing.Size(68, 21);
-            this.LabelGhiChu.TabIndex = 0;
-            this.LabelGhiChu.Text = "Ghi chú:";
-            // 
-            // TextBoxGhiChu
-            // 
-            this.TextBoxGhiChu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TextBoxGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxGhiChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxGhiChu.Location = new System.Drawing.Point(77, 6);
-            this.TextBoxGhiChu.Multiline = true;
-            this.TextBoxGhiChu.Name = "TextBoxGhiChu";
-            this.TextBoxGhiChu.Size = new System.Drawing.Size(281, 80);
-            this.TextBoxGhiChu.TabIndex = 1;
-            this.TextBoxGhiChu.Text = "Ghi chú nha cả nhà";
-            // 
             // FormThongTinPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(979, 550);
             this.Controls.Add(this.PanelBackground);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThongTinPhong";
             this.ShowIcon = false;
@@ -513,6 +618,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormThongTinPhong";
             this.Activated += new System.EventHandler(this.FormThongTinPhong_Activated);
+            this.Load += new System.EventHandler(this.FormThongTinPhong_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormThongTinPhong_Paint);
             this.Resize += new System.EventHandler(this.FormThongTinPhong_Resize);
             this.StyleChanged += new System.EventHandler(this.FormThongTinPhong_SizeChanged);
@@ -525,17 +631,13 @@
             this.PanelChuaButtonThoat.ResumeLayout(false);
             this.PanelChuaThongTin.ResumeLayout(false);
             this.PanelChuaThongTin.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSoNguoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxThoiGianThue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNgayCheckin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).EndInit();
             this.PanelBackgroundTop.ResumeLayout(false);
             this.PanelBackgroundTop.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -556,24 +658,28 @@
         private System.Windows.Forms.Label LabelThoiGianThue;
         private System.Windows.Forms.Label LabelNgayCheckin;
         private System.Windows.Forms.Label LabelTen;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox PictureBoxSoNguoi;
         private System.Windows.Forms.PictureBox PictureBoxThoiGianThue;
         private System.Windows.Forms.PictureBox PictureBoxNgayCheckin;
         private System.Windows.Forms.PictureBox PictureBoxTen;
         private System.Windows.Forms.Panel PanelBackgroundTop;
         private System.Windows.Forms.Label LabelMaPhong;
-        private System.Windows.Forms.ComboBox ComboBoxTinhTrangDonDep;
-        private System.Windows.Forms.ComboBox ComboBoxTinhTrangPhong;
-        private System.Windows.Forms.Label LabelCapNhatTinhTrangDonDep;
-        private System.Windows.Forms.Label LabelCapNhatTinhTrangPhong;
         private System.Windows.Forms.Panel panel3;
         private CTControls.CTButton CTButtonThemDichVu;
         private System.Windows.Forms.Panel panel1;
         private CTControls.CTButton CTButtonThanhToan;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox TextBoxGhiChu;
         private System.Windows.Forms.Label LabelGhiChu;
+        private CTPanel.CTPanel ctPanel1;
+        private System.Windows.Forms.DataGridView gridDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.ComboBox ComboBoxTinhTrangDonDep;
+        private System.Windows.Forms.ComboBox ComboBoxTinhTrangPhong;
+        private System.Windows.Forms.Label LabelCapNhatTinhTrangDonDep;
+        private System.Windows.Forms.Label LabelCapNhatTinhTrangPhong;
+        private CTPanel.CTPanel ctPanel2;
+        private System.Windows.Forms.TextBox TextBoxGhiChu;
+        private CTPanel.CTPanel ctPanel3;
     }
 }
