@@ -21,6 +21,9 @@ namespace HotelManagement.DTO
 
         public int SL { get; set; }
 
-        
+        [Column(TypeName = "money")]
+        public decimal ThanhTien { get; set; }
+
+
     }
 }

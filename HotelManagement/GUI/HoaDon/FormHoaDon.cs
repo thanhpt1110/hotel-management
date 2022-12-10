@@ -60,13 +60,11 @@ namespace HotelManagement.GUI
                 foreach (CTDV ctdv in ctdvs)
                 {
                     dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
-                    decimal TongTien = dichvu.DonGia * ctdv.SL;
-                    TongTienHD += TongTien;
-                    DataGridViewDichVu.Rows.Add(dichvu.TenDV, dichvu.DonGia.ToString("#,#"), ctdv.SL, TongTien.ToString("#,#"));
+                    DataGridViewDichVu.Rows.Add(dichvu.TenDV, dichvu.DonGia.ToString("#,#"), ctdv.SL, ctdv.ThanhTien.ToString("#,#"));
                 }
                 decimal Tongtienphong = loaiphong.GiaNgay * days;
                 DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));
-                this.LabelTongTien.Text += (TongTienHD + Tongtienphong).ToString("#,#");
+                this.LabelTongTien.Text += HD.TriGia.ToString("#,#");
             }
             catch (Exception ex)
             {

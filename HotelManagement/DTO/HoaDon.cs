@@ -17,7 +17,7 @@ namespace HotelManagement.DTO
         public DateTime? NgHD { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal? TriGia { get; set; }
+        public decimal TriGia { get; set; }
 
         [StringLength(5)]
         public string MaNV { get; set; }
