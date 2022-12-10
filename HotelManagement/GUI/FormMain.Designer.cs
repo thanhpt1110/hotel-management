@@ -35,23 +35,6 @@
             this.labelPhienBan = new System.Windows.Forms.Label();
             this.labelBanQuyen = new System.Windows.Forms.Label();
             this.Sidebar = new System.Windows.Forms.Panel();
-            this.ButtonThongKe = new System.Windows.Forms.Button();
-            this.ButtonQuanLyNhanVien = new System.Windows.Forms.Button();
-            this.ButtonQuanLyTaiKhoan = new System.Windows.Forms.Button();
-            this.PanelTienNghi = new System.Windows.Forms.Panel();
-            this.ButtonChiTietTienNghi = new System.Windows.Forms.Button();
-            this.ButtonTienNghi = new System.Windows.Forms.Button();
-            this.ButtonQuanLyTienNghi = new System.Windows.Forms.Button();
-            this.ButtonQuanLyDichVu = new System.Windows.Forms.Button();
-            this.PanelPhong = new System.Windows.Forms.Panel();
-            this.ButtonLoaiPhong = new System.Windows.Forms.Button();
-            this.ButtonPhong = new System.Windows.Forms.Button();
-            this.ButtonQuanLyPhong = new System.Windows.Forms.Button();
-            this.ButtonQuanLyKhachHang = new System.Windows.Forms.Button();
-            this.ButtonDanhSachHoaDon = new System.Windows.Forms.Button();
-            this.ButtonDatPhong = new System.Windows.Forms.Button();
-            this.ButtonSoDoPhong = new System.Windows.Forms.Button();
-            this.ButtonTrangChu = new System.Windows.Forms.Button();
             this.PanelUser = new System.Windows.Forms.Panel();
             this.ButtonLabelDangXuat = new System.Windows.Forms.LinkLabel();
             this.LabelTenNguoiDung = new System.Windows.Forms.Label();
@@ -59,15 +42,25 @@
             this.panelName = new System.Windows.Forms.Panel();
             this.PictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.panelControlBox = new System.Windows.Forms.Panel();
+            this.labelTenKhachSan = new System.Windows.Forms.Label();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
-            this.labelTenKhachSan = new System.Windows.Forms.Label();
+            this.ButtonTrangChu = new System.Windows.Forms.Button();
+            this.ButtonSoDoPhong = new System.Windows.Forms.Button();
+            this.ButtonPhong = new System.Windows.Forms.Button();
+            this.ButtonLoaiPhong = new System.Windows.Forms.Button();
+            this.ButtonDanhSachDatPhong = new System.Windows.Forms.Button();
+            this.ButtonDanhSachHoaDon = new System.Windows.Forms.Button();
+            this.ButtonDanhSachDichVu = new System.Windows.Forms.Button();
+            this.ButtonDanhSachTienNghi = new System.Windows.Forms.Button();
+            this.ButtonDanhSachKhachHang = new System.Windows.Forms.Button();
+            this.ButtonDanhSachNhanVien = new System.Windows.Forms.Button();
+            this.ButtonDanhSachTaiKhoan = new System.Windows.Forms.Button();
+            this.ButtonThongKe = new System.Windows.Forms.Button();
             this.PanelBackground.SuspendLayout();
             this.panelInfomation.SuspendLayout();
             this.Sidebar.SuspendLayout();
-            this.PanelTienNghi.SuspendLayout();
-            this.PanelPhong.SuspendLayout();
             this.PanelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUser)).BeginInit();
             this.panelName.SuspendLayout();
@@ -135,16 +128,15 @@
             this.Sidebar.AutoScroll = true;
             this.Sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
             this.Sidebar.Controls.Add(this.ButtonThongKe);
-            this.Sidebar.Controls.Add(this.ButtonQuanLyNhanVien);
-            this.Sidebar.Controls.Add(this.ButtonQuanLyTaiKhoan);
-            this.Sidebar.Controls.Add(this.PanelTienNghi);
-            this.Sidebar.Controls.Add(this.ButtonQuanLyTienNghi);
-            this.Sidebar.Controls.Add(this.ButtonQuanLyDichVu);
-            this.Sidebar.Controls.Add(this.PanelPhong);
-            this.Sidebar.Controls.Add(this.ButtonQuanLyPhong);
-            this.Sidebar.Controls.Add(this.ButtonQuanLyKhachHang);
+            this.Sidebar.Controls.Add(this.ButtonDanhSachTaiKhoan);
+            this.Sidebar.Controls.Add(this.ButtonDanhSachNhanVien);
+            this.Sidebar.Controls.Add(this.ButtonDanhSachKhachHang);
+            this.Sidebar.Controls.Add(this.ButtonDanhSachTienNghi);
+            this.Sidebar.Controls.Add(this.ButtonDanhSachDichVu);
             this.Sidebar.Controls.Add(this.ButtonDanhSachHoaDon);
-            this.Sidebar.Controls.Add(this.ButtonDatPhong);
+            this.Sidebar.Controls.Add(this.ButtonDanhSachDatPhong);
+            this.Sidebar.Controls.Add(this.ButtonLoaiPhong);
+            this.Sidebar.Controls.Add(this.ButtonPhong);
             this.Sidebar.Controls.Add(this.ButtonSoDoPhong);
             this.Sidebar.Controls.Add(this.ButtonTrangChu);
             this.Sidebar.Controls.Add(this.PanelUser);
@@ -153,345 +145,6 @@
             this.Sidebar.Name = "Sidebar";
             this.Sidebar.Size = new System.Drawing.Size(262, 874);
             this.Sidebar.TabIndex = 5;
-            // 
-            // ButtonThongKe
-            // 
-            this.ButtonThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonThongKe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonThongKe.FlatAppearance.BorderSize = 0;
-            this.ButtonThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonThongKe.Image = global::HotelManagement.Properties.Resources.MenuThongKe;
-            this.ButtonThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonThongKe.Location = new System.Drawing.Point(0, 813);
-            this.ButtonThongKe.Name = "ButtonThongKe";
-            this.ButtonThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonThongKe.Size = new System.Drawing.Size(262, 48);
-            this.ButtonThongKe.TabIndex = 33;
-            this.ButtonThongKe.TabStop = false;
-            this.ButtonThongKe.Text = "    Thống kê";
-            this.ButtonThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonThongKe.UseVisualStyleBackColor = true;
-            this.ButtonThongKe.Click += new System.EventHandler(this.ButtonThongKe_Click);
-            // 
-            // ButtonQuanLyNhanVien
-            // 
-            this.ButtonQuanLyNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonQuanLyNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonQuanLyNhanVien.FlatAppearance.BorderSize = 0;
-            this.ButtonQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonQuanLyNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonQuanLyNhanVien.Image = global::HotelManagement.Properties.Resources.MenuQuanLyNhanVien;
-            this.ButtonQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyNhanVien.Location = new System.Drawing.Point(0, 765);
-            this.ButtonQuanLyNhanVien.Name = "ButtonQuanLyNhanVien";
-            this.ButtonQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonQuanLyNhanVien.Size = new System.Drawing.Size(262, 48);
-            this.ButtonQuanLyNhanVien.TabIndex = 32;
-            this.ButtonQuanLyNhanVien.TabStop = false;
-            this.ButtonQuanLyNhanVien.Text = "    Quản lý nhân viên";
-            this.ButtonQuanLyNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonQuanLyNhanVien.UseVisualStyleBackColor = true;
-            this.ButtonQuanLyNhanVien.Click += new System.EventHandler(this.ButtonQuanLyNhanVien_Click);
-            // 
-            // ButtonQuanLyTaiKhoan
-            // 
-            this.ButtonQuanLyTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonQuanLyTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonQuanLyTaiKhoan.FlatAppearance.BorderSize = 0;
-            this.ButtonQuanLyTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonQuanLyTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonQuanLyTaiKhoan.Image = global::HotelManagement.Properties.Resources.MenuQuanLyTaiKhoan;
-            this.ButtonQuanLyTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyTaiKhoan.Location = new System.Drawing.Point(0, 717);
-            this.ButtonQuanLyTaiKhoan.Name = "ButtonQuanLyTaiKhoan";
-            this.ButtonQuanLyTaiKhoan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonQuanLyTaiKhoan.Size = new System.Drawing.Size(262, 48);
-            this.ButtonQuanLyTaiKhoan.TabIndex = 31;
-            this.ButtonQuanLyTaiKhoan.TabStop = false;
-            this.ButtonQuanLyTaiKhoan.Text = "    Quản lý tài khoản";
-            this.ButtonQuanLyTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonQuanLyTaiKhoan.UseVisualStyleBackColor = true;
-            this.ButtonQuanLyTaiKhoan.Click += new System.EventHandler(this.ButtonQuanLyTaiKhoan_Click);
-            // 
-            // PanelTienNghi
-            // 
-            this.PanelTienNghi.Controls.Add(this.ButtonChiTietTienNghi);
-            this.PanelTienNghi.Controls.Add(this.ButtonTienNghi);
-            this.PanelTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTienNghi.Location = new System.Drawing.Point(0, 617);
-            this.PanelTienNghi.Name = "PanelTienNghi";
-            this.PanelTienNghi.Size = new System.Drawing.Size(262, 100);
-            this.PanelTienNghi.TabIndex = 30;
-            // 
-            // ButtonChiTietTienNghi
-            // 
-            this.ButtonChiTietTienNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(197)))));
-            this.ButtonChiTietTienNghi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonChiTietTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonChiTietTienNghi.FlatAppearance.BorderSize = 0;
-            this.ButtonChiTietTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonChiTietTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonChiTietTienNghi.Image = global::HotelManagement.Properties.Resources.MenuChiTietTienNghi;
-            this.ButtonChiTietTienNghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonChiTietTienNghi.Location = new System.Drawing.Point(0, 48);
-            this.ButtonChiTietTienNghi.Name = "ButtonChiTietTienNghi";
-            this.ButtonChiTietTienNghi.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.ButtonChiTietTienNghi.Size = new System.Drawing.Size(262, 48);
-            this.ButtonChiTietTienNghi.TabIndex = 9;
-            this.ButtonChiTietTienNghi.TabStop = false;
-            this.ButtonChiTietTienNghi.Text = "    Chi tiết tiện nghi";
-            this.ButtonChiTietTienNghi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonChiTietTienNghi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonChiTietTienNghi.UseVisualStyleBackColor = false;
-            this.ButtonChiTietTienNghi.Click += new System.EventHandler(this.ButtonChiTietTienNghi_Click);
-            // 
-            // ButtonTienNghi
-            // 
-            this.ButtonTienNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(197)))));
-            this.ButtonTienNghi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonTienNghi.FlatAppearance.BorderSize = 0;
-            this.ButtonTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonTienNghi.Image = global::HotelManagement.Properties.Resources.MenuTienNghi;
-            this.ButtonTienNghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonTienNghi.Location = new System.Drawing.Point(0, 0);
-            this.ButtonTienNghi.Name = "ButtonTienNghi";
-            this.ButtonTienNghi.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.ButtonTienNghi.Size = new System.Drawing.Size(262, 48);
-            this.ButtonTienNghi.TabIndex = 8;
-            this.ButtonTienNghi.TabStop = false;
-            this.ButtonTienNghi.Text = "    Tiện nghi";
-            this.ButtonTienNghi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonTienNghi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonTienNghi.UseVisualStyleBackColor = false;
-            this.ButtonTienNghi.Click += new System.EventHandler(this.ButtonTienNghi_Click);
-            // 
-            // ButtonQuanLyTienNghi
-            // 
-            this.ButtonQuanLyTienNghi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonQuanLyTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonQuanLyTienNghi.FlatAppearance.BorderSize = 0;
-            this.ButtonQuanLyTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonQuanLyTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonQuanLyTienNghi.Image = global::HotelManagement.Properties.Resources.MenuQuanLy;
-            this.ButtonQuanLyTienNghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyTienNghi.Location = new System.Drawing.Point(0, 569);
-            this.ButtonQuanLyTienNghi.Name = "ButtonQuanLyTienNghi";
-            this.ButtonQuanLyTienNghi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonQuanLyTienNghi.Size = new System.Drawing.Size(262, 48);
-            this.ButtonQuanLyTienNghi.TabIndex = 29;
-            this.ButtonQuanLyTienNghi.TabStop = false;
-            this.ButtonQuanLyTienNghi.Text = "    Quản lý tiện nghi";
-            this.ButtonQuanLyTienNghi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyTienNghi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonQuanLyTienNghi.UseVisualStyleBackColor = true;
-            this.ButtonQuanLyTienNghi.Click += new System.EventHandler(this.ButtonQuanLyTienNghi_Click);
-            // 
-            // ButtonQuanLyDichVu
-            // 
-            this.ButtonQuanLyDichVu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonQuanLyDichVu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonQuanLyDichVu.FlatAppearance.BorderSize = 0;
-            this.ButtonQuanLyDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonQuanLyDichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonQuanLyDichVu.Image = global::HotelManagement.Properties.Resources.MenuQuanLyDichVu;
-            this.ButtonQuanLyDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyDichVu.Location = new System.Drawing.Point(0, 521);
-            this.ButtonQuanLyDichVu.Name = "ButtonQuanLyDichVu";
-            this.ButtonQuanLyDichVu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonQuanLyDichVu.Size = new System.Drawing.Size(262, 48);
-            this.ButtonQuanLyDichVu.TabIndex = 28;
-            this.ButtonQuanLyDichVu.TabStop = false;
-            this.ButtonQuanLyDichVu.Text = "    Quản lý dịch vụ";
-            this.ButtonQuanLyDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyDichVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonQuanLyDichVu.UseVisualStyleBackColor = true;
-            this.ButtonQuanLyDichVu.Click += new System.EventHandler(this.ButtonQuanLyDichVu_Click);
-            // 
-            // PanelPhong
-            // 
-            this.PanelPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(189)))), ((int)(((byte)(197)))));
-            this.PanelPhong.Controls.Add(this.ButtonLoaiPhong);
-            this.PanelPhong.Controls.Add(this.ButtonPhong);
-            this.PanelPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelPhong.Location = new System.Drawing.Point(0, 422);
-            this.PanelPhong.Name = "PanelPhong";
-            this.PanelPhong.Size = new System.Drawing.Size(262, 99);
-            this.PanelPhong.TabIndex = 27;
-            // 
-            // ButtonLoaiPhong
-            // 
-            this.ButtonLoaiPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonLoaiPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonLoaiPhong.FlatAppearance.BorderSize = 0;
-            this.ButtonLoaiPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonLoaiPhong.Image = global::HotelManagement.Properties.Resources.MenuLoaiPhong;
-            this.ButtonLoaiPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonLoaiPhong.Location = new System.Drawing.Point(0, 48);
-            this.ButtonLoaiPhong.Name = "ButtonLoaiPhong";
-            this.ButtonLoaiPhong.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.ButtonLoaiPhong.Size = new System.Drawing.Size(262, 48);
-            this.ButtonLoaiPhong.TabIndex = 7;
-            this.ButtonLoaiPhong.TabStop = false;
-            this.ButtonLoaiPhong.Text = "    Loại phòng";
-            this.ButtonLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonLoaiPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonLoaiPhong.UseVisualStyleBackColor = true;
-            this.ButtonLoaiPhong.Click += new System.EventHandler(this.ButtonLoaiPhong_Click);
-            // 
-            // ButtonPhong
-            // 
-            this.ButtonPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonPhong.FlatAppearance.BorderSize = 0;
-            this.ButtonPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonPhong.Image = global::HotelManagement.Properties.Resources.MenuPhong;
-            this.ButtonPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonPhong.Location = new System.Drawing.Point(0, 0);
-            this.ButtonPhong.Name = "ButtonPhong";
-            this.ButtonPhong.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.ButtonPhong.Size = new System.Drawing.Size(262, 48);
-            this.ButtonPhong.TabIndex = 6;
-            this.ButtonPhong.TabStop = false;
-            this.ButtonPhong.Text = "    Phòng";
-            this.ButtonPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonPhong.UseVisualStyleBackColor = true;
-            this.ButtonPhong.Click += new System.EventHandler(this.ButtonPhong_Click);
-            // 
-            // ButtonQuanLyPhong
-            // 
-            this.ButtonQuanLyPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonQuanLyPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonQuanLyPhong.FlatAppearance.BorderSize = 0;
-            this.ButtonQuanLyPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonQuanLyPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonQuanLyPhong.Image = global::HotelManagement.Properties.Resources.MenuQuanLy;
-            this.ButtonQuanLyPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyPhong.Location = new System.Drawing.Point(0, 374);
-            this.ButtonQuanLyPhong.Name = "ButtonQuanLyPhong";
-            this.ButtonQuanLyPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonQuanLyPhong.Size = new System.Drawing.Size(262, 48);
-            this.ButtonQuanLyPhong.TabIndex = 26;
-            this.ButtonQuanLyPhong.TabStop = false;
-            this.ButtonQuanLyPhong.Text = "    Quản lý phòng";
-            this.ButtonQuanLyPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonQuanLyPhong.UseVisualStyleBackColor = true;
-            this.ButtonQuanLyPhong.Click += new System.EventHandler(this.ButtonQuanLyPhong_Click);
-            // 
-            // ButtonQuanLyKhachHang
-            // 
-            this.ButtonQuanLyKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonQuanLyKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonQuanLyKhachHang.FlatAppearance.BorderSize = 0;
-            this.ButtonQuanLyKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonQuanLyKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonQuanLyKhachHang.Image = global::HotelManagement.Properties.Resources.MenuQuanLyKhachHang;
-            this.ButtonQuanLyKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyKhachHang.Location = new System.Drawing.Point(0, 326);
-            this.ButtonQuanLyKhachHang.Name = "ButtonQuanLyKhachHang";
-            this.ButtonQuanLyKhachHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonQuanLyKhachHang.Size = new System.Drawing.Size(262, 48);
-            this.ButtonQuanLyKhachHang.TabIndex = 25;
-            this.ButtonQuanLyKhachHang.TabStop = false;
-            this.ButtonQuanLyKhachHang.Text = "    Quản lý khách hàng";
-            this.ButtonQuanLyKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonQuanLyKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonQuanLyKhachHang.UseVisualStyleBackColor = true;
-            this.ButtonQuanLyKhachHang.Click += new System.EventHandler(this.ButtonQuanLyKhachHang_Click);
-            // 
-            // ButtonDanhSachHoaDon
-            // 
-            this.ButtonDanhSachHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonDanhSachHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonDanhSachHoaDon.FlatAppearance.BorderSize = 0;
-            this.ButtonDanhSachHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDanhSachHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDanhSachHoaDon.Image = global::HotelManagement.Properties.Resources.MenuDanhSachHoaDon;
-            this.ButtonDanhSachHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonDanhSachHoaDon.Location = new System.Drawing.Point(0, 278);
-            this.ButtonDanhSachHoaDon.Name = "ButtonDanhSachHoaDon";
-            this.ButtonDanhSachHoaDon.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonDanhSachHoaDon.Size = new System.Drawing.Size(262, 48);
-            this.ButtonDanhSachHoaDon.TabIndex = 24;
-            this.ButtonDanhSachHoaDon.TabStop = false;
-            this.ButtonDanhSachHoaDon.Text = "    Danh sách hóa đơn";
-            this.ButtonDanhSachHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonDanhSachHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonDanhSachHoaDon.UseVisualStyleBackColor = true;
-            this.ButtonDanhSachHoaDon.Click += new System.EventHandler(this.ButtonDanhSachHoaDon_Click);
-            // 
-            // ButtonDatPhong
-            // 
-            this.ButtonDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonDatPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonDatPhong.FlatAppearance.BorderSize = 0;
-            this.ButtonDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDatPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonDatPhong.Image = global::HotelManagement.Properties.Resources.MenuDatPhong;
-            this.ButtonDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonDatPhong.Location = new System.Drawing.Point(0, 230);
-            this.ButtonDatPhong.Name = "ButtonDatPhong";
-            this.ButtonDatPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonDatPhong.Size = new System.Drawing.Size(262, 48);
-            this.ButtonDatPhong.TabIndex = 23;
-            this.ButtonDatPhong.TabStop = false;
-            this.ButtonDatPhong.Text = "    Đặt phòng";
-            this.ButtonDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonDatPhong.UseVisualStyleBackColor = true;
-            this.ButtonDatPhong.Click += new System.EventHandler(this.ButtonDatPhong_Click);
-            // 
-            // ButtonSoDoPhong
-            // 
-            this.ButtonSoDoPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonSoDoPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonSoDoPhong.FlatAppearance.BorderSize = 0;
-            this.ButtonSoDoPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonSoDoPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSoDoPhong.Image = global::HotelManagement.Properties.Resources.MenuSoDoPhong;
-            this.ButtonSoDoPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonSoDoPhong.Location = new System.Drawing.Point(0, 182);
-            this.ButtonSoDoPhong.Name = "ButtonSoDoPhong";
-            this.ButtonSoDoPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonSoDoPhong.Size = new System.Drawing.Size(262, 48);
-            this.ButtonSoDoPhong.TabIndex = 22;
-            this.ButtonSoDoPhong.TabStop = false;
-            this.ButtonSoDoPhong.Text = "    Sơ đồ phòng";
-            this.ButtonSoDoPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonSoDoPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonSoDoPhong.UseVisualStyleBackColor = true;
-            this.ButtonSoDoPhong.Click += new System.EventHandler(this.ButtonSoDoPhong_Click);
-            // 
-            // ButtonTrangChu
-            // 
-            this.ButtonTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ButtonTrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonTrangChu.FlatAppearance.BorderSize = 0;
-            this.ButtonTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonTrangChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonTrangChu.Image = global::HotelManagement.Properties.Resources.MenuTrangChu;
-            this.ButtonTrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonTrangChu.Location = new System.Drawing.Point(0, 134);
-            this.ButtonTrangChu.Name = "ButtonTrangChu";
-            this.ButtonTrangChu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ButtonTrangChu.Size = new System.Drawing.Size(262, 48);
-            this.ButtonTrangChu.TabIndex = 21;
-            this.ButtonTrangChu.TabStop = false;
-            this.ButtonTrangChu.Text = "    Trang chủ";
-            this.ButtonTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonTrangChu.UseVisualStyleBackColor = true;
-            this.ButtonTrangChu.Click += new System.EventHandler(this.ButtonTrangChu_Click);
             // 
             // PanelUser
             // 
@@ -576,6 +229,18 @@
             this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
             this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
             // 
+            // labelTenKhachSan
+            // 
+            this.labelTenKhachSan.AutoSize = true;
+            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
+            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenKhachSan.ForeColor = System.Drawing.Color.White;
+            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
+            this.labelTenKhachSan.Name = "labelTenKhachSan";
+            this.labelTenKhachSan.Size = new System.Drawing.Size(132, 21);
+            this.labelTenKhachSan.TabIndex = 2;
+            this.labelTenKhachSan.Text = "Khách sạn IT008";
+            // 
             // ctMaximize1
             // 
             this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
@@ -609,17 +274,259 @@
             this.ctClose1.TabIndex = 0;
             this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
             // 
-            // labelTenKhachSan
+            // ButtonTrangChu
             // 
-            this.labelTenKhachSan.AutoSize = true;
-            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
-            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenKhachSan.ForeColor = System.Drawing.Color.White;
-            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
-            this.labelTenKhachSan.Name = "labelTenKhachSan";
-            this.labelTenKhachSan.Size = new System.Drawing.Size(132, 21);
-            this.labelTenKhachSan.TabIndex = 2;
-            this.labelTenKhachSan.Text = "Khách sạn IT008";
+            this.ButtonTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ButtonTrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonTrangChu.FlatAppearance.BorderSize = 0;
+            this.ButtonTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonTrangChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonTrangChu.Image = global::HotelManagement.Properties.Resources.MenuTrangChu;
+            this.ButtonTrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonTrangChu.Location = new System.Drawing.Point(0, 134);
+            this.ButtonTrangChu.Name = "ButtonTrangChu";
+            this.ButtonTrangChu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonTrangChu.Size = new System.Drawing.Size(262, 48);
+            this.ButtonTrangChu.TabIndex = 25;
+            this.ButtonTrangChu.TabStop = false;
+            this.ButtonTrangChu.Text = "    Trang chủ";
+            this.ButtonTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonTrangChu.UseVisualStyleBackColor = true;
+            this.ButtonTrangChu.Click += new System.EventHandler(this.ButtonTrangChu_Click);
+            // 
+            // ButtonSoDoPhong
+            // 
+            this.ButtonSoDoPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonSoDoPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonSoDoPhong.FlatAppearance.BorderSize = 0;
+            this.ButtonSoDoPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonSoDoPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSoDoPhong.Image = global::HotelManagement.Properties.Resources.MenuSoDoPhong;
+            this.ButtonSoDoPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonSoDoPhong.Location = new System.Drawing.Point(0, 182);
+            this.ButtonSoDoPhong.Name = "ButtonSoDoPhong";
+            this.ButtonSoDoPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonSoDoPhong.Size = new System.Drawing.Size(262, 48);
+            this.ButtonSoDoPhong.TabIndex = 26;
+            this.ButtonSoDoPhong.TabStop = false;
+            this.ButtonSoDoPhong.Text = "    Sơ đồ phòng";
+            this.ButtonSoDoPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonSoDoPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonSoDoPhong.UseVisualStyleBackColor = true;
+            this.ButtonSoDoPhong.Click += new System.EventHandler(this.ButtonSoDoPhong_Click);
+            // 
+            // ButtonPhong
+            // 
+            this.ButtonPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonPhong.FlatAppearance.BorderSize = 0;
+            this.ButtonPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPhong.Image = global::HotelManagement.Properties.Resources.MenuPhong;
+            this.ButtonPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonPhong.Location = new System.Drawing.Point(0, 230);
+            this.ButtonPhong.Name = "ButtonPhong";
+            this.ButtonPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonPhong.Size = new System.Drawing.Size(262, 48);
+            this.ButtonPhong.TabIndex = 27;
+            this.ButtonPhong.TabStop = false;
+            this.ButtonPhong.Text = "    Phòng";
+            this.ButtonPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonPhong.UseVisualStyleBackColor = true;
+            this.ButtonPhong.Click += new System.EventHandler(this.ButtonPhong_Click);
+            // 
+            // ButtonLoaiPhong
+            // 
+            this.ButtonLoaiPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonLoaiPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonLoaiPhong.FlatAppearance.BorderSize = 0;
+            this.ButtonLoaiPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonLoaiPhong.Image = global::HotelManagement.Properties.Resources.MenuLoaiPhong;
+            this.ButtonLoaiPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonLoaiPhong.Location = new System.Drawing.Point(0, 278);
+            this.ButtonLoaiPhong.Name = "ButtonLoaiPhong";
+            this.ButtonLoaiPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonLoaiPhong.Size = new System.Drawing.Size(262, 48);
+            this.ButtonLoaiPhong.TabIndex = 28;
+            this.ButtonLoaiPhong.TabStop = false;
+            this.ButtonLoaiPhong.Text = "    Loại phòng";
+            this.ButtonLoaiPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonLoaiPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonLoaiPhong.UseVisualStyleBackColor = true;
+            this.ButtonLoaiPhong.Click += new System.EventHandler(this.ButtonLoaiPhong_Click);
+            // 
+            // ButtonDanhSachDatPhong
+            // 
+            this.ButtonDanhSachDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonDanhSachDatPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonDanhSachDatPhong.FlatAppearance.BorderSize = 0;
+            this.ButtonDanhSachDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDanhSachDatPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachDatPhong.Image = global::HotelManagement.Properties.Resources.MenuDatPhong;
+            this.ButtonDanhSachDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachDatPhong.Location = new System.Drawing.Point(0, 326);
+            this.ButtonDanhSachDatPhong.Name = "ButtonDanhSachDatPhong";
+            this.ButtonDanhSachDatPhong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonDanhSachDatPhong.Size = new System.Drawing.Size(262, 48);
+            this.ButtonDanhSachDatPhong.TabIndex = 29;
+            this.ButtonDanhSachDatPhong.TabStop = false;
+            this.ButtonDanhSachDatPhong.Text = "    Danh sách đặt phòng";
+            this.ButtonDanhSachDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonDanhSachDatPhong.UseVisualStyleBackColor = true;
+            this.ButtonDanhSachDatPhong.Click += new System.EventHandler(this.ButtonDanhSachDatPhong_Click);
+            // 
+            // ButtonDanhSachHoaDon
+            // 
+            this.ButtonDanhSachHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonDanhSachHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonDanhSachHoaDon.FlatAppearance.BorderSize = 0;
+            this.ButtonDanhSachHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDanhSachHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachHoaDon.Image = global::HotelManagement.Properties.Resources.MenuDanhSachHoaDon;
+            this.ButtonDanhSachHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachHoaDon.Location = new System.Drawing.Point(0, 374);
+            this.ButtonDanhSachHoaDon.Name = "ButtonDanhSachHoaDon";
+            this.ButtonDanhSachHoaDon.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonDanhSachHoaDon.Size = new System.Drawing.Size(262, 48);
+            this.ButtonDanhSachHoaDon.TabIndex = 30;
+            this.ButtonDanhSachHoaDon.TabStop = false;
+            this.ButtonDanhSachHoaDon.Text = "    Danh sách hóa đơn";
+            this.ButtonDanhSachHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonDanhSachHoaDon.UseVisualStyleBackColor = true;
+            this.ButtonDanhSachHoaDon.Click += new System.EventHandler(this.ButtonDanhSachHoaDon_Click);
+            // 
+            // ButtonDanhSachDichVu
+            // 
+            this.ButtonDanhSachDichVu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonDanhSachDichVu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonDanhSachDichVu.FlatAppearance.BorderSize = 0;
+            this.ButtonDanhSachDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDanhSachDichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachDichVu.Image = global::HotelManagement.Properties.Resources.MenuQuanLyDichVu;
+            this.ButtonDanhSachDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachDichVu.Location = new System.Drawing.Point(0, 422);
+            this.ButtonDanhSachDichVu.Name = "ButtonDanhSachDichVu";
+            this.ButtonDanhSachDichVu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonDanhSachDichVu.Size = new System.Drawing.Size(262, 48);
+            this.ButtonDanhSachDichVu.TabIndex = 31;
+            this.ButtonDanhSachDichVu.TabStop = false;
+            this.ButtonDanhSachDichVu.Text = "    Danh sách dịch vụ";
+            this.ButtonDanhSachDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachDichVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonDanhSachDichVu.UseVisualStyleBackColor = true;
+            this.ButtonDanhSachDichVu.Click += new System.EventHandler(this.ButtonDanhSachDichVu_Click);
+            // 
+            // ButtonDanhSachTienNghi
+            // 
+            this.ButtonDanhSachTienNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
+            this.ButtonDanhSachTienNghi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonDanhSachTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonDanhSachTienNghi.FlatAppearance.BorderSize = 0;
+            this.ButtonDanhSachTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDanhSachTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachTienNghi.Image = global::HotelManagement.Properties.Resources.MenuTienNghi;
+            this.ButtonDanhSachTienNghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachTienNghi.Location = new System.Drawing.Point(0, 470);
+            this.ButtonDanhSachTienNghi.Name = "ButtonDanhSachTienNghi";
+            this.ButtonDanhSachTienNghi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonDanhSachTienNghi.Size = new System.Drawing.Size(262, 48);
+            this.ButtonDanhSachTienNghi.TabIndex = 32;
+            this.ButtonDanhSachTienNghi.TabStop = false;
+            this.ButtonDanhSachTienNghi.Text = "    Danh sách tiện nghi";
+            this.ButtonDanhSachTienNghi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachTienNghi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonDanhSachTienNghi.UseVisualStyleBackColor = false;
+            this.ButtonDanhSachTienNghi.Click += new System.EventHandler(this.ButtonDanhSachTienNghi_Click);
+            // 
+            // ButtonDanhSachKhachHang
+            // 
+            this.ButtonDanhSachKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonDanhSachKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonDanhSachKhachHang.FlatAppearance.BorderSize = 0;
+            this.ButtonDanhSachKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDanhSachKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachKhachHang.Image = global::HotelManagement.Properties.Resources.MenuQuanLyKhachHang;
+            this.ButtonDanhSachKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachKhachHang.Location = new System.Drawing.Point(0, 518);
+            this.ButtonDanhSachKhachHang.Name = "ButtonDanhSachKhachHang";
+            this.ButtonDanhSachKhachHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonDanhSachKhachHang.Size = new System.Drawing.Size(262, 48);
+            this.ButtonDanhSachKhachHang.TabIndex = 33;
+            this.ButtonDanhSachKhachHang.TabStop = false;
+            this.ButtonDanhSachKhachHang.Text = "    Danh sách khách hàng";
+            this.ButtonDanhSachKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonDanhSachKhachHang.UseVisualStyleBackColor = true;
+            this.ButtonDanhSachKhachHang.Click += new System.EventHandler(this.ButtonDanhSachKhachHang_Click);
+            // 
+            // ButtonDanhSachNhanVien
+            // 
+            this.ButtonDanhSachNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonDanhSachNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonDanhSachNhanVien.FlatAppearance.BorderSize = 0;
+            this.ButtonDanhSachNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDanhSachNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachNhanVien.Image = global::HotelManagement.Properties.Resources.MenuQuanLyNhanVien;
+            this.ButtonDanhSachNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachNhanVien.Location = new System.Drawing.Point(0, 566);
+            this.ButtonDanhSachNhanVien.Name = "ButtonDanhSachNhanVien";
+            this.ButtonDanhSachNhanVien.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonDanhSachNhanVien.Size = new System.Drawing.Size(262, 48);
+            this.ButtonDanhSachNhanVien.TabIndex = 34;
+            this.ButtonDanhSachNhanVien.TabStop = false;
+            this.ButtonDanhSachNhanVien.Text = "    Danh sách nhân viên";
+            this.ButtonDanhSachNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonDanhSachNhanVien.UseVisualStyleBackColor = true;
+            this.ButtonDanhSachNhanVien.Click += new System.EventHandler(this.ButtonDanhSachNhanVien_Click);
+            // 
+            // ButtonDanhSachTaiKhoan
+            // 
+            this.ButtonDanhSachTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonDanhSachTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonDanhSachTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.ButtonDanhSachTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonDanhSachTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachTaiKhoan.Image = global::HotelManagement.Properties.Resources.MenuQuanLyTaiKhoan;
+            this.ButtonDanhSachTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachTaiKhoan.Location = new System.Drawing.Point(0, 614);
+            this.ButtonDanhSachTaiKhoan.Name = "ButtonDanhSachTaiKhoan";
+            this.ButtonDanhSachTaiKhoan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonDanhSachTaiKhoan.Size = new System.Drawing.Size(262, 48);
+            this.ButtonDanhSachTaiKhoan.TabIndex = 35;
+            this.ButtonDanhSachTaiKhoan.TabStop = false;
+            this.ButtonDanhSachTaiKhoan.Text = "    Danh sách tài khoản";
+            this.ButtonDanhSachTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonDanhSachTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonDanhSachTaiKhoan.UseVisualStyleBackColor = true;
+            this.ButtonDanhSachTaiKhoan.Click += new System.EventHandler(this.ButtonDanhSachTaiKhoan_Click);
+            // 
+            // ButtonThongKe
+            // 
+            this.ButtonThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonThongKe.FlatAppearance.BorderSize = 0;
+            this.ButtonThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonThongKe.Image = global::HotelManagement.Properties.Resources.MenuThongKe;
+            this.ButtonThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonThongKe.Location = new System.Drawing.Point(0, 662);
+            this.ButtonThongKe.Name = "ButtonThongKe";
+            this.ButtonThongKe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ButtonThongKe.Size = new System.Drawing.Size(262, 48);
+            this.ButtonThongKe.TabIndex = 36;
+            this.ButtonThongKe.TabStop = false;
+            this.ButtonThongKe.Text = "    Thống kê";
+            this.ButtonThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ButtonThongKe.UseVisualStyleBackColor = true;
+            this.ButtonThongKe.Click += new System.EventHandler(this.ButtonThongKe_Click);
             // 
             // FormMain
             // 
@@ -645,8 +552,6 @@
             this.panelInfomation.ResumeLayout(false);
             this.panelInfomation.PerformLayout();
             this.Sidebar.ResumeLayout(false);
-            this.PanelTienNghi.ResumeLayout(false);
-            this.PanelPhong.ResumeLayout(false);
             this.PanelUser.ResumeLayout(false);
             this.PanelUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUser)).EndInit();
@@ -675,24 +580,19 @@
         private System.Windows.Forms.PictureBox PictureBoxMenu;
         private System.Windows.Forms.Panel PanelUser;
         private System.Windows.Forms.PictureBox PictureBoxUser;
-        private System.Windows.Forms.Button ButtonThongKe;
-        private System.Windows.Forms.Button ButtonQuanLyNhanVien;
-        private System.Windows.Forms.Button ButtonQuanLyTaiKhoan;
-        private System.Windows.Forms.Panel PanelTienNghi;
-        private System.Windows.Forms.Button ButtonChiTietTienNghi;
-        private System.Windows.Forms.Button ButtonTienNghi;
-        private System.Windows.Forms.Button ButtonQuanLyTienNghi;
-        private System.Windows.Forms.Button ButtonQuanLyDichVu;
-        private System.Windows.Forms.Panel PanelPhong;
-        private System.Windows.Forms.Button ButtonLoaiPhong;
-        private System.Windows.Forms.Button ButtonPhong;
-        private System.Windows.Forms.Button ButtonQuanLyPhong;
-        private System.Windows.Forms.Button ButtonQuanLyKhachHang;
-        private System.Windows.Forms.Button ButtonDanhSachHoaDon;
-        private System.Windows.Forms.Button ButtonDatPhong;
-        private System.Windows.Forms.Button ButtonSoDoPhong;
-        private System.Windows.Forms.Button ButtonTrangChu;
         private System.Windows.Forms.LinkLabel ButtonLabelDangXuat;
         private System.Windows.Forms.Label LabelTenNguoiDung;
+        private System.Windows.Forms.Button ButtonThongKe;
+        private System.Windows.Forms.Button ButtonDanhSachTaiKhoan;
+        private System.Windows.Forms.Button ButtonDanhSachNhanVien;
+        private System.Windows.Forms.Button ButtonDanhSachKhachHang;
+        private System.Windows.Forms.Button ButtonDanhSachTienNghi;
+        private System.Windows.Forms.Button ButtonDanhSachDichVu;
+        private System.Windows.Forms.Button ButtonDanhSachHoaDon;
+        private System.Windows.Forms.Button ButtonDanhSachDatPhong;
+        private System.Windows.Forms.Button ButtonLoaiPhong;
+        private System.Windows.Forms.Button ButtonPhong;
+        private System.Windows.Forms.Button ButtonSoDoPhong;
+        private System.Windows.Forms.Button ButtonTrangChu;
     }
 }

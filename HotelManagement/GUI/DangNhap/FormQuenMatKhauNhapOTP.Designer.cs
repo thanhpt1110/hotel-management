@@ -145,6 +145,8 @@
             this.Controls.Add(this.LabelForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQuenMatKhauNhapOTP";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "FormQuenMatKhauNhapOTP";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).EndInit();
             this.ResumeLayout(false);

@@ -206,5 +206,19 @@ namespace HotelManagement.GUI
             grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
             grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
         }
+
+        private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int y = e.RowIndex, x = e.ColumnIndex;
+            if (y == -1 && x == 0)
+                grid.Cursor = Cursors.Hand;
+            else
+                grid.Cursor = Cursors.Default;
+        }
+
+        private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            grid.Cursor = Cursors.Default;
+        }
     }
 }

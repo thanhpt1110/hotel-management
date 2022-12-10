@@ -1,4 +1,4 @@
-﻿namespace HotelManagement.GUI
+namespace HotelManagement.GUI
 {
     partial class FormDanhSachTienNghi
     {
@@ -118,7 +118,8 @@
             this.grid.Size = new System.Drawing.Size(1097, 659);
             this.grid.TabIndex = 31;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
-            this.grid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseEnter);
+            this.grid.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseLeave);
+            this.grid.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_CellMouseMove);
             // 
             // Column1
             // 
@@ -247,6 +248,49 @@
             this.CTTextBoxTimTenTienNghi.Texts = "";
             this.CTTextBoxTimTenTienNghi.UnderlineedStyle = false;
             this.CTTextBoxTimTenTienNghi._TextChanged += new System.EventHandler(this.CTTextBoxTimTenTienNghi__TextChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 50F;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 175F;
+            this.Column2.HeaderText = "Mã tiện nghi";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 225F;
+            this.Column3.HeaderText = "Tên tiện nghi";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.FillWeight = 75F;
+            this.Column4.HeaderText = "Sửa";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column5.FillWeight = 50F;
+            this.Column5.HeaderText = "Xóa";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // FormDanhSachTienNghi
             // 

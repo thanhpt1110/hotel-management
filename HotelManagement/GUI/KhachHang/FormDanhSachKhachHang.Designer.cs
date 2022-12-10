@@ -1,4 +1,4 @@
-﻿namespace HotelManagement.GUI
+namespace HotelManagement.GUI
 {
     partial class FormDanhSachKhachHang
     {
@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDanhSachKhachHang));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.CTButtonThemKhachHang = new HotelManagement.CTControls.CTButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grid = new System.Windows.Forms.DataGridView();
+            this.ctPanel1 = new CTPanel.CTPanel();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,6 +106,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid.DefaultCellStyle = dataGridViewCellStyle4;
             this.grid.EnableHeadersVisualStyles = false;
             this.grid.Location = new System.Drawing.Point(70, 100);
             this.grid.MultiSelect = false;
@@ -114,6 +127,14 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grid.RowHeadersVisible = false;
             this.grid.RowHeadersWidth = 40;
             this.grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -123,7 +144,22 @@
             this.grid.Size = new System.Drawing.Size(1097, 659);
             this.grid.TabIndex = 31;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
-            this.grid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseEnter);
+            this.grid.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseLeave);
+            this.grid.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_CellMouseMove);
+            // 
+            // ctPanel1
+            // 
+            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel1.BackColor = System.Drawing.Color.White;
+            this.ctPanel1.BorderRadius = 50;
+            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel1.GradientAngle = 90F;
+            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.Location = new System.Drawing.Point(45, 95);
+            this.ctPanel1.Name = "ctPanel1";
+            this.ctPanel1.Size = new System.Drawing.Size(1142, 704);
+            this.ctPanel1.TabIndex = 30;
             // 
             // Column1
             // 
@@ -131,7 +167,7 @@
             this.Column1.HeaderText = "";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column2
             // 
@@ -180,6 +216,9 @@
             // 
             // Column8
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column8.FillWeight = 50F;
             this.Column8.HeaderText = "Sửa";
             this.Column8.Name = "Column8";
@@ -187,11 +226,15 @@
             // 
             // Column9
             // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column9.FillWeight = 50F;
             this.Column9.HeaderText = "Xóa";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             // 
+<<<<<<< HEAD
             // ctPanel1
             // 
             this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -278,6 +321,8 @@
             this.CTTextBoxTimKhachHangTheoTen._TextChanged += new System.EventHandler(this.CTTextBoxTimKhachHangTheoTen__TextChanged);
             this.CTTextBoxTimKhachHangTheoTen.Load += new System.EventHandler(this.CTTextBoxTimKhachHangTheoTen_Load);
             // 
+=======
+>>>>>>> 48f84b0a9bec8015464ee5b6f3c55d8ae4a8d26a
             // FormDanhSachKhachHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;

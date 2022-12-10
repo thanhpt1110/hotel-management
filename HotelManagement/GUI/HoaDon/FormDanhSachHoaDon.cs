@@ -28,8 +28,6 @@ namespace HotelManagement.GUI
         private void FormDanhSachHoaDon_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-
-
             /*  //Test 
               grid.Rows.Add(new object[] { HD, "HD001", "11/10/2003 19:45:00", "Nguyễn Văn A", "Phan Tuấn Thành", "0", "Chưa thanh toán", details});
               grid.Rows.Add(new object[] { HD, "HD002", "11/10/2003 19:45:00", "Nguyễn Văn B", "Phan Tuấn Thành", "100,000", "Đã thanh toán", details});
@@ -138,25 +136,30 @@ namespace HotelManagement.GUI
             }
         }
 
-        private void grid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int curCol = e.ColumnIndex;
-            if (curCol == 7)
-            {
-                if (e.RowIndex >= 0)
-                    grid.Cursor = Cursors.Hand;
-                else if (grid.CurrentCell.Value == DBNull.Value)
-                    grid.Cursor = Cursors.Default;
-            }
+            int y = e.RowIndex, x = e.ColumnIndex;
+            int[] arrX = { 1, 2, 5, 6 };
+            bool isExists = false;
+
+            if (Array.IndexOf(arrX, x) != -1) 
+                isExists = true; 
+
+            if (y >= 0 && x == 7 || y == -1 && isExists)
+                grid.Cursor = Cursors.Hand;
             else
                 grid.Cursor = Cursors.Default;
         }
 
-        private void CTTextBoxTimTheoCCCD_KeyDown(object sender, KeyEventArgs e)
+        private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
+            grid.Cursor = Cursors.Default;
         }
 
+        private void CTTextBoxTimTheoCCCD_KeyDown(object sender, KeyEventArgs e)
+        {
 
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

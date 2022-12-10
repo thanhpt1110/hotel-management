@@ -40,11 +40,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.gridPhongDaChon = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ctPanel2 = new CTPanel.CTPanel();
             this.ctPanel1 = new CTPanel.CTPanel();
             this.PictureBoxCCCD = new System.Windows.Forms.PictureBox();
@@ -78,6 +73,11 @@
             this.CTButtonHuy = new HotelManagement.CTControls.CTButton();
             this.CTButtonNhanPhong = new HotelManagement.CTControls.CTButton();
             this.CTButtonDatTruoc = new HotelManagement.CTControls.CTButton();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPhongTrong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPhongDaChon)).BeginInit();
@@ -146,7 +146,7 @@
             this.gridPhongTrong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -161,7 +161,7 @@
             this.gridPhongTrong.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -174,7 +174,7 @@
             this.gridPhongTrong.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -189,7 +189,8 @@
             this.gridPhongTrong.Size = new System.Drawing.Size(284, 198);
             this.gridPhongTrong.TabIndex = 30;
             this.gridPhongTrong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPhongTrong_CellClick);
-            this.gridPhongTrong.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPhongTrong_CellMouseEnter);
+            this.gridPhongTrong.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPhongTrong_CellMouseLeave);
+            this.gridPhongTrong.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridPhongTrong_CellMouseMove);
             // 
             // Column1
             // 
@@ -224,7 +225,7 @@
             this.gridPhongDaChon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -241,7 +242,7 @@
             this.gridPhongDaChon.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -254,7 +255,7 @@
             this.gridPhongDaChon.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
@@ -269,47 +270,8 @@
             this.gridPhongDaChon.Size = new System.Drawing.Size(285, 198);
             this.gridPhongDaChon.TabIndex = 32;
             this.gridPhongDaChon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPhongDaChon_CellClick);
-            this.gridPhongDaChon.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPhongDaChon_CellMouseEnter);
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Số phòng";
-            this.Column4.MinimumWidth = 10;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 84;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Số người";
-            this.Column5.MinimumWidth = 20;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 79;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Ngày bắt đầu";
-            this.Column6.MinimumWidth = 30;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 85;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Ngày kết thúc";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 84;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Hủy";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column8.Width = 57;
+            this.gridPhongDaChon.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPhongDaChon_CellMouseLeave);
+            this.gridPhongDaChon.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridPhongDaChon_CellMouseMove);
             // 
             // ctPanel2
             // 
@@ -761,6 +723,48 @@
             this.CTButtonDatTruoc.Text = "Đặt trước";
             this.CTButtonDatTruoc.TextColor = System.Drawing.Color.White;
             this.CTButtonDatTruoc.UseVisualStyleBackColor = false;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Số phòng";
+            this.Column4.MinimumWidth = 10;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 92;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Số người";
+            this.Column5.MinimumWidth = 20;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column5.Width = 69;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Ngày bắt đầu";
+            this.Column6.MinimumWidth = 30;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column6.Width = 73;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Ngày kết thúc";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column7.Width = 72;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Hủy";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column8.Width = 42;
             // 
             // FormDatPhong
             // 

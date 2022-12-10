@@ -122,16 +122,17 @@ namespace HotelManagement.GUI
             }
         }
 
-        private void grid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int curCol = e.ColumnIndex;
-            if (curCol == 5 || curCol == 6)
-            {
-                if (e.RowIndex >= 0)
-                    grid.Cursor = Cursors.Hand;
-                else if (grid.CurrentCell.Value == DBNull.Value)
-                    grid.Cursor = Cursors.Default;
-            }
+            int y = e.RowIndex, x = e.ColumnIndex;
+            int[] arrX = { 1, 2, 3, 4 };
+            bool isExists = false;
+
+            if (Array.IndexOf(arrX, x) != -1)
+                isExists = true;
+
+            if (y >= 0 && x == 5 || y >= 0 && x == 6 || y == -1 && isExists)
+                grid.Cursor = Cursors.Hand;
             else
                 grid.Cursor = Cursors.Default;
         }
@@ -153,6 +154,9 @@ namespace HotelManagement.GUI
             }
             this.phongs = PhongBUS.Instance.FindPhongWithMaPH(textBoxPhong.Text);
             LoadDataGrid();
+        private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            grid.Cursor = Cursors.Default;
         }
     }
 }

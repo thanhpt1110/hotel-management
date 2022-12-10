@@ -232,21 +232,6 @@ namespace HotelManagement.GUI
             }
         }
 
-        private void gridPhongTrong_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView grid = gridPhongTrong;
-            int curCol = e.ColumnIndex;
-            if (curCol == 2)
-            {
-                if (e.RowIndex >= 0)
-                    grid.Cursor = Cursors.Hand;
-                else if (grid.CurrentCell.Value == DBNull.Value)
-                    grid.Cursor = Cursors.Default;
-            }
-            else
-                grid.Cursor = Cursors.Default;
-        }
-
         private void gridPhongDaChon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int x = e.ColumnIndex, y = e.RowIndex;
@@ -257,19 +242,48 @@ namespace HotelManagement.GUI
             }
         }
 
-        private void gridPhongDaChon_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void gridPhongTrong_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridView grid = gridPhongDaChon;
-            int curCol = e.ColumnIndex;
-            if (curCol == 4)
-            {
-                if (e.RowIndex >= 0)
-                    grid.Cursor = Cursors.Hand;
-                else if (grid.CurrentCell.Value == DBNull.Value)
-                    grid.Cursor = Cursors.Default;
-            }
+            DataGridView grid = gridPhongTrong;
+            int x = e.ColumnIndex, y = e.RowIndex;
+            int[] arrX = { 0, 1 };
+            bool isExists = false;
+
+            if (Array.IndexOf(arrX, x) != -1)
+                isExists = true;
+
+            if (y >= 0 && x == 2 || y == -1 && isExists)
+                grid.Cursor = Cursors.Hand;
             else
                 grid.Cursor = Cursors.Default;
+        }
+
+        private void gridPhongTrong_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView grid = gridPhongTrong;
+            grid.Cursor = Cursors.Default;
+        }
+
+        private void gridPhongDaChon_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridView grid = gridPhongDaChon;
+            int x = e.ColumnIndex, y = e.RowIndex;
+            int[] arrX = { 0 };
+            bool isExists = false;
+
+            if (Array.IndexOf(arrX, x) != -1)
+                isExists = true;
+
+            if (y >= 0 && x == 4 || y == -1 && isExists)
+                grid.Cursor = Cursors.Hand;
+            else
+                grid.Cursor = Cursors.Default;
+        }
+
+        private void gridPhongDaChon_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView grid = gridPhongDaChon;
+            grid.Cursor = Cursors.Default;
         }
     }
 }
