@@ -28,38 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LabelTrangChu = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // LabelTrangChu
+            // pictureBox1
             // 
-            this.LabelTrangChu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LabelTrangChu.AutoSize = true;
-            this.LabelTrangChu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTrangChu.Location = new System.Drawing.Point(518, 9);
-            this.LabelTrangChu.Name = "LabelTrangChu";
-            this.LabelTrangChu.Size = new System.Drawing.Size(153, 40);
-            this.LabelTrangChu.TabIndex = 0;
-            this.LabelTrangChu.Text = "Trang chủ";
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.staffResize;
+            this.pictureBox1.Location = new System.Drawing.Point(186, 205);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(839, 500);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FormTrangChu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1244, 794);
-            this.Controls.Add(this.LabelTrangChu);
+            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormTrangChu";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormTrangChu";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label LabelTrangChu;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

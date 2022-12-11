@@ -84,7 +84,7 @@
             // 
             // PanelLocPhong
             // 
-            this.PanelLocPhong.BackColor = System.Drawing.SystemColors.Control;
+            this.PanelLocPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.PanelLocPhong.Controls.Add(this.PanelTinhTrangPhong);
             this.PanelLocPhong.Controls.Add(this.PanelLoaiPhong);
             this.PanelLocPhong.Controls.Add(this.PanelRadioButtonTrangThaiPhong);
@@ -118,7 +118,7 @@
             // CTRadioButtonTatCa
             // 
             this.CTRadioButtonTatCa.AutoSize = true;
-            this.CTRadioButtonTatCa.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.CTRadioButtonTatCa.CheckedColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.CTRadioButtonTatCa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonTatCa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonTatCa.Location = new System.Drawing.Point(12, 103);
@@ -135,7 +135,7 @@
             // CTRadioButtonDaDonDep
             // 
             this.CTRadioButtonDaDonDep.AutoSize = true;
-            this.CTRadioButtonDaDonDep.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(201)))), ((int)(((byte)(103)))));
+            this.CTRadioButtonDaDonDep.CheckedColor = System.Drawing.Color.SeaGreen;
             this.CTRadioButtonDaDonDep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonDaDonDep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonDaDonDep.Location = new System.Drawing.Point(12, 41);
@@ -152,7 +152,7 @@
             // CTRadioButtonChuaDonDep
             // 
             this.CTRadioButtonChuaDonDep.AutoSize = true;
-            this.CTRadioButtonChuaDonDep.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
+            this.CTRadioButtonChuaDonDep.CheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonChuaDonDep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonChuaDonDep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonChuaDonDep.Location = new System.Drawing.Point(12, 72);
@@ -192,7 +192,7 @@
             // CTRadioButtonTatCaLoaiPhong
             // 
             this.CTRadioButtonTatCaLoaiPhong.AutoSize = true;
-            this.CTRadioButtonTatCaLoaiPhong.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.CTRadioButtonTatCaLoaiPhong.CheckedColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.CTRadioButtonTatCaLoaiPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonTatCaLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonTatCaLoaiPhong.Location = new System.Drawing.Point(12, 164);
@@ -209,7 +209,7 @@
             // CTRadioButtonPhongVIPDoi
             // 
             this.CTRadioButtonPhongVIPDoi.AutoSize = true;
-            this.CTRadioButtonPhongVIPDoi.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(185)))), ((int)(((byte)(37)))));
+            this.CTRadioButtonPhongVIPDoi.CheckedColor = System.Drawing.Color.Gold;
             this.CTRadioButtonPhongVIPDoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongVIPDoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongVIPDoi.Location = new System.Drawing.Point(12, 133);
@@ -226,7 +226,7 @@
             // CTRadioButtonPhongThuongDon
             // 
             this.CTRadioButtonPhongThuongDon.AutoSize = true;
-            this.CTRadioButtonPhongThuongDon.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(199)))), ((int)(((byte)(102)))));
+            this.CTRadioButtonPhongThuongDon.CheckedColor = System.Drawing.Color.SeaGreen;
             this.CTRadioButtonPhongThuongDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongThuongDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongThuongDon.Location = new System.Drawing.Point(12, 40);
@@ -243,7 +243,7 @@
             // CTRadioButtonPhongVIPDon
             // 
             this.CTRadioButtonPhongVIPDon.AutoSize = true;
-            this.CTRadioButtonPhongVIPDon.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(195)))), ((int)(((byte)(68)))));
+            this.CTRadioButtonPhongVIPDon.CheckedColor = System.Drawing.Color.Gold;
             this.CTRadioButtonPhongVIPDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongVIPDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongVIPDon.Location = new System.Drawing.Point(12, 102);
@@ -260,7 +260,7 @@
             // CTRadioButtonPhongThuongDoi
             // 
             this.CTRadioButtonPhongThuongDoi.AutoSize = true;
-            this.CTRadioButtonPhongThuongDoi.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(201)))), ((int)(((byte)(144)))));
+            this.CTRadioButtonPhongThuongDoi.CheckedColor = System.Drawing.Color.SeaGreen;
             this.CTRadioButtonPhongThuongDoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongThuongDoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongThuongDoi.Location = new System.Drawing.Point(12, 71);
@@ -300,7 +300,7 @@
             // CTRadioButtonTatCaPhong
             // 
             this.CTRadioButtonTatCaPhong.AutoSize = true;
-            this.CTRadioButtonTatCaPhong.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.CTRadioButtonTatCaPhong.CheckedColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.CTRadioButtonTatCaPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonTatCaPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonTatCaPhong.Location = new System.Drawing.Point(12, 164);
@@ -317,7 +317,7 @@
             // CTRadioButtonPhongDangSuaChua
             // 
             this.CTRadioButtonPhongDangSuaChua.AutoSize = true;
-            this.CTRadioButtonPhongDangSuaChua.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.CTRadioButtonPhongDangSuaChua.CheckedColor = System.Drawing.Color.DodgerBlue;
             this.CTRadioButtonPhongDangSuaChua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongDangSuaChua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongDangSuaChua.Location = new System.Drawing.Point(12, 133);
@@ -334,7 +334,7 @@
             // CTRadioButtonPhongTrong
             // 
             this.CTRadioButtonPhongTrong.AutoSize = true;
-            this.CTRadioButtonPhongTrong.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(199)))), ((int)(((byte)(102)))));
+            this.CTRadioButtonPhongTrong.CheckedColor = System.Drawing.Color.SeaGreen;
             this.CTRadioButtonPhongTrong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongTrong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongTrong.Location = new System.Drawing.Point(12, 40);
@@ -351,7 +351,7 @@
             // CTRadioButtonPhongDangThue
             // 
             this.CTRadioButtonPhongDangThue.AutoSize = true;
-            this.CTRadioButtonPhongDangThue.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(96)))), ((int)(((byte)(93)))));
+            this.CTRadioButtonPhongDangThue.CheckedColor = System.Drawing.Color.Red;
             this.CTRadioButtonPhongDangThue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongDangThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongDangThue.Location = new System.Drawing.Point(12, 102);
@@ -368,7 +368,7 @@
             // CTRadioButtonPhongDaDat
             // 
             this.CTRadioButtonPhongDaDat.AutoSize = true;
-            this.CTRadioButtonPhongDaDat.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(195)))), ((int)(((byte)(68)))));
+            this.CTRadioButtonPhongDaDat.CheckedColor = System.Drawing.Color.Goldenrod;
             this.CTRadioButtonPhongDaDat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongDaDat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongDaDat.Location = new System.Drawing.Point(12, 71);
@@ -385,6 +385,7 @@
             // PanelTitle
             // 
             this.PanelTitle.AutoScroll = true;
+            this.PanelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.PanelTitle.Controls.Add(this.pictureBox1);
             this.PanelTitle.Controls.Add(this.ctTextBox1);
             this.PanelTitle.Controls.Add(this.ctDatePicker1);
@@ -407,7 +408,7 @@
             // ctTextBox1
             // 
             this.ctTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.ctTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ctTextBox1.BorderColor = System.Drawing.Color.DimGray;
             this.ctTextBox1.BorderFocusColor = System.Drawing.Color.Black;
             this.ctTextBox1.BorderRadius = 5;
@@ -437,12 +438,13 @@
             this.ctDatePicker1.MinimumSize = new System.Drawing.Size(0, 35);
             this.ctDatePicker1.Name = "ctDatePicker1";
             this.ctDatePicker1.Size = new System.Drawing.Size(209, 35);
-            this.ctDatePicker1.SkinColor = System.Drawing.Color.White;
+            this.ctDatePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ctDatePicker1.TabIndex = 0;
             this.ctDatePicker1.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
             // PanelSoDo
             // 
+            this.PanelSoDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.PanelSoDo.Controls.Add(this.flowLayoutPanel5);
             this.PanelSoDo.Controls.Add(this.panel5);
             this.PanelSoDo.Controls.Add(this.flowLayoutPanel4);

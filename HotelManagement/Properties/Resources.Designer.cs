@@ -793,6 +793,16 @@ namespace HotelManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap staffResize {
+            get {
+                object obj = ResourceManager.GetObject("staffResize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TaiKhoan {
             get {
                 object obj = ResourceManager.GetObject("TaiKhoan", resourceCulture);

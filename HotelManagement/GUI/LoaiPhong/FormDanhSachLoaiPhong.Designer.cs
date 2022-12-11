@@ -75,7 +75,7 @@
             // CTTextBoxTimPhongTheoMa
             // 
             this.CTTextBoxTimPhongTheoMa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CTTextBoxTimPhongTheoMa.BackColor = System.Drawing.Color.White;
+            this.CTTextBoxTimPhongTheoMa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.CTTextBoxTimPhongTheoMa.BorderColor = System.Drawing.Color.Gray;
             this.CTTextBoxTimPhongTheoMa.BorderFocusColor = System.Drawing.Color.Black;
             this.CTTextBoxTimPhongTheoMa.BorderRadius = 5;
@@ -281,7 +281,7 @@
             // FormDanhSachLoaiPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1260, 833);
             this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.grid);
