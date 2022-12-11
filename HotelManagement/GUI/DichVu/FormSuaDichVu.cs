@@ -252,7 +252,14 @@ namespace HotelManagement.GUI
         {
             TextBox textBoxDonGia = sender as TextBox;
             textBoxDonGia.KeyPress += TextBoxDonGia_KeyPress;
+            textBoxDonGia.TextChanged += TextBoxDonGia_TextChanged;
         }
+
+        private void TextBoxDonGia_TextChanged(object sender, EventArgs e)
+        {
+            TextBoxType.Instance.CurrencyType(sender, e);
+        }
+
         private void TextBoxDonGia_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBoxType.Instance.TextBoxOnlyNumber(e);

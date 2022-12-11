@@ -40,10 +40,10 @@ namespace HotelManagement.GUI
                         grid.Rows.Add(new object[] {PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
                         grid.Rows.Add(new object[] {PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });*/
             LoadFullDataGrid();
-            grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
+            /*grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
             grid.Rows.Add(new object[] { PT, "PT002", "Nguyễn Phúc Bình", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
             grid.Rows.Add(new object[] { PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
-            grid.Rows.Add(new object[] { PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
+            grid.Rows.Add(new object[] { PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });*/
         }
 
         public void LoadFullDataGrid()
@@ -56,7 +56,7 @@ namespace HotelManagement.GUI
             this.grid.Rows.Clear();
             foreach (PhieuThue phieuThue in phieuThues)
             {
-                grid.Rows.Add(new object[] { PT, phieuThue.MaPT,phieuThue.KhachHang.TenKH,String.Format("dd/MM/yyyy HH:mm:ss" , phieuThue.NgPT),phieuThue.NhanVien.TenNV,details});
+                grid.Rows.Add(new object[] { PT, phieuThue.MaPT,phieuThue.KhachHang.TenKH,phieuThue.NgPT.ToString("dd/MM/yyyy"),phieuThue.NhanVien.TenNV,details});
             }
         }    
         private void buttonExport_Click(object sender, EventArgs e)

@@ -242,6 +242,14 @@ namespace HotelManagement.GUI
         {
             TextBox textBoxDonGia = sender as TextBox;
             textBoxDonGia.KeyPress += TextBoxDonGia_KeyPress;
+            textBoxDonGia.TextChanged += TextBoxDonGia_TextChanged;
+        }
+
+        private void TextBoxDonGia_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxDonGia = sender as TextBox;
+            TextBoxType.Instance.CurrencyType(sender, e);
+            
         }
 
         private void TextBoxDonGia_KeyPress(object sender, KeyPressEventArgs e)
@@ -267,6 +275,8 @@ namespace HotelManagement.GUI
             textBoxTenDV.KeyPress += TextBoxTenDV_KeyPress;
         }
 
+
+
         private void TextBoxTenDV_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBoxType.Instance.TextBoxNotNumber(e);
@@ -282,6 +292,11 @@ namespace HotelManagement.GUI
         private void TextBoxThemDV_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBoxType.Instance.TextBoxNotNumber(e);
+
+        }
+
+        private void FormThemDichVu_Load(object sender, EventArgs e)
+        {
 
         }
     }

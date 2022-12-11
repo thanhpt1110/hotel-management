@@ -28,7 +28,7 @@ namespace HotelManagement.GUI
         private void CTButtonThemKhachHang_Click(object sender, EventArgs e)
         {
             LoadGrid();
-            using (FormThemKhachHang formThemKhachHang = new FormThemKhachHang())
+            using (FormThemKhachHang formThemKhachHang = new FormThemKhachHang(this))
                 formThemKhachHang.ShowDialog();
         }
 
@@ -129,15 +129,25 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 7)
                 {
-                    using (FormSuaKhachHang formSuaKhachHang = new FormSuaKhachHang())
+                    using (FormSuaKhachHang formSuaKhachHang = new FormSuaKhachHang(KhachHangBUS.Instance.FindKhachHang(grid.Rows[y].Cells[1].Value.ToString()),this))
                     {
                         formSuaKhachHang.ShowDialog();
                     }
                 }
                 if (x == 8)
                 {
-                    // If click Delete button 
-                    MessageBox.Show("Clicked Delete button");
+                     //If click Delete button 
+                    try
+                    {
+                    //khachHangs.Remove(KhachHangBUS.Instance.FindKhachHang(grid.Rows[y].Cells[1].Value.ToString()));
+
+                    KhachHangBUS.Instance.RemoveKH(KhachHangBUS.Instance.FindKhachHang(grid.Rows[y].Cells[1].Value.ToString()));
+                    }
+                    catch (Exception ex)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Không thể xóa thông tin của khách hàng này", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    LoadAllGrid();
                 }
             }
         }

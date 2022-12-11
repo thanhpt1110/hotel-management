@@ -51,7 +51,7 @@ namespace HotelManagement.GUI
             grid.Rows.Clear();
             foreach (Phong phong in this.phongs)
             {
-                grid.Rows.Add(new object[] { PH, phong.MaPH, phong.TTPH, phong.MaPH, phong.LoaiPhong.TenLPH, edit, delete });
+                grid.Rows.Add(new object[] { PH, phong.MaPH, phong.TTPH, phong.TTDD, phong.LoaiPhong.TenLPH, edit, delete });
             }    
         }
         private void buttonExport_Click(object sender, EventArgs e)

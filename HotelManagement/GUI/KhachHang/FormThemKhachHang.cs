@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HotelManagement.BUS;
+using HotelManagement.DAO;
+using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +12,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ApplicationSettings;
 namespace HotelManagement.GUI
 {
     public partial class FormThemKhachHang : Form
@@ -18,6 +21,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
+        FormDanhSachKhachHang formDanhSachKhachHang;
 
         //Constructor
         public FormThemKhachHang()
@@ -27,6 +31,15 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
+        public FormThemKhachHang(FormDanhSachKhachHang formDanhSachKhachHang)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.formDanhSachKhachHang = formDanhSachKhachHang;
+            InitializeComponent();
+        }
+
         //Control Box
 
         //Form Move
@@ -191,5 +204,98 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+
+            if (this.ctTextBoxName.Texts != "" && this.ctTextBoxQuocTich.Texts != "" && this.ctTextBoxCMND.Texts != "" && this.comboBoxGioiTinh.Text != "  Giới tính")
+            {
+                List<KhachHang> khachHangs = KhachHangBUS.Instance.GetKhachHangs();
+                foreach (KhachHang khachHang in khachHangs)
+                {
+                    if (khachHang.CCCD_Passport == this.ctTextBoxCMND.Texts)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách", "THÔNG BÁO", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        if (dialogResult == DialogResult.Cancel)
+                        {
+                            this.Close();
+                        }
+                    }
+                }
+                KhachHang khachHang1 = new KhachHang();
+                khachHang1.MaKH = KhachHangBUS.Instance.GetMaKHNext();
+                khachHang1.TenKH = this.ctTextBoxName.Texts;
+                khachHang1.QuocTich = this.ctTextBoxQuocTich.Texts;
+                khachHang1.CCCD_Passport = this.ctTextBoxCMND.Texts;
+                khachHang1.SDT = this.ctTextBoxSDT.Texts;
+                khachHang1.GioiTinh = this.comboBoxGioiTinh.Text.Trim(' ');
+                KhachHangBUS.Instance.UpdateOrAdd(khachHang1);
+                MessageBox.Show("Thành công", "THÔNG BÁO", MessageBoxButtons.OK);
+                this.formDanhSachKhachHang.LoadAllGrid();
+                this.Close();
+            }
+            else
+                MessageBox.Show("Vui lòng nhập thông tin khách hàng", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+        }
+
+        private void ctTextBoxName__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxName = sender as TextBox;
+            
+            textBoxName.KeyPress += TextBoxName_KeyPress;
+        }
+
+        private void TextBoxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
+        }
+
+        private void FormThemKhachHang_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ctTextBoxCMND__TextChanged(object sender, EventArgs e)
+        {
+            
+            TextBox textBoxCCCD = sender as TextBox;
+            textBoxCCCD.MaxLength = 12;
+            textBoxCCCD.KeyPress += TextBoxCCCD_KeyPress;
+
+        }
+
+
+        private void TextBoxCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
+
+        }
+
+        private void ctTextBoxSDT__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxSDT = sender as TextBox;
+            textBoxSDT.MaxLength = 11;
+
+            textBoxSDT.KeyPress += TextBoxSDT_KeyPress;
+        }
+
+        private void TextBoxSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
+        }
+
+        private void ctTextBoxQuocTich__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxQuocTich = sender as TextBox;
+            textBoxQuocTich.KeyPress += TextBoxQuocTich_KeyPress;
+        }
+
+        private void TextBoxQuocTich_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
+        }
+
+
     }
 }

@@ -5,6 +5,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HotelManagement.DAO
 {
@@ -34,6 +35,11 @@ namespace HotelManagement.DAO
         }    
         public void RemoveKH(KhachHang khachHang)
         {
+            if (khachHang.PhieuThues.ToList().Count>=1)
+            {
+                MessageBox.Show("Không thể xóa thông tin của khách hàng này", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             db.KhachHangs.Remove(khachHang);
             db.SaveChanges();
         }
@@ -41,6 +47,22 @@ namespace HotelManagement.DAO
         {
             return db.KhachHangs.Where(p => p.TenKH.Contains(TenKH)).ToList();
         }
-
+        public string GetMaKHNext()
+        {
+            List<KhachHang> KH = db.KhachHangs.ToList();
+            string MaMax = KH[KH.Count - 1].MaKH.ToString();
+            MaMax = MaMax.Substring(MaMax.Length - 3, 3);
+            int max = int.Parse(MaMax);
+            max++;
+            if (max < 10)
+            {
+                return "KH00" + max.ToString();
+            }
+            else if(max <100)
+            {
+                return "KH0" + max.ToString();
+            }    
+            return "KH" + max.ToString();
+        }
     }
 }

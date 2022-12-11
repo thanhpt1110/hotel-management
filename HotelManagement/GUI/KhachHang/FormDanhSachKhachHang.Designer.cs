@@ -47,9 +47,7 @@ namespace HotelManagement.GUI
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ctPanel1 = new CTPanel.CTPanel();
             this.buttonExport = new HotelManagement.CTControls.CTButton();
-            this.CTButtonThemKhachHang = new HotelManagement.CTControls.CTButton();
             this.CTTextBoxTimKhachHangTheoTen = new HotelManagement.CTControls.CTTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();

@@ -281,6 +281,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormThemDichVu";
             this.Activated += new System.EventHandler(this.FormThemDichVu_Activated);
+            this.Load += new System.EventHandler(this.FormThemDichVu_Load);
             this.SizeChanged += new System.EventHandler(this.FormThemDichVu_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormThemDichVu_Paint);
             this.Resize += new System.EventHandler(this.FormThemDichVu_Resize);
