@@ -61,6 +61,7 @@
             this.PanelBackground.Name = "PanelBackground";
             this.PanelBackground.Size = new System.Drawing.Size(533, 498);
             this.PanelBackground.TabIndex = 2;
+            this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
             // LabelThemTaiKhoan

@@ -179,7 +179,15 @@ namespace HotelManagement
             }
             return fbColor;
         }
-
+        private FormBoundsColors GetSameDark()
+        {
+            FormBoundsColors colors = new FormBoundsColors();
+            colors.TopLeftColor = Color.FromArgb(67, 73, 73);
+            colors.TopRightColor = Color.FromArgb(67, 73, 73);
+            colors.BottomLeftColor = Color.FromArgb(67, 73, 73);
+            colors.BottomRightColor = Color.FromArgb(67, 73, 73);
+            return colors;
+        }
         //Event Methods
         private void FormLogin_Paint(object sender, PaintEventArgs e)
         {

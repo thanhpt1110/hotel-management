@@ -74,6 +74,8 @@
             this.PanelBackground.Name = "PanelBackground";
             this.PanelBackground.Size = new System.Drawing.Size(533, 535);
             this.PanelBackground.TabIndex = 4;
+            this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
+            this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
             // CTButtonThoat
             // 
@@ -312,7 +314,10 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaLoaiPhong";
+            this.Activated += new System.EventHandler(this.FormSuaLoaiPhong_Activated);
+            this.SizeChanged += new System.EventHandler(this.FormSuaLoaiPhong_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormSuaLoaiPhong_Paint);
+            this.Resize += new System.EventHandler(this.FormSuaLoaiPhong_Resize);
             this.PanelBackground.ResumeLayout(false);
             this.PanelBackground.PerformLayout();
             this.panel1.ResumeLayout(false);

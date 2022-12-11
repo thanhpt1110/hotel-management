@@ -41,6 +41,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormBackground";
             this.Opacity = 0.7D;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FormBackground";
             this.Load += new System.EventHandler(this.FormBackground_Load);

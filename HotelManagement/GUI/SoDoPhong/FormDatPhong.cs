@@ -139,14 +139,14 @@ namespace HotelManagement.GUI
             }
             return fbColor;
         }
-        private FormBoundsColors GetSame()
+        private FormBoundsColors GetSameDark()
         {
-            var fbColor = new FormBoundsColors();
-            fbColor.BottomLeftColor = Color.Black;
-            fbColor.BottomRightColor = Color.Black;
-            fbColor.TopLeftColor = Color.Black;
-            fbColor.TopRightColor = Color.Black;
-            return fbColor;
+            FormBoundsColors colors = new FormBoundsColors();
+            colors.TopLeftColor = Color.FromArgb(67, 73, 73);
+            colors.TopRightColor = Color.FromArgb(67, 73, 73);
+            colors.BottomLeftColor = Color.FromArgb(67, 73, 73);
+            colors.BottomRightColor = Color.FromArgb(67, 73, 73);
+            return colors;
         }
         //Event Methods
         private void FormDatPhong_Paint(object sender, PaintEventArgs e)
@@ -156,7 +156,7 @@ namespace HotelManagement.GUI
             Rectangle rectForm = this.ClientRectangle;
             int mWidht = rectForm.Width / 2;
             int mHeight = rectForm.Height / 2;
-            var fbColors = GetFormBoundsColors();
+            var fbColors = GetSameDark();
             //fbColors = GetSame();
             //Top Left
             DrawPath(rectForm, e.Graphics, fbColors.TopLeftColor);
