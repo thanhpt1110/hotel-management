@@ -20,15 +20,37 @@ namespace HotelManagement.GUI
         private Image TN = Properties.Resources.TienNghi;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
+        private FormMain formMain;
         public FormDanhSachTienNghi()
         {
             InitializeComponent();
         }
 
+        public FormDanhSachTienNghi(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
+        }
+
         private void CTButtonThemTienNghi_Click(object sender, EventArgs e)
         {
-            using (FormThemTienNghi formThemTienNghi = new FormThemTienNghi())
-                formThemTienNghi.ShowDialog();
+            FormBackground formBackground = new FormBackground(formMain);
+            try
+            {
+                using (FormSuaTienNghi formThemTienNghi = new FormSuaTienNghi())
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThemTienNghi.Owner = formBackground;
+                    formThemTienNghi.ShowDialog();
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachTienNghi_Load(object sender, EventArgs e)
@@ -36,16 +58,18 @@ namespace HotelManagement.GUI
              grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
 
 
-            /*            grid.Rows.Add(new object[] { TN, "TN001", "Ti vi", edit, delete });
-                        grid.Rows.Add(new object[] { TN, "TN002", "Máy lạnh", edit, delete });
-                        grid.Rows.Add(new object[] {TN, "TN003", "Máy sấy", edit, delete });*/
+            /*grid.Rows.Add(new object[] { TN, "TN001", "Ti vi", edit, delete });
+            grid.Rows.Add(new object[] { TN, "TN002", "Máy lạnh", edit, delete });
+            grid.Rows.Add(new object[] {TN, "TN003", "Máy sấy", edit, delete });*/
             LoadAllData();
         }
+
         public void LoadAllData()
         {
             tienNghis = TienNghiBUS.Instance.GetTienNghis();
             LoadData();
         }
+
         private void LoadData()
         {
             grid.Rows.Clear();
@@ -109,8 +133,23 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 3)
                 {
-                    using (FormSuaTienNghi formSuaTienNghi = new FormSuaTienNghi())
-                        formSuaTienNghi.ShowDialog();
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
+                    {
+                        using (FormSuaTienNghi formSuaTienNghi = new FormSuaTienNghi())
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formSuaTienNghi.Owner = formBackground;
+                            formSuaTienNghi.ShowDialog();
+                            formBackground.Dispose();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
                 }
                 if (x == 4)
                 {

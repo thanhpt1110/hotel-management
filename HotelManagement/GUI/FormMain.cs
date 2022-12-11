@@ -564,7 +564,7 @@ namespace HotelManagement
             ButtonDanhSachTienNghi.BackColor = Color.FromArgb(64, 126, 134);
             ButtonDanhSachTienNghi.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachTienNghi());
+            openChildForm(new FormDanhSachTienNghi(this));
             
         }
 
