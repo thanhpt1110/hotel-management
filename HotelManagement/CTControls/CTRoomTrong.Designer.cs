@@ -178,6 +178,7 @@
             this.Controls.Add(this.LabelThoiGian);
             this.Controls.Add(this.PictureBoxThoiGian);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Margin = new System.Windows.Forms.Padding(20, 20, 0, 0);
             this.Name = "CTRoomTrong";
             this.Size = new System.Drawing.Size(280, 155);
             this.Load += new System.EventHandler(this.CTRoomPhongTrong_Load);
