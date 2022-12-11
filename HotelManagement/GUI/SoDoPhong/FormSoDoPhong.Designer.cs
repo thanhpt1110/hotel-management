@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.PanelLocPhong = new System.Windows.Forms.Panel();
-            this.LabelTrangThaiPhong = new System.Windows.Forms.Label();
-            this.PanelSoDo = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.LabelTinhTrangDonDep = new System.Windows.Forms.Label();
+            this.CTRadioButtonTatCa = new HotelManagement.CTControls.CTRadioButton();
+            this.CTRadioButtonDaDonDep = new HotelManagement.CTControls.CTRadioButton();
+            this.CTRadioButtonChuaDonDep = new HotelManagement.CTControls.CTRadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LabelLoaiPhong = new System.Windows.Forms.Label();
             this.CTRadioButtonTatCaLoaiPhong = new HotelManagement.CTControls.CTRadioButton();
@@ -39,20 +41,18 @@
             this.CTRadioButtonPhongThuongDon = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongVIPDon = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongThuongDoi = new HotelManagement.CTControls.CTRadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LabelTrangThaiPhong = new System.Windows.Forms.Label();
             this.CTRadioButtonTatCaPhong = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDangSuaChua = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongTrong = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDangThue = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDaDat = new HotelManagement.CTControls.CTRadioButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.LabelTinhTrangDonDep = new System.Windows.Forms.Label();
-            this.CTRadioButtonTatCa = new HotelManagement.CTControls.CTRadioButton();
-            this.CTRadioButtonDaDonDep = new HotelManagement.CTControls.CTRadioButton();
-            this.CTRadioButtonChuaDonDep = new HotelManagement.CTControls.CTRadioButton();
+            this.PanelSoDo = new System.Windows.Forms.Panel();
             this.PanelLocPhong.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelLocPhong
@@ -67,37 +67,77 @@
             this.PanelLocPhong.Size = new System.Drawing.Size(237, 794);
             this.PanelLocPhong.TabIndex = 2;
             // 
-            // LabelTrangThaiPhong
+            // panel3
             // 
-            this.LabelTrangThaiPhong.AutoSize = true;
-            this.LabelTrangThaiPhong.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTrangThaiPhong.Location = new System.Drawing.Point(7, 6);
-            this.LabelTrangThaiPhong.Name = "LabelTrangThaiPhong";
-            this.LabelTrangThaiPhong.Size = new System.Drawing.Size(166, 25);
-            this.LabelTrangThaiPhong.TabIndex = 0;
-            this.LabelTrangThaiPhong.Text = "Trạng thái phòng";
+            this.panel3.Controls.Add(this.LabelTinhTrangDonDep);
+            this.panel3.Controls.Add(this.CTRadioButtonTatCa);
+            this.panel3.Controls.Add(this.CTRadioButtonDaDonDep);
+            this.panel3.Controls.Add(this.CTRadioButtonChuaDonDep);
+            this.panel3.Location = new System.Drawing.Point(12, 529);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(208, 153);
+            this.panel3.TabIndex = 4;
             // 
-            // PanelSoDo
+            // LabelTinhTrangDonDep
             // 
-            this.PanelSoDo.AutoScroll = true;
-            this.PanelSoDo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelSoDo.Location = new System.Drawing.Point(237, 0);
-            this.PanelSoDo.Name = "PanelSoDo";
-            this.PanelSoDo.Size = new System.Drawing.Size(1007, 794);
-            this.PanelSoDo.TabIndex = 3;
+            this.LabelTinhTrangDonDep.AutoSize = true;
+            this.LabelTinhTrangDonDep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTinhTrangDonDep.Location = new System.Drawing.Point(7, 6);
+            this.LabelTinhTrangDonDep.Name = "LabelTinhTrangDonDep";
+            this.LabelTinhTrangDonDep.Size = new System.Drawing.Size(185, 25);
+            this.LabelTinhTrangDonDep.TabIndex = 0;
+            this.LabelTinhTrangDonDep.Text = "Tình trạng dọn dẹp";
             // 
-            // panel1
+            // CTRadioButtonTatCa
             // 
-            this.panel1.Controls.Add(this.LabelTrangThaiPhong);
-            this.panel1.Controls.Add(this.CTRadioButtonTatCaPhong);
-            this.panel1.Controls.Add(this.CTRadioButtonPhongDangSuaChua);
-            this.panel1.Controls.Add(this.CTRadioButtonPhongTrong);
-            this.panel1.Controls.Add(this.CTRadioButtonPhongDangThue);
-            this.panel1.Controls.Add(this.CTRadioButtonPhongDaDat);
-            this.panel1.Location = new System.Drawing.Point(12, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(208, 220);
-            this.panel1.TabIndex = 2;
+            this.CTRadioButtonTatCa.AutoSize = true;
+            this.CTRadioButtonTatCa.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.CTRadioButtonTatCa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTRadioButtonTatCa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTRadioButtonTatCa.Location = new System.Drawing.Point(12, 103);
+            this.CTRadioButtonTatCa.MinimumSize = new System.Drawing.Size(0, 21);
+            this.CTRadioButtonTatCa.Name = "CTRadioButtonTatCa";
+            this.CTRadioButtonTatCa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.CTRadioButtonTatCa.Size = new System.Drawing.Size(78, 25);
+            this.CTRadioButtonTatCa.TabIndex = 1;
+            this.CTRadioButtonTatCa.TabStop = true;
+            this.CTRadioButtonTatCa.Text = "Tất cả";
+            this.CTRadioButtonTatCa.UnCheckedColor = System.Drawing.Color.Gray;
+            this.CTRadioButtonTatCa.UseVisualStyleBackColor = true;
+            // 
+            // CTRadioButtonDaDonDep
+            // 
+            this.CTRadioButtonDaDonDep.AutoSize = true;
+            this.CTRadioButtonDaDonDep.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(201)))), ((int)(((byte)(103)))));
+            this.CTRadioButtonDaDonDep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTRadioButtonDaDonDep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTRadioButtonDaDonDep.Location = new System.Drawing.Point(12, 41);
+            this.CTRadioButtonDaDonDep.MinimumSize = new System.Drawing.Size(0, 21);
+            this.CTRadioButtonDaDonDep.Name = "CTRadioButtonDaDonDep";
+            this.CTRadioButtonDaDonDep.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.CTRadioButtonDaDonDep.Size = new System.Drawing.Size(118, 25);
+            this.CTRadioButtonDaDonDep.TabIndex = 1;
+            this.CTRadioButtonDaDonDep.TabStop = true;
+            this.CTRadioButtonDaDonDep.Text = "Đã dọn dẹp";
+            this.CTRadioButtonDaDonDep.UnCheckedColor = System.Drawing.Color.Gray;
+            this.CTRadioButtonDaDonDep.UseVisualStyleBackColor = true;
+            // 
+            // CTRadioButtonChuaDonDep
+            // 
+            this.CTRadioButtonChuaDonDep.AutoSize = true;
+            this.CTRadioButtonChuaDonDep.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
+            this.CTRadioButtonChuaDonDep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTRadioButtonChuaDonDep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTRadioButtonChuaDonDep.Location = new System.Drawing.Point(12, 72);
+            this.CTRadioButtonChuaDonDep.MinimumSize = new System.Drawing.Size(0, 21);
+            this.CTRadioButtonChuaDonDep.Name = "CTRadioButtonChuaDonDep";
+            this.CTRadioButtonChuaDonDep.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.CTRadioButtonChuaDonDep.Size = new System.Drawing.Size(135, 25);
+            this.CTRadioButtonChuaDonDep.TabIndex = 1;
+            this.CTRadioButtonChuaDonDep.TabStop = true;
+            this.CTRadioButtonChuaDonDep.Text = "Chưa dọn dẹp";
+            this.CTRadioButtonChuaDonDep.UnCheckedColor = System.Drawing.Color.Gray;
+            this.CTRadioButtonChuaDonDep.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -126,6 +166,7 @@
             // 
             this.CTRadioButtonTatCaLoaiPhong.AutoSize = true;
             this.CTRadioButtonTatCaLoaiPhong.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.CTRadioButtonTatCaLoaiPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonTatCaLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonTatCaLoaiPhong.Location = new System.Drawing.Point(12, 164);
             this.CTRadioButtonTatCaLoaiPhong.MinimumSize = new System.Drawing.Size(0, 21);
@@ -142,6 +183,7 @@
             // 
             this.CTRadioButtonPhongVIPDoi.AutoSize = true;
             this.CTRadioButtonPhongVIPDoi.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(185)))), ((int)(((byte)(37)))));
+            this.CTRadioButtonPhongVIPDoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongVIPDoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongVIPDoi.Location = new System.Drawing.Point(12, 133);
             this.CTRadioButtonPhongVIPDoi.MinimumSize = new System.Drawing.Size(0, 21);
@@ -158,6 +200,7 @@
             // 
             this.CTRadioButtonPhongThuongDon.AutoSize = true;
             this.CTRadioButtonPhongThuongDon.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(199)))), ((int)(((byte)(102)))));
+            this.CTRadioButtonPhongThuongDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongThuongDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongThuongDon.Location = new System.Drawing.Point(12, 40);
             this.CTRadioButtonPhongThuongDon.MinimumSize = new System.Drawing.Size(0, 21);
@@ -174,6 +217,7 @@
             // 
             this.CTRadioButtonPhongVIPDon.AutoSize = true;
             this.CTRadioButtonPhongVIPDon.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(195)))), ((int)(((byte)(68)))));
+            this.CTRadioButtonPhongVIPDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongVIPDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongVIPDon.Location = new System.Drawing.Point(12, 102);
             this.CTRadioButtonPhongVIPDon.MinimumSize = new System.Drawing.Size(0, 21);
@@ -190,6 +234,7 @@
             // 
             this.CTRadioButtonPhongThuongDoi.AutoSize = true;
             this.CTRadioButtonPhongThuongDoi.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(201)))), ((int)(((byte)(144)))));
+            this.CTRadioButtonPhongThuongDoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongThuongDoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongThuongDoi.Location = new System.Drawing.Point(12, 71);
             this.CTRadioButtonPhongThuongDoi.MinimumSize = new System.Drawing.Size(0, 21);
@@ -202,10 +247,34 @@
             this.CTRadioButtonPhongThuongDoi.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongThuongDoi.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.LabelTrangThaiPhong);
+            this.panel1.Controls.Add(this.CTRadioButtonTatCaPhong);
+            this.panel1.Controls.Add(this.CTRadioButtonPhongDangSuaChua);
+            this.panel1.Controls.Add(this.CTRadioButtonPhongTrong);
+            this.panel1.Controls.Add(this.CTRadioButtonPhongDangThue);
+            this.panel1.Controls.Add(this.CTRadioButtonPhongDaDat);
+            this.panel1.Location = new System.Drawing.Point(12, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(208, 220);
+            this.panel1.TabIndex = 2;
+            // 
+            // LabelTrangThaiPhong
+            // 
+            this.LabelTrangThaiPhong.AutoSize = true;
+            this.LabelTrangThaiPhong.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTrangThaiPhong.Location = new System.Drawing.Point(7, 6);
+            this.LabelTrangThaiPhong.Name = "LabelTrangThaiPhong";
+            this.LabelTrangThaiPhong.Size = new System.Drawing.Size(166, 25);
+            this.LabelTrangThaiPhong.TabIndex = 0;
+            this.LabelTrangThaiPhong.Text = "Trạng thái phòng";
+            // 
             // CTRadioButtonTatCaPhong
             // 
             this.CTRadioButtonTatCaPhong.AutoSize = true;
             this.CTRadioButtonTatCaPhong.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
+            this.CTRadioButtonTatCaPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonTatCaPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonTatCaPhong.Location = new System.Drawing.Point(12, 164);
             this.CTRadioButtonTatCaPhong.MinimumSize = new System.Drawing.Size(0, 21);
@@ -222,6 +291,7 @@
             // 
             this.CTRadioButtonPhongDangSuaChua.AutoSize = true;
             this.CTRadioButtonPhongDangSuaChua.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.CTRadioButtonPhongDangSuaChua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongDangSuaChua.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongDangSuaChua.Location = new System.Drawing.Point(12, 133);
             this.CTRadioButtonPhongDangSuaChua.MinimumSize = new System.Drawing.Size(0, 21);
@@ -238,6 +308,7 @@
             // 
             this.CTRadioButtonPhongTrong.AutoSize = true;
             this.CTRadioButtonPhongTrong.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(199)))), ((int)(((byte)(102)))));
+            this.CTRadioButtonPhongTrong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongTrong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongTrong.Location = new System.Drawing.Point(12, 40);
             this.CTRadioButtonPhongTrong.MinimumSize = new System.Drawing.Size(0, 21);
@@ -254,6 +325,7 @@
             // 
             this.CTRadioButtonPhongDangThue.AutoSize = true;
             this.CTRadioButtonPhongDangThue.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(96)))), ((int)(((byte)(93)))));
+            this.CTRadioButtonPhongDangThue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongDangThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongDangThue.Location = new System.Drawing.Point(12, 102);
             this.CTRadioButtonPhongDangThue.MinimumSize = new System.Drawing.Size(0, 21);
@@ -270,6 +342,7 @@
             // 
             this.CTRadioButtonPhongDaDat.AutoSize = true;
             this.CTRadioButtonPhongDaDat.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(195)))), ((int)(((byte)(68)))));
+            this.CTRadioButtonPhongDaDat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonPhongDaDat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTRadioButtonPhongDaDat.Location = new System.Drawing.Point(12, 71);
             this.CTRadioButtonPhongDaDat.MinimumSize = new System.Drawing.Size(0, 21);
@@ -282,74 +355,14 @@
             this.CTRadioButtonPhongDaDat.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongDaDat.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // PanelSoDo
             // 
-            this.panel3.Controls.Add(this.LabelTinhTrangDonDep);
-            this.panel3.Controls.Add(this.CTRadioButtonTatCa);
-            this.panel3.Controls.Add(this.CTRadioButtonDaDonDep);
-            this.panel3.Controls.Add(this.CTRadioButtonChuaDonDep);
-            this.panel3.Location = new System.Drawing.Point(12, 529);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(208, 153);
-            this.panel3.TabIndex = 4;
-            // 
-            // LabelTinhTrangDonDep
-            // 
-            this.LabelTinhTrangDonDep.AutoSize = true;
-            this.LabelTinhTrangDonDep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTinhTrangDonDep.Location = new System.Drawing.Point(7, 6);
-            this.LabelTinhTrangDonDep.Name = "LabelTinhTrangDonDep";
-            this.LabelTinhTrangDonDep.Size = new System.Drawing.Size(185, 25);
-            this.LabelTinhTrangDonDep.TabIndex = 0;
-            this.LabelTinhTrangDonDep.Text = "Tình trạng dọn dẹp";
-            // 
-            // CTRadioButtonTatCa
-            // 
-            this.CTRadioButtonTatCa.AutoSize = true;
-            this.CTRadioButtonTatCa.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
-            this.CTRadioButtonTatCa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTRadioButtonTatCa.Location = new System.Drawing.Point(12, 103);
-            this.CTRadioButtonTatCa.MinimumSize = new System.Drawing.Size(0, 21);
-            this.CTRadioButtonTatCa.Name = "CTRadioButtonTatCa";
-            this.CTRadioButtonTatCa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.CTRadioButtonTatCa.Size = new System.Drawing.Size(78, 25);
-            this.CTRadioButtonTatCa.TabIndex = 1;
-            this.CTRadioButtonTatCa.TabStop = true;
-            this.CTRadioButtonTatCa.Text = "Tất cả";
-            this.CTRadioButtonTatCa.UnCheckedColor = System.Drawing.Color.Gray;
-            this.CTRadioButtonTatCa.UseVisualStyleBackColor = true;
-            // 
-            // CTRadioButtonDaDonDep
-            // 
-            this.CTRadioButtonDaDonDep.AutoSize = true;
-            this.CTRadioButtonDaDonDep.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(201)))), ((int)(((byte)(103)))));
-            this.CTRadioButtonDaDonDep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTRadioButtonDaDonDep.Location = new System.Drawing.Point(12, 41);
-            this.CTRadioButtonDaDonDep.MinimumSize = new System.Drawing.Size(0, 21);
-            this.CTRadioButtonDaDonDep.Name = "CTRadioButtonDaDonDep";
-            this.CTRadioButtonDaDonDep.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.CTRadioButtonDaDonDep.Size = new System.Drawing.Size(118, 25);
-            this.CTRadioButtonDaDonDep.TabIndex = 1;
-            this.CTRadioButtonDaDonDep.TabStop = true;
-            this.CTRadioButtonDaDonDep.Text = "Đã dọn dẹp";
-            this.CTRadioButtonDaDonDep.UnCheckedColor = System.Drawing.Color.Gray;
-            this.CTRadioButtonDaDonDep.UseVisualStyleBackColor = true;
-            // 
-            // CTRadioButtonChuaDonDep
-            // 
-            this.CTRadioButtonChuaDonDep.AutoSize = true;
-            this.CTRadioButtonChuaDonDep.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
-            this.CTRadioButtonChuaDonDep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTRadioButtonChuaDonDep.Location = new System.Drawing.Point(12, 72);
-            this.CTRadioButtonChuaDonDep.MinimumSize = new System.Drawing.Size(0, 21);
-            this.CTRadioButtonChuaDonDep.Name = "CTRadioButtonChuaDonDep";
-            this.CTRadioButtonChuaDonDep.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.CTRadioButtonChuaDonDep.Size = new System.Drawing.Size(135, 25);
-            this.CTRadioButtonChuaDonDep.TabIndex = 1;
-            this.CTRadioButtonChuaDonDep.TabStop = true;
-            this.CTRadioButtonChuaDonDep.Text = "Chưa dọn dẹp";
-            this.CTRadioButtonChuaDonDep.UnCheckedColor = System.Drawing.Color.Gray;
-            this.CTRadioButtonChuaDonDep.UseVisualStyleBackColor = true;
+            this.PanelSoDo.AutoScroll = true;
+            this.PanelSoDo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelSoDo.Location = new System.Drawing.Point(237, 0);
+            this.PanelSoDo.Name = "PanelSoDo";
+            this.PanelSoDo.Size = new System.Drawing.Size(1007, 794);
+            this.PanelSoDo.TabIndex = 3;
             // 
             // FormSoDoPhong
             // 
@@ -365,12 +378,12 @@
             this.ShowInTaskbar = false;
             this.Text = "FormSoDoPhong";
             this.PanelLocPhong.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

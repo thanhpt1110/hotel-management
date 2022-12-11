@@ -184,7 +184,10 @@ namespace HotelManagement.GUI
         {
             this.Invalidate();
         }
-
+        private void PanelBackground_Paint(object sender, PaintEventArgs e)
+        {
+            ControlRegionAndBorder(PanelBackground, borderRadius - (borderSize / 2), e.Graphics, borderColor);
+        }
         private void PanelBackground_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
