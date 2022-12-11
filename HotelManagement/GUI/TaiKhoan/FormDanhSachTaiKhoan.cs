@@ -19,17 +19,37 @@ namespace HotelManagement.GUI
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         private List<TaiKhoan> taiKhoans;
+        private FormMain formMain;
         public FormDanhSachTaiKhoan()
         {
             InitializeComponent();
         }
 
+        public FormDanhSachTaiKhoan(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
+        }
+
         private void CTButtonThemTaiKhoan_Click(object sender, EventArgs e)
         {
-            using (FormThemTaiKhoan formThemTaiKhoan = new FormThemTaiKhoan())
+            FormBackground formBackground = new FormBackground(formMain);
+            try
             {
-                formThemTaiKhoan.ShowDialog();
+                using (FormThemTaiKhoan formThemTaiKhoan = new FormThemTaiKhoan())
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThemTaiKhoan.Owner = formBackground;
+                    formThemTaiKhoan.ShowDialog();
+                    formBackground.Dispose();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachTaiKhoan_Load(object sender, EventArgs e)
@@ -110,10 +130,23 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 4)
                 {
-                    using (FormSuaTaiKhoan formSuaTaiKhoan = new FormSuaTaiKhoan())
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
                     {
-                        formSuaTaiKhoan.ShowDialog();
+                        using (FormSuaTaiKhoan formSuaTaiKhoan = new FormSuaTaiKhoan())
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formSuaTaiKhoan.Owner = formBackground;
+                            formSuaTaiKhoan.ShowDialog();
+                            formBackground.Dispose();
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
                 }
                 if (x == 5)
                 {

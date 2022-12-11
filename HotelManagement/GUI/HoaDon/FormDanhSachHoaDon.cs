@@ -19,10 +19,18 @@ namespace HotelManagement.GUI
     {
         private Image HD = Properties.Resources.HoaDon;
         private Image details = Properties.Resources.details;
+        private FormMain formMain;
         public FormDanhSachHoaDon()
         {
             InitializeComponent();
             LoadAllDataGrid();
+        }
+
+        public FormDanhSachHoaDon(FormMain formMain)
+        {
+            InitializeComponent();
+            LoadAllDataGrid();
+            this.formMain = formMain;
         }
 
         private void FormDanhSachHoaDon_Load(object sender, EventArgs e)
@@ -129,10 +137,23 @@ namespace HotelManagement.GUI
             {
                 string MaHD = grid.Rows[y].Cells[1].Value.ToString();
                 HoaDon HD = HoaDonBUS.Instance.FindHD(MaHD);
-                using (FormHoaDon formHoaDon = new FormHoaDon(HD))
+                FormBackground formBackground = new FormBackground(formMain);
+                try
                 {
-                    formHoaDon.ShowDialog();
+                    using (FormHoaDon formHoaDon = new FormHoaDon(HD))
+                    {
+                        formBackground.Owner = formMain;
+                        formBackground.Show();
+                        formHoaDon.Owner = formBackground;
+                        formHoaDon.ShowDialog();
+                        formBackground.Dispose();
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "THÔNG BÁO");
+                }
+                finally { formBackground.Dispose(); }
             }
         }
 

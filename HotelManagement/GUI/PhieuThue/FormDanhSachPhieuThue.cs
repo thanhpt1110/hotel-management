@@ -19,15 +19,38 @@ namespace HotelManagement.GUI
         private Image PT = Properties.Resources.PhieuThueDgv;
         private Image details = Properties.Resources.details;
         private List<PhieuThue> phieuThues;
+        private FormMain formMain;
+
         public FormDanhSachPhieuThue()
         {
             InitializeComponent();
         }
 
+        public FormDanhSachPhieuThue(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
+        }
+
         private void CTButtonDatPhong_Click(object sender, EventArgs e)
         {
-            using (FormDatPhong formDatPhong = new FormDatPhong())
-                formDatPhong.ShowDialog();
+            FormBackground formBackground = new FormBackground(formMain);
+            try
+            {
+                using (FormDatPhong formDatPhong = new FormDatPhong())
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formDatPhong.Owner = formBackground;
+                    formDatPhong.ShowDialog();
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachPhieuThue_Load(object sender, EventArgs e)
@@ -35,15 +58,11 @@ namespace HotelManagement.GUI
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
 
 
-            /*            grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
-                        grid.Rows.Add(new object[] { PT, "PT002", "Nguyễn Phúc Bình", "10/11/2003 15:45:00", "Nguyễn Văn Anh",  details});
-                        grid.Rows.Add(new object[] {PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
-                        grid.Rows.Add(new object[] {PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });*/
+            /*grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
+            grid.Rows.Add(new object[] { PT, "PT002", "Nguyễn Phúc Bình", "10/11/2003 15:45:00", "Nguyễn Văn Anh",  details});
+            grid.Rows.Add(new object[] {PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details});
+            grid.Rows.Add(new object[] {PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });*/
             LoadFullDataGrid();
-            grid.Rows.Add(new object[] { PT, "PT001", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
-            grid.Rows.Add(new object[] { PT, "PT002", "Nguyễn Phúc Bình", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
-            grid.Rows.Add(new object[] { PT, "PT003", "Lê Thanh Tuấn", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
-            grid.Rows.Add(new object[] { PT, "PT004", "Phan Tuấn Thành", "10/11/2003 15:45:00", "Nguyễn Văn Anh", details });
         }
 
         public void LoadFullDataGrid()
@@ -112,8 +131,23 @@ namespace HotelManagement.GUI
             // If click details button
             if (y >= 0 && x == 5)
             {
-                using (FormChiTietPhieuThue formChiTietPhieuThue = new FormChiTietPhieuThue())
-                    formChiTietPhieuThue.ShowDialog();
+                FormBackground formBackground = new FormBackground(formMain);
+                try
+                {
+                    using (FormChiTietPhieuThue formChiTietPhieuThue = new FormChiTietPhieuThue())
+                    {
+                        formBackground.Owner = formMain;
+                        formBackground.Show();
+                        formChiTietPhieuThue.Owner = formBackground;
+                        formChiTietPhieuThue.ShowDialog();
+                        formBackground.Dispose();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "THÔNG BÁO");
+                }
+                finally { formBackground.Dispose(); }
             }
         }
 
@@ -132,7 +166,6 @@ namespace HotelManagement.GUI
                 grid.Cursor = Cursors.Default;
         }
 
-//head
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxPT = sender as TextBox;
@@ -151,11 +184,9 @@ namespace HotelManagement.GUI
             this.phieuThues = PhieuThueBUS.Instance.GetPhieuThuesWithNameCus(textBoxPT.Text);
             LoadDataGrid();
         }
-//incoming
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;      
         }   
-//end
     }
 }

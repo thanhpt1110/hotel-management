@@ -19,18 +19,38 @@ namespace HotelManagement.GUI
         private Image NV = Properties.Resources.NhanVien;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
+        private FormMain formMain;
         List<NhanVien> nhanViens;
         public FormDanhSachNhanVien()
         {
             InitializeComponent();
         }
 
+        public FormDanhSachNhanVien(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
+        }
+
         private void CTButtonThemNhanVien_Click(object sender, EventArgs e)
         {
-            using (FormThemNhanVien formThemNhanVien = new FormThemNhanVien())
+            FormBackground formBackground = new FormBackground(formMain);
+            try
             {
-                formThemNhanVien.ShowDialog();
+                using (FormThemNhanVien formThemNhanVien = new FormThemNhanVien())
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThemNhanVien.Owner = formBackground;
+                    formThemNhanVien.ShowDialog();
+                    formBackground.Dispose();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachNhanVien_Load(object sender, EventArgs e)
@@ -55,7 +75,6 @@ namespace HotelManagement.GUI
                 grid.Rows.Clear();
                 foreach (NhanVien nhanvien in this.nhanViens)
                 {
-
                     grid.Rows.Add(NV, nhanvien.MaNV, nhanvien.TenNV, nhanvien.ChucVu, String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh), nhanvien.GioiTinh, nhanvien.SDT, nhanvien.Email, edit, delete);
                 }
             }
@@ -119,10 +138,23 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 8)
                 {
-                    using (FormSuaNhanVien formSuaNhanVien = new FormSuaNhanVien())
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
                     {
-                        formSuaNhanVien.ShowDialog();
+                        using (FormSuaNhanVien formSuaNhanVien = new FormSuaNhanVien())
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formSuaNhanVien.Owner = formBackground;
+                            formSuaNhanVien.ShowDialog();
+                            formBackground.Dispose();
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
                 }
                 if (x == 9)
                 {
@@ -132,10 +164,23 @@ namespace HotelManagement.GUI
                 if (x >= 0 && x <= 7)
                 {
                     // If click Info
-                    using (FormThongTinNhanVien formThongTinNhanVien = new FormThongTinNhanVien())
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
                     {
-                        formThongTinNhanVien.ShowDialog();
+                        using (FormThongTinNhanVien formThongTinNhanVien = new FormThongTinNhanVien())
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formThongTinNhanVien.Owner = formBackground;
+                            formThongTinNhanVien.ShowDialog();
+                            formBackground.Dispose();
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
                 }
             }
         }

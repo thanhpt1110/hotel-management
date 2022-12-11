@@ -19,26 +19,40 @@ namespace HotelManagement.GUI
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         private List<LoaiPhong> loaiPhongs;
+        private FormMain formMain;
         public FormDanhSachLoaiPhong()
         {
             InitializeComponent();
         }
-
+        public FormDanhSachLoaiPhong(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
+        }
         private void CTButtonThemLoaiPhong_Click(object sender, EventArgs e)
         {
-            using (FormThemLoaiPhong formThemLoaiPhong = new FormThemLoaiPhong())
-                formThemLoaiPhong.ShowDialog();
+            FormBackground formBackground = new FormBackground(formMain);
+            try
+            {
+                using (FormThemLoaiPhong formThemLoaiPhong = new FormThemLoaiPhong())
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThemLoaiPhong.Owner = formBackground;
+                    formThemLoaiPhong.ShowDialog();
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachLoaiPhong_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-
-            Image LP = Properties.Resources.LoaiPhong;
-            Image edit = Properties.Resources.edit;
-            Image delete = Properties.Resources.delete;
-
-
             LoadAllDataGrid();
             /*grid.Rows.Add(new object[] { LP, "LP001", "Phòng đơn", "1", "2", "100,000", "50,000", edit, delete });
             grid.Rows.Add(new object[] { LP, "LP002", "Phòng đôi", "2", "4", "200,000", "100,000", edit, delete });
@@ -113,10 +127,23 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 7)
                 {
-                    using (FormSuaLoaiPhong formSuaLoaiPhong = new FormSuaLoaiPhong())
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
                     {
-                        formSuaLoaiPhong.ShowDialog();
+                        using (FormSuaLoaiPhong formSuaLoaiPhong = new FormSuaLoaiPhong())
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formSuaLoaiPhong.Owner = formBackground;
+                            formSuaLoaiPhong.ShowDialog();
+                            formBackground.Dispose();
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
                 }
                 if (x == 8)
                 {

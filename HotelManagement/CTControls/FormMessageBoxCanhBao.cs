@@ -191,5 +191,10 @@ namespace HotelManagement.CTControls
         {
             this.Close();
         }
+
+        private void CTButtonOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

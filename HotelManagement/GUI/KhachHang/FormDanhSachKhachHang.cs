@@ -20,16 +20,40 @@ namespace HotelManagement.GUI
         private Image KH = Properties.Resources.KhachHang;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
+        private FormMain formMain;
         public FormDanhSachKhachHang()
         {
             InitializeComponent();
             LoadAllGrid();
         }
+
+        public FormDanhSachKhachHang(FormMain formMain)
+        {
+            InitializeComponent();
+            LoadAllGrid();
+            this.formMain = formMain;
+        }
+
         private void CTButtonThemKhachHang_Click(object sender, EventArgs e)
         {
             LoadGrid();
-            using (FormThemKhachHang formThemKhachHang = new FormThemKhachHang())
-                formThemKhachHang.ShowDialog();
+            FormBackground formBackground = new FormBackground(formMain);
+            try
+            {
+                using (FormThemKhachHang formThemKhachHang = new FormThemKhachHang())
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThemKhachHang.Owner = formBackground;
+                    formThemKhachHang.ShowDialog();
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachKhachHang_Load(object sender, EventArgs e)
@@ -129,10 +153,23 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 7)
                 {
-                    using (FormSuaKhachHang formSuaKhachHang = new FormSuaKhachHang())
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
                     {
-                        formSuaKhachHang.ShowDialog();
+                        using (FormSuaKhachHang formSuaKhachHang = new FormSuaKhachHang())
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formSuaKhachHang.Owner = formBackground;
+                            formSuaKhachHang.ShowDialog();
+                            formBackground.Dispose();
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
                 }
                 if (x == 8)
                 {

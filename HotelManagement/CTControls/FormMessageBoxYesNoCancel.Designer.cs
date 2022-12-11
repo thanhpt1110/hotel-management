@@ -31,22 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMessageBoxYesNoCancel));
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.PanelTitleBar = new System.Windows.Forms.Panel();
-            this.LabelCaption = new System.Windows.Forms.Label();
             this.LabelMessage = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.CTButtonCancel = new HotelManagement.CTControls.CTButton();
             this.CTButtonNo = new HotelManagement.CTControls.CTButton();
             this.CTButtonOK = new HotelManagement.CTControls.CTButton();
+            this.PanelTitleBar = new System.Windows.Forms.Panel();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.LabelCaption = new System.Windows.Forms.Label();
             this.PanelBackground.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.PanelTitleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelBackground
@@ -73,43 +73,6 @@
             this.panel1.Size = new System.Drawing.Size(380, 67);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.CTButtonCancel);
-            this.panel2.Controls.Add(this.CTButtonNo);
-            this.panel2.Controls.Add(this.CTButtonOK);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 102);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(380, 48);
-            this.panel2.TabIndex = 2;
-            // 
-            // PanelTitleBar
-            // 
-            this.PanelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(131)))), ((int)(((byte)(163)))));
-            this.PanelTitleBar.Controls.Add(this.ctMaximize1);
-            this.PanelTitleBar.Controls.Add(this.ctMinimize1);
-            this.PanelTitleBar.Controls.Add(this.ctClose1);
-            this.PanelTitleBar.Controls.Add(this.LabelCaption);
-            this.PanelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.PanelTitleBar.Name = "PanelTitleBar";
-            this.PanelTitleBar.Size = new System.Drawing.Size(380, 35);
-            this.PanelTitleBar.TabIndex = 1;
-            this.PanelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
-            // 
-            // LabelCaption
-            // 
-            this.LabelCaption.AutoSize = true;
-            this.LabelCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCaption.ForeColor = System.Drawing.Color.White;
-            this.LabelCaption.Location = new System.Drawing.Point(9, 8);
-            this.LabelCaption.Name = "LabelCaption";
-            this.LabelCaption.Size = new System.Drawing.Size(137, 20);
-            this.LabelCaption.TabIndex = 4;
-            this.LabelCaption.Text = "Chọn đi bạn chẻ ơi";
-            // 
             // LabelMessage
             // 
             this.LabelMessage.AutoSize = true;
@@ -132,6 +95,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.CTButtonCancel);
+            this.panel2.Controls.Add(this.CTButtonNo);
+            this.panel2.Controls.Add(this.CTButtonOK);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 102);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(380, 48);
+            this.panel2.TabIndex = 2;
+            // 
             // CTButtonCancel
             // 
             this.CTButtonCancel.BackColor = System.Drawing.Color.Goldenrod;
@@ -151,6 +126,7 @@
             this.CTButtonCancel.Text = "Not Given";
             this.CTButtonCancel.TextColor = System.Drawing.Color.White;
             this.CTButtonCancel.UseVisualStyleBackColor = false;
+            this.CTButtonCancel.Click += new System.EventHandler(this.CTButtonCancel_Click);
             // 
             // CTButtonNo
             // 
@@ -171,6 +147,7 @@
             this.CTButtonNo.Text = "No";
             this.CTButtonNo.TextColor = System.Drawing.Color.White;
             this.CTButtonNo.UseVisualStyleBackColor = false;
+            this.CTButtonNo.Click += new System.EventHandler(this.CTButtonNo_Click);
             // 
             // CTButtonOK
             // 
@@ -191,6 +168,20 @@
             this.CTButtonOK.Text = "Yes";
             this.CTButtonOK.TextColor = System.Drawing.Color.White;
             this.CTButtonOK.UseVisualStyleBackColor = false;
+            // 
+            // PanelTitleBar
+            // 
+            this.PanelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(131)))), ((int)(((byte)(163)))));
+            this.PanelTitleBar.Controls.Add(this.ctMaximize1);
+            this.PanelTitleBar.Controls.Add(this.ctMinimize1);
+            this.PanelTitleBar.Controls.Add(this.ctClose1);
+            this.PanelTitleBar.Controls.Add(this.LabelCaption);
+            this.PanelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.PanelTitleBar.Name = "PanelTitleBar";
+            this.PanelTitleBar.Size = new System.Drawing.Size(380, 35);
+            this.PanelTitleBar.TabIndex = 1;
+            this.PanelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
             // ctMaximize1
             // 
@@ -221,6 +212,18 @@
             this.ctClose1.Name = "ctClose1";
             this.ctClose1.Size = new System.Drawing.Size(15, 15);
             this.ctClose1.TabIndex = 5;
+            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
+            // 
+            // LabelCaption
+            // 
+            this.LabelCaption.AutoSize = true;
+            this.LabelCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelCaption.ForeColor = System.Drawing.Color.White;
+            this.LabelCaption.Location = new System.Drawing.Point(9, 8);
+            this.LabelCaption.Name = "LabelCaption";
+            this.LabelCaption.Size = new System.Drawing.Size(137, 20);
+            this.LabelCaption.TabIndex = 4;
+            this.LabelCaption.Text = "Chọn đi bạn chẻ ơi";
             // 
             // FormMessageBoxYesNoCancel
             // 
@@ -239,10 +242,10 @@
             this.PanelBackground.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.PanelTitleBar.ResumeLayout(false);
             this.PanelTitleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

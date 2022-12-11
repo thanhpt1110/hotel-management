@@ -20,17 +20,37 @@ namespace HotelManagement.GUI
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         private List<DichVu> dichVus;
+        private FormMain formMain;
         public FormDanhSachDichVu()
         {
             InitializeComponent();
         }
 
+        public FormDanhSachDichVu(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
+        }
+
         private void CTButtonThemDichVu_Click(object sender, EventArgs e)
         {
-            using (FormThemDichVu formThemDichVu = new FormThemDichVu(this))
+            FormBackground formBackground = new FormBackground(formMain);
+            try
             {
-                formThemDichVu.ShowDialog();
+                using (FormThemDichVu formThemDichVu = new FormThemDichVu())
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThemDichVu.Owner = formBackground;
+                    formThemDichVu.ShowDialog();
+                    formBackground.Dispose();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachDichVu_Load(object sender, EventArgs e)
@@ -123,10 +143,23 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 5)
                 {
-                    using (FormSuaDichVu formSuaDichVu1 = new FormSuaDichVu(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()),this))
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
                     {
-                        formSuaDichVu1.ShowDialog();
+                        using (FormSuaDichVu formSuaDichVu = new FormSuaDichVu(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()), this))
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formSuaDichVu.Owner = formBackground;
+                            formSuaDichVu.ShowDialog();
+                            formBackground.Dispose();
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
                 }
                 if (x == 6)
                 {

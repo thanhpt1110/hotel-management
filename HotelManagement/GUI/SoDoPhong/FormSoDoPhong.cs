@@ -12,9 +12,15 @@ namespace HotelManagement.GUI
 {
     public partial class FormSoDoPhong : Form
     {
+        private FormMain formMain;
         public FormSoDoPhong()
         {
             InitializeComponent();
+        }
+        public FormSoDoPhong(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
         }
     }
 }
