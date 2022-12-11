@@ -187,7 +187,18 @@ namespace HotelManagement.CTControls
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        private void CTButtonThoat_Click(object sender, EventArgs e)
+
+        private void CTButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CTButtonNo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ctClose1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

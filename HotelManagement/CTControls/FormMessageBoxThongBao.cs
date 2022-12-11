@@ -210,6 +210,11 @@ namespace HotelManagement.CTControls
             this.LabelMessage.Location = new Point(x, y);
         }
 
+        private void ctClose1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void CTButtonOK_Click(object sender, EventArgs e)
         {
             this.Close();

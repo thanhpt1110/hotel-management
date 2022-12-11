@@ -12,9 +12,15 @@ namespace HotelManagement.GUI.ThongKe
 {
     public partial class FormThongKe : Form
     {
+        private FormMain formMain;
         public FormThongKe()
         {
             InitializeComponent();
+        }
+        public FormThongKe(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
         }
     }
 }

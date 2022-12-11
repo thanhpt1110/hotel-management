@@ -33,9 +33,10 @@
             // 
             // LabelTrangChu
             // 
+            this.LabelTrangChu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelTrangChu.AutoSize = true;
             this.LabelTrangChu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTrangChu.Location = new System.Drawing.Point(480, 20);
+            this.LabelTrangChu.Location = new System.Drawing.Point(518, 9);
             this.LabelTrangChu.Name = "LabelTrangChu";
             this.LabelTrangChu.Size = new System.Drawing.Size(153, 40);
             this.LabelTrangChu.TabIndex = 0;
@@ -46,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1244, 794);
             this.Controls.Add(this.LabelTrangChu);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormTrangChu";
             this.ShowIcon = false;

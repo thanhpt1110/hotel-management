@@ -20,16 +20,40 @@ namespace HotelManagement.GUI
         private Image KH = Properties.Resources.KhachHang;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
+        private FormMain formMain;
         public FormDanhSachKhachHang()
         {
             InitializeComponent();
             LoadAllGrid();
         }
+
+        public FormDanhSachKhachHang(FormMain formMain)
+        {
+            InitializeComponent();
+            LoadAllGrid();
+            this.formMain = formMain;
+        }
+
         private void CTButtonThemKhachHang_Click(object sender, EventArgs e)
         {
             LoadGrid();
-            using (FormThemKhachHang formThemKhachHang = new FormThemKhachHang(this))
-                formThemKhachHang.ShowDialog();
+            FormBackground formBackground = new FormBackground(formMain);
+            try
+            {
+                using (FormThemKhachHang formThemKhachHang = new FormThemKhachHang(this))
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThemKhachHang.Owner = formBackground;
+                    formThemKhachHang.ShowDialog();
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachKhachHang_Load(object sender, EventArgs e)
@@ -129,10 +153,24 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 7)
                 {
-                    using (FormSuaKhachHang formSuaKhachHang = new FormSuaKhachHang(KhachHangBUS.Instance.FindKhachHang(grid.Rows[y].Cells[1].Value.ToString()),this))
+                  
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
                     {
-                        formSuaKhachHang.ShowDialog();
+                        using( FormSuaKhachHang formSuaKhachHang = new FormSuaKhachHang(KhachHangBUS.Instance.FindKhachHang(grid.Rows[y].Cells[1].Value.ToString()),this))
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formSuaKhachHang.Owner = formBackground;
+                            formSuaKhachHang.ShowDialog();
+                            formBackground.Dispose();
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
                 }
                 if (x == 8)
                 {
@@ -149,27 +187,6 @@ namespace HotelManagement.GUI
                     }
                     LoadAllGrid();
                 }
-            }
-        }
-
-        private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                int curCol = e.ColumnIndex;
-                if (curCol == 7 || curCol == 8)
-                {
-                    if (e.RowIndex >= 0)
-                        grid.Cursor = Cursors.Hand;
-                    else if (grid.CurrentCell.Value == DBNull.Value)
-                        grid.Cursor = Cursors.Default;
-                }
-                else
-                    grid.Cursor = Cursors.Default;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
             }
         }
 
@@ -196,6 +213,21 @@ namespace HotelManagement.GUI
             }    
             this.khachHangs = KhachHangBUS.Instance.FindKhachHangWithName(textBoxFindName.Text);
             LoadGrid();
+        }
+
+        private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int y = e.RowIndex, x = e.ColumnIndex;
+            int[] arrX = { 1, 5, 6 };
+            bool isExists = false;
+
+            if (Array.IndexOf(arrX, x) != -1)
+                isExists = true;
+
+            if (y >= 0 && x == 7 || y >= 0 && x == 8 ||y == -1 && isExists)
+                grid.Cursor = Cursors.Hand;
+            else
+                grid.Cursor = Cursors.Default;
         }
 
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)

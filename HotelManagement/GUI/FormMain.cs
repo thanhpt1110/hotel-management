@@ -485,7 +485,7 @@ namespace HotelManagement
             ButtonDanhSachDatPhong.BackColor = Color.FromArgb(64, 126, 134);
             ButtonDanhSachDatPhong.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachPhieuThue());
+            openChildForm(new FormDanhSachPhieuThue(this));
         }
 
         private void ButtonSoDoPhong_Click(object sender, EventArgs e)
@@ -495,7 +495,7 @@ namespace HotelManagement
             ButtonSoDoPhong.BackColor = Color.FromArgb(64, 126, 134);
             ButtonSoDoPhong.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormSoDoPhong());
+            openChildForm(new FormSoDoPhong(this));
         }
 
 
@@ -506,7 +506,7 @@ namespace HotelManagement
             ButtonDanhSachHoaDon.BackColor = Color.FromArgb(64, 126, 134);
             ButtonDanhSachHoaDon.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachHoaDon());
+            openChildForm(new FormDanhSachHoaDon(this));
         }
 
         private void ButtonTrangChu_Click(object sender, EventArgs e)
@@ -516,7 +516,7 @@ namespace HotelManagement
             ButtonTrangChu.BackColor = Color.FromArgb(64, 126, 134);
             ButtonTrangChu.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormTrangChu());
+            openChildForm(new FormTrangChu(this));
         }
 
         private void ButtonDanhSachKhachHang_Click(object sender, EventArgs e)
@@ -526,7 +526,7 @@ namespace HotelManagement
             ButtonDanhSachKhachHang.BackColor = Color.FromArgb(64, 126, 134);
             ButtonDanhSachKhachHang.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachKhachHang());
+            openChildForm(new FormDanhSachKhachHang(this));
         }
 
         private void ButtonPhong_Click(object sender, EventArgs e)
@@ -535,7 +535,7 @@ namespace HotelManagement
             ButtonPhong.BackColor = Color.FromArgb(64, 126, 134);
             ButtonPhong.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachPhong());
+            openChildForm(new FormDanhSachPhong(this));
         }
 
         private void ButtonLoaiPhong_Click(object sender, EventArgs e)
@@ -545,7 +545,7 @@ namespace HotelManagement
             ButtonLoaiPhong.BackColor = Color.FromArgb(64, 126, 134);
             ButtonLoaiPhong.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachLoaiPhong());
+            openChildForm(new FormDanhSachLoaiPhong(this));
         }
         private void ButtonDanhSachDichVu_Click(object sender, EventArgs e)
         {
@@ -554,7 +554,7 @@ namespace HotelManagement
             ButtonDanhSachDichVu.BackColor = Color.FromArgb(64, 126, 134);
             ButtonDanhSachDichVu.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachDichVu());
+            openChildForm(new FormDanhSachDichVu(this));
         }
 
         private void ButtonDanhSachTienNghi_Click(object sender, EventArgs e)
@@ -564,7 +564,7 @@ namespace HotelManagement
             ButtonDanhSachTienNghi.BackColor = Color.FromArgb(64, 126, 134);
             ButtonDanhSachTienNghi.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachTienNghi());
+            openChildForm(new FormDanhSachTienNghi(this));
             
         }
 
@@ -575,8 +575,7 @@ namespace HotelManagement
             ButtonDanhSachTaiKhoan.BackColor = Color.FromArgb(64, 126, 134);
             ButtonDanhSachTaiKhoan.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachTaiKhoan());
-            
+            openChildForm(new FormDanhSachTaiKhoan(this));
         }
 
         private void ButtonDanhSachNhanVien_Click(object sender, EventArgs e)
@@ -586,8 +585,7 @@ namespace HotelManagement
             ButtonDanhSachNhanVien.BackColor = Color.FromArgb(64, 126, 134);
             ButtonDanhSachNhanVien.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachNhanVien());
-            
+            openChildForm(new FormDanhSachNhanVien(this));
         }
 
         private void ctClose1_Click(object sender, EventArgs e)
@@ -602,7 +600,7 @@ namespace HotelManagement
             ButtonThongKe.BackColor = Color.FromArgb(64, 126, 134);
             ButtonThongKe.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormThongKe());
+            openChildForm(new FormThongKe(this));
         }
         private void DisplayTextMenu()
         {

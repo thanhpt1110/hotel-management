@@ -35,11 +35,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.CTButtonOK = new HotelManagement.CTControls.CTButton();
             this.PanelTitleBar = new System.Windows.Forms.Panel();
-            this.LabelCaption = new System.Windows.Forms.Label();
-            this.LabelMessage = new System.Windows.Forms.Label();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.LabelCaption = new System.Windows.Forms.Label();
+            this.LabelMessage = new System.Windows.Forms.Label();
             this.PanelBackground.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -125,41 +125,6 @@
             this.PanelTitleBar.TabIndex = 1;
             this.PanelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
-            // LabelCaption
-            // 
-            this.LabelCaption.AutoSize = true;
-            this.LabelCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCaption.ForeColor = System.Drawing.Color.White;
-            this.LabelCaption.Location = new System.Drawing.Point(9, 8);
-            this.LabelCaption.Name = "LabelCaption";
-            this.LabelCaption.Size = new System.Drawing.Size(83, 20);
-            this.LabelCaption.TabIndex = 4;
-            this.LabelCaption.Text = "Thông báo";
-            // 
-            // LabelMessage
-            // 
-            this.LabelMessage.AutoSize = true;
-            this.LabelMessage.BackColor = System.Drawing.SystemColors.Control;
-            this.LabelMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelMessage.ForeColor = System.Drawing.Color.Black;
-            this.LabelMessage.Location = new System.Drawing.Point(105, 61);
-            this.LabelMessage.Name = "LabelMessage";
-            this.LabelMessage.Size = new System.Drawing.Size(209, 20);
-            this.LabelMessage.TabIndex = 4;
-            this.LabelMessage.Text = "Đừng có nhấn bậy nghe hom";
-            // 
-            // LabelMessage
-            // 
-            this.LabelMessage.AutoSize = true;
-            this.LabelMessage.BackColor = System.Drawing.SystemColors.Control;
-            this.LabelMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelMessage.ForeColor = System.Drawing.Color.Black;
-            this.LabelMessage.Location = new System.Drawing.Point(105, 60);
-            this.LabelMessage.Name = "LabelMessage";
-            this.LabelMessage.Size = new System.Drawing.Size(209, 20);
-            this.LabelMessage.TabIndex = 4;
-            this.LabelMessage.Text = "Đừng có nhấn bậy nghe hom";
-            // 
             // ctMaximize1
             // 
             this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
@@ -189,6 +154,30 @@
             this.ctClose1.Name = "ctClose1";
             this.ctClose1.Size = new System.Drawing.Size(15, 15);
             this.ctClose1.TabIndex = 5;
+            this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
+            // 
+            // LabelCaption
+            // 
+            this.LabelCaption.AutoSize = true;
+            this.LabelCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelCaption.ForeColor = System.Drawing.Color.White;
+            this.LabelCaption.Location = new System.Drawing.Point(9, 8);
+            this.LabelCaption.Name = "LabelCaption";
+            this.LabelCaption.Size = new System.Drawing.Size(83, 20);
+            this.LabelCaption.TabIndex = 4;
+            this.LabelCaption.Text = "Thông báo";
+            // 
+            // LabelMessage
+            // 
+            this.LabelMessage.AutoSize = true;
+            this.LabelMessage.BackColor = System.Drawing.SystemColors.Control;
+            this.LabelMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelMessage.ForeColor = System.Drawing.Color.Black;
+            this.LabelMessage.Location = new System.Drawing.Point(105, 60);
+            this.LabelMessage.Name = "LabelMessage";
+            this.LabelMessage.Size = new System.Drawing.Size(209, 20);
+            this.LabelMessage.TabIndex = 4;
+            this.LabelMessage.Text = "Đừng có nhấn bậy nghe hom";
             // 
             // FormMessageBoxThongBao
             // 

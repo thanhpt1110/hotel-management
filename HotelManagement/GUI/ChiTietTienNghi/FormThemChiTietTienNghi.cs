@@ -138,7 +138,15 @@ namespace HotelManagement.GUI
             }
             return fbColor;
         }
-
+        private FormBoundsColors GetSameDark()
+        {
+            FormBoundsColors colors = new FormBoundsColors();
+            colors.TopLeftColor = Color.FromArgb(77, 77, 77);
+            colors.TopRightColor = Color.FromArgb(77, 77, 77);
+            colors.BottomLeftColor = Color.FromArgb(77, 77, 77);
+            colors.BottomRightColor = Color.FromArgb(77, 77, 77);
+            return colors;
+        }
         //Event Methods
         private void FormThemChiTietTienNghi_Paint(object sender, PaintEventArgs e)
         {
@@ -147,7 +155,7 @@ namespace HotelManagement.GUI
             Rectangle rectForm = this.ClientRectangle;
             int mWidht = rectForm.Width / 2;
             int mHeight = rectForm.Height / 2;
-            var fbColors = GetFormBoundsColors();
+            var fbColors = GetSameDark();
             //Top Left
             DrawPath(rectForm, e.Graphics, fbColors.TopLeftColor);
             //Top Right
@@ -176,7 +184,10 @@ namespace HotelManagement.GUI
         {
             this.Invalidate();
         }
-
+        private void PanelBackground_Paint(object sender, PaintEventArgs e)
+        {
+            ControlRegionAndBorder(PanelBackground, borderRadius - (borderSize / 2), e.Graphics, borderColor);
+        }
         private void PanelBackground_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.PanelBackground = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.LabelSuaNhanVien = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.ComboBoxGioiTinh = new System.Windows.Forms.ComboBox();
             this.LabelNgaySinh = new System.Windows.Forms.Label();
@@ -52,15 +50,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxLuong = new HotelManagement.CTControls.CTTextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
             this.CTButtonCapNhat = new HotelManagement.CTControls.CTButton();
-            this.LabelSuaNhanVien = new System.Windows.Forms.Label();
-            this.LabelThemNhanVien = new System.Windows.Forms.Label();
             this.PanelBackground.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -71,47 +63,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelBackground
             // 
-            this.PanelBackground.Controls.Add(this.panel1);
+            this.PanelBackground.Controls.Add(this.LabelSuaNhanVien);
+            this.PanelBackground.Controls.Add(this.panel4);
+            this.PanelBackground.Controls.Add(this.CTButtonThoat);
+            this.PanelBackground.Controls.Add(this.CTButtonCapNhat);
             this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBackground.Location = new System.Drawing.Point(0, 0);
             this.PanelBackground.Name = "PanelBackground";
             this.PanelBackground.Size = new System.Drawing.Size(959, 574);
             this.PanelBackground.TabIndex = 10;
+            this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
-            // panel1
+            // LabelSuaNhanVien
             // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.LabelThemNhanVien);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(959, 574);
-            this.panel1.TabIndex = 10;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(959, 574);
-            this.panel2.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(959, 574);
-            this.panel3.TabIndex = 10;
+            this.LabelSuaNhanVien.AutoSize = true;
+            this.LabelSuaNhanVien.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSuaNhanVien.Location = new System.Drawing.Point(349, 10);
+            this.LabelSuaNhanVien.Name = "LabelSuaNhanVien";
+            this.LabelSuaNhanVien.Size = new System.Drawing.Size(196, 37);
+            this.LabelSuaNhanVien.TabIndex = 16;
+            this.LabelSuaNhanVien.Text = "Sửa nhân viên";
             // 
             // panel4
             // 
@@ -135,10 +111,10 @@
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.ctTextBox1);
             this.panel4.Controls.Add(this.CTTextBoxLuong);
-            this.panel4.Location = new System.Drawing.Point(63, 59);
+            this.panel4.Location = new System.Drawing.Point(58, 60);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(841, 459);
-            this.panel4.TabIndex = 10;
+            this.panel4.TabIndex = 18;
             // 
             // ComboBoxGioiTinh
             // 
@@ -428,17 +404,6 @@
             this.CTTextBoxLuong.Texts = "";
             this.CTTextBoxLuong.UnderlineedStyle = true;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.CTButtonThoat);
-            this.panel5.Controls.Add(this.CTButtonCapNhat);
-            this.panel5.Controls.Add(this.LabelSuaNhanVien);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(959, 574);
-            this.panel5.TabIndex = 13;
-            // 
             // CTButtonThoat
             // 
             this.CTButtonThoat.BackColor = System.Drawing.Color.DarkGray;
@@ -451,10 +416,10 @@
             this.CTButtonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonThoat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThoat.Location = new System.Drawing.Point(773, 524);
+            this.CTButtonThoat.Location = new System.Drawing.Point(768, 525);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 0;
+            this.CTButtonThoat.TabIndex = 15;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -472,33 +437,13 @@
             this.CTButtonCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonCapNhat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonCapNhat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonCapNhat.Location = new System.Drawing.Point(611, 524);
+            this.CTButtonCapNhat.Location = new System.Drawing.Point(606, 525);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
-            this.CTButtonCapNhat.TabIndex = 10;
+            this.CTButtonCapNhat.TabIndex = 17;
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
-            // 
-            // LabelSuaNhanVien
-            // 
-            this.LabelSuaNhanVien.AutoSize = true;
-            this.LabelSuaNhanVien.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSuaNhanVien.Location = new System.Drawing.Point(354, 9);
-            this.LabelSuaNhanVien.Name = "LabelSuaNhanVien";
-            this.LabelSuaNhanVien.Size = new System.Drawing.Size(196, 37);
-            this.LabelSuaNhanVien.TabIndex = 1;
-            this.LabelSuaNhanVien.Text = "Sửa nhân viên";
-            // 
-            // LabelThemNhanVien
-            // 
-            this.LabelThemNhanVien.AutoSize = true;
-            this.LabelThemNhanVien.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelThemNhanVien.Location = new System.Drawing.Point(346, 9);
-            this.LabelThemNhanVien.Name = "LabelThemNhanVien";
-            this.LabelThemNhanVien.Size = new System.Drawing.Size(220, 37);
-            this.LabelThemNhanVien.TabIndex = 1;
-            this.LabelThemNhanVien.Text = "Thêm nhân viên";
             // 
             // FormSuaNhanVien
             // 
@@ -519,10 +464,7 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormSuaNhanVien_Paint);
             this.Resize += new System.EventHandler(this.FormSuaNhanVien_Resize);
             this.PanelBackground.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.PanelBackground.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -534,8 +476,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -543,11 +483,7 @@
         #endregion
 
         private System.Windows.Forms.Panel PanelBackground;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label LabelThemNhanVien;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private CTControls.CTButton CTButtonThoat;
+        private System.Windows.Forms.Label LabelSuaNhanVien;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox ComboBoxGioiTinh;
         private System.Windows.Forms.Label LabelNgaySinh;
@@ -568,8 +504,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private CTControls.CTTextBox ctTextBox1;
         private CTControls.CTTextBox CTTextBoxLuong;
+        private CTControls.CTButton CTButtonThoat;
         private CTControls.CTButton CTButtonCapNhat;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label LabelSuaNhanVien;
     }
 }

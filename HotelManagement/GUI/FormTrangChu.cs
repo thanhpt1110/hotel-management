@@ -12,9 +12,15 @@ namespace HotelManagement.GUI
 {
     public partial class FormTrangChu : Form
     {
+        private FormMain formMain;
         public FormTrangChu()
         {
             InitializeComponent();
+        }
+        public FormTrangChu(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
         }
     }
 }

@@ -160,6 +160,15 @@ namespace HotelManagement.GUI
             public Color BottomLeftColor;
             public Color BottomRightColor;
         }
+        private FormBoundsColors GetSameDark()
+        {
+            FormBoundsColors colors = new FormBoundsColors();
+            colors.TopLeftColor = Color.FromArgb(77, 77, 77);
+            colors.TopRightColor = Color.FromArgb(77, 77, 77);
+            colors.BottomLeftColor = Color.FromArgb(77, 77, 77);
+            colors.BottomRightColor = Color.FromArgb(77, 77, 77);
+            return colors;
+        }
         private FormBoundsColors GetFormBoundsColors()
         {
             var fbColor = new FormBoundsColors();
@@ -199,7 +208,8 @@ namespace HotelManagement.GUI
             Rectangle rectForm = this.ClientRectangle;
             int mWidht = rectForm.Width / 2;
             int mHeight = rectForm.Height / 2;
-            var fbColors = GetFormBoundsColors();
+            //var fbColors = GetFormBoundsColors();
+            var fbColors = GetSameDark();
             //Top Left
             DrawPath(rectForm, e.Graphics, fbColors.TopLeftColor);
             //Top Right

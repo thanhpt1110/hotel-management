@@ -18,16 +18,39 @@ namespace HotelManagement.GUI
         private Image PH = Properties.Resources.Phong;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
+        private FormMain formMain;
         public FormDanhSachPhong()
         {
             InitializeComponent();
             LoadFullDataGrid();
         }
 
+        public FormDanhSachPhong(FormMain formMain)
+        {
+            InitializeComponent();
+            this.formMain = formMain;
+            LoadFullDataGrid();
+        }
+
         private void CTButtonThemPhong_Click(object sender, EventArgs e)
         {
-            using (FormThemPhong formThemPhong = new FormThemPhong())
-                formThemPhong.ShowDialog();
+            FormBackground formBackground = new FormBackground(formMain);
+            try
+            {
+                using (FormThemPhong formThemPhong = new FormThemPhong())
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThemPhong.Owner = formBackground;
+                    formThemPhong.ShowDialog();
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachPhong_Load(object sender, EventArgs e)
@@ -109,10 +132,23 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 5)
                 {
-                    using (FormSuaPhong formSuaPhong = new FormSuaPhong())
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
                     {
-                        formSuaPhong.ShowDialog();
+                        using (FormSuaPhong formSuaPhong = new FormSuaPhong())
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formSuaPhong.Owner = formBackground;
+                            formSuaPhong.ShowDialog();
+                            formBackground.Dispose();
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
                 }
                 if (x == 6)
                 {
