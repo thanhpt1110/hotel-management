@@ -49,6 +49,8 @@
             this.CTRadioButtonPhongDangThue = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDaDat = new HotelManagement.CTControls.CTRadioButton();
             this.PanelTitle = new System.Windows.Forms.Panel();
+            this.LabelChonGio = new System.Windows.Forms.Label();
+            this.LabelChonNgay = new System.Windows.Forms.Label();
             this.ctTimePicker1 = new HotelManagement.CTControls.CTTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
@@ -69,8 +71,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.LabelChonNgay = new System.Windows.Forms.Label();
-            this.LabelChonGio = new System.Windows.Forms.Label();
             this.PanelLocPhong.SuspendLayout();
             this.PanelTinhTrangPhong.SuspendLayout();
             this.PanelLoaiPhong.SuspendLayout();
@@ -401,6 +401,28 @@
             this.PanelTitle.Size = new System.Drawing.Size(1007, 53);
             this.PanelTitle.TabIndex = 3;
             // 
+            // LabelChonGio
+            // 
+            this.LabelChonGio.AutoSize = true;
+            this.LabelChonGio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelChonGio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LabelChonGio.Location = new System.Drawing.Point(178, 1);
+            this.LabelChonGio.Name = "LabelChonGio";
+            this.LabelChonGio.Size = new System.Drawing.Size(56, 15);
+            this.LabelChonGio.TabIndex = 10;
+            this.LabelChonGio.Text = "Chọn giờ";
+            // 
+            // LabelChonNgay
+            // 
+            this.LabelChonNgay.AutoSize = true;
+            this.LabelChonNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelChonNgay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LabelChonNgay.Location = new System.Drawing.Point(19, 1);
+            this.LabelChonNgay.Name = "LabelChonNgay";
+            this.LabelChonNgay.Size = new System.Drawing.Size(65, 15);
+            this.LabelChonNgay.TabIndex = 10;
+            this.LabelChonNgay.Text = "Chọn ngày";
+            // 
             // ctTimePicker1
             // 
             this.ctTimePicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
@@ -635,28 +657,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tầng 1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // LabelChonNgay
-            // 
-            this.LabelChonNgay.AutoSize = true;
-            this.LabelChonNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChonNgay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LabelChonNgay.Location = new System.Drawing.Point(19, 1);
-            this.LabelChonNgay.Name = "LabelChonNgay";
-            this.LabelChonNgay.Size = new System.Drawing.Size(65, 15);
-            this.LabelChonNgay.TabIndex = 10;
-            this.LabelChonNgay.Text = "Chọn ngày";
-            // 
-            // LabelChonGio
-            // 
-            this.LabelChonGio.AutoSize = true;
-            this.LabelChonGio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChonGio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LabelChonGio.Location = new System.Drawing.Point(178, 1);
-            this.LabelChonGio.Name = "LabelChonGio";
-            this.LabelChonGio.Size = new System.Drawing.Size(56, 15);
-            this.LabelChonGio.TabIndex = 10;
-            this.LabelChonGio.Text = "Chọn giờ";
             // 
             // FormSoDoPhong
             // 
