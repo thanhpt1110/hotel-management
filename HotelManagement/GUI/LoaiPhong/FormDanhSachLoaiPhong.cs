@@ -18,17 +18,21 @@ namespace HotelManagement.GUI
         private Image LP = Properties.Resources.LoaiPhong;
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
+        private Image details = Properties.Resources.details;
         private List<LoaiPhong> loaiPhongs;
         private FormMain formMain;
+
         public FormDanhSachLoaiPhong()
         {
             InitializeComponent();
         }
+
         public FormDanhSachLoaiPhong(FormMain formMain)
         {
             InitializeComponent();
             this.formMain = formMain;
         }
+
         private void CTButtonThemLoaiPhong_Click(object sender, EventArgs e)
         {
             FormBackground formBackground = new FormBackground(formMain);
@@ -69,7 +73,7 @@ namespace HotelManagement.GUI
             grid.Rows.Clear();
             foreach(LoaiPhong loaiPhong in this.loaiPhongs)
             {
-                grid.Rows.Add(LP, loaiPhong.MaLPH, loaiPhong.TenLPH, loaiPhong.SoGiuong, loaiPhong.SoNguoiToiDa, loaiPhong.GiaNgay.ToString("#,#"), loaiPhong.GiaGio.ToString("#,#"), edit, delete);
+                grid.Rows.Add(LP, loaiPhong.MaLPH, loaiPhong.TenLPH, loaiPhong.SoGiuong, loaiPhong.SoNguoiToiDa, loaiPhong.GiaNgay.ToString("#,#"), loaiPhong.GiaGio.ToString("#,#"), details, edit, delete);
             }    
         }    
         private void buttonExport_Click(object sender, EventArgs e)
@@ -85,7 +89,7 @@ namespace HotelManagement.GUI
                     int col = grid.Columns.Count;
 
                     // Get Header text of Column
-                    for (int i = 1; i < col - 2 + 1; i++)
+                    for (int i = 1; i < col - 3 + 1; i++)
                     {
                         if (i == 1) continue;
                         XcelApp.Cells[1, i - 1] = grid.Columns[i - 1].HeaderText;
@@ -94,7 +98,7 @@ namespace HotelManagement.GUI
                     // Get data of cells
                     for (int i = 0; i < row; i++)
                     {
-                        for (int j = 1; j < col - 2; j++)
+                        for (int j = 1; j < col - 3; j++)
                         {
                             XcelApp.Cells[i + 2, j] = grid.Rows[i].Cells[j].Value.ToString();
                         }
@@ -124,8 +128,29 @@ namespace HotelManagement.GUI
             int x = e.ColumnIndex, y = e.RowIndex;
             if (y >= 0)
             {
-                // If click Update button 
+                // IF click Details button
                 if (x == 7)
+                {
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
+                    {
+                        using (FormDanhSachChiTietTienNghi formDanhSachChiTietTienNghi = new FormDanhSachChiTietTienNghi(formMain))
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formDanhSachChiTietTienNghi.Owner = formBackground;
+                            formDanhSachChiTietTienNghi.ShowDialog();
+                            formBackground.Dispose();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    }
+                    finally { formBackground.Dispose(); }
+                }
+                // If click Update button 
+                if (x == 8)
                 {
                     FormBackground formBackground = new FormBackground(formMain);
                     try
@@ -145,7 +170,7 @@ namespace HotelManagement.GUI
                     }
                     finally { formBackground.Dispose(); }
                 }
-                if (x == 8)
+                if (x == 9)
                 {
                     // If click Delete button 
                     MessageBox.Show("Clicked Delete button");
@@ -162,7 +187,7 @@ namespace HotelManagement.GUI
             if (Array.IndexOf(arrX, x) != -1)
                 isExists = true;
 
-            if (y >= 0 && x == 7 || y >= 0 && x == 8 || y == -1 && isExists)
+            if (y >= 0 && x == 7 || y >= 0 && x == 8 || y >= 0 && x == 9 || y == -1 && isExists)
                 grid.Cursor = Cursors.Hand;
             else
                 grid.Cursor = Cursors.Default;
