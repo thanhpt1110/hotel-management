@@ -49,6 +49,7 @@
             this.CTRadioButtonPhongDangThue = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDaDat = new HotelManagement.CTControls.CTRadioButton();
             this.PanelTitle = new System.Windows.Forms.Panel();
+            this.ctTimePicker1 = new HotelManagement.CTControls.CTTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
             this.ctDatePicker1 = new HotelManagement.CTControls.CTDatePicker();
@@ -68,6 +69,8 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.LabelChonNgay = new System.Windows.Forms.Label();
+            this.LabelChonGio = new System.Windows.Forms.Label();
             this.PanelLocPhong.SuspendLayout();
             this.PanelTinhTrangPhong.SuspendLayout();
             this.PanelLoaiPhong.SuspendLayout();
@@ -386,6 +389,9 @@
             // 
             this.PanelTitle.AutoScroll = true;
             this.PanelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.PanelTitle.Controls.Add(this.LabelChonGio);
+            this.PanelTitle.Controls.Add(this.LabelChonNgay);
+            this.PanelTitle.Controls.Add(this.ctTimePicker1);
             this.PanelTitle.Controls.Add(this.pictureBox1);
             this.PanelTitle.Controls.Add(this.ctTextBox1);
             this.PanelTitle.Controls.Add(this.ctDatePicker1);
@@ -395,11 +401,25 @@
             this.PanelTitle.Size = new System.Drawing.Size(1007, 53);
             this.PanelTitle.TabIndex = 3;
             // 
+            // ctTimePicker1
+            // 
+            this.ctTimePicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ctTimePicker1.BorderColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ctTimePicker1.BorderSize = 1;
+            this.ctTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctTimePicker1.Location = new System.Drawing.Point(167, 11);
+            this.ctTimePicker1.MinimumSize = new System.Drawing.Size(0, 35);
+            this.ctTimePicker1.Name = "ctTimePicker1";
+            this.ctTimePicker1.Size = new System.Drawing.Size(132, 35);
+            this.ctTimePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ctTimePicker1.TabIndex = 3;
+            this.ctTimePicker1.TextColor = System.Drawing.Color.Black;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(388, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(384, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 2;
@@ -409,13 +429,13 @@
             // 
             this.ctTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ctTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ctTextBox1.BorderColor = System.Drawing.Color.DimGray;
-            this.ctTextBox1.BorderFocusColor = System.Drawing.Color.Black;
+            this.ctTextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.ctTextBox1.BorderFocusColor = System.Drawing.Color.DimGray;
             this.ctTextBox1.BorderRadius = 5;
             this.ctTextBox1.BorderSize = 1;
             this.ctTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctTextBox1.IsFocused = false;
-            this.ctTextBox1.Location = new System.Drawing.Point(383, 8);
+            this.ctTextBox1.Location = new System.Drawing.Point(379, 8);
             this.ctTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ctTextBox1.Multiline = false;
             this.ctTextBox1.Name = "ctTextBox1";
@@ -433,11 +453,14 @@
             // 
             this.ctDatePicker1.BorderColor = System.Drawing.SystemColors.AppWorkspace;
             this.ctDatePicker1.BorderSize = 1;
-            this.ctDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.ctDatePicker1.Location = new System.Drawing.Point(11, 8);
+            this.ctDatePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctDatePicker1.CustomFormat = "dd, MMM, yyyy";
+            this.ctDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctDatePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ctDatePicker1.Location = new System.Drawing.Point(9, 11);
             this.ctDatePicker1.MinimumSize = new System.Drawing.Size(0, 35);
             this.ctDatePicker1.Name = "ctDatePicker1";
-            this.ctDatePicker1.Size = new System.Drawing.Size(209, 35);
+            this.ctDatePicker1.Size = new System.Drawing.Size(128, 35);
             this.ctDatePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ctDatePicker1.TabIndex = 0;
             this.ctDatePicker1.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -611,6 +634,28 @@
             this.label1.Text = "Tầng 1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // LabelChonNgay
+            // 
+            this.LabelChonNgay.AutoSize = true;
+            this.LabelChonNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelChonNgay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LabelChonNgay.Location = new System.Drawing.Point(19, 1);
+            this.LabelChonNgay.Name = "LabelChonNgay";
+            this.LabelChonNgay.Size = new System.Drawing.Size(65, 15);
+            this.LabelChonNgay.TabIndex = 10;
+            this.LabelChonNgay.Text = "Chọn ngày";
+            // 
+            // LabelChonGio
+            // 
+            this.LabelChonGio.AutoSize = true;
+            this.LabelChonGio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelChonGio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LabelChonGio.Location = new System.Drawing.Point(178, 1);
+            this.LabelChonGio.Name = "LabelChonGio";
+            this.LabelChonGio.Size = new System.Drawing.Size(56, 15);
+            this.LabelChonGio.TabIndex = 10;
+            this.LabelChonGio.Text = "Chọn giờ";
+            // 
             // FormSoDoPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -633,6 +678,7 @@
             this.PanelRadioButtonTrangThaiPhong.ResumeLayout(false);
             this.PanelRadioButtonTrangThaiPhong.PerformLayout();
             this.PanelTitle.ResumeLayout(false);
+            this.PanelTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelSoDo.ResumeLayout(false);
             this.PanelSoDo.PerformLayout();
@@ -691,5 +737,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private CTControls.CTTimePicker ctTimePicker1;
+        private System.Windows.Forms.Label LabelChonGio;
+        private System.Windows.Forms.Label LabelChonNgay;
     }
 }

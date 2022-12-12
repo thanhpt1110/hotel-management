@@ -34,6 +34,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.staffResize;
             this.pictureBox1.Location = new System.Drawing.Point(186, 205);
             this.pictureBox1.Name = "pictureBox1";
