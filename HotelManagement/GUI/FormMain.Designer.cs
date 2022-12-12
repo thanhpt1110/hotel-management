@@ -93,7 +93,7 @@
             // 
             // panelInfomation
             // 
-            this.panelInfomation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(160)))), ((int)(((byte)(170)))));
+            this.panelInfomation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(145)))), ((int)(((byte)(153)))));
             this.panelInfomation.Controls.Add(this.labelPhienBan);
             this.panelInfomation.Controls.Add(this.labelBanQuyen);
             this.panelInfomation.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -152,7 +152,8 @@
             this.ButtonThongKe.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonThongKe.FlatAppearance.BorderSize = 0;
             this.ButtonThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonThongKe.ForeColor = System.Drawing.Color.Black;
             this.ButtonThongKe.Image = global::HotelManagement.Properties.Resources.MenuThongKe;
             this.ButtonThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonThongKe.Location = new System.Drawing.Point(0, 662);
@@ -173,7 +174,8 @@
             this.ButtonDanhSachTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonDanhSachTaiKhoan.FlatAppearance.BorderSize = 0;
             this.ButtonDanhSachTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDanhSachTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachTaiKhoan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachTaiKhoan.ForeColor = System.Drawing.Color.Black;
             this.ButtonDanhSachTaiKhoan.Image = global::HotelManagement.Properties.Resources.MenuQuanLyTaiKhoan;
             this.ButtonDanhSachTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonDanhSachTaiKhoan.Location = new System.Drawing.Point(0, 614);
@@ -194,7 +196,8 @@
             this.ButtonDanhSachNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonDanhSachNhanVien.FlatAppearance.BorderSize = 0;
             this.ButtonDanhSachNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDanhSachNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachNhanVien.ForeColor = System.Drawing.Color.Black;
             this.ButtonDanhSachNhanVien.Image = global::HotelManagement.Properties.Resources.MenuQuanLyNhanVien;
             this.ButtonDanhSachNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonDanhSachNhanVien.Location = new System.Drawing.Point(0, 566);
@@ -215,7 +218,8 @@
             this.ButtonDanhSachKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonDanhSachKhachHang.FlatAppearance.BorderSize = 0;
             this.ButtonDanhSachKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDanhSachKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachKhachHang.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachKhachHang.ForeColor = System.Drawing.Color.Black;
             this.ButtonDanhSachKhachHang.Image = global::HotelManagement.Properties.Resources.MenuQuanLyKhachHang;
             this.ButtonDanhSachKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonDanhSachKhachHang.Location = new System.Drawing.Point(0, 518);
@@ -237,7 +241,8 @@
             this.ButtonDanhSachTienNghi.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonDanhSachTienNghi.FlatAppearance.BorderSize = 0;
             this.ButtonDanhSachTienNghi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDanhSachTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachTienNghi.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachTienNghi.ForeColor = System.Drawing.Color.Black;
             this.ButtonDanhSachTienNghi.Image = global::HotelManagement.Properties.Resources.MenuTienNghi;
             this.ButtonDanhSachTienNghi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonDanhSachTienNghi.Location = new System.Drawing.Point(0, 470);
@@ -258,7 +263,8 @@
             this.ButtonDanhSachDichVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonDanhSachDichVu.FlatAppearance.BorderSize = 0;
             this.ButtonDanhSachDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDanhSachDichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachDichVu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachDichVu.ForeColor = System.Drawing.Color.Black;
             this.ButtonDanhSachDichVu.Image = global::HotelManagement.Properties.Resources.MenuQuanLyDichVu;
             this.ButtonDanhSachDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonDanhSachDichVu.Location = new System.Drawing.Point(0, 422);
@@ -279,7 +285,8 @@
             this.ButtonDanhSachHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonDanhSachHoaDon.FlatAppearance.BorderSize = 0;
             this.ButtonDanhSachHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDanhSachHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachHoaDon.ForeColor = System.Drawing.Color.Black;
             this.ButtonDanhSachHoaDon.Image = global::HotelManagement.Properties.Resources.MenuDanhSachHoaDon;
             this.ButtonDanhSachHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonDanhSachHoaDon.Location = new System.Drawing.Point(0, 374);
@@ -300,7 +307,8 @@
             this.ButtonDanhSachDatPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonDanhSachDatPhong.FlatAppearance.BorderSize = 0;
             this.ButtonDanhSachDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonDanhSachDatPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachDatPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonDanhSachDatPhong.ForeColor = System.Drawing.Color.Black;
             this.ButtonDanhSachDatPhong.Image = global::HotelManagement.Properties.Resources.MenuDatPhong;
             this.ButtonDanhSachDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonDanhSachDatPhong.Location = new System.Drawing.Point(0, 326);
@@ -321,7 +329,8 @@
             this.ButtonLoaiPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonLoaiPhong.FlatAppearance.BorderSize = 0;
             this.ButtonLoaiPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonLoaiPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonLoaiPhong.ForeColor = System.Drawing.Color.Black;
             this.ButtonLoaiPhong.Image = global::HotelManagement.Properties.Resources.MenuLoaiPhong;
             this.ButtonLoaiPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonLoaiPhong.Location = new System.Drawing.Point(0, 278);
@@ -342,7 +351,8 @@
             this.ButtonPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonPhong.FlatAppearance.BorderSize = 0;
             this.ButtonPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPhong.ForeColor = System.Drawing.Color.Black;
             this.ButtonPhong.Image = global::HotelManagement.Properties.Resources.MenuPhong;
             this.ButtonPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonPhong.Location = new System.Drawing.Point(0, 230);
@@ -363,7 +373,8 @@
             this.ButtonSoDoPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonSoDoPhong.FlatAppearance.BorderSize = 0;
             this.ButtonSoDoPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonSoDoPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSoDoPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSoDoPhong.ForeColor = System.Drawing.Color.Black;
             this.ButtonSoDoPhong.Image = global::HotelManagement.Properties.Resources.MenuSoDoPhong;
             this.ButtonSoDoPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonSoDoPhong.Location = new System.Drawing.Point(0, 182);
@@ -385,7 +396,8 @@
             this.ButtonTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonTrangChu.FlatAppearance.BorderSize = 0;
             this.ButtonTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonTrangChu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonTrangChu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonTrangChu.ForeColor = System.Drawing.Color.Black;
             this.ButtonTrangChu.Image = global::HotelManagement.Properties.Resources.MenuTrangChu;
             this.ButtonTrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonTrangChu.Location = new System.Drawing.Point(0, 134);
@@ -402,7 +414,7 @@
             // 
             // PanelUser
             // 
-            this.PanelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(169)))), ((int)(((byte)(177)))));
+            this.PanelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.PanelUser.Controls.Add(this.ButtonLabelDangXuat);
             this.PanelUser.Controls.Add(this.LabelTenNguoiDung);
             this.PanelUser.Controls.Add(this.PictureBoxUser);
@@ -521,7 +533,7 @@
             this.labelTenKhachSan.AutoSize = true;
             this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
             this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenKhachSan.ForeColor = System.Drawing.Color.White;
+            this.labelTenKhachSan.ForeColor = System.Drawing.Color.Black;
             this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
             this.labelTenKhachSan.Name = "labelTenKhachSan";
             this.labelTenKhachSan.Size = new System.Drawing.Size(132, 21);

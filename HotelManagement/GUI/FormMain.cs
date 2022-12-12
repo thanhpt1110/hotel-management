@@ -465,25 +465,25 @@ namespace HotelManagement
             ButtonDanhSachNhanVien.BackColor = Color.FromArgb(72, 145, 153);
             ButtonThongKe.BackColor = Color.FromArgb(72, 145, 153);
 
-            ButtonTrangChu.ForeColor = Color.Black;
-            ButtonSoDoPhong.ForeColor = Color.Black;
-            ButtonDanhSachDatPhong.ForeColor = Color.Black;
-            ButtonDanhSachHoaDon.ForeColor = Color.Black;
-            ButtonDanhSachKhachHang.ForeColor = Color.Black;
-            ButtonPhong.ForeColor = Color.Black;
-            ButtonLoaiPhong.ForeColor = Color.Black;
-            ButtonDanhSachDichVu.ForeColor = Color.Black;
-            ButtonDanhSachTienNghi.ForeColor = Color.Black;
-            ButtonDanhSachTaiKhoan.ForeColor = Color.Black;
-            ButtonDanhSachNhanVien.ForeColor = Color.Black;
-            ButtonThongKe.ForeColor = Color.Black;
+            ButtonTrangChu.ForeColor
+                = ButtonSoDoPhong.ForeColor
+                = ButtonDanhSachDatPhong.ForeColor
+                = ButtonDanhSachHoaDon.ForeColor
+                = ButtonDanhSachKhachHang.ForeColor
+                = ButtonPhong.ForeColor
+                = ButtonLoaiPhong.ForeColor
+                = ButtonDanhSachDichVu.ForeColor
+                = ButtonDanhSachTienNghi.ForeColor
+                = ButtonDanhSachTaiKhoan.ForeColor
+                = ButtonDanhSachNhanVien.ForeColor
+                = ButtonThongKe.ForeColor = Color.Black;
         }
 
         private void ButtonDanhSachDatPhong_Click(object sender, EventArgs e)
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonDanhSachDatPhong.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonDanhSachDatPhong.BackColor = Color.FromArgb(233, 117, 32);
             ButtonDanhSachDatPhong.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachPhieuThue(this));
@@ -493,7 +493,7 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonSoDoPhong.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonSoDoPhong.BackColor = Color.FromArgb(233, 117, 32);
             ButtonSoDoPhong.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormSoDoPhong(this));
@@ -504,7 +504,7 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonDanhSachHoaDon.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonDanhSachHoaDon.BackColor = Color.FromArgb(233, 117, 32);
             ButtonDanhSachHoaDon.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachHoaDon(this));
@@ -514,7 +514,7 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonTrangChu.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonTrangChu.BackColor = Color.FromArgb(233, 117, 32);
             ButtonTrangChu.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormTrangChu(this));
@@ -524,7 +524,7 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonDanhSachKhachHang.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonDanhSachKhachHang.BackColor = Color.FromArgb(233, 117, 32);
             ButtonDanhSachKhachHang.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachKhachHang(this));
@@ -533,7 +533,7 @@ namespace HotelManagement
         private void ButtonPhong_Click(object sender, EventArgs e)
         {   //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonPhong.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonPhong.BackColor = Color.FromArgb(233, 117, 32);
             ButtonPhong.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachPhong(this));
@@ -543,7 +543,7 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonLoaiPhong.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonLoaiPhong.BackColor = Color.FromArgb(233, 117, 32);
             ButtonLoaiPhong.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachLoaiPhong(this));
@@ -552,7 +552,7 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonDanhSachDichVu.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonDanhSachDichVu.BackColor = Color.FromArgb(233, 117, 32);
             ButtonDanhSachDichVu.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachDichVu(this));
@@ -562,7 +562,7 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonDanhSachTienNghi.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonDanhSachTienNghi.BackColor = Color.FromArgb(233, 117, 32);
             ButtonDanhSachTienNghi.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachTienNghi(this));
@@ -573,7 +573,7 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonDanhSachTaiKhoan.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonDanhSachTaiKhoan.BackColor = Color.FromArgb(233, 117, 32);
             ButtonDanhSachTaiKhoan.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachTaiKhoan(this));
@@ -583,7 +583,7 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonDanhSachNhanVien.BackColor = Color.FromArgb(64, 126, 134);
+            ButtonDanhSachNhanVien.BackColor = Color.FromArgb(233, 117, 32);
             ButtonDanhSachNhanVien.ForeColor = Color.White;
             //Open Child Form
             openChildForm(new FormDanhSachNhanVien(this));
@@ -598,8 +598,8 @@ namespace HotelManagement
         {
             //Change color button on side bar
             SetAllButtonNormalColor();
-            ButtonThongKe.BackColor = Color.FromArgb(64, 126, 134);
-            ButtonThongKe.ForeColor = Color.White;
+            ButtonThongKe.BackColor = Color.FromArgb(233, 117, 32);
+            
             //Open Child Form
             openChildForm(new FormThongKe(this));
         }

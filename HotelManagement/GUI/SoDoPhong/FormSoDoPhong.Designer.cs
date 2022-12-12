@@ -491,6 +491,7 @@
             // 
             // PanelSoDo
             // 
+            this.PanelSoDo.AutoScroll = true;
             this.PanelSoDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.PanelSoDo.Controls.Add(this.flowLayoutPanel5);
             this.PanelSoDo.Controls.Add(this.panel5);

@@ -267,6 +267,8 @@
             this.CTDatePickerChonNgayHD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CTDatePickerChonNgayHD.BorderColor = System.Drawing.Color.Silver;
             this.CTDatePickerChonNgayHD.BorderSize = 1;
+            this.CTDatePickerChonNgayHD.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.CTDatePickerChonNgayHD.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.CTDatePickerChonNgayHD.CustomFormat = "dd MMMM, yyyy";
             this.CTDatePickerChonNgayHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.CTDatePickerChonNgayHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
