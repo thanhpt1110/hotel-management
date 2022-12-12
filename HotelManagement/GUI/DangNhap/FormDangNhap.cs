@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.CTControls;
 
 namespace HotelManagement.GUI
 {
@@ -37,7 +38,7 @@ namespace HotelManagement.GUI
             }
             else
             {
-                MessageBox.Show("Sai thông tin đăng nhập.", "THÔNG BÁO");
+                CTMessageBox.Show("Sai thông tin đăng nhập.", "THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }    
 
         }
