@@ -24,5 +24,25 @@ namespace HotelManagement.BUS
         {
             return CTDP_DAO.Instance.getKhoangTG(MaCTDP);
         }
+        public CTDP FindCTDP(string MaPhong, DateTime currentTime)
+        {
+            return CTDP_DAO.Instance.FindCTDP(MaPhong, currentTime);
+        }
+        public List<CTDP> getCTDPonTime(DateTime Checkin, DateTime Checkout, List<CTDP> DSPhongThem)
+        {
+            return CTDP_DAO.Instance.getCTDPonTime(Checkin, Checkout, DSPhongThem);
+        }
+        public string getNextCTDP()
+        {
+            return CTDP_DAO.Instance.getNextCTDP();
+        }
+        public void UpdateOrAddCTDP(CTDP ctdp)
+        {
+            CTDP_DAO.Instance.UpdateOrAddCTDP(ctdp);
+        }
+        public string getNextCTDPwithList(List<CTDP> list)
+        {
+            return CTDP_DAO.Instance.getNextCTDPwithList(list);
+        }    
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,13 +12,23 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+// static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using HotelManagement.GUI;
 namespace HotelManagement.CTControls
 {
     public partial class CTRoomTrong : UserControl
     {
         //Methods Set Value
+        Phong phong = new Phong();
+        FormSoDoPhong formSoDoPhong;
+        public string getMaPhong()
+        {
+            return this.LabelMaPhong.Text;
+        }
+        public void setLoaiPhong(string LoaiPhong)
+        {
+            this.LabelLoaiPhong.Text = LoaiPhong;
+        }
         public void setMaPhong(string maPhong)
         {
             this.LabelMaPhong.Text = maPhong;
@@ -51,13 +62,8 @@ namespace HotelManagement.CTControls
             PictureBoxTrangThaiDonDep.Image = Properties.Resources.DaDonDep;
             LabelTrangThaiDonDep.Text = "Đã dọn dẹp";
         }
-        public void setDangSuaChua()
+        public void setGhiChu(string ghiChu)
         {
-            setThoiGianNone();
-            setTrangThai("Đang sửa chữa");
-            PictureBoxTrangThai.Image= Properties.Resources.DangSuaChuaBlack;
-            PictureBoxTrangThaiDonDep.Image = Properties.Resources.DangSuaChuaBlackMin;
-            LabelTrangThaiDonDep.Text = "Đang sửa chữa";
         }
         //Fields
         private int borderSize = 0;
@@ -110,6 +116,17 @@ namespace HotelManagement.CTControls
             this.ForeColor = Color.White;
             InitializeComponent();
         }
+        public CTRoomTrong(Phong phong, FormSoDoPhong soDoPhong)
+        {
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.Size = new Size(280, 155);
+            this.BackColor = Color.FromArgb(113, 201, 103);
+            this.ForeColor = Color.White;
+            this.phong = phong;
+            InitializeComponent();
+            this.formSoDoPhong = soDoPhong;
+        }
+
 
         //Methods
         private void Button_Resize(object sender, EventArgs e)
