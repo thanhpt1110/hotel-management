@@ -55,7 +55,6 @@
             this.Name = "FormTrangChu";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "FormTrangChu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
