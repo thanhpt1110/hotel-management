@@ -44,7 +44,7 @@
             // FormThongKe
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1244, 794);
             this.Controls.Add(this.LabelThongKe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

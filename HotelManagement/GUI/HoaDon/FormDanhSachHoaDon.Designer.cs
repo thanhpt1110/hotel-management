@@ -36,10 +36,6 @@
             this.LabelChonNgay = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grid = new System.Windows.Forms.DataGridView();
-            this.buttonExport = new HotelManagement.CTControls.CTButton();
-            this.ctPanel1 = new CTPanel.CTPanel();
-            this.CTTextBoxTimTheoCCCD = new HotelManagement.CTControls.CTTextBox();
-            this.CTDatePickerChonNgayHD = new HotelManagement.CTControls.CTDatePicker();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +44,10 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.buttonExport = new HotelManagement.CTControls.CTButton();
+            this.ctPanel1 = new CTPanel.CTPanel();
+            this.CTTextBoxTimTheoCCCD = new HotelManagement.CTControls.CTTextBox();
+            this.CTDatePickerChonNgayHD = new HotelManagement.CTControls.CTDatePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
@@ -139,84 +139,6 @@
             this.grid.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseLeave);
             this.grid.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_CellMouseMove);
             // 
-            // buttonExport
-            // 
-            this.buttonExport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
-            this.buttonExport.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
-            this.buttonExport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
-            this.buttonExport.BorderRadius = 10;
-            this.buttonExport.BorderSize = 0;
-            this.buttonExport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExport.FlatAppearance.BorderSize = 0;
-            this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExport.ForeColor = System.Drawing.Color.Black;
-            this.buttonExport.Location = new System.Drawing.Point(820, 30);
-            this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(150, 40);
-            this.buttonExport.TabIndex = 32;
-            this.buttonExport.Text = "Xuất file Excel";
-            this.buttonExport.TextColor = System.Drawing.Color.Black;
-            this.buttonExport.UseVisualStyleBackColor = false;
-            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
-            // 
-            // ctPanel1
-            // 
-            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel1.BackColor = System.Drawing.Color.White;
-            this.ctPanel1.BorderRadius = 50;
-            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel1.GradientAngle = 90F;
-            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel1.Location = new System.Drawing.Point(45, 95);
-            this.ctPanel1.Name = "ctPanel1";
-            this.ctPanel1.Size = new System.Drawing.Size(1142, 704);
-            this.ctPanel1.TabIndex = 30;
-            // 
-            // CTTextBoxTimTheoCCCD
-            // 
-            this.CTTextBoxTimTheoCCCD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CTTextBoxTimTheoCCCD.BackColor = System.Drawing.SystemColors.Window;
-            this.CTTextBoxTimTheoCCCD.BorderColor = System.Drawing.Color.DarkGray;
-            this.CTTextBoxTimTheoCCCD.BorderFocusColor = System.Drawing.Color.Black;
-            this.CTTextBoxTimTheoCCCD.BorderRadius = 5;
-            this.CTTextBoxTimTheoCCCD.BorderSize = 1;
-            this.CTTextBoxTimTheoCCCD.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTTextBoxTimTheoCCCD.IsFocused = false;
-            this.CTTextBoxTimTheoCCCD.Location = new System.Drawing.Point(45, 30);
-            this.CTTextBoxTimTheoCCCD.Margin = new System.Windows.Forms.Padding(4);
-            this.CTTextBoxTimTheoCCCD.Multiline = false;
-            this.CTTextBoxTimTheoCCCD.Name = "CTTextBoxTimTheoCCCD";
-            this.CTTextBoxTimTheoCCCD.Padding = new System.Windows.Forms.Padding(40, 7, 7, 7);
-            this.CTTextBoxTimTheoCCCD.PasswordChar = false;
-            this.CTTextBoxTimTheoCCCD.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.CTTextBoxTimTheoCCCD.PlaceholderText = "Tìm theo số CCCD khách hàng";
-            this.CTTextBoxTimTheoCCCD.ReadOnly = false;
-            this.CTTextBoxTimTheoCCCD.Size = new System.Drawing.Size(275, 35);
-            this.CTTextBoxTimTheoCCCD.TabIndex = 2;
-            this.CTTextBoxTimTheoCCCD.Texts = "";
-            this.CTTextBoxTimTheoCCCD.UnderlineedStyle = false;
-            this.CTTextBoxTimTheoCCCD._TextChanged += new System.EventHandler(this.CTTextBoxTimTheoCCCD__TextChanged);
-            this.CTTextBoxTimTheoCCCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CTTextBoxTimTheoCCCD_KeyDown);
-            // 
-            // CTDatePickerChonNgayHD
-            // 
-            this.CTDatePickerChonNgayHD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CTDatePickerChonNgayHD.BorderColor = System.Drawing.Color.Silver;
-            this.CTDatePickerChonNgayHD.BorderSize = 1;
-            this.CTDatePickerChonNgayHD.CustomFormat = "dd MMMM, yyyy";
-            this.CTDatePickerChonNgayHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.CTDatePickerChonNgayHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CTDatePickerChonNgayHD.Location = new System.Drawing.Point(1001, 30);
-            this.CTDatePickerChonNgayHD.MinimumSize = new System.Drawing.Size(0, 35);
-            this.CTDatePickerChonNgayHD.Name = "CTDatePickerChonNgayHD";
-            this.CTDatePickerChonNgayHD.Size = new System.Drawing.Size(186, 35);
-            this.CTDatePickerChonNgayHD.SkinColor = System.Drawing.Color.White;
-            this.CTDatePickerChonNgayHD.TabIndex = 0;
-            this.CTDatePickerChonNgayHD.TextColor = System.Drawing.Color.Black;
-            // 
             // Column1
             // 
             this.Column1.FillWeight = 50F;
@@ -278,10 +200,88 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
+            // buttonExport
+            // 
+            this.buttonExport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
+            this.buttonExport.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
+            this.buttonExport.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(192)))), ((int)(((byte)(47)))));
+            this.buttonExport.BorderRadius = 10;
+            this.buttonExport.BorderSize = 0;
+            this.buttonExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExport.FlatAppearance.BorderSize = 0;
+            this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExport.ForeColor = System.Drawing.Color.Black;
+            this.buttonExport.Location = new System.Drawing.Point(820, 30);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(150, 40);
+            this.buttonExport.TabIndex = 32;
+            this.buttonExport.Text = "Xuất file Excel";
+            this.buttonExport.TextColor = System.Drawing.Color.Black;
+            this.buttonExport.UseVisualStyleBackColor = false;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
+            // 
+            // ctPanel1
+            // 
+            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel1.BackColor = System.Drawing.Color.White;
+            this.ctPanel1.BorderRadius = 50;
+            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel1.GradientAngle = 90F;
+            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.Location = new System.Drawing.Point(45, 95);
+            this.ctPanel1.Name = "ctPanel1";
+            this.ctPanel1.Size = new System.Drawing.Size(1142, 704);
+            this.ctPanel1.TabIndex = 30;
+            // 
+            // CTTextBoxTimTheoCCCD
+            // 
+            this.CTTextBoxTimTheoCCCD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CTTextBoxTimTheoCCCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.CTTextBoxTimTheoCCCD.BorderColor = System.Drawing.Color.DarkGray;
+            this.CTTextBoxTimTheoCCCD.BorderFocusColor = System.Drawing.Color.Black;
+            this.CTTextBoxTimTheoCCCD.BorderRadius = 5;
+            this.CTTextBoxTimTheoCCCD.BorderSize = 1;
+            this.CTTextBoxTimTheoCCCD.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTTextBoxTimTheoCCCD.IsFocused = false;
+            this.CTTextBoxTimTheoCCCD.Location = new System.Drawing.Point(45, 30);
+            this.CTTextBoxTimTheoCCCD.Margin = new System.Windows.Forms.Padding(4);
+            this.CTTextBoxTimTheoCCCD.Multiline = false;
+            this.CTTextBoxTimTheoCCCD.Name = "CTTextBoxTimTheoCCCD";
+            this.CTTextBoxTimTheoCCCD.Padding = new System.Windows.Forms.Padding(40, 7, 7, 7);
+            this.CTTextBoxTimTheoCCCD.PasswordChar = false;
+            this.CTTextBoxTimTheoCCCD.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.CTTextBoxTimTheoCCCD.PlaceholderText = "Tìm theo số CCCD khách hàng";
+            this.CTTextBoxTimTheoCCCD.ReadOnly = false;
+            this.CTTextBoxTimTheoCCCD.Size = new System.Drawing.Size(275, 35);
+            this.CTTextBoxTimTheoCCCD.TabIndex = 2;
+            this.CTTextBoxTimTheoCCCD.Texts = "";
+            this.CTTextBoxTimTheoCCCD.UnderlineedStyle = false;
+            this.CTTextBoxTimTheoCCCD._TextChanged += new System.EventHandler(this.CTTextBoxTimTheoCCCD__TextChanged);
+            this.CTTextBoxTimTheoCCCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CTTextBoxTimTheoCCCD_KeyDown);
+            // 
+            // CTDatePickerChonNgayHD
+            // 
+            this.CTDatePickerChonNgayHD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CTDatePickerChonNgayHD.BorderColor = System.Drawing.Color.Silver;
+            this.CTDatePickerChonNgayHD.BorderSize = 1;
+            this.CTDatePickerChonNgayHD.CustomFormat = "dd MMMM, yyyy";
+            this.CTDatePickerChonNgayHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.CTDatePickerChonNgayHD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.CTDatePickerChonNgayHD.Location = new System.Drawing.Point(1001, 30);
+            this.CTDatePickerChonNgayHD.MinimumSize = new System.Drawing.Size(0, 35);
+            this.CTDatePickerChonNgayHD.Name = "CTDatePickerChonNgayHD";
+            this.CTDatePickerChonNgayHD.Size = new System.Drawing.Size(186, 35);
+            this.CTDatePickerChonNgayHD.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.CTDatePickerChonNgayHD.TabIndex = 0;
+            this.CTDatePickerChonNgayHD.TextColor = System.Drawing.Color.Black;
+            // 
             // FormDanhSachHoaDon
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1260, 833);
             this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.grid);
