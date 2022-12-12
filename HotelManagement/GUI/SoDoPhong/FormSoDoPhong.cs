@@ -34,16 +34,16 @@ namespace HotelManagement.GUI
             List<CTRoomDangSuaChua> roomDangSuaChuas = new List<CTRoomDangSuaChua>();
             List<CTRoomDangThue> roomDangThues = new List<CTRoomDangThue>();
             List<CTRoomTrong> roomTrongs = new List<CTRoomTrong>();
-            this.flowPanelTang1.Controls.Clear();
-            this.flowPanelTang2.Controls.Clear();
-            this.flowPanelTang3.Controls.Clear();
-            this.flowPanelTang4.Controls.Clear();
-            this.flowPanelTang5.Controls.Clear();
+            this.flowLayoutPanel1.Controls.Clear();
+            this.flowLayoutPanel2.Controls.Clear();
+            this.flowLayoutPanel3.Controls.Clear();
+            this.flowLayoutPanel4.Controls.Clear();
+            this.flowLayoutPanel5.Controls.Clear();
             phongs = PhongBUS.Instance.GetAllPhong();
 
             foreach (Phong phong in phongs)
             {
-                CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, TimePicker.Value.Date);
+                CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, this.ctDatePicker1.Value.Date);
                 if (phong.TTPH == "Bình thường" && ctdp != null)
                 {
                     if (ctdp.TrangThai == "Đang thuê")
@@ -108,54 +108,54 @@ namespace HotelManagement.GUI
                 foreach (CTRoomDangThue room in roomDangThues)
                 {
                     if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang1.Controls.Add(room);
+                        this.flowLayoutPanel1.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang2.Controls.Add(room);
+                        this.flowLayoutPanel2.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang3.Controls.Add(room);
+                        this.flowLayoutPanel3.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang4.Controls.Add(room);
+                        this.flowLayoutPanel4.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang5.Controls.Add(room);
+                        this.flowLayoutPanel5.Controls.Add(room);
                 }
                 foreach (CTRoomTrong room in roomTrongs)
                 {
                     if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang1.Controls.Add(room);
+                        this.flowLayoutPanel1.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang2.Controls.Add(room);
+                        this.flowLayoutPanel2.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang3.Controls.Add(room);
+                        this.flowLayoutPanel3.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang4.Controls.Add(room);
+                        this.flowLayoutPanel4.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang5.Controls.Add(room);
+                        this.flowLayoutPanel5.Controls.Add(room);
                 }
                 foreach (CTRoomDangSuaChua room in roomDangSuaChuas)
                 {
                     if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang1.Controls.Add(room);
+                        this.flowLayoutPanel1.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang2.Controls.Add(room);
+                        this.flowLayoutPanel2.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang3.Controls.Add(room);
+                        this.flowLayoutPanel3.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang4.Controls.Add(room);
+                        this.flowLayoutPanel4.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang5.Controls.Add(room);
+                        this.flowLayoutPanel5.Controls.Add(room);
                 }
                 foreach (CTRoomDaDat room in roomDaDats)
                 {
                     if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang1.Controls.Add(room);
+                        this.flowLayoutPanel1.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang2.Controls.Add(room);
+                        this.flowLayoutPanel2.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang3.Controls.Add(room);
+                        this.flowLayoutPanel3.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang4.Controls.Add(room);
+                        this.flowLayoutPanel4.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang5.Controls.Add(room);
+                        this.flowLayoutPanel5.Controls.Add(room);
                 }
             }
 
@@ -167,17 +167,17 @@ namespace HotelManagement.GUI
             List<CTRoomDangSuaChua> roomDangSuaChuas = new List<CTRoomDangSuaChua>();
             List<CTRoomDangThue> roomDangThues = new List<CTRoomDangThue>();
             List<CTRoomTrong> roomTrongs = new List<CTRoomTrong>();
-            this.flowPanelTang1.Controls.Clear();
-            this.flowPanelTang2.Controls.Clear();
-            this.flowPanelTang3.Controls.Clear();
-            this.flowPanelTang4.Controls.Clear();
-            this.flowPanelTang5.Controls.Clear();
+            this.flowLayoutPanel1.Controls.Clear();
+            this.flowLayoutPanel2.Controls.Clear();
+            this.flowLayoutPanel3.Controls.Clear();
+            this.flowLayoutPanel4.Controls.Clear();
+            this.flowLayoutPanel5.Controls.Clear();
 
 
 
             foreach (Phong phong in phongs)
             {
-                CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, TimePicker.Value.Date);
+                CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, this.ctDatePicker1.Value.Date);
                 if (phong.TTPH == "Bình thường" && ctdp != null)
                 {
                     if (ctdp.TrangThai == "Đang thuê")
@@ -242,62 +242,58 @@ namespace HotelManagement.GUI
                 foreach (CTRoomDangThue room in roomDangThues)
                 {
                     if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang1.Controls.Add(room);
+                        this.flowLayoutPanel1.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang2.Controls.Add(room);
+                        this.flowLayoutPanel2.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang3.Controls.Add(room);
+                        this.flowLayoutPanel3.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang4.Controls.Add(room);
+                        this.flowLayoutPanel4.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang5.Controls.Add(room);
+                        this.flowLayoutPanel5.Controls.Add(room);
                 }
                 foreach (CTRoomTrong room in roomTrongs)
                 {
                     if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang1.Controls.Add(room);
+                        this.flowLayoutPanel1.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang2.Controls.Add(room);
+                        this.flowLayoutPanel2.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang3.Controls.Add(room);
+                        this.flowLayoutPanel3.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang4.Controls.Add(room);
+                        this.flowLayoutPanel4.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang5.Controls.Add(room);
+                        this.flowLayoutPanel5.Controls.Add(room);
                 }
                 foreach (CTRoomDangSuaChua room in roomDangSuaChuas)
                 {
                     if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang1.Controls.Add(room);
+                        this.flowLayoutPanel1.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang2.Controls.Add(room);
+                        this.flowLayoutPanel2.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang3.Controls.Add(room);
+                        this.flowLayoutPanel3.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang4.Controls.Add(room);
+                        this.flowLayoutPanel4.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang5.Controls.Add(room);
+                        this.flowLayoutPanel5.Controls.Add(room);
                 }
                 foreach (CTRoomDaDat room in roomDaDats)
                 {
                     if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang1.Controls.Add(room);
+                        this.flowLayoutPanel1.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang2.Controls.Add(room);
+                        this.flowLayoutPanel2.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang3.Controls.Add(room);
+                        this.flowLayoutPanel3.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang4.Controls.Add(room);
+                        this.flowLayoutPanel4.Controls.Add(room);
                     else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowPanelTang5.Controls.Add(room);
+                        this.flowLayoutPanel5.Controls.Add(room);
                 }
             }
         }
 
-        private void TimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            this.LoadPhong();
-        }
 
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {
@@ -311,6 +307,11 @@ namespace HotelManagement.GUI
             TextBox textBox = sender as TextBox;
             phongs = PhongBUS.Instance.FindPhongWithMaPH(textBox.Text);
             LoadPhongFind();
+        }
+
+        private void ctDatePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            this.LoadPhong();
         }
     }
 }
