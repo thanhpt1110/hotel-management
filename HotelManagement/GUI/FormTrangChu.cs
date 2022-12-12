@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.CTControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,11 @@ namespace HotelManagement.GUI
         {
             InitializeComponent();
             this.formMain = formMain;
+        }
+
+        private void CTButtonTest_Click(object sender, EventArgs e)
+        {
+            CTMessageBox.Show("Sinh viên khoa công nghệ phần mềm - Đại học Công Nghệ Thông Tin - Đại học Quốc gia Thành Phố Hồ Chí Minh","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }
