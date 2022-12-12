@@ -9,12 +9,13 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HotelManagement.DTO;
 namespace HotelManagement.GUI
 {
     public partial class FormThongTinNhanVien : Form
     {
         //Fields
+        NhanVien nhanVien;
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
@@ -26,6 +27,15 @@ namespace HotelManagement.GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+        }
+        public FormThongTinNhanVien(NhanVien nhanVien)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.nhanVien = nhanVien;
+            InitializeComponent();
+            LoadForm();
         }
         //Control Box
 
@@ -46,6 +56,27 @@ namespace HotelManagement.GUI
             }
         }
 
+        private void LoadForm()
+        {
+            this.CTTextBoxNhapCCCD.RemovePlaceholder();
+            this.ctTextBoxGioiTinh.RemovePlaceholder();
+            this.CTTextBoxNhapChucVu.RemovePlaceholder();
+            this.ctTextBoxNgaySinh.RemovePlaceholder();
+            this.ctTextBoxEmail.RemovePlaceholder();
+            this.ctTextBoxSDT.RemovePlaceholder();
+            this.CTTextBoxDiaChi.RemovePlaceholder();
+            this.CTTextBoxNhapHoTen.RemovePlaceholder();
+            this.CTTextBoxLuong.RemovePlaceholder();
+
+            this.CTTextBoxNhapCCCD.Texts = this.nhanVien.CCCD;
+            this.ctTextBoxGioiTinh.Texts = this.nhanVien.GioiTinh;
+            this.CTTextBoxNhapChucVu.Texts = this.nhanVien.ChucVu;
+            this.ctTextBoxNgaySinh.Texts = this.nhanVien.NgaySinh.ToString("dd/MM/yyyy");
+            this.ctTextBoxEmail.Texts = this.nhanVien.Email;
+            this.ctTextBoxSDT.Texts = this.nhanVien.SDT;
+            this.CTTextBoxDiaChi.Texts = this.nhanVien.DiaChi;
+            this.CTTextBoxNhapHoTen.Texts = this.nhanVien.TenNV;
+        }
         //Private Methods
         //Private Methods
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)

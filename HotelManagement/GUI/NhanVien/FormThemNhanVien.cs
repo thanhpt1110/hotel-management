@@ -9,6 +9,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.DTO;
+using HotelManagement.BUS;
+using HotelManagement.CTControls;
+using ApplicationSettings;
 
 namespace HotelManagement.GUI
 {
@@ -203,6 +207,90 @@ namespace HotelManagement.GUI
         private void FormThemNhanVien_Load(object sender, EventArgs e)
         {
             this.ActiveControl = LabelThemNhanVien;
+           
         }
+        private void CTTextBoxNhapHoTen__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxOnlyChu = sender as TextBox;
+            textBoxOnlyChu.KeyPress += TextBoxOnlyChu_KeyPress;
+        }
+
+        private void TextBoxOnlyChu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
+        }
+
+        private void CTTextBoxLuong__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxMoney = sender as TextBox;
+            textBoxMoney.KeyPress += TextBoxMoney_KeyPress;
+            textBoxMoney.TextChanged += TextBoxMoney_TextChanged;
+        }
+
+        private void TextBoxMoney_TextChanged(object sender, EventArgs e)
+        {
+            TextBoxType.Instance.CurrencyType(sender, e);
+        }
+
+        private void TextBoxMoney_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
+        }
+
+        private void ctTextBoxSDT__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxOnlyNum = sender as TextBox;
+            textBoxOnlyNum.MaxLength = 10;
+            textBoxOnlyNum.KeyPress += TextBoxOnlyNum_KeyPress;
+        }
+        private void ctTextBoxCCCD__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxOnlyNum = sender as TextBox;
+            textBoxOnlyNum.MaxLength = 12;
+            textBoxOnlyNum.KeyPress += TextBoxOnlyNum_KeyPress;
+        }
+        private void TextBoxOnlyNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
+
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NhanVien nhanVien = new NhanVien();
+                foreach (NhanVien nhanVien1 in NhanVienBUS.Instance.GetAllNhanViens())
+                {
+                    if (nhanVien1.CCCD == this.CTTextBoxNhapCCCD.Texts)
+                    {
+                        CTMessageBox.Show("Số căn cước công dân trùng với nhân viên khác", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else if (nhanVien1.SDT == this.ctTextBoxSDT.Texts)
+                    {
+                        CTMessageBox.Show("Số điện thoại này trùng với nhân viên khác", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                nhanVien.MaNV = NhanVienBUS.Instance.GetMaNVNext();
+                nhanVien.ChucVu = this.CTTextBoxNhapChucVu.Texts;
+                nhanVien.CCCD = this.CTTextBoxNhapCCCD.Texts;
+                nhanVien.GioiTinh = this.ComboBoxGioiTinh.Text.Trim(' ');
+                nhanVien.NgaySinh = this.ctDatePicker1.Value;
+                nhanVien.Email = this.ctTextBoxEmail.Texts;
+                nhanVien.SDT = this.ctTextBoxSDT.Texts;
+                nhanVien.DiaChi = this.CTTextBoxDiaChi.Texts;
+                nhanVien.TenNV = this.CTTextBoxNhapHoTen.Texts;
+                NhanVienBUS.Instance.UpdateOrInsert(nhanVien);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                CTMessageBox.Show(ex.Message, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

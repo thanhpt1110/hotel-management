@@ -25,5 +25,7 @@ namespace HotelManagement.DTO
         [Required]
         [StringLength(20)]
         public string LoaiDV { get; set; }
+
+        public bool? DaXoa { get; set; }
     }
 }

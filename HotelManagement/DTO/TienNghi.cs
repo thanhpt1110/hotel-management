@@ -16,5 +16,7 @@ namespace HotelManagement.DTO
         [Required]
         [StringLength(50)]
         public string TenTN { get; set; }
+
+        public bool? DaXoa { get; set; }
     }
 }

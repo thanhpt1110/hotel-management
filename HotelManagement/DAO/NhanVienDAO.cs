@@ -19,9 +19,13 @@ namespace HotelManagement.DAO
         }
         private NhanVienDAO() { }
 
-        public List<NhanVien> GetNhanViens()
+        public List<NhanVien> GetAllNhanViens()
         {
             return db.NhanViens.ToList();
+        }
+        public List<NhanVien> GetNhanViens()
+        {
+            return db.NhanViens.Where(p => p.DaXoa == false).ToList();
         }
         public NhanVien GetNhanVien(string MaNV)
         {
@@ -29,17 +33,21 @@ namespace HotelManagement.DAO
         }
         public void UpdateOrInsert(NhanVien nhanVien)
         {
+            nhanVien.DaXoa = false;
             db.NhanViens.AddOrUpdate(nhanVien);
+            db.SaveChanges();
         }
         public void RemoveNhanVien(NhanVien nhanVien)
         {
-            db.NhanViens.Remove(nhanVien);
+            nhanVien.DaXoa = true;
+            db.NhanViens.AddOrUpdate(nhanVien);
+            db.SaveChanges();
         }
         public List<NhanVien> GetNhanViensWithName(string tenNV)
         {
-            return db.NhanViens.Where(p => p.TenNV.Contains(tenNV)).ToList();
+            return db.NhanViens.Where(p => p.TenNV.Contains(tenNV) && p.DaXoa == false).ToList();
         }
-        public string GetMaKHNext()
+        public string GetMaNVNext()
         {
             List<NhanVien> NV = db.NhanViens.ToList();
             string MaMax = NV[NV.Count - 1].MaNV.ToString();

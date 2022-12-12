@@ -21,7 +21,7 @@ namespace HotelManagement.DAO
 
         public bool CheckLogin(string username, string password)
         {
-            TaiKhoan tk = db.TaiKhoans.Where(p => p.TenTK == username && p.Password == password).SingleOrDefault();
+            TaiKhoan tk = db.TaiKhoans.Where(p => p.TenTK == username && p.Password == password && p.DaXoa==false).SingleOrDefault();
             if (tk == null)
                 return false;
             return true;
@@ -46,7 +46,8 @@ namespace HotelManagement.DAO
         }
         public void RemoveTk(TaiKhoan taiKhoan)
         {
-            db.TaiKhoans.Remove(taiKhoan);
+            taiKhoan.DaXoa = true;
+            db.TaiKhoans.AddOrUpdate(taiKhoan);
             db.SaveChanges();
         }
         public TaiKhoan CheckLegit(string username,string email)

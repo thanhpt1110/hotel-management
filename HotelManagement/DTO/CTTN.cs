@@ -20,5 +20,6 @@ namespace HotelManagement.DTO
         public string MaTN { get; set; }
 
         public int? SL { get; set; }
+        public bool? DaXoa { get; set; }
     }
 }

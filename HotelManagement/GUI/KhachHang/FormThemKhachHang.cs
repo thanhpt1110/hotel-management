@@ -215,6 +215,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
+            int flag = 0;
 
             if (this.ctTextBoxName.Texts != "" && this.ctTextBoxQuocTich.Texts != "" && this.ctTextBoxCMND.Texts != "" && this.comboBoxGioiTinh.Text != "  Giới tính")
             {
@@ -227,20 +228,28 @@ namespace HotelManagement.GUI
                         if (dialogResult == DialogResult.Cancel)
                         {
                             this.Close();
+                            return;
                         }
+                        else
+                            flag = 1;
                     }
+                   
                 }
-                KhachHang khachHang1 = new KhachHang();
-                khachHang1.MaKH = KhachHangBUS.Instance.GetMaKHNext();
-                khachHang1.TenKH = this.ctTextBoxName.Texts;
-                khachHang1.QuocTich = this.ctTextBoxQuocTich.Texts;
-                khachHang1.CCCD_Passport = this.ctTextBoxCMND.Texts;
-                khachHang1.SDT = this.ctTextBoxSDT.Texts;
-                khachHang1.GioiTinh = this.comboBoxGioiTinh.Text.Trim(' ');
-                KhachHangBUS.Instance.UpdateOrAdd(khachHang1);
-                MessageBox.Show("Thành công", "THÔNG BÁO", MessageBoxButtons.OK);
-                this.formDanhSachKhachHang.LoadAllGrid();
-                this.Close();
+                 if(flag == 0)
+                {
+                    KhachHang khachHang1 = new KhachHang();
+                    khachHang1.MaKH = KhachHangBUS.Instance.GetMaKHNext();
+                    khachHang1.TenKH = this.ctTextBoxName.Texts;
+                    khachHang1.QuocTich = this.ctTextBoxQuocTich.Texts;
+                    khachHang1.CCCD_Passport = this.ctTextBoxCMND.Texts;
+                    khachHang1.SDT = this.ctTextBoxSDT.Texts;
+                    khachHang1.GioiTinh = this.comboBoxGioiTinh.Text.Trim(' ');
+                    KhachHangBUS.Instance.UpdateOrAdd(khachHang1);
+                    MessageBox.Show("Thành công", "THÔNG BÁO", MessageBoxButtons.OK);
+                    this.formDanhSachKhachHang.LoadAllGrid();
+                    this.Close();
+                }
+
             }
             else
                 MessageBox.Show("Vui lòng nhập thông tin khách hàng", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Hand);

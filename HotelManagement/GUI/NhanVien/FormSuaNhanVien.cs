@@ -9,7 +9,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ApplicationSettings;
+using HotelManagement.BUS;
+using HotelManagement.CTControls;
+using HotelManagement.DTO;
 namespace HotelManagement.GUI
 {
     public partial class FormSuaNhanVien : Form
@@ -18,7 +21,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        NhanVien nhanVien;
         //Constructor
         public FormSuaNhanVien()
         {
@@ -26,6 +29,15 @@ namespace HotelManagement.GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+        }
+        public FormSuaNhanVien(NhanVien nhanVien)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.nhanVien = nhanVien;
+            InitializeComponent();
+            LoadForm();
         }
         //Control Box
 
@@ -45,7 +57,25 @@ namespace HotelManagement.GUI
                 return cp;
             }
         }
+        private void LoadForm()
+        {
+            this.CTTextBoxNhapCCCD.RemovePlaceholder();
+            this.CTTextBoxNhapChucVu.RemovePlaceholder();
+            this.ctTextBoxEmail.RemovePlaceholder();
+            this.ctTextBoxSDT.RemovePlaceholder();
+            this.CTTextBoxDiaChi.RemovePlaceholder();
+            this.CTTextBoxNhapHoTen.RemovePlaceholder();
+            this.CTTextBoxLuong.RemovePlaceholder();
 
+            this.CTTextBoxNhapCCCD.Texts = this.nhanVien.CCCD;
+            this.ComboBoxGioiTinh.Text = " " + this.nhanVien.GioiTinh;
+            this.CTTextBoxNhapChucVu.Texts = this.nhanVien.ChucVu;
+            this.ctDatePicker1.Value = this.nhanVien.NgaySinh;
+            this.ctTextBoxEmail.Texts = this.nhanVien.Email;
+            this.ctTextBoxSDT.Texts = this.nhanVien.SDT;
+            this.CTTextBoxDiaChi.Texts = this.nhanVien.DiaChi;
+            this.CTTextBoxNhapHoTen.Texts = this.nhanVien.TenNV;
+        }
         //Private Methods
         //Private Methods
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
@@ -203,6 +233,81 @@ namespace HotelManagement.GUI
         private void FormSuaNhanVien_Load(object sender, EventArgs e)
         {
             this.ActiveControl = LabelSuaNhanVien;
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (NhanVien nhanVien in NhanVienBUS.Instance.GetAllNhanViens())
+                {
+                    if (nhanVien.CCCD == this.CTTextBoxNhapCCCD.Texts && nhanVien.MaNV != this.nhanVien.MaNV)
+                    {
+                        CTMessageBox.Show("Số căn cước công dân trùng với nhân viên khác", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else if (nhanVien.SDT == this.ctTextBoxSDT.Texts && nhanVien.MaNV != this.nhanVien.MaNV)
+                    {
+                        CTMessageBox.Show("Số điện thoại này trùng với nhân viên khác", "THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                this.nhanVien.ChucVu = this.CTTextBoxNhapChucVu.Texts;
+                this.nhanVien.CCCD = this.CTTextBoxNhapCCCD.Texts;
+                this.nhanVien.GioiTinh = this.ComboBoxGioiTinh.Text.Trim(' ');
+                this.nhanVien.NgaySinh = this.ctDatePicker1.Value;
+                this.nhanVien.Email = this.ctTextBoxEmail.Texts;
+                this.nhanVien.SDT = this.ctTextBoxSDT.Texts;
+                this.nhanVien.DiaChi = this.CTTextBoxDiaChi.Texts;
+                this.nhanVien.TenNV = this.CTTextBoxNhapHoTen.Texts;
+                NhanVienBUS.Instance.UpdateOrInsert(nhanVien);
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                CTMessageBox.Show(ex.Message, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void CTTextBoxNhapHoTen__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxOnlyChu = sender as TextBox;
+            textBoxOnlyChu.KeyPress += TextBoxOnlyChu_KeyPress;
+        }
+
+        private void TextBoxOnlyChu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
+        }
+
+        private void CTTextBoxLuong__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxMoney = sender as TextBox;
+            textBoxMoney.KeyPress += TextBoxMoney_KeyPress;
+            textBoxMoney.TextChanged += TextBoxMoney_TextChanged;
+        }
+
+        private void TextBoxMoney_TextChanged(object sender, EventArgs e)
+        {
+            TextBoxType.Instance.CurrencyType(sender, e);
+        }
+
+        private void TextBoxMoney_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
+        }
+
+        private void ctTextBoxSDT__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxOnlyNum = sender as TextBox;
+            textBoxOnlyNum.KeyPress += TextBoxOnlyNum_KeyPress;
+        }
+
+        private void TextBoxOnlyNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
+
         }
     }
 }

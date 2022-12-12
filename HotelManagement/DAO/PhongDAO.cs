@@ -19,7 +19,7 @@ namespace HotelManagement.DAO
         private PhongDAO() { }
         public List<Phong> GetAllPhongs()
         {
-            return db.Phongs.ToList();  
+            return db.Phongs.Where(p => p.DaXoa == false).ToList();
         }    
         public Phong FindPhong(string MaPh)
         {
@@ -27,7 +27,8 @@ namespace HotelManagement.DAO
         }
         public List<Phong> FindPhongWithMaPH(string MaPh)
         {
-            return db.Phongs.Where(p => p.MaPH.Contains(MaPh)).ToList();
+            return db.Phongs.Where(p => p.MaPH.Contains(MaPh) && p.DaXoa == false).ToList();
         }
+        
     }
 }

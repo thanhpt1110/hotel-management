@@ -21,7 +21,7 @@ namespace HotelManagement.DAO
 
         public List<TienNghi> GetTienNghis()
         {
-            return db.TienNghis.ToList();
+            return db.TienNghis.Where(p => p.DaXoa == false).ToList();
         }    
         public TienNghi FindTienNghi(string MaTN)
         {
@@ -29,15 +29,18 @@ namespace HotelManagement.DAO
         }
         public void RemoveTN(TienNghi tienNghi) // try catch th có phòng có mã tiện nghi đó
         {
-            db.TienNghis.Remove(tienNghi);
+            tienNghi.DaXoa = true;
+            db.TienNghis.AddOrUpdate(tienNghi);
+            db.SaveChanges();
         }
         public void InsertOrUpdate(TienNghi tienNghi)
         {
             db.TienNghis.AddOrUpdate(tienNghi);
+            db.SaveChanges();
         }
         public List<TienNghi> FindTienNghiWithName(string name)
         {
-            return db.TienNghis.Where(p => p.TenTN.Contains(name)).ToList();
+            return db.TienNghis.Where(p => p.TenTN.Contains(name) && p.DaXoa == false).ToList();
         }
     }
 }

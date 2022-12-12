@@ -67,7 +67,8 @@ namespace HotelManagement.GUI
                     }
                     if (hoadon.MaNV != null)
                         tennv = hoadon.NhanVien.TenNV;
-                    grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, hoadon.CTDP.PhieuThue.KhachHang.TenKH, hoadon.TriGia.ToString("#,#"), hoadon.TrangThai, details);
+                    if(hoadon.TrangThai=="Đã thanh toán")
+                        grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, hoadon.CTDP.PhieuThue.KhachHang.TenKH, hoadon.TriGia.ToString("#,#"), hoadon.TrangThai, details);
                 }
             }
             catch (Exception ex)

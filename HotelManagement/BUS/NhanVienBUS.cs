@@ -16,6 +16,10 @@ namespace HotelManagement.BUS
             get { if (instance == null) instance = new NhanVienBUS(); return instance; }
             private set { instance = value; }
         }
+        public List<NhanVien> GetAllNhanViens()
+        {
+            return NhanVienDAO.Instance.GetAllNhanViens();
+        }
         private NhanVienBUS() { }
         public List<NhanVien> GetNhanViens()
         {
@@ -36,6 +40,10 @@ namespace HotelManagement.BUS
         public List<NhanVien> GetNhanViensWithName(string tenNV)
         {
             return NhanVienDAO.Instance.GetNhanViensWithName(tenNV);
+        }
+        public string GetMaNVNext()
+        {
+            return NhanVienDAO.Instance.GetMaNVNext();
         }
     }
 }

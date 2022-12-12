@@ -32,6 +32,8 @@ namespace HotelManagement.DTO
 
         public virtual CTDP CTDP { get; set; }
 
+       // public bool? DaXoa { get; set; }
+
         public virtual NhanVien NhanVien { get; set; }
     }
 }

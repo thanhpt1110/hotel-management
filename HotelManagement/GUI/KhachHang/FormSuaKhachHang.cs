@@ -278,6 +278,7 @@ namespace HotelManagement.GUI
                 khachHang.CCCD_Passport = this.ctTextBoxCCCD.Texts;
                 khachHang.SDT = this.ctTextBoxSDT.Texts;
                 khachHang.GioiTinh = this.comboBoxGioiTinh.Text.Trim(' ');
+                
                 KhachHangBUS.Instance.UpdateOrAdd(khachHang);
                 DialogResult dialogresult=  MessageBox.Show("Bạn có chắc chắn các thông tin trên chưa?", "THÔNG BÁO", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                 if(dialogresult==DialogResult.Yes)

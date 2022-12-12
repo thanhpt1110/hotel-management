@@ -29,6 +29,7 @@ namespace HotelManagement.DTO
         [StringLength(5)]
         public string MaNV { get; set; }
 
+        public bool? DaXoa { get; set; }
         public virtual KhachHang KhachHang { get; set; }
 
         public virtual NhanVien NhanVien { get; set; }

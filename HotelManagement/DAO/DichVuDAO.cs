@@ -21,7 +21,7 @@ namespace HotelManagement.DAO
 
         public List<DichVu> GetDichVus()
         {
-            return db.DichVus.ToList();
+            return db.DichVus.Where(p=>p.DaXoa ==false).ToList();
         }    
         public DichVu FindDichVu(string MaDV)
         {
@@ -29,12 +29,14 @@ namespace HotelManagement.DAO
         }
         public void UpdateORAdd(DichVu dv)
         {
+            dv.DaXoa = false;
             db.DichVus.AddOrUpdate(dv);
             db.SaveChanges();
         }
         public void RemoveDV(DichVu dv)
         {
-            db.DichVus.Remove(dv);
+            dv.DaXoa = true;
+            db.DichVus.AddOrUpdate(dv);
             db.SaveChanges();
         }
         public string GetMaDVNext()

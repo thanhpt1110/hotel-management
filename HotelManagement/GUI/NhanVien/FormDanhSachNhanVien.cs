@@ -137,12 +137,13 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormSuaNhanVien formSuaNhanVien = new FormSuaNhanVien())
+                        using (FormSuaNhanVien formSuaNhanVien = new FormSuaNhanVien(NhanVienBUS.Instance.GetNhanVien(grid.Rows[y].Cells[1].Value.ToString()))) 
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();
                             formSuaNhanVien.Owner = formBackground;
                             formSuaNhanVien.ShowDialog();
+                            this.LoadAllGrid();
                             formBackground.Dispose();
                         }
                     }
@@ -154,8 +155,8 @@ namespace HotelManagement.GUI
                 }
                 if (x == 9)
                 {
-                    // If click Delete button 
-                    MessageBox.Show("Clicked Delete button");
+                    NhanVienBUS.Instance.RemoveNhanVien(NhanVienBUS.Instance.GetNhanVien(grid.Rows[y].Cells[1].Value.ToString()));
+                    this.LoadAllGrid();
                 }
                 if (x >= 0 && x <= 7)
                 {
@@ -163,7 +164,8 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormThongTinNhanVien formThongTinNhanVien = new FormThongTinNhanVien())
+                        
+                        using (FormThongTinNhanVien formThongTinNhanVien = new FormThongTinNhanVien(NhanVienBUS.Instance.GetNhanVien(grid.Rows[y].Cells[1].Value.ToString())))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();

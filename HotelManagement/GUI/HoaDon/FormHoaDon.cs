@@ -48,7 +48,7 @@ namespace HotelManagement.GUI
             {
                 DichVu dichvu;
                 int days = CTDP_BUS.Instance.getKhoangTG(HD.MaCTDP);
-                decimal TongTienHD = 0;
+                //decimal TongTienHD = 0;
                 this.TextBoxSoHD.Text = HD.MaHD;
                 this.TextBoxTenKH.Text = HD.CTDP.PhieuThue.KhachHang.TenKH;
                 this.TextBoxSoNgay.Text = days.ToString() + " ngày";
@@ -62,7 +62,7 @@ namespace HotelManagement.GUI
                 foreach (CTDV ctdv in ctdvs)
                 {
                     dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
-                    DataGridViewDichVu.Rows.Add(dichvu.TenDV, dichvu.DonGia.ToString("#,#"), ctdv.SL, ctdv.ThanhTien.ToString("#,#"));
+                    DataGridViewDichVu.Rows.Add(dichvu.TenDV, ctdv.DonGia.ToString("#,#"), ctdv.SL, ctdv.ThanhTien.ToString("#,#"));
                 }
                 decimal Tongtienphong = loaiphong.GiaNgay * days;
                 DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));

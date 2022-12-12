@@ -57,6 +57,8 @@ namespace HotelManagement.DTO
         [StringLength(200)]
         public string AnhDaiDien { get; set; }
 
+        public bool? DaXoa { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
 

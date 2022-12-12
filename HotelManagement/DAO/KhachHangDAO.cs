@@ -22,7 +22,7 @@ namespace HotelManagement.DAO
         
         public List<KhachHang> GetKhachHangs()
         {
-            return db.KhachHangs.ToList();
+            return db.KhachHangs.Where(p => p.DaXoa == false).ToList();
         }
         public KhachHang FindKhachHang(string MaKH)
         {
@@ -30,22 +30,19 @@ namespace HotelManagement.DAO
         }
         public void UpdateOrAdd(KhachHang khachHang)
         {
+            khachHang.DaXoa = false;
             db.KhachHangs.AddOrUpdate(khachHang);
             db.SaveChanges();
         }    
         public void RemoveKH(KhachHang khachHang)
         {
-            if (khachHang.PhieuThues.ToList().Count>=1)
-            {
-                MessageBox.Show("Không thể xóa thông tin của khách hàng này", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            db.KhachHangs.Remove(khachHang);
+            khachHang.DaXoa = true;
+            db.KhachHangs.AddOrUpdate(khachHang);
             db.SaveChanges();
         }
         public List<KhachHang> FindKhachHangWithName(string TenKH)
         {
-            return db.KhachHangs.Where(p => p.TenKH.Contains(TenKH)).ToList();
+            return db.KhachHangs.Where(p => p.TenKH.Contains(TenKH) && p.DaXoa ==false).ToList();
         }
         public string GetMaKHNext()
         {

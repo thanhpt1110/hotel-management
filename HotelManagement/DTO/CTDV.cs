@@ -24,6 +24,10 @@ namespace HotelManagement.DTO
         [Column(TypeName = "money")]
         public decimal ThanhTien { get; set; }
 
+        [Key]
+        [Column(Order = 2, TypeName = "money")]
+        public decimal DonGia { get; set; }
 
+        public bool? DaXoa { get; set; }
     }
 }
