@@ -1,6 +1,7 @@
 ﻿using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,5 +36,80 @@ namespace HotelManagement.DAO
             TimeSpan timeSpan = checkout.Subtract(checkin);   
             return timeSpan.Days;
         }
+        public CTDP FindCTDP(string MaPhong, DateTime currentTime)
+        {
+
+            CTDP ctdp = db.CTDPs.Where(p => p.MaPH == MaPhong && p.CheckIn <= currentTime && p.CheckOut >= currentTime).SingleOrDefault();
+            return ctdp;
+        }
+        public List<CTDP> getCTDPonTime(DateTime Checkin, DateTime Checkout, List<CTDP> DSPhongThem)
+        {
+            List<CTDP> listCTDP = db.CTDPs.ToList();
+            if (DSPhongThem != null)
+            {
+                foreach (var ctdp in DSPhongThem)
+                {
+                    listCTDP.Add(ctdp);
+                }
+            }
+            var cTDPs = from p in listCTDP where ((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin <= p.CheckIn && Checkout >= p.CheckOut)) select p;
+
+            List<CTDP> ctdpList = new List<CTDP>();
+            foreach (var ctdp in cTDPs)
+            {
+                ctdpList.Add(ctdp);
+            }
+            return ctdpList;
+        }
+        public string getNextCTDP()
+        {
+            List<CTDP> cTDPs = db.CTDPs.ToList();
+            string MaMax = cTDPs[cTDPs.Count - 1].MaCTDP.ToString();
+            MaMax = MaMax.Substring(MaMax.Length - 3, 3);
+            int max = int.Parse(MaMax);
+            max++;
+            if (max < 10)
+            {
+                return "CTDP00" + max.ToString();
+            }
+            else if (max >= 10)
+            {
+                return "CTDP0" + max.ToString();
+            }
+            return "CTDP" + max.ToString();
+
+        }
+        public void UpdateOrAddCTDP(CTDP ctdp)
+        {
+            ctdp.PhieuThue = db.PhieuThues.Find(ctdp.MaPT);
+            db.CTDPs.AddOrUpdate(ctdp);
+            db.SaveChanges();
+        }
+        public string getNextCTDPwithList(List<CTDP> list)
+        {
+            List<CTDP> cTDPs = db.CTDPs.ToList();
+            if (list.Count > 0)
+            {
+                foreach (var ctdp in list)
+                {
+                    cTDPs.Add(ctdp);
+                }
+            }
+            string MaMax = cTDPs[cTDPs.Count - 1].MaCTDP.ToString();
+            MaMax = MaMax.Substring(MaMax.Length - 3, 3);
+            int max = int.Parse(MaMax);
+            max++;
+            if (max < 10)
+            {
+                return "CTDP00" + max.ToString();
+            }
+            else if (max >= 10)
+            {
+                return "CTDP0" + max.ToString();
+            }
+            return "CTDP" + max.ToString();
+
+        }
+
     }
 }

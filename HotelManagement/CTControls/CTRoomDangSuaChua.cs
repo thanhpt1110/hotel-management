@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelManagement.DTO;
+using HotelManagement.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +19,53 @@ namespace HotelManagement.CTControls
         private int borderSize = 0;
         private int borderRadius = 20;
         private Color borderColor = Color.FromArgb(43, 183, 213);
+        private Phong phong = new Phong();
+        private FormSoDoPhong formSoDoPhong;
+        public string getMaPhong()
+        {
+            return this.LabelMaPhong.Text;
+        }
+        public void setLoaiPhong(string LoaiPhong)
+        {
+            this.LabelLoaiPhong.Text = LoaiPhong;
+        }
+        public void setMaPhong(string maPhong)
+        {
+            this.LabelMaPhong.Text = maPhong;
+        }
+        public void setTrangThai(string trangThai)
+        {
+            this.LabelLoaiPhong.Text = trangThai;
+            this.LabelTrangThaiLon.Text = trangThai;
+        }
+        public void setThoiGianNone()
+        {
+            LabelThoiGian.Text = "";
+        }
+        public void setThoiGian(string thoiGian)
+        {
+            this.LabelThoiGian.Text = thoiGian;
+        }
+        public void setPhongTrong()
+        {
+            setThoiGianNone();
+            setTrangThai("Phòng trống");
+            PictureBoxTrangThai.Image = Properties.Resources.Trong;
+        }
+        public void setChuaDonDep()
+        {
+            PictureBoxTrangThaiDonDep.Image = Properties.Resources.ChuaDonDep;
+            LabelTrangThaiDonDep.Text = "Chưa dọn dẹp";
+        }
+        public void setDaDonDep()
+        {
+            PictureBoxTrangThaiDonDep.Image = Properties.Resources.DaDonDep;
+            LabelTrangThaiDonDep.Text = "Đã dọn dẹp";
+        }
+        public void setGhiChu(string ghiChu)
+        {
+            this.LabelCoc.Text = ghiChu;
+        }
 
         public int BorderSize
         {
@@ -64,7 +113,16 @@ namespace HotelManagement.CTControls
             this.ForeColor = Color.White;
             InitializeComponent();
         }
-
+        public CTRoomDangSuaChua(Phong phong, FormSoDoPhong loaPhong)
+        {
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.Size = new Size(280, 155);
+            this.BackColor = Color.FromArgb(43, 183, 213);
+            this.ForeColor = Color.White;
+            this.phong = phong;
+            this.formSoDoPhong = loaPhong;
+            InitializeComponent();
+        }
         //Methods
         private void Button_Resize(object sender, EventArgs e)
         {

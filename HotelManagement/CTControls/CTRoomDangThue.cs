@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HotelManagement.GUI;
 namespace HotelManagement.CTControls
 {
     public partial class CTRoomDangThue : UserControl
@@ -20,7 +21,52 @@ namespace HotelManagement.CTControls
         private int borderSize = 0;
         private int borderRadius = 20;
         private Color borderColor = Color.FromArgb(236, 107, 104);
-
+        private CTDP ctdp;
+        private FormSoDoPhong formSoDoPhong;
+        public string getMaPhong()
+        {
+            return this.LabelMaPhong.Text;
+        }
+        public void setLoaiPhong(string LoaiPhong)
+        {
+            this.LabelLoaiPhong.Text = LoaiPhong;
+        }
+        public void setMaPhong(string maPhong)
+        {
+            this.LabelMaPhong.Text = maPhong;
+        }
+        public void setTrangThai(string trangThai)
+        {
+            this.LabelLoaiPhong.Text = trangThai;
+            this.LabelTrangThaiLon.Text = trangThai;
+        }
+        public void setThoiGianNone()
+        {
+            LabelThoiGian.Text = "";
+        }
+        public void setThoiGian(string thoiGian)
+        {
+            this.LabelThoiGian.Text = thoiGian;
+        }
+        public void setPhongTrong()
+        {
+            setThoiGianNone();
+            setTrangThai("Phòng trống");
+            PictureBoxTrangThai.Image = Properties.Resources.Trong;
+        }
+        public void setChuaDonDep()
+        {
+            PictureBoxTrangThaiDonDep.Image = Properties.Resources.ChuaDonDep;
+            LabelTrangThaiDonDep.Text = "Chưa dọn dẹp";
+        }
+        public void setDaDonDep()
+        {
+            PictureBoxTrangThaiDonDep.Image = Properties.Resources.DaDonDep;
+            LabelTrangThaiDonDep.Text = "Đã dọn dẹp";
+        }
+        public void setGhiChu(string ghiChu)
+        {
+        }
         public int BorderSize
         {
             get { return borderSize; }
@@ -67,7 +113,17 @@ namespace HotelManagement.CTControls
             this.ForeColor = Color.White;
             InitializeComponent();
         }
+        public CTRoomDangThue(CTDP cTDP, FormSoDoPhong soDoPhong)
+        {
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.Size = new Size(280, 155);
+            this.BackColor = Color.FromArgb(236, 107, 104);
+            this.ForeColor = Color.White;
+            InitializeComponent();
+            ctdp = cTDP;
+            this.formSoDoPhong = soDoPhong;
 
+        }
         //Methods
         private void Button_Resize(object sender, EventArgs e)
         {
