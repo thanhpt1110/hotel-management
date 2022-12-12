@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::HotelManagement.Properties.Resources.fixedYellowResize;
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "CTMinimize";
             this.Size = new System.Drawing.Size(15, 15);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.minimize_Paint);

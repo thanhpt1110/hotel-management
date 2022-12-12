@@ -38,11 +38,11 @@
             this.button2 = new HotelManagement.CTControls.CTButton();
             this.button1 = new HotelManagement.CTControls.CTButton();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
+            this.panelControlBox = new System.Windows.Forms.Panel();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
+            this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.btnClose = new HotelManagement.CTControls.CTClose();
             this.labelCaption = new System.Windows.Forms.Label();
-            this.panelControlBox = new System.Windows.Forms.Panel();
             this.PanelBackground.SuspendLayout();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
@@ -189,25 +189,39 @@
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
-            // ctMaximize1
+            // panelControlBox
             // 
-            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
-            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
-            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMaximize1.Location = new System.Drawing.Point(9, 4);
-            this.ctMaximize1.Name = "ctMaximize1";
-            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMaximize1.TabIndex = 7;
+            this.panelControlBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControlBox.Controls.Add(this.ctMinimize1);
+            this.panelControlBox.Controls.Add(this.ctMaximize1);
+            this.panelControlBox.Controls.Add(this.btnClose);
+            this.panelControlBox.Location = new System.Drawing.Point(284, 4);
+            this.panelControlBox.Name = "panelControlBox";
+            this.panelControlBox.Size = new System.Drawing.Size(95, 23);
+            this.panelControlBox.TabIndex = 8;
             // 
             // ctMinimize1
             // 
             this.ctMinimize1.BackColor = System.Drawing.Color.Transparent;
             this.ctMinimize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize1.BackgroundImage")));
-            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMinimize1.Location = new System.Drawing.Point(39, 4);
+            this.ctMinimize1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ctMinimize1.Enabled = false;
+            this.ctMinimize1.Location = new System.Drawing.Point(38, 4);
+            this.ctMinimize1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ctMinimize1.Name = "ctMinimize1";
             this.ctMinimize1.Size = new System.Drawing.Size(15, 15);
-            this.ctMinimize1.TabIndex = 6;
+            this.ctMinimize1.TabIndex = 8;
+            // 
+            // ctMaximize1
+            // 
+            this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
+            this.ctMaximize1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMaximize1.BackgroundImage")));
+            this.ctMaximize1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctMaximize1.Enabled = false;
+            this.ctMaximize1.Location = new System.Drawing.Point(9, 4);
+            this.ctMaximize1.Name = "ctMaximize1";
+            this.ctMaximize1.Size = new System.Drawing.Size(15, 15);
+            this.ctMaximize1.TabIndex = 7;
             // 
             // btnClose
             // 
@@ -230,17 +244,6 @@
             this.labelCaption.Size = new System.Drawing.Size(137, 20);
             this.labelCaption.TabIndex = 4;
             this.labelCaption.Text = "Chọn đi bạn chẻ ơi";
-            // 
-            // panelControlBox
-            // 
-            this.panelControlBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControlBox.Controls.Add(this.ctMaximize1);
-            this.panelControlBox.Controls.Add(this.ctMinimize1);
-            this.panelControlBox.Controls.Add(this.btnClose);
-            this.panelControlBox.Location = new System.Drawing.Point(284, 4);
-            this.panelControlBox.Name = "panelControlBox";
-            this.panelControlBox.Size = new System.Drawing.Size(95, 23);
-            this.panelControlBox.TabIndex = 8;
             // 
             // FormMessageBox
             // 
@@ -281,9 +284,9 @@
         private CTButton button1;
         private System.Windows.Forms.Panel panelTitleBar;
         private CTMaximize ctMaximize1;
-        private CTMinimize ctMinimize1;
         private CTClose btnClose;
         private System.Windows.Forms.Label labelCaption;
         private System.Windows.Forms.Panel panelControlBox;
+        private CTMinimize ctMinimize1;
     }
 }

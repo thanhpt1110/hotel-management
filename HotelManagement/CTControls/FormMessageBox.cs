@@ -16,7 +16,7 @@ namespace HotelManagement.CTControls
     {
         //Fields
         private int borderRadius = 15;
-        private int borderSize = 1;
+        private int borderSize = 2;
         private Color borderColor = Color.FromArgb(33, 131, 163);
         private Color primaryColor = Color.FromArgb(33, 131, 163);
         //Properties

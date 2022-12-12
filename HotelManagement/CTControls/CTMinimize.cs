@@ -15,19 +15,13 @@ namespace HotelManagement.CTControls
         private bool mouseHover = false;
         private bool mouseMove = false;
         private bool mouseLeave = false;
+
         public CTMinimize()
         {
             this.DoubleBuffered = true;
             InitializeComponent();
         }
 
-        private void minimize_MouseMove(object sender, MouseEventArgs e)
-        {
-            mouseMove = true;
-            mouseHover = false;
-            mouseLeave = false;
-            this.Invalidate();
-        }
 
         private void minimize_Paint(object sender, PaintEventArgs e)
         {
@@ -44,6 +38,13 @@ namespace HotelManagement.CTControls
                 g.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
 
             }
+        }
+        private void minimize_MouseMove(object sender, MouseEventArgs e)
+        {
+            mouseMove = true;
+            mouseHover = false;
+            mouseLeave = false;
+            this.Invalidate();
         }
 
         private void minimize_MouseHover(object sender, EventArgs e)
@@ -76,7 +77,5 @@ namespace HotelManagement.CTControls
             mouseLeave = true;
             this.Invalidate();
         }
-
-        
     }
 }
