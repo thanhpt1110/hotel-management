@@ -1,4 +1,8 @@
-﻿using System;
+﻿using ApplicationSettings;
+using HotelManagement.BUS;
+using HotelManagement.CTControls;
+using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -198,6 +202,34 @@ namespace HotelManagement.GUI
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TienNghi tienNghi = new TienNghi();
+                tienNghi.MaTN = TienNghiBUS.Instance.GetMaTNNext();
+                tienNghi.TenTN = this.ctTextBoxName.Texts;
+                TienNghiBUS.Instance.InsertOrUpdate(tienNghi);
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                CTMessageBox.Show("Thêm tiện nghi thất bại", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+        }
+
+        private void ctTextBoxName__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxNotNum = sender as TextBox;
+            textBoxNotNum.KeyPress += TextBoxNotNum_KeyPress;
+        }
+
+        private void TextBoxNotNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
         }
     }
 }

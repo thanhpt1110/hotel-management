@@ -20,7 +20,7 @@ namespace HotelManagement.DAO
 
         public List<CTDV> FindCTDV(string MaHD)
         {
-            return db.CTDVs.Where(p=>p.MaHD==MaHD).ToList();
+            return db.CTDVs.Where(p=>p.MaHD==MaHD && p.DaXoa==false).ToList();
         }    
     }
 }

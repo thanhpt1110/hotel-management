@@ -9,6 +9,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.DTO;
+using HotelManagement.BUS;
+using HotelManagement.CTControls;
+using ApplicationSettings;
 
 namespace HotelManagement.GUI
 {
@@ -18,7 +22,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        TienNghi tienNghi;
         //Constructor
         public FormSuaTienNghi()
         {
@@ -26,6 +30,15 @@ namespace HotelManagement.GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+        }
+        public FormSuaTienNghi(TienNghi tienNghi )
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.tienNghi = tienNghi;
+            InitializeComponent();
+            LoadForm();
         }
         //Control Box
 
@@ -48,6 +61,13 @@ namespace HotelManagement.GUI
 
         //Private Methods
         //Private Methods
+
+        private void LoadForm()
+        {
+            this.ctTextBoxName.RemovePlaceholder();
+            this.ctTextBoxName.Texts = tienNghi.TenTN;
+            
+        }
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -197,6 +217,30 @@ namespace HotelManagement.GUI
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            this.tienNghi.TenTN = ctTextBoxName.Texts;
+            try
+            {
+                TienNghiBUS.Instance.InsertOrUpdate(tienNghi);
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                CTMessageBox.Show("Cập nhật tiện nghi thất bại");
+            }
+        }
+        private void ctTextBoxName__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxNotNum = sender as TextBox;
+            textBoxNotNum.KeyPress += TextBoxNotNum_KeyPress;
+        }
+
+        private void TextBoxNotNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
         }
     }
 }

@@ -43,6 +43,7 @@ namespace HotelManagement.GUI
                     formBackground.Show();
                     formThemTienNghi.Owner = formBackground;
                     formThemTienNghi.ShowDialog();
+                    this.LoadAllData();
                     formBackground.Dispose();
                 }
             }
@@ -130,12 +131,13 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormSuaTienNghi formSuaTienNghi = new FormSuaTienNghi())
+                        using (FormSuaTienNghi formSuaTienNghi = new FormSuaTienNghi(TienNghiBUS.Instance.FindTienNghi(grid.Rows[y].Cells[1].Value.ToString())))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();
                             formSuaTienNghi.Owner = formBackground;
                             formSuaTienNghi.ShowDialog();
+                            this.LoadAllData();
                             formBackground.Dispose();
                         }
                     }
@@ -148,7 +150,8 @@ namespace HotelManagement.GUI
                 if (x == 4)
                 {
                     // If click Delete button 
-                    MessageBox.Show("Click delete button");
+                    TienNghiBUS.Instance.RemoveTN(TienNghiBUS.Instance.FindTienNghi(grid.Rows[y].Cells[1].Value.ToString()));
+                    this.LoadAllData();
                 }
             }
         }

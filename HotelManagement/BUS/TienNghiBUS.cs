@@ -37,5 +37,9 @@ namespace HotelManagement.BUS
         {
             return TienNghiDAO.Instance.FindTienNghiWithName(name);
         }
+        public string GetMaTNNext()
+        {
+            return TienNghiDAO.Instance.GetMaTNNext();
+        }    
     }
 }
