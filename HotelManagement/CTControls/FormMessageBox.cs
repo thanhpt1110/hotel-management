@@ -16,7 +16,7 @@ namespace HotelManagement.CTControls
     {
         //Fields
         private int borderRadius = 15;
-        private int borderSize = 2;
+        private int borderSize = 3;
         private Color borderColor = Color.FromArgb(33, 131, 163);
         private Color primaryColor = Color.FromArgb(33, 131, 163);
         //Properties
@@ -400,7 +400,15 @@ namespace HotelManagement.CTControls
             }
             return fbColor;
         }
-
+        private FormBoundsColors GetSameWhite()
+        {
+            var fbColor = new FormBoundsColors();
+            fbColor.TopLeftColor = Color.FromArgb(207, 236, 236);
+            fbColor.TopRightColor = Color.FromArgb(207, 236, 236);
+            fbColor.BottomLeftColor = Color.FromArgb(207, 236, 236);
+            fbColor.BottomRightColor = Color.FromArgb(207, 236, 236);
+            return fbColor;
+        }
         //Event Methods
         private void FormMessageBox_Paint(object sender, PaintEventArgs e)
         {
@@ -409,7 +417,8 @@ namespace HotelManagement.CTControls
             Rectangle rectForm = this.ClientRectangle;
             int mWidht = rectForm.Width / 2;
             int mHeight = rectForm.Height / 2;
-            var fbColors = GetFormBoundsColors();
+            //var fbColors = GetFormBoundsColors();
+            var fbColors = GetSameWhite();
             //Top Left
             DrawPath(rectForm, e.Graphics, fbColors.TopLeftColor);
             //Top Right

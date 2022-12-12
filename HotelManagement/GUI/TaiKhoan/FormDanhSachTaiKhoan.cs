@@ -109,11 +109,7 @@ namespace HotelManagement.GUI
                 else
                 {
                     string mess = "Chưa có dữ liệu trong bảng!";
-                    int x = 105, y = 60;
-                    using (FormMessageBoxThongBao frm = new FormMessageBoxThongBao(mess, x, y))
-                    {
-                        frm.ShowDialog();
-                    }
+                    CTMessageBox.Show(mess, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

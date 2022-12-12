@@ -26,7 +26,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonTest_Click(object sender, EventArgs e)
         {
-            CTMessageBox.Show("Sinh viên khoa công nghệ phần mềm - Đại học Công Nghệ Thông Tin - Đại học Quốc gia Thành Phố Hồ Chí Minh","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            CTMessageBox.Show("Sinh viên khoa công nghệ phần mềm - Đại học Công Nghệ Thông Tin - Đại học Quốc gia Thành Phố Hồ Chí Minh","Thông báo",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Information);
         }
     }
 }
