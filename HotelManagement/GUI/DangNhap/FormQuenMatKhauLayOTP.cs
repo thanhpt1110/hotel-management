@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.DTO;
+using HotelManagement.CTControls;
 
 namespace HotelManagement.GUI
 {
@@ -44,7 +45,7 @@ namespace HotelManagement.GUI
             }
             else
             {
-                MessageBox.Show("Email hoặc tài khoản đăng nhập của bạn bị sai", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show("Email hoặc tài khoản đăng nhập của bạn bị sai", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
                 
         }

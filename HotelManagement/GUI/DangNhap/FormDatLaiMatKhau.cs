@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.BUS;
+using HotelManagement.CTControls; 
 
 namespace HotelManagement.GUI
 {
@@ -37,12 +38,12 @@ namespace HotelManagement.GUI
         {
             if(this.textBoxPassword.Texts == "" && this.textBoxPassConfirm.Texts=="")
             {
-                MessageBox.Show("Vui lòng nhập password", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show("Vui lòng nhập password", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }        
             if(this.textBoxPassword.Texts!=this.textBoxPassConfirm.Texts)
             {
-                MessageBox.Show("Vui lòng kiểm tra lại password của bạn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show("Vui lòng kiểm tra lại password của bạn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -50,12 +51,12 @@ namespace HotelManagement.GUI
                 try
                 {
                     TaiKhoanBUS.Instance.AddOrUpdateTK(taiKhoan);
-                    MessageBox.Show("Đổi mật khẩu thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    CTMessageBox.Show("Đổi mật khẩu thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.None);
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message,"THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CTMessageBox.Show(ex.Message,"THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 formLoginParent.openChildForm(new FormDangNhap(formLoginParent));
 

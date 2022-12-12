@@ -409,6 +409,15 @@ namespace HotelManagement.CTControls
             fbColor.BottomRightColor = Color.FromArgb(207, 236, 236);
             return fbColor;
         }
+        private FormBoundsColors GetSameDark()
+        {
+            var fbColor = new FormBoundsColors();
+            fbColor.TopLeftColor = Color.FromArgb(30, 119, 148);
+            fbColor.TopRightColor = Color.FromArgb(30, 119, 148);
+            fbColor.BottomLeftColor = Color.FromArgb(30, 119, 148);
+            fbColor.BottomRightColor = Color.FromArgb(30, 119, 148);
+            return fbColor;
+        }
         //Event Methods
         private void FormMessageBox_Paint(object sender, PaintEventArgs e)
         {

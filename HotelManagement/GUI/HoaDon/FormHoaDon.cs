@@ -14,6 +14,8 @@ using HotelManagement.BUS;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Runtime.CompilerServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Drawing.Printing;
+using Button = System.Windows.Forms.Button;
 
 namespace HotelManagement.GUI
 {
