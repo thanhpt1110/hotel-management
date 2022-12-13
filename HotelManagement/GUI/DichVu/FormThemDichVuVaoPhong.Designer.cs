@@ -1,4 +1,4 @@
-﻿namespace HotelManagement.GUI.DichVu
+﻿namespace HotelManagement.GUI
 {
     partial class FormThemDichVuVaoPhong
     {

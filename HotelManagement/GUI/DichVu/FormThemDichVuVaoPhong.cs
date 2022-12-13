@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagement.GUI.DichVu
+namespace HotelManagement.GUI
 {
     public partial class FormThemDichVuVaoPhong : Form
     {
