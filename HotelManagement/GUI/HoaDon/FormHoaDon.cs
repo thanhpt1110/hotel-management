@@ -16,6 +16,7 @@ using System.Runtime.CompilerServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Drawing.Printing;
 using Button = System.Windows.Forms.Button;
+using HotelManagement.CTControls;
 
 namespace HotelManagement.GUI
 {
@@ -288,5 +289,70 @@ namespace HotelManagement.GUI
                 g.DrawLine(pen, botX_left, botY_left, botX_right, botY_right);
             }
         }
+
+        #region In Hoa Don
+        private Bitmap memoryImage;
+        private Size s;
+
+        private void CaptureScreen()
+        {
+            Graphics myGraphics = this.CreateGraphics();
+            s = this.ClientSize;
+            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, -10, s);
+        }
+
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(memoryImage, 0, 0);
+        }
+
+        private void HideButton()
+        {
+            LabelTitle.Visible = false;
+            Printer.Visible = false;
+            ctMaximize1.Visible = false;
+            ctMinimize1.Visible = false;
+            ctClose1.Visible = false;
+        }
+
+        private void ShowButton()
+        {
+            LabelTitle.Visible = true;
+            Printer.Visible = true;
+            ctMaximize1.Visible = true;
+            ctMinimize1.Visible = true;
+            ctClose1.Visible = true;
+        }
+
+        private void Printer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (printDialog.ShowDialog() == DialogResult.OK)
+                {
+                    HideButton();
+                    this.Refresh();
+
+                    CaptureScreen();
+                    printDocument.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("In hóa đơn", s.Width + 23, s.Height + 17);
+                    printDocument.Print();
+
+                    ShowButton();
+                    printDialog.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                CTMessageBox.Show(ex.Message, "Thông báo");
+            }
+            finally
+            {
+                ShowButton();
+                printDialog.Dispose();
+            }
+        }
+        #endregion
     }
 }
