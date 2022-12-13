@@ -256,7 +256,11 @@ namespace HotelManagement.CTControls
 
         private void CTRoomPhongTrong_Click(object sender, EventArgs e)
         {
-           
+            using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(this.LabelTrangThaiLon.Text, null,phong))
+            {
+                formThongTinPhong.ShowDialog();
+                this.formSoDoPhong.LoadAllPhong();
+            }
         }
     }
 }

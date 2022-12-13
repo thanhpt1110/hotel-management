@@ -29,5 +29,9 @@ namespace HotelManagement.BUS
         {
             return PhongDAO.Instance.FindPhongWithMaPH(MaPh);
         }
+        public void UpdateOrAdd(Phong phong)
+        {
+            PhongDAO.Instance.UpdateOrAdd(phong);
+        }
     }
 }

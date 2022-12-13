@@ -20,6 +20,7 @@ namespace HotelManagement.CTControls
         private int borderRadius = 20;
         private Color borderColor = Color.FromArgb(43, 183, 213);
         private Phong phong = new Phong();
+       // private CTDP cTDP = null;
         private FormSoDoPhong formSoDoPhong;
         public string getMaPhong()
         {
@@ -220,7 +221,11 @@ namespace HotelManagement.CTControls
 
         private void CTRoomDangSuaChua_Click(object sender, EventArgs e)
         {
-
+            using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(this.LabelTrangThaiLon.Text,null, phong))
+            {
+                formThongTinPhong.ShowDialog();
+                this.formSoDoPhong.LoadAllPhong();
+            }
         }
     }
 }

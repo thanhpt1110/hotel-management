@@ -10,6 +10,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.DTO;
+using HotelManagement.BUS;
+
 
 namespace HotelManagement.GUI
 {
@@ -19,7 +22,7 @@ namespace HotelManagement.GUI
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         private FormMain formMain;
-
+        string MaLPH;
         //Constructor
         public FormDanhSachChiTietTienNghi()
         {
@@ -37,7 +40,14 @@ namespace HotelManagement.GUI
             this.formMain = formMain;
             InitializeComponent();
         }
-
+        public FormDanhSachChiTietTienNghi(string MaLPH)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.MaLPH = MaLPH;
+            InitializeComponent();
+        }
         //Fields
         private int borderRadius = 20;
         private int borderSize = 2;
@@ -64,6 +74,8 @@ namespace HotelManagement.GUI
 
         //Private Methods
         //Private Methods
+
+
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -218,8 +230,24 @@ namespace HotelManagement.GUI
             grid.Rows.Add(new object[] { "Tủ lạnh", "1", "Đang sửa", edit, delete });
             grid.Rows.Add(new object[] { "Điều hòa", "2", "Sử dụng tốt", edit, delete });
             grid.Rows.Add(new object[] { "Máy sấy", "3", "Đang sửa", edit, delete });
+            LoadAllForm();
         }
 
+        public void LoadAllForm()
+        {
+            List<CTTN> cTTNs = CTTN_BUS.Instance.FindCTTN(this.MaLPH);
+            LoadForm(cTTNs);
+        }
+        private void LoadForm(List<CTTN> cTTNs)
+        {
+
+            grid.Rows.Clear();
+            foreach(CTTN cTTN in cTTNs)
+            {
+                grid.Rows.Add(new object[] { cTTN.TienNghi.TenTN, cTTN.SL, "Sử dụng tốt", edit, delete });
+
+            }    
+        }
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int x = e.ColumnIndex, y = e.RowIndex;

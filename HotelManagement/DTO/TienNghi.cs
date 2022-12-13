@@ -9,6 +9,10 @@ namespace HotelManagement.DTO
     [Table("TienNghi")]
     public partial class TienNghi
     {
+        public TienNghi()
+        {
+            CTTNs = new HashSet<CTTN>();
+        }
         [Key]
         [StringLength(5)]
         public string MaTN { get; set; }
@@ -18,5 +22,7 @@ namespace HotelManagement.DTO
         public string TenTN { get; set; }
 
         public bool? DaXoa { get; set; }
+
+        public virtual ICollection<CTTN> CTTNs { get; set; }
     }
 }

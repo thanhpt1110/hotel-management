@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelManagement.BUS;
+using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +20,9 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        CTDP ctdp;
+        Phong phong;
+        string TTPhong = "";
         //Constructor
         public FormThongTinPhong()
         {
@@ -27,6 +31,20 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
+        public FormThongTinPhong(string Case, CTDP cTDP = null, Phong phong = null)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.ctdp = cTDP;
+            this.TTPhong = Case;
+            this.phong = phong;
+            InitializeComponent();
+            LoadPage();
+
+
+        }
+
         //Control Box
 
         //Form Move
@@ -47,6 +65,7 @@ namespace HotelManagement.GUI
         }
 
         //Private Methods
+
         //Private Methods
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
@@ -197,12 +216,123 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+        private void LoadPhongDaDat()
+        {
+            this.LabelMaPhong.Text = ctdp.MaPH;
+            this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
+            this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
+            this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " ngày";
+            this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
+            this.ComboBoxTinhTrangPhong.Text = "Phòng đã đặt";
+            this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
+            this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
+            this.CTButtonThemDichVu.Hide();
+            this.CTButtonDatPhongNay.Hide();
+            this.PanelChuaButtonThanhToan.Hide();
+        }
+        private void LoadPhongDangThue()
+        {
+            this.LabelMaPhong.Text = ctdp.MaPH;
+            this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
+            this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
+            this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " ngày";
+            this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
+            this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
+            this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
+            this.ComboBoxTinhTrangPhong.Text = "Phòng đang thuê";
+            this.PanelChuaButtonDatPhongNay.Hide();
+            this.PanelChuaButtonNhanPhong.Hide();
+        }
+        private void LoadPhongDangSua()
+        {
+            this.LabelMaPhong.Text = phong.MaPH;
+            this.LabelTen.Text = "";
+            this.LabelNgayCheckin.Text = "";
+            this.LabelThoiGianThue.Text = "";
+            this.LabelSoNguoi.Text = "";
+            this.ComboBoxTinhTrangDonDep.Text = phong.TTDD;
+            this.TextBoxGhiChu.Text = phong.GhiChu;
+            this.ComboBoxTinhTrangPhong.Text = "Đang sửa chữa";
+            this.ComboBoxTinhTrangPhong.Items.Add("Đang sửa chữa");
+            this.ComboBoxTinhTrangPhong.Items.Add("Phòng trống");
+            this.CTButtonThemDichVu.Hide();
+            this.CTButtonDatPhongNay.Hide();
+            this.PanelChuaButtonThanhToan.Hide();
+            this.PanelChuaButtonNhanPhong.Hide();
+        }
 
+        private void LoadPhongTrong()
+        {
+            this.LabelMaPhong.Text = phong.MaPH;
+            this.LabelTen.Text = "";
+            this.LabelNgayCheckin.Text = "";
+            this.LabelThoiGianThue.Text = "";
+            this.LabelSoNguoi.Text = "";
+            this.TextBoxGhiChu.Text = phong.GhiChu;
+            this.ComboBoxTinhTrangDonDep.Text = phong.TTDD;
+            this.ComboBoxTinhTrangPhong.Text = "Phòng trống";
+            this.ComboBoxTinhTrangPhong.Items.Add("Đang sửa chữa");
+            this.ComboBoxTinhTrangPhong.Items.Add("Phòng trống");
+            this.CTButtonThemDichVu.Hide();
+            this.PanelChuaButtonThanhToan.Hide();
+            this.PanelChuaButtonNhanPhong.Hide();
+        }
+        private void LoadPage()
+        {
+            switch (TTPhong)
+            {
+                case "Phòng đã đặt": // Khách đã đặt phòng
+                    this.LoadPhongDaDat();
+                    break;
+                case "   Phòng\r\nđang thuê":
+                    this.LoadPhongDangThue();
+                    break;
+                case "Đang sửa chữa":
+                    this.LoadPhongDangSua();
+                    break;
+                case "Phòng trống":
+                    this.LoadPhongTrong();
+                    break;
+                
+
+            }
+        }
         private void FormThongTinPhong_Load(object sender, EventArgs e)
         {
             DataGridView grid = gridDichVu;
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
             this.ActiveControl = LabelMaPhong;
+        }
+
+        private void LabelThoiGianThue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CTButtonLuu_Click(object sender, EventArgs e)
+        {
+            string TTPhong = this.ComboBoxTinhTrangPhong.Text;
+            if (TTPhong == "Phòng trống")
+                phong.TTPH = "Bình thường";
+            else if (TTPhong == "Đang sửa chữa")
+                phong.TTPH = TTPhong;
+            if (TTPhong == "Đang sửa chữa" || TTPhong == "Phòng trống")
+            {
+                phong.GhiChu = this.TextBoxGhiChu.Text;
+                phong.TTDD = this.ComboBoxTinhTrangDonDep.Text;
+                
+                PhongBUS.Instance.UpdateOrAdd(phong);
+            }
+            else
+            {
+                phong = PhongBUS.Instance.FindePhong(ctdp.MaPH);
+                phong.TTDD = this.ComboBoxTinhTrangDonDep.Text;
+                phong.GhiChu = this.TextBoxGhiChu.Text;
+                PhongBUS.Instance.UpdateOrAdd(phong);
+            }
+
+            this.Close();
+
         }
     }
 }
