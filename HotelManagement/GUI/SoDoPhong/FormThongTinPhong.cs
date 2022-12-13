@@ -334,5 +334,13 @@ namespace HotelManagement.GUI
             this.Close();
 
         }
+
+        private void CTButtonThemDichVu_Click(object sender, EventArgs e)
+        {
+            using(FormThemDichVuVaoPhong frm = new FormThemDichVuVaoPhong())
+            {
+                frm.ShowDialog();
+            }    
+        }
     }
 }
