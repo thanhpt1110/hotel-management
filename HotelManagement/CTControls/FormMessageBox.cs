@@ -143,7 +143,7 @@ namespace HotelManagement.CTControls
                     button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
                     button2.Text = "Cancel";
                     button2.DialogResult = DialogResult.Cancel;//Set DialogResult
-                    button2.BackColor = Color.DimGray;
+                    button2.BackColor = Color.Goldenrod;
 
                     //Set Default Button
                     if (defaultButton != MessageBoxDefaultButton.Button3)//There are only 2 buttons, so the Default Button cannot be Button3
@@ -163,7 +163,7 @@ namespace HotelManagement.CTControls
                     button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
                     button2.Text = "Cancel";
                     button2.DialogResult = DialogResult.Cancel;//Set DialogResult
-                    button2.BackColor = Color.DimGray;
+                    button2.BackColor = Color.Goldenrod;
 
                     //Set Default Button
                     if (defaultButton != MessageBoxDefaultButton.Button3)//There are only 2 buttons, so the Default Button cannot be Button3
@@ -183,7 +183,7 @@ namespace HotelManagement.CTControls
                     button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
                     button2.Text = "No";
                     button2.DialogResult = DialogResult.No;//Set DialogResult
-                    button2.BackColor = Color.IndianRed;
+                    button2.BackColor = Color.FromArgb(252, 87, 83);
 
                     //Set Default Button
                     if (defaultButton != MessageBoxDefaultButton.Button3)//There are only 2 buttons, so the Default Button cannot be Button3
@@ -202,14 +202,14 @@ namespace HotelManagement.CTControls
                     button2.Location = new Point(xCenter, yCenter);
                     button2.Text = "No";
                     button2.DialogResult = DialogResult.No;//Set DialogResult
-                    button2.BackColor = Color.IndianRed;
+                    button2.BackColor = Color.FromArgb(252, 87, 83);
 
                     //Cancel Button
                     button3.Visible = true;
                     button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
                     button3.Text = "Cancel";
                     button3.DialogResult = DialogResult.Cancel;//Set DialogResult
-                    button3.BackColor = Color.DimGray;
+                    button3.BackColor = Color.Goldenrod;
 
                     //Set Default Button
                     SetDefaultButton(defaultButton);
@@ -234,7 +234,7 @@ namespace HotelManagement.CTControls
                     button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
                     button3.Text = "Ignore";
                     button3.DialogResult = DialogResult.Ignore;//Set DialogResult
-                    button3.BackColor = Color.IndianRed;
+                    button3.BackColor = Color.FromArgb(252, 87, 83);
 
                     //Set Default Button
                     SetDefaultButton(defaultButton);
