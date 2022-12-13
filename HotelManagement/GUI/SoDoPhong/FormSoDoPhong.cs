@@ -30,6 +30,7 @@ namespace HotelManagement.GUI
         }
         public void LoadPhong()
         {
+            SetAppear();
             List<CTRoomDaDat> roomDaDats = new List<CTRoomDaDat>();
             List<CTRoomDangSuaChua> roomDangSuaChuas = new List<CTRoomDangSuaChua>();
             List<CTRoomDangThue> roomDangThues = new List<CTRoomDangThue>();
@@ -162,7 +163,7 @@ namespace HotelManagement.GUI
         }
         private void LoadPhongFind()
         {
-
+            SetAppear();
             List<CTRoomDaDat> roomDaDats = new List<CTRoomDaDat>();
             List<CTRoomDangSuaChua> roomDangSuaChuas = new List<CTRoomDangSuaChua>();
             List<CTRoomDangThue> roomDangThues = new List<CTRoomDangThue>();
@@ -294,6 +295,12 @@ namespace HotelManagement.GUI
             }
         }
 
+        private void SetAppear()
+        {
+            PanelSoDo.Dock = DockStyle.None;
+            PanelSoDo.Size = new Size(0, 0);
+            timerAppear.Start();
+        }
 
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {
@@ -312,6 +319,12 @@ namespace HotelManagement.GUI
         private void ctDatePicker1_ValueChanged(object sender, EventArgs e)
         {
             this.LoadPhong();
+        }
+
+        private void timerAppear_Tick(object sender, EventArgs e)
+        {
+            PanelSoDo.Dock = DockStyle.Fill;
+            timerAppear.Stop();
         }
     }
 }
