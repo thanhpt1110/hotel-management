@@ -198,5 +198,10 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+
+        private void ctTextBox4__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

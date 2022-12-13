@@ -9,6 +9,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.DTO;
+using HotelManagement.BUS;
+using HotelManagement.CTControls;
 
 namespace HotelManagement.GUI
 {
@@ -18,7 +21,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        Phong phong;
         //Constructor
         public FormSuaPhong()
         {
@@ -26,6 +29,15 @@ namespace HotelManagement.GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+        }
+        public FormSuaPhong(Phong phong)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.phong = phong;
+            InitializeComponent();
+            LoadForm();
         }
         //Control Box
 
@@ -48,6 +60,26 @@ namespace HotelManagement.GUI
 
         //Private Methods
         //Private Methods
+
+        private void LoadForm()
+        {
+            if(phong.GhiChu!="")
+            {
+                this.ctTextBoxGhiChu.RemovePlaceholder();
+            }    
+            this.comboBoxDonDep.Text = phong.TTDD;
+
+            this.comboBoxLoaiPhong.Text = phong.LoaiPhong.TenLPH;
+            this.comboBoxLoaiPhong.Items.Clear();
+            List<LoaiPhong> loaiPhongs = LoaiPhongBUS.Instance.GetLoaiPhongs();
+
+            foreach (LoaiPhong loaiPhong in loaiPhongs)
+            {
+                this.comboBoxLoaiPhong.Items.Add(loaiPhong.TenLPH);
+            }    
+            this.comboBoxTinhTrangPhong.Text = phong.TTPH;
+            this.ctTextBoxGhiChu.Texts = phong.GhiChu;
+        }
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -206,6 +238,38 @@ namespace HotelManagement.GUI
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                phong.TTDD = this.comboBoxDonDep.Text;
+                phong.GhiChu = this.ctTextBoxGhiChu.Texts;
+                if (this.comboBoxLoaiPhong.Text == "Thường đơn")
+                {
+                    phong.MaLPH = "NOR01";
+                }
+                else if (this.comboBoxLoaiPhong.Text == "Thường đôi")
+                {
+                    phong.MaLPH = "NOR02";
+                }
+                else if (this.comboBoxLoaiPhong.Text == "Vip đơn")
+                {
+                    phong.MaLPH = "VIP01";
+                }
+                else
+                    phong.MaLPH = "VIP02";
+                phong.TTPH = this.comboBoxTinhTrangPhong.Text;
+                PhongBUS.Instance.UpdateOrAdd(phong);
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                CTMessageBox.Show("Cập nhật thông tin phòng thất bại.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
     }
 }

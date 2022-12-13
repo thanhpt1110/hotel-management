@@ -21,5 +21,7 @@ namespace HotelManagement.DTO
 
         public int? SL { get; set; }
         public bool? DaXoa { get; set; }
+
+        public virtual TienNghi TienNghi { get; set; }
     }
 }

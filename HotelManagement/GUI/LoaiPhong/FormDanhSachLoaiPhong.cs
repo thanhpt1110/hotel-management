@@ -130,12 +130,13 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormDanhSachChiTietTienNghi formDanhSachChiTietTienNghi = new FormDanhSachChiTietTienNghi(formMain))
+                        using (FormDanhSachChiTietTienNghi formDanhSachChiTietTienNghi = new FormDanhSachChiTietTienNghi(grid.Rows[y].Cells[1].Value.ToString()))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();
                             formDanhSachChiTietTienNghi.Owner = formBackground;
                             formDanhSachChiTietTienNghi.ShowDialog();
+                            this.LoadAllDataGrid();
                             formBackground.Dispose();
                         }
                     }

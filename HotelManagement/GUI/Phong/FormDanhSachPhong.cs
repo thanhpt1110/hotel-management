@@ -131,12 +131,13 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormSuaPhong formSuaPhong = new FormSuaPhong())
+                        using (FormSuaPhong formSuaPhong = new FormSuaPhong(PhongBUS.Instance.FindePhong(grid.Rows[y].Cells[1].Value.ToString())))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();
                             formSuaPhong.Owner = formBackground;
                             formSuaPhong.ShowDialog();
+                            this.LoadFullDataGrid();
                             formBackground.Dispose();
                         }
                     }

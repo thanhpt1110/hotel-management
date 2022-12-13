@@ -1,6 +1,7 @@
 ﻿using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,14 @@ namespace HotelManagement.DAO
         public List<Phong> FindPhongWithMaPH(string MaPh)
         {
             return db.Phongs.Where(p => p.MaPH.Contains(MaPh) && p.DaXoa == false).ToList();
+        }
+
+        public void UpdateOrAdd(Phong phong)
+        {
+            phong.LoaiPhong = db.LoaiPhongs.Find(phong.MaLPH);
+            phong.DaXoa = false;
+            db.Phongs.AddOrUpdate(phong);
+            db.SaveChanges();
         }
         
     }

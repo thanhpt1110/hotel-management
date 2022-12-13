@@ -241,6 +241,7 @@
             this.ctTextBox4.TabIndex = 4;
             this.ctTextBox4.Texts = "";
             this.ctTextBox4.UnderlineedStyle = true;
+            this.ctTextBox4._TextChanged += new System.EventHandler(this.ctTextBox4__TextChanged);
             // 
             // FormThemPhong
             // 

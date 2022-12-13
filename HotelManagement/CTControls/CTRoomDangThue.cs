@@ -221,7 +221,11 @@ namespace HotelManagement.CTControls
 
         private void CTRoomDangThue_Click(object sender, EventArgs e)
         {
-
+            using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(this.LabelTrangThaiLon.Text, ctdp))
+            {
+                formThongTinPhong.ShowDialog();
+                this.formSoDoPhong.LoadAllPhong();
+            }
         }
     }
 }
