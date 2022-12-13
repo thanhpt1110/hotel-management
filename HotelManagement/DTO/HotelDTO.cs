@@ -98,6 +98,11 @@ namespace HotelManagement.DTO
                 .HasMany(e => e.TaiKhoans)
                 .WithRequired(e => e.NhanVien)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TienNghi>()
+            .HasMany(e => e.CTTNs)
+            .WithRequired(e => e.TienNghi)
+            .WillCascadeOnDelete(false);
         }
     }
 }

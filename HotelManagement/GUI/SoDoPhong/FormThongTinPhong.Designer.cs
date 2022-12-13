@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.CTButtonThemDichVu = new HotelManagement.CTControls.CTButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelChuaButtonThanhToan = new System.Windows.Forms.Panel();
             this.CTButtonThanhToan = new HotelManagement.CTControls.CTButton();
             this.PanelChuaButtonDatPhongNay = new System.Windows.Forms.Panel();
             this.CTButtonDatPhongNay = new HotelManagement.CTControls.CTButton();
@@ -70,7 +70,7 @@
             this.LabelMaPhong = new System.Windows.Forms.Label();
             this.PanelBackground.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.PanelChuaButtonThanhToan.SuspendLayout();
             this.PanelChuaButtonDatPhongNay.SuspendLayout();
             this.PanelChuaButtonNhanPhong.SuspendLayout();
             this.PanelChuaButtonLuu.SuspendLayout();
@@ -87,7 +87,7 @@
             // PanelBackground
             // 
             this.PanelBackground.Controls.Add(this.panel3);
-            this.PanelBackground.Controls.Add(this.panel1);
+            this.PanelBackground.Controls.Add(this.PanelChuaButtonThanhToan);
             this.PanelBackground.Controls.Add(this.PanelChuaButtonDatPhongNay);
             this.PanelBackground.Controls.Add(this.PanelChuaButtonNhanPhong);
             this.PanelBackground.Controls.Add(this.PanelChuaButtonLuu);
@@ -131,14 +131,14 @@
             this.CTButtonThemDichVu.TextColor = System.Drawing.Color.White;
             this.CTButtonThemDichVu.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // PanelChuaButtonThanhToan
             // 
-            this.panel1.Controls.Add(this.CTButtonThanhToan);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(39, 488);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 62);
-            this.panel1.TabIndex = 16;
+            this.PanelChuaButtonThanhToan.Controls.Add(this.CTButtonThanhToan);
+            this.PanelChuaButtonThanhToan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelChuaButtonThanhToan.Location = new System.Drawing.Point(39, 488);
+            this.PanelChuaButtonThanhToan.Name = "PanelChuaButtonThanhToan";
+            this.PanelChuaButtonThanhToan.Size = new System.Drawing.Size(188, 62);
+            this.PanelChuaButtonThanhToan.TabIndex = 16;
             // 
             // CTButtonThanhToan
             // 
@@ -249,6 +249,7 @@
             this.CTButtonLuu.Text = "Lưu";
             this.CTButtonLuu.TextColor = System.Drawing.Color.White;
             this.CTButtonLuu.UseVisualStyleBackColor = false;
+            this.CTButtonLuu.Click += new System.EventHandler(this.CTButtonLuu_Click);
             // 
             // PanelChuaButtonThoat
             // 
@@ -337,8 +338,8 @@
             this.ComboBoxTinhTrangDonDep.ForeColor = System.Drawing.Color.Black;
             this.ComboBoxTinhTrangDonDep.FormattingEnabled = true;
             this.ComboBoxTinhTrangDonDep.Items.AddRange(new object[] {
-            "  Đã dọn dẹp",
-            "  Đang dọn dẹp"});
+            "Đã dọn dẹp",
+            "Đang dọn dẹp"});
             this.ComboBoxTinhTrangDonDep.Location = new System.Drawing.Point(616, 237);
             this.ComboBoxTinhTrangDonDep.Name = "ComboBoxTinhTrangDonDep";
             this.ComboBoxTinhTrangDonDep.Size = new System.Drawing.Size(192, 29);
@@ -350,11 +351,6 @@
             this.ComboBoxTinhTrangPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxTinhTrangPhong.ForeColor = System.Drawing.Color.Black;
             this.ComboBoxTinhTrangPhong.FormattingEnabled = true;
-            this.ComboBoxTinhTrangPhong.Items.AddRange(new object[] {
-            "  Phòng đã đặt",
-            "  Phòng đang thuê",
-            "  Phòng trống",
-            "  Phòng đang sửa chữa"});
             this.ComboBoxTinhTrangPhong.Location = new System.Drawing.Point(616, 155);
             this.ComboBoxTinhTrangPhong.Name = "ComboBoxTinhTrangPhong";
             this.ComboBoxTinhTrangPhong.Size = new System.Drawing.Size(192, 29);
@@ -373,14 +369,14 @@
             this.gridDichVu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridDichVu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridDichVu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gridDichVu.ColumnHeadersHeight = 50;
             this.gridDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -388,27 +384,27 @@
             this.Column2,
             this.Column3});
             this.gridDichVu.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridDichVu.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridDichVu.DefaultCellStyle = dataGridViewCellStyle8;
             this.gridDichVu.EnableHeadersVisualStyles = false;
             this.gridDichVu.Location = new System.Drawing.Point(38, 105);
             this.gridDichVu.MultiSelect = false;
             this.gridDichVu.Name = "gridDichVu";
             this.gridDichVu.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDichVu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDichVu.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.gridDichVu.RowHeadersVisible = false;
             this.gridDichVu.RowHeadersWidth = 40;
             this.gridDichVu.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -497,6 +493,7 @@
             this.LabelThoiGianThue.Size = new System.Drawing.Size(110, 21);
             this.LabelThoiGianThue.TabIndex = 3;
             this.LabelThoiGianThue.Text = "Thời gian thuê";
+            this.LabelThoiGianThue.Click += new System.EventHandler(this.LabelThoiGianThue_Click);
             // 
             // LabelNgayCheckin
             // 
@@ -624,7 +621,7 @@
             this.StyleChanged += new System.EventHandler(this.FormThongTinPhong_SizeChanged);
             this.PanelBackground.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.PanelChuaButtonThanhToan.ResumeLayout(false);
             this.PanelChuaButtonDatPhongNay.ResumeLayout(false);
             this.PanelChuaButtonNhanPhong.ResumeLayout(false);
             this.PanelChuaButtonLuu.ResumeLayout(false);
@@ -666,7 +663,7 @@
         private System.Windows.Forms.Label LabelMaPhong;
         private System.Windows.Forms.Panel panel3;
         private CTControls.CTButton CTButtonThemDichVu;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelChuaButtonThanhToan;
         private CTControls.CTButton CTButtonThanhToan;
         private System.Windows.Forms.Label LabelGhiChu;
         private CTPanel.CTPanel ctPanel1;

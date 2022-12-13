@@ -40,7 +40,7 @@
             // 
             this.PictureBoxBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureBoxBack.Image = global::HotelManagement.Properties.Resources.back;
-            this.PictureBoxBack.Location = new System.Drawing.Point(12, 24);
+            this.PictureBoxBack.Location = new System.Drawing.Point(0, 0);
             this.PictureBoxBack.Name = "PictureBoxBack";
             this.PictureBoxBack.Size = new System.Drawing.Size(40, 40);
             this.PictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -60,11 +60,11 @@
             this.ButtonLayOTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonLayOTP.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.ButtonLayOTP.ForeColor = System.Drawing.Color.White;
-            this.ButtonLayOTP.Location = new System.Drawing.Point(98, 356);
+            this.ButtonLayOTP.Location = new System.Drawing.Point(90, 360);
             this.ButtonLayOTP.Name = "ButtonLayOTP";
             this.ButtonLayOTP.Size = new System.Drawing.Size(140, 47);
             this.ButtonLayOTP.TabIndex = 6;
-            this.ButtonLayOTP.Text = "GET OTP";
+            this.ButtonLayOTP.Text = "Lấy mã OTP";
             this.ButtonLayOTP.TextColor = System.Drawing.Color.White;
             this.ButtonLayOTP.UseVisualStyleBackColor = false;
             this.ButtonLayOTP.Click += new System.EventHandler(this.ButtonLayOTP_Click);
@@ -78,14 +78,14 @@
             this.TextBoxEmail.BorderSize = 1;
             this.TextBoxEmail.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.TextBoxEmail.IsFocused = false;
-            this.TextBoxEmail.Location = new System.Drawing.Point(23, 260);
+            this.TextBoxEmail.Location = new System.Drawing.Point(20, 240);
             this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxEmail.Multiline = false;
             this.TextBoxEmail.Name = "TextBoxEmail";
             this.TextBoxEmail.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
             this.TextBoxEmail.PasswordChar = false;
             this.TextBoxEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TextBoxEmail.PlaceholderText = "Enter your email";
+            this.TextBoxEmail.PlaceholderText = "Email";
             this.TextBoxEmail.ReadOnly = false;
             this.TextBoxEmail.Size = new System.Drawing.Size(286, 45);
             this.TextBoxEmail.TabIndex = 4;
@@ -101,14 +101,14 @@
             this.textBoxUsername.BorderSize = 1;
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(23, 179);
+            this.textBoxUsername.Location = new System.Drawing.Point(20, 165);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Multiline = false;
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
             this.textBoxUsername.PasswordChar = false;
             this.textBoxUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxUsername.PlaceholderText = "Enter your username";
+            this.textBoxUsername.PlaceholderText = "Tên tài khoản";
             this.textBoxUsername.ReadOnly = false;
             this.textBoxUsername.Size = new System.Drawing.Size(286, 45);
             this.textBoxUsername.TabIndex = 3;
@@ -121,7 +121,7 @@
             this.LabelForgotPassword.AutoSize = true;
             this.LabelForgotPassword.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 69);
+            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 45);
             this.LabelForgotPassword.Name = "LabelForgotPassword";
             this.LabelForgotPassword.Size = new System.Drawing.Size(295, 59);
             this.LabelForgotPassword.TabIndex = 2;

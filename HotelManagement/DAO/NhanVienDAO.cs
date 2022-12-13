@@ -49,8 +49,8 @@ namespace HotelManagement.DAO
         }
         public string GetMaNVNext()
         {
-            List<NhanVien> NV = db.NhanViens.ToList();
-            string MaMax = NV[NV.Count - 1].MaNV.ToString();
+            List<NhanVien> NV = db.NhanViens.Where(p=>p.MaNV.Contains("NV")).ToList();
+            string MaMax = NV[NV.Count - 1].MaNV;
             MaMax = MaMax.Substring(MaMax.Length - 3, 3);
             int max = int.Parse(MaMax);
             max++;

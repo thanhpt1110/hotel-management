@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.GUI;
+using System.Net.NetworkInformation;
+
 namespace HotelManagement.CTControls
 {
     public partial class CTRoomDaDat : UserControl
@@ -213,12 +215,15 @@ namespace HotelManagement.CTControls
         {
             this.Invalidate();
         }
-
+        
         private void CTRoomDaDat_Click(object sender, EventArgs e)
         {
-            FormThongTinPhong formThongTinPhong = new FormThongTinPhong();
-            formThongTinPhong.ShowDialog();
-            this.SoDoPhong.LoadPhong();
+
+            using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(this.LabelTrangThaiLon.Text, ctdp))
+            {
+                formThongTinPhong.ShowDialog();
+                this.SoDoPhong.LoadAllPhong();
+            }
         }
     }
 }

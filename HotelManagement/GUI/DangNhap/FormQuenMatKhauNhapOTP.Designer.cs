@@ -50,11 +50,11 @@
             this.ButtonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonContinue.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonContinue.ForeColor = System.Drawing.Color.White;
-            this.ButtonContinue.Location = new System.Drawing.Point(179, 302);
+            this.ButtonContinue.Location = new System.Drawing.Point(177, 295);
             this.ButtonContinue.Name = "ButtonContinue";
             this.ButtonContinue.Size = new System.Drawing.Size(130, 47);
             this.ButtonContinue.TabIndex = 10;
-            this.ButtonContinue.Text = "CONTINUE";
+            this.ButtonContinue.Text = "Tiếp tục";
             this.ButtonContinue.TextColor = System.Drawing.Color.White;
             this.ButtonContinue.UseVisualStyleBackColor = false;
             this.ButtonContinue.Click += new System.EventHandler(this.ButtonContinue_Click);
@@ -68,14 +68,14 @@
             this.textBoxOTP.BorderSize = 1;
             this.textBoxOTP.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxOTP.IsFocused = false;
-            this.textBoxOTP.Location = new System.Drawing.Point(24, 203);
+            this.textBoxOTP.Location = new System.Drawing.Point(22, 196);
             this.textBoxOTP.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOTP.Multiline = false;
             this.textBoxOTP.Name = "textBoxOTP";
             this.textBoxOTP.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
             this.textBoxOTP.PasswordChar = false;
             this.textBoxOTP.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxOTP.PlaceholderText = "Enter your OTP";
+            this.textBoxOTP.PlaceholderText = "Nhập mã OTP";
             this.textBoxOTP.ReadOnly = false;
             this.textBoxOTP.Size = new System.Drawing.Size(286, 45);
             this.textBoxOTP.TabIndex = 8;
@@ -88,7 +88,7 @@
             this.LabelForgotPassword.AutoSize = true;
             this.LabelForgotPassword.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 69);
+            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 45);
             this.LabelForgotPassword.Name = "LabelForgotPassword";
             this.LabelForgotPassword.Size = new System.Drawing.Size(295, 59);
             this.LabelForgotPassword.TabIndex = 7;
@@ -106,11 +106,11 @@
             this.ButtonResend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonResend.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonResend.ForeColor = System.Drawing.Color.White;
-            this.ButtonResend.Location = new System.Drawing.Point(24, 302);
+            this.ButtonResend.Location = new System.Drawing.Point(22, 295);
             this.ButtonResend.Name = "ButtonResend";
             this.ButtonResend.Size = new System.Drawing.Size(130, 47);
             this.ButtonResend.TabIndex = 10;
-            this.ButtonResend.Text = "RESEND";
+            this.ButtonResend.Text = "Gửi lại";
             this.ButtonResend.TextColor = System.Drawing.Color.White;
             this.ButtonResend.UseVisualStyleBackColor = false;
             this.ButtonResend.Click += new System.EventHandler(this.ButtonResend_Click);
@@ -119,7 +119,7 @@
             // 
             this.PictureBoxBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureBoxBack.Image = global::HotelManagement.Properties.Resources.back;
-            this.PictureBoxBack.Location = new System.Drawing.Point(12, 24);
+            this.PictureBoxBack.Location = new System.Drawing.Point(0, 0);
             this.PictureBoxBack.Name = "PictureBoxBack";
             this.PictureBoxBack.Size = new System.Drawing.Size(40, 40);
             this.PictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -16,15 +16,15 @@ namespace HotelManagement.BUS
             private set { instance = value; }
         }
         private CTDP_BUS() { }
-        public List<CTDP> GetCTDPs()
+        public List<CTDP> GetCTDPs() // Lấy tất cả CTDP
         {
             return CTDP_DAO.Instance.GetCTDPs();
         }
-        public int getKhoangTG(string MaCTDP)
+        public int getKhoangTG(string MaCTDP) // Lấy thời gian ở của khách hàng tại 1 phòng nào đó
         {
             return CTDP_DAO.Instance.getKhoangTG(MaCTDP);
         }
-        public CTDP FindCTDP(string MaPhong, DateTime currentTime)
+        public CTDP FindCTDP(string MaPhong, DateTime currentTime) // Tìm Mã phòng theo 
         {
             return CTDP_DAO.Instance.FindCTDP(MaPhong, currentTime);
         }
