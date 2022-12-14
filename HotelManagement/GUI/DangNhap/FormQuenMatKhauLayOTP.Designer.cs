@@ -60,7 +60,7 @@
             this.ButtonLayOTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonLayOTP.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.ButtonLayOTP.ForeColor = System.Drawing.Color.White;
-            this.ButtonLayOTP.Location = new System.Drawing.Point(90, 360);
+            this.ButtonLayOTP.Location = new System.Drawing.Point(100, 300);
             this.ButtonLayOTP.Name = "ButtonLayOTP";
             this.ButtonLayOTP.Size = new System.Drawing.Size(140, 47);
             this.ButtonLayOTP.TabIndex = 6;
@@ -78,7 +78,7 @@
             this.TextBoxEmail.BorderSize = 1;
             this.TextBoxEmail.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.TextBoxEmail.IsFocused = false;
-            this.TextBoxEmail.Location = new System.Drawing.Point(20, 240);
+            this.TextBoxEmail.Location = new System.Drawing.Point(24, 200);
             this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxEmail.Multiline = false;
             this.TextBoxEmail.Name = "TextBoxEmail";
@@ -101,7 +101,7 @@
             this.textBoxUsername.BorderSize = 1;
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(20, 165);
+            this.textBoxUsername.Location = new System.Drawing.Point(24, 135);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Multiline = false;
             this.textBoxUsername.Name = "textBoxUsername";
@@ -121,7 +121,7 @@
             this.LabelForgotPassword.AutoSize = true;
             this.LabelForgotPassword.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 45);
+            this.LabelForgotPassword.Location = new System.Drawing.Point(15, 30);
             this.LabelForgotPassword.Name = "LabelForgotPassword";
             this.LabelForgotPassword.Size = new System.Drawing.Size(295, 59);
             this.LabelForgotPassword.TabIndex = 2;
