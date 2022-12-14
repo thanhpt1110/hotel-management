@@ -21,40 +21,52 @@ namespace HotelManagement.DAO
 
         public List<DichVu> GetDichVus()
         {
-            return db.DichVus.Where(p=>p.DaXoa ==false).ToList();
+   
+                return db.DichVus.Where(p => p.DaXoa == false).ToList();
+            
         }    
         public DichVu FindDichVu(string MaDV)
         {
-            return db.DichVus.Find(MaDV);
+
+                return db.DichVus.Find(MaDV);
+            
         }
         public void UpdateORAdd(DichVu dv)
         {
-            dv.DaXoa = false;
-            db.DichVus.AddOrUpdate(dv);
-            db.SaveChanges();
+
+                dv.DaXoa = false;
+                db.DichVus.AddOrUpdate(dv);
+                db.SaveChanges();
+            
         }
         public void RemoveDV(DichVu dv)
         {
-            dv.DaXoa = true;
-            db.DichVus.AddOrUpdate(dv);
-            db.SaveChanges();
+
+                dv.DaXoa = true;
+                db.DichVus.AddOrUpdate(dv);
+                db.SaveChanges();
+            
         }
         public string GetMaDVNext()
         {
-            List<DichVu> DV = db.DichVus.ToList();
-            string MaMax = DV[DV.Count - 1].MaDV.ToString();
-            MaMax = MaMax.Substring(MaMax.Length - 2, 2);
-            int max = int.Parse(MaMax);
-            max++;
-            if (max < 10)
-            {
-                return "DV0" + max.ToString();
-            }
-            return "DV" + max.ToString();
+
+                List<DichVu> DV = db.DichVus.ToList();
+                string MaMax = DV[DV.Count - 1].MaDV.ToString();
+                MaMax = MaMax.Substring(MaMax.Length - 2, 2);
+                int max = int.Parse(MaMax);
+                max++;
+                if (max < 10)
+                {
+                    return "DV0" + max.ToString();
+                }
+                return "DV" + max.ToString();
+            
         }
         public List<DichVu> FindDichVuWithName(string TenDV)
         {
-            return db.DichVus.Where(p=>p.TenDV.Contains(TenDV) && p.DaXoa == false).ToList();
+
+                return db.DichVus.Where(p => p.TenDV.Contains(TenDV) && p.DaXoa == false).ToList();
+            
         }
     }
 }

@@ -31,7 +31,7 @@ namespace HotelManagement.GUI
         {
             if (TaiKhoanBUS.Instance.checkLogin(this.textBoxUsername.Texts, textBoxPassword.Texts))
             {
-                FormMain formMain = new FormMain(TaiKhoanBUS.Instance.getQuyenTruyCap(this.textBoxUsername.Texts));
+                FormMain formMain = new FormMain(TaiKhoanBUS.Instance.GetTKDangNhap(textBoxUsername.Texts));
                 formLoginParent.Hide();
                 formMain.ShowDialog();
                 formLoginParent.Close();

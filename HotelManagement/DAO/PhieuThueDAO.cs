@@ -1,10 +1,13 @@
-﻿using HotelManagement.DTO;
+﻿using HotelManagement.CTControls;
+using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HotelManagement.DAO
 {
@@ -28,31 +31,47 @@ namespace HotelManagement.DAO
         }
         public void UpdatePhieuThue(PhieuThue phieuThue)
         {
-            db.PhieuThues.AddOrUpdate(phieuThue);
+            try
+            {
+
+                phieuThue.DaXoa = false;
+                phieuThue.NhanVien = db.NhanViens.Find(phieuThue.MaNV);
+                phieuThue.KhachHang = db.KhachHangs.Find(phieuThue.MaKH);
+
+                db.PhieuThues.AddOrUpdate(phieuThue);
+                db.SaveChanges();
+
+            }
+            catch (DbEntityValidationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         public List<PhieuThue> GetPhieuThuesWithNameCus(string name)
         {
             return db.PhieuThues.Where(p => p.KhachHang.TenKH.Contains(name)).ToList();
         }
-        public string GetMaKHNext()
+        public string GetMaPTNext()
         {
-            List<NhanVien> DV = db.NhanViens.ToList();
-            string MaMax = DV[DV.Count - 1].MaNV.ToString();
+            List<PhieuThue> PT = db.PhieuThues.ToList();
+            string MaMax = PT[PT.Count - 1].MaPT.ToString();
             MaMax = MaMax.Substring(MaMax.Length - 3, 3);
             int max = int.Parse(MaMax);
             max++;
             if (max < 10)
             {
-                return "NV00" + max.ToString();
+                return "PT00" + max.ToString();
             }
-            else if (max < 100)
+            else if (max >= 10)
             {
-                return "NV0" + max.ToString();
+                return "PT0" + max.ToString();
             }
-            return "NV" + max.ToString();
+            return "PT" + max.ToString();
         }
         public void RemoveAllPhieuThueWithMaKH(List<PhieuThue> phieuThues)
         {
+                
             if(phieuThues!=null)
                 foreach(PhieuThue phieuThue in phieuThues)
                 {

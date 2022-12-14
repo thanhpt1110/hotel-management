@@ -20,14 +20,16 @@ namespace HotelManagement.GUI
         private Image details = Properties.Resources.details;
         private List<PhieuThue> phieuThues;
         private FormMain formMain;
+        private TaiKhoan taiKhoan;
 
         public FormDanhSachPhieuThue()
         {
             InitializeComponent();
         }
 
-        public FormDanhSachPhieuThue(FormMain formMain)
+        public FormDanhSachPhieuThue(FormMain formMain,TaiKhoan taiKhoan)
         {
+            this.taiKhoan = taiKhoan;
             InitializeComponent();
             this.formMain = formMain;
         }
@@ -37,7 +39,7 @@ namespace HotelManagement.GUI
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
-                using (FormDatPhong formDatPhong = new FormDatPhong())
+                using (FormDatPhong formDatPhong = new FormDatPhong(this.taiKhoan))
                 {
                     formBackground.Owner = formMain;
                     formBackground.Show();
@@ -130,7 +132,7 @@ namespace HotelManagement.GUI
                 FormBackground formBackground = new FormBackground(formMain);
                 try
                 {
-                    using (FormChiTietPhieuThue formChiTietPhieuThue = new FormChiTietPhieuThue())
+                    using (FormChiTietPhieuThue formChiTietPhieuThue = new FormChiTietPhieuThue(PhieuThueBUS.Instance.GetPhieuThue(grid.Rows[y].Cells[1].Value.ToString())))
                     {
                         formBackground.Owner = formMain;
                         formBackground.Show();
@@ -138,6 +140,7 @@ namespace HotelManagement.GUI
                         formChiTietPhieuThue.ShowDialog();
                         formBackground.Dispose();
                     }
+                 
                 }
                 catch (Exception ex)
                 {

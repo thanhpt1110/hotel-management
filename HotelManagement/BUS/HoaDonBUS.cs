@@ -33,5 +33,9 @@ namespace HotelManagement.BUS
         {
             return HoaDonDAO.Instance.FindHoaDonWith_CCCD(cccd);
         }
+        public string getMaHDNext()
+        {
+            return HoaDonDAO.Instance.getMaHDNext();
+        }
     }
 }

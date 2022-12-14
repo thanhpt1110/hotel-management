@@ -21,38 +21,58 @@ namespace HotelManagement.DAO
 
         public bool CheckLogin(string username, string password)
         {
-            TaiKhoan tk = db.TaiKhoans.Where(p => p.TenTK == username && p.Password == password && p.DaXoa==false).SingleOrDefault();
-            if (tk == null)
-                return false;
-            return true;
+
+                TaiKhoan tk = db.TaiKhoans.Where(p => p.TenTK == username && p.Password == password && p.DaXoa == false).SingleOrDefault();
+                if (tk == null)
+                    return false;
+                return true;
+            
         }
         public int GetQuyenTruyCap(string username)
         {
-            TaiKhoan tk = db.TaiKhoans.Find(username);
-            return tk.CapDoQuyen;
+
+                TaiKhoan tk = db.TaiKhoans.Find(username);
+                return tk.CapDoQuyen;
+            
         }
         public List<TaiKhoan> GetTaiKhoans()
         {
-            return db.TaiKhoans.ToList();
+
+                return db.TaiKhoans.ToList();
+            
         }
         public List<TaiKhoan> GetTaiKhoansWithUserName(string username)
         {
-            return db.TaiKhoans.Where(p=>p.TenTK.Contains(username)).ToList();  
+
+                return db.TaiKhoans.Where(p => p.TenTK.Contains(username)).ToList();
+            
         }    
+        public TaiKhoan GetTKDangNhap(string username)
+        {
+
+                return db.TaiKhoans.Find(username);
+            
+        }
         public void AddOrUpdateTK(TaiKhoan taiKhoan)
         {
-            db.TaiKhoans.AddOrUpdate(taiKhoan);
-            db.SaveChanges();
+
+                db.TaiKhoans.AddOrUpdate(taiKhoan);
+                db.SaveChanges();
+            
         }
         public void RemoveTk(TaiKhoan taiKhoan)
         {
-            taiKhoan.DaXoa = true;
-            db.TaiKhoans.AddOrUpdate(taiKhoan);
-            db.SaveChanges();
+
+                taiKhoan.DaXoa = true;
+                db.TaiKhoans.AddOrUpdate(taiKhoan);
+                db.SaveChanges();
+            
         }
         public TaiKhoan CheckLegit(string username,string email)
         {
-            return db.TaiKhoans.Where(p => p.TenTK == username && p.NhanVien.Email == email).SingleOrDefault();
+
+                return db.TaiKhoans.Where(p => p.TenTK == username && p.NhanVien.Email == email).SingleOrDefault();
+            
         }
         
     }

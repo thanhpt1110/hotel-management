@@ -13,13 +13,38 @@ namespace HotelManagement.CTControls
 {
     public partial class CTTimePicker : UserControl
     {
-
+        
         public CTTimePicker()
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.MinimumSize = new Size(0, 35);
             this.Font = new Font(this.Font.Name, 9.5F);
             InitializeComponent();
+        }
+
+        public void SetHour(int hour, int min)
+        {
+            if (min <= 30)
+                this.ComboBoxGio.Text = hour.ToString();
+            else
+                this.ComboBoxGio.Text = (hour + 1).ToString();
+        }
+        public void SetMin(int Min)
+        {
+            if(Min<=30)
+                this.ComboBoxPhut.Text = "30";
+            else
+                this.ComboBoxPhut.Text = "00";
+
+
+        }
+        public int getHour()
+        {
+            return int.Parse(this.ComboBoxGio.Text);
+        }
+        public int getMin()
+        {
+            return int.Parse(this.ComboBoxPhut.Text);
         }
         //Fields
         //->Appearance

@@ -33,5 +33,9 @@ namespace HotelManagement.BUS
         {
             PhongDAO.Instance.UpdateOrAdd(phong);
         }
+        public List<Phong> FindPhongTrong(DateTime Checkin, DateTime Checkout, List<CTDP> DSPhongThem)
+        {
+            return PhongDAO.Instance.FindPhongTrong(Checkin, Checkout, DSPhongThem);   
+        }
     }
 }

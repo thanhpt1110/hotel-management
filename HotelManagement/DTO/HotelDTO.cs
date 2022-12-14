@@ -103,6 +103,11 @@ namespace HotelManagement.DTO
             .HasMany(e => e.CTTNs)
             .WithRequired(e => e.TienNghi)
             .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Phong>()
+            .HasMany(e => e.CTDPs)
+            .WithRequired(e => e.Phong)
+            .WillCascadeOnDelete(false);
         }
     }
 }

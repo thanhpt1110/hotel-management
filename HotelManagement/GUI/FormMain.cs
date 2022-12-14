@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ApplicationSettings;
 using HotelManagement.GUI.ThongKe;
+using HotelManagement.DTO;
 
 namespace HotelManagement
 {
@@ -23,14 +24,14 @@ namespace HotelManagement
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.FromArgb(72, 145, 153);
-
+        private TaiKhoan taiKhoan;
         //Constructor
-        public FormMain(int LoaiTK)
+        public FormMain(TaiKhoan taiKhoan)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
-            this.LoaiTK = LoaiTK;
+            this.taiKhoan = taiKhoan;
             InitializeComponent();
             //customDesign();
         }
@@ -486,7 +487,7 @@ namespace HotelManagement
             ButtonDanhSachDatPhong.BackColor = Color.FromArgb(233, 117, 32);
             ButtonDanhSachDatPhong.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormDanhSachPhieuThue(this));
+            openChildForm(new FormDanhSachPhieuThue(this,taiKhoan));
         }
 
         private void ButtonSoDoPhong_Click(object sender, EventArgs e)

@@ -10,6 +10,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BUS;
+using HotelManagement.DTO;
+using ApplicationSettings;
+using HotelManagement.DAO;
 
 namespace HotelManagement.GUI
 {
@@ -19,7 +23,13 @@ namespace HotelManagement.GUI
         private int borderRadius = 15;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        private List<CTDP> listPhongDaDat = new List<CTDP>();
+        private Image Add = Properties.Resources.Add; // Image for Button Thêm
+        private Image Del = Properties.Resources.delete1; // Image for Button Hủy
+        private KhachHang khachHang = new KhachHang();
+        private int flag = 0;
+        private TaiKhoan taiKhoan;
+        private PhieuThue phieuThue = new PhieuThue();
         //Constructor
         public FormDatPhong()
         {
@@ -28,8 +38,17 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
+        public FormDatPhong(TaiKhoan taiKhoan)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.taiKhoan = taiKhoan;
+            InitializeComponent();
+            phieuThue.MaPT = PhieuThueBUS.Instance.GetMaPTNext();
+        }
         //Control Box
-        
+
         //Form Move
 
         //Drag Form
@@ -49,6 +68,7 @@ namespace HotelManagement.GUI
 
         //Private Methods
         //Private Methods
+        #region Draw Form
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -202,7 +222,7 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
-
+        #endregion
         private void FormDatPhong_Load(object sender, EventArgs e)
         {
             // Custom Dgv when loading Form
@@ -210,25 +230,61 @@ namespace HotelManagement.GUI
             DataGridView grid2 = gridPhongDaChon;
             grid1.ColumnHeadersDefaultCellStyle.Font = new Font(grid1.Font, FontStyle.Bold);
             grid2.ColumnHeadersDefaultCellStyle.Font = new Font(grid2.Font, FontStyle.Bold);
-                
-            Image Add = Properties.Resources.Add; // Image for Button Thêm
-            Image Del = Properties.Resources.delete1; // Image for Button Hủy
-            grid1.Rows.Add(new object[] { "P101", "Phòng vip", Add });
-            grid1.Rows.Add(new object[] { "P101", "Phòng vip", Add });
+            this.ctTimePicker1.SetHour(DateTime.Now.Hour, DateTime.Now.Minute);
+            this.ctTimePicker1.SetMin(DateTime.Now.Minute);
+            this.ctTimePicker2.SetHour(DateTime.Now.Hour, DateTime.Now.Minute);
+            this.ctTimePicker2.SetMin(DateTime.Now.Minute);
 
-            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", Del });
-            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", Del });
-            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", Del });
-            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", Del });
+            grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });
+            grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });
+            LoadgridPhongTrong();
+            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
+            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
+            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
+            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
+            LoadGridPhongDat();
+            phieuThue.MaPT = PhieuThueBUS.Instance.GetMaPTNext();
+
         }
-
+        private void LoadgridPhongTrong()
+        {
+            gridPhongTrong.Rows.Clear();
+            List<Phong> phongs = PhongBUS.Instance.FindPhongTrong(CTDatePickerNgayBD.Value, CTDatePickerNgayKT.Value, listPhongDaDat);
+            foreach (Phong phong in phongs)
+            {
+                gridPhongTrong.Rows.Add(new object[] { phong.MaPH, phong.LoaiPhong.TenLPH, this.Add });
+            }    
+        }
+        private void LoadGridPhongDat()
+        {
+            gridPhongDaChon.Rows.Clear();
+            if(this.listPhongDaDat!=null)
+            {
+                foreach(CTDP room in listPhongDaDat)
+                {
+                    gridPhongDaChon.Rows.Add(room.MaPH, room.SoNguoi, room.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), room.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), this.Del);
+                }    
+            }    
+        }
         private void gridPhongTrong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int x = e.ColumnIndex, y = e.RowIndex;
             if (y >= 0 && x == 2)
             {
-                // If click Add new room
-                MessageBox.Show("Add new room");
+                CTDP cTDP = new CTDP();
+                cTDP.MaCTDP = CTDP_BUS.Instance.getNextCTDPwithList(this.listPhongDaDat);
+                cTDP.MaPT = this.phieuThue.MaPT;
+                cTDP.DatCoc = 0;
+                cTDP.CheckIn = CTDatePickerNgayBD.Value;
+                cTDP.CheckOut = CTDatePickerNgayKT.Value;
+                cTDP.MaPH = gridPhongTrong.Rows[y].Cells[0].Value.ToString();
+                cTDP.Phong = PhongBUS.Instance.FindePhong(cTDP.MaPH);
+                cTDP.SoNguoi = 0;
+                cTDP.DonGia = cTDP.Phong.LoaiPhong.GiaNgay;
+                cTDP.TrangThai = "Đã đặt";
+                listPhongDaDat.Add(cTDP);
+                LoadGridPhongDat();
+                LoadgridPhongTrong();
             }
         }
 
@@ -238,8 +294,22 @@ namespace HotelManagement.GUI
             if (y >= 0 && x == 4)
             {
                 // If click Add new room
-                MessageBox.Show("Delete this room");
-            }
+                DialogResult dialogResult = CTMessageBox.Show("Bạn có muốn xóa phòng không? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                {
+                    foreach (CTDP ctdp in this.listPhongDaDat)
+                    {
+                        if (ctdp.CheckIn.ToString("dd/MM/yyyy hh:mm:ss") == gridPhongDaChon.Rows[y].Cells[2].Value.ToString() && ctdp.MaPH == gridPhongDaChon.Rows[y].Cells[0].Value.ToString())
+                        {
+                            this.listPhongDaDat.Remove(ctdp);
+                            LoadGridPhongDat();
+                            LoadgridPhongTrong();
+                            return;
+                        }
+                    }
+                    CTMessageBox.Show("Xóa thất bại");
+                }
+            }         
         }
 
         private void gridPhongTrong_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
@@ -284,6 +354,130 @@ namespace HotelManagement.GUI
         {
             DataGridView grid = gridPhongDaChon;
             grid.Cursor = Cursors.Default;
+        }
+
+        private void CTDatePickerNgayBD_ValueChanged(object sender, EventArgs e)
+        {
+            LoadgridPhongTrong();
+        }
+
+        private void CTDatePickerNgayKT_ValueChanged(object sender, EventArgs e)
+        {
+            LoadgridPhongTrong();
+        }
+
+        private void CTButtonNhanPhong_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void CTButtonDatTruoc_Click(object sender, EventArgs e)
+        {
+            if (this.CTTextBoxNhapCCCD.Texts != "" && this.CTTextBoxNhapDiaChi.Texts != "" && this.CTTextBoxNhapHoTen.Texts != "" && this.ComboBoxGioiTinh.Text != "  Giới tính")
+            {
+                CreateKH();
+                CreatePhieuThue();
+                CreateCTDP();
+                CreateHoaDon();
+                this.Close();
+            }
+            else
+            {
+                CTMessageBox.Show("Vui lòng nhập thông tin khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
+        }
+        private void CreateKH()
+        {
+            khachHang.SDT = CTTextBoxNhapSDT.Texts;
+            khachHang.QuocTich = CTTextBoxNhapDiaChi.Texts;
+            if (flag == 0)
+            {
+
+                khachHang.MaKH = KhachHangBUS.Instance.GetMaKHNext();
+                //CTMessageBox.Show("Thành cong");
+            }
+            khachHang.TenKH = CTTextBoxNhapHoTen.Texts;
+            khachHang.CCCD_Passport = CTTextBoxNhapCCCD.Texts;
+            khachHang.GioiTinh = this.ComboBoxGioiTinh.Text;
+            KhachHangBUS.Instance.UpdateOrAdd(khachHang);
+        }
+        private void CreatePhieuThue()
+        {
+            
+            phieuThue.MaNV = "NV001";
+            phieuThue.DaXoa = false;
+            phieuThue.MaKH = khachHang.MaKH;
+            phieuThue.NgPT = DateTime.Now;
+            PhieuThueBUS.Instance.AddOrUpdatePhieuThue(phieuThue);         
+        }
+
+        void CreateCTDP()
+        {
+            foreach(CTDP ctdp in listPhongDaDat)
+            {
+                ctdp.MaPT = phieuThue.MaPT;
+                ctdp.TrangThai = "Đã đặt";
+                ctdp.DaXoa = false;
+                
+                CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
+            }
+        }
+
+        private void CreateHoaDon()
+        {
+            foreach (CTDP ctdp in listPhongDaDat)
+            {
+                HoaDon hoadon = new HoaDon();
+                hoadon.MaHD = HoaDonBUS.Instance.getMaHDNext();
+                hoadon.MaCTDP = ctdp.MaCTDP;
+                hoadon.MaNV = "NV001";
+                hoadon.TriGia = 0;
+                hoadon.NgHD = DateTime.Now;
+                hoadon.TrangThai = "Chưa thanh toán";
+                HoaDonBUS.Instance.Update_Inserthd(hoadon);
+            }
+        }
+
+        private void CTTextBoxNhapHoTen__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxNotNumber = sender as TextBox;
+            textBoxNotNumber.KeyPress += TextBoxNotNumber_KeyPress;
+        }
+
+        private void TextBoxNotNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
+        }
+
+        private void CTTextBoxNhapCCCD__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            textBox.MaxLength = 12;
+            textBox.TextChanged += TextBox_TextChanged;
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text) != null)
+            {
+                DialogResult dialogresult = CTMessageBox.Show("Đã có số cccd hoặc passport này trong danh sách\r\n Bạn có muốn lấy lại thông tin đó?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogresult == DialogResult.Yes)
+                {
+                    CTTextBoxNhapSDT.RemovePlaceholder();
+                    CTTextBoxNhapDiaChi.RemovePlaceholder();
+                    CTTextBoxNhapHoTen.RemovePlaceholder();
+                   // CTTextBoxNhapCCCD.RemovePlaceholder();
+                      
+
+                    khachHang = KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text);
+                    CTTextBoxNhapSDT.Texts = khachHang.SDT;
+                    CTTextBoxNhapDiaChi.Texts = khachHang.QuocTich;
+                    ComboBoxGioiTinh.Text = khachHang.GioiTinh;
+                    CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
+                    ComboBoxGioiTinh.Focus();
+                    flag = 1;
+                }          
+            }    
         }
     }
 }

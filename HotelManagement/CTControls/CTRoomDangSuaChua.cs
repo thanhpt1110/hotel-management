@@ -20,7 +20,8 @@ namespace HotelManagement.CTControls
         private int borderRadius = 20;
         private Color borderColor = Color.FromArgb(43, 183, 213);
         private Phong phong = new Phong();
-       // private CTDP cTDP = null;
+        FormMain formMain;
+        // private CTDP cTDP = null;
         private FormSoDoPhong formSoDoPhong;
         public string getMaPhong()
         {
@@ -114,7 +115,7 @@ namespace HotelManagement.CTControls
             this.ForeColor = Color.White;
             InitializeComponent();
         }
-        public CTRoomDangSuaChua(Phong phong, FormSoDoPhong loaPhong)
+        public CTRoomDangSuaChua(Phong phong, FormSoDoPhong loaPhong, FormMain formMain)
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.Size = new Size(280, 155);
@@ -123,6 +124,7 @@ namespace HotelManagement.CTControls
             this.phong = phong;
             this.formSoDoPhong = loaPhong;
             InitializeComponent();
+            this.formMain = formMain;
         }
         //Methods
         private void Button_Resize(object sender, EventArgs e)

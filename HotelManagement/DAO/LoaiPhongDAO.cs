@@ -20,25 +20,35 @@ namespace HotelManagement.DAO
         private LoaiPhongDAO() { }
         public List<LoaiPhong> GetLoaiPhongs()
         {
-            return db.LoaiPhongs.ToList();
+
+                return db.LoaiPhongs.ToList();
+            
         }    
         public LoaiPhong getLoaiPhong(string MaLP)
         {
-            return db.LoaiPhongs.Find(MaLP);
+
+                return db.LoaiPhongs.Find(MaLP);
+ 
         }
         public void AddOrUpdate(LoaiPhong loaiPhong)
         {
-            db.LoaiPhongs.AddOrUpdate(loaiPhong);
-            db.SaveChanges();
+
+                db.LoaiPhongs.AddOrUpdate(loaiPhong);
+                db.SaveChanges();
+            
         }
         public void RemoveLoaiPhong(LoaiPhong loaiPhong)
         {
-            db.LoaiPhongs.Remove(loaiPhong);
-            db.SaveChanges();
+
+                db.LoaiPhongs.Remove(loaiPhong);
+                db.SaveChanges();
+            
         }
         public List<LoaiPhong> getLoaiPhongWithName(string TenLP)
         {
-            return db.LoaiPhongs.Where(p => p.TenLPH.Contains(TenLP)).ToList();
+
+                return db.LoaiPhongs.Where(p => p.TenLPH.Contains(TenLP)).ToList();
+            
         }
     }
 }

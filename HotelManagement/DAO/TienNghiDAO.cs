@@ -21,44 +21,57 @@ namespace HotelManagement.DAO
 
         public List<TienNghi> GetTienNghis()
         {
-            return db.TienNghis.Where(p => p.DaXoa == false).ToList();
+
+                return db.TienNghis.Where(p => p.DaXoa == false).ToList();
+            
         }    
         public TienNghi FindTienNghi(string MaTN)
         {
-            return db.TienNghis.Find(MaTN);
+
+                return db.TienNghis.Find(MaTN);
+            
         }
         public void RemoveTN(TienNghi tienNghi) // try catch th có phòng có mã tiện nghi đó
         {
-            tienNghi.DaXoa = true;
-            db.TienNghis.AddOrUpdate(tienNghi);
-            db.SaveChanges();
+
+                tienNghi.DaXoa = true;
+                db.TienNghis.AddOrUpdate(tienNghi);
+                db.SaveChanges();
+            
         }
         public void InsertOrUpdate(TienNghi tienNghi)
         {
-            tienNghi.DaXoa = false;
-            db.TienNghis.AddOrUpdate(tienNghi);
-            db.SaveChanges();
+
+                tienNghi.DaXoa = false;
+                db.TienNghis.AddOrUpdate(tienNghi);
+                db.SaveChanges();
+            
         }
         public List<TienNghi> FindTienNghiWithName(string name)
         {
-            return db.TienNghis.Where(p => p.TenTN.Contains(name) && p.DaXoa == false).ToList();
+
+                return db.TienNghis.Where(p => p.TenTN.Contains(name) && p.DaXoa == false).ToList();
+            
         }
         public string GetMaTNNext()
         {
-            List<TienNghi> TN = db.TienNghis.ToList();
-            string MaMax = TN[TN.Count - 1].MaTN.ToString();
-            MaMax = MaMax.Substring(MaMax.Length - 3, 3);
-            int max = int.Parse(MaMax);
-            max++;
-            if (max < 10)
-            {
-                return "TN00" + max.ToString();
-            }
-            else if (max < 100)
-            {
-                return "TN0" + max.ToString();
-            }
-            return "TN" + max.ToString();
+            
+            
+                List<TienNghi> TN = db.TienNghis.ToList();
+                string MaMax = TN[TN.Count - 1].MaTN.ToString();
+                MaMax = MaMax.Substring(MaMax.Length - 3, 3);
+                int max = int.Parse(MaMax);
+                max++;
+                if (max < 10)
+                {
+                    return "TN00" + max.ToString();
+                }
+                else if (max < 100)
+                {
+                    return "TN0" + max.ToString();
+                }
+                return "TN" + max.ToString();
+            
         }
     }
 }

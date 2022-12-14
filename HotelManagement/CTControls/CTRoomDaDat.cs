@@ -22,6 +22,7 @@ namespace HotelManagement.CTControls
         private Color borderColor = Color.FromArgb(227, 196, 68);
         CTDP ctdp = new CTDP();
         FormSoDoPhong SoDoPhong;
+        FormMain formMain;
         public string getMaPhong()
         {
             return this.LabelMaPhong.Text;
@@ -111,7 +112,7 @@ namespace HotelManagement.CTControls
             this.ForeColor = Color.White;
             InitializeComponent();
         }
-        public CTRoomDaDat(CTDP cTDP, FormSoDoPhong SoDoPhong)
+        public CTRoomDaDat(CTDP cTDP, FormSoDoPhong SoDoPhong, FormMain formMain)
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.Size = new Size(280, 155);
@@ -120,6 +121,7 @@ namespace HotelManagement.CTControls
             ctdp = cTDP;
             this.SoDoPhong = SoDoPhong;
             InitializeComponent();
+            this.formMain = formMain;
         }
         //Methods
         private void Button_Resize(object sender, EventArgs e)

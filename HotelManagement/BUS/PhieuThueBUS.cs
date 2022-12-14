@@ -25,13 +25,17 @@ namespace HotelManagement.BUS
         {
             return PhieuThueDAO.Instance.GetPhieuThue(MaPT);
         }
-        public void UpdatePhieuThue(PhieuThue phieuThue)
+        public void AddOrUpdatePhieuThue(PhieuThue phieuThue)
         {
             PhieuThueDAO.Instance.UpdatePhieuThue(phieuThue);
         }
         public List<PhieuThue> GetPhieuThuesWithNameCus(string name)
         {
             return PhieuThueDAO.Instance.GetPhieuThuesWithNameCus(name);
+        }
+        public string GetMaPTNext()
+        {
+            return PhieuThueDAO.Instance.GetMaPTNext();
         }
     }
 }

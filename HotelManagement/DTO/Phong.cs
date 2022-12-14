@@ -1,5 +1,6 @@
 namespace HotelManagement.DTO
 {
+    using HotelManagement.BUS;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -9,6 +10,10 @@ namespace HotelManagement.DTO
     [Table("Phong")]
     public partial class Phong
     {
+        public Phong()
+        {
+            CTDPs = new HashSet<CTDP>();
+        }
         [Key]
         [StringLength(5)]
         public string MaPH { get; set; }
@@ -31,5 +36,7 @@ namespace HotelManagement.DTO
 
         public bool? DaXoa { get; set; }
         public virtual LoaiPhong LoaiPhong { get; set; }
+
+        public virtual ICollection<CTDP> CTDPs { get; set; }
     }
 }

@@ -21,23 +21,32 @@ namespace HotelManagement.DAO
 
         public List<CTTN> GetCTTNs()
         {
-            return db.CTTNs.Where(p => p.DaXoa == false).ToList();
+
+                return db.CTTNs.Where(p => p.DaXoa == false).ToList();
+            
         }
         public void UpdateOrInsert(CTTN cTTN)
         {
-            cTTN.DaXoa = false;
-            db.CTTNs.AddOrUpdate(cTTN);
-            db.SaveChanges();
+
+                cTTN.DaXoa = false;
+                db.CTTNs.AddOrUpdate(cTTN);
+                db.SaveChanges();
+            
         }
         public void RemoveCTTN(CTTN cTTN)
         {
-            cTTN.DaXoa = true;
-            db.CTTNs.AddOrUpdate(cTTN);
-            db.SaveChanges();
+
+                cTTN.DaXoa = true;
+                db.CTTNs.AddOrUpdate(cTTN);
+                db.SaveChanges();
+            
         }
         public List<CTTN> FindCTTN(string MaLPH)
         {
-            return db.CTTNs.Where(p => p.MaLPH == MaLPH && p.DaXoa == false).ToList();
+
+                return db.CTTNs.Where(p => p.MaLPH == MaLPH && p.DaXoa == false).ToList();
+            
         }
+
     }
 }

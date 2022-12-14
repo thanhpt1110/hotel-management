@@ -21,6 +21,7 @@ namespace HotelManagement.CTControls
         //Methods Set Value
         Phong phong = new Phong();
         FormSoDoPhong formSoDoPhong;
+        FormMain formMain;
         public string getMaPhong()
         {
             return this.LabelMaPhong.Text;
@@ -116,7 +117,7 @@ namespace HotelManagement.CTControls
             this.ForeColor = Color.White;
             InitializeComponent();
         }
-        public CTRoomTrong(Phong phong, FormSoDoPhong soDoPhong)
+        public CTRoomTrong(Phong phong, FormSoDoPhong soDoPhong, FormMain formMain)
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.Size = new Size(280, 155);
@@ -125,6 +126,7 @@ namespace HotelManagement.CTControls
             this.phong = phong;
             InitializeComponent();
             this.formSoDoPhong = soDoPhong;
+            this.formMain = formMain;
         }
 
 

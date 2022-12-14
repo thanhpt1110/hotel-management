@@ -46,5 +46,9 @@ namespace HotelManagement.BUS
         {
             TaiKhoanDAO.Instance.RemoveTk(taiKhoan);
         }
+        public TaiKhoan GetTKDangNhap(string username)
+        {
+            return TaiKhoanDAO.Instance.GetTKDangNhap(username);
+        }
     }
 }

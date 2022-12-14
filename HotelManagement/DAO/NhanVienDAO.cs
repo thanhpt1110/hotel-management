@@ -21,48 +21,62 @@ namespace HotelManagement.DAO
 
         public List<NhanVien> GetAllNhanViens()
         {
-            return db.NhanViens.ToList();
+
+                return db.NhanViens.ToList();
+            
         }
         public List<NhanVien> GetNhanViens()
         {
-            return db.NhanViens.Where(p => p.DaXoa == false).ToList();
+
+                return db.NhanViens.Where(p => p.DaXoa == false).ToList();
+            
         }
         public NhanVien GetNhanVien(string MaNV)
         {
-            return db.NhanViens.Find(MaNV);
+
+                return db.NhanViens.Find(MaNV);
+            
         }
         public void UpdateOrInsert(NhanVien nhanVien)
         {
-            nhanVien.DaXoa = false;
-            db.NhanViens.AddOrUpdate(nhanVien);
-            db.SaveChanges();
+
+                nhanVien.DaXoa = false;
+                db.NhanViens.AddOrUpdate(nhanVien);
+                db.SaveChanges();
+            
         }
         public void RemoveNhanVien(NhanVien nhanVien)
         {
-            nhanVien.DaXoa = true;
-            db.NhanViens.AddOrUpdate(nhanVien);
-            db.SaveChanges();
+
+                nhanVien.DaXoa = true;
+                db.NhanViens.AddOrUpdate(nhanVien);
+                db.SaveChanges();
+            
         }
         public List<NhanVien> GetNhanViensWithName(string tenNV)
         {
-            return db.NhanViens.Where(p => p.TenNV.Contains(tenNV) && p.DaXoa == false).ToList();
+
+                return db.NhanViens.Where(p => p.TenNV.Contains(tenNV) && p.DaXoa == false).ToList();
+            
         }
         public string GetMaNVNext()
         {
-            List<NhanVien> NV = db.NhanViens.Where(p=>p.MaNV.Contains("NV")).ToList();
-            string MaMax = NV[NV.Count - 1].MaNV;
-            MaMax = MaMax.Substring(MaMax.Length - 3, 3);
-            int max = int.Parse(MaMax);
-            max++;
-            if (max < 10)
-            {
-                return "NV00" + max.ToString();
-            }
-            else if (max < 100)
-            {
-                return "NV0" + max.ToString();
-            }
-            return "NV" + max.ToString();
+
+                List<NhanVien> NV = db.NhanViens.Where(p => p.MaNV.Contains("NV")).ToList();
+                string MaMax = NV[NV.Count - 1].MaNV;
+                MaMax = MaMax.Substring(MaMax.Length - 3, 3);
+                int max = int.Parse(MaMax);
+                max++;
+                if (max < 10)
+                {
+                    return "NV00" + max.ToString();
+                }
+                else if (max < 100)
+                {
+                    return "NV0" + max.ToString();
+                }
+                return "NV" + max.ToString();
+            
         }
     }
 }

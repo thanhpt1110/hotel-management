@@ -1,4 +1,5 @@
 ﻿using HotelManagement.BUS;
+using HotelManagement.CTControls;
 using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
@@ -216,6 +217,7 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+        #region Display room 
         private void LoadPhongDaDat()
         {
             this.LabelMaPhong.Text = ctdp.MaPH;
@@ -242,6 +244,11 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Phòng đang thuê";
             this.PanelChuaButtonDatPhongNay.Hide();
             this.PanelChuaButtonNhanPhong.Hide();
+            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(ctdp.HoaDons.Single().MaHD);
+            foreach(CTDV v in cTDVs)
+            {
+                gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
+            }    
         }
         private void LoadPhongDangSua()
         {
@@ -279,24 +286,31 @@ namespace HotelManagement.GUI
         }
         private void LoadPage()
         {
-            switch (TTPhong)
+            try 
             {
-                case "Phòng đã đặt": // Khách đã đặt phòng
-                    this.LoadPhongDaDat();
-                    break;
-                case "   Phòng\r\nđang thuê":
-                    this.LoadPhongDangThue();
-                    break;
-                case "Đang sửa chữa":
-                    this.LoadPhongDangSua();
-                    break;
-                case "Phòng trống":
-                    this.LoadPhongTrong();
-                    break;
-                
+                switch (TTPhong)
+                {
+                    case "Phòng đã đặt": // Khách đã đặt phòng
+                        this.LoadPhongDaDat();
+                        break;
+                    case "   Phòng\r\nđang thuê":
+                        this.LoadPhongDangThue();
+                        break;
+                    case "Đang sửa chữa":
+                        this.LoadPhongDangSua();
+                        break;
+                    case "Phòng trống":
+                        this.LoadPhongTrong();
+                        break;
 
+                }
+            }
+            catch(Exception ex)
+            {
+                CTMessageBox.Show("Load danh sách phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
         private void FormThongTinPhong_Load(object sender, EventArgs e)
         {
             DataGridView grid = gridDichVu;

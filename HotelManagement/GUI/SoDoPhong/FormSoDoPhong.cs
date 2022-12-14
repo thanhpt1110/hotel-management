@@ -27,8 +27,11 @@ namespace HotelManagement.GUI
         {
             InitializeComponent();
             this.formMain = formMain;
+            this.ctDatePicker1.Value = DateTime.Now;
+            CTMessageBox.Show(this.ctDatePicker1.Value.ToString());
             LoadAllPhong();
         }
+        #region Đặt phòng
         public void LoadAllPhong()
         {
             phongs = PhongBUS.Instance.GetAllPhong();
@@ -52,12 +55,12 @@ namespace HotelManagement.GUI
 
             foreach (Phong phong in phongs)
             {
-                CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, this.ctDatePicker1.Value.Date);
+                CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, this.ctDatePicker1.Value);
                 if (phong.TTPH == "Bình thường" && ctdp != null)
                 {
                     if (ctdp.TrangThai == "Đang thuê")
                     {
-                        CTRoomDangThue room = new CTRoomDangThue(ctdp, this);
+                        CTRoomDangThue room = new CTRoomDangThue(ctdp, this,this.formMain);
 
                         room.setThoiGian(CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " Ngày");
                         if (phong.TTDD == "Đã dọn dẹp")
@@ -71,7 +74,7 @@ namespace HotelManagement.GUI
                 }
                 else if (phong.TTPH == "Đang sửa chữa")
                 {
-                    CTRoomDangSuaChua room = new CTRoomDangSuaChua(phong, this);
+                    CTRoomDangSuaChua room = new CTRoomDangSuaChua(phong, this, this.formMain);
 
                     room.setMaPhong(phong.MaPH);
                     if (phong.TTDD == "Đã dọn dẹp")
@@ -83,22 +86,12 @@ namespace HotelManagement.GUI
                     roomDangSuaChuas.Add(room);
 
                 }
-                else if (phong.TTPH == "Bình thường" && ctdp == null)
-                {
-                    CTRoomTrong room = new CTRoomTrong(phong, this);
-                    if (phong.TTDD == "Đã dọn dẹp")
-                        room.setDaDonDep();
-                    else
-                        room.setChuaDonDep();
-                    room.setMaPhong(phong.MaPH);
-                    room.setLoaiPhong(phong.LoaiPhong.TenLPH);
-                    roomTrongs.Add(room);
-                }
+
                 if (phong.TTPH == "Bình thường" && ctdp != null)
                 {
                     if (ctdp.TrangThai == "Đã đặt")
                     {
-                        CTRoomDaDat room = new CTRoomDaDat(ctdp, this);
+                        CTRoomDaDat room = new CTRoomDaDat(ctdp, this, this.formMain);
                         room.setThoiGian(CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " Ngày");
 
                         if (phong.TTDD == "Đã dọn dẹp")
@@ -110,6 +103,17 @@ namespace HotelManagement.GUI
                         roomDaDats.Add(room);
                     }
 
+                }
+                if (phong.TTPH == "Bình thường" && ctdp == null)
+                {
+                    CTRoomTrong room = new CTRoomTrong(phong, this, this.formMain);
+                    if (phong.TTDD == "Đã dọn dẹp")
+                        room.setDaDonDep();
+                    else
+                        room.setChuaDonDep();
+                    room.setMaPhong(phong.MaPH);
+                    room.setLoaiPhong(phong.LoaiPhong.TenLPH);
+                    roomTrongs.Add(room);
                 }
             }
             foreach (Phong phong in phongs)
@@ -169,6 +173,7 @@ namespace HotelManagement.GUI
             }
         }
 
+        #endregion
 
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {

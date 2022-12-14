@@ -9,6 +9,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.DTO;
+using HotelManagement.BUS;
+using HotelManagement.DAO;
 
 namespace HotelManagement.GUI
 {
@@ -18,13 +21,21 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        private PhieuThue phieuThue;
         //Constructor
         public FormChiTietPhieuThue()
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
+            InitializeComponent();
+        }
+        public FormChiTietPhieuThue(PhieuThue phieuThue)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.phieuThue = phieuThue;
             InitializeComponent();
         }
         //Control Box
@@ -48,6 +59,7 @@ namespace HotelManagement.GUI
 
         //Private Methods
         //Private Methods
+        #region Draw Form
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -200,21 +212,34 @@ namespace HotelManagement.GUI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        #endregion
         private void FormChiTietPhieuThue_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-
-            grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
-            grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
-            grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
+            /*
+                        grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
+                        grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});
+                        grid.Rows.Add(new object[] { "P101", "11/10/2003 12:00:00", "11/10/2003 12:00:00", "3"});*/
+            this.LabelNhanVienLapPhieu.Text = this.phieuThue.NhanVien.TenNV;
+            this.LabelChiTietPhieuThueTieuDe.Text = this.phieuThue.MaPT;
+            this.LabelTen.Text = this.phieuThue.KhachHang.TenKH;
+            this.LabelThoiGianLapPhieu.Text = this.phieuThue.NgPT.ToString("dd/MM/yyyy hh:mm:");
+            LoadGrid();
         }
-
+        private void LoadGrid()
+        {
+            grid.Rows.Clear();
+            List<CTDP> ctdps = CTDP_BUS.Instance.GetCTDPs().Where(p=>p.MaPT==phieuThue.MaPT).ToList();
+            foreach(CTDP cTDP in ctdps)
+            {
+                grid.Rows.Add(new object[] { cTDP.MaPH, cTDP.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.SoNguoi });
+            }    
+        }    
         private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
             int y = e.RowIndex, x = e.ColumnIndex;
