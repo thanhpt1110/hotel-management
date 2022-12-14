@@ -183,6 +183,7 @@
             this.Size = new System.Drawing.Size(280, 155);
             this.Load += new System.EventHandler(this.CTRoomPhongTrong_Load);
             this.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             this.PanelTop.ResumeLayout(false);
             this.PanelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrangThai)).EndInit();

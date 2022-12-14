@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.ButtonContinue = new HotelManagement.CTControls.CTButton();
             this.textBoxOTP = new HotelManagement.CTControls.CTTextBox();
-            this.LabelForgotPassword = new System.Windows.Forms.Label();
             this.ButtonResend = new HotelManagement.CTControls.CTButton();
             this.PictureBoxBack = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonContinue
@@ -82,18 +83,6 @@
             this.textBoxOTP.Texts = "";
             this.textBoxOTP.UnderlineedStyle = false;
             // 
-            // LabelForgotPassword
-            // 
-            this.LabelForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LabelForgotPassword.AutoSize = true;
-            this.LabelForgotPassword.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 45);
-            this.LabelForgotPassword.Name = "LabelForgotPassword";
-            this.LabelForgotPassword.Size = new System.Drawing.Size(295, 59);
-            this.LabelForgotPassword.TabIndex = 7;
-            this.LabelForgotPassword.Text = "Forgot password";
-            // 
             // ButtonResend
             // 
             this.ButtonResend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
@@ -133,24 +122,34 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.QuenMatKhau;
+            this.pictureBox1.Location = new System.Drawing.Point(22, 92);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(286, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormQuenMatKhauNhapOTP
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 466);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PictureBoxBack);
             this.Controls.Add(this.ButtonResend);
             this.Controls.Add(this.ButtonContinue);
             this.Controls.Add(this.textBoxOTP);
-            this.Controls.Add(this.LabelForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQuenMatKhauNhapOTP";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormQuenMatKhauNhapOTP";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -158,9 +157,9 @@
 
         private CTControls.CTButton ButtonContinue;
         private CTControls.CTTextBox textBoxOTP;
-        private System.Windows.Forms.Label LabelForgotPassword;
         private CTControls.CTButton ButtonResend;
         private System.Windows.Forms.PictureBox PictureBoxBack;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

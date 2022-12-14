@@ -32,8 +32,9 @@
             this.ButtonLayOTP = new HotelManagement.CTControls.CTButton();
             this.TextBoxEmail = new HotelManagement.CTControls.CTTextBox();
             this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
-            this.LabelForgotPassword = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PictureBoxBack
@@ -115,36 +116,34 @@
             this.textBoxUsername.Texts = "";
             this.textBoxUsername.UnderlineedStyle = false;
             // 
-            // LabelForgotPassword
+            // pictureBox1
             // 
-            this.LabelForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LabelForgotPassword.AutoSize = true;
-            this.LabelForgotPassword.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 45);
-            this.LabelForgotPassword.Name = "LabelForgotPassword";
-            this.LabelForgotPassword.Size = new System.Drawing.Size(295, 59);
-            this.LabelForgotPassword.TabIndex = 2;
-            this.LabelForgotPassword.Text = "Forgot password";
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.QuenMatKhau;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(286, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // FormQuenMatKhauLayOTP
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 466);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PictureBoxBack);
             this.Controls.Add(this.ButtonLayOTP);
             this.Controls.Add(this.TextBoxEmail);
             this.Controls.Add(this.textBoxUsername);
-            this.Controls.Add(this.LabelForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQuenMatKhauLayOTP";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormQuenMatKhau";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -153,6 +152,6 @@
         private CTControls.CTTextBox TextBoxEmail;
         private CTControls.CTButton ButtonLayOTP;
         private System.Windows.Forms.PictureBox PictureBoxBack;
-        private System.Windows.Forms.Label LabelForgotPassword;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

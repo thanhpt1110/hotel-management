@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelLogin = new System.Windows.Forms.Label();
             this.buttonLogin = new HotelManagement.CTControls.CTButton();
             this.textBoxPassword = new HotelManagement.CTControls.CTTextBox();
             this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
             this.labelForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labelLogin
-            // 
-            this.labelLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelLogin.AutoSize = true;
-            this.labelLogin.Font = new System.Drawing.Font("Brush Script MT", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.labelLogin.Location = new System.Drawing.Point(80, 35);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(160, 79);
-            this.labelLogin.TabIndex = 6;
-            this.labelLogin.Text = "Login";
             // 
             // buttonLogin
             // 
@@ -127,22 +116,33 @@
             this.labelForgotPassword.Text = "Quên mật khẩu?";
             this.labelForgotPassword.Click += new System.EventHandler(this.labelForgotPassword_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.DangNhap;
+            this.pictureBox1.Location = new System.Drawing.Point(46, 71);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(242, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormDangNhap
             // 
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 466);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelForgotPassword);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
-            this.Controls.Add(this.labelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDangNhap";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormDangNhap";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,7 +153,7 @@
         private CTControls.CTButton buttonLogin;
         private CTControls.CTTextBox textBoxPassword;
         private CTControls.CTTextBox textBoxUsername;
-        private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.LinkLabel labelForgotPassword;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -67,6 +67,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -131,6 +132,14 @@
     <Content Include="img\TimePickerBlack.png" />
     <Content Include="img\TimePickerWhite.png" />
     <Content Include="img\x.png" />
+    <None Include="Resources\top3.png" />
+    <None Include="Resources\top2.png" />
+    <None Include="Resources\top1.png" />
+    <None Include="Resources\SoPhongDat.png" />
+    <None Include="Resources\DoanhThu.png" />
+    <None Include="Resources\DoanhThuThue.png" />
+    <None Include="Resources\DangNhap.png" />
+    <None Include="Resources\QuenMatKhau.png" />
     <None Include="Resources\none.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\error.png" />

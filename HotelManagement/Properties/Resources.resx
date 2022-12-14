@@ -160,6 +160,9 @@
   <data name="DaDonDep" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\tickblack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DangNhap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DangNhap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DangSuaChua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DangSuaChua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,6 +189,12 @@
   </data>
   <data name="DichVuDgv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DichVu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DoanhThu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DoanhThu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DoanhThuThue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DoanhThuThue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,6 +337,9 @@
   <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="QuenMatKhau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuenMatKhau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="question" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -342,6 +354,9 @@
   </data>
   <data name="SoNguoi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SoNguoi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SoPhongDat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SoPhongDat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="staffResize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\staffResize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -360,6 +375,15 @@
   </data>
   <data name="TimePickerWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TimePickerWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="top1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="top2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\top2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="top3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\top3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Trong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
