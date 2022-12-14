@@ -1,5 +1,4 @@
 ﻿using HotelManagement.BUS;
-using HotelManagement.CTControls;
 using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
@@ -15,35 +14,30 @@ using System.Windows.Forms;
 
 namespace HotelManagement.GUI
 {
-    public partial class FormThongTinPhong : Form
+    public partial class FormThemDichVuVaoPhong : Form
     {
         //Fields
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-        CTDP ctdp;
-        Phong phong;
-        string TTPhong = "";
+        private DichVu dichVu;
+        FormDanhSachDichVu formDanhSachDichVu;
         //Constructor
-        public FormThongTinPhong()
+        public FormThemDichVuVaoPhong()
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
-        public FormThongTinPhong(string Case, CTDP cTDP = null, Phong phong = null)
+        public FormThemDichVuVaoPhong(DichVu dichVu, FormDanhSachDichVu formDanhSachDichVu)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
-            this.ctdp = cTDP;
-            this.TTPhong = Case;
-            this.phong = phong;
+            this.dichVu = dichVu;
+            this.formDanhSachDichVu = formDanhSachDichVu;
             InitializeComponent();
-            LoadPage();
-
-
         }
 
         //Control Box
@@ -66,7 +60,6 @@ namespace HotelManagement.GUI
         }
 
         //Private Methods
-
         //Private Methods
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
@@ -158,16 +151,24 @@ namespace HotelManagement.GUI
             }
             return fbColor;
         }
-
+        private FormBoundsColors GetSameDark()
+        {
+            FormBoundsColors colors = new FormBoundsColors();
+            colors.TopLeftColor = Color.FromArgb(67, 73, 73);
+            colors.TopRightColor = Color.FromArgb(67, 73, 73);
+            colors.BottomLeftColor = Color.FromArgb(67, 73, 73);
+            colors.BottomRightColor = Color.FromArgb(67, 73, 73);
+            return colors;
+        }
         //Event Methods
-        private void FormThongTinPhong_Paint(object sender, PaintEventArgs e)
+        private void FormThemDichVuVaoPhong_Paint(object sender, PaintEventArgs e)
         {
             //-> SMOOTH OUTER BORDER
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             Rectangle rectForm = this.ClientRectangle;
             int mWidht = rectForm.Width / 2;
             int mHeight = rectForm.Height / 2;
-            var fbColors = GetFormBoundsColors();
+            var fbColors = GetSameDark();
             //Top Left
             DrawPath(rectForm, e.Graphics, fbColors.TopLeftColor);
             //Top Right
@@ -182,179 +183,32 @@ namespace HotelManagement.GUI
             //-> SET ROUNDED REGION AND BORDER
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
-        private void FormThongTinPhong_Resize(object sender, EventArgs e)
+        private void FormThemDichVuVaoPhong_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void FormThongTinPhong_SizeChanged(object sender, EventArgs e)
+        private void FormThemDichVuVaoPhong_SizeChanged(object sender, EventArgs e)
         {
             this.Invalidate();
         }
 
-        private void FormThongTinPhong_Activated(object sender, EventArgs e)
+        private void FormThemDichVuVaoPhong_Activated(object sender, EventArgs e)
         {
             this.Invalidate();
         }
-
-        private void PanelBackground_Paint(object sender, PaintEventArgs e)
-        {
-            ControlRegionAndBorder(PanelBackground, borderRadius - (borderSize / 2), e.Graphics, borderColor);
-        }
-
         private void PanelBackground_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        private void PanelTop_MouseDown(object sender, MouseEventArgs e)
+        private void PanelBackground_Paint(object sender, PaintEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            ControlRegionAndBorder(PanelBackground, borderRadius - (borderSize / 2), e.Graphics, borderColor);
         }
-
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        #region Display room 
-        private void LoadPhongDaDat()
-        {
-            this.LabelMaPhong.Text = ctdp.MaPH;
-            this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
-            this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
-            this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " ngày";
-            this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
-            this.ComboBoxTinhTrangPhong.Text = "Phòng đã đặt";
-            this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
-            this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
-            this.CTButtonThemDichVu.Hide();
-            this.CTButtonDatPhongNay.Hide();
-            this.PanelChuaButtonThanhToan.Hide();
-        }
-        private void LoadPhongDangThue()
-        {
-            this.LabelMaPhong.Text = ctdp.MaPH;
-            this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
-            this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
-            this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " ngày";
-            this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
-            this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
-            this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
-            this.ComboBoxTinhTrangPhong.Text = "Phòng đang thuê";
-            this.PanelChuaButtonDatPhongNay.Hide();
-            this.PanelChuaButtonNhanPhong.Hide();
-            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(ctdp.HoaDons.Single().MaHD);
-            foreach(CTDV v in cTDVs)
-            {
-                gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
-            }    
-        }
-        private void LoadPhongDangSua()
-        {
-            this.LabelMaPhong.Text = phong.MaPH;
-            this.LabelTen.Text = "";
-            this.LabelNgayCheckin.Text = "";
-            this.LabelThoiGianThue.Text = "";
-            this.LabelSoNguoi.Text = "";
-            this.ComboBoxTinhTrangDonDep.Text = phong.TTDD;
-            this.TextBoxGhiChu.Text = phong.GhiChu;
-            this.ComboBoxTinhTrangPhong.Text = "Đang sửa chữa";
-            this.ComboBoxTinhTrangPhong.Items.Add("Đang sửa chữa");
-            this.ComboBoxTinhTrangPhong.Items.Add("Phòng trống");
-            this.CTButtonThemDichVu.Hide();
-            this.CTButtonDatPhongNay.Hide();
-            this.PanelChuaButtonThanhToan.Hide();
-            this.PanelChuaButtonNhanPhong.Hide();
-        }
-
-        private void LoadPhongTrong()
-        {
-            this.LabelMaPhong.Text = phong.MaPH;
-            this.LabelTen.Text = "";
-            this.LabelNgayCheckin.Text = "";
-            this.LabelThoiGianThue.Text = "";
-            this.LabelSoNguoi.Text = "";
-            this.TextBoxGhiChu.Text = phong.GhiChu;
-            this.ComboBoxTinhTrangDonDep.Text = phong.TTDD;
-            this.ComboBoxTinhTrangPhong.Text = "Phòng trống";
-            this.ComboBoxTinhTrangPhong.Items.Add("Đang sửa chữa");
-            this.ComboBoxTinhTrangPhong.Items.Add("Phòng trống");
-            this.CTButtonThemDichVu.Hide();
-            this.PanelChuaButtonThanhToan.Hide();
-            this.PanelChuaButtonNhanPhong.Hide();
-        }
-        private void LoadPage()
-        {
-            try 
-            {
-                switch (TTPhong)
-                {
-                    case "Phòng đã đặt": // Khách đã đặt phòng
-                        this.LoadPhongDaDat();
-                        break;
-                    case "   Phòng\r\nđang thuê":
-                        this.LoadPhongDangThue();
-                        break;
-                    case "Đang sửa chữa":
-                        this.LoadPhongDangSua();
-                        break;
-                    case "Phòng trống":
-                        this.LoadPhongTrong();
-                        break;
-
-                }
-            }
-            catch(Exception ex)
-            {
-                CTMessageBox.Show("Load danh sách phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        #endregion
-        private void FormThongTinPhong_Load(object sender, EventArgs e)
-        {
-            DataGridView grid = gridDichVu;
-            grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-            this.ActiveControl = LabelMaPhong;
-        }
-
-        private void LabelThoiGianThue_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CTButtonLuu_Click(object sender, EventArgs e)
-        {
-            string TTPhong = this.ComboBoxTinhTrangPhong.Text;
-            if (TTPhong == "Phòng trống")
-                phong.TTPH = "Bình thường";
-            else if (TTPhong == "Đang sửa chữa")
-                phong.TTPH = TTPhong;
-            if (TTPhong == "Đang sửa chữa" || TTPhong == "Phòng trống")
-            {
-                phong.GhiChu = this.TextBoxGhiChu.Text;
-                phong.TTDD = this.ComboBoxTinhTrangDonDep.Text;
-                
-                PhongBUS.Instance.UpdateOrAdd(phong);
-            }
-            else
-            {
-                phong = PhongBUS.Instance.FindePhong(ctdp.MaPH);
-                phong.TTDD = this.ComboBoxTinhTrangDonDep.Text;
-                phong.GhiChu = this.TextBoxGhiChu.Text;
-                PhongBUS.Instance.UpdateOrAdd(phong);
-            }
-
-            this.Close();
-
-        }
-
-        private void CTButtonThemDichVu_Click(object sender, EventArgs e)
-        {
-            using(FormThemDichVuVaoPhong frm = new FormThemDichVuVaoPhong())
-            {
-                frm.ShowDialog();
-            }    
         }
     }
 }

@@ -28,13 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ButtonOK = new HotelManagement.CTControls.CTButton();
-            this.textBoxPassword = new HotelManagement.CTControls.CTTextBox();
             this.LabelForgotPassword = new System.Windows.Forms.Label();
-            this.textBoxPassConfirm = new HotelManagement.CTControls.CTTextBox();
             this.PictureBoxBack = new System.Windows.Forms.PictureBox();
+            this.ButtonOK = new HotelManagement.CTControls.CTButton();
+            this.textBoxPassConfirm = new HotelManagement.CTControls.CTTextBox();
+            this.textBoxPassword = new HotelManagement.CTControls.CTTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
             this.SuspendLayout();
+            // 
+            // LabelForgotPassword
+            // 
+            this.LabelForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LabelForgotPassword.AutoSize = true;
+            this.LabelForgotPassword.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
+            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 45);
+            this.LabelForgotPassword.Name = "LabelForgotPassword";
+            this.LabelForgotPassword.Size = new System.Drawing.Size(295, 59);
+            this.LabelForgotPassword.TabIndex = 11;
+            this.LabelForgotPassword.Text = "Forgot password";
+            // 
+            // PictureBoxBack
+            // 
+            this.PictureBoxBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxBack.Image = global::HotelManagement.Properties.Resources.back;
+            this.PictureBoxBack.Location = new System.Drawing.Point(0, 0);
+            this.PictureBoxBack.Name = "PictureBoxBack";
+            this.PictureBoxBack.Size = new System.Drawing.Size(40, 40);
+            this.PictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxBack.TabIndex = 15;
+            this.PictureBoxBack.TabStop = false;
+            this.PictureBoxBack.Click += new System.EventHandler(this.PictureBoxBack_Click);
             // 
             // ButtonOK
             // 
@@ -48,7 +72,7 @@
             this.ButtonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonOK.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonOK.ForeColor = System.Drawing.Color.White;
-            this.ButtonOK.Location = new System.Drawing.Point(113, 363);
+            this.ButtonOK.Location = new System.Drawing.Point(110, 360);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.Size = new System.Drawing.Size(94, 47);
             this.ButtonOK.TabIndex = 14;
@@ -56,42 +80,6 @@
             this.ButtonOK.TextColor = System.Drawing.Color.White;
             this.ButtonOK.UseVisualStyleBackColor = false;
             this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.textBoxPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
-            this.textBoxPassword.BorderRadius = 20;
-            this.textBoxPassword.BorderSize = 1;
-            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.textBoxPassword.IsFocused = false;
-            this.textBoxPassword.Location = new System.Drawing.Point(22, 187);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxPassword.Multiline = false;
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
-            this.textBoxPassword.PasswordChar = false;
-            this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxPassword.PlaceholderText = "Enter your new password";
-            this.textBoxPassword.ReadOnly = false;
-            this.textBoxPassword.Size = new System.Drawing.Size(286, 45);
-            this.textBoxPassword.TabIndex = 12;
-            this.textBoxPassword.Texts = "";
-            this.textBoxPassword.UnderlineedStyle = false;
-            this.textBoxPassword._TextChanged += new System.EventHandler(this.textBoxPassword__TextChanged);
-            // 
-            // LabelForgotPassword
-            // 
-            this.LabelForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LabelForgotPassword.AutoSize = true;
-            this.LabelForgotPassword.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 69);
-            this.LabelForgotPassword.Name = "LabelForgotPassword";
-            this.LabelForgotPassword.Size = new System.Drawing.Size(295, 59);
-            this.LabelForgotPassword.TabIndex = 11;
-            this.LabelForgotPassword.Text = "Forgot password";
             // 
             // textBoxPassConfirm
             // 
@@ -102,14 +90,14 @@
             this.textBoxPassConfirm.BorderSize = 1;
             this.textBoxPassConfirm.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxPassConfirm.IsFocused = false;
-            this.textBoxPassConfirm.Location = new System.Drawing.Point(22, 266);
+            this.textBoxPassConfirm.Location = new System.Drawing.Point(20, 240);
             this.textBoxPassConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassConfirm.Multiline = false;
             this.textBoxPassConfirm.Name = "textBoxPassConfirm";
             this.textBoxPassConfirm.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
             this.textBoxPassConfirm.PasswordChar = false;
             this.textBoxPassConfirm.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.textBoxPassConfirm.PlaceholderText = "Confirm your new password";
+            this.textBoxPassConfirm.PlaceholderText = "Xác nhận lại mật khẩu";
             this.textBoxPassConfirm.ReadOnly = false;
             this.textBoxPassConfirm.Size = new System.Drawing.Size(286, 45);
             this.textBoxPassConfirm.TabIndex = 12;
@@ -117,17 +105,29 @@
             this.textBoxPassConfirm.UnderlineedStyle = false;
             this.textBoxPassConfirm._TextChanged += new System.EventHandler(this.textBoxPassConfirm__TextChanged);
             // 
-            // PictureBoxBack
+            // textBoxPassword
             // 
-            this.PictureBoxBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxBack.Image = global::HotelManagement.Properties.Resources.back;
-            this.PictureBoxBack.Location = new System.Drawing.Point(12, 24);
-            this.PictureBoxBack.Name = "PictureBoxBack";
-            this.PictureBoxBack.Size = new System.Drawing.Size(40, 40);
-            this.PictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxBack.TabIndex = 15;
-            this.PictureBoxBack.TabStop = false;
-            this.PictureBoxBack.Click += new System.EventHandler(this.PictureBoxBack_Click);
+            this.textBoxPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.textBoxPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(69)))), ((int)(((byte)(82)))));
+            this.textBoxPassword.BorderRadius = 20;
+            this.textBoxPassword.BorderSize = 1;
+            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.textBoxPassword.IsFocused = false;
+            this.textBoxPassword.Location = new System.Drawing.Point(20, 165);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Multiline = false;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Padding = new System.Windows.Forms.Padding(14, 7, 7, 7);
+            this.textBoxPassword.PasswordChar = false;
+            this.textBoxPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.textBoxPassword.PlaceholderText = "Mật khẩu mới";
+            this.textBoxPassword.ReadOnly = false;
+            this.textBoxPassword.Size = new System.Drawing.Size(286, 45);
+            this.textBoxPassword.TabIndex = 12;
+            this.textBoxPassword.Texts = "";
+            this.textBoxPassword.UnderlineedStyle = false;
+            this.textBoxPassword._TextChanged += new System.EventHandler(this.textBoxPassword__TextChanged);
             // 
             // FormDatLaiMatKhau
             // 

@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelManagement.DTO;
 using HotelManagement.BUS;
 using ApplicationSettings;
+using HotelManagement.DTO;
 
 namespace HotelManagement.GUI
 {

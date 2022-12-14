@@ -34,13 +34,14 @@ namespace HotelManagement.GUI
         #region Đặt phòng
         public void LoadAllPhong()
         {
+            SetAppear();
             phongs = PhongBUS.Instance.GetAllPhong();
             LoadPhong();
         }
 
         private void LoadPhong()
         {
-
+            SetAppear();
             List<CTRoomDaDat> roomDaDats = new List<CTRoomDaDat>();
             List<CTRoomDangSuaChua> roomDangSuaChuas = new List<CTRoomDangSuaChua>();
             List<CTRoomDangThue> roomDangThues = new List<CTRoomDangThue>();
@@ -178,6 +179,13 @@ namespace HotelManagement.GUI
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
+            textBox.TextChanged += TextBox_TextChanged;
+
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
             phongs = PhongBUS.Instance.FindPhongWithMaPH(textBox.Text);
             LoadPhong();
 
@@ -185,7 +193,20 @@ namespace HotelManagement.GUI
 
         private void ctDatePicker1_ValueChanged(object sender, EventArgs e)
         {
-            this.LoadAllPhong();
+            this.LoadPhong();
+        }
+
+        private void SetAppear()
+        {
+            PanelSoDo.Dock = DockStyle.None;
+            PanelSoDo.Size = new Size(0, 0);
+            timerAppear.Start();
+        }
+
+        private void timerAppear_Tick(object sender, EventArgs e)
+        {
+            PanelSoDo.Dock = DockStyle.Fill;
+            timerAppear.Stop();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PanelLocPhong = new System.Windows.Forms.Panel();
             this.PanelTinhTrangPhong = new System.Windows.Forms.Panel();
             this.LabelTinhTrangDonDep = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.timerAppear = new System.Windows.Forms.Timer(this.components);
             this.PanelLocPhong.SuspendLayout();
             this.PanelTinhTrangPhong.SuspendLayout();
             this.PanelLoaiPhong.SuspendLayout();
@@ -659,11 +661,17 @@
             this.label1.Text = "Tầng 1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // timerAppear
+            // 
+            this.timerAppear.Enabled = true;
+            this.timerAppear.Interval = 500;
+            this.timerAppear.Tick += new System.EventHandler(this.timerAppear_Tick);
+            // 
             // FormSoDoPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1244, 794);
             this.Controls.Add(this.PanelSoDo);
             this.Controls.Add(this.PanelTitle);
@@ -744,5 +752,6 @@
         private CTControls.CTTimePicker ctTimePicker1;
         private System.Windows.Forms.Label LabelChonGio;
         private System.Windows.Forms.Label LabelChonNgay;
+        private System.Windows.Forms.Timer timerAppear;
     }
 }
