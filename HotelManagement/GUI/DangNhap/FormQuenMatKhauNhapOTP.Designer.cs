@@ -51,7 +51,7 @@
             this.ButtonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonContinue.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonContinue.ForeColor = System.Drawing.Color.White;
-            this.ButtonContinue.Location = new System.Drawing.Point(177, 295);
+            this.ButtonContinue.Location = new System.Drawing.Point(180, 277);
             this.ButtonContinue.Name = "ButtonContinue";
             this.ButtonContinue.Size = new System.Drawing.Size(130, 47);
             this.ButtonContinue.TabIndex = 10;
@@ -69,7 +69,7 @@
             this.textBoxOTP.BorderSize = 1;
             this.textBoxOTP.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxOTP.IsFocused = false;
-            this.textBoxOTP.Location = new System.Drawing.Point(22, 196);
+            this.textBoxOTP.Location = new System.Drawing.Point(24, 189);
             this.textBoxOTP.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOTP.Multiline = false;
             this.textBoxOTP.Name = "textBoxOTP";
@@ -95,7 +95,7 @@
             this.ButtonResend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonResend.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonResend.ForeColor = System.Drawing.Color.White;
-            this.ButtonResend.Location = new System.Drawing.Point(22, 295);
+            this.ButtonResend.Location = new System.Drawing.Point(24, 277);
             this.ButtonResend.Name = "ButtonResend";
             this.ButtonResend.Size = new System.Drawing.Size(130, 47);
             this.ButtonResend.TabIndex = 10;

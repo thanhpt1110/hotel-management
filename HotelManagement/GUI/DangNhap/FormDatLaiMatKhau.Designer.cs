@@ -61,7 +61,7 @@
             this.ButtonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonOK.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonOK.ForeColor = System.Drawing.Color.White;
-            this.ButtonOK.Location = new System.Drawing.Point(110, 360);
+            this.ButtonOK.Location = new System.Drawing.Point(118, 356);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.Size = new System.Drawing.Size(94, 47);
             this.ButtonOK.TabIndex = 14;
@@ -79,7 +79,7 @@
             this.textBoxPassConfirm.BorderSize = 1;
             this.textBoxPassConfirm.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxPassConfirm.IsFocused = false;
-            this.textBoxPassConfirm.Location = new System.Drawing.Point(20, 240);
+            this.textBoxPassConfirm.Location = new System.Drawing.Point(23, 252);
             this.textBoxPassConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassConfirm.Multiline = false;
             this.textBoxPassConfirm.Name = "textBoxPassConfirm";
@@ -103,7 +103,7 @@
             this.textBoxPassword.BorderSize = 1;
             this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxPassword.IsFocused = false;
-            this.textBoxPassword.Location = new System.Drawing.Point(20, 165);
+            this.textBoxPassword.Location = new System.Drawing.Point(23, 177);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Multiline = false;
             this.textBoxPassword.Name = "textBoxPassword";

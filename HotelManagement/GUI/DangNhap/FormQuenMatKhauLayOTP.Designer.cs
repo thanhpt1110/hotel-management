@@ -32,9 +32,9 @@
             this.ButtonLayOTP = new HotelManagement.CTControls.CTButton();
             this.TextBoxEmail = new HotelManagement.CTControls.CTTextBox();
             this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // PictureBoxBack
@@ -61,7 +61,7 @@
             this.ButtonLayOTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonLayOTP.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.ButtonLayOTP.ForeColor = System.Drawing.Color.White;
-            this.ButtonLayOTP.Location = new System.Drawing.Point(90, 360);
+            this.ButtonLayOTP.Location = new System.Drawing.Point(93, 356);
             this.ButtonLayOTP.Name = "ButtonLayOTP";
             this.ButtonLayOTP.Size = new System.Drawing.Size(140, 47);
             this.ButtonLayOTP.TabIndex = 6;
@@ -79,7 +79,7 @@
             this.TextBoxEmail.BorderSize = 1;
             this.TextBoxEmail.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.TextBoxEmail.IsFocused = false;
-            this.TextBoxEmail.Location = new System.Drawing.Point(20, 240);
+            this.TextBoxEmail.Location = new System.Drawing.Point(23, 252);
             this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxEmail.Multiline = false;
             this.TextBoxEmail.Name = "TextBoxEmail";
@@ -102,7 +102,7 @@
             this.textBoxUsername.BorderSize = 1;
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(20, 165);
+            this.textBoxUsername.Location = new System.Drawing.Point(23, 177);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Multiline = false;
             this.textBoxUsername.Name = "textBoxUsername";
@@ -116,22 +116,22 @@
             this.textBoxUsername.Texts = "";
             this.textBoxUsername.UnderlineedStyle = false;
             // 
-            // pictureBox1
+            // pictureBox3
             // 
-            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.QuenMatKhau;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(286, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox3.Image = global::HotelManagement.Properties.Resources.QuenMatKhau;
+            this.pictureBox3.Location = new System.Drawing.Point(23, 93);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(286, 49);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
             // 
             // FormQuenMatKhauLayOTP
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 466);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.PictureBoxBack);
             this.Controls.Add(this.ButtonLayOTP);
             this.Controls.Add(this.TextBoxEmail);
@@ -142,7 +142,7 @@
             this.ShowInTaskbar = false;
             this.Text = "FormQuenMatKhau";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -152,6 +152,6 @@
         private CTControls.CTTextBox TextBoxEmail;
         private CTControls.CTButton ButtonLayOTP;
         private System.Windows.Forms.PictureBox PictureBoxBack;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

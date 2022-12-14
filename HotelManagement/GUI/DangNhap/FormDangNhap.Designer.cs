@@ -48,7 +48,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(90, 350);
+            this.buttonLogin.Location = new System.Drawing.Point(93, 356);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(146, 47);
             this.buttonLogin.TabIndex = 4;
@@ -66,7 +66,7 @@
             this.textBoxPassword.BorderSize = 1;
             this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxPassword.IsFocused = false;
-            this.textBoxPassword.Location = new System.Drawing.Point(20, 230);
+            this.textBoxPassword.Location = new System.Drawing.Point(23, 252);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Multiline = false;
             this.textBoxPassword.Name = "textBoxPassword";
@@ -89,7 +89,7 @@
             this.textBoxUsername.BorderSize = 1;
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(20, 155);
+            this.textBoxUsername.Location = new System.Drawing.Point(23, 177);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Multiline = false;
             this.textBoxUsername.Name = "textBoxUsername";
@@ -108,7 +108,7 @@
             this.labelForgotPassword.AutoSize = true;
             this.labelForgotPassword.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.labelForgotPassword.Location = new System.Drawing.Point(175, 284);
+            this.labelForgotPassword.Location = new System.Drawing.Point(182, 310);
             this.labelForgotPassword.Name = "labelForgotPassword";
             this.labelForgotPassword.Size = new System.Drawing.Size(126, 21);
             this.labelForgotPassword.TabIndex = 9;
@@ -119,7 +119,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.DangNhap;
-            this.pictureBox1.Location = new System.Drawing.Point(46, 71);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 81);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(242, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
