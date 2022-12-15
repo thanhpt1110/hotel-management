@@ -32,7 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelBackground = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.PanelChuaButtonCoc = new System.Windows.Forms.Panel();
+            this.CTButtonCoc = new HotelManagement.CTControls.CTButton();
+            this.PanelChuaButtonThemDichVu = new System.Windows.Forms.Panel();
             this.CTButtonThemDichVu = new HotelManagement.CTControls.CTButton();
             this.PanelChuaButtonThanhToan = new System.Windows.Forms.Panel();
             this.CTButtonThanhToan = new HotelManagement.CTControls.CTButton();
@@ -69,7 +71,8 @@
             this.PanelBackgroundTop = new System.Windows.Forms.Panel();
             this.LabelMaPhong = new System.Windows.Forms.Label();
             this.PanelBackground.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.PanelChuaButtonCoc.SuspendLayout();
+            this.PanelChuaButtonThemDichVu.SuspendLayout();
             this.PanelChuaButtonThanhToan.SuspendLayout();
             this.PanelChuaButtonDatPhongNay.SuspendLayout();
             this.PanelChuaButtonNhanPhong.SuspendLayout();
@@ -86,7 +89,8 @@
             // 
             // PanelBackground
             // 
-            this.PanelBackground.Controls.Add(this.panel3);
+            this.PanelBackground.Controls.Add(this.PanelChuaButtonCoc);
+            this.PanelBackground.Controls.Add(this.PanelChuaButtonThemDichVu);
             this.PanelBackground.Controls.Add(this.PanelChuaButtonThanhToan);
             this.PanelBackground.Controls.Add(this.PanelChuaButtonDatPhongNay);
             this.PanelBackground.Controls.Add(this.PanelChuaButtonNhanPhong);
@@ -102,14 +106,43 @@
             this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
-            // panel3
+            // PanelChuaButtonCoc
             // 
-            this.panel3.Controls.Add(this.CTButtonThemDichVu);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(-149, 488);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(188, 62);
-            this.panel3.TabIndex = 17;
+            this.PanelChuaButtonCoc.Controls.Add(this.CTButtonCoc);
+            this.PanelChuaButtonCoc.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelChuaButtonCoc.Location = new System.Drawing.Point(-337, 488);
+            this.PanelChuaButtonCoc.Name = "PanelChuaButtonCoc";
+            this.PanelChuaButtonCoc.Size = new System.Drawing.Size(188, 62);
+            this.PanelChuaButtonCoc.TabIndex = 36;
+            // 
+            // CTButtonCoc
+            // 
+            this.CTButtonCoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.CTButtonCoc.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.CTButtonCoc.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.CTButtonCoc.BorderRadius = 10;
+            this.CTButtonCoc.BorderSize = 0;
+            this.CTButtonCoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTButtonCoc.FlatAppearance.BorderSize = 0;
+            this.CTButtonCoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CTButtonCoc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTButtonCoc.ForeColor = System.Drawing.Color.White;
+            this.CTButtonCoc.Location = new System.Drawing.Point(20, 9);
+            this.CTButtonCoc.Name = "CTButtonCoc";
+            this.CTButtonCoc.Size = new System.Drawing.Size(150, 40);
+            this.CTButtonCoc.TabIndex = 0;
+            this.CTButtonCoc.Text = "Đặt cọc";
+            this.CTButtonCoc.TextColor = System.Drawing.Color.White;
+            this.CTButtonCoc.UseVisualStyleBackColor = false;
+            // 
+            // PanelChuaButtonThemDichVu
+            // 
+            this.PanelChuaButtonThemDichVu.Controls.Add(this.CTButtonThemDichVu);
+            this.PanelChuaButtonThemDichVu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelChuaButtonThemDichVu.Location = new System.Drawing.Point(-149, 488);
+            this.PanelChuaButtonThemDichVu.Name = "PanelChuaButtonThemDichVu";
+            this.PanelChuaButtonThemDichVu.Size = new System.Drawing.Size(188, 62);
+            this.PanelChuaButtonThemDichVu.TabIndex = 35;
             // 
             // CTButtonThemDichVu
             // 
@@ -139,7 +172,7 @@
             this.PanelChuaButtonThanhToan.Location = new System.Drawing.Point(39, 488);
             this.PanelChuaButtonThanhToan.Name = "PanelChuaButtonThanhToan";
             this.PanelChuaButtonThanhToan.Size = new System.Drawing.Size(188, 62);
-            this.PanelChuaButtonThanhToan.TabIndex = 16;
+            this.PanelChuaButtonThanhToan.TabIndex = 22;
             // 
             // CTButtonThanhToan
             // 
@@ -160,6 +193,7 @@
             this.CTButtonThanhToan.Text = "Thanh toán";
             this.CTButtonThanhToan.TextColor = System.Drawing.Color.White;
             this.CTButtonThanhToan.UseVisualStyleBackColor = false;
+            this.CTButtonThanhToan.Click += new System.EventHandler(this.CTButtonThanhToan_Click);
             // 
             // PanelChuaButtonDatPhongNay
             // 
@@ -168,8 +202,7 @@
             this.PanelChuaButtonDatPhongNay.Location = new System.Drawing.Point(227, 488);
             this.PanelChuaButtonDatPhongNay.Name = "PanelChuaButtonDatPhongNay";
             this.PanelChuaButtonDatPhongNay.Size = new System.Drawing.Size(188, 62);
-            this.PanelChuaButtonDatPhongNay.TabIndex = 15;
-            this.PanelChuaButtonDatPhongNay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
+            this.PanelChuaButtonDatPhongNay.TabIndex = 21;
             // 
             // CTButtonDatPhongNay
             // 
@@ -199,8 +232,7 @@
             this.PanelChuaButtonNhanPhong.Location = new System.Drawing.Point(415, 488);
             this.PanelChuaButtonNhanPhong.Name = "PanelChuaButtonNhanPhong";
             this.PanelChuaButtonNhanPhong.Size = new System.Drawing.Size(188, 62);
-            this.PanelChuaButtonNhanPhong.TabIndex = 14;
-            this.PanelChuaButtonNhanPhong.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
+            this.PanelChuaButtonNhanPhong.TabIndex = 20;
             // 
             // CTButtonNhanPhong
             // 
@@ -230,8 +262,7 @@
             this.PanelChuaButtonLuu.Location = new System.Drawing.Point(603, 488);
             this.PanelChuaButtonLuu.Name = "PanelChuaButtonLuu";
             this.PanelChuaButtonLuu.Size = new System.Drawing.Size(188, 62);
-            this.PanelChuaButtonLuu.TabIndex = 13;
-            this.PanelChuaButtonLuu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
+            this.PanelChuaButtonLuu.TabIndex = 19;
             // 
             // CTButtonLuu
             // 
@@ -261,8 +292,7 @@
             this.PanelChuaButtonThoat.Location = new System.Drawing.Point(791, 488);
             this.PanelChuaButtonThoat.Name = "PanelChuaButtonThoat";
             this.PanelChuaButtonThoat.Size = new System.Drawing.Size(188, 62);
-            this.PanelChuaButtonThoat.TabIndex = 12;
-            this.PanelChuaButtonThoat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
+            this.PanelChuaButtonThoat.TabIndex = 18;
             // 
             // CTButtonThoat
             // 
@@ -623,7 +653,8 @@
             this.Resize += new System.EventHandler(this.FormThongTinPhong_Resize);
             this.StyleChanged += new System.EventHandler(this.FormThongTinPhong_SizeChanged);
             this.PanelBackground.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.PanelChuaButtonCoc.ResumeLayout(false);
+            this.PanelChuaButtonThemDichVu.ResumeLayout(false);
             this.PanelChuaButtonThanhToan.ResumeLayout(false);
             this.PanelChuaButtonDatPhongNay.ResumeLayout(false);
             this.PanelChuaButtonNhanPhong.ResumeLayout(false);
@@ -645,14 +676,6 @@
         #endregion
 
         private System.Windows.Forms.Panel PanelBackground;
-        private System.Windows.Forms.Panel PanelChuaButtonDatPhongNay;
-        private CTControls.CTButton CTButtonDatPhongNay;
-        private System.Windows.Forms.Panel PanelChuaButtonNhanPhong;
-        private CTControls.CTButton CTButtonNhanPhong;
-        private System.Windows.Forms.Panel PanelChuaButtonLuu;
-        private CTControls.CTButton CTButtonLuu;
-        private System.Windows.Forms.Panel PanelChuaButtonThoat;
-        private CTControls.CTButton CTButtonThoat;
         private System.Windows.Forms.Panel PanelChuaThongTin;
         private System.Windows.Forms.Label LabelSoNguoi;
         private System.Windows.Forms.Label LabelThoiGianThue;
@@ -664,9 +687,6 @@
         private System.Windows.Forms.PictureBox PictureBoxTen;
         private System.Windows.Forms.Panel PanelBackgroundTop;
         private System.Windows.Forms.Label LabelMaPhong;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel PanelChuaButtonThanhToan;
-        private CTControls.CTButton CTButtonThanhToan;
         private System.Windows.Forms.Label LabelGhiChu;
         private CTPanel.CTPanel ctPanel1;
         private System.Windows.Forms.DataGridView gridDichVu;
@@ -680,6 +700,19 @@
         private CTPanel.CTPanel ctPanel2;
         private System.Windows.Forms.TextBox TextBoxGhiChu;
         private CTPanel.CTPanel ctPanel3;
+        private System.Windows.Forms.Panel PanelChuaButtonCoc;
+        private CTControls.CTButton CTButtonCoc;
+        private System.Windows.Forms.Panel PanelChuaButtonThemDichVu;
         private CTControls.CTButton CTButtonThemDichVu;
+        private System.Windows.Forms.Panel PanelChuaButtonThanhToan;
+        private CTControls.CTButton CTButtonThanhToan;
+        private System.Windows.Forms.Panel PanelChuaButtonDatPhongNay;
+        private CTControls.CTButton CTButtonDatPhongNay;
+        private System.Windows.Forms.Panel PanelChuaButtonNhanPhong;
+        private CTControls.CTButton CTButtonNhanPhong;
+        private System.Windows.Forms.Panel PanelChuaButtonLuu;
+        private CTControls.CTButton CTButtonLuu;
+        private System.Windows.Forms.Panel PanelChuaButtonThoat;
+        private CTControls.CTButton CTButtonThoat;
     }
 }

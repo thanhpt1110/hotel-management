@@ -203,10 +203,5 @@ namespace HotelManagement.GUI
             panelSoDoPhong.Dock = DockStyle.Fill;
                 timerAppear.Stop();
         }
-
-        private void ctTimePicker1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

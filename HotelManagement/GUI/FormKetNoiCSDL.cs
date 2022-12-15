@@ -292,5 +292,30 @@ namespace HotelManagement.GUI
             }*/
             #endregion
         }
+
+        private void ctMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void panelControlBox_MouseHover(object sender, EventArgs e)
+        {
+            ctClose.turnOn();
+            ctMinimize.turnOn();
+            //ctMaximize.turnOn();
+        }
+
+        private void panelControlBox_MouseLeave(object sender, EventArgs e)
+        {
+            ctClose.turnOff();
+            ctMinimize.turnOff();
+            //ctMaximize.turnOff();
+        }
+
+        private void panelControlBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            ctClose.turnOn();
+            ctMinimize.turnOn();
+            //ctMaximize.turnOn();
+        }
     }
 }

@@ -230,8 +230,8 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Phòng đã đặt";
             this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
             this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
-            this.CTButtonThemDichVu.Hide();
-            this.CTButtonDatPhongNay.Hide();
+            this.PanelChuaButtonThemDichVu.Hide();
+            this.PanelChuaButtonDatPhongNay.Hide();
             this.PanelChuaButtonThanhToan.Hide();
         }
         private void LoadPhongDangThue()
@@ -264,10 +264,11 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Đang sửa chữa";
             this.ComboBoxTinhTrangPhong.Items.Add("Đang sửa chữa");
             this.ComboBoxTinhTrangPhong.Items.Add("Phòng trống");
-            this.CTButtonThemDichVu.Hide();
-            this.CTButtonDatPhongNay.Hide();
+            this.PanelChuaButtonThemDichVu.Hide();
+            this.PanelChuaButtonDatPhongNay.Hide();
             this.PanelChuaButtonThanhToan.Hide();
             this.PanelChuaButtonNhanPhong.Hide();
+            this.PanelChuaButtonCoc.Hide();
         }
 
         private void LoadPhongTrong()
@@ -282,9 +283,10 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Phòng trống";
             this.ComboBoxTinhTrangPhong.Items.Add("Đang sửa chữa");
             this.ComboBoxTinhTrangPhong.Items.Add("Phòng trống");
-            this.CTButtonThemDichVu.Hide();
+            this.PanelChuaButtonThemDichVu.Hide();
             this.PanelChuaButtonThanhToan.Hide();
             this.PanelChuaButtonNhanPhong.Hide();
+            this.PanelChuaButtonCoc.Hide();
         }
         private void LoadPage()
         {
@@ -373,6 +375,11 @@ namespace HotelManagement.GUI
                 this.Close();
                 formDatPhong.ShowDialog();
             }
+        }
+
+        private void CTButtonThanhToan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

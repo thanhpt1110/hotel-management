@@ -230,10 +230,7 @@ namespace HotelManagement.GUI
             DataGridView grid2 = gridPhongDaChon;
             grid1.ColumnHeadersDefaultCellStyle.Font = new Font(grid1.Font, FontStyle.Bold);
             grid2.ColumnHeadersDefaultCellStyle.Font = new Font(grid2.Font, FontStyle.Bold);
-            this.ctTimePicker1.SetHour(DateTime.Now.Hour, DateTime.Now.Minute);
-            this.ctTimePicker1.SetMin(DateTime.Now.Minute);
-            this.ctTimePicker2.SetHour(DateTime.Now.Hour, DateTime.Now.Minute);
-            this.ctTimePicker2.SetMin(DateTime.Now.Minute);
+            
 
             grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });
             grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });

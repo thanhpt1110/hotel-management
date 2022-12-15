@@ -260,15 +260,16 @@ namespace HotelManagement.GUI
             if (y >= 0 && x == 3)
             {
                 DichVu dichVu = DichVuBUS.Instance.FindDichVu(gridDichVu.Rows[y].Cells[1].Value.ToString());
-                if(dichVu.SLConLai>0)
+                if (dichVu.SLConLai > 0)
                 {
                     dichVu.SLConLai--;
-                }    
-                else if(dichVu.SLConLai==0)
+                }
+                else if (dichVu.SLConLai == 0)
                 {
                     CTMessageBox.Show("Sản phẩm này đã hết ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                }    
+                }
             }
+        }
     }
 }

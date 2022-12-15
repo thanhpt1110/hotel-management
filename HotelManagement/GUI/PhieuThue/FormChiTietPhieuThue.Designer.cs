@@ -34,10 +34,6 @@
             this.LabelChiTietPhieuThueTieuDe = new System.Windows.Forms.Label();
             this.PanelChuaThongTin = new System.Windows.Forms.Panel();
             this.grid = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ctPanel1 = new CTPanel.CTPanel();
             this.LabelNhanVienLapPhieu = new System.Windows.Forms.Label();
             this.LabelThoiGianLapPhieu = new System.Windows.Forms.Label();
@@ -49,6 +45,10 @@
             this.CTButtonLuu = new HotelManagement.CTControls.CTButton();
             this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
             this.CTButtonThanhToan = new HotelManagement.CTControls.CTButton();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelChuaThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSoNguoi)).BeginInit();
@@ -145,36 +145,6 @@
             this.grid.TabIndex = 30;
             this.grid.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellMouseLeave);
             this.grid.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_CellMouseMove);
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 175F;
-            this.Column2.HeaderText = "Số phòng";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 225F;
-            this.Column3.HeaderText = "Ngày bắt đầu";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 225F;
-            this.Column4.HeaderText = "Ngày kết thúc";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Số người";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ctPanel1
             // 
@@ -323,6 +293,36 @@
             this.CTButtonThanhToan.Text = "Thêm phòng thuê";
             this.CTButtonThanhToan.TextColor = System.Drawing.Color.White;
             this.CTButtonThanhToan.UseVisualStyleBackColor = false;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Số người";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 225F;
+            this.Column4.HeaderText = "Ngày kết thúc";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 225F;
+            this.Column3.HeaderText = "Ngày bắt đầu";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 175F;
+            this.Column2.HeaderText = "Số phòng";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // FormChiTietPhieuThue
             // 

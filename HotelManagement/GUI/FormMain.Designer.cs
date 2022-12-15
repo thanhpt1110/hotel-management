@@ -391,6 +391,7 @@
             // 
             // ButtonTrangChu
             // 
+            this.ButtonTrangChu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
             this.ButtonTrangChu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ButtonTrangChu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -409,7 +410,7 @@
             this.ButtonTrangChu.Text = "    Trang chủ";
             this.ButtonTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonTrangChu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ButtonTrangChu.UseVisualStyleBackColor = true;
+            this.ButtonTrangChu.UseVisualStyleBackColor = false;
             this.ButtonTrangChu.Click += new System.EventHandler(this.ButtonTrangChu_Click);
             // 
             // PanelUser
