@@ -309,15 +309,5 @@ namespace HotelManagement
             labelCorporation.BringToFront();
             
         }
-
-        private void linkLabelKetNoiCSDL_Click(object sender, EventArgs e)
-        {
-            using (FormKetNoiCSDL formKetNoiCSDL = new FormKetNoiCSDL())
-            {
-                this.Hide();
-                formKetNoiCSDL.ShowDialog();
-                this.Close();
-            }
-        }
     }
 }
