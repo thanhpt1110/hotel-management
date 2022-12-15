@@ -245,7 +245,7 @@ namespace HotelManagement.GUI
         }
 
         #endregion
-
+        
         #region Process events
         private void ctClose_Click(object sender, EventArgs e)
         {
@@ -372,7 +372,7 @@ namespace HotelManagement.GUI
                         this.Hide();
                         formLogin.ShowDialog();
                         this.Close();
-                    }*/
+                    }
                 }
             }
             catch (Exception ex)
