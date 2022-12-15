@@ -18,6 +18,8 @@ namespace HotelManagement.GUI
 {
     public partial class FormKetNoiCSDL : Form
     {
+        #region Custom UI
+
         //Fields
         private int borderRadius = 20;
         private int borderSize = 2;
@@ -195,6 +197,56 @@ namespace HotelManagement.GUI
             ControlRegionAndBorder(panelBackground, borderRadius - (borderSize / 2), e.Graphics, borderColor);
         }
 
+        private void panelControlBox_MouseHover(object sender, EventArgs e)
+        {
+            ctClose.turnOn();
+            ctMinimize.turnOn();
+            //ctMaximize.turnOn();
+        }
+
+        private void panelControlBox_MouseLeave(object sender, EventArgs e)
+        {
+            ctClose.turnOff();
+            ctMinimize.turnOff();
+            //ctMaximize.turnOff();
+        }
+
+        private void panelControlBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            ctClose.turnOn();
+            ctMinimize.turnOn();
+            //ctMaximize.turnOn();
+        }
+        #endregion
+
+        #region Button mouse effect
+        private void buttonDefault_MouseMove(object sender, MouseEventArgs e)
+        {
+            buttonDefault.BackColor = Color.FromArgb(255, 205, 0);
+            buttonDefault.BackgroundColor = Color.FromArgb(255, 205, 0);
+            buttonDefault.BorderColor = Color.FromArgb(229, 184, 0);
+        }
+
+        private void buttonDefault_MouseLeave(object sender, EventArgs e)
+        {
+            buttonDefault.BackColor = Color.FromArgb(255, 222, 85);
+            buttonDefault.BackgroundColor = Color.FromArgb(255, 222, 85);
+            buttonDefault.BorderColor = Color.FromArgb(255, 222, 85);
+        }
+
+        private void buttonKetNoi_MouseMove(object sender, MouseEventArgs e)
+        {
+            buttonKetNoi.BorderColor = Color.FromArgb(32, 122, 229);
+        }
+
+        private void buttonKetNoi_MouseLeave(object sender, EventArgs e)
+        {
+            buttonKetNoi.BorderColor = Color.FromArgb(36, 136, 255);
+        }
+
+        #endregion
+
+        #region Process events
         private void ctClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -229,13 +281,13 @@ namespace HotelManagement.GUI
 
         private void buttonKetNoi_Click(object sender, EventArgs e)
         {
+            string server = textBoxServer.Texts;
+            string db = textBoxDB.Texts;
             #region Check CheckBox status to save new or not
             if (checkBoxLuu.Checked) // Overwrite old file
             {
                 try
                 {
-                    string server = textBoxServer.Texts;
-                    string db = textBoxDB.Texts;
                     // Check file exist or not
                     if (!File.Exists("DBConnection.txt"))
                     {
@@ -266,19 +318,56 @@ namespace HotelManagement.GUI
             }
             #endregion
 
-            CTMessageBox.Show("Kết nối CSDL thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (server == string.Empty && db == string.Empty)
+            {
+                CTMessageBox.Show("Không được để trống! Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            #region CheckDBConnection
-            string connectionString = string.Format("data source={0}; initial catalog = {1}; integrated security = True; MultipleActiveResultSets = True;App = EntityFramework", textBoxServer.Texts, textBoxDB.Texts);
+            #region Check DB Connection
+            string connectionString = string.Format("Data source = {0}; Initial Catalog = {1}; Integrated security = True; MultipleActiveResultSets = True;App = EntityFramework", server, db);
             try
             {
                 SqlHelper sqlHelper = new SqlHelper(connectionString);
                 if (sqlHelper.isConnected)
                 {
                     ConnectDB connectDB = new ConnectDB();
-                    connectDB.saveConnectionString("HotelDTO", connectionString);
-                    MessageBox.Show("Test connection successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-/*                    using (FormLogin formLogin = new FormLogin())
+                    connectDB.ReloadFileConfig("HotelDTO", connectionString);
+
+                    CTMessageBox.Show("Kết nối cơ sở dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (FormLogin formLogin = new FormLogin())
+                    {
+                        this.Hide();
+                        formLogin.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng kiểm tra lại thông tin đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            #endregion
+        }
+
+        private void ctMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void buttonDefault_Click(object sender, EventArgs e)
+        {
+            #region Check DB Connection 
+            string connectionString = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Database\HotelManagement.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework";
+            try
+            {
+                SqlHelper sqlHelper = new SqlHelper(connectionString);
+                if (sqlHelper.isConnected)
+                {
+                    ConnectDB connectDB = new ConnectDB();
+                    connectDB.ReloadFileConfig("HotelDTO", connectionString);
+                    CTMessageBox.Show("Kết nối cơ sở dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (FormLogin formLogin = new FormLogin())
                     {
                         this.Hide();
                         formLogin.ShowDialog();
@@ -288,36 +377,13 @@ namespace HotelManagement.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng khởi động lại chương trình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             #endregion
 
             this.Close();
         }
 
-        private void ctMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-        private void panelControlBox_MouseHover(object sender, EventArgs e)
-        {
-            ctClose.turnOn();
-            ctMinimize.turnOn();
-            //ctMaximize.turnOn();
-        }
-
-        private void panelControlBox_MouseLeave(object sender, EventArgs e)
-        {
-            ctClose.turnOff();
-            ctMinimize.turnOff();
-            //ctMaximize.turnOff();
-        }
-
-        private void panelControlBox_MouseMove(object sender, MouseEventArgs e)
-        {
-            ctClose.turnOn();
-            ctMinimize.turnOn();
-            //ctMaximize.turnOn();
-        }
+        #endregion
     }
 }

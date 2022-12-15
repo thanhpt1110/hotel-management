@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKetNoiCSDL));
             this.panelBackground = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBoxDB = new HotelManagement.CTControls.CTTextBox();
             this.panelControlBox = new System.Windows.Forms.Panel();
+            this.checkBoxLuu = new System.Windows.Forms.CheckBox();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.buttonDefault = new HotelManagement.CTControls.CTButton();
+            this.textBoxDB = new HotelManagement.CTControls.CTTextBox();
             this.ctMaximize = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize = new HotelManagement.CTControls.CTMinimize();
             this.ctClose = new HotelManagement.CTControls.CTClose();
-            this.checkBoxLuu = new System.Windows.Forms.CheckBox();
-            this.labelTitle = new System.Windows.Forms.Label();
             this.buttonKetNoi = new HotelManagement.CTControls.CTButton();
             this.textBoxServer = new HotelManagement.CTControls.CTTextBox();
             this.panelBackground.SuspendLayout();
@@ -47,6 +48,7 @@
             // 
             // panelBackground
             // 
+            this.panelBackground.Controls.Add(this.buttonDefault);
             this.panelBackground.Controls.Add(this.pictureBox1);
             this.panelBackground.Controls.Add(this.textBoxDB);
             this.panelBackground.Controls.Add(this.panelControlBox);
@@ -65,35 +67,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HotelManagement.Properties.Resources.database;
-            this.pictureBox1.Location = new System.Drawing.Point(51, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(54, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 180);
+            this.pictureBox1.Size = new System.Drawing.Size(199, 197);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBoxDB
-            // 
-            this.textBoxDB.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxDB.BorderColor = System.Drawing.Color.Gray;
-            this.textBoxDB.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBoxDB.BorderRadius = 10;
-            this.textBoxDB.BorderSize = 1;
-            this.textBoxDB.ForeColor = System.Drawing.Color.Black;
-            this.textBoxDB.IsFocused = false;
-            this.textBoxDB.Location = new System.Drawing.Point(309, 166);
-            this.textBoxDB.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxDB.Multiline = false;
-            this.textBoxDB.Name = "textBoxDB";
-            this.textBoxDB.Padding = new System.Windows.Forms.Padding(20, 7, 7, 7);
-            this.textBoxDB.PasswordChar = false;
-            this.textBoxDB.PlaceholderColor = System.Drawing.Color.Silver;
-            this.textBoxDB.PlaceholderText = "Nhập tên database";
-            this.textBoxDB.ReadOnly = false;
-            this.textBoxDB.Size = new System.Drawing.Size(241, 28);
-            this.textBoxDB.TabIndex = 11;
-            this.textBoxDB.Texts = "";
-            this.textBoxDB.UnderlineedStyle = false;
             // 
             // panelControlBox
             // 
@@ -108,6 +87,74 @@
             this.panelControlBox.MouseLeave += new System.EventHandler(this.panelControlBox_MouseLeave);
             this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
             this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
+            // 
+            // checkBoxLuu
+            // 
+            this.checkBoxLuu.AutoSize = true;
+            this.checkBoxLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxLuu.Location = new System.Drawing.Point(465, 210);
+            this.checkBoxLuu.Name = "checkBoxLuu";
+            this.checkBoxLuu.Size = new System.Drawing.Size(106, 25);
+            this.checkBoxLuu.TabIndex = 13;
+            this.checkBoxLuu.Text = "Lưu kết nối";
+            this.checkBoxLuu.UseVisualStyleBackColor = true;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(293, 45);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(278, 37);
+            this.labelTitle.TabIndex = 9;
+            this.labelTitle.Text = "Kết nối cơ sở dữ liệu";
+            // 
+            // buttonDefault
+            // 
+            this.buttonDefault.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(85)))));
+            this.buttonDefault.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(85)))));
+            this.buttonDefault.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(85)))));
+            this.buttonDefault.BorderRadius = 15;
+            this.buttonDefault.BorderSize = 2;
+            this.buttonDefault.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDefault.FlatAppearance.BorderSize = 0;
+            this.buttonDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDefault.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDefault.ForeColor = System.Drawing.Color.Black;
+            this.buttonDefault.Location = new System.Drawing.Point(87, 258);
+            this.buttonDefault.Name = "buttonDefault";
+            this.buttonDefault.Size = new System.Drawing.Size(207, 40);
+            this.buttonDefault.TabIndex = 16;
+            this.buttonDefault.Text = "Sử dụng CSDL mặc định";
+            this.buttonDefault.TextColor = System.Drawing.Color.Black;
+            this.buttonDefault.UseVisualStyleBackColor = false;
+            this.buttonDefault.Click += new System.EventHandler(this.buttonDefault_Click);
+            this.buttonDefault.MouseLeave += new System.EventHandler(this.buttonDefault_MouseLeave);
+            this.buttonDefault.MouseMove += new System.Windows.Forms.MouseEventHandler(this.buttonDefault_MouseMove);
+            // 
+            // textBoxDB
+            // 
+            this.textBoxDB.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxDB.BorderColor = System.Drawing.Color.Gray;
+            this.textBoxDB.BorderFocusColor = System.Drawing.Color.Black;
+            this.textBoxDB.BorderRadius = 10;
+            this.textBoxDB.BorderSize = 1;
+            this.textBoxDB.ForeColor = System.Drawing.Color.Black;
+            this.textBoxDB.IsFocused = false;
+            this.textBoxDB.Location = new System.Drawing.Point(297, 160);
+            this.textBoxDB.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxDB.Multiline = false;
+            this.textBoxDB.Name = "textBoxDB";
+            this.textBoxDB.Padding = new System.Windows.Forms.Padding(20, 7, 7, 7);
+            this.textBoxDB.PasswordChar = false;
+            this.textBoxDB.PlaceholderColor = System.Drawing.Color.Silver;
+            this.textBoxDB.PlaceholderText = "Nhập tên database";
+            this.textBoxDB.ReadOnly = false;
+            this.textBoxDB.Size = new System.Drawing.Size(271, 28);
+            this.textBoxDB.TabIndex = 11;
+            this.textBoxDB.Texts = "";
+            this.textBoxDB.UnderlineedStyle = false;
             // 
             // ctMaximize
             // 
@@ -142,40 +189,19 @@
             this.ctClose.TabIndex = 0;
             this.ctClose.Click += new System.EventHandler(this.ctClose_Click);
             // 
-            // checkBoxLuu
-            // 
-            this.checkBoxLuu.AutoSize = true;
-            this.checkBoxLuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxLuu.Location = new System.Drawing.Point(450, 221);
-            this.checkBoxLuu.Name = "checkBoxLuu";
-            this.checkBoxLuu.Size = new System.Drawing.Size(106, 25);
-            this.checkBoxLuu.TabIndex = 13;
-            this.checkBoxLuu.Text = "Lưu kết nối";
-            this.checkBoxLuu.UseVisualStyleBackColor = true;
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(290, 56);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(278, 37);
-            this.labelTitle.TabIndex = 9;
-            this.labelTitle.Text = "Kết nối cơ sở dữ liệu";
-            // 
             // buttonKetNoi
             // 
-            this.buttonKetNoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(172)))), ((int)(((byte)(242)))));
-            this.buttonKetNoi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(172)))), ((int)(((byte)(242)))));
-            this.buttonKetNoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(172)))), ((int)(((byte)(242)))));
+            this.buttonKetNoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.buttonKetNoi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.buttonKetNoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
             this.buttonKetNoi.BorderRadius = 15;
-            this.buttonKetNoi.BorderSize = 0;
+            this.buttonKetNoi.BorderSize = 2;
             this.buttonKetNoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonKetNoi.FlatAppearance.BorderSize = 0;
             this.buttonKetNoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKetNoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKetNoi.ForeColor = System.Drawing.Color.White;
-            this.buttonKetNoi.Location = new System.Drawing.Point(348, 257);
+            this.buttonKetNoi.Location = new System.Drawing.Point(352, 258);
             this.buttonKetNoi.Name = "buttonKetNoi";
             this.buttonKetNoi.Size = new System.Drawing.Size(150, 40);
             this.buttonKetNoi.TabIndex = 12;
@@ -183,6 +209,8 @@
             this.buttonKetNoi.TextColor = System.Drawing.Color.White;
             this.buttonKetNoi.UseVisualStyleBackColor = false;
             this.buttonKetNoi.Click += new System.EventHandler(this.buttonKetNoi_Click);
+            this.buttonKetNoi.MouseLeave += new System.EventHandler(this.buttonKetNoi_MouseLeave);
+            this.buttonKetNoi.MouseMove += new System.Windows.Forms.MouseEventHandler(this.buttonKetNoi_MouseMove);
             // 
             // textBoxServer
             // 
@@ -193,7 +221,7 @@
             this.textBoxServer.BorderSize = 1;
             this.textBoxServer.ForeColor = System.Drawing.Color.Black;
             this.textBoxServer.IsFocused = false;
-            this.textBoxServer.Location = new System.Drawing.Point(309, 110);
+            this.textBoxServer.Location = new System.Drawing.Point(297, 100);
             this.textBoxServer.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxServer.Multiline = false;
             this.textBoxServer.Name = "textBoxServer";
@@ -202,7 +230,7 @@
             this.textBoxServer.PlaceholderColor = System.Drawing.Color.Silver;
             this.textBoxServer.PlaceholderText = "Nhập tên server";
             this.textBoxServer.ReadOnly = false;
-            this.textBoxServer.Size = new System.Drawing.Size(241, 28);
+            this.textBoxServer.Size = new System.Drawing.Size(271, 28);
             this.textBoxServer.TabIndex = 10;
             this.textBoxServer.Texts = "";
             this.textBoxServer.UnderlineedStyle = false;
@@ -247,5 +275,6 @@
         private CTControls.CTButton buttonKetNoi;
         private CTControls.CTTextBox textBoxServer;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private CTControls.CTButton buttonDefault;
     }
 }
