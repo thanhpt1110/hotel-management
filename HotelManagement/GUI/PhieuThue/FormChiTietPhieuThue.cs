@@ -21,6 +21,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
+        private Image delete = Properties.Resources.delete;
         private PhieuThue phieuThue;
         //Constructor
         public FormChiTietPhieuThue()
@@ -237,13 +238,13 @@ namespace HotelManagement.GUI
             List<CTDP> ctdps = CTDP_BUS.Instance.GetCTDPs().Where(p=>p.MaPT==phieuThue.MaPT).ToList();
             foreach(CTDP cTDP in ctdps)
             {
-                grid.Rows.Add(new object[] { cTDP.MaPH, cTDP.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.SoNguoi });
+                grid.Rows.Add(new object[] { cTDP.MaPH, cTDP.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.SoNguoi, this.delete }) ;
             }    
         }    
         private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
             int y = e.RowIndex, x = e.ColumnIndex;
-            if (y == -1 && x == 0)
+            if (y == -1 && x == 0 || y >= 0 && x == 4)
                 grid.Cursor = Cursors.Hand;
             else
                 grid.Cursor = Cursors.Default;
@@ -252,6 +253,17 @@ namespace HotelManagement.GUI
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;
+        }
+
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int y = e.RowIndex, x = e.ColumnIndex;
+            if (y >= 0 && x ==4)
+            {
+                // If click Delete button
+                MessageBox.Show("Clicked delete button");
+
+            }
         }
     }
 }

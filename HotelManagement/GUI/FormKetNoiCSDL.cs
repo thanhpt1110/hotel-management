@@ -375,7 +375,7 @@ namespace HotelManagement.GUI
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng khởi động lại chương trình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
