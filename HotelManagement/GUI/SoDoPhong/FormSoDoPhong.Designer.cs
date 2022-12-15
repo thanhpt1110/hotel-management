@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSoDoPhong));
             this.PanelLocPhong = new System.Windows.Forms.Panel();
             this.PanelTinhTrangPhong = new System.Windows.Forms.Panel();
             this.LabelTinhTrangDonDep = new System.Windows.Forms.Label();
@@ -56,7 +57,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
             this.ctDatePicker1 = new HotelManagement.CTControls.CTDatePicker();
-            this.PanelSoDo = new System.Windows.Forms.Panel();
+            this.timerAppear = new System.Windows.Forms.Timer(this.components);
+            this.panelSoDoPhong = new System.Windows.Forms.Panel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,21 +72,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.timerAppear = new System.Windows.Forms.Timer(this.components);
             this.PanelLocPhong.SuspendLayout();
             this.PanelTinhTrangPhong.SuspendLayout();
             this.PanelLoaiPhong.SuspendLayout();
             this.PanelRadioButtonTrangThaiPhong.SuspendLayout();
             this.PanelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.PanelSoDo.SuspendLayout();
+            this.panelSoDoPhong.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelLocPhong
@@ -438,11 +439,12 @@
             this.ctTimePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ctTimePicker1.TabIndex = 3;
             this.ctTimePicker1.TextColor = System.Drawing.Color.Black;
+            this.ctTimePicker1.Load += new System.EventHandler(this.ctTimePicker1_Load);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::HotelManagement.Properties.Resources.search;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(384, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
@@ -491,25 +493,29 @@
             this.ctDatePicker1.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ctDatePicker1.ValueChanged += new System.EventHandler(this.ctDatePicker1_ValueChanged);
             // 
-            // PanelSoDo
+            // timerAppear
             // 
-            this.PanelSoDo.AutoScroll = true;
-            this.PanelSoDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.PanelSoDo.Controls.Add(this.flowLayoutPanel5);
-            this.PanelSoDo.Controls.Add(this.panel5);
-            this.PanelSoDo.Controls.Add(this.flowLayoutPanel4);
-            this.PanelSoDo.Controls.Add(this.panel4);
-            this.PanelSoDo.Controls.Add(this.flowLayoutPanel3);
-            this.PanelSoDo.Controls.Add(this.panel3);
-            this.PanelSoDo.Controls.Add(this.flowLayoutPanel2);
-            this.PanelSoDo.Controls.Add(this.panel2);
-            this.PanelSoDo.Controls.Add(this.flowLayoutPanel1);
-            this.PanelSoDo.Controls.Add(this.panel1);
-            this.PanelSoDo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelSoDo.Location = new System.Drawing.Point(237, 53);
-            this.PanelSoDo.Name = "PanelSoDo";
-            this.PanelSoDo.Size = new System.Drawing.Size(1007, 741);
-            this.PanelSoDo.TabIndex = 4;
+            this.timerAppear.Enabled = true;
+            this.timerAppear.Interval = 500;
+            this.timerAppear.Tick += new System.EventHandler(this.timerAppear_Tick);
+            // 
+            // panelSoDoPhong
+            // 
+            this.panelSoDoPhong.Controls.Add(this.flowLayoutPanel5);
+            this.panelSoDoPhong.Controls.Add(this.panel5);
+            this.panelSoDoPhong.Controls.Add(this.flowLayoutPanel4);
+            this.panelSoDoPhong.Controls.Add(this.panel4);
+            this.panelSoDoPhong.Controls.Add(this.flowLayoutPanel3);
+            this.panelSoDoPhong.Controls.Add(this.panel3);
+            this.panelSoDoPhong.Controls.Add(this.flowLayoutPanel2);
+            this.panelSoDoPhong.Controls.Add(this.panel2);
+            this.panelSoDoPhong.Controls.Add(this.flowLayoutPanel1);
+            this.panelSoDoPhong.Controls.Add(this.panel6);
+            this.panelSoDoPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSoDoPhong.Location = new System.Drawing.Point(237, 53);
+            this.panelSoDoPhong.Name = "panelSoDoPhong";
+            this.panelSoDoPhong.Size = new System.Drawing.Size(1007, 741);
+            this.panelSoDoPhong.TabIndex = 4;
             // 
             // flowLayoutPanel5
             // 
@@ -519,7 +525,7 @@
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(20);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(1007, 0);
-            this.flowLayoutPanel5.TabIndex = 9;
+            this.flowLayoutPanel5.TabIndex = 29;
             // 
             // panel5
             // 
@@ -528,7 +534,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 140);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1007, 35);
-            this.panel5.TabIndex = 8;
+            this.panel5.TabIndex = 28;
             // 
             // label5
             // 
@@ -549,7 +555,7 @@
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(20);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(1007, 0);
-            this.flowLayoutPanel4.TabIndex = 7;
+            this.flowLayoutPanel4.TabIndex = 27;
             // 
             // panel4
             // 
@@ -558,7 +564,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 105);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1007, 35);
-            this.panel4.TabIndex = 6;
+            this.panel4.TabIndex = 26;
             // 
             // label4
             // 
@@ -579,7 +585,7 @@
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(20);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(1007, 0);
-            this.flowLayoutPanel3.TabIndex = 5;
+            this.flowLayoutPanel3.TabIndex = 25;
             // 
             // panel3
             // 
@@ -588,7 +594,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 70);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1007, 35);
-            this.panel3.TabIndex = 4;
+            this.panel3.TabIndex = 24;
             // 
             // label3
             // 
@@ -609,7 +615,7 @@
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(20);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1007, 0);
-            this.flowLayoutPanel2.TabIndex = 3;
+            this.flowLayoutPanel2.TabIndex = 23;
             // 
             // panel2
             // 
@@ -618,7 +624,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 35);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1007, 35);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 22;
             // 
             // label2
             // 
@@ -639,16 +645,16 @@
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(20);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1007, 0);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.TabIndex = 21;
             // 
-            // panel1
+            // panel6
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1007, 35);
-            this.panel1.TabIndex = 0;
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1007, 35);
+            this.panel6.TabIndex = 20;
             // 
             // label1
             // 
@@ -661,21 +667,16 @@
             this.label1.Text = "Tầng 1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // timerAppear
-            // 
-            this.timerAppear.Enabled = true;
-            this.timerAppear.Interval = 500;
-            this.timerAppear.Tick += new System.EventHandler(this.timerAppear_Tick);
-            // 
             // FormSoDoPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1244, 794);
-            this.Controls.Add(this.PanelSoDo);
+            this.Controls.Add(this.panelSoDoPhong);
             this.Controls.Add(this.PanelTitle);
             this.Controls.Add(this.PanelLocPhong);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSoDoPhong";
@@ -692,8 +693,8 @@
             this.PanelTitle.ResumeLayout(false);
             this.PanelTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.PanelSoDo.ResumeLayout(false);
-            this.PanelSoDo.PerformLayout();
+            this.panelSoDoPhong.ResumeLayout(false);
+            this.panelSoDoPhong.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -702,8 +703,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -733,10 +734,11 @@
         private CTControls.CTTextBox ctTextBox1;
         private CTControls.CTDatePicker ctDatePicker1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel PanelSoDo;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private CTControls.CTTimePicker ctTimePicker1;
+        private System.Windows.Forms.Label LabelChonGio;
+        private System.Windows.Forms.Label LabelChonNgay;
+        private System.Windows.Forms.Timer timerAppear;
+        private System.Windows.Forms.Panel panelSoDoPhong;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
@@ -749,9 +751,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private CTControls.CTTimePicker ctTimePicker1;
-        private System.Windows.Forms.Label LabelChonGio;
-        private System.Windows.Forms.Label LabelChonNgay;
-        private System.Windows.Forms.Timer timerAppear;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label1;
     }
 }

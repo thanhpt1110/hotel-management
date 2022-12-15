@@ -19,16 +19,17 @@ namespace HotelManagement.GUI
     {
         private FormMain formMain;
         List<Phong> phongs;
+        TaiKhoan taiKhoan;
         public FormSoDoPhong()
         {
             InitializeComponent();
         }
-        public FormSoDoPhong(FormMain formMain)
+        public FormSoDoPhong(FormMain formMain,TaiKhoan taiKhoan)
         {
             InitializeComponent();
             this.formMain = formMain;
             this.ctDatePicker1.Value = DateTime.Now;
-            CTMessageBox.Show(this.ctDatePicker1.Value.ToString());
+            this.taiKhoan = taiKhoan;
             LoadAllPhong();
         }
         #region Đặt phòng
@@ -36,10 +37,10 @@ namespace HotelManagement.GUI
         {
             SetAppear();
             phongs = PhongBUS.Instance.GetAllPhong();
-            LoadPhong();
+            LoadPhong(phongs);
         }
 
-        private void LoadPhong()
+        private void LoadPhong(List<Phong> phongs)
         {
             SetAppear();
             List<CTRoomDaDat> roomDaDats = new List<CTRoomDaDat>();
@@ -92,7 +93,7 @@ namespace HotelManagement.GUI
                 {
                     if (ctdp.TrangThai == "Đã đặt")
                     {
-                        CTRoomDaDat room = new CTRoomDaDat(ctdp, this, this.formMain);
+                        CTRoomDaDat room = new CTRoomDaDat(ctdp, this, this.formMain,taiKhoan);
                         room.setThoiGian(CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " Ngày");
 
                         if (phong.TTDD == "Đã dọn dẹp")
@@ -179,34 +180,33 @@ namespace HotelManagement.GUI
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            textBox.TextChanged += TextBox_TextChanged;
-
-        }
-
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
             phongs = PhongBUS.Instance.FindPhongWithMaPH(textBox.Text);
-            LoadPhong();
-
+            LoadPhong(phongs);
         }
+
+
 
         private void ctDatePicker1_ValueChanged(object sender, EventArgs e)
         {
-            this.LoadPhong();
+            this.LoadAllPhong();
         }
 
         private void SetAppear()
         {
-            PanelSoDo.Dock = DockStyle.None;
-            PanelSoDo.Size = new Size(0, 0);
+            panelSoDoPhong.Dock = DockStyle.None;
+            panelSoDoPhong.Size = new Size(0, 0);
             timerAppear.Start();
         }
 
         private void timerAppear_Tick(object sender, EventArgs e)
         {
-            PanelSoDo.Dock = DockStyle.Fill;
-            timerAppear.Stop();
+            panelSoDoPhong.Dock = DockStyle.Fill;
+                timerAppear.Stop();
+        }
+
+        private void ctTimePicker1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

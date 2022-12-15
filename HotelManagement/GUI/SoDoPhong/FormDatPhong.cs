@@ -452,12 +452,6 @@ namespace HotelManagement.GUI
         {
             TextBox textBox = sender as TextBox;
             textBox.MaxLength = 12;
-            textBox.TextChanged += TextBox_TextChanged;
-        }
-
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
             if (KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text) != null)
             {
                 DialogResult dialogresult = CTMessageBox.Show("Đã có số cccd hoặc passport này trong danh sách\r\n Bạn có muốn lấy lại thông tin đó?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -466,8 +460,8 @@ namespace HotelManagement.GUI
                     CTTextBoxNhapSDT.RemovePlaceholder();
                     CTTextBoxNhapDiaChi.RemovePlaceholder();
                     CTTextBoxNhapHoTen.RemovePlaceholder();
-                   // CTTextBoxNhapCCCD.RemovePlaceholder();
-                      
+                    // CTTextBoxNhapCCCD.RemovePlaceholder();
+
 
                     khachHang = KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text);
                     CTTextBoxNhapSDT.Texts = khachHang.SDT;
@@ -476,8 +470,10 @@ namespace HotelManagement.GUI
                     CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
                     ComboBoxGioiTinh.Focus();
                     flag = 1;
-                }          
-            }    
+                }
+            }
         }
+
+  
     }
 }

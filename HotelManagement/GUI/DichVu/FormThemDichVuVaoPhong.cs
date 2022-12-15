@@ -1,4 +1,5 @@
 ﻿using HotelManagement.BUS;
+using HotelManagement.CTControls;
 using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
@@ -16,12 +17,17 @@ namespace HotelManagement.GUI
 {
     public partial class FormThemDichVuVaoPhong : Form
     {
+        private Image Del = Properties.Resources.delete1; // Image for Button Hủy
+        private Image Add = Properties.Resources.Add; // Image for Button Thêm
+        private List<DichVu> dichVus ;
+        private List<CTDV> dichVusDaDat;
         //Fields
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
         private DichVu dichVu;
         FormDanhSachDichVu formDanhSachDichVu;
+        private CTDP ctdp;
         //Constructor
         public FormThemDichVuVaoPhong()
         {
@@ -30,20 +36,55 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
-        public FormThemDichVuVaoPhong(DichVu dichVu, FormDanhSachDichVu formDanhSachDichVu)
+        public FormThemDichVuVaoPhong(CTDP cTDP)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
-            this.dichVu = dichVu;
-            this.formDanhSachDichVu = formDanhSachDichVu;
+          //  this.dichVu = dichVu;
+            this.ctdp = cTDP;
+           // this.formDanhSachDichVu = formDanhSachDichVu;
             InitializeComponent();
+            LoadGridDaChon();
+            LoadGridDichVu();
         }
+        private void LoadLanDau()
+        {
+        }
+        private void LoadGridDaChon()
+        {
+            dgvDVDaChon.Rows.Clear();
+            HoaDon hoaDon = ctdp.HoaDons.Single();
+            List<CTDV> ctdv = CTDV_BUS.Instance.FindCTDV(hoaDon.MaHD);
 
+            foreach(CTDV v in ctdv)
+            {
+                DichVu dichVu = DichVuBUS.Instance.FindDichVu(v.MaDV);
+
+                dgvDVDaChon.Rows.Add(dichVu.TenDV, v.SL, v.DonGia.ToString("#,#"), Del);
+            }    
+        }
+        private void LoadGridDichVu()
+        {
+          this.dichVus = DichVuBUS.Instance.GetDichVus();
+            gridDichVu.Rows.Clear();
+            foreach(DichVu v in dichVus)
+            {
+                if(v.SLConLai==-1)
+                {
+                    gridDichVu.Rows.Add(v.TenDV, v.DonGia.ToString("#,#"), "", Add);
+
+                }
+                else
+                gridDichVu.Rows.Add(v.TenDV, v.DonGia.ToString("#,#"), v.SLConLai, Add);
+                dichVus.Add(dichVu);
+            }    
+        }
+        
         //Control Box
 
         //Form Move
-
+        #region Draw Form
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -106,6 +147,7 @@ namespace HotelManagement.GUI
                 }
             }
         }
+
         private void DrawPath(Rectangle rect, Graphics graph, Color color)
         {
             using (GraphicsPath roundPath = GetRoundedPath(rect, borderRadius))
@@ -206,9 +248,27 @@ namespace HotelManagement.GUI
         {
             ControlRegionAndBorder(PanelBackground, borderRadius - (borderSize / 2), e.Graphics, borderColor);
         }
+        #endregion
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void gridDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int x = e.ColumnIndex, y = e.RowIndex;
+            if (y >= 0 && x == 3)
+            {
+                DichVu dichVu = DichVuBUS.Instance.FindDichVu(gridDichVu.Rows[y].Cells[1].Value.ToString());
+                if(dichVu.SLConLai>0)
+                {
+                    dichVu.SLConLai--;
+                }    
+                else if(dichVu.SLConLai==0)
+                {
+                    CTMessageBox.Show("Sản phẩm này đã hết ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }    
+            }
     }
 }

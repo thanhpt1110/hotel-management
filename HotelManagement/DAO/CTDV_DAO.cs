@@ -24,6 +24,7 @@ namespace HotelManagement.DAO
                 return db.CTDVs.Where(p => p.MaHD == MaHD && p.DaXoa == false).ToList();
             
         } 
+
         
     }
 }

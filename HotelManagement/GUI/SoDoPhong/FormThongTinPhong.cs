@@ -23,6 +23,7 @@ namespace HotelManagement.GUI
         private Color borderColor = Color.White;
         CTDP ctdp;
         Phong phong;
+        TaiKhoan taiKhoan;
         string TTPhong = "";
         //Constructor
         public FormThongTinPhong()
@@ -32,7 +33,7 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
-        public FormThongTinPhong(string Case, CTDP cTDP = null, Phong phong = null)
+        public FormThongTinPhong(string Case, CTDP cTDP = null, Phong phong = null,TaiKhoan taiKhoan = null)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -40,6 +41,7 @@ namespace HotelManagement.GUI
             this.ctdp = cTDP;
             this.TTPhong = Case;
             this.phong = phong;
+            this.taiKhoan = taiKhoan;
             InitializeComponent();
             LoadPage();
 
@@ -351,10 +353,26 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemDichVu_Click(object sender, EventArgs e)
         {
-            using(FormThemDichVuVaoPhong frm = new FormThemDichVuVaoPhong())
+            using(FormThemDichVuVaoPhong frm = new FormThemDichVuVaoPhong(ctdp))
             {
                 frm.ShowDialog();
             }    
+        }
+
+        private void CTButtonNhanPhong_Click(object sender, EventArgs e)
+        {
+            ctdp.TrangThai = "Đang thuê";
+            CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
+            this.Close();
+        }
+
+        private void CTButtonDatPhongNay_Click(object sender, EventArgs e)
+        {
+            using (FormDatPhong formDatPhong = new FormDatPhong(taiKhoan))
+            {
+                this.Close();
+                formDatPhong.ShowDialog();
+            }
         }
     }
 }

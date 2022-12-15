@@ -23,6 +23,7 @@ namespace HotelManagement.CTControls
         CTDP ctdp = new CTDP();
         FormSoDoPhong SoDoPhong;
         FormMain formMain;
+        TaiKhoan taiKhoan;
         public string getMaPhong()
         {
             return this.LabelMaPhong.Text;
@@ -112,7 +113,7 @@ namespace HotelManagement.CTControls
             this.ForeColor = Color.White;
             InitializeComponent();
         }
-        public CTRoomDaDat(CTDP cTDP, FormSoDoPhong SoDoPhong, FormMain formMain)
+        public CTRoomDaDat(CTDP cTDP, FormSoDoPhong SoDoPhong, FormMain formMain,TaiKhoan taiKhoan)
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.Size = new Size(280, 155);
@@ -122,6 +123,7 @@ namespace HotelManagement.CTControls
             this.SoDoPhong = SoDoPhong;
             InitializeComponent();
             this.formMain = formMain;
+            this.taiKhoan = taiKhoan;
         }
         //Methods
         private void Button_Resize(object sender, EventArgs e)
@@ -221,7 +223,7 @@ namespace HotelManagement.CTControls
         private void CTRoomDaDat_Click(object sender, EventArgs e)
         {
 
-            using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(this.LabelTrangThaiLon.Text, ctdp))
+            using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(this.LabelTrangThaiLon.Text, ctdp,null,taiKhoan))
             {
                 formThongTinPhong.ShowDialog();
                 this.SoDoPhong.LoadAllPhong();

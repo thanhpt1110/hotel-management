@@ -497,7 +497,7 @@ namespace HotelManagement
             ButtonSoDoPhong.BackColor = Color.FromArgb(233, 117, 32);
             ButtonSoDoPhong.ForeColor = Color.White;
             //Open Child Form
-            openChildForm(new FormSoDoPhong(this));
+            openChildForm(new FormSoDoPhong(this,taiKhoan));
         }
 
 
