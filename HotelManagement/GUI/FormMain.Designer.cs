@@ -48,16 +48,16 @@
             this.ButtonSoDoPhong = new System.Windows.Forms.Button();
             this.ButtonTrangChu = new System.Windows.Forms.Button();
             this.PanelUser = new System.Windows.Forms.Panel();
-            this.ButtonLabelDangXuat = new System.Windows.Forms.LinkLabel();
             this.LabelTenNguoiDung = new System.Windows.Forms.Label();
             this.PictureBoxUser = new System.Windows.Forms.PictureBox();
             this.panelName = new System.Windows.Forms.Panel();
             this.PictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.panelControlBox = new System.Windows.Forms.Panel();
+            this.labelTenKhachSan = new System.Windows.Forms.Label();
+            this.linkLabelDangXuat = new System.Windows.Forms.LinkLabel();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
-            this.labelTenKhachSan = new System.Windows.Forms.Label();
             this.PanelBackground.SuspendLayout();
             this.panelInfomation.SuspendLayout();
             this.Sidebar.SuspendLayout();
@@ -416,7 +416,7 @@
             // PanelUser
             // 
             this.PanelUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
-            this.PanelUser.Controls.Add(this.ButtonLabelDangXuat);
+            this.PanelUser.Controls.Add(this.linkLabelDangXuat);
             this.PanelUser.Controls.Add(this.LabelTenNguoiDung);
             this.PanelUser.Controls.Add(this.PictureBoxUser);
             this.PanelUser.Dock = System.Windows.Forms.DockStyle.Top;
@@ -424,18 +424,6 @@
             this.PanelUser.Name = "PanelUser";
             this.PanelUser.Size = new System.Drawing.Size(262, 134);
             this.PanelUser.TabIndex = 0;
-            // 
-            // ButtonLabelDangXuat
-            // 
-            this.ButtonLabelDangXuat.AutoSize = true;
-            this.ButtonLabelDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonLabelDangXuat.LinkColor = System.Drawing.Color.Black;
-            this.ButtonLabelDangXuat.Location = new System.Drawing.Point(9, 6);
-            this.ButtonLabelDangXuat.Name = "ButtonLabelDangXuat";
-            this.ButtonLabelDangXuat.Size = new System.Drawing.Size(72, 17);
-            this.ButtonLabelDangXuat.TabIndex = 2;
-            this.ButtonLabelDangXuat.TabStop = true;
-            this.ButtonLabelDangXuat.Text = "Đăng xuất";
             // 
             // LabelTenNguoiDung
             // 
@@ -496,6 +484,32 @@
             this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
             this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
             // 
+            // labelTenKhachSan
+            // 
+            this.labelTenKhachSan.AutoSize = true;
+            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
+            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenKhachSan.ForeColor = System.Drawing.Color.Black;
+            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
+            this.labelTenKhachSan.Name = "labelTenKhachSan";
+            this.labelTenKhachSan.Size = new System.Drawing.Size(132, 21);
+            this.labelTenKhachSan.TabIndex = 2;
+            this.labelTenKhachSan.Text = "Khách sạn IT008";
+            // 
+            // linkLabelDangXuat
+            // 
+            this.linkLabelDangXuat.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
+            this.linkLabelDangXuat.AutoSize = true;
+            this.linkLabelDangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelDangXuat.LinkColor = System.Drawing.Color.Black;
+            this.linkLabelDangXuat.Location = new System.Drawing.Point(3, 10);
+            this.linkLabelDangXuat.Name = "linkLabelDangXuat";
+            this.linkLabelDangXuat.Size = new System.Drawing.Size(80, 21);
+            this.linkLabelDangXuat.TabIndex = 2;
+            this.linkLabelDangXuat.TabStop = true;
+            this.linkLabelDangXuat.Text = "Đăng xuất";
+            this.linkLabelDangXuat.Click += new System.EventHandler(this.linkLabelDangXuat_Click);
+            // 
             // ctMaximize1
             // 
             this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
@@ -528,18 +542,6 @@
             this.ctClose1.Size = new System.Drawing.Size(15, 15);
             this.ctClose1.TabIndex = 0;
             this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
-            // 
-            // labelTenKhachSan
-            // 
-            this.labelTenKhachSan.AutoSize = true;
-            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
-            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenKhachSan.ForeColor = System.Drawing.Color.Black;
-            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
-            this.labelTenKhachSan.Name = "labelTenKhachSan";
-            this.labelTenKhachSan.Size = new System.Drawing.Size(132, 21);
-            this.labelTenKhachSan.TabIndex = 2;
-            this.labelTenKhachSan.Text = "Khách sạn IT008";
             // 
             // FormMain
             // 
@@ -593,7 +595,6 @@
         private System.Windows.Forms.PictureBox PictureBoxMenu;
         private System.Windows.Forms.Panel PanelUser;
         private System.Windows.Forms.PictureBox PictureBoxUser;
-        private System.Windows.Forms.LinkLabel ButtonLabelDangXuat;
         private System.Windows.Forms.Label LabelTenNguoiDung;
         private System.Windows.Forms.Button ButtonThongKe;
         private System.Windows.Forms.Button ButtonDanhSachTaiKhoan;
@@ -607,5 +608,6 @@
         private System.Windows.Forms.Button ButtonPhong;
         private System.Windows.Forms.Button ButtonSoDoPhong;
         private System.Windows.Forms.Button ButtonTrangChu;
+        private System.Windows.Forms.LinkLabel linkLabelDangXuat;
     }
 }

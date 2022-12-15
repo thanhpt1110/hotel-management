@@ -83,6 +83,7 @@
             this.linkLabelKetNoiCSDL.TabIndex = 11;
             this.linkLabelKetNoiCSDL.TabStop = true;
             this.linkLabelKetNoiCSDL.Text = "Kết nối CSDL";
+            this.linkLabelKetNoiCSDL.Click += new System.EventHandler(this.linkLabelKetNoiCSDL_Click);
             // 
             // PanelLoginContent
             // 

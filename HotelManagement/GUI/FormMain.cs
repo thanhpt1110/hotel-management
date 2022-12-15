@@ -654,5 +654,15 @@ namespace HotelManagement
                 Sidebar.Size = size;
             }
         }
+
+        private void linkLabelDangXuat_Click(object sender, EventArgs e)
+        {
+            using (FormLogin formLogin = new FormLogin())
+            {
+                this.Hide();
+                formLogin.ShowDialog();
+                this.Close();
+            }
+        }
     }
 }

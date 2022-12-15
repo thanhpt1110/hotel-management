@@ -1,6 +1,6 @@
 CREATE DATABASE HotelManagement
 GO
-USE HotelManangement
+USE HotelManagement
 GO
 SET DATEFORMAT DMY
 CREATE TABLE NhanVien(
