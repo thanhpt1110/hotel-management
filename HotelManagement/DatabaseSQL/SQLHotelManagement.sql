@@ -1,4 +1,4 @@
-﻿CREATE DATABASE HotelManangement
+CREATE DATABASE HotelManagement
 GO
 USE HotelManangement
 GO
