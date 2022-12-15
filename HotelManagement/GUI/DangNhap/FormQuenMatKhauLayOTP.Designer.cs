@@ -32,8 +32,9 @@
             this.ButtonLayOTP = new HotelManagement.CTControls.CTButton();
             this.TextBoxEmail = new HotelManagement.CTControls.CTTextBox();
             this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
-            this.LabelForgotPassword = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // PictureBoxBack
@@ -60,7 +61,7 @@
             this.ButtonLayOTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonLayOTP.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.ButtonLayOTP.ForeColor = System.Drawing.Color.White;
-            this.ButtonLayOTP.Location = new System.Drawing.Point(90, 360);
+            this.ButtonLayOTP.Location = new System.Drawing.Point(93, 356);
             this.ButtonLayOTP.Name = "ButtonLayOTP";
             this.ButtonLayOTP.Size = new System.Drawing.Size(140, 47);
             this.ButtonLayOTP.TabIndex = 6;
@@ -78,7 +79,7 @@
             this.TextBoxEmail.BorderSize = 1;
             this.TextBoxEmail.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.TextBoxEmail.IsFocused = false;
-            this.TextBoxEmail.Location = new System.Drawing.Point(20, 240);
+            this.TextBoxEmail.Location = new System.Drawing.Point(23, 252);
             this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TextBoxEmail.Multiline = false;
             this.TextBoxEmail.Name = "TextBoxEmail";
@@ -101,7 +102,7 @@
             this.textBoxUsername.BorderSize = 1;
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.textBoxUsername.IsFocused = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(20, 165);
+            this.textBoxUsername.Location = new System.Drawing.Point(23, 177);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Multiline = false;
             this.textBoxUsername.Name = "textBoxUsername";
@@ -115,36 +116,34 @@
             this.textBoxUsername.Texts = "";
             this.textBoxUsername.UnderlineedStyle = false;
             // 
-            // LabelForgotPassword
+            // pictureBox3
             // 
-            this.LabelForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LabelForgotPassword.AutoSize = true;
-            this.LabelForgotPassword.Font = new System.Drawing.Font("Brush Script MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.LabelForgotPassword.Location = new System.Drawing.Point(13, 45);
-            this.LabelForgotPassword.Name = "LabelForgotPassword";
-            this.LabelForgotPassword.Size = new System.Drawing.Size(295, 59);
-            this.LabelForgotPassword.TabIndex = 2;
-            this.LabelForgotPassword.Text = "Forgot password";
+            this.pictureBox3.Image = global::HotelManagement.Properties.Resources.QuenMatKhau;
+            this.pictureBox3.Location = new System.Drawing.Point(23, 93);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(286, 49);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
             // 
             // FormQuenMatKhauLayOTP
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 466);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.PictureBoxBack);
             this.Controls.Add(this.ButtonLayOTP);
             this.Controls.Add(this.TextBoxEmail);
             this.Controls.Add(this.textBoxUsername);
-            this.Controls.Add(this.LabelForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQuenMatKhauLayOTP";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormQuenMatKhau";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -153,6 +152,6 @@
         private CTControls.CTTextBox TextBoxEmail;
         private CTControls.CTButton ButtonLayOTP;
         private System.Windows.Forms.PictureBox PictureBoxBack;
-        private System.Windows.Forms.Label LabelForgotPassword;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

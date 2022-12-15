@@ -35,8 +35,8 @@
             this.LabelLoaiPhong = new System.Windows.Forms.Label();
             this.LabelMaPhong = new System.Windows.Forms.Label();
             this.LabelTrangThaiDonDep = new System.Windows.Forms.Label();
-            this.PictureBoxTrangThaiDonDep = new System.Windows.Forms.PictureBox();
             this.LabelThoiGian = new System.Windows.Forms.Label();
+            this.PictureBoxTrangThaiDonDep = new System.Windows.Forms.PictureBox();
             this.PictureBoxThoiGian = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrangThai)).BeginInit();
@@ -46,7 +46,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(167)))), ((int)(((byte)(31)))));
             this.panel1.Controls.Add(this.PictureBoxTrangThai);
             this.panel1.Controls.Add(this.LabelTrangThaiLon);
             this.panel1.Controls.Add(this.LabelCoc);
@@ -140,19 +140,6 @@
             this.LabelTrangThaiDonDep.Text = "Đã dọn dẹp";
             this.LabelTrangThaiDonDep.Click += new System.EventHandler(this.CTRoomDaDat_Click);
             // 
-            // PictureBoxTrangThaiDonDep
-            // 
-            this.PictureBoxTrangThaiDonDep.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxTrangThaiDonDep.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxTrangThaiDonDep.Image = global::HotelManagement.Properties.Resources.DaDonDep;
-            this.PictureBoxTrangThaiDonDep.Location = new System.Drawing.Point(155, 132);
-            this.PictureBoxTrangThaiDonDep.Name = "PictureBoxTrangThaiDonDep";
-            this.PictureBoxTrangThaiDonDep.Size = new System.Drawing.Size(20, 20);
-            this.PictureBoxTrangThaiDonDep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxTrangThaiDonDep.TabIndex = 20;
-            this.PictureBoxTrangThaiDonDep.TabStop = false;
-            this.PictureBoxTrangThaiDonDep.Click += new System.EventHandler(this.CTRoomDaDat_Click);
-            // 
             // LabelThoiGian
             // 
             this.LabelThoiGian.AutoSize = true;
@@ -166,6 +153,19 @@
             this.LabelThoiGian.TabIndex = 19;
             this.LabelThoiGian.Text = "0 giờ";
             this.LabelThoiGian.Click += new System.EventHandler(this.CTRoomDaDat_Click);
+            // 
+            // PictureBoxTrangThaiDonDep
+            // 
+            this.PictureBoxTrangThaiDonDep.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxTrangThaiDonDep.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxTrangThaiDonDep.Image = global::HotelManagement.Properties.Resources.DaDonDep;
+            this.PictureBoxTrangThaiDonDep.Location = new System.Drawing.Point(155, 132);
+            this.PictureBoxTrangThaiDonDep.Name = "PictureBoxTrangThaiDonDep";
+            this.PictureBoxTrangThaiDonDep.Size = new System.Drawing.Size(20, 20);
+            this.PictureBoxTrangThaiDonDep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxTrangThaiDonDep.TabIndex = 20;
+            this.PictureBoxTrangThaiDonDep.TabStop = false;
+            this.PictureBoxTrangThaiDonDep.Click += new System.EventHandler(this.CTRoomDaDat_Click);
             // 
             // PictureBoxThoiGian
             // 

@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.LabelCoc = new System.Windows.Forms.Label();
-            this.PictureBoxTrangThai = new System.Windows.Forms.PictureBox();
             this.LabelTrangThaiLon = new System.Windows.Forms.Label();
             this.LabelLoaiPhong = new System.Windows.Forms.Label();
             this.LabelMaPhong = new System.Windows.Forms.Label();
-            this.LabelTrangThaiDonDep = new System.Windows.Forms.Label();
             this.LabelThoiGian = new System.Windows.Forms.Label();
+            this.LabelTrangThaiDonDep = new System.Windows.Forms.Label();
+            this.PictureBoxTrangThai = new System.Windows.Forms.PictureBox();
             this.PictureBoxTrangThaiDonDep = new System.Windows.Forms.PictureBox();
             this.PictureBoxThoiGian = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -72,17 +72,6 @@
             this.LabelCoc.TabIndex = 9;
             this.LabelCoc.Text = "Hư điều hòa";
             this.LabelCoc.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
-            // 
-            // PictureBoxTrangThai
-            // 
-            this.PictureBoxTrangThai.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxTrangThai.Image = global::HotelManagement.Properties.Resources.DangSuaChua;
-            this.PictureBoxTrangThai.Location = new System.Drawing.Point(25, 63);
-            this.PictureBoxTrangThai.Name = "PictureBoxTrangThai";
-            this.PictureBoxTrangThai.Size = new System.Drawing.Size(50, 50);
-            this.PictureBoxTrangThai.TabIndex = 8;
-            this.PictureBoxTrangThai.TabStop = false;
-            this.PictureBoxTrangThai.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
             // 
             // LabelTrangThaiLon
             // 
@@ -126,6 +115,20 @@
             this.LabelMaPhong.Text = "P100";
             this.LabelMaPhong.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
             // 
+            // LabelThoiGian
+            // 
+            this.LabelThoiGian.AutoSize = true;
+            this.LabelThoiGian.BackColor = System.Drawing.Color.Transparent;
+            this.LabelThoiGian.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LabelThoiGian.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelThoiGian.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.LabelThoiGian.Location = new System.Drawing.Point(50, 133);
+            this.LabelThoiGian.Name = "LabelThoiGian";
+            this.LabelThoiGian.Size = new System.Drawing.Size(38, 17);
+            this.LabelThoiGian.TabIndex = 19;
+            this.LabelThoiGian.Text = "0 giờ";
+            this.LabelThoiGian.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
+            // 
             // LabelTrangThaiDonDep
             // 
             this.LabelTrangThaiDonDep.AutoSize = true;
@@ -140,19 +143,16 @@
             this.LabelTrangThaiDonDep.Text = "Đã dọn dẹp";
             this.LabelTrangThaiDonDep.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
             // 
-            // LabelThoiGian
+            // PictureBoxTrangThai
             // 
-            this.LabelThoiGian.AutoSize = true;
-            this.LabelThoiGian.BackColor = System.Drawing.Color.Transparent;
-            this.LabelThoiGian.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LabelThoiGian.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelThoiGian.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.LabelThoiGian.Location = new System.Drawing.Point(50, 133);
-            this.LabelThoiGian.Name = "LabelThoiGian";
-            this.LabelThoiGian.Size = new System.Drawing.Size(38, 17);
-            this.LabelThoiGian.TabIndex = 19;
-            this.LabelThoiGian.Text = "0 giờ";
-            this.LabelThoiGian.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
+            this.PictureBoxTrangThai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxTrangThai.Image = global::HotelManagement.Properties.Resources.DangSuaChua;
+            this.PictureBoxTrangThai.Location = new System.Drawing.Point(25, 63);
+            this.PictureBoxTrangThai.Name = "PictureBoxTrangThai";
+            this.PictureBoxTrangThai.Size = new System.Drawing.Size(50, 50);
+            this.PictureBoxTrangThai.TabIndex = 8;
+            this.PictureBoxTrangThai.TabStop = false;
+            this.PictureBoxTrangThai.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
             // 
             // PictureBoxTrangThaiDonDep
             // 
@@ -211,10 +211,10 @@
         private System.Windows.Forms.Label LabelTrangThaiLon;
         private System.Windows.Forms.Label LabelLoaiPhong;
         private System.Windows.Forms.Label LabelMaPhong;
-        private System.Windows.Forms.Label LabelTrangThaiDonDep;
         private System.Windows.Forms.PictureBox PictureBoxTrangThaiDonDep;
-        private System.Windows.Forms.Label LabelThoiGian;
-        private System.Windows.Forms.PictureBox PictureBoxThoiGian;
         private System.Windows.Forms.Label LabelCoc;
+        private System.Windows.Forms.PictureBox PictureBoxThoiGian;
+        private System.Windows.Forms.Label LabelThoiGian;
+        private System.Windows.Forms.Label LabelTrangThaiDonDep;
     }
 }

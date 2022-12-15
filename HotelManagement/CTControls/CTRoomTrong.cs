@@ -109,6 +109,21 @@ namespace HotelManagement.CTControls
             set { this.ForeColor = value; }
         }
         //Constructor
+        private Form activeForm = null;
+        /*public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            PanelTransparent.Controls.Add(childForm);
+            PanelTransparent.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }*/
+        private bool touchMouse = false;
         public CTRoomTrong()
         {
             this.SetStyle(ControlStyles.UserPaint, true);
@@ -192,7 +207,6 @@ namespace HotelManagement.CTControls
                     }
                 }
             }
-
         }
 
 
@@ -263,6 +277,12 @@ namespace HotelManagement.CTControls
                 formThongTinPhong.ShowDialog();
                 this.formSoDoPhong.LoadAllPhong();
             }
+        }
+
+        private void CTRoomTrong_MouseMove(object sender, MouseEventArgs e)
+        {
+            touchMouse = true;
+            this.Invalidate();
         }
     }
 }

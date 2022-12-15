@@ -213,6 +213,16 @@ namespace HotelManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DangNhap {
+            get {
+                object obj = ResourceManager.GetObject("DangNhap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DangSuaChua {
             get {
                 object obj = ResourceManager.GetObject("DangSuaChua", resourceCulture);
@@ -246,6 +256,16 @@ namespace HotelManagement.Properties {
         internal static System.Drawing.Bitmap DangThue {
             get {
                 object obj = ResourceManager.GetObject("DangThue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap database {
+            get {
+                object obj = ResourceManager.GetObject("database", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +316,26 @@ namespace HotelManagement.Properties {
         internal static System.Drawing.Bitmap DichVuDgv {
             get {
                 object obj = ResourceManager.GetObject("DichVuDgv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DoanhThu {
+            get {
+                object obj = ResourceManager.GetObject("DoanhThu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DoanhThuThue {
+            get {
+                object obj = ResourceManager.GetObject("DoanhThuThue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -773,6 +813,16 @@ namespace HotelManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap QuenMatKhau {
+            get {
+                object obj = ResourceManager.GetObject("QuenMatKhau", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap question {
             get {
                 object obj = ResourceManager.GetObject("question", resourceCulture);
@@ -816,6 +866,16 @@ namespace HotelManagement.Properties {
         internal static System.Drawing.Bitmap SoNguoi {
             get {
                 object obj = ResourceManager.GetObject("SoNguoi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SoPhongDat {
+            get {
+                object obj = ResourceManager.GetObject("SoPhongDat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -876,6 +936,36 @@ namespace HotelManagement.Properties {
         internal static System.Drawing.Bitmap TimePickerWhite {
             get {
                 object obj = ResourceManager.GetObject("TimePickerWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top1 {
+            get {
+                object obj = ResourceManager.GetObject("top1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top2 {
+            get {
+                object obj = ResourceManager.GetObject("top2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top3 {
+            get {
+                object obj = ResourceManager.GetObject("top3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
