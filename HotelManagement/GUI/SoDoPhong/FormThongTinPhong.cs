@@ -230,8 +230,8 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Phòng đã đặt";
             this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
             this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
-            this.CTButtonThemDichVu.Hide();
-            this.CTButtonDatPhongNay.Hide();
+            this.PanelChuaButtonThemDichVu.Hide();
+            this.PanelChuaButtonDatPhongNay.Hide();
             this.PanelChuaButtonThanhToan.Hide();
         }
         private void LoadPhongDangThue()
@@ -247,9 +247,11 @@ namespace HotelManagement.GUI
             this.PanelChuaButtonDatPhongNay.Hide();
             this.PanelChuaButtonNhanPhong.Hide();
             List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(ctdp.HoaDons.Single().MaHD);
+            gridDichVu.Rows.Clear();
             foreach(CTDV v in cTDVs)
             {
-                gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
+                if(v.SL!=0)
+                    gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
             }    
         }
         private void LoadPhongDangSua()
@@ -264,10 +266,11 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Đang sửa chữa";
             this.ComboBoxTinhTrangPhong.Items.Add("Đang sửa chữa");
             this.ComboBoxTinhTrangPhong.Items.Add("Phòng trống");
-            this.CTButtonThemDichVu.Hide();
-            this.CTButtonDatPhongNay.Hide();
+            this.PanelChuaButtonThemDichVu.Hide();
+            this.PanelChuaButtonDatPhongNay.Hide();
             this.PanelChuaButtonThanhToan.Hide();
             this.PanelChuaButtonNhanPhong.Hide();
+            this.PanelChuaButtonCoc.Hide();
         }
 
         private void LoadPhongTrong()
@@ -282,12 +285,14 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Phòng trống";
             this.ComboBoxTinhTrangPhong.Items.Add("Đang sửa chữa");
             this.ComboBoxTinhTrangPhong.Items.Add("Phòng trống");
-            this.CTButtonThemDichVu.Hide();
+            this.PanelChuaButtonThemDichVu.Hide();
             this.PanelChuaButtonThanhToan.Hide();
             this.PanelChuaButtonNhanPhong.Hide();
+            this.PanelChuaButtonCoc.Hide();
         }
         private void LoadPage()
         {
+            
             try 
             {
                 switch (TTPhong)
@@ -356,6 +361,7 @@ namespace HotelManagement.GUI
             using(FormThemDichVuVaoPhong frm = new FormThemDichVuVaoPhong(ctdp))
             {
                 frm.ShowDialog();
+                this.LoadPage();
             }    
         }
 
@@ -373,6 +379,11 @@ namespace HotelManagement.GUI
                 this.Close();
                 formDatPhong.ShowDialog();
             }
+        }
+
+        private void CTButtonThanhToan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

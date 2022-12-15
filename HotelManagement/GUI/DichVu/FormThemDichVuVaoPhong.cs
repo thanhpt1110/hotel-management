@@ -60,23 +60,38 @@ namespace HotelManagement.GUI
         }
         private void LoadGridDaChonLanDau()
         {
-            this.hoadon = ctdp.HoaDons.Single();
-            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(this.hoadon.MaHD);
-            foreach(CTDV cTDV in cTDVs)
+            try
             {
-                this.dichVusDaDat.Add(cTDV);
-                this.SLDVDaDat.Add(cTDV.SL);
-            }    
-            LoadGridDaChon();
+                this.hoadon = ctdp.HoaDons.Single();
+                List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(this.hoadon.MaHD);
+                if (cTDVs != null)
+                {
+                    foreach (CTDV cTDV in cTDVs)
+                    {
+                        CTDV cTDV1 = new CTDV(cTDV);
+                        //cTDV1 = cTDV;
+                        this.dichVusDaDat.Add(cTDV1);
+                        this.SLDVDaDat.Add(cTDV.SL);
+                    }
+                }
+                LoadGridDaChon();
+            }
+            catch(Exception ex)
+            {
+                CTMessageBox.Show("Load du lieu that bai.");
+            }
         }
         private void LoadGridDaChon()
         {
             dgvDVDaChon.Rows.Clear();
-
+            
             foreach (CTDV v in dichVusDaDat)
             {
-                DichVu dichVu = DichVuBUS.Instance.FindDichVu(v.MaDV);
-                dgvDVDaChon.Rows.Add(dichVu.TenDV, v.SL, v.DonGia.ToString("#,#"), Del);
+                if (v.SL != 0)
+                {
+                    DichVu dichVu = DichVuBUS.Instance.FindDichVu(v.MaDV);
+                    dgvDVDaChon.Rows.Add(dichVu.TenDV, v.SL, v.ThanhTien.ToString("#,#"), Del);
+                }
             }  
         }
         
@@ -104,7 +119,6 @@ namespace HotelManagement.GUI
                 }
                 else
                     gridDichVu.Rows.Add(v.TenDV, v.DonGia.ToString("#,#"), v.SLConLai, Add);
-               // dichVus.Add(dichVu);
             }
         }
         
@@ -278,74 +292,38 @@ namespace HotelManagement.GUI
         #endregion
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
-            foreach(DichVu dichVu in this.dichVus)
-            {
-                int i = 0;
-                dichVu.SLConLai = SLDVConLai[i];
-                i++;
-            }
-            foreach (CTDV cTDV in this.dichVusDaDat)
-            {
-                int i = 0;
-                cTDV.SL = SLDVDaDat[i];
-                i++;
-            }
+
             this.Close();
         }
 
         private void gridDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int flag = 0;
-            
+         
             int x = e.ColumnIndex, y = e.RowIndex;
             if (y >= 0 && x == 3)
             {
-                foreach (DichVu dichVu in this.dichVus)
-                {
-                    if (dichVu.TenDV == gridDichVu.Rows[y].Cells[0].Value.ToString())
-                    {
-                        if (dichVu.SLConLai > 0)
-                        {
-                            dichVu.SLConLai--;
-                            gridDichVu.Rows[y].Cells[2].Value = dichVu.SLConLai;
 
-                        }
-                        else if (dichVu.SLConLai == 0)
-                        {
-                            CTMessageBox.Show("Sản phẩm này đã hết ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-                foreach(CTDV cTDV in this.dichVusDaDat)
-                {
-                    if(cTDV.MaDV==DichVuBUS.Instance.FindDichVuWithNameAndDonGia(gridDichVu.Rows[y].Cells[0].Value.ToString(), gridDichVu.Rows[y].Cells[1].Value.ToString().Trim(',')).MaDV)
-                    {
-                        cTDV.SL++;
-                        cTDV.ThanhTien = cTDV.DonGia * cTDV.SL;
-                        flag = 1;
-                    }
-                }
-               
-                if (flag==0)
-                {
-                    CTDV ctdv = new CTDV();
-                    ctdv.MaHD = hoadon.MaHD;
-                    ctdv.DonGia = decimal.Parse(gridDichVu.Rows[y].Cells[1].Value.ToString().Trim(','));
-                    ctdv.SL = 1;
-                    ctdv.ThanhTien = ctdv.DonGia * ctdv.SL;
-                    ctdv.DaXoa = false;
-                    ctdv.MaDV = DichVuBUS.Instance.FindDichVuWithNameAndDonGia(gridDichVu.Rows[y].Cells[0].Value.ToString(), gridDichVu.Rows[y].Cells[1].Value.ToString().Trim(',')).MaDV;
-                    dichVusDaDat.Add(ctdv);
-                }
-                //this.LoadGridDichVu();
-                this.LoadGridDaChon();
             }
         }
 
         private void CTButtonLuu_Click(object sender, EventArgs e)
         {
-
+            DichVuBUS.Instance.UpdateDV(dichVus);
+            CTDV_BUS.Instance.InsertOrUpdateList(dichVusDaDat);
             this.Close();
+        }
+
+        private void dgvDVDaChon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int flag = 0;
+
+            int x = e.ColumnIndex, y = e.RowIndex;
+            if (y >= 0 && x == 3)
+            {
+
+
+
+            }
         }
     }
 }

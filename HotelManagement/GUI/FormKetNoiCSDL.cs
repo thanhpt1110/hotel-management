@@ -278,12 +278,12 @@ namespace HotelManagement.GUI
                     ConnectDB connectDB = new ConnectDB();
                     connectDB.saveConnectionString("HotelDTO", connectionString);
                     MessageBox.Show("Test connection successfully", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    using (FormLogin formLogin = new FormLogin())
+/*                    using (FormLogin formLogin = new FormLogin())
                     {
                         this.Hide();
                         formLogin.ShowDialog();
                         this.Close();
-                    }
+                    }*/
                 }
             }
             catch (Exception ex)
@@ -291,6 +291,33 @@ namespace HotelManagement.GUI
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             #endregion
+
+            this.Close();
+        }
+
+        private void ctMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void panelControlBox_MouseHover(object sender, EventArgs e)
+        {
+            ctClose.turnOn();
+            ctMinimize.turnOn();
+            //ctMaximize.turnOn();
+        }
+
+        private void panelControlBox_MouseLeave(object sender, EventArgs e)
+        {
+            ctClose.turnOff();
+            ctMinimize.turnOff();
+            //ctMaximize.turnOff();
+        }
+
+        private void panelControlBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            ctClose.turnOn();
+            ctMinimize.turnOn();
+            //ctMaximize.turnOn();
         }
     }
 }

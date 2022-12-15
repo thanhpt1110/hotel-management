@@ -1,6 +1,6 @@
-﻿CREATE DATABASE HotelManangement
+CREATE DATABASE HotelManagement
 GO
-USE HotelManangement
+USE HotelManagement
 GO
 SET DATEFORMAT DMY
 CREATE TABLE NhanVien(
@@ -258,8 +258,8 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD003','18/11/2022','NV001','CTDP003',N'Đã thanh toán','1730000') -- Update Tri gia sau
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD004','20/11/2022','NV001','CTDP004',N'Đã thanh toán','1225000') -- Update Tri gia sau
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD005','17/12/2022','NV001','CTDP005',N'Chưa thanh toán','0')
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD006',null,'NV001','CTDP006',N'Chưa thanh toán','0')
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007',null,'NV001','CTDP007',N'Chưa thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD006','20/12/2022','NV001','CTDP006',N'Chưa thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007','18/12/2022','NV001','CTDP007',N'Chưa thanh toán','0')
 -- CTDV
 	
 	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD001','DV01','2','20000','10000')
@@ -303,5 +303,4 @@ ALTER TABLE
 	
 
 
-
-	SELECT * FROM TaiKhoan
+SELECT * FROM DichVu

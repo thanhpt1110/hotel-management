@@ -49,5 +49,9 @@ namespace HotelManagement.BUS
         {
             return DichVuDAO.Instance.FindDichVuWithNameAndDonGia(TenDV, DonGia);
         }
+        public void UpdateDV(List<DichVu> dichVus)
+        {
+            DichVuDAO.Instance.UpdateDV(dichVus);
+        }    
     }
 }

@@ -233,6 +233,7 @@
             this.dgvDVDaChon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDVDaChon.Size = new System.Drawing.Size(301, 210);
             this.dgvDVDaChon.TabIndex = 33;
+            this.dgvDVDaChon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDVDaChon_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

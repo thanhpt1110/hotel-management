@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKetNoiCSDL));
             this.panelBackground = new System.Windows.Forms.Panel();
-            this.panelControlBox = new System.Windows.Forms.Panel();
-            this.checkBoxLuu = new System.Windows.Forms.CheckBox();
-            this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxDB = new HotelManagement.CTControls.CTTextBox();
+            this.panelControlBox = new System.Windows.Forms.Panel();
             this.ctMaximize = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize = new HotelManagement.CTControls.CTMinimize();
             this.ctClose = new HotelManagement.CTControls.CTClose();
+            this.checkBoxLuu = new System.Windows.Forms.CheckBox();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.buttonKetNoi = new HotelManagement.CTControls.CTButton();
             this.textBoxServer = new HotelManagement.CTControls.CTTextBox();
             this.panelBackground.SuspendLayout();
-            this.panelControlBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelControlBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBackground
@@ -61,39 +61,6 @@
             this.panelBackground.TabIndex = 0;
             this.panelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             this.panelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBackground_MouseDown);
-            // 
-            // panelControlBox
-            // 
-            this.panelControlBox.BackColor = System.Drawing.Color.White;
-            this.panelControlBox.Controls.Add(this.ctMaximize);
-            this.panelControlBox.Controls.Add(this.ctMinimize);
-            this.panelControlBox.Controls.Add(this.ctClose);
-            this.panelControlBox.Location = new System.Drawing.Point(501, 2);
-            this.panelControlBox.Name = "panelControlBox";
-            this.panelControlBox.Size = new System.Drawing.Size(95, 30);
-            this.panelControlBox.TabIndex = 14;
-            // 
-            // checkBoxLuu
-            // 
-            this.checkBoxLuu.AutoSize = true;
-            this.checkBoxLuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxLuu.Location = new System.Drawing.Point(450, 221);
-            this.checkBoxLuu.Name = "checkBoxLuu";
-            this.checkBoxLuu.Size = new System.Drawing.Size(106, 25);
-            this.checkBoxLuu.TabIndex = 13;
-            this.checkBoxLuu.Text = "Lưu kết nối";
-            this.checkBoxLuu.UseVisualStyleBackColor = true;
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(290, 56);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(278, 37);
-            this.labelTitle.TabIndex = 9;
-            this.labelTitle.Text = "Kết nối cơ sở dữ liệu";
             // 
             // pictureBox1
             // 
@@ -128,6 +95,20 @@
             this.textBoxDB.Texts = "";
             this.textBoxDB.UnderlineedStyle = false;
             // 
+            // panelControlBox
+            // 
+            this.panelControlBox.BackColor = System.Drawing.Color.White;
+            this.panelControlBox.Controls.Add(this.ctMaximize);
+            this.panelControlBox.Controls.Add(this.ctMinimize);
+            this.panelControlBox.Controls.Add(this.ctClose);
+            this.panelControlBox.Location = new System.Drawing.Point(492, 3);
+            this.panelControlBox.Name = "panelControlBox";
+            this.panelControlBox.Size = new System.Drawing.Size(95, 30);
+            this.panelControlBox.TabIndex = 14;
+            this.panelControlBox.MouseLeave += new System.EventHandler(this.panelControlBox_MouseLeave);
+            this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
+            this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
+            // 
             // ctMaximize
             // 
             this.ctMaximize.BackColor = System.Drawing.Color.Transparent;
@@ -144,11 +125,11 @@
             this.ctMinimize.BackColor = System.Drawing.Color.Transparent;
             this.ctMinimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctMinimize.BackgroundImage")));
             this.ctMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctMinimize.Enabled = false;
             this.ctMinimize.Location = new System.Drawing.Point(40, 6);
             this.ctMinimize.Name = "ctMinimize";
             this.ctMinimize.Size = new System.Drawing.Size(15, 15);
             this.ctMinimize.TabIndex = 1;
+            this.ctMinimize.Click += new System.EventHandler(this.ctMinimize_Click);
             // 
             // ctClose
             // 
@@ -160,6 +141,28 @@
             this.ctClose.Size = new System.Drawing.Size(15, 15);
             this.ctClose.TabIndex = 0;
             this.ctClose.Click += new System.EventHandler(this.ctClose_Click);
+            // 
+            // checkBoxLuu
+            // 
+            this.checkBoxLuu.AutoSize = true;
+            this.checkBoxLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxLuu.Location = new System.Drawing.Point(450, 221);
+            this.checkBoxLuu.Name = "checkBoxLuu";
+            this.checkBoxLuu.Size = new System.Drawing.Size(106, 25);
+            this.checkBoxLuu.TabIndex = 13;
+            this.checkBoxLuu.Text = "Lưu kết nối";
+            this.checkBoxLuu.UseVisualStyleBackColor = true;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(290, 56);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(278, 37);
+            this.labelTitle.TabIndex = 9;
+            this.labelTitle.Text = "Kết nối cơ sở dữ liệu";
             // 
             // buttonKetNoi
             // 
@@ -213,6 +216,7 @@
             this.Controls.Add(this.panelBackground);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormKetNoiCSDL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -224,8 +228,8 @@
             this.Resize += new System.EventHandler(this.FormKetNoiCSDL_Resize);
             this.panelBackground.ResumeLayout(false);
             this.panelBackground.PerformLayout();
-            this.panelControlBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelControlBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

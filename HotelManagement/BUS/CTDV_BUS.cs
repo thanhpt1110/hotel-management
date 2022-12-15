@@ -20,6 +20,10 @@ namespace HotelManagement.BUS
         public List<CTDV> FindCTDV(string MaHD)
         {
             return CTDV_DAO.Instance.FindCTDV(MaHD);
-        }    
+        }
+        public void InsertOrUpdateList(List<CTDV> cTDVs)
+        {
+            CTDV_DAO.Instance.InsertOrUpdateList(cTDVs);
+        }
     }
 }

@@ -27,8 +27,10 @@ namespace HotelManagement.DAO
         }    
         public DichVu FindDichVu(string MaDV)
         {
-
-                return db.DichVus.Find(MaDV);
+            using (HotelDTO hotelDTO = new HotelDTO())
+            {
+                return hotelDTO.DichVus.Find(MaDV);
+            }
             
         }
         public void UpdateORAdd(DichVu dv)
@@ -62,6 +64,7 @@ namespace HotelManagement.DAO
                 return "DV" + max.ToString();
             
         }
+       
         public List<DichVu> FindDichVuWithName(string TenDV)
         {
 

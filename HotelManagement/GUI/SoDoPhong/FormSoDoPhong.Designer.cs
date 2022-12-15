@@ -51,9 +51,12 @@
             this.CTRadioButtonPhongDangThue = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDaDat = new HotelManagement.CTControls.CTRadioButton();
             this.PanelTitle = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ComboBoxPhut = new System.Windows.Forms.ComboBox();
+            this.ComboBoxGio = new System.Windows.Forms.ComboBox();
             this.LabelChonGio = new System.Windows.Forms.Label();
+            this.ctBorderPanel1 = new HotelManagement.CTControls.CTBorderPanel();
             this.LabelChonNgay = new System.Windows.Forms.Label();
-            this.ctTimePicker1 = new HotelManagement.CTControls.CTTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
             this.ctDatePicker1 = new HotelManagement.CTControls.CTDatePicker();
@@ -137,6 +140,7 @@
             this.CTRadioButtonTatCa.Text = "Tất cả";
             this.CTRadioButtonTatCa.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonTatCa.UseVisualStyleBackColor = true;
+            this.CTRadioButtonTatCa.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonDaDonDep
             // 
@@ -154,6 +158,7 @@
             this.CTRadioButtonDaDonDep.Text = "Đã dọn dẹp";
             this.CTRadioButtonDaDonDep.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonDaDonDep.UseVisualStyleBackColor = true;
+            this.CTRadioButtonDaDonDep.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonChuaDonDep
             // 
@@ -171,6 +176,7 @@
             this.CTRadioButtonChuaDonDep.Text = "Chưa dọn dẹp";
             this.CTRadioButtonChuaDonDep.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonChuaDonDep.UseVisualStyleBackColor = true;
+            this.CTRadioButtonChuaDonDep.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // PanelLoaiPhong
             // 
@@ -211,6 +217,7 @@
             this.CTRadioButtonTatCaLoaiPhong.Text = "Tất cả loại phòng";
             this.CTRadioButtonTatCaLoaiPhong.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonTatCaLoaiPhong.UseVisualStyleBackColor = true;
+            this.CTRadioButtonTatCaLoaiPhong.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonPhongVIPDoi
             // 
@@ -228,6 +235,7 @@
             this.CTRadioButtonPhongVIPDoi.Text = "Phòng VIP đôi";
             this.CTRadioButtonPhongVIPDoi.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongVIPDoi.UseVisualStyleBackColor = true;
+            this.CTRadioButtonPhongVIPDoi.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonPhongThuongDon
             // 
@@ -245,6 +253,7 @@
             this.CTRadioButtonPhongThuongDon.Text = "Phòng thường đơn";
             this.CTRadioButtonPhongThuongDon.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongThuongDon.UseVisualStyleBackColor = true;
+            this.CTRadioButtonPhongThuongDon.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonPhongVIPDon
             // 
@@ -262,6 +271,7 @@
             this.CTRadioButtonPhongVIPDon.Text = "Phòng VIP đơn";
             this.CTRadioButtonPhongVIPDon.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongVIPDon.UseVisualStyleBackColor = true;
+            this.CTRadioButtonPhongVIPDon.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonPhongThuongDoi
             // 
@@ -279,6 +289,7 @@
             this.CTRadioButtonPhongThuongDoi.Text = "Phòng thường đôi";
             this.CTRadioButtonPhongThuongDoi.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongThuongDoi.UseVisualStyleBackColor = true;
+            this.CTRadioButtonPhongThuongDoi.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // PanelRadioButtonTrangThaiPhong
             // 
@@ -319,6 +330,7 @@
             this.CTRadioButtonTatCaPhong.Text = "Tất cả phòng";
             this.CTRadioButtonTatCaPhong.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonTatCaPhong.UseVisualStyleBackColor = true;
+            this.CTRadioButtonTatCaPhong.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonPhongDangSuaChua
             // 
@@ -336,6 +348,7 @@
             this.CTRadioButtonPhongDangSuaChua.Text = "Phòng đang sửa chữa";
             this.CTRadioButtonPhongDangSuaChua.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongDangSuaChua.UseVisualStyleBackColor = true;
+            this.CTRadioButtonPhongDangSuaChua.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonPhongTrong
             // 
@@ -353,6 +366,7 @@
             this.CTRadioButtonPhongTrong.Text = "Phòng trống";
             this.CTRadioButtonPhongTrong.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongTrong.UseVisualStyleBackColor = true;
+            this.CTRadioButtonPhongTrong.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonPhongDangThue
             // 
@@ -370,6 +384,7 @@
             this.CTRadioButtonPhongDangThue.Text = "Phòng đang thuê";
             this.CTRadioButtonPhongDangThue.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongDangThue.UseVisualStyleBackColor = true;
+            this.CTRadioButtonPhongDangThue.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // CTRadioButtonPhongDaDat
             // 
@@ -387,14 +402,18 @@
             this.CTRadioButtonPhongDaDat.Text = "Phòng đã đặt";
             this.CTRadioButtonPhongDaDat.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongDaDat.UseVisualStyleBackColor = true;
+            this.CTRadioButtonPhongDaDat.CheckedChanged += new System.EventHandler(this.CTRadioButtonPhongTrong_CheckedChanged);
             // 
             // PanelTitle
             // 
             this.PanelTitle.AutoScroll = true;
             this.PanelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.PanelTitle.Controls.Add(this.label7);
+            this.PanelTitle.Controls.Add(this.ComboBoxPhut);
+            this.PanelTitle.Controls.Add(this.ComboBoxGio);
             this.PanelTitle.Controls.Add(this.LabelChonGio);
+            this.PanelTitle.Controls.Add(this.ctBorderPanel1);
             this.PanelTitle.Controls.Add(this.LabelChonNgay);
-            this.PanelTitle.Controls.Add(this.ctTimePicker1);
             this.PanelTitle.Controls.Add(this.pictureBox1);
             this.PanelTitle.Controls.Add(this.ctTextBox1);
             this.PanelTitle.Controls.Add(this.ctDatePicker1);
@@ -404,42 +423,105 @@
             this.PanelTitle.Size = new System.Drawing.Size(1007, 53);
             this.PanelTitle.TabIndex = 3;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(208, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 21);
+            this.label7.TabIndex = 38;
+            this.label7.Text = ":";
+            // 
+            // ComboBoxPhut
+            // 
+            this.ComboBoxPhut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ComboBoxPhut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBoxPhut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxPhut.FormattingEnabled = true;
+            this.ComboBoxPhut.Items.AddRange(new object[] {
+            " 00",
+            " 30"});
+            this.ComboBoxPhut.Location = new System.Drawing.Point(227, 16);
+            this.ComboBoxPhut.Name = "ComboBoxPhut";
+            this.ComboBoxPhut.Size = new System.Drawing.Size(50, 25);
+            this.ComboBoxPhut.TabIndex = 36;
+            this.ComboBoxPhut.Text = " mm";
+            // 
+            // ComboBoxGio
+            // 
+            this.ComboBoxGio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ComboBoxGio.DropDownHeight = 70;
+            this.ComboBoxGio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBoxGio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxGio.FormattingEnabled = true;
+            this.ComboBoxGio.IntegralHeight = false;
+            this.ComboBoxGio.Items.AddRange(new object[] {
+            " 00",
+            " 01",
+            " 02",
+            " 03",
+            " 04",
+            " 05",
+            " 06",
+            " 07",
+            " 08",
+            " 09",
+            " 10",
+            " 11",
+            " 12",
+            " 13",
+            " 14",
+            " 15",
+            " 16",
+            " 17",
+            " 18",
+            " 19",
+            " 20",
+            " 21",
+            " 22",
+            " 23"});
+            this.ComboBoxGio.Location = new System.Drawing.Point(162, 17);
+            this.ComboBoxGio.Name = "ComboBoxGio";
+            this.ComboBoxGio.Size = new System.Drawing.Size(43, 25);
+            this.ComboBoxGio.TabIndex = 37;
+            this.ComboBoxGio.Text = " hh";
+            // 
             // LabelChonGio
             // 
             this.LabelChonGio.AutoSize = true;
             this.LabelChonGio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChonGio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LabelChonGio.Location = new System.Drawing.Point(178, 1);
+            this.LabelChonGio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LabelChonGio.Location = new System.Drawing.Point(166, 1);
             this.LabelChonGio.Name = "LabelChonGio";
             this.LabelChonGio.Size = new System.Drawing.Size(56, 15);
             this.LabelChonGio.TabIndex = 10;
             this.LabelChonGio.Text = "Chọn giờ";
             // 
+            // ctBorderPanel1
+            // 
+            this.ctBorderPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ctBorderPanel1.BorderColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ctBorderPanel1.BorderSize = 1;
+            this.ctBorderPanel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctBorderPanel1.Location = new System.Drawing.Point(155, 11);
+            this.ctBorderPanel1.MinimumSize = new System.Drawing.Size(0, 35);
+            this.ctBorderPanel1.Name = "ctBorderPanel1";
+            this.ctBorderPanel1.Size = new System.Drawing.Size(132, 36);
+            this.ctBorderPanel1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ctBorderPanel1.TabIndex = 34;
+            this.ctBorderPanel1.TextColor = System.Drawing.Color.Black;
+            // 
             // LabelChonNgay
             // 
             this.LabelChonNgay.AutoSize = true;
             this.LabelChonNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChonNgay.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LabelChonNgay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LabelChonNgay.Location = new System.Drawing.Point(19, 1);
             this.LabelChonNgay.Name = "LabelChonNgay";
             this.LabelChonNgay.Size = new System.Drawing.Size(65, 15);
             this.LabelChonNgay.TabIndex = 10;
             this.LabelChonNgay.Text = "Chọn ngày";
-            // 
-            // ctTimePicker1
-            // 
-            this.ctTimePicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ctTimePicker1.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ctTimePicker1.BorderSize = 1;
-            this.ctTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctTimePicker1.Location = new System.Drawing.Point(167, 11);
-            this.ctTimePicker1.MinimumSize = new System.Drawing.Size(0, 35);
-            this.ctTimePicker1.Name = "ctTimePicker1";
-            this.ctTimePicker1.Size = new System.Drawing.Size(132, 35);
-            this.ctTimePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ctTimePicker1.TabIndex = 3;
-            this.ctTimePicker1.TextColor = System.Drawing.Color.Black;
-            this.ctTimePicker1.Load += new System.EventHandler(this.ctTimePicker1_Load);
             // 
             // pictureBox1
             // 
@@ -501,6 +583,7 @@
             // 
             // panelSoDoPhong
             // 
+            this.panelSoDoPhong.AutoScroll = true;
             this.panelSoDoPhong.Controls.Add(this.flowLayoutPanel5);
             this.panelSoDoPhong.Controls.Add(this.panel5);
             this.panelSoDoPhong.Controls.Add(this.flowLayoutPanel4);
@@ -734,7 +817,6 @@
         private CTControls.CTTextBox ctTextBox1;
         private CTControls.CTDatePicker ctDatePicker1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CTControls.CTTimePicker ctTimePicker1;
         private System.Windows.Forms.Label LabelChonGio;
         private System.Windows.Forms.Label LabelChonNgay;
         private System.Windows.Forms.Timer timerAppear;
@@ -754,5 +836,9 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
+        private CTControls.CTBorderPanel ctBorderPanel1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox ComboBoxPhut;
+        private System.Windows.Forms.ComboBox ComboBoxGio;
     }
 }
