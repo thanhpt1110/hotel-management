@@ -269,7 +269,7 @@ namespace HotelManagement.GUI
             CTMessageBox.Show("Kết nối CSDL thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             #region CheckDBConnection
-            /*string connectionString = string.Format("Data source = {0}; Initial Catalog = {1}; Integrated security = True; MultipleActiveResultSets = True;App = EntityFramework", textBoxServer.Text, textBoxDB.Text);
+            string connectionString = string.Format("data source={0}; initial catalog = {1}; integrated security = True; MultipleActiveResultSets = True;App = EntityFramework", textBoxServer.Texts, textBoxDB.Texts);
             try
             {
                 SqlHelper sqlHelper = new SqlHelper(connectionString);
@@ -289,7 +289,7 @@ namespace HotelManagement.GUI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }*/
+            }
             #endregion
         }
     }

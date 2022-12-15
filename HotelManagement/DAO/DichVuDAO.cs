@@ -72,5 +72,18 @@ namespace HotelManagement.DAO
         {
             return db.DichVus.Where(p => p.DaXoa == false && p.SLConLai != 0).ToList();
         }
+        public DichVu FindDichVuWithNameAndDonGia(string TenDV, string DonGia)
+        {
+            decimal dongia = decimal.Parse(DonGia);
+            return db.DichVus.Where(p => p.TenDV == TenDV && p.DonGia == dongia ).SingleOrDefault();
+        }
+        public void UpdateDV(List<DichVu> dichVus)
+        {
+            foreach(DichVu dichVu in dichVus)
+            {
+                db.DichVus.AddOrUpdate(dichVu);
+            }
+            db.SaveChanges();
+        }    
     }
 }

@@ -1,6 +1,7 @@
 ﻿using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,14 @@ namespace HotelManagement.DAO
                 return db.CTDVs.Where(p => p.MaHD == MaHD && p.DaXoa == false).ToList();
             
         } 
-
         
+        public void InsertOrUpdateList(List<CTDV> cTDVs)
+        {
+            foreach(CTDV cTDV in cTDVs)
+            {
+                db.CTDVs.AddOrUpdate(cTDV);
+            }
+            db.SaveChanges();
+        }    
     }
 }
