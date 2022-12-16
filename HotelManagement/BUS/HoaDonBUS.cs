@@ -37,5 +37,9 @@ namespace HotelManagement.BUS
         {
             return HoaDonDAO.Instance.getMaHDNext();
         }
+        public void ThanhToanHD(HoaDon HD)
+        {
+            HoaDonDAO.Instance.ThanhToanHD(HD);
+        }
     }
 }

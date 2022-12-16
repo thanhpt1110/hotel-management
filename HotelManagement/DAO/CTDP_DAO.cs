@@ -62,7 +62,7 @@ namespace HotelManagement.DAO
                         listCTDP.Add(ctdp);
                     }
                 }
-                var cTDPs = from p in listCTDP where ((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin >= p.CheckIn && Checkout <= p.CheckOut)) select p;
+                var cTDPs = from p in listCTDP where (((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin >= p.CheckIn && Checkout <= p.CheckOut)) && p.TrangThai!="Đã xong") select p;
 
                 List<CTDP> ctdpList = new List<CTDP>();
                 foreach (var ctdp in cTDPs)
@@ -124,8 +124,7 @@ namespace HotelManagement.DAO
                 {
                     return "CTDP0" + max.ToString();
                 }
-                return "CTDP" + max.ToString();
-            
+                return "CTDP" + max.ToString();      
         }
 
     }

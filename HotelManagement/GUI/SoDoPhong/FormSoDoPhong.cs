@@ -109,7 +109,7 @@ namespace HotelManagement.GUI
                     }
 
                 }
-                if (phong.TTPH == "Bình thường" && ctdp == null)
+                if (phong.TTPH == "Bình thường" && (ctdp == null || ctdp.TrangThai=="Đã xong"))
                 {
                     CTRoomTrong room = new CTRoomTrong(phong, this, this.formMain);
                     if (phong.TTDD == "Đã dọn dẹp")

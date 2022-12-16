@@ -222,6 +222,7 @@ namespace HotelManagement.GUI
         #region Display room 
         private void LoadPhongDaDat()
         {
+            gridDichVu.Rows.Clear();
             this.LabelMaPhong.Text = ctdp.MaPH;
             this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
             this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
@@ -255,7 +256,8 @@ namespace HotelManagement.GUI
             }    
         }
         private void LoadPhongDangSua()
-        {
+        { 
+            gridDichVu.Rows.Clear();
             this.LabelMaPhong.Text = phong.MaPH;
             this.LabelTen.Text = "";
             this.LabelNgayCheckin.Text = "";
@@ -275,6 +277,7 @@ namespace HotelManagement.GUI
 
         private void LoadPhongTrong()
         {
+            gridDichVu.Rows.Clear();
             this.LabelMaPhong.Text = phong.MaPH;
             this.LabelTen.Text = "";
             this.LabelNgayCheckin.Text = "";
@@ -383,7 +386,28 @@ namespace HotelManagement.GUI
 
         private void CTButtonThanhToan_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = CTMessageBox.Show("Bạn có muốn thanh toán phòng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                HoaDon hd = HoaDonBUS.Instance.GetHoaDons().Where(p => p.MaCTDP == ctdp.MaCTDP).SingleOrDefault();
+                hd.TriGia = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
+                foreach(CTDV cTDV in CTDV_BUS.Instance.FindCTDV(hd.MaHD))
+                {
+                    hd.TriGia += cTDV.ThanhTien;
+                }    
+                ctdp.TrangThai = "Đã xong";
+                hd.TrangThai = "Đã thanh toán";
+                hd.NgHD = DateTime.Now;
+                HoaDonBUS.Instance.ThanhToanHD(hd);
+                CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
+                FormHoaDon formHoaDon = new FormHoaDon(hd);
+                formHoaDon.ShowDialog();
+                
+                this.phong = ctdp.Phong;
+                this.phong.TTDD = "Chưa dọn dẹp";
+                this.LoadPhongTrong();
 
+            }
         }
     }
 }
