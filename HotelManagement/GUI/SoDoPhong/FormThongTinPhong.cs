@@ -247,13 +247,17 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Phòng đang thuê";
             this.PanelChuaButtonDatPhongNay.Hide();
             this.PanelChuaButtonNhanPhong.Hide();
-            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(ctdp.HoaDons.Single().MaHD);
+            List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
+            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(hoaDons.Where(p=>p.MaCTDP==ctdp.MaCTDP).Single().MaHD);
             gridDichVu.Rows.Clear();
-            foreach(CTDV v in cTDVs)
+            if (cTDVs.Count > 0)
             {
-                if(v.SL!=0)
-                    gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
-            }    
+                foreach (CTDV v in cTDVs)
+                {
+                    if (v.SL != 0)
+                        gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
+                }
+            }
         }
         private void LoadPhongDangSua()
         { 
@@ -317,7 +321,7 @@ namespace HotelManagement.GUI
             }
             catch(Exception ex)
             {
-                CTMessageBox.Show("Load danh sách phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion

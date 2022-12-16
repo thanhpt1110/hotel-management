@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HotelManagement.CTControls;
+using System.Security.Cryptography;
+
 namespace HotelManagement.DAO
 {
     internal class CTDP_DAO
@@ -84,21 +86,38 @@ namespace HotelManagement.DAO
                 {
                     return "CTDP00" + max.ToString();
                 }
-                else if (max >= 10)
+                else if (max < 100)
                 {
                     return "CTDP0" + max.ToString();
                 }
                 return "CTDP" + max.ToString();
            
         }
+        private void SetMaCTDP(List<CTDP> list)
+        {
+            int i = 1;
+            foreach(CTDP cTDP in list)
+            {
+                if (i < 10)
+                {
+                    cTDP.MaCTDP = "CTDP00" + i.ToString();
+                }
+                else if (i < 100)
+                {
+                    cTDP.MaCTDP = "CTDP0" + i.ToString();
+                }
+                else
+                    cTDP.MaCTDP = "CTDP" + i.ToString();
+            }
+        }
         public void UpdateOrAddCTDP(CTDP ctdp)
         { 
                 ctdp.PhieuThue = db.PhieuThues.Find(ctdp.MaPT);
                  ctdp.Phong = db.Phongs.Find(ctdp.MaPH);
-                ctdp.DaXoa = false;
-                
+                ctdp.DaXoa = false;              
                 db.CTDPs.AddOrUpdate(ctdp);
                 db.SaveChanges();
+                
             
         }
         public string getNextCTDPwithList(List<CTDP> list)
@@ -120,7 +139,7 @@ namespace HotelManagement.DAO
                 {
                     return "CTDP00" + max.ToString();
                 }
-                else if (max >= 10)
+                else if (max < 100)
                 {
                     return "CTDP0" + max.ToString();
                 }
