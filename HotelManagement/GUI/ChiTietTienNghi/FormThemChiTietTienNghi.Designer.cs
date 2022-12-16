@@ -124,7 +124,7 @@
             this.ctButton2.Location = new System.Drawing.Point(160, 416);
             this.ctButton2.Name = "ctButton2";
             this.ctButton2.Size = new System.Drawing.Size(140, 40);
-            this.ctButton2.TabIndex = 6;
+            this.ctButton2.TabIndex = 10;
             this.ctButton2.Text = "Cập nhật";
             this.ctButton2.TextColor = System.Drawing.Color.White;
             this.ctButton2.UseVisualStyleBackColor = false;
@@ -192,7 +192,7 @@
             this.CTTextBoxSoLuong.PlaceholderText = "Số lượng";
             this.CTTextBoxSoLuong.ReadOnly = false;
             this.CTTextBoxSoLuong.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxSoLuong.TabIndex = 10;
+            this.CTTextBoxSoLuong.TabIndex = 8;
             this.CTTextBoxSoLuong.Texts = "";
             this.CTTextBoxSoLuong.UnderlineedStyle = true;
             // 
@@ -215,7 +215,7 @@
             this.ctTextBoxGhiChu.PlaceholderText = "Ghi chú";
             this.ctTextBoxGhiChu.ReadOnly = false;
             this.ctTextBoxGhiChu.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBoxGhiChu.TabIndex = 11;
+            this.ctTextBoxGhiChu.TabIndex = 9;
             this.ctTextBoxGhiChu.Texts = "";
             this.ctTextBoxGhiChu.UnderlineedStyle = true;
             // 
@@ -372,6 +372,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormThemChiTietTienNghi";
             this.Activated += new System.EventHandler(this.FormThemChiTietTienNghi_Activated);
+            this.Load += new System.EventHandler(this.FormThemChiTietTienNghi_Load);
             this.SizeChanged += new System.EventHandler(this.FormThemChiTietTienNghi_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormThemChiTietTienNghi_Paint);
             this.Resize += new System.EventHandler(this.FormThemChiTietTienNghi_Resize);

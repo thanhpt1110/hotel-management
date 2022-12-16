@@ -13,6 +13,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace HotelManagement.GUI
 {
@@ -394,6 +395,40 @@ namespace HotelManagement.GUI
 
 
             }
+        }
+
+        private void FormThemDichVuVaoPhong_Load(object sender, EventArgs e)
+        {
+            gridDichVu.ColumnHeadersDefaultCellStyle.Font = new Font(gridDichVu.Font, FontStyle.Bold);
+            dgvDVDaChon.ColumnHeadersDefaultCellStyle.Font = new Font(dgvDVDaChon.Font, FontStyle.Bold);
+        }
+
+        private void gridDichVu_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int y = e.RowIndex, x = e.ColumnIndex;
+            if (y >= 0 && x == 3)
+                gridDichVu.Cursor = Cursors.Hand;
+            else
+                gridDichVu.Cursor = Cursors.Default;
+        }
+
+        private void gridDichVu_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            gridDichVu.Cursor = Cursors.Default;
+        }
+
+        private void dgvDVDaChon_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int y = e.RowIndex, x = e.ColumnIndex;
+            if (y >= 0 && x == 3)
+                dgvDVDaChon.Cursor = Cursors.Hand;
+            else
+                dgvDVDaChon.Cursor = Cursors.Default;
+        }
+
+        private void dgvDVDaChon_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvDVDaChon.Cursor = Cursors.Default;
         }
     }
 }

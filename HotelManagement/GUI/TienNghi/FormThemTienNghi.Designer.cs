@@ -73,7 +73,7 @@
             this.CTButtonThoat.Location = new System.Drawing.Point(337, 287);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 0;
+            this.CTButtonThoat.TabIndex = 5;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -94,7 +94,7 @@
             this.CTButtonCapNhat.Location = new System.Drawing.Point(180, 287);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
-            this.CTButtonCapNhat.TabIndex = 6;
+            this.CTButtonCapNhat.TabIndex = 4;
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
@@ -161,7 +161,7 @@
             this.ctTextBoxName.PlaceholderText = "Tên tiện nghi";
             this.ctTextBoxName.ReadOnly = false;
             this.ctTextBoxName.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBoxName.TabIndex = 4;
+            this.ctTextBoxName.TabIndex = 2;
             this.ctTextBoxName.Texts = "";
             this.ctTextBoxName.UnderlineedStyle = true;
             this.ctTextBoxName._TextChanged += new System.EventHandler(this.ctTextBoxName__TextChanged);
@@ -185,7 +185,7 @@
             this.ctTextBoxMoTa.PlaceholderText = "Mô tả";
             this.ctTextBoxMoTa.ReadOnly = false;
             this.ctTextBoxMoTa.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBoxMoTa.TabIndex = 4;
+            this.ctTextBoxMoTa.TabIndex = 3;
             this.ctTextBoxMoTa.Texts = "";
             this.ctTextBoxMoTa.UnderlineedStyle = true;
             // 
@@ -203,6 +203,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormThemTienNghi";
             this.Activated += new System.EventHandler(this.FormThemTienNghi_Activated);
+            this.Load += new System.EventHandler(this.FormThemTienNghi_Load);
             this.SizeChanged += new System.EventHandler(this.FormThemTienNghi_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormThemTienNghi_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);

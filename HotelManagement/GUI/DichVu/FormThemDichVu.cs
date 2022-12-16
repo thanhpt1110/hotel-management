@@ -305,7 +305,7 @@ namespace HotelManagement.GUI
 
         private void FormThemDichVu_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = LabelThemDichVu;
         }
     }
 }

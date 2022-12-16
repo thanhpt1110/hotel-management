@@ -313,5 +313,10 @@ namespace HotelManagement.GUI
         {
             TextBoxType.Instance.TextBoxNotNumber(e);
         }
+
+        private void FormSuaKhachHang_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = labelSuaKhachHang;
+        }
     }
 }

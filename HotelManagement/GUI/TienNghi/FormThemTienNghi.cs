@@ -231,5 +231,10 @@ namespace HotelManagement.GUI
         {
             TextBoxType.Instance.TextBoxNotNumber(e);
         }
+
+        private void FormThemTienNghi_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = LabelThemTienNghi;
+        }
     }
 }

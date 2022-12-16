@@ -222,12 +222,24 @@ namespace HotelManagement.CTControls
         
         private void CTRoomDaDat_Click(object sender, EventArgs e)
         {
-
-            using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(this.LabelTrangThaiLon.Text, ctdp,null,taiKhoan))
+            FormBackground formBackground = new FormBackground(formMain);
+            try
             {
-                formThongTinPhong.ShowDialog();
-                this.SoDoPhong.LoadLanDau();
+                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, ctdp, null, taiKhoan))
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThongTinPhong.Owner = formBackground;
+                    formThongTinPhong.ShowDialog();
+                    this.SoDoPhong.LoadLanDau();
+                    formBackground.Dispose();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
     }
 }

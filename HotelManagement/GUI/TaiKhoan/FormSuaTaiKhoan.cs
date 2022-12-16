@@ -199,5 +199,10 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+
+        private void FormSuaTaiKhoan_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = LabelSuaTaiKhoan;
+        }
     }
 }

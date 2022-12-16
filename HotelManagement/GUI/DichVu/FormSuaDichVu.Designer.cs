@@ -79,7 +79,7 @@
             this.CTButtonThoat.Location = new System.Drawing.Point(345, 480);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 0;
+            this.CTButtonThoat.TabIndex = 9;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -100,7 +100,7 @@
             this.CTButtonCapNhat.Location = new System.Drawing.Point(180, 480);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
-            this.CTButtonCapNhat.TabIndex = 6;
+            this.CTButtonCapNhat.TabIndex = 8;
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
@@ -215,7 +215,7 @@
             this.CTTextBoxDonGia.PlaceholderText = "Đơn giá";
             this.CTTextBoxDonGia.ReadOnly = false;
             this.CTTextBoxDonGia.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxDonGia.TabIndex = 4;
+            this.CTTextBoxDonGia.TabIndex = 5;
             this.CTTextBoxDonGia.Texts = "";
             this.CTTextBoxDonGia.UnderlineedStyle = true;
             this.CTTextBoxDonGia._TextChanged += new System.EventHandler(this.CTTextBoxDonGia__TextChanged);
@@ -240,7 +240,7 @@
             this.CTTextBoxSoLuong.PlaceholderText = "Số lượng còn lại";
             this.CTTextBoxSoLuong.ReadOnly = false;
             this.CTTextBoxSoLuong.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxSoLuong.TabIndex = 4;
+            this.CTTextBoxSoLuong.TabIndex = 6;
             this.CTTextBoxSoLuong.Texts = "";
             this.CTTextBoxSoLuong.UnderlineedStyle = true;
             this.CTTextBoxSoLuong._TextChanged += new System.EventHandler(this.CTTextBoxSoLuong__TextChanged);
@@ -264,7 +264,7 @@
             this.ctTextBoxMoTa.PlaceholderText = "Mô tả";
             this.ctTextBoxMoTa.ReadOnly = false;
             this.ctTextBoxMoTa.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBoxMoTa.TabIndex = 4;
+            this.ctTextBoxMoTa.TabIndex = 7;
             this.ctTextBoxMoTa.Texts = "";
             this.ctTextBoxMoTa.UnderlineedStyle = true;
             this.ctTextBoxMoTa._TextChanged += new System.EventHandler(this.ctTextBoxMoTa__TextChanged);
@@ -284,6 +284,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaDichVu";
             this.Activated += new System.EventHandler(this.FormSuaDichVu_Activated);
+            this.Load += new System.EventHandler(this.FormSuaDichVu_Load);
             this.SizeChanged += new System.EventHandler(this.FormSuaDichVu_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormSuaDichVu_Paint);
             this.Resize += new System.EventHandler(this.FormSuaDichVu_Resize);
