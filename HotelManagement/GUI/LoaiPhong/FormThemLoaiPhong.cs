@@ -199,5 +199,9 @@ namespace HotelManagement.GUI
             this.Close();
         }
 
+        private void FormThemLoaiPhong_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = LabelThemLoaiPhong;
+        }
     }
 }

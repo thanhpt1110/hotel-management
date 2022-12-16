@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panelBackground = new System.Windows.Forms.Panel();
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.linkLabelKetNoiCSDL = new System.Windows.Forms.LinkLabel();
             this.PanelLoginContent = new System.Windows.Forms.Panel();
             this.panelControlBox = new System.Windows.Forms.Panel();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
@@ -60,7 +59,6 @@
             // panelLogin
             // 
             this.panelLogin.BackColor = System.Drawing.Color.White;
-            this.panelLogin.Controls.Add(this.linkLabelKetNoiCSDL);
             this.panelLogin.Controls.Add(this.PanelLoginContent);
             this.panelLogin.Controls.Add(this.panelControlBox);
             this.panelLogin.Controls.Add(this.labelCorporation);
@@ -71,18 +69,6 @@
             this.panelLogin.TabIndex = 10;
             this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBackground_Paint);
             this.panelLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogin_MouseDown);
-            // 
-            // linkLabelKetNoiCSDL
-            // 
-            this.linkLabelKetNoiCSDL.AutoSize = true;
-            this.linkLabelKetNoiCSDL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelKetNoiCSDL.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.linkLabelKetNoiCSDL.Location = new System.Drawing.Point(195, 4);
-            this.linkLabelKetNoiCSDL.Name = "linkLabelKetNoiCSDL";
-            this.linkLabelKetNoiCSDL.Size = new System.Drawing.Size(100, 21);
-            this.linkLabelKetNoiCSDL.TabIndex = 11;
-            this.linkLabelKetNoiCSDL.TabStop = true;
-            this.linkLabelKetNoiCSDL.Text = "Kết nối CSDL";
             // 
             // PanelLoginContent
             // 
@@ -200,7 +186,6 @@
         private CTControls.CTClose ctClose1;
         private System.Windows.Forms.Label labelCorporation;
         private System.Windows.Forms.Panel PanelLoginContent;
-        private System.Windows.Forms.LinkLabel linkLabelKetNoiCSDL;
 
         #endregion
         //private CTControl.CTButton ctButton1;

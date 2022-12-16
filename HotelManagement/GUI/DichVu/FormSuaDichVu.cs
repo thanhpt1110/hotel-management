@@ -318,5 +318,10 @@ namespace HotelManagement.GUI
         {
 
         }
+
+        private void FormSuaDichVu_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = LabelSuaDichVu;
+        }
     }
 }

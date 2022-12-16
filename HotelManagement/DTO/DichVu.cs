@@ -27,5 +27,19 @@ namespace HotelManagement.DTO
         public string LoaiDV { get; set; }
 
         public bool? DaXoa { get; set; }
+
+        public DichVu (DichVu dichVu)
+        {
+            this.MaDV = dichVu.MaDV;
+            this.DaXoa = dichVu.DaXoa;
+            this.TenDV = dichVu.TenDV;
+            this.DonGia = dichVu.DonGia;
+            this.SLConLai = dichVu.SLConLai;
+            this.LoaiDV = dichVu.LoaiDV;
+        }
+        public DichVu()
+        {
+            
+        }
     }
 }

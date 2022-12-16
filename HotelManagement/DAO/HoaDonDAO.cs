@@ -38,8 +38,12 @@ namespace HotelManagement.DAO
                 
                 db.HoaDons.AddOrUpdate(HD);
                 db.SaveChanges();
-            
         }
+        public void ThanhToanHD(HoaDon HD)
+        {
+            db.HoaDons.AddOrUpdate(HD);
+            db.SaveChanges();
+        }    
         public List<HoaDon> FindHoaDonWith_CCCD(string cccd)
         {
 

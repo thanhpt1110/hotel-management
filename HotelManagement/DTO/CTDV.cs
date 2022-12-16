@@ -29,5 +29,17 @@ namespace HotelManagement.DTO
         public decimal DonGia { get; set; }
 
         public bool? DaXoa { get; set; }
+        
+        public CTDV(CTDV a)
+        {
+            this.SL = a.SL;
+            this.DaXoa = a.DaXoa;
+            this.DonGia = a.DonGia;
+            this.ThanhTien = a.ThanhTien;
+            this.MaDV = a.MaDV;
+            this.MaHD = a.MaHD;
+        }
+        public CTDV()
+        { }    
     }
 }

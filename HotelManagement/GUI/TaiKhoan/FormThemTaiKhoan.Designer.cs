@@ -91,7 +91,7 @@
             this.CTButtonThoat.Location = new System.Drawing.Point(342, 445);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 0;
+            this.CTButtonThoat.TabIndex = 7;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -204,7 +204,7 @@
             this.CTTextBoxNhapMatKhau.PlaceholderText = "Nhập mật khẩu";
             this.CTTextBoxNhapMatKhau.ReadOnly = false;
             this.CTTextBoxNhapMatKhau.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxNhapMatKhau.TabIndex = 3;
+            this.CTTextBoxNhapMatKhau.TabIndex = 4;
             this.CTTextBoxNhapMatKhau.Texts = "";
             this.CTTextBoxNhapMatKhau.UnderlineedStyle = true;
             // 
@@ -250,7 +250,7 @@
             this.CTTextBoxNhapTenTaiKhoan.PlaceholderText = "Nhập tên tài khoản";
             this.CTTextBoxNhapTenTaiKhoan.ReadOnly = false;
             this.CTTextBoxNhapTenTaiKhoan.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxNhapTenTaiKhoan.TabIndex = 1;
+            this.CTTextBoxNhapTenTaiKhoan.TabIndex = 3;
             this.CTTextBoxNhapTenTaiKhoan.Texts = "";
             this.CTTextBoxNhapTenTaiKhoan.UnderlineedStyle = true;
             // 
@@ -269,6 +269,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormThemTaiKhoan";
             this.Activated += new System.EventHandler(this.FormThemTaiKhoan_Activated);
+            this.Load += new System.EventHandler(this.FormThemTaiKhoan_Load);
             this.SizeChanged += new System.EventHandler(this.FormThemTaiKhoan_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormThemTaiKhoan_Paint);
             this.Resize += new System.EventHandler(this.FormThemTaiKhoan_Resize);

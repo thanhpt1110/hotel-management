@@ -27,8 +27,10 @@ namespace HotelManagement.DAO
         }    
         public DichVu FindDichVu(string MaDV)
         {
-
-                return db.DichVus.Find(MaDV);
+            using (HotelDTO hotelDTO = new HotelDTO())
+            {
+                return hotelDTO.DichVus.Find(MaDV);
+            }
             
         }
         public void UpdateORAdd(DichVu dv)
@@ -62,6 +64,7 @@ namespace HotelManagement.DAO
                 return "DV" + max.ToString();
             
         }
+       
         public List<DichVu> FindDichVuWithName(string TenDV)
         {
 
@@ -72,5 +75,18 @@ namespace HotelManagement.DAO
         {
             return db.DichVus.Where(p => p.DaXoa == false && p.SLConLai != 0).ToList();
         }
+        public DichVu FindDichVuWithNameAndDonGia(string TenDV, string DonGia)
+        {
+            decimal dongia = decimal.Parse(DonGia);
+            return db.DichVus.Where(p => p.TenDV == TenDV && p.DonGia == dongia ).SingleOrDefault();
+        }
+        public void UpdateDV(List<DichVu> dichVus)
+        {
+            foreach(DichVu dichVu in dichVus)
+            {
+                db.DichVus.AddOrUpdate(dichVu);
+            }
+            db.SaveChanges();
+        }    
     }
 }

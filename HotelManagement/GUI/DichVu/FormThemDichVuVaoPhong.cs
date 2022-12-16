@@ -7,11 +7,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace HotelManagement.GUI
 {
@@ -19,8 +21,13 @@ namespace HotelManagement.GUI
     {
         private Image Del = Properties.Resources.delete1; // Image for Button Hủy
         private Image Add = Properties.Resources.Add; // Image for Button Thêm
-        private List<DichVu> dichVus ;
-        private List<CTDV> dichVusDaDat;
+        private List<DichVu> dichVus = new List<DichVu>();
+        private List<CTDV> dichVusDaDat = new List<CTDV>();
+        private List<int?> SLDVConLai = new List<int?>();
+        private List<int> SLDVDaDat = new List<int>();
+        private HoaDon hoadon;
+        /*        private List<CTDV> dichVusdadatBanDau = new List<CTDV>();
+                private List<DichVu> dichVusBanDau = new List<DichVu>();*/
         //Fields
         private int borderRadius = 20;
         private int borderSize = 2;
@@ -45,42 +52,82 @@ namespace HotelManagement.GUI
             this.ctdp = cTDP;
            // this.formDanhSachDichVu = formDanhSachDichVu;
             InitializeComponent();
-            LoadGridDaChon();
-            LoadGridDichVu();
+            LoadGridDaChonLanDau();
+            LoadGridDichVuLanDau();
         }
         private void LoadLanDau()
         {
+
+        }
+        #region Load Grid Checked
+        private void LoadGridDaChonLanDau()
+        {
+            try
+            {
+               // this.hoadon = ctdp.HoaDons.Single();
+                List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
+                this.hoadon = hoaDons.Where(p => p.MaCTDP == ctdp.MaCTDP).Single();
+                 List<CTDV>cTDVs = CTDV_BUS.Instance.FindCTDV(this.hoadon.MaHD);
+                if (cTDVs != null)
+                {
+                    foreach (CTDV cTDV in cTDVs)
+                    {
+                        CTDV cTDV1 = new CTDV(cTDV);
+                        //cTDV1 = cTDV;
+                        this.dichVusDaDat.Add(cTDV1);
+                        this.SLDVDaDat.Add(cTDV.SL);
+                    }
+                }
+                LoadGridDaChon();
+            }
+            catch(Exception ex)
+            {
+                CTMessageBox.Show("Load du lieu that bai.");
+            }
         }
         private void LoadGridDaChon()
         {
             dgvDVDaChon.Rows.Clear();
-            HoaDon hoaDon = ctdp.HoaDons.Single();
-            List<CTDV> ctdv = CTDV_BUS.Instance.FindCTDV(hoaDon.MaHD);
-
-            foreach(CTDV v in ctdv)
+            
+            foreach (CTDV v in dichVusDaDat)
             {
-                DichVu dichVu = DichVuBUS.Instance.FindDichVu(v.MaDV);
+                if (v.SL != 0)
+                {
+                    DichVu dichVu = DichVuBUS.Instance.FindDichVu(v.MaDV);
+                    dgvDVDaChon.Rows.Add(dichVu.TenDV, v.SL, v.ThanhTien.ToString("#,#"), Del);
+                }
+            }  
+        }
+        #endregion
 
-                dgvDVDaChon.Rows.Add(dichVu.TenDV, v.SL, v.DonGia.ToString("#,#"), Del);
+        #region LoadGridDV
+        private void LoadGridDichVuLanDau()
+        {
+            List<DichVu> dichVus;
+            dichVus = DichVuBUS.Instance.GetDichVus();
+            foreach(DichVu dichVu in dichVus)
+            {
+                this.dichVus.Add(new DichVu(dichVu));
+                this.SLDVConLai.Add(dichVu.SLConLai);
             }    
+            LoadGridDichVu();
         }
         private void LoadGridDichVu()
         {
-          this.dichVus = DichVuBUS.Instance.GetDichVus();
+            
             gridDichVu.Rows.Clear();
-            foreach(DichVu v in dichVus)
+            foreach (DichVu v in dichVus)
             {
-                if(v.SLConLai==-1)
+                if (v.SLConLai == -1)
                 {
                     gridDichVu.Rows.Add(v.TenDV, v.DonGia.ToString("#,#"), "", Add);
 
                 }
                 else
-                gridDichVu.Rows.Add(v.TenDV, v.DonGia.ToString("#,#"), v.SLConLai, Add);
-                dichVus.Add(dichVu);
-            }    
+                    gridDichVu.Rows.Add(v.TenDV, v.DonGia.ToString("#,#"), v.SLConLai, Add);
+            }
         }
-        
+        #endregion
         //Control Box
 
         //Form Move
@@ -251,25 +298,137 @@ namespace HotelManagement.GUI
         #endregion
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
 
         private void gridDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+         
             int x = e.ColumnIndex, y = e.RowIndex;
             if (y >= 0 && x == 3)
             {
-                DichVu dichVu = DichVuBUS.Instance.FindDichVu(gridDichVu.Rows[y].Cells[1].Value.ToString());
-                if (dichVu.SLConLai > 0)
+                #region Add Service
+                decimal dongia = decimal.Parse(gridDichVu.Rows[y].Cells[1].Value.ToString().Trim(','));
+                DichVu dichVu = dichVus.Where(p=>p.TenDV==gridDichVu.Rows[y].Cells[0].Value.ToString() && p.DonGia == dongia).SingleOrDefault();
+                if (dichVu.SLConLai >= 1)
                 {
                     dichVu.SLConLai--;
+                    gridDichVu.Rows[y].Cells[2].Value=dichVu.SLConLai;
                 }
                 else if (dichVu.SLConLai == 0)
-                {
-                    CTMessageBox.Show("Sản phẩm này đã hết ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CTMessageBox.Show("Số lượng hàng trong kho đã hết!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                else if (dichVu.SLConLai == -1)
+                { }    
 
+                foreach(DataGridViewRow dataRow in dgvDVDaChon.Rows)
+                {
+                    if (dataRow.Cells[0].Value.ToString() == dichVu.TenDV && (decimal.Parse(dataRow.Cells[2].Value.ToString().Trim(',')) / int.Parse(dataRow.Cells[1].Value.ToString()))==dichVu.DonGia)
+                    {
+                        CTDV cTDV = dichVusDaDat.Where(p=>p.MaDV==dichVu.MaDV&&p.DonGia==dichVu.DonGia).FirstOrDefault();
+                        dataRow.Cells[1].Value = ++cTDV.SL;
+                        cTDV.ThanhTien = cTDV.DonGia * cTDV.SL;
+                        dataRow.Cells[2].Value = cTDV.ThanhTien.ToString("#,#");
+                        return;
+                    }
                 }
+                CTDV cTDV1 = new CTDV();
+                cTDV1.DonGia=dichVu.DonGia;
+                cTDV1.DaXoa = false;
+                cTDV1.ThanhTien = dichVu.DonGia;
+                cTDV1.MaDV=dichVu.MaDV;
+                cTDV1.MaHD = hoadon.MaHD;
+                cTDV1.SL = 1;
+                dichVusDaDat.Add(cTDV1);
+                this.LoadGridDaChon();
+                #endregion
             }
+        }
+
+        private void CTButtonLuu_Click(object sender, EventArgs e)
+        {
+            DichVuBUS.Instance.UpdateDV(dichVus);
+            CTDV_BUS.Instance.InsertOrUpdateList(dichVusDaDat);
+            this.Close();
+        }
+
+        private void dgvDVDaChon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int x = e.ColumnIndex, y = e.RowIndex;
+            if (y >= 0 && x == 3)
+            {
+                #region Remove Service
+                DichVu dichVu=null;
+                if (int.Parse(dgvDVDaChon.Rows[y].Cells[1].Value.ToString())>1)
+                {
+                    decimal dongia = decimal.Parse(dgvDVDaChon.Rows[y].Cells[2].Value.ToString().Trim(',')) / int.Parse(dgvDVDaChon.Rows[y].Cells[1].Value.ToString());
+                    dichVu = dichVus.Where(p => p.TenDV == dgvDVDaChon.Rows[y].Cells[0].Value.ToString() && p.DonGia == dongia).SingleOrDefault();
+                    CTDV cTDV = dichVusDaDat.Where(p => p.MaDV == dichVu.MaDV && p.ThanhTien == decimal.Parse(dgvDVDaChon.Rows[y].Cells[2].Value.ToString().Trim(','))).SingleOrDefault();
+                    dgvDVDaChon.Rows[y].Cells[1].Value = --cTDV.SL;
+                    cTDV.ThanhTien = cTDV.DonGia * cTDV.SL;
+                    dgvDVDaChon.Rows[y].Cells[2].Value = cTDV.ThanhTien.ToString("#,#");
+                }
+                else 
+                {
+                    decimal dongia = decimal.Parse(dgvDVDaChon.Rows[y].Cells[2].Value.ToString().Trim(',')) / int.Parse(dgvDVDaChon.Rows[y].Cells[1].Value.ToString());
+                    dichVu = dichVus.Where(p => p.TenDV == dgvDVDaChon.Rows[y].Cells[0].Value.ToString() && p.DonGia == dongia).SingleOrDefault();
+                    CTDV cTDV = dichVusDaDat.Where(p => p.MaDV == dichVu.MaDV && p.ThanhTien == decimal.Parse(dgvDVDaChon.Rows[y].Cells[2].Value.ToString().Trim(','))).SingleOrDefault();
+                    --cTDV.SL;
+                    cTDV.ThanhTien = cTDV.DonGia * cTDV.SL;
+                    LoadGridDaChon();
+                }
+                #endregion
+                #region increase Service
+                if (dichVu != null)
+                {
+                    foreach (DataGridViewRow item in gridDichVu.Rows)
+                    {
+                        if (item.Cells[0].Value.ToString() == dichVu.TenDV)
+                        {
+                            if (item.Cells[2].Value.ToString() != "")
+                                item.Cells[2].Value = ++dichVu.SLConLai;
+                        }
+                    }
+                }
+                #endregion
+
+
+            }
+        }
+
+        private void FormThemDichVuVaoPhong_Load(object sender, EventArgs e)
+        {
+            gridDichVu.ColumnHeadersDefaultCellStyle.Font = new Font(gridDichVu.Font, FontStyle.Bold);
+            dgvDVDaChon.ColumnHeadersDefaultCellStyle.Font = new Font(dgvDVDaChon.Font, FontStyle.Bold);
+        }
+
+        private void gridDichVu_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int y = e.RowIndex, x = e.ColumnIndex;
+            if (y >= 0 && x == 3)
+                gridDichVu.Cursor = Cursors.Hand;
+            else
+                gridDichVu.Cursor = Cursors.Default;
+        }
+
+        private void gridDichVu_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            gridDichVu.Cursor = Cursors.Default;
+        }
+
+        private void dgvDVDaChon_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int y = e.RowIndex, x = e.ColumnIndex;
+            if (y >= 0 && x == 3)
+                dgvDVDaChon.Cursor = Cursors.Hand;
+            else
+                dgvDVDaChon.Cursor = Cursors.Default;
+        }
+
+        private void dgvDVDaChon_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvDVDaChon.Cursor = Cursors.Default;
         }
     }
 }

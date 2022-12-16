@@ -271,5 +271,10 @@ namespace HotelManagement.GUI
                 this.Close();
             }
         }
+
+        private void FormSuaPhong_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = LabelSuaPhong;
+        }
     }
 }

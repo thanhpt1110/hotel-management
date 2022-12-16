@@ -128,7 +128,7 @@
             this.ComboBoxGioiTinh.Location = new System.Drawing.Point(349, 409);
             this.ComboBoxGioiTinh.Name = "ComboBoxGioiTinh";
             this.ComboBoxGioiTinh.Size = new System.Drawing.Size(121, 29);
-            this.ComboBoxGioiTinh.TabIndex = 5;
+            this.ComboBoxGioiTinh.TabIndex = 9;
             this.ComboBoxGioiTinh.Text = "  Giới tính";
             // 
             // LabelNgaySinh
@@ -153,7 +153,7 @@
             this.ctDatePicker1.Name = "ctDatePicker1";
             this.ctDatePicker1.Size = new System.Drawing.Size(210, 35);
             this.ctDatePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.ctDatePicker1.TabIndex = 6;
+            this.ctDatePicker1.TabIndex = 5;
             this.ctDatePicker1.TextColor = System.Drawing.Color.DimGray;
             // 
             // pictureBox3
@@ -242,7 +242,7 @@
             this.ctTextBoxEmail.PlaceholderText = "Nhập email";
             this.ctTextBoxEmail.ReadOnly = false;
             this.ctTextBoxEmail.Size = new System.Drawing.Size(210, 35);
-            this.ctTextBoxEmail.TabIndex = 9;
+            this.ctTextBoxEmail.TabIndex = 8;
             this.ctTextBoxEmail.Texts = "";
             this.ctTextBoxEmail.UnderlineedStyle = true;
             // 
@@ -265,7 +265,7 @@
             this.CTTextBoxDiaChi.PlaceholderText = "Nhập địa chỉ";
             this.CTTextBoxDiaChi.ReadOnly = false;
             this.CTTextBoxDiaChi.Size = new System.Drawing.Size(210, 35);
-            this.CTTextBoxDiaChi.TabIndex = 8;
+            this.CTTextBoxDiaChi.TabIndex = 7;
             this.CTTextBoxDiaChi.Texts = "";
             this.CTTextBoxDiaChi.UnderlineedStyle = true;
             // 
@@ -288,7 +288,7 @@
             this.CTTextBoxNhapCCCD.PlaceholderText = "Nhập số CCCD";
             this.CTTextBoxNhapCCCD.ReadOnly = false;
             this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(210, 35);
-            this.CTTextBoxNhapCCCD.TabIndex = 7;
+            this.CTTextBoxNhapCCCD.TabIndex = 6;
             this.CTTextBoxNhapCCCD.Texts = "";
             this.CTTextBoxNhapCCCD.UnderlineedStyle = true;
             this.CTTextBoxNhapCCCD._TextChanged += new System.EventHandler(this.ctTextBoxSDT__TextChanged);
@@ -424,7 +424,7 @@
             this.CTButtonThoat.Location = new System.Drawing.Point(768, 525);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 15;
+            this.CTButtonThoat.TabIndex = 11;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -445,7 +445,7 @@
             this.CTButtonCapNhat.Location = new System.Drawing.Point(606, 525);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
-            this.CTButtonCapNhat.TabIndex = 17;
+            this.CTButtonCapNhat.TabIndex = 10;
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;

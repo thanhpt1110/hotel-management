@@ -141,10 +141,10 @@ namespace HotelManagement.GUI
         private FormBoundsColors GetSameDark()
         {
             FormBoundsColors colors = new FormBoundsColors();
-            colors.TopLeftColor = Color.FromArgb(77, 77, 77);
-            colors.TopRightColor = Color.FromArgb(77, 77, 77);
-            colors.BottomLeftColor = Color.FromArgb(77, 77, 77);
-            colors.BottomRightColor = Color.FromArgb(77, 77, 77);
+            colors.TopLeftColor = Color.FromArgb(128, 128, 128);
+            colors.TopRightColor = Color.FromArgb(128, 128, 128);
+            colors.BottomLeftColor = Color.FromArgb(128, 128, 128);
+            colors.BottomRightColor = Color.FromArgb(128, 128, 128);
             return colors;
         }
         //Event Methods
@@ -196,6 +196,11 @@ namespace HotelManagement.GUI
         private void CTButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormThemChiTietTienNghi_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = LabelThemChiTietTienNghi;
         }
     }
 }

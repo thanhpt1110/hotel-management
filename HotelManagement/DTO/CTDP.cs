@@ -20,7 +20,7 @@ namespace HotelManagement.DTO
         public string MaCTDP { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal? DonGia { get; set; }
+        public decimal DonGia { get; set; }
         public int? SoNguoi { get; set; }
 
         [Required]

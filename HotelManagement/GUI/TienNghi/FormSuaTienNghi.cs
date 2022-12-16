@@ -242,5 +242,10 @@ namespace HotelManagement.GUI
         {
             TextBoxType.Instance.TextBoxNotNumber(e);
         }
+
+        private void FormSuaTienNghi_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = LabelSuaTienNghi;
+        }
     }
 }

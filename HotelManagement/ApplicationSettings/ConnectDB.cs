@@ -25,7 +25,18 @@ namespace HotelManagement.ApplicationSettings
         {
             config.ConnectionStrings.ConnectionStrings[key].ConnectionString = value;
             config.ConnectionStrings.ConnectionStrings[key].ProviderName = "System.Data.SqlClient";
+            config.Save(ConfigurationSaveMode.Modified, true);
+            ConfigurationManager.RefreshSection("connectionStrings");
+        }
+
+        public void ReloadFileConfig(string key, string value)
+        {
+            var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+            connectionStringsSection.ConnectionStrings[key].ConnectionString = value;
+            config.ConnectionStrings.ConnectionStrings[key].ConnectionString = value;
+            config.ConnectionStrings.ConnectionStrings[key].ProviderName = "System.Data.SqlClient";
             config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("connectionStrings");
         }
     }
 }

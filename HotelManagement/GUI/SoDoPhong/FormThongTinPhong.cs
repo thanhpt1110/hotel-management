@@ -21,10 +21,11 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-        CTDP ctdp;
-        Phong phong;
-        TaiKhoan taiKhoan;
-        string TTPhong = "";
+        private CTDP ctdp;
+        private Phong phong;
+        private TaiKhoan taiKhoan;
+        private string TTPhong = "";
+        private FormMain formMain;
         //Constructor
         public FormThongTinPhong()
         {
@@ -33,7 +34,7 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
-        public FormThongTinPhong(string Case, CTDP cTDP = null, Phong phong = null,TaiKhoan taiKhoan = null)
+        public FormThongTinPhong(FormMain formMain, string Case, CTDP cTDP = null, Phong phong = null,TaiKhoan taiKhoan = null)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -42,6 +43,7 @@ namespace HotelManagement.GUI
             this.TTPhong = Case;
             this.phong = phong;
             this.taiKhoan = taiKhoan;
+            this.formMain = formMain;
             InitializeComponent();
             LoadPage();
 
@@ -222,6 +224,7 @@ namespace HotelManagement.GUI
         #region Display room 
         private void LoadPhongDaDat()
         {
+            gridDichVu.Rows.Clear();
             this.LabelMaPhong.Text = ctdp.MaPH;
             this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
             this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
@@ -246,14 +249,21 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Phòng đang thuê";
             this.PanelChuaButtonDatPhongNay.Hide();
             this.PanelChuaButtonNhanPhong.Hide();
-            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(ctdp.HoaDons.Single().MaHD);
-            foreach(CTDV v in cTDVs)
+            List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
+            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(hoaDons.Where(p=>p.MaCTDP==ctdp.MaCTDP).Single().MaHD);
+            gridDichVu.Rows.Clear();
+            if (cTDVs.Count > 0)
             {
-                gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
-            }    
+                foreach (CTDV v in cTDVs)
+                {
+                    if (v.SL != 0)
+                        gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
+                }
+            }
         }
         private void LoadPhongDangSua()
-        {
+        { 
+            gridDichVu.Rows.Clear();
             this.LabelMaPhong.Text = phong.MaPH;
             this.LabelTen.Text = "";
             this.LabelNgayCheckin.Text = "";
@@ -273,6 +283,7 @@ namespace HotelManagement.GUI
 
         private void LoadPhongTrong()
         {
+            gridDichVu.Rows.Clear();
             this.LabelMaPhong.Text = phong.MaPH;
             this.LabelTen.Text = "";
             this.LabelNgayCheckin.Text = "";
@@ -290,6 +301,7 @@ namespace HotelManagement.GUI
         }
         private void LoadPage()
         {
+            
             try 
             {
                 switch (TTPhong)
@@ -311,7 +323,7 @@ namespace HotelManagement.GUI
             }
             catch(Exception ex)
             {
-                CTMessageBox.Show("Load danh sách phòng thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
@@ -355,10 +367,23 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemDichVu_Click(object sender, EventArgs e)
         {
-            using(FormThemDichVuVaoPhong frm = new FormThemDichVuVaoPhong(ctdp))
+            FormBackground formBackground = new FormBackground(formMain);
+            try
             {
-                frm.ShowDialog();
-            }    
+                using (FormThemDichVuVaoPhong frm = new FormThemDichVuVaoPhong(ctdp))
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    frm.Owner = formBackground;
+                    frm.ShowDialog();
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); } 
         }
 
         private void CTButtonNhanPhong_Click(object sender, EventArgs e)
@@ -379,7 +404,28 @@ namespace HotelManagement.GUI
 
         private void CTButtonThanhToan_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = CTMessageBox.Show("Bạn có muốn thanh toán phòng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                HoaDon hd = HoaDonBUS.Instance.GetHoaDons().Where(p => p.MaCTDP == ctdp.MaCTDP).SingleOrDefault();
+                hd.TriGia = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
+                foreach(CTDV cTDV in CTDV_BUS.Instance.FindCTDV(hd.MaHD))
+                {
+                    hd.TriGia += cTDV.ThanhTien;
+                }    
+                ctdp.TrangThai = "Đã xong";
+                hd.TrangThai = "Đã thanh toán";
+                hd.NgHD = DateTime.Now;
+                HoaDonBUS.Instance.ThanhToanHD(hd);
+                CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
+                FormHoaDon formHoaDon = new FormHoaDon(hd);
+                formHoaDon.ShowDialog();
+                
+                this.phong = ctdp.Phong;
+                this.phong.TTDD = "Chưa dọn dẹp";
+                this.LoadPhongTrong();
 
+            }
         }
     }
 }

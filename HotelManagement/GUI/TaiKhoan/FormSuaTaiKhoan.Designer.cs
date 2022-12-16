@@ -91,7 +91,7 @@
             this.CTButtonThoat.Location = new System.Drawing.Point(342, 445);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 0;
+            this.CTButtonThoat.TabIndex = 9;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -112,7 +112,7 @@
             this.CTButtonCapNhat.Location = new System.Drawing.Point(195, 445);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
-            this.CTButtonCapNhat.TabIndex = 6;
+            this.CTButtonCapNhat.TabIndex = 8;
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
@@ -152,7 +152,7 @@
             this.ctTextBox1.PlaceholderText = "Mã nhân viên";
             this.ctTextBox1.ReadOnly = true;
             this.ctTextBox1.Size = new System.Drawing.Size(250, 36);
-            this.ctTextBox1.TabIndex = 7;
+            this.ctTextBox1.TabIndex = 4;
             this.ctTextBox1.Texts = "";
             this.ctTextBox1.UnderlineedStyle = true;
             // 
@@ -205,7 +205,7 @@
             this.comboBox1.Location = new System.Drawing.Point(106, 296);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(173, 28);
-            this.comboBox1.TabIndex = 5;
+            this.comboBox1.TabIndex = 7;
             this.comboBox1.Text = "  Cấp độ quyền";
             // 
             // CTTextBoxNhapMatKhau
@@ -227,7 +227,7 @@
             this.CTTextBoxNhapMatKhau.PlaceholderText = "Nhập mật khẩu";
             this.CTTextBoxNhapMatKhau.ReadOnly = false;
             this.CTTextBoxNhapMatKhau.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxNhapMatKhau.TabIndex = 3;
+            this.CTTextBoxNhapMatKhau.TabIndex = 6;
             this.CTTextBoxNhapMatKhau.Texts = "";
             this.CTTextBoxNhapMatKhau.UnderlineedStyle = true;
             // 
@@ -250,7 +250,7 @@
             this.CTTextBoxNhapTenTaiKhoan.PlaceholderText = "Nhập tên tài khoản";
             this.CTTextBoxNhapTenTaiKhoan.ReadOnly = false;
             this.CTTextBoxNhapTenTaiKhoan.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxNhapTenTaiKhoan.TabIndex = 1;
+            this.CTTextBoxNhapTenTaiKhoan.TabIndex = 5;
             this.CTTextBoxNhapTenTaiKhoan.Texts = "";
             this.CTTextBoxNhapTenTaiKhoan.UnderlineedStyle = true;
             // 
@@ -268,6 +268,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaTaiKhoan";
             this.Activated += new System.EventHandler(this.FormSuaTaiKhoan_Activated);
+            this.Load += new System.EventHandler(this.FormSuaTaiKhoan_Load);
             this.SizeChanged += new System.EventHandler(this.FormSuaTaiKhoan_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormSuaTaiKhoan_Paint);
             this.Resize += new System.EventHandler(this.FormSuaTaiKhoan_Resize);

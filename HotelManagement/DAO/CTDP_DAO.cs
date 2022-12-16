@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HotelManagement.CTControls;
+using System.Security.Cryptography;
+
 namespace HotelManagement.DAO
 {
     internal class CTDP_DAO
@@ -62,7 +64,7 @@ namespace HotelManagement.DAO
                         listCTDP.Add(ctdp);
                     }
                 }
-                var cTDPs = from p in listCTDP where ((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin >= p.CheckIn && Checkout <= p.CheckOut)) select p;
+                var cTDPs = from p in listCTDP where (((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin >= p.CheckIn && Checkout <= p.CheckOut)) && p.TrangThai!="Đã xong") select p;
 
                 List<CTDP> ctdpList = new List<CTDP>();
                 foreach (var ctdp in cTDPs)
@@ -84,21 +86,22 @@ namespace HotelManagement.DAO
                 {
                     return "CTDP00" + max.ToString();
                 }
-                else if (max >= 10)
+                else if (max < 100)
                 {
                     return "CTDP0" + max.ToString();
                 }
                 return "CTDP" + max.ToString();
            
         }
+
         public void UpdateOrAddCTDP(CTDP ctdp)
         { 
                 ctdp.PhieuThue = db.PhieuThues.Find(ctdp.MaPT);
                  ctdp.Phong = db.Phongs.Find(ctdp.MaPH);
-                ctdp.DaXoa = false;
-                
+                ctdp.DaXoa = false;              
                 db.CTDPs.AddOrUpdate(ctdp);
                 db.SaveChanges();
+                
             
         }
         public string getNextCTDPwithList(List<CTDP> list)
@@ -120,12 +123,11 @@ namespace HotelManagement.DAO
                 {
                     return "CTDP00" + max.ToString();
                 }
-                else if (max >= 10)
+                else if (max < 100)
                 {
                     return "CTDP0" + max.ToString();
                 }
-                return "CTDP" + max.ToString();
-            
+                return "CTDP" + max.ToString();      
         }
 
     }

@@ -63,6 +63,7 @@ namespace HotelManagement.GUI
             grid.Rows.Add(new object[] { DV, "DV003", "Bún bò", "25,000", "20", edit, delete });
             grid.Rows.Add(new object[] { DV, "DV004", "Karaoke", "300,000", "10", edit, delete });*/
         }
+
         private void LoadDV()
         {
             try

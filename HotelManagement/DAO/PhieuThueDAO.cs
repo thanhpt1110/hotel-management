@@ -63,7 +63,7 @@ namespace HotelManagement.DAO
             {
                 return "PT00" + max.ToString();
             }
-            else if (max >= 10)
+            else if (max < 100)
             {
                 return "PT0" + max.ToString();
             }
