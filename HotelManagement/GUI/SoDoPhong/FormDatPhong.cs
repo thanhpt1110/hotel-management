@@ -284,13 +284,33 @@ namespace HotelManagement.GUI
                 LoadgridPhongTrong();
             }
         }
-
+        private void SetMaCTDP(List<CTDP> list)
+        {
+            int i = 1;
+            int MaMax = CTDP_BUS.Instance.GetCTDPs().Count;
+            int tong;
+            foreach (CTDP cTDP in list)
+            {
+                tong = MaMax + i;
+                if (tong < 10)
+                {
+                    cTDP.MaCTDP = "CTDP00" + tong.ToString();
+                }
+                else if (tong < 100)
+                {
+                    cTDP.MaCTDP = "CTDP0" + tong.ToString();
+                }
+                else
+                    cTDP.MaCTDP = "CTDP" + tong.ToString();
+                i++;
+            }
+        }
         private void gridPhongDaChon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int x = e.ColumnIndex, y = e.RowIndex;
             if (y >= 0 && x == 4)
             {
-                // If click Add new room
+                // If click Remove new room
                 DialogResult dialogResult = CTMessageBox.Show("Bạn có muốn xóa phòng không? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
                 {
@@ -299,6 +319,7 @@ namespace HotelManagement.GUI
                         if (ctdp.CheckIn.ToString("dd/MM/yyyy hh:mm:ss") == gridPhongDaChon.Rows[y].Cells[2].Value.ToString() && ctdp.MaPH == gridPhongDaChon.Rows[y].Cells[0].Value.ToString())
                         {
                             this.listPhongDaDat.Remove(ctdp);
+                            SetMaCTDP(listPhongDaDat);
                             LoadGridPhongDat();
                             LoadgridPhongTrong();
                             return;

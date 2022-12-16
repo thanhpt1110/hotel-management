@@ -226,7 +226,7 @@ namespace HotelManagement.CTControls
             using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(this.LabelTrangThaiLon.Text, ctdp,null,taiKhoan))
             {
                 formThongTinPhong.ShowDialog();
-                this.SoDoPhong.LoadAllPhong();
+                this.SoDoPhong.LoadLanDau();
             }
         }
     }

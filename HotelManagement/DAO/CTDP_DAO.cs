@@ -93,23 +93,7 @@ namespace HotelManagement.DAO
                 return "CTDP" + max.ToString();
            
         }
-        private void SetMaCTDP(List<CTDP> list)
-        {
-            int i = 1;
-            foreach(CTDP cTDP in list)
-            {
-                if (i < 10)
-                {
-                    cTDP.MaCTDP = "CTDP00" + i.ToString();
-                }
-                else if (i < 100)
-                {
-                    cTDP.MaCTDP = "CTDP0" + i.ToString();
-                }
-                else
-                    cTDP.MaCTDP = "CTDP" + i.ToString();
-            }
-        }
+
         public void UpdateOrAddCTDP(CTDP ctdp)
         { 
                 ctdp.PhieuThue = db.PhieuThues.Find(ctdp.MaPT);

@@ -32,8 +32,9 @@ namespace HotelManagement.GUI
             this.formMain = formMain;
             this.ctDatePicker1.Value = DateTime.Now;
             this.taiKhoan = taiKhoan;
-            LoadAllPhong();
-            
+            LoadLanDau();
+
+
         }
         #region Đặt phòng
         public void LoadAllPhong()
@@ -41,6 +42,14 @@ namespace HotelManagement.GUI
             SetAppear();
             phongs = PhongBUS.Instance.GetAllPhong();
             LoadPhong(phongs);
+        }
+        public void LoadLanDau()
+        {
+            SetAppear();
+            this.ctDatePicker1.Value = DateTime.Now;
+            phongs = PhongBUS.Instance.GetAllPhong();
+            LoadPhong(phongs);
+
         }
 
         private void LoadPhong(List<Phong> phongs)
