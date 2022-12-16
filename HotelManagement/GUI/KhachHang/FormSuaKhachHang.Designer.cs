@@ -116,7 +116,7 @@
             this.CTButtonThoat.Location = new System.Drawing.Point(349, 563);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 0;
+            this.CTButtonThoat.TabIndex = 7;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -211,7 +211,7 @@
             // 
             this.comboBoxGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.comboBoxGioiTinh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxGioiTinh.ForeColor = System.Drawing.Color.DimGray;
+            this.comboBoxGioiTinh.ForeColor = System.Drawing.Color.Black;
             this.comboBoxGioiTinh.FormattingEnabled = true;
             this.comboBoxGioiTinh.Items.AddRange(new object[] {
             "  Nam",
@@ -308,6 +308,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaKhachHang";
             this.Activated += new System.EventHandler(this.FormSuaKhachHang_Activated);
+            this.Load += new System.EventHandler(this.FormSuaKhachHang_Load);
             this.SizeChanged += new System.EventHandler(this.FormSuaKhachHang_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormSuaKhachHang_Paint);
             this.Resize += new System.EventHandler(this.FormSuaKhachHang_Resize);

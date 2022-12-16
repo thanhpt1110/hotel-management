@@ -21,10 +21,11 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-        CTDP ctdp;
-        Phong phong;
-        TaiKhoan taiKhoan;
-        string TTPhong = "";
+        private CTDP ctdp;
+        private Phong phong;
+        private TaiKhoan taiKhoan;
+        private string TTPhong = "";
+        private FormMain formMain;
         //Constructor
         public FormThongTinPhong()
         {
@@ -33,7 +34,7 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
-        public FormThongTinPhong(string Case, CTDP cTDP = null, Phong phong = null,TaiKhoan taiKhoan = null)
+        public FormThongTinPhong(FormMain formMain, string Case, CTDP cTDP = null, Phong phong = null,TaiKhoan taiKhoan = null)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -42,6 +43,7 @@ namespace HotelManagement.GUI
             this.TTPhong = Case;
             this.phong = phong;
             this.taiKhoan = taiKhoan;
+            this.formMain = formMain;
             InitializeComponent();
             LoadPage();
 
@@ -365,11 +367,23 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemDichVu_Click(object sender, EventArgs e)
         {
-            using(FormThemDichVuVaoPhong frm = new FormThemDichVuVaoPhong(ctdp))
+            FormBackground formBackground = new FormBackground(formMain);
+            try
             {
-                frm.ShowDialog();
-                this.LoadPage();
-            }    
+                using (FormThemDichVuVaoPhong frm = new FormThemDichVuVaoPhong(ctdp))
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    frm.Owner = formBackground;
+                    frm.ShowDialog();
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); } 
         }
 
         private void CTButtonNhanPhong_Click(object sender, EventArgs e)

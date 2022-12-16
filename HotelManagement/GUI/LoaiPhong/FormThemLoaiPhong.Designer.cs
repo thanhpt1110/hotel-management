@@ -92,7 +92,7 @@
             this.CTButtonThoat.Location = new System.Drawing.Point(345, 480);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 0;
+            this.CTButtonThoat.TabIndex = 10;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -113,7 +113,7 @@
             this.CTButtonCapNhat.Location = new System.Drawing.Point(180, 480);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
-            this.CTButtonCapNhat.TabIndex = 6;
+            this.CTButtonCapNhat.TabIndex = 9;
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
@@ -205,7 +205,7 @@
             this.ctTextBox1.PlaceholderText = "Số người tối đa";
             this.ctTextBox1.ReadOnly = false;
             this.ctTextBox1.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBox1.TabIndex = 4;
+            this.ctTextBox1.TabIndex = 6;
             this.ctTextBox1.Texts = "";
             this.ctTextBox1.UnderlineedStyle = true;
             // 
@@ -228,7 +228,7 @@
             this.CTTextBoxSoGiuong.PlaceholderText = "Số giường";
             this.CTTextBoxSoGiuong.ReadOnly = false;
             this.CTTextBoxSoGiuong.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxSoGiuong.TabIndex = 4;
+            this.CTTextBoxSoGiuong.TabIndex = 5;
             this.CTTextBoxSoGiuong.Texts = "";
             this.CTTextBoxSoGiuong.UnderlineedStyle = true;
             // 
@@ -274,7 +274,7 @@
             this.ctTextBox2.PlaceholderText = "Giá giờ";
             this.ctTextBox2.ReadOnly = false;
             this.ctTextBox2.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBox2.TabIndex = 4;
+            this.ctTextBox2.TabIndex = 8;
             this.ctTextBox2.Texts = "";
             this.ctTextBox2.UnderlineedStyle = true;
             // 
@@ -297,7 +297,7 @@
             this.ctTextBox4.PlaceholderText = "Giá ngày";
             this.ctTextBox4.ReadOnly = false;
             this.ctTextBox4.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBox4.TabIndex = 4;
+            this.ctTextBox4.TabIndex = 7;
             this.ctTextBox4.Texts = "";
             this.ctTextBox4.UnderlineedStyle = true;
             // 
@@ -314,6 +314,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormThemLoaiPhong";
             this.Activated += new System.EventHandler(this.FormThemLoaiPhong_Activated);
+            this.Load += new System.EventHandler(this.FormThemLoaiPhong_Load);
             this.SizeChanged += new System.EventHandler(this.FormThemLoaiPhong_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormThemLoaiPhong_Paint);
             this.Resize += new System.EventHandler(this.FormThemLoaiPhong_Resize);

@@ -127,6 +127,7 @@
             // CTRadioButtonTatCa
             // 
             this.CTRadioButtonTatCa.AutoSize = true;
+            this.CTRadioButtonTatCa.Checked = true;
             this.CTRadioButtonTatCa.CheckedColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.CTRadioButtonTatCa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonTatCa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,7 +155,6 @@
             this.CTRadioButtonDaDonDep.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonDaDonDep.Size = new System.Drawing.Size(118, 25);
             this.CTRadioButtonDaDonDep.TabIndex = 1;
-            this.CTRadioButtonDaDonDep.TabStop = true;
             this.CTRadioButtonDaDonDep.Text = "Đã dọn dẹp";
             this.CTRadioButtonDaDonDep.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonDaDonDep.UseVisualStyleBackColor = true;
@@ -172,7 +172,6 @@
             this.CTRadioButtonChuaDonDep.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonChuaDonDep.Size = new System.Drawing.Size(135, 25);
             this.CTRadioButtonChuaDonDep.TabIndex = 1;
-            this.CTRadioButtonChuaDonDep.TabStop = true;
             this.CTRadioButtonChuaDonDep.Text = "Chưa dọn dẹp";
             this.CTRadioButtonChuaDonDep.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonChuaDonDep.UseVisualStyleBackColor = true;
@@ -204,6 +203,7 @@
             // CTRadioButtonTatCaLoaiPhong
             // 
             this.CTRadioButtonTatCaLoaiPhong.AutoSize = true;
+            this.CTRadioButtonTatCaLoaiPhong.Checked = true;
             this.CTRadioButtonTatCaLoaiPhong.CheckedColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.CTRadioButtonTatCaLoaiPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonTatCaLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,7 +231,6 @@
             this.CTRadioButtonPhongVIPDoi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonPhongVIPDoi.Size = new System.Drawing.Size(136, 25);
             this.CTRadioButtonPhongVIPDoi.TabIndex = 1;
-            this.CTRadioButtonPhongVIPDoi.TabStop = true;
             this.CTRadioButtonPhongVIPDoi.Text = "Phòng VIP đôi";
             this.CTRadioButtonPhongVIPDoi.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongVIPDoi.UseVisualStyleBackColor = true;
@@ -249,7 +248,6 @@
             this.CTRadioButtonPhongThuongDon.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonPhongThuongDon.Size = new System.Drawing.Size(170, 25);
             this.CTRadioButtonPhongThuongDon.TabIndex = 1;
-            this.CTRadioButtonPhongThuongDon.TabStop = true;
             this.CTRadioButtonPhongThuongDon.Text = "Phòng thường đơn";
             this.CTRadioButtonPhongThuongDon.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongThuongDon.UseVisualStyleBackColor = true;
@@ -267,7 +265,6 @@
             this.CTRadioButtonPhongVIPDon.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonPhongVIPDon.Size = new System.Drawing.Size(142, 25);
             this.CTRadioButtonPhongVIPDon.TabIndex = 1;
-            this.CTRadioButtonPhongVIPDon.TabStop = true;
             this.CTRadioButtonPhongVIPDon.Text = "Phòng VIP đơn";
             this.CTRadioButtonPhongVIPDon.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongVIPDon.UseVisualStyleBackColor = true;
@@ -285,7 +282,6 @@
             this.CTRadioButtonPhongThuongDoi.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonPhongThuongDoi.Size = new System.Drawing.Size(164, 25);
             this.CTRadioButtonPhongThuongDoi.TabIndex = 1;
-            this.CTRadioButtonPhongThuongDoi.TabStop = true;
             this.CTRadioButtonPhongThuongDoi.Text = "Phòng thường đôi";
             this.CTRadioButtonPhongThuongDoi.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongThuongDoi.UseVisualStyleBackColor = true;
@@ -317,6 +313,7 @@
             // CTRadioButtonTatCaPhong
             // 
             this.CTRadioButtonTatCaPhong.AutoSize = true;
+            this.CTRadioButtonTatCaPhong.Checked = true;
             this.CTRadioButtonTatCaPhong.CheckedColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.CTRadioButtonTatCaPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CTRadioButtonTatCaPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -344,7 +341,6 @@
             this.CTRadioButtonPhongDangSuaChua.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonPhongDangSuaChua.Size = new System.Drawing.Size(187, 25);
             this.CTRadioButtonPhongDangSuaChua.TabIndex = 1;
-            this.CTRadioButtonPhongDangSuaChua.TabStop = true;
             this.CTRadioButtonPhongDangSuaChua.Text = "Phòng đang sửa chữa";
             this.CTRadioButtonPhongDangSuaChua.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongDangSuaChua.UseVisualStyleBackColor = true;
@@ -362,7 +358,6 @@
             this.CTRadioButtonPhongTrong.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonPhongTrong.Size = new System.Drawing.Size(125, 25);
             this.CTRadioButtonPhongTrong.TabIndex = 1;
-            this.CTRadioButtonPhongTrong.TabStop = true;
             this.CTRadioButtonPhongTrong.Text = "Phòng trống";
             this.CTRadioButtonPhongTrong.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongTrong.UseVisualStyleBackColor = true;
@@ -380,7 +375,6 @@
             this.CTRadioButtonPhongDangThue.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonPhongDangThue.Size = new System.Drawing.Size(157, 25);
             this.CTRadioButtonPhongDangThue.TabIndex = 1;
-            this.CTRadioButtonPhongDangThue.TabStop = true;
             this.CTRadioButtonPhongDangThue.Text = "Phòng đang thuê";
             this.CTRadioButtonPhongDangThue.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongDangThue.UseVisualStyleBackColor = true;
@@ -398,7 +392,6 @@
             this.CTRadioButtonPhongDaDat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.CTRadioButtonPhongDaDat.Size = new System.Drawing.Size(130, 25);
             this.CTRadioButtonPhongDaDat.TabIndex = 1;
-            this.CTRadioButtonPhongDaDat.TabStop = true;
             this.CTRadioButtonPhongDaDat.Text = "Phòng đã đặt";
             this.CTRadioButtonPhongDaDat.UnCheckedColor = System.Drawing.Color.Gray;
             this.CTRadioButtonPhongDaDat.UseVisualStyleBackColor = true;

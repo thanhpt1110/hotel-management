@@ -74,7 +74,7 @@ namespace HotelManagement.GUI
                 {
                     if (ctdp.TrangThai == "Đang thuê")
                     {
-                        CTRoomDangThue room = new CTRoomDangThue(ctdp, this,this.formMain);
+                        CTRoomDangThue room = new CTRoomDangThue(ctdp, this, this.formMain);
 
                         room.setThoiGian(CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " Ngày");
                         if (phong.TTDD == "Đã dọn dẹp")

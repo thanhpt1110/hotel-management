@@ -32,20 +32,13 @@ namespace HotelManagement.GUI
             InitializeComponent();
         }
 
-        public FormDanhSachChiTietTienNghi(FormMain formMain)
-        {
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.Padding = new Padding(borderSize);
-            this.formMain = formMain;
-            InitializeComponent();
-        }
-        public FormDanhSachChiTietTienNghi(string MaLPH)
+        public FormDanhSachChiTietTienNghi(string MaLPH, FormMain formMain)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             this.MaLPH = MaLPH;
+            this.formMain = formMain;
             InitializeComponent();
         }
         //Fields
@@ -226,10 +219,10 @@ namespace HotelManagement.GUI
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
             //Test 
-            grid.Rows.Add(new object[] { "Ti vi", "1", "Sử dụng tốt", edit, delete });
+            /*grid.Rows.Add(new object[] { "Ti vi", "1", "Sử dụng tốt", edit, delete });
             grid.Rows.Add(new object[] { "Tủ lạnh", "1", "Đang sửa", edit, delete });
             grid.Rows.Add(new object[] { "Điều hòa", "2", "Sử dụng tốt", edit, delete });
-            grid.Rows.Add(new object[] { "Máy sấy", "3", "Đang sửa", edit, delete });
+            grid.Rows.Add(new object[] { "Máy sấy", "3", "Đang sửa", edit, delete });*/
             LoadAllForm();
         }
 
@@ -238,9 +231,9 @@ namespace HotelManagement.GUI
             List<CTTN> cTTNs = CTTN_BUS.Instance.FindCTTN(this.MaLPH);
             LoadForm(cTTNs);
         }
+
         private void LoadForm(List<CTTN> cTTNs)
         {
-
             grid.Rows.Clear();
             foreach(CTTN cTTN in cTTNs)
             {

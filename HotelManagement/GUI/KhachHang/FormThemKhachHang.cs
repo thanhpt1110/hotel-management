@@ -269,7 +269,7 @@ namespace HotelManagement.GUI
 
         private void FormThemKhachHang_Load(object sender, EventArgs e)
         {
-            
+            this.ActiveControl = labelThemKhachHang;
         }
 
         private void ctTextBoxCMND__TextChanged(object sender, EventArgs e)

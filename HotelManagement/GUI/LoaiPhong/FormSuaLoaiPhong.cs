@@ -198,5 +198,10 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+
+        private void FormSuaLoaiPhong_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = LabelSuaLoaiPhong;
+        }
     }
 }

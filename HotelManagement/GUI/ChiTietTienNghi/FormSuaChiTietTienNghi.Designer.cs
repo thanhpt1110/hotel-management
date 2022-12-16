@@ -76,7 +76,7 @@
             this.CTButtonThoat.Location = new System.Drawing.Point(322, 416);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 0;
+            this.CTButtonThoat.TabIndex = 11;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -97,7 +97,7 @@
             this.CTButtonCapNhat.Location = new System.Drawing.Point(160, 416);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
-            this.CTButtonCapNhat.TabIndex = 6;
+            this.CTButtonCapNhat.TabIndex = 10;
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
@@ -165,7 +165,7 @@
             this.CTTextBoxSoLuong.PlaceholderText = "Số lượng";
             this.CTTextBoxSoLuong.ReadOnly = false;
             this.CTTextBoxSoLuong.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxSoLuong.TabIndex = 10;
+            this.CTTextBoxSoLuong.TabIndex = 8;
             this.CTTextBoxSoLuong.Texts = "";
             this.CTTextBoxSoLuong.UnderlineedStyle = true;
             // 
@@ -188,7 +188,7 @@
             this.ctTextBoxGhiChu.PlaceholderText = "Mô tả";
             this.ctTextBoxGhiChu.ReadOnly = false;
             this.ctTextBoxGhiChu.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBoxGhiChu.TabIndex = 11;
+            this.ctTextBoxGhiChu.TabIndex = 9;
             this.ctTextBoxGhiChu.Texts = "";
             this.ctTextBoxGhiChu.UnderlineedStyle = true;
             // 
@@ -239,6 +239,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormSuaChiTietTienNghi";
             this.Activated += new System.EventHandler(this.FormSuaChiTietTienNghi_Activated);
+            this.Load += new System.EventHandler(this.FormSuaChiTietTienNghi_Load);
             this.SizeChanged += new System.EventHandler(this.FormSuaChiTietTienNghi_SizeChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormSuaChiTietTienNghi_Paint);
             this.Resize += new System.EventHandler(this.FormSuaChiTietTienNghi_Resize);

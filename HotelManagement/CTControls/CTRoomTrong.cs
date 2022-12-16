@@ -272,11 +272,24 @@ namespace HotelManagement.CTControls
 
         private void CTRoomPhongTrong_Click(object sender, EventArgs e)
         {
-            using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(this.LabelTrangThaiLon.Text, null,phong))
+            FormBackground formBackground = new FormBackground(formMain);
+            try
             {
-                formThongTinPhong.ShowDialog();
-                this.formSoDoPhong.LoadLanDau();
+                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, null, phong))
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formThongTinPhong.Owner = formBackground;
+                    formThongTinPhong.ShowDialog();
+                    this.formSoDoPhong.LoadLanDau();
+                    formBackground.Dispose();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "THÔNG BÁO");
+            }
+            finally { formBackground.Dispose(); }
         }
 
         private void CTRoomTrong_MouseMove(object sender, MouseEventArgs e)
