@@ -37,7 +37,7 @@ namespace HotelManagement.GUI
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
-                using (FormThemDichVu formThemDichVu = new FormThemDichVu())
+                using (FormThemDichVu formThemDichVu = new FormThemDichVu(this))
                 {
                     formBackground.Owner = formMain;
                     formBackground.Show();

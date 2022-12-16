@@ -31,7 +31,9 @@ namespace HotelManagement.DAO
                 cTTN.DaXoa = false;
                 db.CTTNs.AddOrUpdate(cTTN);
                 db.SaveChanges();
-            
+                instance = null;
+
+
         }
         public void RemoveCTTN(CTTN cTTN)
         {
@@ -39,7 +41,9 @@ namespace HotelManagement.DAO
                 cTTN.DaXoa = true;
                 db.CTTNs.AddOrUpdate(cTTN);
                 db.SaveChanges();
-            
+                instance = null;
+
+
         }
         public List<CTTN> FindCTTN(string MaLPH)
         {

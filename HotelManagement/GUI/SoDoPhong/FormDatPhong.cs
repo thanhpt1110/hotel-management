@@ -268,22 +268,31 @@ namespace HotelManagement.GUI
             int x = e.ColumnIndex, y = e.RowIndex;
             if (y >= 0 && x == 2)
             {
-                CTDP cTDP = new CTDP();
-                cTDP.MaCTDP = CTDP_BUS.Instance.getNextCTDPwithList(this.listPhongDaDat);
-                cTDP.MaPT = this.phieuThue.MaPT;
-                cTDP.DatCoc = 0;
-                cTDP.CheckIn = CTDatePickerNgayBD.Value;
-                cTDP.CheckOut = CTDatePickerNgayKT.Value;
-                cTDP.MaPH = gridPhongTrong.Rows[y].Cells[0].Value.ToString();
-                cTDP.Phong = PhongBUS.Instance.FindePhong(cTDP.MaPH);
-                cTDP.SoNguoi = 0;
-                cTDP.DonGia = cTDP.Phong.LoaiPhong.GiaNgay;
-                cTDP.TrangThai = "Đã đặt";
-                listPhongDaDat.Add(cTDP);
-                LoadGridPhongDat();
-                LoadgridPhongTrong();
+                if (CTDatePickerNgayBD.Value < CTDatePickerNgayKT.Value)
+                {
+                    CTDP cTDP = new CTDP();
+                    cTDP.MaCTDP = CTDP_BUS.Instance.getNextCTDPwithList(this.listPhongDaDat);
+                    cTDP.MaPT = this.phieuThue.MaPT;
+                    cTDP.DatCoc = 0;
+                    cTDP.CheckIn = CTDatePickerNgayBD.Value;
+                    cTDP.CheckOut = CTDatePickerNgayKT.Value;
+                    cTDP.MaPH = gridPhongTrong.Rows[y].Cells[0].Value.ToString();
+                    cTDP.Phong = PhongBUS.Instance.FindePhong(cTDP.MaPH);
+                    cTDP.SoNguoi = 0;
+                    cTDP.DonGia = cTDP.Phong.LoaiPhong.GiaNgay;
+                    cTDP.TrangThai = "Đã đặt";
+                    listPhongDaDat.Add(cTDP);
+                    LoadGridPhongDat();
+                    LoadgridPhongTrong();
+                }
+                else
+                {
+                    CTMessageBox.Show("Thời gian bắt đầu không được sau thời gian kết thúc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }    
             }
         }
+        #region Remove Room
+
         private void SetMaCTDP(List<CTDP> list)
         {
             int i = 1;
@@ -329,7 +338,8 @@ namespace HotelManagement.GUI
                 }
             }         
         }
-
+        #endregion
+        #region UI Form
         private void gridPhongTrong_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridView grid = gridPhongTrong;
@@ -373,19 +383,30 @@ namespace HotelManagement.GUI
             DataGridView grid = gridPhongDaChon;
             grid.Cursor = Cursors.Default;
         }
-
+        #endregion
         private void CTDatePickerNgayBD_ValueChanged(object sender, EventArgs e)
         {
+            CTDatePicker cTDatePicker = sender as CTDatePicker;
+            if(cTDatePicker.Value<DateTime.Now)
+            {
+                cTDatePicker.Value = DateTime.Now;
+                return;
+            }    
             LoadgridPhongTrong();
         }
 
         private void CTDatePickerNgayKT_ValueChanged(object sender, EventArgs e)
         {
+
             LoadgridPhongTrong();
         }
 
         private void CTButtonNhanPhong_Click(object sender, EventArgs e)
         {
+            if(DateTime.Now.Hour  == CTDatePickerNgayBD.Value.Hour)
+            {
+
+            }    
         }
 
         private void CTButtonDatTruoc_Click(object sender, EventArgs e)

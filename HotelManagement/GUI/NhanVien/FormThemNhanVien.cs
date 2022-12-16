@@ -257,21 +257,25 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 NhanVien nhanVien = new NhanVien();
-                foreach (NhanVien nhanVien1 in NhanVienBUS.Instance.GetAllNhanViens())
+                List<NhanVien> nhanViens = NhanVienBUS.Instance.GetNhanViens();
+                if (nhanViens.Where(p => p.CCCD == this.CTTextBoxNhapCCCD.Texts).SingleOrDefault() != null)
                 {
-                    if (nhanVien1.CCCD == this.CTTextBoxNhapCCCD.Texts)
-                    {
-                        CTMessageBox.Show("Số căn cước công dân trùng với nhân viên khác", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else if (nhanVien1.SDT == this.ctTextBoxSDT.Texts)
-                    {
-                        CTMessageBox.Show("Số điện thoại này trùng với nhân viên khác", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    CTMessageBox.Show("Trùng mã căn cước công dân với nhân viên khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (nhanViens.Where(p => p.SDT == this.ctTextBoxSDT.Texts).SingleOrDefault() != null)
+                {
+                    CTMessageBox.Show("Trùng số điện thoại với nhân viên khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (nhanViens.Where(p => p.Email == this.ctTextBoxEmail.Texts).SingleOrDefault() != null)
+                {
+                    CTMessageBox.Show("Trùng email với nhân viên khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 nhanVien.MaNV = NhanVienBUS.Instance.GetMaNVNext();
                 nhanVien.ChucVu = this.CTTextBoxNhapChucVu.Texts;

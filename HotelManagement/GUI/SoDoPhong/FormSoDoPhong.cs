@@ -46,7 +46,7 @@ namespace HotelManagement.GUI
         public void LoadLanDau()
         {
             SetAppear();
-            this.ctDatePicker1.Value = DateTime.Now;
+            //this.ctDatePicker1.Value = DateTime.Now;
             phongs = PhongBUS.Instance.GetAllPhong();
             LoadPhong(phongs);
 
