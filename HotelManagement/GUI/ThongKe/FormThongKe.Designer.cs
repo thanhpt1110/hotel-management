@@ -52,11 +52,6 @@
             this.Button7Ngay = new System.Windows.Forms.Button();
             this.Button30Ngay = new System.Windows.Forms.Button();
             this.Button6Thang = new System.Windows.Forms.Button();
-            this.dtpNgayKT = new HotelManagement.CTControls.CTDatePicker();
-            this.dtpNgayBD = new HotelManagement.CTControls.CTDatePicker();
-            this.ctPanel3 = new CTPanel.CTPanel();
-            this.ctPanel2 = new CTPanel.CTPanel();
-            this.ctPanel1 = new CTPanel.CTPanel();
             this.LabelDoanhThuThuePhong = new System.Windows.Forms.Label();
             this.DoanhThuThue = new System.Windows.Forms.Label();
             this.DoanhThuDichVu = new System.Windows.Forms.Label();
@@ -68,9 +63,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chartSoPhongDat = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartDichVu = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.ctPanel4 = new CTPanel.CTPanel();
-            this.ctPanel5 = new CTPanel.CTPanel();
-            this.ctPanel6 = new CTPanel.CTPanel();
             this.DoanhThuDichVuCaoNhat = new System.Windows.Forms.Label();
             this.SoLanDatLoaiPhongNhieuNhat = new System.Windows.Forms.Label();
             this.TenDichVuDoanhThuCaoNhat = new System.Windows.Forms.Label();
@@ -83,10 +75,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblThangDoanhThuCaoNhat = new System.Windows.Forms.Label();
+            this.ButtonOK = new System.Windows.Forms.Button();
             this.ctPanel9 = new CTPanel.CTPanel();
             this.ctPanel8 = new CTPanel.CTPanel();
             this.ctPanel7 = new CTPanel.CTPanel();
-            this.ButtonOK = new System.Windows.Forms.Button();
+            this.dtpNgayKT = new HotelManagement.CTControls.CTDatePicker();
+            this.dtpNgayBD = new HotelManagement.CTControls.CTDatePicker();
+            this.ctPanel3 = new CTPanel.CTPanel();
+            this.ctPanel2 = new CTPanel.CTPanel();
+            this.ctPanel1 = new CTPanel.CTPanel();
+            this.ctPanel4 = new CTPanel.CTPanel();
+            this.ctPanel5 = new CTPanel.CTPanel();
+            this.ctPanel6 = new CTPanel.CTPanel();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThuThue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -271,80 +271,6 @@
             this.Button6Thang.UseVisualStyleBackColor = true;
             this.Button6Thang.Click += new System.EventHandler(this.Button6Thang_Click);
             // 
-            // dtpNgayKT
-            // 
-            this.dtpNgayKT.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpNgayKT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(119)))), ((int)(((byte)(148)))));
-            this.dtpNgayKT.BorderSize = 2;
-            this.dtpNgayKT.CustomFormat = "MMM dd, yyyy";
-            this.dtpNgayKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayKT.Location = new System.Drawing.Point(331, 14);
-            this.dtpNgayKT.MinimumSize = new System.Drawing.Size(0, 35);
-            this.dtpNgayKT.Name = "dtpNgayKT";
-            this.dtpNgayKT.Size = new System.Drawing.Size(135, 35);
-            this.dtpNgayKT.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.dtpNgayKT.TabIndex = 3;
-            this.dtpNgayKT.TextColor = System.Drawing.Color.Black;
-            // 
-            // dtpNgayBD
-            // 
-            this.dtpNgayBD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpNgayBD.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(119)))), ((int)(((byte)(148)))));
-            this.dtpNgayBD.BorderSize = 2;
-            this.dtpNgayBD.CustomFormat = "MMM dd, yyyy";
-            this.dtpNgayBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayBD.Location = new System.Drawing.Point(166, 14);
-            this.dtpNgayBD.MinimumSize = new System.Drawing.Size(0, 35);
-            this.dtpNgayBD.Name = "dtpNgayBD";
-            this.dtpNgayBD.Size = new System.Drawing.Size(135, 35);
-            this.dtpNgayBD.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.dtpNgayBD.TabIndex = 3;
-            this.dtpNgayBD.TextColor = System.Drawing.Color.Black;
-            // 
-            // ctPanel3
-            // 
-            this.ctPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ctPanel3.BorderRadius = 15;
-            this.ctPanel3.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel3.GradientAngle = 90F;
-            this.ctPanel3.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(201)))), ((int)(((byte)(103)))));
-            this.ctPanel3.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(201)))), ((int)(((byte)(103)))));
-            this.ctPanel3.Location = new System.Drawing.Point(841, 71);
-            this.ctPanel3.Name = "ctPanel3";
-            this.ctPanel3.Size = new System.Drawing.Size(396, 92);
-            this.ctPanel3.TabIndex = 1;
-            // 
-            // ctPanel2
-            // 
-            this.ctPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ctPanel2.BorderRadius = 15;
-            this.ctPanel2.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel2.GradientAngle = 90F;
-            this.ctPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(167)))), ((int)(((byte)(31)))));
-            this.ctPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(167)))), ((int)(((byte)(31)))));
-            this.ctPanel2.Location = new System.Drawing.Point(418, 71);
-            this.ctPanel2.Name = "ctPanel2";
-            this.ctPanel2.Size = new System.Drawing.Size(407, 92);
-            this.ctPanel2.TabIndex = 1;
-            // 
-            // ctPanel1
-            // 
-            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ctPanel1.BorderRadius = 15;
-            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel1.GradientAngle = 90F;
-            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(126)))), ((int)(((byte)(123)))));
-            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(126)))), ((int)(((byte)(123)))));
-            this.ctPanel1.Location = new System.Drawing.Point(19, 71);
-            this.ctPanel1.Name = "ctPanel1";
-            this.ctPanel1.Size = new System.Drawing.Size(384, 92);
-            this.ctPanel1.TabIndex = 1;
-            // 
             // LabelDoanhThuThuePhong
             // 
             this.LabelDoanhThuThuePhong.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -514,48 +440,6 @@
             title3.Text = "Các dịch vụ được sử dụng";
             this.chartDichVu.Titles.Add(title3);
             // 
-            // ctPanel4
-            // 
-            this.ctPanel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel4.BackColor = System.Drawing.Color.White;
-            this.ctPanel4.BorderRadius = 15;
-            this.ctPanel4.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel4.GradientAngle = 90F;
-            this.ctPanel4.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.ctPanel4.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.ctPanel4.Location = new System.Drawing.Point(563, 169);
-            this.ctPanel4.Name = "ctPanel4";
-            this.ctPanel4.Size = new System.Drawing.Size(674, 379);
-            this.ctPanel4.TabIndex = 19;
-            // 
-            // ctPanel5
-            // 
-            this.ctPanel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel5.BackColor = System.Drawing.Color.White;
-            this.ctPanel5.BorderRadius = 15;
-            this.ctPanel5.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel5.GradientAngle = 90F;
-            this.ctPanel5.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.ctPanel5.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.ctPanel5.Location = new System.Drawing.Point(562, 554);
-            this.ctPanel5.Name = "ctPanel5";
-            this.ctPanel5.Size = new System.Drawing.Size(675, 267);
-            this.ctPanel5.TabIndex = 20;
-            // 
-            // ctPanel6
-            // 
-            this.ctPanel6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel6.BackColor = System.Drawing.Color.White;
-            this.ctPanel6.BorderRadius = 15;
-            this.ctPanel6.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel6.GradientAngle = 90F;
-            this.ctPanel6.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.ctPanel6.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
-            this.ctPanel6.Location = new System.Drawing.Point(19, 474);
-            this.ctPanel6.Name = "ctPanel6";
-            this.ctPanel6.Size = new System.Drawing.Size(537, 347);
-            this.ctPanel6.TabIndex = 21;
-            // 
             // DoanhThuDichVuCaoNhat
             // 
             this.DoanhThuDichVuCaoNhat.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -586,7 +470,7 @@
             this.TenDichVuDoanhThuCaoNhat.AutoSize = true;
             this.TenDichVuDoanhThuCaoNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.TenDichVuDoanhThuCaoNhat.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenDichVuDoanhThuCaoNhat.Location = new System.Drawing.Point(159, 416);
+            this.TenDichVuDoanhThuCaoNhat.Location = new System.Drawing.Point(148, 416);
             this.TenDichVuDoanhThuCaoNhat.Name = "TenDichVuDoanhThuCaoNhat";
             this.TenDichVuDoanhThuCaoNhat.Size = new System.Drawing.Size(137, 32);
             this.TenDichVuDoanhThuCaoNhat.TabIndex = 59;
@@ -622,7 +506,7 @@
             this.TenLoaiPhongDoanhThuCaoNhat.AutoSize = true;
             this.TenLoaiPhongDoanhThuCaoNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.TenLoaiPhongDoanhThuCaoNhat.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenLoaiPhongDoanhThuCaoNhat.Location = new System.Drawing.Point(142, 207);
+            this.TenLoaiPhongDoanhThuCaoNhat.Location = new System.Drawing.Point(142, 208);
             this.TenLoaiPhongDoanhThuCaoNhat.Name = "TenLoaiPhongDoanhThuCaoNhat";
             this.TenLoaiPhongDoanhThuCaoNhat.Size = new System.Drawing.Size(174, 32);
             this.TenLoaiPhongDoanhThuCaoNhat.TabIndex = 61;
@@ -700,6 +584,22 @@
             this.lblThangDoanhThuCaoNhat.TabIndex = 55;
             this.lblThangDoanhThuCaoNhat.Text = "Loại phòng doanh thu cao nhất";
             // 
+            // ButtonOK
+            // 
+            this.ButtonOK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonOK.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(119)))), ((int)(((byte)(148)))));
+            this.ButtonOK.FlatAppearance.BorderSize = 2;
+            this.ButtonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonOK.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonOK.Location = new System.Drawing.Point(506, 14);
+            this.ButtonOK.Name = "ButtonOK";
+            this.ButtonOK.Size = new System.Drawing.Size(55, 35);
+            this.ButtonOK.TabIndex = 65;
+            this.ButtonOK.Text = "OK";
+            this.ButtonOK.UseVisualStyleBackColor = true;
+            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
+            // 
             // ctPanel9
             // 
             this.ctPanel9.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -742,21 +642,121 @@
             this.ctPanel7.Size = new System.Drawing.Size(537, 98);
             this.ctPanel7.TabIndex = 50;
             // 
-            // ButtonOK
+            // dtpNgayKT
             // 
-            this.ButtonOK.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonOK.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(119)))), ((int)(((byte)(148)))));
-            this.ButtonOK.FlatAppearance.BorderSize = 2;
-            this.ButtonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonOK.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonOK.Location = new System.Drawing.Point(506, 14);
-            this.ButtonOK.Name = "ButtonOK";
-            this.ButtonOK.Size = new System.Drawing.Size(55, 35);
-            this.ButtonOK.TabIndex = 65;
-            this.ButtonOK.Text = "OK";
-            this.ButtonOK.UseVisualStyleBackColor = true;
-            this.ButtonOK.Click += new System.EventHandler(this.ButtonOK_Click);
+            this.dtpNgayKT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpNgayKT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(119)))), ((int)(((byte)(148)))));
+            this.dtpNgayKT.BorderSize = 2;
+            this.dtpNgayKT.CustomFormat = "MMM dd, yyyy";
+            this.dtpNgayKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayKT.Location = new System.Drawing.Point(331, 14);
+            this.dtpNgayKT.MinimumSize = new System.Drawing.Size(0, 35);
+            this.dtpNgayKT.Name = "dtpNgayKT";
+            this.dtpNgayKT.Size = new System.Drawing.Size(135, 35);
+            this.dtpNgayKT.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.dtpNgayKT.TabIndex = 3;
+            this.dtpNgayKT.TextColor = System.Drawing.Color.Black;
+            // 
+            // dtpNgayBD
+            // 
+            this.dtpNgayBD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpNgayBD.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(119)))), ((int)(((byte)(148)))));
+            this.dtpNgayBD.BorderSize = 2;
+            this.dtpNgayBD.CustomFormat = "MMM dd, yyyy";
+            this.dtpNgayBD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBD.Location = new System.Drawing.Point(166, 14);
+            this.dtpNgayBD.MinimumSize = new System.Drawing.Size(0, 35);
+            this.dtpNgayBD.Name = "dtpNgayBD";
+            this.dtpNgayBD.Size = new System.Drawing.Size(135, 35);
+            this.dtpNgayBD.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.dtpNgayBD.TabIndex = 3;
+            this.dtpNgayBD.TextColor = System.Drawing.Color.Black;
+            // 
+            // ctPanel3
+            // 
+            this.ctPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ctPanel3.BorderRadius = 15;
+            this.ctPanel3.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel3.GradientAngle = 90F;
+            this.ctPanel3.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(201)))), ((int)(((byte)(103)))));
+            this.ctPanel3.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(201)))), ((int)(((byte)(103)))));
+            this.ctPanel3.Location = new System.Drawing.Point(841, 71);
+            this.ctPanel3.Name = "ctPanel3";
+            this.ctPanel3.Size = new System.Drawing.Size(396, 92);
+            this.ctPanel3.TabIndex = 1;
+            // 
+            // ctPanel2
+            // 
+            this.ctPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ctPanel2.BorderRadius = 15;
+            this.ctPanel2.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel2.GradientAngle = 90F;
+            this.ctPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(167)))), ((int)(((byte)(31)))));
+            this.ctPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(167)))), ((int)(((byte)(31)))));
+            this.ctPanel2.Location = new System.Drawing.Point(418, 71);
+            this.ctPanel2.Name = "ctPanel2";
+            this.ctPanel2.Size = new System.Drawing.Size(407, 92);
+            this.ctPanel2.TabIndex = 1;
+            // 
+            // ctPanel1
+            // 
+            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ctPanel1.BorderRadius = 15;
+            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel1.GradientAngle = 90F;
+            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(126)))), ((int)(((byte)(123)))));
+            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(126)))), ((int)(((byte)(123)))));
+            this.ctPanel1.Location = new System.Drawing.Point(19, 71);
+            this.ctPanel1.Name = "ctPanel1";
+            this.ctPanel1.Size = new System.Drawing.Size(384, 92);
+            this.ctPanel1.TabIndex = 1;
+            // 
+            // ctPanel4
+            // 
+            this.ctPanel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel4.BackColor = System.Drawing.Color.White;
+            this.ctPanel4.BorderRadius = 15;
+            this.ctPanel4.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel4.GradientAngle = 90F;
+            this.ctPanel4.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.ctPanel4.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.ctPanel4.Location = new System.Drawing.Point(563, 169);
+            this.ctPanel4.Name = "ctPanel4";
+            this.ctPanel4.Size = new System.Drawing.Size(674, 379);
+            this.ctPanel4.TabIndex = 19;
+            // 
+            // ctPanel5
+            // 
+            this.ctPanel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel5.BackColor = System.Drawing.Color.White;
+            this.ctPanel5.BorderRadius = 15;
+            this.ctPanel5.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel5.GradientAngle = 90F;
+            this.ctPanel5.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.ctPanel5.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.ctPanel5.Location = new System.Drawing.Point(562, 554);
+            this.ctPanel5.Name = "ctPanel5";
+            this.ctPanel5.Size = new System.Drawing.Size(675, 267);
+            this.ctPanel5.TabIndex = 20;
+            // 
+            // ctPanel6
+            // 
+            this.ctPanel6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel6.BackColor = System.Drawing.Color.White;
+            this.ctPanel6.BorderRadius = 15;
+            this.ctPanel6.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel6.GradientAngle = 90F;
+            this.ctPanel6.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.ctPanel6.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.ctPanel6.Location = new System.Drawing.Point(19, 474);
+            this.ctPanel6.Name = "ctPanel6";
+            this.ctPanel6.Size = new System.Drawing.Size(537, 347);
+            this.ctPanel6.TabIndex = 21;
             // 
             // FormThongKe
             // 

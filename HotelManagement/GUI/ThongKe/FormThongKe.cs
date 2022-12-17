@@ -60,8 +60,8 @@ namespace HotelManagement.GUI.ThongKe
             ButtonHomNay.BackColor = Color.FromArgb(30, 119, 148);
             ButtonHomNay.ForeColor = Color.White;
             ButtonOK.Enabled = false;
-            dtpNgayBD.Value = DateTime.Now;
-            dtpNgayKT.Value = DateTime.Now;
+            dtpNgayBD.Value = DateTime.Now.Date;
+            dtpNgayKT.Value = DateTime.Now.Date;
             LoadData();
         }
 
