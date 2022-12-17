@@ -380,11 +380,15 @@ namespace HotelManagement.GUI
                     formBackground.Dispose();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally { formBackground.Dispose(); } 
+            finally 
+            {
+                formBackground.Dispose(); 
+            } 
         }
 
         private void CTButtonNhanPhong_Click(object sender, EventArgs e)
@@ -405,27 +409,59 @@ namespace HotelManagement.GUI
 
         private void CTButtonThanhToan_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = CTMessageBox.Show("Bạn có muốn thanh toán phòng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn thanh toán phòng này không?", "Thông báo",
+                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogresult == DialogResult.Yes)
             {
                 HoaDon hd = HoaDonBUS.Instance.GetHoaDons().Where(p => p.MaCTDP == ctdp.MaCTDP).SingleOrDefault();
-                hd.TriGia = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
-                foreach(CTDV cTDV in CTDV_BUS.Instance.FindCTDV(hd.MaHD))
+                try
                 {
-                    hd.TriGia += cTDV.ThanhTien;
-                }    
-                ctdp.TrangThai = "Đã xong";
-                hd.TrangThai = "Đã thanh toán";
-                hd.NgHD = DateTime.Now;
-                HoaDonBUS.Instance.ThanhToanHD(hd);
-                CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
-                FormHoaDon formHoaDon = new FormHoaDon(hd);
-                formHoaDon.ShowDialog();
-                
-                this.phong = ctdp.Phong;
-                this.phong.TTDD = "Chưa dọn dẹp";
-                this.LoadPhongTrong();
-
+                    hd.TriGia = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
+                    foreach(CTDV cTDV in CTDV_BUS.Instance.FindCTDV(hd.MaHD))
+                    {
+                        hd.TriGia += cTDV.ThanhTien;
+                    }    
+                    ctdp.TrangThai = "Đã xong";
+                    hd.TrangThai = "Đã thanh toán";
+                    hd.NgHD = DateTime.Now;
+                    HoaDonBUS.Instance.ThanhToanHD(hd);
+                    CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
+                }
+                catch (Exception)
+                {
+                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
+                    {
+                        using (FormHoaDon formHoaDon = new FormHoaDon(hd))
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formHoaDon.Owner = formBackground;
+                            formHoaDon.ShowDialog();
+                            formBackground.Dispose();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        formBackground.Dispose();
+                        CTMessageBox.Show("Thanh toán thành công.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.phong = ctdp.Phong;
+                        this.phong.TTDD = "Chưa dọn dẹp";
+                        this.LoadPhongTrong();
+                        this.Close();
+                    }
+                }
             }
         }
     }

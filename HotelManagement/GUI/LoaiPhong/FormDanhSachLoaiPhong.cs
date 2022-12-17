@@ -113,9 +113,10 @@ namespace HotelManagement.GUI
                     CTMessageBox.Show(mess, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,7 +131,9 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormDanhSachChiTietTienNghi formDanhSachChiTietTienNghi = new FormDanhSachChiTietTienNghi(grid.Rows[y].Cells[1].Value.ToString(), formMain))
+                        string MaLP = grid.Rows[y].Cells[1].Value.ToString();
+                        string TenLP = grid.Rows[y].Cells[2].Value.ToString();
+                        using (FormDanhSachChiTietTienNghi formDanhSachChiTietTienNghi = new FormDanhSachChiTietTienNghi(MaLP, TenLP, formMain))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();
@@ -140,9 +143,10 @@ namespace HotelManagement.GUI
                             formBackground.Dispose();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally { formBackground.Dispose(); }
                 }
@@ -161,11 +165,16 @@ namespace HotelManagement.GUI
                             formBackground.Dispose();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    finally { formBackground.Dispose(); }
+                    finally 
+                    {
+                        LoadAllDataGrid();
+                        formBackground.Dispose(); 
+                    }
                 }
             }
         }

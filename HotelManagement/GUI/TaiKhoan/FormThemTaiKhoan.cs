@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.CTControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -203,6 +204,35 @@ namespace HotelManagement.GUI
         private void FormThemTaiKhoan_Load(object sender, EventArgs e)
         {
             this.ActiveControl = LabelThemTaiKhoan;
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            string MaNV = ctTextBoxMaNV.Texts;
+            string TenTK = CTTextBoxNhapTenTaiKhoan.Texts;
+            string MK = CTTextBoxNhapMatKhau.Texts;
+            string CapDoQuyen = comboBox1.Text;
+            if (MaNV == "" || TenTK == "" || MK == "" || CapDoQuyen == "  Cấp độ quyền")
+            {
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin tài khoản.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                // Function here
+            }
+            catch (Exception)
+            {
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
     }
 }

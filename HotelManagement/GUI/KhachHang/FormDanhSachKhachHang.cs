@@ -49,9 +49,10 @@ namespace HotelManagement.GUI
                     formBackground.Dispose();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally { formBackground.Dispose(); }
         }
@@ -72,9 +73,10 @@ namespace HotelManagement.GUI
                 this.khachHangs = KhachHangBUS.Instance.GetKhachHangs();
                 LoadGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Load danh sách khách hàng không thành công", "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }    
         private void LoadGrid()
@@ -92,9 +94,10 @@ namespace HotelManagement.GUI
                 khachHangs = KhachHangBUS.Instance.FindKhachHangWithName(this.CTTextBoxTimKhachHangTheoTen.Texts);
                 LoadGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }    
 
@@ -132,12 +135,13 @@ namespace HotelManagement.GUI
                 else
                 {
                     string mess = "Chưa có dữ liệu trong bảng!";
-                    CTMessageBox.Show(mess, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CTMessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -149,7 +153,6 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 7)
                 {
-                  
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
@@ -164,24 +167,34 @@ namespace HotelManagement.GUI
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally { formBackground.Dispose(); }
                 }
                 if (x == 8)
                 {
                      //If click Delete button 
-                    try
+                    DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", 
+                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogresult == DialogResult.Yes)
                     {
-                    //khachHangs.Remove(KhachHangBUS.Instance.FindKhachHang(grid.Rows[y].Cells[1].Value.ToString()));
-
-                    KhachHangBUS.Instance.RemoveKH(KhachHangBUS.Instance.FindKhachHang(grid.Rows[y].Cells[1].Value.ToString()));
-                    }
-                    catch (Exception ex)
-                    {
-                        DialogResult dialogResult = MessageBox.Show("Không thể xóa thông tin của khách hàng này", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    LoadAllGrid();
+                        try
+                        {
+                            KhachHangBUS.Instance.RemoveKH(KhachHangBUS.Instance.FindKhachHang(grid.Rows[y].Cells[1].Value.ToString()));
+                        }
+                        catch (Exception)
+                        {
+                            CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            LoadAllGrid();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }                    
                 }
             }
         }

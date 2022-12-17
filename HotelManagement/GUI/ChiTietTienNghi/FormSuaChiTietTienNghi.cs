@@ -225,22 +225,35 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            if(this.CTTextBoxSoLuong.Texts=="")
+            if (this.CTTextBoxSoLuong.Texts == "")
             {
                 CTMessageBox.Show("Vui lòng nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
+                string TenTN = ctTextBoxTenTienNghi.Texts;
+                string SL = CTTextBoxSoLuong.Texts;
+                string GhiChu = ctTextBoxGhiChu.Texts;
+                if (TenTN == "" || SL == "" || GhiChu == "")
+                {
+                    CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin tiện nghi.", "Thông báo",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                try
+                {
+                    this.cTTN.SL = int.Parse(this.CTTextBoxSoLuong.Texts);
+                    CTTN_DAO.Instance.UpdateOrInsert(cTTN);
+                }
+                catch (Exception)
+                {
+                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    CTMessageBox.Show("Cập nh thông tin thành công.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
-            try
-            {
-                this.cTTN.SL = int.Parse(this.CTTextBoxSoLuong.Texts);
-                CTTN_DAO.Instance.UpdateOrInsert(cTTN);
-            }
-            catch
-            {
-                CTMessageBox.Show("Cập nhật thông tin thất bại");
-            } 
-            
-            this.Close();
         }
     }
 }

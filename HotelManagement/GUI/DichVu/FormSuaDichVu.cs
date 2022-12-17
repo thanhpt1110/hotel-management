@@ -232,28 +232,31 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            try
+            if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == "" || this.CTTextBoxDonGia.Texts == "" || this.ctTextBoxMoTa.Texts == "")
             {
-                if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == "" || this.CTTextBoxDonGia.Texts == "" || this.ctTextBoxMoTa.Texts == "")
-                {
-                    MessageBox.Show("Bạn vui lòng điền đầy đủ thông tin", "THÔNG BÁO");
-                    return;
-                }
-                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    this.dichVu.TenDV = this.ctTextBoxTenDV.Texts;
-                    this.dichVu.SLConLai = int.Parse(this.CTTextBoxSoLuong.Texts);
-                    this.dichVu.DonGia = decimal.Parse(this.CTTextBoxDonGia.Texts.Trim(','));
-                    dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
-                    DichVuBUS.Instance.UpdateORAdd(dichVu);
-                    this.formDanhSachDichVu.LoadALLDV();
-                    this.Close();
-                }
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin dịch vụ.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception ex)
+            try
+            { 
+                this.dichVu.TenDV = this.ctTextBoxTenDV.Texts;
+                this.dichVu.SLConLai = int.Parse(this.CTTextBoxSoLuong.Texts);
+                this.dichVu.DonGia = decimal.Parse(this.CTTextBoxDonGia.Texts.Trim(','));
+                dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
+                DichVuBUS.Instance.UpdateORAdd(dichVu);   
+            }
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.formDanhSachDichVu.LoadALLDV();
+                this.Close();
             }
         }
 

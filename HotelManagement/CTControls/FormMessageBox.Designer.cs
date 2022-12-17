@@ -133,7 +133,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 35);
             this.button3.TabIndex = 0;
-            this.button3.Text = "Not Given";
+            this.button3.Text = "Hủy";
             this.button3.TextColor = System.Drawing.Color.White;
             this.button3.UseVisualStyleBackColor = false;
             // 
@@ -153,7 +153,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 35);
             this.button2.TabIndex = 0;
-            this.button2.Text = "No";
+            this.button2.Text = "Không";
             this.button2.TextColor = System.Drawing.Color.White;
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -173,7 +173,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 35);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Yes";
+            this.button1.Text = "Có";
             this.button1.TextColor = System.Drawing.Color.White;
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -254,6 +254,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(380, 150);
             this.Name = "FormMessageBox";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormMessageBox";
             this.Activated += new System.EventHandler(this.FormMessageBox_Activated);

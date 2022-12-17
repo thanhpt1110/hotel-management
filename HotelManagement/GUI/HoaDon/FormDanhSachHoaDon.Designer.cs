@@ -253,7 +253,7 @@
             this.CTTextBoxTimTheoCCCD.Padding = new System.Windows.Forms.Padding(40, 7, 7, 7);
             this.CTTextBoxTimTheoCCCD.PasswordChar = false;
             this.CTTextBoxTimTheoCCCD.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.CTTextBoxTimTheoCCCD.PlaceholderText = "Tìm theo số CCCD khách hàng";
+            this.CTTextBoxTimTheoCCCD.PlaceholderText = "Nhập CCCD khách hàng cần tìm";
             this.CTTextBoxTimTheoCCCD.ReadOnly = false;
             this.CTTextBoxTimTheoCCCD.Size = new System.Drawing.Size(275, 35);
             this.CTTextBoxTimTheoCCCD.TabIndex = 2;

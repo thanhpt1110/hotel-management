@@ -22,14 +22,12 @@ namespace HotelManagement.GUI
         public FormDanhSachPhong()
         {
             InitializeComponent();
-            LoadFullDataGrid();
         }
 
         public FormDanhSachPhong(FormMain formMain)
         {
             InitializeComponent();
             this.formMain = formMain;
-            LoadFullDataGrid();
         }
 
         private void CTButtonThemPhong_Click(object sender, EventArgs e)
@@ -46,17 +44,22 @@ namespace HotelManagement.GUI
                     formBackground.Dispose();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally { formBackground.Dispose(); }
+            finally 
+            {
+                LoadFullDataGrid();
+                formBackground.Dispose(); 
+            }
         }
 
         private void FormDanhSachPhong_Load(object sender, EventArgs e)
         {
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
-
+            LoadFullDataGrid();
 
             /*grid.Rows.Add(new object[] { PH, "PH001", "Trống", "Đang dọn dẹp", "Phòng đơn", edit, delete });
             grid.Rows.Add(new object[] { PH, "PH002", "Đang thuê", "Đã dọn dẹp", "Phòng đơn", edit, delete });
@@ -111,12 +114,13 @@ namespace HotelManagement.GUI
                 else
                 {
                     string mess = "Chưa có dữ liệu trong bảng!";
-                    CTMessageBox.Show(mess, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CTMessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -131,7 +135,8 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormSuaPhong formSuaPhong = new FormSuaPhong(PhongBUS.Instance.FindePhong(grid.Rows[y].Cells[1].Value.ToString())))
+                        string MaPH = grid.Rows[y].Cells[1].Value.ToString();
+                        using (FormSuaPhong formSuaPhong = new FormSuaPhong(PhongBUS.Instance.FindePhong(MaPH)))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();
@@ -141,16 +146,41 @@ namespace HotelManagement.GUI
                             formBackground.Dispose();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    finally { formBackground.Dispose(); }
+                    finally 
+                    {
+                        LoadFullDataGrid();
+                        formBackground.Dispose(); 
+                    }
                 }
                 if (x == 6)
                 {
-                    // If click Delete button 
-                    MessageBox.Show("Clicked Delete button");
+                    // If click delete button
+                    DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
+                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            // Function here
+                        }
+                        catch (Exception)
+                        {
+                            CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            this.LoadFullDataGrid();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+
                 }
             }
         }

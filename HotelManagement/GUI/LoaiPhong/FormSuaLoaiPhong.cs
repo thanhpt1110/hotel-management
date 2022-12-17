@@ -1,4 +1,5 @@
 ﻿using HotelManagement.DTO;
+﻿using HotelManagement.CTControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -211,6 +212,36 @@ namespace HotelManagement.GUI
         private void FormSuaLoaiPhong_Load(object sender, EventArgs e)
         {
             this.ActiveControl = LabelSuaLoaiPhong;
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            string TenLP = CTTextBoxTenLoaiPhong.Texts;
+            string SoGiuong = CTTextBoxSoGiuong.Texts;
+            string SoNguoi = ctTextBoxSoNguoi.Texts;
+            string GiaNgay = ctTextBoxGiaNgay.Texts;
+            string GiaGio = ctTextBoxGiaGio.Texts;
+            if (TenLP == "" || SoGiuong == "" || SoNguoi == "" || GiaNgay == "" || GiaGio == "")
+            {
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin loại phòng.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                // Function here
+            }
+            catch (Exception)
+            {
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
     }
 }

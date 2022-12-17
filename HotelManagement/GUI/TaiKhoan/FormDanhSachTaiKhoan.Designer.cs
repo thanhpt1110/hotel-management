@@ -100,7 +100,7 @@
             this.CTTextBoxTimTheoTenTaiKhoan.Padding = new System.Windows.Forms.Padding(40, 7, 7, 7);
             this.CTTextBoxTimTheoTenTaiKhoan.PasswordChar = false;
             this.CTTextBoxTimTheoTenTaiKhoan.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.CTTextBoxTimTheoTenTaiKhoan.PlaceholderText = "Tìm theo tên tài khoản";
+            this.CTTextBoxTimTheoTenTaiKhoan.PlaceholderText = "Nhập tên tài khoản cần tìm";
             this.CTTextBoxTimTheoTenTaiKhoan.ReadOnly = false;
             this.CTTextBoxTimTheoTenTaiKhoan.Size = new System.Drawing.Size(244, 36);
             this.CTTextBoxTimTheoTenTaiKhoan.TabIndex = 12;

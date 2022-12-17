@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HotelManagement.BUS;
+using HotelManagement.CTControls;
+using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -207,6 +210,36 @@ namespace HotelManagement.GUI
         private void FormThemPhong_Load(object sender, EventArgs e)
         {
             this.ActiveControl = LabelThemPhong;
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            string MaPH = ctTextBoxMaPH.Texts;
+            string TinhTrang = comboBoxTinhTrangPhong.Text;
+            string DonDep = comboBoxDonDep.Text;
+            string LoaiPhong = comboBoxLoaiPhong.Text;
+            string GhiChu = ctTextBoxGhiChu.Texts;
+            if (TinhTrang == "    Tình trạng phòng" || DonDep == "  Tình trạng dọn dẹp" || LoaiPhong == "  Loại phòng" || GhiChu == "" || MaPH == "")
+            {
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin phòng.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                // Function here
+            }
+            catch (Exception)
+            {
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
     }
 }

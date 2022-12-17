@@ -258,40 +258,68 @@ namespace HotelManagement.GUI
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
             
+            string HoTen = CTTextBoxNhapHoTen.Texts;
+            string ChucVu = CTTextBoxNhapChucVu.Texts;
+            string Luong = CTTextBoxLuong.Texts;
+            string SDT = ctTextBoxSDT.Texts;
+            string CCCD = CTTextBoxNhapCCCD.Texts;
+            string DiaChi = CTTextBoxDiaChi.Texts;
+            string email = ctTextBoxEmail.Texts;
+            string GioiTinh = ComboBoxGioiTinh.Text;
+            if (HoTen == "" || ChucVu == "" || Luong == "" || SDT == "" || CCCD == "" || DiaChi == "" || email == "" || GioiTinh == "  Giới tính")
+            {
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên.", "Thông báo",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 NhanVien nhanVien = new NhanVien();
                 List<NhanVien> nhanViens = NhanVienBUS.Instance.GetNhanViens();
                 if (nhanViens.Where(p => p.CCCD == this.CTTextBoxNhapCCCD.Texts).SingleOrDefault() != null)
                 {
-                    CTMessageBox.Show("Trùng mã căn cước công dân với nhân viên khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (nhanVien.CCCD == this.CTTextBoxNhapCCCD.Texts)
+                    {
+                        CTMessageBox.Show("Đã tồn tại số CCCD này trong danh sách nhân viên! Vui lòng kiểm tra lại thông tin.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else if (nhanVien.SDT == this.ctTextBoxSDT.Texts)
+                    {
+                        CTMessageBox.Show("Đã tồn tại SĐT này trong danh sách nhân viên! Vui lòng kiểm tra lại thông tin.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
-                if (nhanViens.Where(p => p.SDT == this.ctTextBoxSDT.Texts).SingleOrDefault() != null)
+                try
                 {
-                    CTMessageBox.Show("Trùng số điện thoại với nhân viên khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    nhanVien.MaNV = NhanVienBUS.Instance.GetMaNVNext();
+                    nhanVien.ChucVu = ChucVu;
+                    nhanVien.CCCD = CCCD;
+                    nhanVien.GioiTinh = this.ComboBoxGioiTinh.Text.Trim(' ');
+                    nhanVien.NgaySinh = this.ctDatePicker1.Value;
+                    nhanVien.Email = email;
+                    nhanVien.SDT = SDT;
+                    nhanVien.DiaChi = DiaChi;
+                    nhanVien.TenNV = HoTen;
+                    NhanVienBUS.Instance.UpdateOrInsert(nhanVien);
                 }
-                if (nhanViens.Where(p => p.Email == this.ctTextBoxEmail.Texts).SingleOrDefault() != null)
+                catch (Exception ex)
                 {
-                    CTMessageBox.Show("Trùng email với nhân viên khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                nhanVien.MaNV = NhanVienBUS.Instance.GetMaNVNext();
-                nhanVien.ChucVu = this.CTTextBoxNhapChucVu.Texts;
-                nhanVien.CCCD = this.CTTextBoxNhapCCCD.Texts;
-                nhanVien.GioiTinh = this.ComboBoxGioiTinh.Text.Trim(' ');
-                nhanVien.NgaySinh = this.ctDatePicker1.Value;
-                nhanVien.Email = this.ctTextBoxEmail.Texts;
-                nhanVien.SDT = this.ctTextBoxSDT.Texts;
-                nhanVien.DiaChi = this.CTTextBoxDiaChi.Texts;
-                nhanVien.TenNV = this.CTTextBoxNhapHoTen.Texts;
-                NhanVienBUS.Instance.UpdateOrInsert(nhanVien);
-                this.Close();
+                finally
+                {
+                    CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                CTMessageBox.Show(ex.Message, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

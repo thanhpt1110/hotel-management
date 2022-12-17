@@ -30,8 +30,8 @@
         {
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ctButton1 = new HotelManagement.CTControls.CTButton();
-            this.ctButton2 = new HotelManagement.CTControls.CTButton();
+            this.ButtonThoat = new HotelManagement.CTControls.CTButton();
+            this.ButtonThem = new HotelManagement.CTControls.CTButton();
             this.LabelThemCTTN = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -47,7 +47,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ctComboBox1 = new HotelManagement.CTControls.CTComboBox();
+            this.ComboBoxTenTienNghi = new System.Windows.Forms.ComboBox();
             this.PanelBackground.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,8 +78,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.ctButton1);
-            this.panel2.Controls.Add(this.ctButton2);
+            this.panel2.Controls.Add(this.ButtonThoat);
+            this.panel2.Controls.Add(this.ButtonThem);
             this.panel2.Controls.Add(this.LabelThemCTTN);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -88,46 +88,47 @@
             this.panel2.Size = new System.Drawing.Size(500, 500);
             this.panel2.TabIndex = 8;
             // 
-            // ctButton1
+            // ButtonThoat
             // 
-            this.ctButton1.BackColor = System.Drawing.Color.DarkGray;
-            this.ctButton1.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.ctButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.ctButton1.BorderRadius = 10;
-            this.ctButton1.BorderSize = 0;
-            this.ctButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctButton1.FlatAppearance.BorderSize = 0;
-            this.ctButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ctButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctButton1.ForeColor = System.Drawing.Color.White;
-            this.ctButton1.Location = new System.Drawing.Point(322, 416);
-            this.ctButton1.Name = "ctButton1";
-            this.ctButton1.Size = new System.Drawing.Size(132, 40);
-            this.ctButton1.TabIndex = 0;
-            this.ctButton1.Text = "Thoát";
-            this.ctButton1.TextColor = System.Drawing.Color.White;
-            this.ctButton1.UseVisualStyleBackColor = false;
-            this.ctButton1.Click += new System.EventHandler(this.CTButtonThoat_Click);
+            this.ButtonThoat.BackColor = System.Drawing.Color.DarkGray;
+            this.ButtonThoat.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.ButtonThoat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.ButtonThoat.BorderRadius = 10;
+            this.ButtonThoat.BorderSize = 0;
+            this.ButtonThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonThoat.FlatAppearance.BorderSize = 0;
+            this.ButtonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonThoat.ForeColor = System.Drawing.Color.White;
+            this.ButtonThoat.Location = new System.Drawing.Point(322, 416);
+            this.ButtonThoat.Name = "ButtonThoat";
+            this.ButtonThoat.Size = new System.Drawing.Size(132, 40);
+            this.ButtonThoat.TabIndex = 6;
+            this.ButtonThoat.Text = "Thoát";
+            this.ButtonThoat.TextColor = System.Drawing.Color.White;
+            this.ButtonThoat.UseVisualStyleBackColor = false;
+            this.ButtonThoat.Click += new System.EventHandler(this.ButtonThoat_Click);
             // 
-            // ctButton2
+            // ButtonThem
             // 
-            this.ctButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.ctButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.ctButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.ctButton2.BorderRadius = 10;
-            this.ctButton2.BorderSize = 0;
-            this.ctButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ctButton2.FlatAppearance.BorderSize = 0;
-            this.ctButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ctButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctButton2.ForeColor = System.Drawing.Color.White;
-            this.ctButton2.Location = new System.Drawing.Point(160, 416);
-            this.ctButton2.Name = "ctButton2";
-            this.ctButton2.Size = new System.Drawing.Size(140, 40);
-            this.ctButton2.TabIndex = 10;
-            this.ctButton2.Text = "Cập nhật";
-            this.ctButton2.TextColor = System.Drawing.Color.White;
-            this.ctButton2.UseVisualStyleBackColor = false;
+            this.ButtonThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.ButtonThem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.ButtonThem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.ButtonThem.BorderRadius = 10;
+            this.ButtonThem.BorderSize = 0;
+            this.ButtonThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonThem.FlatAppearance.BorderSize = 0;
+            this.ButtonThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonThem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonThem.ForeColor = System.Drawing.Color.White;
+            this.ButtonThem.Location = new System.Drawing.Point(160, 416);
+            this.ButtonThem.Name = "ButtonThem";
+            this.ButtonThem.Size = new System.Drawing.Size(140, 40);
+            this.ButtonThem.TabIndex = 5;
+            this.ButtonThem.Text = "Thêm";
+            this.ButtonThem.TextColor = System.Drawing.Color.White;
+            this.ButtonThem.UseVisualStyleBackColor = false;
+            this.ButtonThem.Click += new System.EventHandler(this.ButtonThem_Click);
             // 
             // LabelThemCTTN
             // 
@@ -142,7 +143,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.panel3.Controls.Add(this.ctComboBox1);
+            this.panel3.Controls.Add(this.ComboBoxTenTienNghi);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.CTTextBoxSoLuong);
@@ -192,7 +193,7 @@
             this.CTTextBoxSoLuong.PlaceholderText = "Số lượng";
             this.CTTextBoxSoLuong.ReadOnly = false;
             this.CTTextBoxSoLuong.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxSoLuong.TabIndex = 8;
+            this.CTTextBoxSoLuong.TabIndex = 3;
             this.CTTextBoxSoLuong.Texts = "";
             this.CTTextBoxSoLuong.UnderlineedStyle = true;
             // 
@@ -215,7 +216,7 @@
             this.ctTextBoxGhiChu.PlaceholderText = "Ghi chú";
             this.ctTextBoxGhiChu.ReadOnly = false;
             this.ctTextBoxGhiChu.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBoxGhiChu.TabIndex = 9;
+            this.ctTextBoxGhiChu.TabIndex = 4;
             this.ctTextBoxGhiChu.Texts = "";
             this.ctTextBoxGhiChu.UnderlineedStyle = true;
             // 
@@ -248,7 +249,6 @@
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
-            this.CTButtonThoat.Click += new System.EventHandler(this.CTButtonThoat_Click);
             // 
             // CTButtonCapNhat
             // 
@@ -336,30 +336,29 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // ctComboBox1
+            // ComboBoxTenTienNghi
             // 
-            this.ctComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ctComboBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.ctComboBox1.BorderSize = 1;
-            this.ctComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.ctComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ctComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.ctComboBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.ctComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.ctComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.ctComboBox1.Location = new System.Drawing.Point(122, 44);
-            this.ctComboBox1.Name = "ctComboBox1";
-            this.ctComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.ctComboBox1.Size = new System.Drawing.Size(249, 37);
-            this.ctComboBox1.TabIndex = 10;
-            this.ctComboBox1.Texts = "Tiện nghi";
+            this.ComboBoxTenTienNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ComboBoxTenTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTenTienNghi.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxTenTienNghi.FormattingEnabled = true;
+            this.ComboBoxTenTienNghi.Items.AddRange(new object[] {
+            "  Nam",
+            "  Nữ"});
+            this.ComboBoxTenTienNghi.Location = new System.Drawing.Point(122, 44);
+            this.ComboBoxTenTienNghi.Name = "ComboBoxTenTienNghi";
+            this.ComboBoxTenTienNghi.Size = new System.Drawing.Size(249, 29);
+            this.ComboBoxTenTienNghi.TabIndex = 11;
+            this.ComboBoxTenTienNghi.Text = "  Tên tiện nghi";
             // 
             // FormThemChiTietTienNghi
             // 
+            this.AcceptButton = this.ButtonThem;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(500, 500);
             this.Controls.Add(this.PanelBackground);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormThemChiTietTienNghi";
             this.ShowIcon = false;
@@ -398,8 +397,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel2;
-        private CTControls.CTButton ctButton1;
-        private CTControls.CTButton ctButton2;
+        private CTControls.CTButton ButtonThoat;
+        private CTControls.CTButton ButtonThem;
         private System.Windows.Forms.Label LabelThemCTTN;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -407,6 +406,6 @@
         private CTControls.CTTextBox CTTextBoxSoLuong;
         private CTControls.CTTextBox ctTextBoxGhiChu;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private CTControls.CTComboBox ctComboBox1;
+        private System.Windows.Forms.ComboBox ComboBoxTenTienNghi;
     }
 }

@@ -106,7 +106,7 @@
             // 
             this.ComboBoxGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.ComboBoxGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxGioiTinh.ForeColor = System.Drawing.Color.DimGray;
+            this.ComboBoxGioiTinh.ForeColor = System.Drawing.Color.Black;
             this.ComboBoxGioiTinh.FormattingEnabled = true;
             this.ComboBoxGioiTinh.Items.AddRange(new object[] {
             "  Nam",
@@ -428,11 +428,11 @@
             this.CTButtonCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CTButtonCapNhat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTButtonCapNhat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonCapNhat.Location = new System.Drawing.Point(610, 524);
+            this.CTButtonCapNhat.Location = new System.Drawing.Point(604, 524);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
             this.CTButtonCapNhat.TabIndex = 10;
-            this.CTButtonCapNhat.Text = "Lưu";
+            this.CTButtonCapNhat.Text = "Thêm";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
             this.CTButtonCapNhat.Click += new System.EventHandler(this.CTButtonCapNhat_Click);
@@ -452,6 +452,7 @@
             // 
             // FormThemNhanVien
             // 
+            this.AcceptButton = this.CTButtonCapNhat;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

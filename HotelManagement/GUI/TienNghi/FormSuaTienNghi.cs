@@ -226,15 +226,24 @@ namespace HotelManagement.GUI
                 CTMessageBox.Show("Vui lòng nhập tên tiện nghi.");
                 return;
             }    
-            this.tienNghi.TenTN = ctTextBoxName.Texts;
-            try
+            else
             {
-                TienNghiBUS.Instance.InsertOrUpdate(tienNghi);
-                this.Close();
-            }
-            catch(Exception ex)
-            {
-                CTMessageBox.Show("Cập nhật tiện nghi thất bại");
+                this.tienNghi.TenTN = ctTextBoxName.Texts;
+                try
+                {
+                    TienNghiBUS.Instance.InsertOrUpdate(tienNghi);
+                }
+                catch (Exception)
+                {
+                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
         }
         private void ctTextBoxName__TextChanged(object sender, EventArgs e)
