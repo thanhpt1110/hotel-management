@@ -236,9 +236,10 @@ namespace HotelManagement.CTControls
                     formBackground.Dispose();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally { formBackground.Dispose(); }
             

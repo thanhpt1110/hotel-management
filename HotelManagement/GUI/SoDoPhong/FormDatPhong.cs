@@ -230,15 +230,15 @@ namespace HotelManagement.GUI
             DataGridView grid2 = gridPhongDaChon;
             grid1.ColumnHeadersDefaultCellStyle.Font = new Font(grid1.Font, FontStyle.Bold);
             grid2.ColumnHeadersDefaultCellStyle.Font = new Font(grid2.Font, FontStyle.Bold);
-            
 
-            grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });
-            grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });
+            
+            /*grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });
+            grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });*/
             LoadgridPhongTrong();
+            /*grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
             grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
             grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
-            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
-            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
+            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });*/
             LoadGridPhongDat();
             phieuThue.MaPT = PhieuThueBUS.Instance.GetMaPTNext();
 
@@ -311,21 +311,30 @@ namespace HotelManagement.GUI
             if (y >= 0 && x == 4)
             {
                 // If click Remove new room
-                DialogResult dialogResult = CTMessageBox.Show("Bạn có muốn xóa phòng không? ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes)
+                DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
+                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogresult == DialogResult.Yes)
                 {
-                    foreach (CTDP ctdp in this.listPhongDaDat)
+                    try
                     {
-                        if (ctdp.CheckIn.ToString("dd/MM/yyyy hh:mm:ss") == gridPhongDaChon.Rows[y].Cells[2].Value.ToString() && ctdp.MaPH == gridPhongDaChon.Rows[y].Cells[0].Value.ToString())
+                        foreach (CTDP ctdp in this.listPhongDaDat)
                         {
-                            this.listPhongDaDat.Remove(ctdp);
-                            SetMaCTDP(listPhongDaDat);
-                            LoadGridPhongDat();
-                            LoadgridPhongTrong();
-                            return;
+                            if (ctdp.CheckIn.ToString("dd/MM/yyyy hh:mm:ss") == gridPhongDaChon.Rows[y].Cells[2].Value.ToString() && ctdp.MaPH == gridPhongDaChon.Rows[y].Cells[0].Value.ToString())
+                            {
+                                this.listPhongDaDat.Remove(ctdp);
+                                SetMaCTDP(listPhongDaDat);
+                                LoadGridPhongDat();
+                                LoadgridPhongTrong();
+                                return;
+                            }
                         }
                     }
-                    CTMessageBox.Show("Xóa thất bại");
+                    catch (Exception)
+                    {
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally{}
                 }
             }         
         }
@@ -392,16 +401,30 @@ namespace HotelManagement.GUI
         {
             if (this.CTTextBoxNhapCCCD.Texts != "" && this.CTTextBoxNhapDiaChi.Texts != "" && this.CTTextBoxNhapHoTen.Texts != "" && this.ComboBoxGioiTinh.Text != "  Giới tính")
             {
-                CreateKH();
-                CreatePhieuThue();
-                CreateCTDP();
-                CreateHoaDon();
-                this.Close();
+                try
+                {
+                    CreateKH();
+                    CreatePhieuThue();
+                    CreateCTDP();
+                    CreateHoaDon();
+                }
+                catch (Exception)
+                {
+                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    CTMessageBox.Show("Đặt phòng thành công.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
             else
             {
-                CTMessageBox.Show("Vui lòng nhập thông tin khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }    
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng.", "Thông báo",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void CreateKH()
         {

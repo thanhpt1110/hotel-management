@@ -115,7 +115,7 @@
             this.textBoxDB.PlaceholderColor = System.Drawing.Color.Silver;
             this.textBoxDB.PlaceholderText = "Nhập tên database";
             this.textBoxDB.ReadOnly = false;
-            this.textBoxDB.Size = new System.Drawing.Size(271, 36);
+            this.textBoxDB.Size = new System.Drawing.Size(271, 28);
             this.textBoxDB.TabIndex = 11;
             this.textBoxDB.Texts = "";
             this.textBoxDB.UnderlineedStyle = false;
@@ -230,13 +230,14 @@
             this.textBoxServer.PlaceholderColor = System.Drawing.Color.Silver;
             this.textBoxServer.PlaceholderText = "Nhập tên server";
             this.textBoxServer.ReadOnly = false;
-            this.textBoxServer.Size = new System.Drawing.Size(271, 36);
+            this.textBoxServer.Size = new System.Drawing.Size(271, 28);
             this.textBoxServer.TabIndex = 10;
             this.textBoxServer.Texts = "";
             this.textBoxServer.UnderlineedStyle = false;
             // 
             // FormKetNoiCSDL
             // 
+            this.AcceptButton = this.buttonKetNoi;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

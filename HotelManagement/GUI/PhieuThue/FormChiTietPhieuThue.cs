@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using HotelManagement.DTO;
 using HotelManagement.BUS;
 using HotelManagement.DAO;
+using HotelManagement.CTControls;
 
 namespace HotelManagement.GUI
 {
@@ -258,12 +259,40 @@ namespace HotelManagement.GUI
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int y = e.RowIndex, x = e.ColumnIndex;
-            if (y >= 0 && x ==4)
+            if (y >= 0 && x == 4)
             {
                 // If click Delete button
-                MessageBox.Show("Clicked delete button");
-
+                DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
+                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogresult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Function here
+                    }
+                    catch (Exception)
+                    {
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        this.LoadGrid();
+                        CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
+        }
+
+        private void CTButtonThemPT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CTButtonOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

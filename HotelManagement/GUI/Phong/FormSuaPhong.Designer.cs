@@ -244,10 +244,12 @@
             // 
             // FormSuaPhong
             // 
+            this.AcceptButton = this.CTButtonCapNhat;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(533, 535);
             this.Controls.Add(this.PanelBackground);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSuaPhong";
             this.ShowIcon = false;

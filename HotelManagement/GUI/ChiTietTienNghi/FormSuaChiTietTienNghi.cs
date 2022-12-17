@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.CTControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -201,6 +202,34 @@ namespace HotelManagement.GUI
         private void FormSuaChiTietTienNghi_Load(object sender, EventArgs e)
         {
             this.ActiveControl = LabelSuaChiTietTienNghi;
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            string TenTN = ctTextBoxTenTienNghi.Texts;
+            string SL = CTTextBoxSoLuong.Texts;
+            string GhiChu = ctTextBoxGhiChu.Texts;
+            if (TenTN == "" || SL == "" || GhiChu == "")
+            {
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin tiện nghi.", "Thông báo",
+                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                // Function here
+            }
+            catch (Exception)
+            {
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CTMessageBox.Show("Cập nh thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
     }
 }

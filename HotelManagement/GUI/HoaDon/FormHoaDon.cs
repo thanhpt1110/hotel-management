@@ -310,7 +310,6 @@ namespace HotelManagement.GUI
 
         private void HideButton()
         {
-            LabelTitle.Visible = false;
             Printer.Visible = false;
             ctMaximize1.Visible = false;
             ctMinimize1.Visible = false;
@@ -319,7 +318,6 @@ namespace HotelManagement.GUI
 
         private void ShowButton()
         {
-            LabelTitle.Visible = true;
             Printer.Visible = true;
             ctMaximize1.Visible = true;
             ctMinimize1.Visible = true;

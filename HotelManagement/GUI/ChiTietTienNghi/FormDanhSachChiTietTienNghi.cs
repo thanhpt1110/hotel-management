@@ -22,7 +22,7 @@ namespace HotelManagement.GUI
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         private FormMain formMain;
-        string MaLPH;
+        private string MaLPH, TenLP;
         //Constructor
         public FormDanhSachChiTietTienNghi()
         {
@@ -32,12 +32,13 @@ namespace HotelManagement.GUI
             InitializeComponent();
         }
 
-        public FormDanhSachChiTietTienNghi(string MaLPH, FormMain formMain)
+        public FormDanhSachChiTietTienNghi(string MaLPH, string TenLP, FormMain formMain)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             this.MaLPH = MaLPH;
+            this.TenLP = TenLP;
             this.formMain = formMain;
             InitializeComponent();
         }
@@ -217,6 +218,7 @@ namespace HotelManagement.GUI
 
         private void FormDanhSachChiTietTienNghi_Load(object sender, EventArgs e)
         {
+            this.LabelTenLoaiPhong.Text = TenLP;
             grid.ColumnHeadersDefaultCellStyle.Font = new Font(grid.Font, FontStyle.Bold);
             //Test 
             /*grid.Rows.Add(new object[] { "Ti vi", "1", "Sử dụng tốt", edit, delete });
@@ -261,16 +263,41 @@ namespace HotelManagement.GUI
                             formBackground.Dispose();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    finally { formBackground.Dispose(); }
+                    finally 
+                    {
+                        LoadAllForm();
+                        formBackground.Dispose(); 
+                    }
                 }
                 if (x == 4)
                 {
-                    // If click Delete button 
-                    MessageBox.Show("Clicked Delete button");
+                    // If click delete button
+                    DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
+                                                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            // Function here
+                        }
+                        catch (Exception)
+                        {
+                            CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            LoadAllForm();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+
                 }
             }
         }
@@ -289,11 +316,16 @@ namespace HotelManagement.GUI
                     formBackground.Dispose();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally { formBackground.Dispose(); }
+            finally 
+            {
+                LoadAllForm();
+                formBackground.Dispose(); 
+            }
         }
 
         private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)

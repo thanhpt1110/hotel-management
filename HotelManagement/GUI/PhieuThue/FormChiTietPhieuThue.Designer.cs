@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChiTietPhieuThue));
             this.LabelChiTietPhieuThueTieuDe = new System.Windows.Forms.Label();
             this.PanelChuaThongTin = new System.Windows.Forms.Panel();
@@ -49,9 +49,8 @@
             this.PictureBoxNgayCheckin = new System.Windows.Forms.PictureBox();
             this.PictureBoxTen = new System.Windows.Forms.PictureBox();
             this.PanelBackground = new System.Windows.Forms.Panel();
-            this.CTButtonLuu = new HotelManagement.CTControls.CTButton();
-            this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
-            this.CTButtonThanhToan = new HotelManagement.CTControls.CTButton();
+            this.CTButtonOK = new HotelManagement.CTControls.CTButton();
+            this.CTButtonThemPT = new HotelManagement.CTControls.CTButton();
             this.PanelChuaThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSoNguoi)).BeginInit();
@@ -101,14 +100,14 @@
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.grid.ColumnHeadersHeight = 50;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -118,27 +117,27 @@
             this.Column4,
             this.Column5});
             this.grid.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid.DefaultCellStyle = dataGridViewCellStyle11;
             this.grid.EnableHeadersVisualStyles = false;
             this.grid.Location = new System.Drawing.Point(45, 92);
             this.grid.MultiSelect = false;
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.grid.RowHeadersVisible = false;
             this.grid.RowHeadersWidth = 40;
             this.grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -183,9 +182,9 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column5.HeaderText = "Hủy";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -266,9 +265,9 @@
             // 
             // PanelBackground
             // 
+            this.PanelBackground.Controls.Add(this.CTButtonThemPT);
             this.PanelBackground.Controls.Add(this.LabelChiTietPhieuThueTieuDe);
-            this.PanelBackground.Controls.Add(this.CTButtonLuu);
-            this.PanelBackground.Controls.Add(this.CTButtonThoat);
+            this.PanelBackground.Controls.Add(this.CTButtonOK);
             this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBackground.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelBackground.Location = new System.Drawing.Point(0, 0);
@@ -278,74 +277,55 @@
             this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
             this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
-            // CTButtonLuu
+            // CTButtonOK
             // 
-            this.CTButtonLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonLuu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonLuu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonLuu.BorderRadius = 10;
-            this.CTButtonLuu.BorderSize = 0;
-            this.CTButtonLuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CTButtonLuu.FlatAppearance.BorderSize = 0;
-            this.CTButtonLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CTButtonLuu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTButtonLuu.ForeColor = System.Drawing.Color.White;
-            this.CTButtonLuu.Location = new System.Drawing.Point(604, 499);
-            this.CTButtonLuu.Name = "CTButtonLuu";
-            this.CTButtonLuu.Size = new System.Drawing.Size(150, 40);
-            this.CTButtonLuu.TabIndex = 13;
-            this.CTButtonLuu.Text = "Lưu";
-            this.CTButtonLuu.TextColor = System.Drawing.Color.White;
-            this.CTButtonLuu.UseVisualStyleBackColor = false;
+            this.CTButtonOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.CTButtonOK.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.CTButtonOK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.CTButtonOK.BorderRadius = 10;
+            this.CTButtonOK.BorderSize = 0;
+            this.CTButtonOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTButtonOK.FlatAppearance.BorderSize = 0;
+            this.CTButtonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CTButtonOK.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTButtonOK.ForeColor = System.Drawing.Color.White;
+            this.CTButtonOK.Location = new System.Drawing.Point(781, 499);
+            this.CTButtonOK.Name = "CTButtonOK";
+            this.CTButtonOK.Size = new System.Drawing.Size(150, 40);
+            this.CTButtonOK.TabIndex = 13;
+            this.CTButtonOK.Text = "OK";
+            this.CTButtonOK.TextColor = System.Drawing.Color.White;
+            this.CTButtonOK.UseVisualStyleBackColor = false;
+            this.CTButtonOK.Click += new System.EventHandler(this.CTButtonOK_Click);
             // 
-            // CTButtonThoat
+            // CTButtonThemPT
             // 
-            this.CTButtonThoat.BackColor = System.Drawing.Color.Gray;
-            this.CTButtonThoat.BackgroundColor = System.Drawing.Color.Gray;
-            this.CTButtonThoat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.CTButtonThoat.BorderRadius = 10;
-            this.CTButtonThoat.BorderSize = 0;
-            this.CTButtonThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CTButtonThoat.FlatAppearance.BorderSize = 0;
-            this.CTButtonThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CTButtonThoat.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTButtonThoat.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThoat.Location = new System.Drawing.Point(781, 499);
-            this.CTButtonThoat.Name = "CTButtonThoat";
-            this.CTButtonThoat.Size = new System.Drawing.Size(150, 40);
-            this.CTButtonThoat.TabIndex = 12;
-            this.CTButtonThoat.Text = "Thoát";
-            this.CTButtonThoat.TextColor = System.Drawing.Color.White;
-            this.CTButtonThoat.UseVisualStyleBackColor = false;
-            this.CTButtonThoat.Click += new System.EventHandler(this.CTButtonThoat_Click);
-            // 
-            // CTButtonThanhToan
-            // 
-            this.CTButtonThanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
-            this.CTButtonThanhToan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
-            this.CTButtonThanhToan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
-            this.CTButtonThanhToan.BorderRadius = 10;
-            this.CTButtonThanhToan.BorderSize = 0;
-            this.CTButtonThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CTButtonThanhToan.FlatAppearance.BorderSize = 0;
-            this.CTButtonThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CTButtonThanhToan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTButtonThanhToan.ForeColor = System.Drawing.Color.White;
-            this.CTButtonThanhToan.Location = new System.Drawing.Point(425, 499);
-            this.CTButtonThanhToan.Name = "CTButtonThanhToan";
-            this.CTButtonThanhToan.Size = new System.Drawing.Size(150, 40);
-            this.CTButtonThanhToan.TabIndex = 14;
-            this.CTButtonThanhToan.Text = "Thêm phòng thuê";
-            this.CTButtonThanhToan.TextColor = System.Drawing.Color.White;
-            this.CTButtonThanhToan.UseVisualStyleBackColor = false;
+            this.CTButtonThemPT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.CTButtonThemPT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.CTButtonThemPT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.CTButtonThemPT.BorderRadius = 10;
+            this.CTButtonThemPT.BorderSize = 0;
+            this.CTButtonThemPT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CTButtonThemPT.FlatAppearance.BorderSize = 0;
+            this.CTButtonThemPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CTButtonThemPT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTButtonThemPT.ForeColor = System.Drawing.Color.White;
+            this.CTButtonThemPT.Location = new System.Drawing.Point(600, 499);
+            this.CTButtonThemPT.Name = "CTButtonThemPT";
+            this.CTButtonThemPT.Size = new System.Drawing.Size(150, 40);
+            this.CTButtonThemPT.TabIndex = 14;
+            this.CTButtonThemPT.Text = "Thêm phòng thuê";
+            this.CTButtonThemPT.TextColor = System.Drawing.Color.White;
+            this.CTButtonThemPT.UseVisualStyleBackColor = false;
+            this.CTButtonThemPT.Click += new System.EventHandler(this.CTButtonThemPT_Click);
             // 
             // FormChiTietPhieuThue
             // 
+            this.AcceptButton = this.CTButtonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(979, 550);
-            this.Controls.Add(this.CTButtonThanhToan);
             this.Controls.Add(this.PanelChuaThongTin);
             this.Controls.Add(this.PanelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -381,9 +361,8 @@
         private System.Windows.Forms.PictureBox PictureBoxSoNguoi;
         private System.Windows.Forms.PictureBox PictureBoxNgayCheckin;
         private System.Windows.Forms.PictureBox PictureBoxTen;
-        private CTControls.CTButton CTButtonThoat;
-        private CTControls.CTButton CTButtonLuu;
-        private CTControls.CTButton CTButtonThanhToan;
+        private CTControls.CTButton CTButtonOK;
+        private CTControls.CTButton CTButtonThemPT;
         private System.Windows.Forms.Panel PanelBackground;
         private CTPanel.CTPanel ctPanel1;
         private System.Windows.Forms.DataGridView grid;

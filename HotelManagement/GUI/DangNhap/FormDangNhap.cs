@@ -38,7 +38,8 @@ namespace HotelManagement.GUI
             }
             else
             {
-                CTMessageBox.Show("Sai thông tin đăng nhập.", "THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                CTMessageBox.Show("Sai thông tin đăng nhập! Vui lòng kiểm tra lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
 
         }

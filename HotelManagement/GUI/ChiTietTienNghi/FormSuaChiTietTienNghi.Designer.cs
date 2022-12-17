@@ -76,7 +76,7 @@
             this.CTButtonThoat.Location = new System.Drawing.Point(322, 416);
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
-            this.CTButtonThoat.TabIndex = 11;
+            this.CTButtonThoat.TabIndex = 6;
             this.CTButtonThoat.Text = "Thoát";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
@@ -97,16 +97,17 @@
             this.CTButtonCapNhat.Location = new System.Drawing.Point(160, 416);
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
-            this.CTButtonCapNhat.TabIndex = 10;
+            this.CTButtonCapNhat.TabIndex = 5;
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
+            this.CTButtonCapNhat.Click += new System.EventHandler(this.CTButtonCapNhat_Click);
             // 
             // LabelSuaChiTietTienNghi
             // 
             this.LabelSuaChiTietTienNghi.AutoSize = true;
             this.LabelSuaChiTietTienNghi.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelSuaChiTietTienNghi.Location = new System.Drawing.Point(103, 21);
+            this.LabelSuaChiTietTienNghi.Location = new System.Drawing.Point(115, 20);
             this.LabelSuaChiTietTienNghi.Name = "LabelSuaChiTietTienNghi";
             this.LabelSuaChiTietTienNghi.Size = new System.Drawing.Size(282, 37);
             this.LabelSuaChiTietTienNghi.TabIndex = 0;
@@ -165,7 +166,7 @@
             this.CTTextBoxSoLuong.PlaceholderText = "Số lượng";
             this.CTTextBoxSoLuong.ReadOnly = false;
             this.CTTextBoxSoLuong.Size = new System.Drawing.Size(250, 35);
-            this.CTTextBoxSoLuong.TabIndex = 8;
+            this.CTTextBoxSoLuong.TabIndex = 3;
             this.CTTextBoxSoLuong.Texts = "";
             this.CTTextBoxSoLuong.UnderlineedStyle = true;
             // 
@@ -188,7 +189,7 @@
             this.ctTextBoxGhiChu.PlaceholderText = "Mô tả";
             this.ctTextBoxGhiChu.ReadOnly = false;
             this.ctTextBoxGhiChu.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBoxGhiChu.TabIndex = 9;
+            this.ctTextBoxGhiChu.TabIndex = 4;
             this.ctTextBoxGhiChu.Texts = "";
             this.ctTextBoxGhiChu.UnderlineedStyle = true;
             // 
@@ -211,7 +212,7 @@
             this.ctTextBoxTenTienNghi.PlaceholderText = "Tên tiện nghi";
             this.ctTextBoxTenTienNghi.ReadOnly = false;
             this.ctTextBoxTenTienNghi.Size = new System.Drawing.Size(250, 35);
-            this.ctTextBoxTenTienNghi.TabIndex = 7;
+            this.ctTextBoxTenTienNghi.TabIndex = 2;
             this.ctTextBoxTenTienNghi.Texts = "";
             this.ctTextBoxTenTienNghi.UnderlineedStyle = true;
             // 
@@ -227,6 +228,7 @@
             // 
             // FormSuaChiTietTienNghi
             // 
+            this.AcceptButton = this.CTButtonCapNhat;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(500, 500);

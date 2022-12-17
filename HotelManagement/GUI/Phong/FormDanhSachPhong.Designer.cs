@@ -259,7 +259,7 @@
             this.CTTextBoxTimPhongTheoMa.Padding = new System.Windows.Forms.Padding(40, 7, 7, 7);
             this.CTTextBoxTimPhongTheoMa.PasswordChar = false;
             this.CTTextBoxTimPhongTheoMa.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.CTTextBoxTimPhongTheoMa.PlaceholderText = "Tìm phòng theo mã phòng";
+            this.CTTextBoxTimPhongTheoMa.PlaceholderText = "Nhập mã phòng cần tìm";
             this.CTTextBoxTimPhongTheoMa.ReadOnly = false;
             this.CTTextBoxTimPhongTheoMa.Size = new System.Drawing.Size(244, 36);
             this.CTTextBoxTimPhongTheoMa.TabIndex = 8;

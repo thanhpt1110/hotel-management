@@ -88,8 +88,8 @@
             // 
             // CTButtonThoat
             // 
-            this.CTButtonThoat.BackColor = System.Drawing.Color.DarkGray;
-            this.CTButtonThoat.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.CTButtonThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
+            this.CTButtonThoat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
             this.CTButtonThoat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
             this.CTButtonThoat.BorderRadius = 10;
             this.CTButtonThoat.BorderSize = 0;
@@ -102,7 +102,7 @@
             this.CTButtonThoat.Name = "CTButtonThoat";
             this.CTButtonThoat.Size = new System.Drawing.Size(132, 40);
             this.CTButtonThoat.TabIndex = 11;
-            this.CTButtonThoat.Text = "Thoát";
+            this.CTButtonThoat.Text = "OK";
             this.CTButtonThoat.TextColor = System.Drawing.Color.White;
             this.CTButtonThoat.UseVisualStyleBackColor = false;
             this.CTButtonThoat.Click += new System.EventHandler(this.CTButtonThoat_Click);
@@ -141,6 +141,7 @@
             this.ctTextBoxGioiTinh.BorderRadius = 0;
             this.ctTextBoxGioiTinh.BorderSize = 2;
             this.ctTextBoxGioiTinh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctTextBoxGioiTinh.ForeColor = System.Drawing.Color.Black;
             this.ctTextBoxGioiTinh.IsFocused = false;
             this.ctTextBoxGioiTinh.Location = new System.Drawing.Point(333, 408);
             this.ctTextBoxGioiTinh.Margin = new System.Windows.Forms.Padding(4);
@@ -429,6 +430,7 @@
             // 
             // FormThongTinNhanVien
             // 
+            this.AcceptButton = this.CTButtonThoat;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

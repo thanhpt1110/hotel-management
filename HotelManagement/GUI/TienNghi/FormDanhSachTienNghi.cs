@@ -47,9 +47,10 @@ namespace HotelManagement.GUI
                     formBackground.Dispose();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally { formBackground.Dispose(); }
         }
@@ -111,7 +112,7 @@ namespace HotelManagement.GUI
                 else
                 {
                     string mess = "Chưa có dữ liệu trong bảng!";
-                    CTMessageBox.Show(mess, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CTMessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -141,17 +142,36 @@ namespace HotelManagement.GUI
                             formBackground.Dispose();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally { formBackground.Dispose(); }
                 }
                 if (x == 4)
                 {
                     // If click Delete button 
-                    TienNghiBUS.Instance.RemoveTN(TienNghiBUS.Instance.FindTienNghi(grid.Rows[y].Cells[1].Value.ToString()));
-                    this.LoadAllData();
+                    DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", 
+                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            TienNghiBUS.Instance.RemoveTN(TienNghiBUS.Instance.FindTienNghi(grid.Rows[y].Cells[1].Value.ToString()));
+                        }
+                        catch (Exception)
+                        {
+                            CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            this.LoadAllData();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
             }
         }
