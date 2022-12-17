@@ -27,6 +27,8 @@ namespace HotelManagement.GUI.ThongKe
             dtpNgayBD.Value = DateTime.Today.AddDays(-7);
             dtpNgayKT.Value = DateTime.Now;
             Button7Ngay.Select();
+            Button7Ngay.BackColor = Color.FromArgb(30, 119, 148);
+            Button7Ngay.ForeColor = Color.White;
             thongKe = new ThongKeDAO();
             LoadData();
         }
@@ -106,14 +108,14 @@ namespace HotelManagement.GUI.ThongKe
         
         private void LoadData()
         {
-            chartDoanhThuThue.Series[0].Points.Clear();
-            chartDoanhThuThue.Series[1].Points.Clear();
-            chartDoanhThuThue.Series[2].Points.Clear();
-            chartDoanhThuThue.Series[3].Points.Clear();
 
             var refreshDate = thongKe.LoadData(dtpNgayBD.Value, dtpNgayKT.Value);
             if (refreshDate == true)
             {
+                chartDoanhThuThue.Series[0].Points.Clear();
+                chartDoanhThuThue.Series[1].Points.Clear();
+                chartDoanhThuThue.Series[2].Points.Clear();
+                chartDoanhThuThue.Series[3].Points.Clear();
                 foreach(var item in thongKe.DoanhThuThuongDonList)
                 {
                     chartDoanhThuThue.Series[0].Points.AddXY(item.Date, item.TotalAmount);
