@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HotelManagement.BUS;
 namespace HotelManagement.GUI.ThongKe
 {
     public partial class FormThongKe : Form
@@ -21,7 +22,13 @@ namespace HotelManagement.GUI.ThongKe
         {
             InitializeComponent();
             this.formMain = formMain;
+            chart1.ChartAreas["ChartArea1"].AxisX.Title = "Ngày hóa đơn";
+            chart1.ChartAreas["ChartArea1"].AxisY.Title = "VND";
+            chart1.ChartAreas["ChartArea1"].AxisY.Interval = 1;
+  
+
         }
+
         private void setButtonNormal()
         {
             ButtonTuyChon.BackColor
@@ -69,5 +76,7 @@ namespace HotelManagement.GUI.ThongKe
             Button6Thang.BackColor = Color.FromArgb(30, 119, 148);
             Button6Thang.ForeColor = Color.White;
         }
+
+
     }
 }

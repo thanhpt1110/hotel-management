@@ -168,12 +168,6 @@ namespace HotelManagement.GUI
         private void CTTextBoxTimTenTienNghi__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxTienNghi = sender as TextBox;
-            textBoxTienNghi.TextChanged += TextBoxTienNghi_TextChanged;
-        }
-
-        private void TextBoxTienNghi_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBoxTienNghi = sender as TextBox;
             if (textBoxTienNghi.Focused == false)
             {
                 LoadAllData();
@@ -182,6 +176,7 @@ namespace HotelManagement.GUI
             this.tienNghis = TienNghiBUS.Instance.FindTienNghiWithName(textBoxTienNghi.Text);
             LoadData();
         }
+
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;

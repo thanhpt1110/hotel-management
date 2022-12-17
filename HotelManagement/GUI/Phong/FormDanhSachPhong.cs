@@ -173,12 +173,6 @@ namespace HotelManagement.GUI
         private void CTTextBoxTimPhongTheoMa__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxPhong = sender as TextBox;
-            textBoxPhong.TextChanged += TextBoxPhong_TextChanged;
-        }
-
-        private void TextBoxPhong_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBoxPhong = sender as TextBox;
 
             if (textBoxPhong.Focused == false)
             {
@@ -188,6 +182,8 @@ namespace HotelManagement.GUI
             this.phongs = PhongBUS.Instance.FindPhongWithMaPH(textBoxPhong.Text);
             LoadDataGrid();
         }
+
+
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;

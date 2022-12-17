@@ -193,23 +193,17 @@ namespace HotelManagement.GUI
         private void CTTextBoxTimKhachHangTheoTen__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxFindName = sender as TextBox;
-            textBoxFindName.TextChanged += TextBoxFindName_TextChanged;
-            
-        }
-
-        private void TextBoxFindName_TextChanged(object sender, EventArgs e)
-        {
-            
-            TextBox textBoxFindName = sender as TextBox;
-            
-            if(textBoxFindName.Focused == false)
+            if (textBoxFindName.Focused == false)
             {
                 LoadAllGrid();
                 return;
-            }    
+            }
             this.khachHangs = KhachHangBUS.Instance.FindKhachHangWithName(textBoxFindName.Text);
             LoadGrid();
+
         }
+
+
 
         private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {

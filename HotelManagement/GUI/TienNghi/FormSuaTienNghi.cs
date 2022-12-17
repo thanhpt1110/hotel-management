@@ -221,6 +221,11 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
+            if(ctTextBoxName.Texts=="")
+            {
+                CTMessageBox.Show("Vui lòng nhập tên tiện nghi.");
+                return;
+            }    
             this.tienNghi.TenTN = ctTextBoxName.Texts;
             try
             {

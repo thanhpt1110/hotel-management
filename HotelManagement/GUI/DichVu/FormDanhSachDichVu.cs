@@ -181,21 +181,16 @@ namespace HotelManagement.GUI
         {
             TextBox textBoxTimTheoMaPhong = sender as TextBox;
             textBoxTimTheoMaPhong.KeyPress += TextBoxTimTheoMaPhong_KeyPress;
-            textBoxTimTheoMaPhong.TextChanged += TextBoxTimTheoMaPhong_TextChanged;
-        }
 
-        private void TextBoxTimTheoMaPhong_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBoxFindNameDV = sender as TextBox;
-
-            if (textBoxFindNameDV.Focused == false )
+            if (textBoxTimTheoMaPhong.Focused == false)
             {
                 LoadALLDV();
                 return;
             }
-            this.dichVus = DichVuBUS.Instance.FindDichVuWithName(textBoxFindNameDV.Text);
+            this.dichVus = DichVuBUS.Instance.FindDichVuWithName(textBoxTimTheoMaPhong.Text);
             LoadDV();
         }
+
 
         private void TextBoxTimTheoMaPhong_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HotelManagement.CTControls;
+using HotelManagement.DAO;
+using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +21,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        CTTN cTTN;
         //Constructor
         public FormSuaChiTietTienNghi()
         {
@@ -26,6 +29,23 @@ namespace HotelManagement.GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+        }
+        public FormSuaChiTietTienNghi(CTTN cTTN)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.cTTN = cTTN;
+            InitializeComponent();
+            LoadcTTN();
+        }
+
+        void LoadcTTN()
+        {
+            this.ctTextBoxTenTienNghi.RemovePlaceholder();
+            this.CTTextBoxSoLuong.RemovePlaceholder();
+            this.ctTextBoxTenTienNghi.Texts = cTTN.TienNghi.TenTN;
+            this.CTTextBoxSoLuong.Texts = cTTN.SL.ToString();
         }
         //Control Box
 
@@ -201,6 +221,26 @@ namespace HotelManagement.GUI
         private void FormSuaChiTietTienNghi_Load(object sender, EventArgs e)
         {
             this.ActiveControl = LabelSuaChiTietTienNghi;
+        }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+            if(this.CTTextBoxSoLuong.Texts=="")
+            {
+                CTMessageBox.Show("Vui lòng nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            try
+            {
+                this.cTTN.SL = int.Parse(this.CTTextBoxSoLuong.Texts);
+                CTTN_DAO.Instance.UpdateOrInsert(cTTN);
+            }
+            catch
+            {
+                CTMessageBox.Show("Cập nhật thông tin thất bại");
+            } 
+            
+            this.Close();
         }
     }
 }

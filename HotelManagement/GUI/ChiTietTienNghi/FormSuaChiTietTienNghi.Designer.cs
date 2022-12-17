@@ -101,6 +101,7 @@
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
+            this.CTButtonCapNhat.Click += new System.EventHandler(this.CTButtonCapNhat_Click);
             // 
             // LabelSuaChiTietTienNghi
             // 
@@ -209,7 +210,7 @@
             this.ctTextBoxTenTienNghi.PasswordChar = false;
             this.ctTextBoxTenTienNghi.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBoxTenTienNghi.PlaceholderText = "Tên tiện nghi";
-            this.ctTextBoxTenTienNghi.ReadOnly = false;
+            this.ctTextBoxTenTienNghi.ReadOnly = true;
             this.ctTextBoxTenTienNghi.Size = new System.Drawing.Size(250, 35);
             this.ctTextBoxTenTienNghi.TabIndex = 7;
             this.ctTextBoxTenTienNghi.Texts = "";

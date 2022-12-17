@@ -13,6 +13,8 @@ using System.Windows.Forms.VisualStyles;
 using ApplicationSettings;
 using HotelManagement.BUS;
 using HotelManagement.DTO;
+using HotelManagement.CTControls;
+
 namespace HotelManagement.GUI
 {
     public partial class FormSuaKhachHang : Form
@@ -269,7 +271,8 @@ namespace HotelManagement.GUI
                 {
                     if (khachHang.CCCD_Passport == this.ctTextBoxCCCD.Texts && this.khachHang.CCCD_Passport!= this.ctTextBoxCCCD.Texts)
                     {
-                        DialogResult dialogResult = MessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogResult dialogResult = CTMessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
 
@@ -280,7 +283,7 @@ namespace HotelManagement.GUI
                 khachHang.GioiTinh = this.comboBoxGioiTinh.Text.Trim(' ');
                 
                 KhachHangBUS.Instance.UpdateOrAdd(khachHang);
-                DialogResult dialogresult=  MessageBox.Show("Bạn có chắc chắn các thông tin trên chưa?", "THÔNG BÁO", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                DialogResult dialogresult=  CTMessageBox.Show("Bạn có chắc chắn các thông tin trên chưa?", "THÔNG BÁO", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                 if(dialogresult==DialogResult.Yes)
                 {
                     this.formDanhSachKhachHang.LoadAllGrid();

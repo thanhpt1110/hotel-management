@@ -206,19 +206,24 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            try
+            if (this.ctTextBoxName.Texts != "")
             {
-                TienNghi tienNghi = new TienNghi();
-                tienNghi.MaTN = TienNghiBUS.Instance.GetMaTNNext();
-                tienNghi.TenTN = this.ctTextBoxName.Texts;
-                TienNghiBUS.Instance.InsertOrUpdate(tienNghi);
-                this.Close();
+                try
+                {
+                    TienNghi tienNghi = new TienNghi();
+                    tienNghi.MaTN = TienNghiBUS.Instance.GetMaTNNext();
+                    tienNghi.TenTN = this.ctTextBoxName.Texts;
+                    TienNghiBUS.Instance.InsertOrUpdate(tienNghi);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    CTMessageBox.Show("Thêm tiện nghi thất bại.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
-            catch(Exception ex)
-            {
-                CTMessageBox.Show("Thêm tiện nghi thất bại", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
+            else
+                CTMessageBox.Show("Vui lòng nhập tên tiện nghi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void ctTextBoxName__TextChanged(object sender, EventArgs e)

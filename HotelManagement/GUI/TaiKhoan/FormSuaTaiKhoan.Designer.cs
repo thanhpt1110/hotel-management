@@ -116,6 +116,7 @@
             this.CTButtonCapNhat.Text = "Cập nhật";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
+            this.CTButtonCapNhat.Click += new System.EventHandler(this.CTButtonCapNhat_Click);
             // 
             // panel1
             // 

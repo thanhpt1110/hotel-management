@@ -49,6 +49,7 @@ namespace HotelManagement.DAO
             }
             catch(DbEntityValidationException ex)
             {
+                instance = null;
                 MessageBox.Show(ex.Message);
             }
             

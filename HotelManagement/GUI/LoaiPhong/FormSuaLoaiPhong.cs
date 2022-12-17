@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        LoaiPhong loaiPhong;
         //Constructor
         public FormSuaLoaiPhong()
         {
@@ -26,6 +27,14 @@ namespace HotelManagement.GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+        }
+        public FormSuaLoaiPhong(LoaiPhong loaiPhong)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            InitializeComponent();
+            this.loaiPhong = loaiPhong;
         }
         //Control Box
 

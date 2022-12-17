@@ -21,7 +21,7 @@ namespace HotelManagement.DAO
 
         public List<DichVu> GetDichVus()
         {
-   
+            instance = null;
                 return db.DichVus.Where(p => p.DaXoa == false).ToList();
             
         }    

@@ -204,5 +204,10 @@ namespace HotelManagement.GUI
         {
             this.ActiveControl = LabelSuaTaiKhoan;
         }
+
+        private void CTButtonCapNhat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

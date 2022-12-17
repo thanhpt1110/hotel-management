@@ -164,12 +164,6 @@ namespace HotelManagement.GUI
         private void CTTextBoxTimTheoTenTaiKhoan__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxTaiKhoan = sender as TextBox;
-            textBoxTaiKhoan.TextChanged += TextBoxTaiKhoan_TextChanged;
-        }
-
-        private void TextBoxTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBoxTaiKhoan = sender as TextBox;
 
             if (textBoxTaiKhoan.Focused == false)
             {
@@ -179,6 +173,7 @@ namespace HotelManagement.GUI
             this.taiKhoans = TaiKhoanBUS.Instance.GetTaiKhoansWithUserName(textBoxTaiKhoan.Text);
             LoadGrid();
         }
+
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;

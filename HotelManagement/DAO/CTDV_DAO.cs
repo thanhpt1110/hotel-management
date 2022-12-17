@@ -43,5 +43,6 @@ namespace HotelManagement.DAO
             db.SaveChanges();
             instance = null;
         }    
+
     }
 }

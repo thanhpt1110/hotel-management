@@ -376,6 +376,7 @@ namespace HotelManagement.GUI
                     formBackground.Show();
                     frm.Owner = formBackground;
                     frm.ShowDialog();
+                    this.LoadPage();
                     formBackground.Dispose();
                 }
             }

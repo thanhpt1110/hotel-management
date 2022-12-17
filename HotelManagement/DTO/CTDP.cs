@@ -43,7 +43,7 @@ namespace HotelManagement.DTO
         [Required]
         [StringLength(20)]
         public string TrangThai { get; set; }
-
+        public decimal ThanhTien { get; set; }
         public bool? DaXoa { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

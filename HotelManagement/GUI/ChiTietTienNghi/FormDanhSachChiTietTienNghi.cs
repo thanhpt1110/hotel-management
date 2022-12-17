@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.DTO;
 using HotelManagement.BUS;
-
+using HotelManagement.DAO;
 
 namespace HotelManagement.GUI
 {
@@ -234,11 +234,12 @@ namespace HotelManagement.GUI
 
         private void LoadForm(List<CTTN> cTTNs)
         {
+            this.LabelTenLoaiPhong.Text = LoaiPhongBUS.Instance.getLoaiPhong(this.MaLPH).TenLPH;
             grid.Rows.Clear();
             foreach(CTTN cTTN in cTTNs)
             {
                 grid.Rows.Add(new object[] { cTTN.TienNghi.TenTN, cTTN.SL, "Sử dụng tốt", edit, delete });
-
+                
             }    
         }
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -252,12 +253,14 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormSuaChiTietTienNghi formSuaChiTietTienNghi = new FormSuaChiTietTienNghi())
+                        CTTN cTTN = CTTN_BUS.Instance.GetCTTNs().Where(p => p.MaLPH == this.MaLPH && p.TienNghi.TenTN == grid.Rows[y].Cells[0].Value.ToString()).SingleOrDefault();
+                        using (FormSuaChiTietTienNghi formSuaChiTietTienNghi = new FormSuaChiTietTienNghi(cTTN))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();
                             formSuaChiTietTienNghi.Owner = formBackground;
                             formSuaChiTietTienNghi.ShowDialog();
+                            this.LoadAllForm();
                             formBackground.Dispose();
                         }
                     }
@@ -270,7 +273,10 @@ namespace HotelManagement.GUI
                 if (x == 4)
                 {
                     // If click Delete button 
-                    MessageBox.Show("Clicked Delete button");
+                    CTTN cTTN = CTTN_BUS.Instance.GetCTTNs().Where(p => p.MaLPH == this.MaLPH && p.TienNghi.TenTN == grid.Rows[y].Cells[0].Value.ToString()).SingleOrDefault();
+                    CTTN_DAO.Instance.RemoveCTTN(cTTN);
+                    this.LoadAllForm();
+
                 }
             }
         }
