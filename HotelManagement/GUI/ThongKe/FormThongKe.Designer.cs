@@ -487,6 +487,7 @@
             // 
             // chartDichVu
             // 
+            this.chartDichVu.AllowDrop = true;
             this.chartDichVu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chartDichVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));

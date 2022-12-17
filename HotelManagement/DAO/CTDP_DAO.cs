@@ -97,14 +97,11 @@ namespace HotelManagement.DAO
 
         public void UpdateOrAddCTDP(CTDP ctdp)
         {
-
-                ctdp.PhieuThue = db.PhieuThues.Find(ctdp.MaPT);
-                MessageBox.Show("Thành công");
-                ctdp.Phong = db.Phongs.Find(ctdp.MaPH);
-                ctdp.DaXoa = false;
-                db.CTDPs.AddOrUpdate(ctdp);
-                    
-                db.SaveChanges();
+            ctdp.PhieuThue = db.PhieuThues.Find(ctdp.MaPT);
+            ctdp.Phong = db.Phongs.Find(ctdp.MaPH);
+            ctdp.DaXoa = false;
+            db.CTDPs.AddOrUpdate(ctdp);
+            db.SaveChanges();
             instance = null;
         }
         public string getNextCTDPwithList(List<CTDP> list)
