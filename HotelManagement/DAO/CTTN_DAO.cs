@@ -27,11 +27,19 @@ namespace HotelManagement.DAO
         }
         public void UpdateOrInsert(CTTN cTTN)
         {
-
+            try
+            {
                 cTTN.DaXoa = false;
+                cTTN.TienNghi = db.TienNghis.Find(cTTN.MaTN);
+                
                 db.CTTNs.AddOrUpdate(cTTN);
                 db.SaveChanges();
                 instance = null;
+            }
+            catch(Exception)
+            {
+                db.CTTNs.Remove(cTTN);
+            }
 
 
         }

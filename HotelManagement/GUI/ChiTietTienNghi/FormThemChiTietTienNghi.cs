@@ -1,4 +1,5 @@
 ﻿using HotelManagement.CTControls;
+using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BUS;
+using HotelManagement.DAO;
+using ApplicationSettings;
 
 namespace HotelManagement.GUI
 {
@@ -19,7 +23,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        LoaiPhong loaiPhong;
         //Constructor
         public FormThemChiTietTienNghi()
         {
@@ -27,6 +31,15 @@ namespace HotelManagement.GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+        }
+        public FormThemChiTietTienNghi(string MaLPH)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.loaiPhong = LoaiPhongBUS.Instance.getLoaiPhong(MaLPH);
+            InitializeComponent();
+            LoadForm();
         }
         //Control Box
 
@@ -49,6 +62,7 @@ namespace HotelManagement.GUI
 
         //Private Methods
         //Private Methods
+        #region Draw Form
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -204,7 +218,23 @@ namespace HotelManagement.GUI
         {
             this.Close();
         }
+        #endregion
 
+        private void LoadForm()
+        {
+            this.ComboBoxTenTienNghi.Items.Clear();
+            List<TienNghi> tienNghis = TienNghiBUS.Instance.GetTienNghis();
+            List<CTTN> cTTNs = CTTN_BUS.Instance.GetCTTNs().Where(p=>p.MaLPH==loaiPhong.MaLPH).ToList();
+            foreach (TienNghi tienNghi in tienNghis)
+            {
+                if(cTTNs.Where(p=>p.MaTN==tienNghi.MaTN).Any())
+                {
+                    continue;
+                }
+                this.ComboBoxTenTienNghi.Items.Add(tienNghi.TenTN);
+            }
+            
+        }    
         private void ButtonThem_Click(object sender, EventArgs e)
         {
             string TenTN = ComboBoxTenTienNghi.Text;
@@ -218,7 +248,11 @@ namespace HotelManagement.GUI
             }
             try
             {
-                // Function here
+                CTTN cTTN = new CTTN();
+                cTTN.MaTN = TienNghiBUS.Instance.GetTienNghis().Where(p => p.TenTN == this.ComboBoxTenTienNghi.Text).Single().MaTN;
+                cTTN.MaLPH = loaiPhong.MaLPH;
+                cTTN.SL = int.Parse(CTTextBoxSoLuong.Texts);
+                CTTN_BUS.Instance.UpdateOrInsert(cTTN);
             }
             catch (Exception)
             {
@@ -231,6 +265,17 @@ namespace HotelManagement.GUI
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close(); 
             }
+        }
+
+        private void CTTextBoxSoLuong__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxOnlyNum = sender as TextBox;
+            textBoxOnlyNum.KeyPress += TextBoxOnlyNum_KeyPress;
+        }
+
+        private void TextBoxOnlyNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
         }
     }
 }

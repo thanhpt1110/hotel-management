@@ -69,7 +69,7 @@ namespace HotelManagement.GUI
         //Private Methods
         //Private Methods
 
-
+        #region Draw form
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -215,7 +215,7 @@ namespace HotelManagement.GUI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        #endregion
         private void FormDanhSachChiTietTienNghi_Load(object sender, EventArgs e)
         {
             this.LabelTenLoaiPhong.Text = TenLP;
@@ -314,7 +314,7 @@ namespace HotelManagement.GUI
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
-                using (FormThemChiTietTienNghi formThemChiTietTienNghi = new FormThemChiTietTienNghi())
+                using (FormThemChiTietTienNghi formThemChiTietTienNghi = new FormThemChiTietTienNghi(MaLPH))
                 {
                     formBackground.Owner = formMain;
                     formBackground.Show();

@@ -213,7 +213,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == "" || this.CTTextBoxDonGia.Texts == "" || this.ctTextBoxMoTa.Texts == "")
+            if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == ""  || this.ctTextBoxMoTa.Texts == "")
             {
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin dịch vụ.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -224,6 +224,11 @@ namespace HotelManagement.GUI
             {
                     DichVu dichVu = new DichVu();
                     dichVu.TenDV = this.ctTextBoxTenDV.Texts;
+                if (this.CTTextBoxSoLuong.Texts=="")
+                {
+                    dichVu.SLConLai = -1;
+                }
+                else
                     dichVu.SLConLai = int.Parse(this.CTTextBoxSoLuong.Texts);
                     dichVu.DonGia = decimal.Parse(this.CTTextBoxDonGia.Texts);
                     dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
@@ -248,14 +253,8 @@ namespace HotelManagement.GUI
         {
             TextBox textBoxDonGia = sender as TextBox;
             textBoxDonGia.KeyPress += TextBoxDonGia_KeyPress;
-            textBoxDonGia.TextChanged += TextBoxDonGia_TextChanged;
-        }
+            TextBoxType.Instance.CurrencyType(textBoxDonGia, e);
 
-        private void TextBoxDonGia_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBoxDonGia = sender as TextBox;
-            TextBoxType.Instance.CurrencyType(sender, e);
-            
         }
 
         private void TextBoxDonGia_KeyPress(object sender, KeyPressEventArgs e)

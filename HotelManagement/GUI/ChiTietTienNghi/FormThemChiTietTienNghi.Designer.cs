@@ -34,6 +34,7 @@
             this.ButtonThem = new HotelManagement.CTControls.CTButton();
             this.LabelThemCTTN = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ComboBoxTenTienNghi = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.CTTextBoxSoLuong = new HotelManagement.CTControls.CTTextBox();
@@ -47,7 +48,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ComboBoxTenTienNghi = new System.Windows.Forms.ComboBox();
             this.PanelBackground.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -154,6 +154,21 @@
             this.panel3.Size = new System.Drawing.Size(416, 317);
             this.panel3.TabIndex = 0;
             // 
+            // ComboBoxTenTienNghi
+            // 
+            this.ComboBoxTenTienNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ComboBoxTenTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxTenTienNghi.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxTenTienNghi.FormattingEnabled = true;
+            this.ComboBoxTenTienNghi.Items.AddRange(new object[] {
+            "  Nam",
+            "  Nữ"});
+            this.ComboBoxTenTienNghi.Location = new System.Drawing.Point(122, 44);
+            this.ComboBoxTenTienNghi.Name = "ComboBoxTenTienNghi";
+            this.ComboBoxTenTienNghi.Size = new System.Drawing.Size(249, 29);
+            this.ComboBoxTenTienNghi.TabIndex = 11;
+            this.ComboBoxTenTienNghi.Text = "  Tên tiện nghi";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::HotelManagement.Properties.Resources.note;
@@ -196,6 +211,7 @@
             this.CTTextBoxSoLuong.TabIndex = 3;
             this.CTTextBoxSoLuong.Texts = "";
             this.CTTextBoxSoLuong.UnderlineedStyle = true;
+            this.CTTextBoxSoLuong._TextChanged += new System.EventHandler(this.CTTextBoxSoLuong__TextChanged);
             // 
             // ctTextBoxGhiChu
             // 
@@ -335,21 +351,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // ComboBoxTenTienNghi
-            // 
-            this.ComboBoxTenTienNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.ComboBoxTenTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxTenTienNghi.ForeColor = System.Drawing.Color.Black;
-            this.ComboBoxTenTienNghi.FormattingEnabled = true;
-            this.ComboBoxTenTienNghi.Items.AddRange(new object[] {
-            "  Nam",
-            "  Nữ"});
-            this.ComboBoxTenTienNghi.Location = new System.Drawing.Point(122, 44);
-            this.ComboBoxTenTienNghi.Name = "ComboBoxTenTienNghi";
-            this.ComboBoxTenTienNghi.Size = new System.Drawing.Size(249, 29);
-            this.ComboBoxTenTienNghi.TabIndex = 11;
-            this.ComboBoxTenTienNghi.Text = "  Tên tiện nghi";
             // 
             // FormThemChiTietTienNghi
             // 

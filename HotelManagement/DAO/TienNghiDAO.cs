@@ -27,17 +27,30 @@ namespace HotelManagement.DAO
         }    
         public TienNghi FindTienNghi(string MaTN)
         {
-
                 return db.TienNghis.Find(MaTN);
             
         }
         public void RemoveTN(TienNghi tienNghi) // try catch th có phòng có mã tiện nghi đó
         {
 
+            try
+            {
                 tienNghi.DaXoa = true;
+
                 db.TienNghis.AddOrUpdate(tienNghi);
                 db.SaveChanges();
-            
+            }
+            catch(Exception)
+            {
+                db.TienNghis.Remove(tienNghi);
+                return;
+            }
+            List<CTTN> cTTNs = db.CTTNs.ToList();
+            foreach(CTTN cTTN in cTTNs.Where(p=>p.MaTN==tienNghi.MaTN).ToList())
+            {
+                cTTN.DaXoa = true;
+            }    
+                db.SaveChanges();
         }
         public void InsertOrUpdate(TienNghi tienNghi)
         {

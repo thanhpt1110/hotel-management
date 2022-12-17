@@ -225,13 +225,12 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            if (this.CTTextBoxSoLuong.Texts == "")
-            {
-                CTMessageBox.Show("Vui lòng nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+      
+                
                 string TenTN = ctTextBoxTenTienNghi.Texts;
                 string SL = CTTextBoxSoLuong.Texts;
                 string GhiChu = ctTextBoxGhiChu.Texts;
-                if (TenTN == "" || SL == "" || GhiChu == "")
+                if (TenTN == "" || SL == "" )
                 {
                     CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin tiện nghi.", "Thông báo",
                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -253,7 +252,7 @@ namespace HotelManagement.GUI
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-            }
+            
         }
     }
 }
