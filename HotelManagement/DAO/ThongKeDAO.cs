@@ -632,6 +632,7 @@ namespace HotelManagement.DAO
                                               on CTDV.MaHD = HoaDon.MaHD
                                               inner join DichVu
                                               on DichVu.MaDV = CTDV.MaDV
+                                              where NgHD between @fromDate and @toDate
                                               group by DichVu.MaDV, TenDV, SL, NgHD
                                               order by NgHD desc";
                     reader = command.ExecuteReader();

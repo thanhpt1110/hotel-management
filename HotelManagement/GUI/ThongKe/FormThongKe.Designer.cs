@@ -557,6 +557,7 @@
             // 
             // DoanhThuDichVuCaoNhat
             // 
+            this.DoanhThuDichVuCaoNhat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DoanhThuDichVuCaoNhat.AutoSize = true;
             this.DoanhThuDichVuCaoNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.DoanhThuDichVuCaoNhat.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -568,6 +569,7 @@
             // 
             // SoLanDatLoaiPhongNhieuNhat
             // 
+            this.SoLanDatLoaiPhongNhieuNhat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SoLanDatLoaiPhongNhieuNhat.AutoSize = true;
             this.SoLanDatLoaiPhongNhieuNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.SoLanDatLoaiPhongNhieuNhat.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -579,6 +581,7 @@
             // 
             // TenDichVuDoanhThuCaoNhat
             // 
+            this.TenDichVuDoanhThuCaoNhat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TenDichVuDoanhThuCaoNhat.AutoSize = true;
             this.TenDichVuDoanhThuCaoNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.TenDichVuDoanhThuCaoNhat.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -590,6 +593,7 @@
             // 
             // TenLoaiPhongDatNhieuNhat
             // 
+            this.TenLoaiPhongDatNhieuNhat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TenLoaiPhongDatNhieuNhat.AutoSize = true;
             this.TenLoaiPhongDatNhieuNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.TenLoaiPhongDatNhieuNhat.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -601,6 +605,7 @@
             // 
             // DoanhThuLoaiPhongCaoNhat
             // 
+            this.DoanhThuLoaiPhongCaoNhat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DoanhThuLoaiPhongCaoNhat.AutoSize = true;
             this.DoanhThuLoaiPhongCaoNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.DoanhThuLoaiPhongCaoNhat.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -612,6 +617,7 @@
             // 
             // TenLoaiPhongDoanhThuCaoNhat
             // 
+            this.TenLoaiPhongDoanhThuCaoNhat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TenLoaiPhongDoanhThuCaoNhat.AutoSize = true;
             this.TenLoaiPhongDoanhThuCaoNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.TenLoaiPhongDoanhThuCaoNhat.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -659,6 +665,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -670,6 +677,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -681,6 +689,7 @@
             // 
             // lblThangDoanhThuCaoNhat
             // 
+            this.lblThangDoanhThuCaoNhat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblThangDoanhThuCaoNhat.AutoSize = true;
             this.lblThangDoanhThuCaoNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.lblThangDoanhThuCaoNhat.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
