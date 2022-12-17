@@ -257,6 +257,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
+            
             string HoTen = CTTextBoxNhapHoTen.Texts;
             string ChucVu = CTTextBoxNhapChucVu.Texts;
             string Luong = CTTextBoxLuong.Texts;
@@ -274,7 +275,8 @@ namespace HotelManagement.GUI
             try
             {
                 NhanVien nhanVien = new NhanVien();
-                foreach (NhanVien nhanVien1 in NhanVienBUS.Instance.GetAllNhanViens())
+                List<NhanVien> nhanViens = NhanVienBUS.Instance.GetNhanViens();
+                if (nhanViens.Where(p => p.CCCD == this.CTTextBoxNhapCCCD.Texts).SingleOrDefault() != null)
                 {
                     if (nhanVien1.CCCD == this.CTTextBoxNhapCCCD.Texts)
                     {
