@@ -225,6 +225,7 @@ namespace HotelManagement.GUI
         #endregion
         private void FormDatPhong_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = label1;
             // Custom Dgv when loading Form
             DataGridView grid1 = gridPhongTrong;
             DataGridView grid2 = gridPhongDaChon;

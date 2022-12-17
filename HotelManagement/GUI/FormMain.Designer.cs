@@ -48,16 +48,16 @@
             this.ButtonSoDoPhong = new System.Windows.Forms.Button();
             this.ButtonTrangChu = new System.Windows.Forms.Button();
             this.PanelUser = new System.Windows.Forms.Panel();
+            this.linkLabelDangXuat = new System.Windows.Forms.LinkLabel();
             this.LabelTenNguoiDung = new System.Windows.Forms.Label();
             this.PictureBoxUser = new System.Windows.Forms.PictureBox();
             this.panelName = new System.Windows.Forms.Panel();
             this.PictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.panelControlBox = new System.Windows.Forms.Panel();
-            this.labelTenKhachSan = new System.Windows.Forms.Label();
-            this.linkLabelDangXuat = new System.Windows.Forms.LinkLabel();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
+            this.labelTenKhachSan = new System.Windows.Forms.Label();
             this.PanelBackground.SuspendLayout();
             this.panelInfomation.SuspendLayout();
             this.Sidebar.SuspendLayout();
@@ -398,7 +398,7 @@
             this.ButtonTrangChu.FlatAppearance.BorderSize = 0;
             this.ButtonTrangChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonTrangChu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonTrangChu.ForeColor = System.Drawing.Color.Black;
+            this.ButtonTrangChu.ForeColor = System.Drawing.Color.White;
             this.ButtonTrangChu.Image = global::HotelManagement.Properties.Resources.MenuTrangChu;
             this.ButtonTrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonTrangChu.Location = new System.Drawing.Point(0, 134);
@@ -424,6 +424,20 @@
             this.PanelUser.Name = "PanelUser";
             this.PanelUser.Size = new System.Drawing.Size(262, 134);
             this.PanelUser.TabIndex = 0;
+            // 
+            // linkLabelDangXuat
+            // 
+            this.linkLabelDangXuat.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
+            this.linkLabelDangXuat.AutoSize = true;
+            this.linkLabelDangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelDangXuat.LinkColor = System.Drawing.Color.Black;
+            this.linkLabelDangXuat.Location = new System.Drawing.Point(3, 10);
+            this.linkLabelDangXuat.Name = "linkLabelDangXuat";
+            this.linkLabelDangXuat.Size = new System.Drawing.Size(80, 21);
+            this.linkLabelDangXuat.TabIndex = 2;
+            this.linkLabelDangXuat.TabStop = true;
+            this.linkLabelDangXuat.Text = "Đăng xuất";
+            this.linkLabelDangXuat.Click += new System.EventHandler(this.linkLabelDangXuat_Click);
             // 
             // LabelTenNguoiDung
             // 
@@ -484,32 +498,6 @@
             this.panelControlBox.MouseHover += new System.EventHandler(this.panelControlBox_MouseHover);
             this.panelControlBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelControlBox_MouseMove);
             // 
-            // labelTenKhachSan
-            // 
-            this.labelTenKhachSan.AutoSize = true;
-            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
-            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenKhachSan.ForeColor = System.Drawing.Color.Black;
-            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
-            this.labelTenKhachSan.Name = "labelTenKhachSan";
-            this.labelTenKhachSan.Size = new System.Drawing.Size(132, 21);
-            this.labelTenKhachSan.TabIndex = 2;
-            this.labelTenKhachSan.Text = "Khách sạn IT008";
-            // 
-            // linkLabelDangXuat
-            // 
-            this.linkLabelDangXuat.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(119)))), ((int)(((byte)(34)))));
-            this.linkLabelDangXuat.AutoSize = true;
-            this.linkLabelDangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelDangXuat.LinkColor = System.Drawing.Color.Black;
-            this.linkLabelDangXuat.Location = new System.Drawing.Point(3, 10);
-            this.linkLabelDangXuat.Name = "linkLabelDangXuat";
-            this.linkLabelDangXuat.Size = new System.Drawing.Size(80, 21);
-            this.linkLabelDangXuat.TabIndex = 2;
-            this.linkLabelDangXuat.TabStop = true;
-            this.linkLabelDangXuat.Text = "Đăng xuất";
-            this.linkLabelDangXuat.Click += new System.EventHandler(this.linkLabelDangXuat_Click);
-            // 
             // ctMaximize1
             // 
             this.ctMaximize1.BackColor = System.Drawing.Color.Transparent;
@@ -542,6 +530,18 @@
             this.ctClose1.Size = new System.Drawing.Size(15, 15);
             this.ctClose1.TabIndex = 0;
             this.ctClose1.Click += new System.EventHandler(this.ctClose1_Click);
+            // 
+            // labelTenKhachSan
+            // 
+            this.labelTenKhachSan.AutoSize = true;
+            this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
+            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenKhachSan.ForeColor = System.Drawing.Color.Black;
+            this.labelTenKhachSan.Location = new System.Drawing.Point(83, 21);
+            this.labelTenKhachSan.Name = "labelTenKhachSan";
+            this.labelTenKhachSan.Size = new System.Drawing.Size(132, 21);
+            this.labelTenKhachSan.TabIndex = 2;
+            this.labelTenKhachSan.Text = "Khách sạn IT008";
             // 
             // FormMain
             // 

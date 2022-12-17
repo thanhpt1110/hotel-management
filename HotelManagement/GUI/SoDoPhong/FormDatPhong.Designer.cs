@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,12 +53,18 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ctPanel2 = new CTPanel.CTPanel();
+            this.ctPanel1 = new CTPanel.CTPanel();
             this.PictureBoxCCCD = new System.Windows.Forms.PictureBox();
             this.PictureBoxGioiTinh = new System.Windows.Forms.PictureBox();
             this.PictureBoxDiaChi = new System.Windows.Forms.PictureBox();
             this.PictureBoxSDT = new System.Windows.Forms.PictureBox();
             this.PictureBoxTen = new System.Windows.Forms.PictureBox();
             this.ComboBoxGioiTinh = new System.Windows.Forms.ComboBox();
+            this.CTTextBoxNhapDiaChi = new HotelManagement.CTControls.CTTextBox();
+            this.CTTextBoxNhapSDT = new HotelManagement.CTControls.CTTextBox();
+            this.CTTextBoxNhapCCCD = new HotelManagement.CTControls.CTTextBox();
+            this.CTTextBoxNhapHoTen = new HotelManagement.CTControls.CTTextBox();
             this.LabelThongTinKH = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,19 +74,13 @@
             this.PictureBoxNgayKT = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.LabelThongTinPhong = new System.Windows.Forms.Label();
-            this.LabelDatPhong = new System.Windows.Forms.Label();
-            this.PanelBackground = new System.Windows.Forms.Panel();
-            this.ctPanel2 = new CTPanel.CTPanel();
-            this.ctPanel1 = new CTPanel.CTPanel();
-            this.CTTextBoxNhapDiaChi = new HotelManagement.CTControls.CTTextBox();
-            this.CTTextBoxNhapSDT = new HotelManagement.CTControls.CTTextBox();
-            this.CTTextBoxNhapCCCD = new HotelManagement.CTControls.CTTextBox();
-            this.CTTextBoxNhapHoTen = new HotelManagement.CTControls.CTTextBox();
             this.CTDatePickerNgayKT = new HotelManagement.CTControls.CTDatePicker();
             this.CTDatePickerNgayBD = new HotelManagement.CTControls.CTDatePicker();
+            this.LabelThongTinPhong = new System.Windows.Forms.Label();
             this.ctBorderPanel2 = new HotelManagement.CTControls.CTBorderPanel();
             this.ctBorderPanel1 = new HotelManagement.CTControls.CTBorderPanel();
+            this.LabelDatPhong = new System.Windows.Forms.Label();
+            this.PanelBackground = new System.Windows.Forms.Panel();
             this.CTButtonHuy = new HotelManagement.CTControls.CTButton();
             this.CTButtonNhanPhong = new HotelManagement.CTControls.CTButton();
             this.CTButtonDatTruoc = new HotelManagement.CTControls.CTButton();
@@ -304,14 +304,14 @@
             this.gridPhongTrong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridPhongTrong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridPhongTrong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPhongTrong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPhongTrong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridPhongTrong.ColumnHeadersHeight = 50;
             this.gridPhongTrong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridPhongTrong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -319,27 +319,27 @@
             this.Column2,
             this.Column3});
             this.gridPhongTrong.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridPhongTrong.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridPhongTrong.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridPhongTrong.EnableHeadersVisualStyles = false;
             this.gridPhongTrong.Location = new System.Drawing.Point(319, 239);
             this.gridPhongTrong.MultiSelect = false;
             this.gridPhongTrong.Name = "gridPhongTrong";
             this.gridPhongTrong.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPhongTrong.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPhongTrong.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridPhongTrong.RowHeadersVisible = false;
             this.gridPhongTrong.RowHeadersWidth = 40;
             this.gridPhongTrong.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -383,14 +383,14 @@
             this.gridPhongDaChon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridPhongDaChon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridPhongDaChon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPhongDaChon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPhongDaChon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridPhongDaChon.ColumnHeadersHeight = 50;
             this.gridPhongDaChon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridPhongDaChon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -400,27 +400,27 @@
             this.Column7,
             this.Column8});
             this.gridPhongDaChon.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridPhongDaChon.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridPhongDaChon.DefaultCellStyle = dataGridViewCellStyle5;
             this.gridPhongDaChon.EnableHeadersVisualStyles = false;
             this.gridPhongDaChon.Location = new System.Drawing.Point(638, 239);
             this.gridPhongDaChon.MultiSelect = false;
             this.gridPhongDaChon.Name = "gridPhongDaChon";
             this.gridPhongDaChon.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPhongDaChon.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPhongDaChon.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridPhongDaChon.RowHeadersVisible = false;
             this.gridPhongDaChon.RowHeadersWidth = 40;
             this.gridPhongDaChon.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -474,6 +474,34 @@
             this.Column8.ReadOnly = true;
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column8.Width = 42;
+            // 
+            // ctPanel2
+            // 
+            this.ctPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel2.BackColor = System.Drawing.Color.White;
+            this.ctPanel2.BorderRadius = 50;
+            this.ctPanel2.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel2.GradientAngle = 90F;
+            this.ctPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel2.Location = new System.Drawing.Point(627, 231);
+            this.ctPanel2.Name = "ctPanel2";
+            this.ctPanel2.Size = new System.Drawing.Size(305, 224);
+            this.ctPanel2.TabIndex = 31;
+            // 
+            // ctPanel1
+            // 
+            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctPanel1.BackColor = System.Drawing.Color.White;
+            this.ctPanel1.BorderRadius = 50;
+            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
+            this.ctPanel1.GradientAngle = 90F;
+            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.ctPanel1.Location = new System.Drawing.Point(308, 231);
+            this.ctPanel1.Name = "ctPanel1";
+            this.ctPanel1.Size = new System.Drawing.Size(305, 224);
+            this.ctPanel1.TabIndex = 29;
             // 
             // PictureBoxCCCD
             // 
@@ -534,9 +562,102 @@
             this.ComboBoxGioiTinh.Location = new System.Drawing.Point(79, 399);
             this.ComboBoxGioiTinh.Name = "ComboBoxGioiTinh";
             this.ComboBoxGioiTinh.Size = new System.Drawing.Size(164, 29);
-            this.ComboBoxGioiTinh.TabIndex = 1;
-            this.ComboBoxGioiTinh.TabStop = false;
+            this.ComboBoxGioiTinh.TabIndex = 5;
             this.ComboBoxGioiTinh.Text = "  Giới tính";
+            // 
+            // CTTextBoxNhapDiaChi
+            // 
+            this.CTTextBoxNhapDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.CTTextBoxNhapDiaChi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CTTextBoxNhapDiaChi.BorderFocusColor = System.Drawing.Color.Black;
+            this.CTTextBoxNhapDiaChi.BorderRadius = 0;
+            this.CTTextBoxNhapDiaChi.BorderSize = 1;
+            this.CTTextBoxNhapDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTTextBoxNhapDiaChi.IsFocused = false;
+            this.CTTextBoxNhapDiaChi.Location = new System.Drawing.Point(79, 314);
+            this.CTTextBoxNhapDiaChi.Margin = new System.Windows.Forms.Padding(4);
+            this.CTTextBoxNhapDiaChi.Multiline = false;
+            this.CTTextBoxNhapDiaChi.Name = "CTTextBoxNhapDiaChi";
+            this.CTTextBoxNhapDiaChi.Padding = new System.Windows.Forms.Padding(7);
+            this.CTTextBoxNhapDiaChi.PasswordChar = false;
+            this.CTTextBoxNhapDiaChi.PlaceholderColor = System.Drawing.Color.Gray;
+            this.CTTextBoxNhapDiaChi.PlaceholderText = "Nhập quốc tịch";
+            this.CTTextBoxNhapDiaChi.ReadOnly = false;
+            this.CTTextBoxNhapDiaChi.Size = new System.Drawing.Size(205, 36);
+            this.CTTextBoxNhapDiaChi.TabIndex = 4;
+            this.CTTextBoxNhapDiaChi.Texts = "";
+            this.CTTextBoxNhapDiaChi.UnderlineedStyle = true;
+            // 
+            // CTTextBoxNhapSDT
+            // 
+            this.CTTextBoxNhapSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.CTTextBoxNhapSDT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CTTextBoxNhapSDT.BorderFocusColor = System.Drawing.Color.Black;
+            this.CTTextBoxNhapSDT.BorderRadius = 0;
+            this.CTTextBoxNhapSDT.BorderSize = 1;
+            this.CTTextBoxNhapSDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTTextBoxNhapSDT.IsFocused = false;
+            this.CTTextBoxNhapSDT.Location = new System.Drawing.Point(79, 243);
+            this.CTTextBoxNhapSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.CTTextBoxNhapSDT.Multiline = false;
+            this.CTTextBoxNhapSDT.Name = "CTTextBoxNhapSDT";
+            this.CTTextBoxNhapSDT.Padding = new System.Windows.Forms.Padding(7);
+            this.CTTextBoxNhapSDT.PasswordChar = false;
+            this.CTTextBoxNhapSDT.PlaceholderColor = System.Drawing.Color.Gray;
+            this.CTTextBoxNhapSDT.PlaceholderText = "Nhập số điện thoại";
+            this.CTTextBoxNhapSDT.ReadOnly = false;
+            this.CTTextBoxNhapSDT.Size = new System.Drawing.Size(205, 36);
+            this.CTTextBoxNhapSDT.TabIndex = 3;
+            this.CTTextBoxNhapSDT.Texts = "";
+            this.CTTextBoxNhapSDT.UnderlineedStyle = true;
+            // 
+            // CTTextBoxNhapCCCD
+            // 
+            this.CTTextBoxNhapCCCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.CTTextBoxNhapCCCD.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CTTextBoxNhapCCCD.BorderFocusColor = System.Drawing.Color.Black;
+            this.CTTextBoxNhapCCCD.BorderRadius = 0;
+            this.CTTextBoxNhapCCCD.BorderSize = 1;
+            this.CTTextBoxNhapCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTTextBoxNhapCCCD.IsFocused = false;
+            this.CTTextBoxNhapCCCD.Location = new System.Drawing.Point(79, 172);
+            this.CTTextBoxNhapCCCD.Margin = new System.Windows.Forms.Padding(4);
+            this.CTTextBoxNhapCCCD.Multiline = false;
+            this.CTTextBoxNhapCCCD.Name = "CTTextBoxNhapCCCD";
+            this.CTTextBoxNhapCCCD.Padding = new System.Windows.Forms.Padding(7);
+            this.CTTextBoxNhapCCCD.PasswordChar = false;
+            this.CTTextBoxNhapCCCD.PlaceholderColor = System.Drawing.Color.Gray;
+            this.CTTextBoxNhapCCCD.PlaceholderText = "Nhập số CCCD";
+            this.CTTextBoxNhapCCCD.ReadOnly = false;
+            this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(205, 36);
+            this.CTTextBoxNhapCCCD.TabIndex = 2;
+            this.CTTextBoxNhapCCCD.Texts = "";
+            this.CTTextBoxNhapCCCD.UnderlineedStyle = true;
+            this.CTTextBoxNhapCCCD._TextChanged += new System.EventHandler(this.CTTextBoxNhapCCCD__TextChanged);
+            // 
+            // CTTextBoxNhapHoTen
+            // 
+            this.CTTextBoxNhapHoTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.CTTextBoxNhapHoTen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CTTextBoxNhapHoTen.BorderFocusColor = System.Drawing.Color.Black;
+            this.CTTextBoxNhapHoTen.BorderRadius = 0;
+            this.CTTextBoxNhapHoTen.BorderSize = 1;
+            this.CTTextBoxNhapHoTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CTTextBoxNhapHoTen.IsFocused = false;
+            this.CTTextBoxNhapHoTen.Location = new System.Drawing.Point(79, 99);
+            this.CTTextBoxNhapHoTen.Margin = new System.Windows.Forms.Padding(4);
+            this.CTTextBoxNhapHoTen.Multiline = false;
+            this.CTTextBoxNhapHoTen.Name = "CTTextBoxNhapHoTen";
+            this.CTTextBoxNhapHoTen.Padding = new System.Windows.Forms.Padding(7);
+            this.CTTextBoxNhapHoTen.PasswordChar = false;
+            this.CTTextBoxNhapHoTen.PlaceholderColor = System.Drawing.Color.Gray;
+            this.CTTextBoxNhapHoTen.PlaceholderText = "Nhập họ tên khách hàng";
+            this.CTTextBoxNhapHoTen.ReadOnly = false;
+            this.CTTextBoxNhapHoTen.Size = new System.Drawing.Size(205, 36);
+            this.CTTextBoxNhapHoTen.TabIndex = 1;
+            this.CTTextBoxNhapHoTen.Texts = "";
+            this.CTTextBoxNhapHoTen.UnderlineedStyle = true;
+            this.CTTextBoxNhapHoTen._TextChanged += new System.EventHandler(this.CTTextBoxNhapHoTen__TextChanged);
             // 
             // LabelThongTinKH
             // 
@@ -622,171 +743,8 @@
             this.label1.Location = new System.Drawing.Point(431, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 15);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Ngày bắt đầu";
-            // 
-            // LabelThongTinPhong
-            // 
-            this.LabelThongTinPhong.AutoSize = true;
-            this.LabelThongTinPhong.BackColor = System.Drawing.Color.Transparent;
-            this.LabelThongTinPhong.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelThongTinPhong.Location = new System.Drawing.Point(551, 15);
-            this.LabelThongTinPhong.Name = "LabelThongTinPhong";
-            this.LabelThongTinPhong.Size = new System.Drawing.Size(206, 32);
-            this.LabelThongTinPhong.TabIndex = 1;
-            this.LabelThongTinPhong.Text = "Thông tin phòng";
-            // 
-            // LabelDatPhong
-            // 
-            this.LabelDatPhong.AutoSize = true;
-            this.LabelDatPhong.BackColor = System.Drawing.Color.White;
-            this.LabelDatPhong.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelDatPhong.Location = new System.Drawing.Point(431, 9);
-            this.LabelDatPhong.Name = "LabelDatPhong";
-            this.LabelDatPhong.Size = new System.Drawing.Size(153, 37);
-            this.LabelDatPhong.TabIndex = 1;
-            this.LabelDatPhong.Text = "Đặt Phòng";
-            // 
-            // PanelBackground
-            // 
-            this.PanelBackground.BackColor = System.Drawing.Color.White;
-            this.PanelBackground.Controls.Add(this.CTButtonHuy);
-            this.PanelBackground.Controls.Add(this.CTButtonNhanPhong);
-            this.PanelBackground.Controls.Add(this.CTButtonDatTruoc);
-            this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelBackground.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelBackground.Location = new System.Drawing.Point(0, 0);
-            this.PanelBackground.Name = "PanelBackground";
-            this.PanelBackground.Size = new System.Drawing.Size(1022, 587);
-            this.PanelBackground.TabIndex = 3;
-            this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
-            this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
-            // 
-            // ctPanel2
-            // 
-            this.ctPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel2.BackColor = System.Drawing.Color.White;
-            this.ctPanel2.BorderRadius = 50;
-            this.ctPanel2.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel2.GradientAngle = 90F;
-            this.ctPanel2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel2.Location = new System.Drawing.Point(627, 231);
-            this.ctPanel2.Name = "ctPanel2";
-            this.ctPanel2.Size = new System.Drawing.Size(305, 224);
-            this.ctPanel2.TabIndex = 31;
-            // 
-            // ctPanel1
-            // 
-            this.ctPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctPanel1.BackColor = System.Drawing.Color.White;
-            this.ctPanel1.BorderRadius = 50;
-            this.ctPanel1.ForeColor = System.Drawing.Color.Black;
-            this.ctPanel1.GradientAngle = 90F;
-            this.ctPanel1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
-            this.ctPanel1.Location = new System.Drawing.Point(308, 231);
-            this.ctPanel1.Name = "ctPanel1";
-            this.ctPanel1.Size = new System.Drawing.Size(305, 224);
-            this.ctPanel1.TabIndex = 29;
-            // 
-            // CTTextBoxNhapDiaChi
-            // 
-            this.CTTextBoxNhapDiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.CTTextBoxNhapDiaChi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CTTextBoxNhapDiaChi.BorderFocusColor = System.Drawing.Color.Black;
-            this.CTTextBoxNhapDiaChi.BorderRadius = 0;
-            this.CTTextBoxNhapDiaChi.BorderSize = 1;
-            this.CTTextBoxNhapDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTTextBoxNhapDiaChi.IsFocused = false;
-            this.CTTextBoxNhapDiaChi.Location = new System.Drawing.Point(79, 314);
-            this.CTTextBoxNhapDiaChi.Margin = new System.Windows.Forms.Padding(4);
-            this.CTTextBoxNhapDiaChi.Multiline = false;
-            this.CTTextBoxNhapDiaChi.Name = "CTTextBoxNhapDiaChi";
-            this.CTTextBoxNhapDiaChi.Padding = new System.Windows.Forms.Padding(7);
-            this.CTTextBoxNhapDiaChi.PasswordChar = false;
-            this.CTTextBoxNhapDiaChi.PlaceholderColor = System.Drawing.Color.Gray;
-            this.CTTextBoxNhapDiaChi.PlaceholderText = "Nhập quốc tịch";
-            this.CTTextBoxNhapDiaChi.ReadOnly = false;
-            this.CTTextBoxNhapDiaChi.Size = new System.Drawing.Size(205, 36);
-            this.CTTextBoxNhapDiaChi.TabIndex = 1;
-            this.CTTextBoxNhapDiaChi.TabStop = false;
-            this.CTTextBoxNhapDiaChi.Texts = "";
-            this.CTTextBoxNhapDiaChi.UnderlineedStyle = true;
-            // 
-            // CTTextBoxNhapSDT
-            // 
-            this.CTTextBoxNhapSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.CTTextBoxNhapSDT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CTTextBoxNhapSDT.BorderFocusColor = System.Drawing.Color.Black;
-            this.CTTextBoxNhapSDT.BorderRadius = 0;
-            this.CTTextBoxNhapSDT.BorderSize = 1;
-            this.CTTextBoxNhapSDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTTextBoxNhapSDT.IsFocused = false;
-            this.CTTextBoxNhapSDT.Location = new System.Drawing.Point(79, 243);
-            this.CTTextBoxNhapSDT.Margin = new System.Windows.Forms.Padding(4);
-            this.CTTextBoxNhapSDT.Multiline = false;
-            this.CTTextBoxNhapSDT.Name = "CTTextBoxNhapSDT";
-            this.CTTextBoxNhapSDT.Padding = new System.Windows.Forms.Padding(7);
-            this.CTTextBoxNhapSDT.PasswordChar = false;
-            this.CTTextBoxNhapSDT.PlaceholderColor = System.Drawing.Color.Gray;
-            this.CTTextBoxNhapSDT.PlaceholderText = "Nhập số điện thoại";
-            this.CTTextBoxNhapSDT.ReadOnly = false;
-            this.CTTextBoxNhapSDT.Size = new System.Drawing.Size(205, 36);
-            this.CTTextBoxNhapSDT.TabIndex = 1;
-            this.CTTextBoxNhapSDT.TabStop = false;
-            this.CTTextBoxNhapSDT.Texts = "";
-            this.CTTextBoxNhapSDT.UnderlineedStyle = true;
-            // 
-            // CTTextBoxNhapCCCD
-            // 
-            this.CTTextBoxNhapCCCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.CTTextBoxNhapCCCD.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CTTextBoxNhapCCCD.BorderFocusColor = System.Drawing.Color.Black;
-            this.CTTextBoxNhapCCCD.BorderRadius = 0;
-            this.CTTextBoxNhapCCCD.BorderSize = 1;
-            this.CTTextBoxNhapCCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTTextBoxNhapCCCD.IsFocused = false;
-            this.CTTextBoxNhapCCCD.Location = new System.Drawing.Point(79, 172);
-            this.CTTextBoxNhapCCCD.Margin = new System.Windows.Forms.Padding(4);
-            this.CTTextBoxNhapCCCD.Multiline = false;
-            this.CTTextBoxNhapCCCD.Name = "CTTextBoxNhapCCCD";
-            this.CTTextBoxNhapCCCD.Padding = new System.Windows.Forms.Padding(7);
-            this.CTTextBoxNhapCCCD.PasswordChar = false;
-            this.CTTextBoxNhapCCCD.PlaceholderColor = System.Drawing.Color.Gray;
-            this.CTTextBoxNhapCCCD.PlaceholderText = "Nhập số CCCD";
-            this.CTTextBoxNhapCCCD.ReadOnly = false;
-            this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(205, 36);
-            this.CTTextBoxNhapCCCD.TabIndex = 1;
-            this.CTTextBoxNhapCCCD.TabStop = false;
-            this.CTTextBoxNhapCCCD.Texts = "";
-            this.CTTextBoxNhapCCCD.UnderlineedStyle = true;
-            this.CTTextBoxNhapCCCD._TextChanged += new System.EventHandler(this.CTTextBoxNhapCCCD__TextChanged);
-            // 
-            // CTTextBoxNhapHoTen
-            // 
-            this.CTTextBoxNhapHoTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.CTTextBoxNhapHoTen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.CTTextBoxNhapHoTen.BorderFocusColor = System.Drawing.Color.Black;
-            this.CTTextBoxNhapHoTen.BorderRadius = 0;
-            this.CTTextBoxNhapHoTen.BorderSize = 1;
-            this.CTTextBoxNhapHoTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTTextBoxNhapHoTen.IsFocused = false;
-            this.CTTextBoxNhapHoTen.Location = new System.Drawing.Point(79, 99);
-            this.CTTextBoxNhapHoTen.Margin = new System.Windows.Forms.Padding(4);
-            this.CTTextBoxNhapHoTen.Multiline = false;
-            this.CTTextBoxNhapHoTen.Name = "CTTextBoxNhapHoTen";
-            this.CTTextBoxNhapHoTen.Padding = new System.Windows.Forms.Padding(7);
-            this.CTTextBoxNhapHoTen.PasswordChar = false;
-            this.CTTextBoxNhapHoTen.PlaceholderColor = System.Drawing.Color.Gray;
-            this.CTTextBoxNhapHoTen.PlaceholderText = "Nhập họ tên khách hàng";
-            this.CTTextBoxNhapHoTen.ReadOnly = false;
-            this.CTTextBoxNhapHoTen.Size = new System.Drawing.Size(205, 36);
-            this.CTTextBoxNhapHoTen.TabIndex = 1;
-            this.CTTextBoxNhapHoTen.TabStop = false;
-            this.CTTextBoxNhapHoTen.Texts = "";
-            this.CTTextBoxNhapHoTen.UnderlineedStyle = true;
-            this.CTTextBoxNhapHoTen._TextChanged += new System.EventHandler(this.CTTextBoxNhapHoTen__TextChanged);
             // 
             // CTDatePickerNgayKT
             // 
@@ -820,6 +778,17 @@
             this.CTDatePickerNgayBD.TextColor = System.Drawing.SystemColors.InfoText;
             this.CTDatePickerNgayBD.ValueChanged += new System.EventHandler(this.CTDatePickerNgayBD_ValueChanged);
             // 
+            // LabelThongTinPhong
+            // 
+            this.LabelThongTinPhong.AutoSize = true;
+            this.LabelThongTinPhong.BackColor = System.Drawing.Color.Transparent;
+            this.LabelThongTinPhong.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelThongTinPhong.Location = new System.Drawing.Point(551, 15);
+            this.LabelThongTinPhong.Name = "LabelThongTinPhong";
+            this.LabelThongTinPhong.Size = new System.Drawing.Size(206, 32);
+            this.LabelThongTinPhong.TabIndex = 1;
+            this.LabelThongTinPhong.Text = "Thông tin phòng";
+            // 
             // ctBorderPanel2
             // 
             this.ctBorderPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
@@ -847,6 +816,32 @@
             this.ctBorderPanel1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.ctBorderPanel1.TabIndex = 5;
             this.ctBorderPanel1.TextColor = System.Drawing.Color.Black;
+            // 
+            // LabelDatPhong
+            // 
+            this.LabelDatPhong.AutoSize = true;
+            this.LabelDatPhong.BackColor = System.Drawing.Color.White;
+            this.LabelDatPhong.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDatPhong.Location = new System.Drawing.Point(431, 9);
+            this.LabelDatPhong.Name = "LabelDatPhong";
+            this.LabelDatPhong.Size = new System.Drawing.Size(153, 37);
+            this.LabelDatPhong.TabIndex = 1;
+            this.LabelDatPhong.Text = "Đặt Phòng";
+            // 
+            // PanelBackground
+            // 
+            this.PanelBackground.BackColor = System.Drawing.Color.White;
+            this.PanelBackground.Controls.Add(this.CTButtonHuy);
+            this.PanelBackground.Controls.Add(this.CTButtonNhanPhong);
+            this.PanelBackground.Controls.Add(this.CTButtonDatTruoc);
+            this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelBackground.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelBackground.Location = new System.Drawing.Point(0, 0);
+            this.PanelBackground.Name = "PanelBackground";
+            this.PanelBackground.Size = new System.Drawing.Size(1022, 587);
+            this.PanelBackground.TabIndex = 3;
+            this.PanelBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBackground_Paint);
+            this.PanelBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelBackground_MouseDown);
             // 
             // CTButtonHuy
             // 

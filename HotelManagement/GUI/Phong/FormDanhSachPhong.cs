@@ -218,10 +218,5 @@ namespace HotelManagement.GUI
         {
             grid.Cursor = Cursors.Default;
         }
-
-        private void grid_Scroll(object sender, ScrollEventArgs e)
-        {
-            e.NewValue = 1;
-        }
     }
 }
