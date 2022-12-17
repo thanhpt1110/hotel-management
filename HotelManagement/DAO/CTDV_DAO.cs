@@ -29,15 +29,19 @@ namespace HotelManagement.DAO
         {
             foreach(CTDV cTDV in cTDVs)
             {
-                db.CTDVs.AddOrUpdate(cTDV);
-                CTDV cTDV1 = db.CTDVs.Where(p => p.DonGia == cTDV.DonGia && p.MaDV == cTDV.MaDV && p.MaHD == cTDV.MaHD).SingleOrDefault();
-                if (cTDV.SL == 0 && cTDV1!= null)
+                if (cTDV.SL != 0)
                 {
-                    //CTDV ctdv = db.CTDVs.Where(p => p.MaDV == cTDV.MaDV && p.DonGia == cTDV.DonGia && p.MaHD == cTDV.MaHD).SingleOrDefault();
-                    db.CTDVs.Remove(cTDV1);
-                }    
+                    db.CTDVs.AddOrUpdate(cTDV);
+                    CTDV cTDV1 = db.CTDVs.Where(p => p.DonGia == cTDV.DonGia && p.MaDV == cTDV.MaDV && p.MaHD == cTDV.MaHD).SingleOrDefault();
+                    if (cTDV.SL == 0 && cTDV1 != null)
+                    {
+                        //CTDV ctdv = db.CTDVs.Where(p => p.MaDV == cTDV.MaDV && p.DonGia == cTDV.DonGia && p.MaHD == cTDV.MaHD).SingleOrDefault();
+                        db.CTDVs.Remove(cTDV1);
+                    }
+                }
             }
             db.SaveChanges();
+            instance = null;
         }    
     }
 }

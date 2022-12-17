@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HotelManagement.CTControls;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace HotelManagement.DAO
 {
@@ -49,7 +50,7 @@ namespace HotelManagement.DAO
         public CTDP FindCTDP(string MaPhong, DateTime currentTime)
         {
           //  CTMessageBox.Show(currentTime.ToString());
-                CTDP ctdp = db.CTDPs.Where(p => p.MaPH == MaPhong &&( (p.CheckIn <= currentTime &&  currentTime <= p.CheckOut)||p.CheckIn==currentTime)).SingleOrDefault();
+                CTDP ctdp = db.CTDPs.Where(p => p.MaPH == MaPhong &&( (p.CheckIn <= currentTime &&  currentTime <= p.CheckOut)||p.CheckIn==currentTime) && p.TrangThai!="Đã xong").SingleOrDefault();
                 return ctdp;
             
         }
@@ -62,9 +63,9 @@ namespace HotelManagement.DAO
                     foreach (var ctdp in DSPhongThem)
                     {
                         listCTDP.Add(ctdp);
-                    }
+                    } 
                 }
-                var cTDPs = from p in listCTDP where (((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin >= p.CheckIn && Checkout <= p.CheckOut)) && p.TrangThai!="Đã xong") select p;
+                var cTDPs = from p in listCTDP where (((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin <= p.CheckIn && Checkout >= p.CheckOut)) && p.TrangThai!="Đã xong") select p;
 
                 List<CTDP> ctdpList = new List<CTDP>();
                 foreach (var ctdp in cTDPs)
@@ -95,14 +96,16 @@ namespace HotelManagement.DAO
         }
 
         public void UpdateOrAddCTDP(CTDP ctdp)
-        { 
+        {
+
                 ctdp.PhieuThue = db.PhieuThues.Find(ctdp.MaPT);
-                 ctdp.Phong = db.Phongs.Find(ctdp.MaPH);
-                ctdp.DaXoa = false;              
+                MessageBox.Show("Thành công");
+                ctdp.Phong = db.Phongs.Find(ctdp.MaPH);
+                ctdp.DaXoa = false;
                 db.CTDPs.AddOrUpdate(ctdp);
+                    
                 db.SaveChanges();
-                
-            
+            instance = null;
         }
         public string getNextCTDPwithList(List<CTDP> list)
         {
