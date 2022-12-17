@@ -278,13 +278,13 @@ namespace HotelManagement.GUI
                 List<NhanVien> nhanViens = NhanVienBUS.Instance.GetNhanViens();
                 if (nhanViens.Where(p => p.CCCD == this.CTTextBoxNhapCCCD.Texts).SingleOrDefault() != null)
                 {
-                    if (nhanVien1.CCCD == this.CTTextBoxNhapCCCD.Texts)
+                    if (nhanVien.CCCD == this.CTTextBoxNhapCCCD.Texts)
                     {
                         CTMessageBox.Show("Đã tồn tại số CCCD này trong danh sách nhân viên! Vui lòng kiểm tra lại thông tin.", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    else if (nhanVien1.SDT == this.ctTextBoxSDT.Texts)
+                    else if (nhanVien.SDT == this.ctTextBoxSDT.Texts)
                     {
                         CTMessageBox.Show("Đã tồn tại SĐT này trong danh sách nhân viên! Vui lòng kiểm tra lại thông tin.", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);

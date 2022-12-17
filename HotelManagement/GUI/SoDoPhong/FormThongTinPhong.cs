@@ -445,18 +445,21 @@ namespace HotelManagement.GUI
                             formBackground.Dispose();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    finally { formBackground.Dispose(); }
-
-                    CTMessageBox.Show("Thanh toán thành công.", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.phong = ctdp.Phong;
-                    this.phong.TTDD = "Chưa dọn dẹp";
-                    this.LoadPhongTrong();
-                    this.Close();
+                    finally
+                    {
+                        formBackground.Dispose();
+                        CTMessageBox.Show("Thanh toán thành công.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.phong = ctdp.Phong;
+                        this.phong.TTDD = "Chưa dọn dẹp";
+                        this.LoadPhongTrong();
+                        this.Close();
+                    }
                 }
             }
         }
