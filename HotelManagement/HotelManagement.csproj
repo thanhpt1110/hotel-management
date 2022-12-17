@@ -136,6 +136,8 @@
     <None Include="Resources\DichVuChart.png" />
     <None Include="Resources\DatPhongChart.png" />
     <None Include="Resources\ThuePhongChart.png" />
+    <None Include="Resources\phong_icon.png" />
+    <None Include="Resources\error.png" />
     <None Include="Resources\database.png" />
     <None Include="Resources\top3.png" />
     <None Include="Resources\top2.png" />
@@ -147,7 +149,6 @@
     <None Include="Resources\QuenMatKhau.png" />
     <None Include="Resources\none.png" />
     <None Include="Resources\question.png" />
-    <None Include="Resources\error.png" />
     <None Include="Resources\TimePicker.png" />
     <None Include="Resources\staffResize.png" />
     <None Include="Resources\back.png" />

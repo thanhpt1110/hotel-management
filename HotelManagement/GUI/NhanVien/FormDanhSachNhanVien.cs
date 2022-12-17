@@ -46,11 +46,16 @@ namespace HotelManagement.GUI
                     formBackground.Dispose();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally { formBackground.Dispose(); }
+            finally 
+            {
+                LoadAllGrid();
+                formBackground.Dispose(); 
+            }
         }
 
         private void FormDanhSachNhanVien_Load(object sender, EventArgs e)
@@ -78,9 +83,10 @@ namespace HotelManagement.GUI
                     grid.Rows.Add(NV, nhanvien.MaNV, nhanvien.TenNV, nhanvien.ChucVu, String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh), nhanvien.GioiTinh, nhanvien.SDT, nhanvien.Email, edit, delete);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void buttonExport_Click(object sender, EventArgs e)
@@ -120,9 +126,10 @@ namespace HotelManagement.GUI
                     CTMessageBox.Show(mess, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -147,16 +154,37 @@ namespace HotelManagement.GUI
                             formBackground.Dispose();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally { formBackground.Dispose(); }
                 }
+                // If click delete
                 if (x == 9)
                 {
-                    NhanVienBUS.Instance.RemoveNhanVien(NhanVienBUS.Instance.GetNhanVien(grid.Rows[y].Cells[1].Value.ToString()));
-                    this.LoadAllGrid();
+                    DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
+                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            NhanVienBUS.Instance.RemoveNhanVien(NhanVienBUS.Instance.GetNhanVien(grid.Rows[y].Cells[1].Value.ToString()));
+                        }
+                        catch (Exception ex)
+                        {
+                            CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            this.LoadAllGrid();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+
                 }
                 if (x >= 0 && x <= 7)
                 {
@@ -174,9 +202,10 @@ namespace HotelManagement.GUI
                             formBackground.Dispose();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show(ex.Message, "THÔNG BÁO");
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally { formBackground.Dispose(); }
                 }

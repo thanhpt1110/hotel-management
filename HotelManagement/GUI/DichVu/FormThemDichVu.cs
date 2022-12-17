@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ApplicationSettings;
+using HotelManagement.CTControls;
+
 namespace HotelManagement.GUI
 {
     public partial class FormThemDichVu : Form
@@ -211,24 +213,15 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            try
+            if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == "" || this.CTTextBoxDonGia.Texts == "" || this.ctTextBoxMoTa.Texts == "")
             {
-                if (this.ctTextBoxTenDV.Texts == "" || this.CTTextBoxSoLuong.Texts == "" || this.CTTextBoxDonGia.Texts == "" || this.ctTextBoxMoTa.Texts == "")
-                {
-                    MessageBox.Show("Bạn vui lòng điền đầy đủ thông tin", "THÔNG BÁO");
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin dịch vụ.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             try
             {
-                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc các thông tin trên chưa", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialogResult == DialogResult.Yes)
-                {
                     DichVu dichVu = new DichVu();
                     dichVu.TenDV = this.ctTextBoxTenDV.Texts;
                     dichVu.SLConLai = int.Parse(this.CTTextBoxSoLuong.Texts);
@@ -236,13 +229,18 @@ namespace HotelManagement.GUI
                     dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
                     dichVu.MaDV = DichVuBUS.Instance.GetMaDVNext();
                     DichVuBUS.Instance.UpdateORAdd(dichVu);
-                    this.formDanhSachDichVu.LoadALLDV();
-                    this.Close();
-                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.formDanhSachDichVu.LoadALLDV();
+                this.Close();
             }
         }
 

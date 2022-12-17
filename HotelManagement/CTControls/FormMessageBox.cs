@@ -125,9 +125,9 @@ namespace HotelManagement.CTControls
                     //OK Button
                     button1.Visible = true;
                     button1.Location = new Point(xCenter, yCenter);
-                    button1.Text = "Ok";
+                    button1.Text = "OK";
                     button1.DialogResult = DialogResult.OK;//Set DialogResult
-
+                    this.AcceptButton = button1;
                     //Set Default Button
                     SetDefaultButton(defaultButton);
                     break;
@@ -135,13 +135,13 @@ namespace HotelManagement.CTControls
                     //OK Button
                     button1.Visible = true;
                     button1.Location = new Point(xCenter - (button1.Width / 2) - 5, yCenter);
-                    button1.Text = "Ok";
+                    button1.Text = "OK";
                     button1.DialogResult = DialogResult.OK;//Set DialogResult
 
                     //Cancel Button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
-                    button2.Text = "Cancel";
+                    button2.Text = "Hủy";
                     button2.DialogResult = DialogResult.Cancel;//Set DialogResult
                     button2.BackColor = Color.Goldenrod;
 
@@ -155,13 +155,13 @@ namespace HotelManagement.CTControls
                     //Retry Button
                     button1.Visible = true;
                     button1.Location = new Point(xCenter - (button1.Width / 2) - 5, yCenter);
-                    button1.Text = "Retry";
+                    button1.Text = "Thử lại";
                     button1.DialogResult = DialogResult.Retry;//Set DialogResult
 
                     //Cancel Button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
-                    button2.Text = "Cancel";
+                    button2.Text = "Hủy";
                     button2.DialogResult = DialogResult.Cancel;//Set DialogResult
                     button2.BackColor = Color.Goldenrod;
 
@@ -175,13 +175,13 @@ namespace HotelManagement.CTControls
                     //Yes Button
                     button1.Visible = true;
                     button1.Location = new Point(xCenter - (button1.Width / 2) - 5, yCenter);
-                    button1.Text = "Yes";
+                    button1.Text = "Có";
                     button1.DialogResult = DialogResult.Yes;//Set DialogResult
-
+                    this.AcceptButton = button1;    
                     //No Button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter + (button2.Width / 2) + 5, yCenter);
-                    button2.Text = "No";
+                    button2.Text = "Không";
                     button2.DialogResult = DialogResult.No;//Set DialogResult
                     button2.BackColor = Color.FromArgb(252, 87, 83);
 
@@ -194,20 +194,20 @@ namespace HotelManagement.CTControls
                     //Yes Button
                     button1.Visible = true;
                     button1.Location = new Point(xCenter - button1.Width - 5, yCenter);
-                    button1.Text = "Yes";
+                    button1.Text = "Có";
                     button1.DialogResult = DialogResult.Yes;//Set DialogResult
-
+                    this.AcceptButton = button1;
                     //No Button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter, yCenter);
-                    button2.Text = "No";
+                    button2.Text = "Không";
                     button2.DialogResult = DialogResult.No;//Set DialogResult
                     button2.BackColor = Color.FromArgb(252, 87, 83);
 
                     //Cancel Button
                     button3.Visible = true;
                     button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
-                    button3.Text = "Cancel";
+                    button3.Text = "Hủy";
                     button3.DialogResult = DialogResult.Cancel;//Set DialogResult
                     button3.BackColor = Color.Goldenrod;
 
@@ -219,20 +219,20 @@ namespace HotelManagement.CTControls
                     //Abort Button
                     button1.Visible = true;
                     button1.Location = new Point(xCenter - button1.Width - 5, yCenter);
-                    button1.Text = "Abort";
+                    button1.Text = "Hủy bỏ";
                     button1.DialogResult = DialogResult.Abort;//Set DialogResult
                     button1.BackColor = Color.Goldenrod;
 
                     //Retry Button
                     button2.Visible = true;
                     button2.Location = new Point(xCenter, yCenter);
-                    button2.Text = "Retry";
+                    button2.Text = "Thử lại";
                     button2.DialogResult = DialogResult.Retry;//Set DialogResult                    
 
                     //Ignore Button
                     button3.Visible = true;
                     button3.Location = new Point(xCenter + button2.Width + 5, yCenter);
-                    button3.Text = "Ignore";
+                    button3.Text = "Bỏ qua";
                     button3.DialogResult = DialogResult.Ignore;//Set DialogResult
                     button3.BackColor = Color.FromArgb(252, 87, 83);
 

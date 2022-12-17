@@ -61,7 +61,6 @@
             this.LabelNgayHD = new System.Windows.Forms.Label();
             this.LabelTenKH = new System.Windows.Forms.Label();
             this.LabelHoaDon = new System.Windows.Forms.Label();
-            this.LabelTitle = new System.Windows.Forms.Label();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.PanelBackground.SuspendLayout();
@@ -98,7 +97,6 @@
             this.PanelBackground.Controls.Add(this.LabelNgayHD);
             this.PanelBackground.Controls.Add(this.LabelTenKH);
             this.PanelBackground.Controls.Add(this.LabelHoaDon);
-            this.PanelBackground.Controls.Add(this.LabelTitle);
             this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBackground.Location = new System.Drawing.Point(0, 0);
             this.PanelBackground.Name = "PanelBackground";
@@ -442,16 +440,6 @@
             this.LabelHoaDon.TabIndex = 14;
             this.LabelHoaDon.Text = "Hóa đơn";
             // 
-            // LabelTitle
-            // 
-            this.LabelTitle.AutoSize = true;
-            this.LabelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelTitle.Location = new System.Drawing.Point(12, 9);
-            this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(61, 17);
-            this.LabelTitle.TabIndex = 13;
-            this.LabelTitle.Text = "Hóa đơn";
-            // 
             // printDialog
             // 
             this.printDialog.UseEXDialog = true;
@@ -514,7 +502,6 @@
         private System.Windows.Forms.Label LabelNgayHD;
         private System.Windows.Forms.Label LabelTenKH;
         private System.Windows.Forms.Label LabelHoaDon;
-        private System.Windows.Forms.Label LabelTitle;
         private System.Windows.Forms.PictureBox Printer;
         private CTControls.CTClose ctClose1;
         private System.Windows.Forms.FontDialog fontDialog1;

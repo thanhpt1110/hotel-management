@@ -240,7 +240,7 @@ namespace HotelManagement.GUI
             this.CTTextBoxTimTenTienNghi.Padding = new System.Windows.Forms.Padding(40, 7, 7, 7);
             this.CTTextBoxTimTenTienNghi.PasswordChar = false;
             this.CTTextBoxTimTenTienNghi.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.CTTextBoxTimTenTienNghi.PlaceholderText = "Tìm theo tên tiện nghi";
+            this.CTTextBoxTimTenTienNghi.PlaceholderText = "Nhập tên tiện nghi cần tìm";
             this.CTTextBoxTimTenTienNghi.ReadOnly = false;
             this.CTTextBoxTimTenTienNghi.Size = new System.Drawing.Size(244, 36);
             this.CTTextBoxTimTenTienNghi.TabIndex = 16;

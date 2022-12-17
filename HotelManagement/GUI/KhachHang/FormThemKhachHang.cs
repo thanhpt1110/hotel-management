@@ -13,6 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ApplicationSettings;
+using HotelManagement.CTControls;
+
 namespace HotelManagement.GUI
 {
     public partial class FormThemKhachHang : Form
@@ -215,27 +217,19 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            int flag = 0;
-
             if (this.ctTextBoxName.Texts != "" && this.ctTextBoxQuocTich.Texts != "" && this.ctTextBoxCMND.Texts != "" && this.comboBoxGioiTinh.Text != "  Giới tính")
-            {
+            {   
                 List<KhachHang> khachHangs = KhachHangBUS.Instance.GetKhachHangs();
                 foreach (KhachHang khachHang in khachHangs)
                 {
                     if (khachHang.CCCD_Passport == this.ctTextBoxCMND.Texts)
                     {
-                        DialogResult dialogResult = MessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách", "THÔNG BÁO", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                        if (dialogResult == DialogResult.Cancel)
-                        {
-                            this.Close();
-                            return;
-                        }
-                        else
-                            flag = 1;
+                        CTMessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách khách hàng! Vui lòng kiểm tra lại thông tin.", "Thông báo",
+                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
-                   
                 }
-                 if(flag == 0)
+                try
                 {
                     KhachHang khachHang1 = new KhachHang();
                     khachHang1.MaKH = KhachHangBUS.Instance.GetMaKHNext();
@@ -245,14 +239,23 @@ namespace HotelManagement.GUI
                     khachHang1.SDT = this.ctTextBoxSDT.Texts;
                     khachHang1.GioiTinh = this.comboBoxGioiTinh.Text.Trim(' ');
                     KhachHangBUS.Instance.UpdateOrAdd(khachHang1);
-                    MessageBox.Show("Thành công", "THÔNG BÁO", MessageBoxButtons.OK);
+                }
+                catch(Exception)
+                {
+                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
                     this.formDanhSachKhachHang.LoadAllGrid();
+                    CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-
             }
             else
-                MessageBox.Show("Vui lòng nhập thông tin khách hàng", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void ctTextBoxName__TextChanged(object sender, EventArgs e)

@@ -101,7 +101,7 @@
             this.CTButtonCapNhat.Name = "CTButtonCapNhat";
             this.CTButtonCapNhat.Size = new System.Drawing.Size(140, 40);
             this.CTButtonCapNhat.TabIndex = 8;
-            this.CTButtonCapNhat.Text = "Cập nhật";
+            this.CTButtonCapNhat.Text = "Thêm";
             this.CTButtonCapNhat.TextColor = System.Drawing.Color.White;
             this.CTButtonCapNhat.UseVisualStyleBackColor = false;
             this.CTButtonCapNhat.Click += new System.EventHandler(this.CTButtonCapNhat_Click);
@@ -270,6 +270,7 @@
             // 
             // FormThemDichVu
             // 
+            this.AcceptButton = this.CTButtonCapNhat;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagement.CTControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -193,14 +194,43 @@ namespace HotelManagement.GUI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        private void CTButtonThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void FormThemChiTietTienNghi_Load(object sender, EventArgs e)
         {
             this.ActiveControl = LabelThemChiTietTienNghi;
+        }
+
+        private void ButtonThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ButtonThem_Click(object sender, EventArgs e)
+        {
+            string TenTN = ComboBoxTenTienNghi.Text;
+            string SL = CTTextBoxSoLuong.Texts; 
+            string GhiChu = ctTextBoxGhiChu.Texts;
+            if (TenTN == "  Tên tiện nghi" || SL == "" || GhiChu == "")
+            {
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin tiện nghi.", "Thông báo",
+                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                // Function here
+            }
+            catch (Exception)
+            {
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally 
+            {
+                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close(); 
+            }
         }
     }
 }

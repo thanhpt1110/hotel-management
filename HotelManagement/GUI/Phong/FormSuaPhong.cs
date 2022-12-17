@@ -242,32 +242,40 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
+            string TinhTrang = comboBoxTinhTrangPhong.Text; 
+            string DonDep = comboBoxDonDep.Text;
+            string LoaiPhong = comboBoxLoaiPhong.Text;
+            string GhiChu = ctTextBoxGhiChu.Texts;
+            if (TinhTrang == "    Tình trạng phòng" || DonDep == "  Tình trạng dọn dẹp" || LoaiPhong == "  Loại phòng" || GhiChu == "")
+            {
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin phòng.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
-                
                 phong.TTDD = this.comboBoxDonDep.Text;
                 phong.GhiChu = this.ctTextBoxGhiChu.Texts;
                 if (this.comboBoxLoaiPhong.Text == "Thường đơn")
-                {
                     phong.MaLPH = "NOR01";
-                }
                 else if (this.comboBoxLoaiPhong.Text == "Thường đôi")
-                {
                     phong.MaLPH = "NOR02";
-                }
                 else if (this.comboBoxLoaiPhong.Text == "Vip đơn")
-                {
                     phong.MaLPH = "VIP01";
-                }
                 else
                     phong.MaLPH = "VIP02";
                 phong.TTPH = this.comboBoxTinhTrangPhong.Text;
                 PhongBUS.Instance.UpdateOrAdd(phong);
-                this.Close();
             }
-            catch(Exception ex)
+            catch (Exception)
             {
-                CTMessageBox.Show("Cập nhật thông tin phòng thất bại.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

@@ -237,37 +237,66 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
+            string HoTen = CTTextBoxNhapHoTen.Texts;
+            string ChucVu = CTTextBoxNhapChucVu.Texts;
+            string Luong = CTTextBoxLuong.Texts;
+            string SDT = ctTextBoxSDT.Texts;
+            string CCCD = CTTextBoxNhapCCCD.Texts;
+            string DiaChi = CTTextBoxDiaChi.Texts;
+            string email = ctTextBoxEmail.Texts;
+            string GioiTinh = ComboBoxGioiTinh.Text;
+            if (HoTen == "" || ChucVu == "" || Luong == "" || SDT == "" || CCCD == "" || DiaChi == "" || email == "" || GioiTinh == "  Giới tính")
+            {
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên.", "Thông báo",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 foreach (NhanVien nhanVien in NhanVienBUS.Instance.GetAllNhanViens())
                 {
                     if (nhanVien.CCCD == this.CTTextBoxNhapCCCD.Texts && nhanVien.MaNV != this.nhanVien.MaNV)
                     {
-                        CTMessageBox.Show("Số căn cước công dân trùng với nhân viên khác", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        CTMessageBox.Show("Đã tồn tại số CCCD này trong danh sách nhân viên! Vui lòng kiểm tra lại thông tin.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     else if (nhanVien.SDT == this.ctTextBoxSDT.Texts && nhanVien.MaNV != this.nhanVien.MaNV)
                     {
-                        CTMessageBox.Show("Số điện thoại này trùng với nhân viên khác", "THÔNG BÁO",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        CTMessageBox.Show("Đã tồn tại SĐT này trong danh sách nhân viên! Vui lòng kiểm tra lại thông tin.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
-                this.nhanVien.ChucVu = this.CTTextBoxNhapChucVu.Texts;
-                this.nhanVien.CCCD = this.CTTextBoxNhapCCCD.Texts;
-                this.nhanVien.GioiTinh = this.ComboBoxGioiTinh.Text.Trim(' ');
-                this.nhanVien.NgaySinh = this.ctDatePicker1.Value;
-                this.nhanVien.Email = this.ctTextBoxEmail.Texts;
-                this.nhanVien.SDT = this.ctTextBoxSDT.Texts;
-                this.nhanVien.DiaChi = this.CTTextBoxDiaChi.Texts;
-                this.nhanVien.TenNV = this.CTTextBoxNhapHoTen.Texts;
-                NhanVienBUS.Instance.UpdateOrInsert(nhanVien);
-                this.Close();
+                try
+                {
+                    this.nhanVien.ChucVu = ChucVu;
+                    this.nhanVien.CCCD = CCCD;
+                    this.nhanVien.GioiTinh = this.ComboBoxGioiTinh.Text.Trim(' ');
+                    this.nhanVien.NgaySinh = this.ctDatePicker1.Value;
+                    this.nhanVien.Email = email;
+                    this.nhanVien.SDT = SDT;
+                    this.nhanVien.DiaChi = DiaChi;
+                    this.nhanVien.TenNV = HoTen;
+                    NhanVienBUS.Instance.UpdateOrInsert(nhanVien);
+                }
+                catch (Exception)
+                {
+                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
-            catch(Exception ex)
+            catch (Exception)
             {
-                CTMessageBox.Show(ex.Message, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void CTTextBoxNhapHoTen__TextChanged(object sender, EventArgs e)
