@@ -21,6 +21,9 @@ namespace HotelManagement.GUI.ThongKe
         {
             InitializeComponent();
             this.formMain = formMain;
+            dtpNgayBD.Value = DateTime.Today.AddDays(-7);
+            dtpNgayKT.Value = DateTime.Now;
+            Button7Ngay.Select();
         }
         private void setButtonNormal()
         {
@@ -68,6 +71,13 @@ namespace HotelManagement.GUI.ThongKe
             setButtonNormal();
             Button6Thang.BackColor = Color.FromArgb(30, 119, 148);
             Button6Thang.ForeColor = Color.White;
+        }
+
+        private void ButtonOK_Click(object sender, EventArgs e)
+        {
+            setButtonNormal();
+            ButtonTuyChon.BackColor = Color.FromArgb(30, 119, 148);
+            ButtonTuyChon.ForeColor = Color.White;
         }
     }
 }

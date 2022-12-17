@@ -178,6 +178,9 @@
   <data name="database" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DatPhongChart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DatPhongChart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,6 +192,9 @@
   </data>
   <data name="DichVu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DichVu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DichVuChart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DichVuChart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DichVuDgv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DichVu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -366,6 +372,9 @@
   </data>
   <data name="TaiKhoan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TaiKhoan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ThuePhongChart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ThuePhongChart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TienNghi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TienNghi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
