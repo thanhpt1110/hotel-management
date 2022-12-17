@@ -105,34 +105,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>HotelManagement.mdf</DependentUpon>
     </Content>
-    <Content Include="img\Address.png" />
-    <Content Include="img\calendarDark.png" />
-    <Content Include="img\CalendarPick.png" />
-    <Content Include="img\calendarWhite.png" />
-    <Content Include="img\CCCD.png" />
-    <Content Include="img\clock.png" />
-    <Content Include="img\ClockPick.png" />
-    <Content Include="img\DaDat.png" />
-    <Content Include="img\DangSuaChua.png" />
-    <Content Include="img\DangThue.png" />
-    <Content Include="img\fix.png" />
-    <Content Include="img\fix50.png" />
-    <Content Include="img\fixedCloseResize.png" />
-    <Content Include="img\fixedGreenResize.png" />
-    <Content Include="img\fixedMaxResize.png" />
-    <Content Include="img\fixedMinResize.png" />
-    <Content Include="img\fixedNone.png" />
-    <Content Include="img\fixedRedResize.png" />
-    <Content Include="img\fixedYellowResize.png" />
-    <Content Include="img\Gender.png" />
-    <Content Include="img\Name.png" />
-    <Content Include="img\Phone.png" />
-    <Content Include="img\pictureIconNoneBackGroundResize.png" />
-    <Content Include="img\tick.png" />
-    <Content Include="img\tickBlack.png" />
-    <Content Include="img\TimePickerBlack.png" />
-    <Content Include="img\TimePickerWhite.png" />
-    <Content Include="img\x.png" />
+    <Content Include="Resources\calendardark.png" />
+    <Content Include="Resources\calendarwhite.png" />
+    <Content Include="Resources\clock.png" />
+    <Content Include="Resources\fixedcloseresize.png" />
+    <Content Include="Resources\fixedgreenresize.png" />
+    <Content Include="Resources\fixedmaxresize.png" />
+    <Content Include="Resources\fixedminresize.png" />
+    <Content Include="Resources\fixednone.png" />
+    <Content Include="Resources\fixedredresize.png" />
+    <Content Include="Resources\fixedyellowresize.png" />
+    <Content Include="Resources\Giuong1.png" />
+    <Content Include="Resources\tick.png" />
+    <Content Include="Resources\tickblack.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\DichVuChart.png" />
     <None Include="Resources\DatPhongChart.png" />
