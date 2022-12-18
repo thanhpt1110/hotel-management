@@ -162,7 +162,8 @@ namespace HotelManagement.GUI
                     {
                         try
                         {
-                            // Fucntion here
+                            TaiKhoan taiKhoan = TaiKhoanBUS.Instance.GetTKDangNhap(grid.Rows[y].Cells[1].Value.ToString());
+                            TaiKhoanBUS.Instance.RemoveTk(taiKhoan);
                         }
                         catch (Exception)
                         {

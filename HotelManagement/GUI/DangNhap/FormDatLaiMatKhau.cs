@@ -66,37 +66,25 @@ namespace HotelManagement.GUI
         private void textBoxPassword__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxPassword = sender as TextBox;
-            textBoxPassword.TextChanged += TextBoxPassword_TextChanged;
-        }
-
-        private void TextBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBoxPassword = sender as TextBox;
             if (textBoxPassword.Focused == false)
             {
                 textBoxPassword.UseSystemPasswordChar = false;
             }
             else
                 textBoxPassword.UseSystemPasswordChar = true;
-
         }
+
 
         private void textBoxPassConfirm__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxPasswordConfirm = sender as TextBox;
-            textBoxPasswordConfirm.TextChanged += TextBoxPasswordConfirm_TextChanged;
-        }
-
-        private void TextBoxPasswordConfirm_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBoxPassword = sender as TextBox;
-            if ( textBoxPassword.Focused==false)
+            if (textBoxPasswordConfirm.Focused == false)
             {
-                textBoxPassword.UseSystemPasswordChar = false;
+                textBoxPasswordConfirm.UseSystemPasswordChar = false;
             }
             else
-                textBoxPassword.UseSystemPasswordChar = true;
-
+                textBoxPasswordConfirm.UseSystemPasswordChar = true;
         }
+
     }
 }

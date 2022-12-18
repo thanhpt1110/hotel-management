@@ -407,7 +407,6 @@ namespace HotelManagement.GUI
 
         private void CTDatePickerNgayKT_ValueChanged(object sender, EventArgs e)
         {
-
             LoadgridPhongTrong();
         }
 
