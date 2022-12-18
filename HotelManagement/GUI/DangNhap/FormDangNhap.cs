@@ -43,5 +43,10 @@ namespace HotelManagement.GUI
             }    
 
         }
+
+        private void textBoxPassword__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

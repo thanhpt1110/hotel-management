@@ -268,7 +268,9 @@ namespace HotelManagement.GUI
                 {
                     try
                     {
-                        // Function here
+                        List<CTDP> cTDPs = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaPH == grid.Rows[y].Cells[0].Value.ToString() && p.CheckIn.ToString("dd/MM/yyyy hh:mm:ss") == grid.Rows[y].Cells[0].Value.ToString()).ToList();
+                        
+
                     }
                     catch (Exception)
                     {

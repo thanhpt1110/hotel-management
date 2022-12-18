@@ -31,14 +31,14 @@ namespace HotelManagement.DAO
         public int GetQuyenTruyCap(string username)
         {
 
-                TaiKhoan tk = db.TaiKhoans.Find(username);
+            TaiKhoan tk = db.TaiKhoans.Where(p => p.TenTK == username && p.DaXoa == false).SingleOrDefault();
                 return tk.CapDoQuyen;
             
         }
         public List<TaiKhoan> GetTaiKhoans()
         {
 
-                return db.TaiKhoans.ToList();
+                return db.TaiKhoans.Where(p=>p.DaXoa==false).ToList();
             
         }
         public List<TaiKhoan> GetTaiKhoansWithUserName(string username)
@@ -50,7 +50,7 @@ namespace HotelManagement.DAO
         public TaiKhoan GetTKDangNhap(string username)
         {
 
-                return db.TaiKhoans.Find(username);
+                return db.TaiKhoans.Where(p=>p.TenTK==username && p.DaXoa==false).SingleOrDefault();
             
         }
         public void AddOrUpdateTK(TaiKhoan taiKhoan)
@@ -75,12 +75,13 @@ namespace HotelManagement.DAO
                 taiKhoan.DaXoa = true;
                 db.TaiKhoans.AddOrUpdate(taiKhoan);
                 db.SaveChanges();
-            
+                instance = null;
+
         }
         public TaiKhoan CheckLegit(string username,string email)
         {
 
-                return db.TaiKhoans.Where(p => p.TenTK == username && p.NhanVien.Email == email).SingleOrDefault();
+                return db.TaiKhoans.Where(p => p.TenTK == username && p.NhanVien.Email == email && p.DaXoa==false).SingleOrDefault();
             
         }
         
