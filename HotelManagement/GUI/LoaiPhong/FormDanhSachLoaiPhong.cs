@@ -156,7 +156,7 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormSuaLoaiPhong formSuaLoaiPhong = new FormSuaLoaiPhong())
+                        using (FormSuaLoaiPhong formSuaLoaiPhong = new FormSuaLoaiPhong(LoaiPhongBUS.Instance.getLoaiPhong(grid.Rows[y].Cells[1].Value.ToString())))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();

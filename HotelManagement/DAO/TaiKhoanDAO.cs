@@ -55,9 +55,18 @@ namespace HotelManagement.DAO
         }
         public void AddOrUpdateTK(TaiKhoan taiKhoan)
         {
-
+            try
+            {
+                taiKhoan.NhanVien = db.NhanViens.Find(taiKhoan.MaNV);
+                taiKhoan.DaXoa = false;
                 db.TaiKhoans.AddOrUpdate(taiKhoan);
                 db.SaveChanges();
+                instance = null;
+            }
+            catch(Exception)
+            {
+                db.TaiKhoans.Remove(taiKhoan);
+            }
             
         }
         public void RemoveTk(TaiKhoan taiKhoan)

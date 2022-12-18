@@ -135,12 +135,14 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormSuaTaiKhoan formSuaTaiKhoan = new FormSuaTaiKhoan())
+                        using (FormSuaTaiKhoan formSuaTaiKhoan = new FormSuaTaiKhoan(TaiKhoanBUS.Instance.GetTKDangNhap(grid.Rows[y].Cells[1].Value.ToString())))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();
                             formSuaTaiKhoan.Owner = formBackground;
                             formSuaTaiKhoan.ShowDialog();
+                            this.LoadAllGrid();
+                            this.CTTextBoxTimTheoTenTaiKhoan.Texts = "";
                             formBackground.Dispose();
                         }
                     }

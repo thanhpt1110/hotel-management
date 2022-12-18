@@ -279,7 +279,7 @@ namespace HotelManagement.GUI
                     cTDP.CheckOut = CTDatePickerNgayKT.Value;
                     cTDP.MaPH = gridPhongTrong.Rows[y].Cells[0].Value.ToString();
                     cTDP.Phong = PhongBUS.Instance.FindePhong(cTDP.MaPH);
-                    cTDP.SoNguoi = 0;
+                    cTDP.SoNguoi = cTDP.Phong.LoaiPhong.SoNguoiToiDa;
                     cTDP.DonGia = cTDP.Phong.LoaiPhong.GiaNgay;
                     cTDP.TrangThai = "Đã đặt";
                     listPhongDaDat.Add(cTDP);

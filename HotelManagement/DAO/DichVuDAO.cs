@@ -36,20 +36,32 @@ namespace HotelManagement.DAO
         public void UpdateORAdd(DichVu dv)
         {
 
+            try
+            {
                 dv.DaXoa = false;
                 db.DichVus.AddOrUpdate(dv);
                 db.SaveChanges();
                 instance = null;
+            }
+            catch(Exception )
+            {
+                db.DichVus.Remove(dv);
+            }
 
         }
         public void RemoveDV(DichVu dv)
         {
-
+            try
+            {
                 dv.DaXoa = true;
                 db.DichVus.AddOrUpdate(dv);
                 db.SaveChanges();
                 instance = null;
-
+            }
+            catch (Exception)
+            {
+                db.DichVus.Remove(dv);
+            }
 
         }
         public string GetMaDVNext()
@@ -85,13 +97,23 @@ namespace HotelManagement.DAO
         }
         public void UpdateDV(List<DichVu> dichVus)
         {
-            foreach(DichVu dichVu in dichVus)
+            try
             {
-           //     if(dichVu.SLConLai!=-1)
-                db.DichVus.AddOrUpdate(dichVu);
+                foreach (DichVu dichVu in dichVus)
+                {
+                    //     if(dichVu.SLConLai!=-1)
+                    db.DichVus.AddOrUpdate(dichVu);
+                }
+                db.SaveChanges();
+                instance = null;
             }
-            db.SaveChanges();
-            instance = null;
+            catch (Exception)
+            {
+                foreach (DichVu dichVu in dichVus)
+                {
+                    db.DichVus.Remove(dichVu);
+                }
+            }
 
         }
     }

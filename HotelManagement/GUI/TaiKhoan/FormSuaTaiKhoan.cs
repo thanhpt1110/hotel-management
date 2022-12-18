@@ -1,4 +1,6 @@
-﻿using HotelManagement.CTControls;
+﻿using HotelManagement.BUS;
+using HotelManagement.CTControls;
+using HotelManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +21,7 @@ namespace HotelManagement.GUI
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.White;
-
+        private TaiKhoan taiKhoan;
         //Constructor
         public FormSuaTaiKhoan()
         {
@@ -28,11 +30,21 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
         }
+        public FormSuaTaiKhoan(TaiKhoan taiKhoan)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.taiKhoan = taiKhoan;
+            InitializeComponent();
+            LoadForm();
+        }
         //Control Box
 
         //Form Move
 
         //Drag Form
+        #region Draw form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -205,13 +217,32 @@ namespace HotelManagement.GUI
         {
             this.ActiveControl = LabelSuaTaiKhoan;
         }
-
+        #endregion
+        private void LoadForm()
+        {
+            ctTextBoxMaNV.RemovePlaceholder();
+            CTTextBoxNhapTenTaiKhoan.RemovePlaceholder();
+            CTTextBoxNhapMatKhau.RemovePlaceholder();
+            ctTextBoxMaNV.Texts = taiKhoan.MaNV;
+            CTTextBoxNhapTenTaiKhoan.Texts = taiKhoan.TenTK;
+            CTTextBoxNhapMatKhau.Texts = taiKhoan.Password;
+            if (taiKhoan.CapDoQuyen == 3)
+            {
+                comboBoxCapDoQuyen.Text = "  Admin";
+            }
+            else if (taiKhoan.CapDoQuyen == 2)
+            {
+                comboBoxCapDoQuyen.Text = "  Quản lý";
+            }
+            else
+                comboBoxCapDoQuyen.Text = "  Lễ tân";
+        }
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
             string MaNV = ctTextBoxMaNV.Texts;
             string TenTK = CTTextBoxNhapTenTaiKhoan.Texts;
             string MK = CTTextBoxNhapMatKhau.Texts;
-            string CapDoQuyen = comboBox1.Text;
+            string CapDoQuyen = comboBoxCapDoQuyen.Text;
             if (MaNV == "" || TenTK == "" || MK == "" || CapDoQuyen == "  Cấp độ quyền")
             {
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin tài khoản.", "Thông báo",
@@ -220,7 +251,14 @@ namespace HotelManagement.GUI
             }
             try
             {
-                // Function here
+                taiKhoan.Password = MK;
+                if (CapDoQuyen == "  Admin")
+                    taiKhoan.CapDoQuyen = 3;
+                else if (CapDoQuyen == "  Quản lý")
+                    taiKhoan.CapDoQuyen = 2;
+                else
+                    taiKhoan.CapDoQuyen = 1;
+                TaiKhoanBUS.Instance.AddOrUpdateTK(taiKhoan);
             }
             catch (Exception)
             {
@@ -233,6 +271,17 @@ namespace HotelManagement.GUI
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
+        }
+
+        private void CTTextBoxNhapMatKhau__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text == "")
+            {
+                textBox.UseSystemPasswordChar = false;
+            }
+            else 
+                textBox.UseSystemPasswordChar = true;
         }
     }
 }

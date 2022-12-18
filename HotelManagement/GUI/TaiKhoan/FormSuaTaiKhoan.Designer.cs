@@ -39,7 +39,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCapDoQuyen = new System.Windows.Forms.ComboBox();
             this.CTTextBoxNhapMatKhau = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxNhapTenTaiKhoan = new HotelManagement.CTControls.CTTextBox();
             this.PanelBackground.SuspendLayout();
@@ -126,7 +126,7 @@
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.comboBoxCapDoQuyen);
             this.panel1.Controls.Add(this.CTTextBoxNhapMatKhau);
             this.panel1.Controls.Add(this.CTTextBoxNhapTenTaiKhoan);
             this.panel1.Location = new System.Drawing.Point(56, 60);
@@ -193,21 +193,21 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // comboBox1
+            // comboBoxCapDoQuyen
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.Black;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxCapDoQuyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.comboBoxCapDoQuyen.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCapDoQuyen.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxCapDoQuyen.FormattingEnabled = true;
+            this.comboBoxCapDoQuyen.Items.AddRange(new object[] {
             "  Admin",
             "  Quản lý",
             "  Lễ tân"});
-            this.comboBox1.Location = new System.Drawing.Point(106, 296);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 28);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "  Cấp độ quyền";
+            this.comboBoxCapDoQuyen.Location = new System.Drawing.Point(106, 296);
+            this.comboBoxCapDoQuyen.Name = "comboBoxCapDoQuyen";
+            this.comboBoxCapDoQuyen.Size = new System.Drawing.Size(173, 28);
+            this.comboBoxCapDoQuyen.TabIndex = 7;
+            this.comboBoxCapDoQuyen.Text = "  Cấp độ quyền";
             // 
             // CTTextBoxNhapMatKhau
             // 
@@ -231,6 +231,7 @@
             this.CTTextBoxNhapMatKhau.TabIndex = 6;
             this.CTTextBoxNhapMatKhau.Texts = "";
             this.CTTextBoxNhapMatKhau.UnderlineedStyle = true;
+            this.CTTextBoxNhapMatKhau._TextChanged += new System.EventHandler(this.CTTextBoxNhapMatKhau__TextChanged);
             // 
             // CTTextBoxNhapTenTaiKhoan
             // 
@@ -249,7 +250,7 @@
             this.CTTextBoxNhapTenTaiKhoan.PasswordChar = false;
             this.CTTextBoxNhapTenTaiKhoan.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapTenTaiKhoan.PlaceholderText = "Nhập tên tài khoản";
-            this.CTTextBoxNhapTenTaiKhoan.ReadOnly = false;
+            this.CTTextBoxNhapTenTaiKhoan.ReadOnly = true;
             this.CTTextBoxNhapTenTaiKhoan.Size = new System.Drawing.Size(250, 35);
             this.CTTextBoxNhapTenTaiKhoan.TabIndex = 5;
             this.CTTextBoxNhapTenTaiKhoan.Texts = "";
@@ -296,7 +297,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxCapDoQuyen;
         private CTControls.CTTextBox CTTextBoxNhapMatKhau;
         private CTControls.CTTextBox CTTextBoxNhapTenTaiKhoan;
         private CTControls.CTTextBox ctTextBoxMaNV;

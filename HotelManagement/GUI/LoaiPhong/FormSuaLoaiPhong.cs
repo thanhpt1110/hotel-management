@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.BUS;
 
 namespace HotelManagement.GUI
 {
@@ -36,12 +37,14 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             InitializeComponent();
             this.loaiPhong = loaiPhong;
+            LoadForm();
         }
         //Control Box
 
         //Form Move
 
         //Drag Form
+        #region Draw Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -213,7 +216,22 @@ namespace HotelManagement.GUI
         {
             this.ActiveControl = LabelSuaLoaiPhong;
         }
+        #endregion
 
+        private void LoadForm()
+        {
+            CTTextBoxSoGiuong.RemovePlaceholder();
+            ctTextBoxSoNguoi.RemovePlaceholder();
+            ctTextBoxGiaNgay.RemovePlaceholder();
+            ctTextBoxGiaGio.RemovePlaceholder();
+            CTTextBoxTenLoaiPhong.RemovePlaceholder();
+
+            CTTextBoxSoGiuong.Texts = loaiPhong.SoGiuong.ToString();
+            ctTextBoxSoNguoi.Texts = loaiPhong.SoNguoiToiDa.ToString();
+            ctTextBoxGiaNgay.Texts = loaiPhong.GiaNgay.ToString("#,#");
+            ctTextBoxGiaGio.Texts = loaiPhong.GiaGio.ToString("#,#");
+            CTTextBoxTenLoaiPhong.Texts = loaiPhong.TenLPH;
+        }
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
             string TenLP = CTTextBoxTenLoaiPhong.Texts;
@@ -229,7 +247,9 @@ namespace HotelManagement.GUI
             }
             try
             {
-                // Function here
+                loaiPhong.GiaGio = decimal.Parse(GiaNgay.Trim(','));
+                loaiPhong.GiaNgay = decimal.Parse(GiaNgay.Trim(','));
+                LoaiPhongBUS.Instance.AddOrUpdate(loaiPhong);
             }
             catch (Exception)
             {
