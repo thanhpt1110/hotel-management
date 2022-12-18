@@ -65,9 +65,9 @@
             this.ctTextBox1.Padding = new System.Windows.Forms.Padding(40, 7, 7, 7);
             this.ctTextBox1.PasswordChar = false;
             this.ctTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ctTextBox1.PlaceholderText = "Tìm khách hàng theo tên";
+            this.ctTextBox1.PlaceholderText = "Nhập tên khách hàng cần tìm";
             this.ctTextBox1.ReadOnly = false;
-            this.ctTextBox1.Size = new System.Drawing.Size(244, 36);
+            this.ctTextBox1.Size = new System.Drawing.Size(291, 36);
             this.ctTextBox1.TabIndex = 0;
             this.ctTextBox1.TabStop = false;
             this.ctTextBox1.Texts = "";

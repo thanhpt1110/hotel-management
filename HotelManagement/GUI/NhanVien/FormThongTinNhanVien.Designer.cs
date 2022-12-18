@@ -143,7 +143,7 @@
             this.ctTextBoxGioiTinh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctTextBoxGioiTinh.ForeColor = System.Drawing.Color.Black;
             this.ctTextBoxGioiTinh.IsFocused = false;
-            this.ctTextBoxGioiTinh.Location = new System.Drawing.Point(333, 408);
+            this.ctTextBoxGioiTinh.Location = new System.Drawing.Point(333, 400);
             this.ctTextBoxGioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.ctTextBoxGioiTinh.Multiline = false;
             this.ctTextBoxGioiTinh.Name = "ctTextBoxGioiTinh";
@@ -175,7 +175,7 @@
             this.ctTextBoxNgaySinh.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBoxNgaySinh.PlaceholderText = "Ngày sinh";
             this.ctTextBoxNgaySinh.ReadOnly = true;
-            this.ctTextBoxNgaySinh.Size = new System.Drawing.Size(210, 35);
+            this.ctTextBoxNgaySinh.Size = new System.Drawing.Size(234, 35);
             this.ctTextBoxNgaySinh.TabIndex = 10;
             this.ctTextBoxNgaySinh.Texts = "";
             this.ctTextBoxNgaySinh.UnderlineedStyle = true;
@@ -201,7 +201,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::HotelManagement.Properties.Resources.Gender;
-            this.pictureBox9.Location = new System.Drawing.Point(290, 408);
+            this.pictureBox9.Location = new System.Drawing.Point(296, 407);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(30, 30);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -265,7 +265,7 @@
             this.ctTextBoxEmail.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBoxEmail.PlaceholderText = "Email";
             this.ctTextBoxEmail.ReadOnly = true;
-            this.ctTextBoxEmail.Size = new System.Drawing.Size(210, 35);
+            this.ctTextBoxEmail.Size = new System.Drawing.Size(234, 35);
             this.ctTextBoxEmail.TabIndex = 9;
             this.ctTextBoxEmail.Texts = "";
             this.ctTextBoxEmail.UnderlineedStyle = true;
@@ -288,7 +288,7 @@
             this.CTTextBoxDiaChi.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxDiaChi.PlaceholderText = "Địa chỉ";
             this.CTTextBoxDiaChi.ReadOnly = true;
-            this.CTTextBoxDiaChi.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxDiaChi.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxDiaChi.TabIndex = 8;
             this.CTTextBoxDiaChi.Texts = "";
             this.CTTextBoxDiaChi.UnderlineedStyle = true;
@@ -311,7 +311,7 @@
             this.CTTextBoxNhapCCCD.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapCCCD.PlaceholderText = "CCCD";
             this.CTTextBoxNhapCCCD.ReadOnly = true;
-            this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxNhapCCCD.TabIndex = 7;
             this.CTTextBoxNhapCCCD.Texts = "";
             this.CTTextBoxNhapCCCD.UnderlineedStyle = true;
@@ -334,7 +334,7 @@
             this.CTTextBoxNhapChucVu.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapChucVu.PlaceholderText = "Chức vụ";
             this.CTTextBoxNhapChucVu.ReadOnly = true;
-            this.CTTextBoxNhapChucVu.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxNhapChucVu.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxNhapChucVu.TabIndex = 2;
             this.CTTextBoxNhapChucVu.Texts = "";
             this.CTTextBoxNhapChucVu.UnderlineedStyle = true;
@@ -357,7 +357,7 @@
             this.CTTextBoxNhapHoTen.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapHoTen.PlaceholderText = "Họ và tên";
             this.CTTextBoxNhapHoTen.ReadOnly = true;
-            this.CTTextBoxNhapHoTen.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxNhapHoTen.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxNhapHoTen.TabIndex = 1;
             this.CTTextBoxNhapHoTen.Texts = "";
             this.CTTextBoxNhapHoTen.UnderlineedStyle = true;
@@ -400,7 +400,7 @@
             this.ctTextBoxSDT.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBoxSDT.PlaceholderText = "Số điện thoại";
             this.ctTextBoxSDT.ReadOnly = true;
-            this.ctTextBoxSDT.Size = new System.Drawing.Size(210, 35);
+            this.ctTextBoxSDT.Size = new System.Drawing.Size(234, 35);
             this.ctTextBoxSDT.TabIndex = 4;
             this.ctTextBoxSDT.Texts = "";
             this.ctTextBoxSDT.UnderlineedStyle = true;
@@ -423,7 +423,7 @@
             this.CTTextBoxLuong.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxLuong.PlaceholderText = "Lương";
             this.CTTextBoxLuong.ReadOnly = true;
-            this.CTTextBoxLuong.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxLuong.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxLuong.TabIndex = 3;
             this.CTTextBoxLuong.Texts = "";
             this.CTTextBoxLuong.UnderlineedStyle = true;

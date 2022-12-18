@@ -39,10 +39,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBoxGioiTinh = new System.Windows.Forms.ComboBox();
             this.ctTextBoxQuocTich = new HotelManagement.CTControls.CTTextBox();
             this.ctTextBoxSDT = new HotelManagement.CTControls.CTTextBox();
             this.ctTextBoxCCCD = new HotelManagement.CTControls.CTTextBox();
+            this.comboBoxGioiTinh = new HotelManagement.CTControls.CTComboBox();
             this.PanelBackground.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -146,12 +146,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.panel1.Controls.Add(this.comboBoxGioiTinh);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.comboBoxGioiTinh);
             this.panel1.Controls.Add(this.ctTextBoxQuocTich);
             this.panel1.Controls.Add(this.ctTextBoxSDT);
             this.panel1.Controls.Add(this.ctTextBoxCCCD);
@@ -206,21 +206,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // comboBoxGioiTinh
-            // 
-            this.comboBoxGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
-            this.comboBoxGioiTinh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxGioiTinh.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxGioiTinh.FormattingEnabled = true;
-            this.comboBoxGioiTinh.Items.AddRange(new object[] {
-            "  Nam",
-            "  Nữ"});
-            this.comboBoxGioiTinh.Location = new System.Drawing.Point(106, 400);
-            this.comboBoxGioiTinh.Name = "comboBoxGioiTinh";
-            this.comboBoxGioiTinh.Size = new System.Drawing.Size(173, 28);
-            this.comboBoxGioiTinh.TabIndex = 5;
-            this.comboBoxGioiTinh.Text = "  Giới tính";
             // 
             // ctTextBoxQuocTich
             // 
@@ -294,6 +279,27 @@
             this.ctTextBoxCCCD.UnderlineedStyle = true;
             this.ctTextBoxCCCD._TextChanged += new System.EventHandler(this.ctTextBox2__TextChanged);
             // 
+            // comboBoxGioiTinh
+            // 
+            this.comboBoxGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.comboBoxGioiTinh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.comboBoxGioiTinh.BorderSize = 2;
+            this.comboBoxGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxGioiTinh.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxGioiTinh.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.comboBoxGioiTinh.Items.AddRange(new object[] {
+            "  Nam",
+            "  Nữ"});
+            this.comboBoxGioiTinh.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.comboBoxGioiTinh.ListTextColor = System.Drawing.Color.Black;
+            this.comboBoxGioiTinh.Location = new System.Drawing.Point(107, 395);
+            this.comboBoxGioiTinh.Name = "comboBoxGioiTinh";
+            this.comboBoxGioiTinh.Padding = new System.Windows.Forms.Padding(2);
+            this.comboBoxGioiTinh.Size = new System.Drawing.Size(153, 33);
+            this.comboBoxGioiTinh.TabIndex = 5;
+            this.comboBoxGioiTinh.Texts = "  Giới tính";
+            // 
             // FormSuaKhachHang
             // 
             this.AcceptButton = this.CTButtonCapNhat;
@@ -338,9 +344,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBoxGioiTinh;
         private CTControls.CTTextBox ctTextBoxQuocTich;
         private CTControls.CTTextBox ctTextBoxSDT;
         private CTControls.CTTextBox ctTextBoxCCCD;
+        private CTControls.CTComboBox comboBoxGioiTinh;
     }
 }

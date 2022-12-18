@@ -215,9 +215,9 @@ namespace HotelManagement.GUI
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
             string MaPH = ctTextBoxMaPH.Texts;
-            string TinhTrang = comboBoxTinhTrangPhong.Text;
-            string DonDep = comboBoxDonDep.Text;
-            string LoaiPhong = comboBoxLoaiPhong.Text;
+            string TinhTrang = comboBoxTinhTrangPhong.Texts;
+            string DonDep = comboBoxDonDep.Texts;
+            string LoaiPhong = comboBoxLoaiPhong.Texts;
             string GhiChu = ctTextBoxGhiChu.Texts;
             if (TinhTrang == "    Tình trạng phòng" || DonDep == "  Tình trạng dọn dẹp" || LoaiPhong == "  Loại phòng" || GhiChu == "" || MaPH == "")
             {

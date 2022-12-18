@@ -68,7 +68,7 @@ namespace HotelManagement.GUI
             this.CTTextBoxLuong.RemovePlaceholder();
 
             this.CTTextBoxNhapCCCD.Texts = this.nhanVien.CCCD;
-            this.ComboBoxGioiTinh.Text = " " + this.nhanVien.GioiTinh;
+            this.ComboBoxGioiTinh.Texts = "  " + this.nhanVien.GioiTinh;
             this.CTTextBoxNhapChucVu.Texts = this.nhanVien.ChucVu;
             this.ctDatePicker1.Value = this.nhanVien.NgaySinh;
             this.ctTextBoxEmail.Texts = this.nhanVien.Email;
@@ -244,7 +244,7 @@ namespace HotelManagement.GUI
             string CCCD = CTTextBoxNhapCCCD.Texts;
             string DiaChi = CTTextBoxDiaChi.Texts;
             string email = ctTextBoxEmail.Texts;
-            string GioiTinh = ComboBoxGioiTinh.Text;
+            string GioiTinh = ComboBoxGioiTinh.Texts;
             if (HoTen == "" || ChucVu == "" || Luong == "" || SDT == "" || CCCD == "" || DiaChi == "" || email == "" || GioiTinh == "  Giới tính")
             {
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên.", "Thông báo",
@@ -272,7 +272,7 @@ namespace HotelManagement.GUI
                 {
                     this.nhanVien.ChucVu = ChucVu;
                     this.nhanVien.CCCD = CCCD;
-                    this.nhanVien.GioiTinh = this.ComboBoxGioiTinh.Text.Trim(' ');
+                    this.nhanVien.GioiTinh = this.ComboBoxGioiTinh.Texts.Trim(' ');
                     this.nhanVien.NgaySinh = this.ctDatePicker1.Value;
                     this.nhanVien.Email = email;
                     this.nhanVien.SDT = SDT;

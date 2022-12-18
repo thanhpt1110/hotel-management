@@ -265,7 +265,7 @@ namespace HotelManagement.GUI
             string CCCD = CTTextBoxNhapCCCD.Texts;
             string DiaChi = CTTextBoxDiaChi.Texts;
             string email = ctTextBoxEmail.Texts;
-            string GioiTinh = ComboBoxGioiTinh.Text;
+            string GioiTinh = ComboBoxGioiTinh.Texts;
             if (HoTen == "" || ChucVu == "" || Luong == "" || SDT == "" || CCCD == "" || DiaChi == "" || email == "" || GioiTinh == "  Giới tính")
             {
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin nhân viên.", "Thông báo",
@@ -296,7 +296,7 @@ namespace HotelManagement.GUI
                     nhanVien.MaNV = NhanVienBUS.Instance.GetMaNVNext();
                     nhanVien.ChucVu = ChucVu;
                     nhanVien.CCCD = CCCD;
-                    nhanVien.GioiTinh = this.ComboBoxGioiTinh.Text.Trim(' ');
+                    nhanVien.GioiTinh = this.ComboBoxGioiTinh.Texts.Trim(' ');
                     nhanVien.NgaySinh = this.ctDatePicker1.Value;
                     nhanVien.Email = email;
                     nhanVien.SDT = SDT;
