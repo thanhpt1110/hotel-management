@@ -13,6 +13,7 @@ using HotelManagement.DTO;
 using HotelManagement.BUS;
 using HotelManagement.DAO;
 using HotelManagement.CTControls;
+using System.Globalization;
 
 namespace HotelManagement.GUI
 {
@@ -259,6 +260,7 @@ namespace HotelManagement.GUI
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int y = e.RowIndex, x = e.ColumnIndex;
+            int flag = 0;
             if (y >= 0 && x == 4)
             {
                 // If click Delete button
@@ -268,18 +270,32 @@ namespace HotelManagement.GUI
                 {
                     try
                     {
-                        List<CTDP> cTDPs = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaPH == grid.Rows[y].Cells[0].Value.ToString() && p.CheckIn.ToString("dd/MM/yyyy hh:mm:ss") == grid.Rows[y].Cells[0].Value.ToString()).ToList();
-                        
+
+                        DateTime date = DateTime.ParseExact(grid.Rows[y].Cells[1].Value.ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+                        CTDP cTDP = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaPT == phieuThue.MaPT).ToList()[y];
+                        if(cTDP.TrangThai == "Đã xong" || cTDP.TrangThai =="Đang thuê")
+                        {
+                            CTMessageBox.Show("Thông tin đặt phòng này không hủy được do đang được thuê hoặc đã xong!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }    
+                        cTDP.TrangThai = "Đã hủy";
+                        cTDP.DaXoa = true;
+                        CTDP_BUS.Instance.RemoveCTDP(cTDP);
+                        HoaDon hoadon = HoaDonBUS.Instance.GetHoaDons().Where(p => p.MaCTDP == cTDP.MaCTDP).Single();
+                        HoaDonBUS.Instance.RemoveHD(hoadon);
+                        flag = 1;
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                        CTMessageBox.Show(ex.Message, "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                     finally
                     {
                         this.LoadGrid();
+                        if(flag==1)
                         CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
                                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

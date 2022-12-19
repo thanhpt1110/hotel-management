@@ -146,6 +146,11 @@
             this.comboBoxLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxLoaiPhong.ForeColor = System.Drawing.Color.Black;
             this.comboBoxLoaiPhong.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.comboBoxLoaiPhong.Items.AddRange(new object[] {
+            "Phòng đơn thường",
+            "Phòng đơn VIP",
+            "Phòng đôi thường",
+            "Phòng đôi VIP"});
             this.comboBoxLoaiPhong.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.comboBoxLoaiPhong.ListTextColor = System.Drawing.Color.Black;
             this.comboBoxLoaiPhong.Location = new System.Drawing.Point(107, 253);
@@ -185,6 +190,9 @@
             this.comboBoxTinhTrangPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTinhTrangPhong.ForeColor = System.Drawing.Color.Black;
             this.comboBoxTinhTrangPhong.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.comboBoxTinhTrangPhong.Items.AddRange(new object[] {
+            "Bình thường",
+            "Đang sửa chữa"});
             this.comboBoxTinhTrangPhong.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.comboBoxTinhTrangPhong.ListTextColor = System.Drawing.Color.Black;
             this.comboBoxTinhTrangPhong.Location = new System.Drawing.Point(107, 98);

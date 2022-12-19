@@ -38,6 +38,7 @@ namespace HotelManagement.DAO
                 
                 db.HoaDons.AddOrUpdate(HD);
                 db.SaveChanges();
+                
         }
         public void ThanhToanHD(HoaDon HD)
         {
@@ -68,6 +69,11 @@ namespace HotelManagement.DAO
                 }
                 return "HD" + max.ToString();
             
+        }
+        public void RemoveHD(HoaDon hoaDon)
+        {
+            db.HoaDons.Remove(hoaDon);
+            db.SaveChanges();
         }
     }
 }

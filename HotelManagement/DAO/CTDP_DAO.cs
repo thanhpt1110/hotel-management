@@ -110,6 +110,13 @@ namespace HotelManagement.DAO
                 db.CTDPs.Remove(ctdp);
             }
         }
+        public void RemoveCTDP(CTDP cTDP)
+        {
+            cTDP.DaXoa = true;
+            db.CTDPs.AddOrUpdate(cTDP);
+            db.SaveChanges();
+
+        }
         public string getNextCTDPwithList(List<CTDP> list)
         {
 
