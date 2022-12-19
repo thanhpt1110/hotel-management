@@ -94,7 +94,6 @@ namespace HotelManagement.DAO
                 return "CTDP" + max.ToString();
            
         }
-
         public void UpdateOrAddCTDP(CTDP ctdp)
         {
             try

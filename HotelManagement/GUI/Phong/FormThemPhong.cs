@@ -214,11 +214,26 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
+            int flag = 0;
+            for(int i=1;i<=5;i++)
+            {
+                if(ctTextBoxMaPH.Texts.StartsWith("P" + i.ToString())
+                {
+                    flag = 1;
+                    break;
+                }                
+            }
+            if (flag == 0)
+            {
+                CTMessageBox.Show("Mã phòng lớn hơn số tầng có sẵn hoặc mã phòng sai cú pháp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string MaPH = ctTextBoxMaPH.Texts;
             string TinhTrang = comboBoxTinhTrangPhong.Text;
             string DonDep = comboBoxDonDep.Text;
             string LoaiPhong = comboBoxLoaiPhong.Text;
             string GhiChu = ctTextBoxGhiChu.Texts;
+            
             if (TinhTrang == "    Tình trạng phòng" || DonDep == "  Tình trạng dọn dẹp" || LoaiPhong == "  Loại phòng" || GhiChu == "" || MaPH == "")
             {
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin phòng.", "Thông báo",
@@ -227,7 +242,7 @@ namespace HotelManagement.GUI
             }
             try
             {
-                // Function here
+                
             }
             catch (Exception)
             {
