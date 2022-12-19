@@ -94,7 +94,6 @@ namespace HotelManagement.DAO
                 return "CTDP" + max.ToString();
            
         }
-
         public void UpdateOrAddCTDP(CTDP ctdp)
         {
             try
@@ -110,6 +109,13 @@ namespace HotelManagement.DAO
             {
                 db.CTDPs.Remove(ctdp);
             }
+        }
+        public void RemoveCTDP(CTDP cTDP)
+        {
+            cTDP.DaXoa = true;
+            db.CTDPs.AddOrUpdate(cTDP);
+            db.SaveChanges();
+
         }
         public string getNextCTDPwithList(List<CTDP> list)
         {

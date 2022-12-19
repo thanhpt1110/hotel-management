@@ -41,5 +41,9 @@ namespace HotelManagement.BUS
         {
             HoaDonDAO.Instance.ThanhToanHD(HD);
         }
+        public void RemoveHD(HoaDon hd)
+        {
+            HoaDonDAO.Instance.RemoveHD(hd);
+        }
     }
 }

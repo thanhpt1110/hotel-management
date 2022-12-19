@@ -62,14 +62,14 @@
             this.LabelThoiGianThue = new System.Windows.Forms.Label();
             this.LabelNgayCheckin = new System.Windows.Forms.Label();
             this.LabelTen = new System.Windows.Forms.Label();
-            this.PictureBoxSoNguoi = new System.Windows.Forms.PictureBox();
-            this.PictureBoxThoiGianThue = new System.Windows.Forms.PictureBox();
-            this.PictureBoxNgayCheckin = new System.Windows.Forms.PictureBox();
-            this.PictureBoxTen = new System.Windows.Forms.PictureBox();
             this.ctPanel2 = new CTPanel.CTPanel();
             this.ctPanel3 = new CTPanel.CTPanel();
             this.PanelBackgroundTop = new System.Windows.Forms.Panel();
             this.LabelMaPhong = new System.Windows.Forms.Label();
+            this.PictureBoxSoNguoi = new System.Windows.Forms.PictureBox();
+            this.PictureBoxThoiGianThue = new System.Windows.Forms.PictureBox();
+            this.PictureBoxNgayCheckin = new System.Windows.Forms.PictureBox();
+            this.PictureBoxTen = new System.Windows.Forms.PictureBox();
             this.PanelBackground.SuspendLayout();
             this.PanelChuaButtonCoc.SuspendLayout();
             this.PanelChuaButtonThemDichVu.SuspendLayout();
@@ -80,11 +80,11 @@
             this.PanelChuaButtonThoat.SuspendLayout();
             this.PanelChuaThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDichVu)).BeginInit();
+            this.PanelBackgroundTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSoNguoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxThoiGianThue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNgayCheckin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).BeginInit();
-            this.PanelBackgroundTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelBackground
@@ -548,45 +548,6 @@
             this.LabelTen.TabIndex = 3;
             this.LabelTen.Text = "Họ tên khách hàng";
             // 
-            // PictureBoxSoNguoi
-            // 
-            this.PictureBoxSoNguoi.Image = global::HotelManagement.Properties.Resources.SoNguoi;
-            this.PictureBoxSoNguoi.Location = new System.Drawing.Point(718, 33);
-            this.PictureBoxSoNguoi.Name = "PictureBoxSoNguoi";
-            this.PictureBoxSoNguoi.Size = new System.Drawing.Size(30, 30);
-            this.PictureBoxSoNguoi.TabIndex = 0;
-            this.PictureBoxSoNguoi.TabStop = false;
-            // 
-            // PictureBoxThoiGianThue
-            // 
-            this.PictureBoxThoiGianThue.Image = global::HotelManagement.Properties.Resources.ClockPick;
-            this.PictureBoxThoiGianThue.Location = new System.Drawing.Point(491, 33);
-            this.PictureBoxThoiGianThue.Name = "PictureBoxThoiGianThue";
-            this.PictureBoxThoiGianThue.Size = new System.Drawing.Size(30, 30);
-            this.PictureBoxThoiGianThue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxThoiGianThue.TabIndex = 0;
-            this.PictureBoxThoiGianThue.TabStop = false;
-            // 
-            // PictureBoxNgayCheckin
-            // 
-            this.PictureBoxNgayCheckin.Image = global::HotelManagement.Properties.Resources.CalendarPick;
-            this.PictureBoxNgayCheckin.Location = new System.Drawing.Point(283, 33);
-            this.PictureBoxNgayCheckin.Name = "PictureBoxNgayCheckin";
-            this.PictureBoxNgayCheckin.Size = new System.Drawing.Size(30, 30);
-            this.PictureBoxNgayCheckin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxNgayCheckin.TabIndex = 0;
-            this.PictureBoxNgayCheckin.TabStop = false;
-            // 
-            // PictureBoxTen
-            // 
-            this.PictureBoxTen.Image = global::HotelManagement.Properties.Resources.NameKH;
-            this.PictureBoxTen.Location = new System.Drawing.Point(31, 33);
-            this.PictureBoxTen.Name = "PictureBoxTen";
-            this.PictureBoxTen.Size = new System.Drawing.Size(30, 30);
-            this.PictureBoxTen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxTen.TabIndex = 0;
-            this.PictureBoxTen.TabStop = false;
-            // 
             // ctPanel2
             // 
             this.ctPanel2.BackColor = System.Drawing.Color.White;
@@ -634,6 +595,45 @@
             this.LabelMaPhong.TabIndex = 4;
             this.LabelMaPhong.Text = "Mã Phòng";
             // 
+            // PictureBoxSoNguoi
+            // 
+            this.PictureBoxSoNguoi.Image = global::HotelManagement.Properties.Resources.SoNguoi;
+            this.PictureBoxSoNguoi.Location = new System.Drawing.Point(718, 33);
+            this.PictureBoxSoNguoi.Name = "PictureBoxSoNguoi";
+            this.PictureBoxSoNguoi.Size = new System.Drawing.Size(30, 30);
+            this.PictureBoxSoNguoi.TabIndex = 0;
+            this.PictureBoxSoNguoi.TabStop = false;
+            // 
+            // PictureBoxThoiGianThue
+            // 
+            this.PictureBoxThoiGianThue.Image = global::HotelManagement.Properties.Resources.ClockPick;
+            this.PictureBoxThoiGianThue.Location = new System.Drawing.Point(491, 33);
+            this.PictureBoxThoiGianThue.Name = "PictureBoxThoiGianThue";
+            this.PictureBoxThoiGianThue.Size = new System.Drawing.Size(30, 30);
+            this.PictureBoxThoiGianThue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxThoiGianThue.TabIndex = 0;
+            this.PictureBoxThoiGianThue.TabStop = false;
+            // 
+            // PictureBoxNgayCheckin
+            // 
+            this.PictureBoxNgayCheckin.Image = global::HotelManagement.Properties.Resources.CalendarPick;
+            this.PictureBoxNgayCheckin.Location = new System.Drawing.Point(283, 33);
+            this.PictureBoxNgayCheckin.Name = "PictureBoxNgayCheckin";
+            this.PictureBoxNgayCheckin.Size = new System.Drawing.Size(30, 30);
+            this.PictureBoxNgayCheckin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxNgayCheckin.TabIndex = 0;
+            this.PictureBoxNgayCheckin.TabStop = false;
+            // 
+            // PictureBoxTen
+            // 
+            this.PictureBoxTen.Image = global::HotelManagement.Properties.Resources.NameKH;
+            this.PictureBoxTen.Location = new System.Drawing.Point(31, 33);
+            this.PictureBoxTen.Name = "PictureBoxTen";
+            this.PictureBoxTen.Size = new System.Drawing.Size(30, 30);
+            this.PictureBoxTen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxTen.TabIndex = 0;
+            this.PictureBoxTen.TabStop = false;
+            // 
             // FormThongTinPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -663,12 +663,12 @@
             this.PanelChuaThongTin.ResumeLayout(false);
             this.PanelChuaThongTin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDichVu)).EndInit();
+            this.PanelBackgroundTop.ResumeLayout(false);
+            this.PanelBackgroundTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSoNguoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxThoiGianThue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNgayCheckin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTen)).EndInit();
-            this.PanelBackgroundTop.ResumeLayout(false);
-            this.PanelBackgroundTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

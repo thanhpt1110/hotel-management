@@ -216,6 +216,7 @@ namespace HotelManagement.GUI
         private void FormSuaTaiKhoan_Load(object sender, EventArgs e)
         {
             this.ActiveControl = LabelSuaTaiKhoan;
+            CTTextBoxNhapMatKhau.PasswordChar = true;
         }
         #endregion
         private void LoadForm()
@@ -228,21 +229,21 @@ namespace HotelManagement.GUI
             CTTextBoxNhapMatKhau.Texts = taiKhoan.Password;
             if (taiKhoan.CapDoQuyen == 3)
             {
-                comboBoxCapDoQuyen.Text = "  Admin";
+                comboBoxCapDoQuyen.Texts = "  Admin";
             }
             else if (taiKhoan.CapDoQuyen == 2)
             {
-                comboBoxCapDoQuyen.Text = "  Quản lý";
+                comboBoxCapDoQuyen.Texts = "  Quản lý";
             }
             else
-                comboBoxCapDoQuyen.Text = "  Lễ tân";
+                comboBoxCapDoQuyen.Texts = "  Lễ tân";
         }
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
             string MaNV = ctTextBoxMaNV.Texts;
             string TenTK = CTTextBoxNhapTenTaiKhoan.Texts;
             string MK = CTTextBoxNhapMatKhau.Texts;
-            string CapDoQuyen = comboBoxCapDoQuyen.Text;
+            string CapDoQuyen = comboBoxCapDoQuyen.Texts;
             if (MaNV == "" || TenTK == "" || MK == "" || CapDoQuyen == "  Cấp độ quyền")
             {
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin tài khoản.", "Thông báo",
@@ -275,13 +276,11 @@ namespace HotelManagement.GUI
 
         private void CTTextBoxNhapMatKhau__TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            if (textBox.Text == "")
-            {
-                textBox.UseSystemPasswordChar = false;
-            }
-            else 
-                textBox.UseSystemPasswordChar = true;
+            TextBox textBoxPasswordConfirm = sender as TextBox;
+            if (textBoxPasswordConfirm.Focused == false)
+                textBoxPasswordConfirm.UseSystemPasswordChar = false;
+            else
+                textBoxPasswordConfirm.UseSystemPasswordChar = true;
         }
     }
 }

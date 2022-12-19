@@ -79,6 +79,7 @@
             this.textBoxPassword.TabIndex = 7;
             this.textBoxPassword.Texts = "";
             this.textBoxPassword.UnderlineedStyle = false;
+            this.textBoxPassword._TextChanged += new System.EventHandler(this.textBoxPassword__TextChanged);
             // 
             // textBoxUsername
             // 

@@ -417,8 +417,9 @@ namespace HotelManagement.GUI
                 HoaDon hd = HoaDonBUS.Instance.GetHoaDons().Where(p => p.MaCTDP == ctdp.MaCTDP).SingleOrDefault();
                 try
                 {
-                    hd.TriGia = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
-                    foreach (CTDV cTDV in CTDV_BUS.Instance.FindCTDV(hd.MaHD))
+                    ctdp.ThanhTien = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
+                    hd.TriGia = ctdp.ThanhTien;
+                    foreach(CTDV cTDV in CTDV_BUS.Instance.FindCTDV(hd.MaHD))
                     {
                         hd.TriGia += cTDV.ThanhTien;
                     }

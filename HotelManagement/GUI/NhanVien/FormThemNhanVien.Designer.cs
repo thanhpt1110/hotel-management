@@ -30,12 +30,12 @@
         {
             this.LabelThemNhanVien = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ComboBoxGioiTinh = new System.Windows.Forms.ComboBox();
+            this.ComboBoxGioiTinh = new HotelManagement.CTControls.CTComboBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.LabelNgaySinh = new System.Windows.Forms.Label();
             this.ctDatePicker1 = new HotelManagement.CTControls.CTDatePicker();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -53,9 +53,9 @@
             this.CTButtonCapNhat = new HotelManagement.CTControls.CTButton();
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -79,11 +79,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.panel1.Controls.Add(this.ComboBoxGioiTinh);
+            this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.LabelNgaySinh);
             this.panel1.Controls.Add(this.ctDatePicker1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.pictureBox5);
@@ -105,23 +105,39 @@
             // ComboBoxGioiTinh
             // 
             this.ComboBoxGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ComboBoxGioiTinh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.ComboBoxGioiTinh.BorderSize = 2;
+            this.ComboBoxGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxGioiTinh.ForeColor = System.Drawing.Color.Black;
-            this.ComboBoxGioiTinh.FormattingEnabled = true;
+            this.ComboBoxGioiTinh.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
             this.ComboBoxGioiTinh.Items.AddRange(new object[] {
             "  Nam",
             "  Nữ"});
-            this.ComboBoxGioiTinh.Location = new System.Drawing.Point(349, 409);
+            this.ComboBoxGioiTinh.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ComboBoxGioiTinh.ListTextColor = System.Drawing.Color.Black;
+            this.ComboBoxGioiTinh.Location = new System.Drawing.Point(334, 402);
             this.ComboBoxGioiTinh.Name = "ComboBoxGioiTinh";
-            this.ComboBoxGioiTinh.Size = new System.Drawing.Size(121, 29);
+            this.ComboBoxGioiTinh.Padding = new System.Windows.Forms.Padding(2);
+            this.ComboBoxGioiTinh.Size = new System.Drawing.Size(153, 33);
             this.ComboBoxGioiTinh.TabIndex = 9;
-            this.ComboBoxGioiTinh.Text = "  Giới tính";
+            this.ComboBoxGioiTinh.Texts = "  Giới tính";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::HotelManagement.Properties.Resources.Gender;
+            this.pictureBox9.Location = new System.Drawing.Point(298, 403);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 11;
+            this.pictureBox9.TabStop = false;
             // 
             // LabelNgaySinh
             // 
             this.LabelNgaySinh.AutoSize = true;
             this.LabelNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNgaySinh.ForeColor = System.Drawing.Color.DimGray;
+            this.LabelNgaySinh.ForeColor = System.Drawing.Color.Black;
             this.LabelNgaySinh.Location = new System.Drawing.Point(579, 42);
             this.LabelNgaySinh.Name = "LabelNgaySinh";
             this.LabelNgaySinh.Size = new System.Drawing.Size(66, 17);
@@ -130,17 +146,17 @@
             // 
             // ctDatePicker1
             // 
-            this.ctDatePicker1.BorderColor = System.Drawing.Color.DimGray;
-            this.ctDatePicker1.BorderSize = 1;
+            this.ctDatePicker1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
+            this.ctDatePicker1.BorderSize = 2;
             this.ctDatePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.ctDatePicker1.Location = new System.Drawing.Point(514, 53);
             this.ctDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
             this.ctDatePicker1.Name = "ctDatePicker1";
-            this.ctDatePicker1.Size = new System.Drawing.Size(210, 35);
+            this.ctDatePicker1.Size = new System.Drawing.Size(234, 35);
             this.ctDatePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.ctDatePicker1.TabIndex = 5;
-            this.ctDatePicker1.TextColor = System.Drawing.Color.DimGray;
+            this.ctDatePicker1.TextColor = System.Drawing.Color.Black;
             // 
             // pictureBox3
             // 
@@ -159,16 +175,6 @@
             this.pictureBox6.Size = new System.Drawing.Size(42, 30);
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::HotelManagement.Properties.Resources.Gender;
-            this.pictureBox9.Location = new System.Drawing.Point(290, 408);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -227,7 +233,7 @@
             this.ctTextBoxSDT.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBoxSDT.PlaceholderText = "Nhập số điện thoại";
             this.ctTextBoxSDT.ReadOnly = false;
-            this.ctTextBoxSDT.Size = new System.Drawing.Size(210, 35);
+            this.ctTextBoxSDT.Size = new System.Drawing.Size(234, 35);
             this.ctTextBoxSDT.TabIndex = 4;
             this.ctTextBoxSDT.Texts = "";
             this.ctTextBoxSDT.UnderlineedStyle = true;
@@ -251,7 +257,7 @@
             this.ctTextBoxEmail.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBoxEmail.PlaceholderText = "Nhập email";
             this.ctTextBoxEmail.ReadOnly = false;
-            this.ctTextBoxEmail.Size = new System.Drawing.Size(210, 35);
+            this.ctTextBoxEmail.Size = new System.Drawing.Size(234, 35);
             this.ctTextBoxEmail.TabIndex = 8;
             this.ctTextBoxEmail.Texts = "";
             this.ctTextBoxEmail.UnderlineedStyle = true;
@@ -274,7 +280,7 @@
             this.CTTextBoxDiaChi.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxDiaChi.PlaceholderText = "Nhập địa chỉ";
             this.CTTextBoxDiaChi.ReadOnly = false;
-            this.CTTextBoxDiaChi.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxDiaChi.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxDiaChi.TabIndex = 7;
             this.CTTextBoxDiaChi.Texts = "";
             this.CTTextBoxDiaChi.UnderlineedStyle = true;
@@ -297,7 +303,7 @@
             this.CTTextBoxNhapCCCD.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapCCCD.PlaceholderText = "Nhập số CCCD";
             this.CTTextBoxNhapCCCD.ReadOnly = false;
-            this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxNhapCCCD.TabIndex = 6;
             this.CTTextBoxNhapCCCD.Texts = "";
             this.CTTextBoxNhapCCCD.UnderlineedStyle = true;
@@ -321,7 +327,7 @@
             this.CTTextBoxNhapChucVu.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapChucVu.PlaceholderText = "Nhập chức vụ";
             this.CTTextBoxNhapChucVu.ReadOnly = false;
-            this.CTTextBoxNhapChucVu.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxNhapChucVu.Size = new System.Drawing.Size(237, 35);
             this.CTTextBoxNhapChucVu.TabIndex = 2;
             this.CTTextBoxNhapChucVu.Texts = "";
             this.CTTextBoxNhapChucVu.UnderlineedStyle = true;
@@ -336,7 +342,7 @@
             this.CTTextBoxNhapHoTen.BorderSize = 2;
             this.CTTextBoxNhapHoTen.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxNhapHoTen.IsFocused = false;
-            this.CTTextBoxNhapHoTen.Location = new System.Drawing.Point(107, 48);
+            this.CTTextBoxNhapHoTen.Location = new System.Drawing.Point(110, 48);
             this.CTTextBoxNhapHoTen.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxNhapHoTen.Multiline = false;
             this.CTTextBoxNhapHoTen.Name = "CTTextBoxNhapHoTen";
@@ -345,7 +351,7 @@
             this.CTTextBoxNhapHoTen.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapHoTen.PlaceholderText = "Nhập họ tên nhân viên";
             this.CTTextBoxNhapHoTen.ReadOnly = false;
-            this.CTTextBoxNhapHoTen.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxNhapHoTen.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxNhapHoTen.TabIndex = 1;
             this.CTTextBoxNhapHoTen.Texts = "";
             this.CTTextBoxNhapHoTen.UnderlineedStyle = true;
@@ -389,7 +395,7 @@
             this.CTTextBoxLuong.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxLuong.PlaceholderText = "Lương";
             this.CTTextBoxLuong.ReadOnly = false;
-            this.CTTextBoxLuong.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxLuong.Size = new System.Drawing.Size(237, 35);
             this.CTTextBoxLuong.TabIndex = 3;
             this.CTTextBoxLuong.Texts = "";
             this.CTTextBoxLuong.UnderlineedStyle = true;
@@ -472,9 +478,9 @@
             this.Resize += new System.EventHandler(this.FormThemNhanVien_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -507,11 +513,11 @@
         private CTControls.CTTextBox ctTextBoxEmail;
         private CTControls.CTTextBox CTTextBoxDiaChi;
         private CTControls.CTTextBox CTTextBoxNhapCCCD;
-        private System.Windows.Forms.ComboBox ComboBoxGioiTinh;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private CTControls.CTButton CTButtonThoat;
         private CTControls.CTButton CTButtonCapNhat;
         private System.Windows.Forms.Panel PanelBackground;
         private CTControls.CTTextBox ctTextBoxSDT;
+        private CTControls.CTComboBox ComboBoxGioiTinh;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }

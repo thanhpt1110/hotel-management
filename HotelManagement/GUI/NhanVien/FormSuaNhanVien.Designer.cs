@@ -31,7 +31,7 @@
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.LabelSuaNhanVien = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.ComboBoxGioiTinh = new System.Windows.Forms.ComboBox();
+            this.ComboBoxGioiTinh = new HotelManagement.CTControls.CTComboBox();
             this.LabelNgaySinh = new System.Windows.Forms.Label();
             this.ctDatePicker1 = new HotelManagement.CTControls.CTDatePicker();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -119,23 +119,29 @@
             // ComboBoxGioiTinh
             // 
             this.ComboBoxGioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ComboBoxGioiTinh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.ComboBoxGioiTinh.BorderSize = 2;
+            this.ComboBoxGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxGioiTinh.ForeColor = System.Drawing.Color.Black;
-            this.ComboBoxGioiTinh.FormattingEnabled = true;
+            this.ComboBoxGioiTinh.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
             this.ComboBoxGioiTinh.Items.AddRange(new object[] {
             "  Nam",
             "  Nữ"});
-            this.ComboBoxGioiTinh.Location = new System.Drawing.Point(349, 409);
+            this.ComboBoxGioiTinh.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ComboBoxGioiTinh.ListTextColor = System.Drawing.Color.Black;
+            this.ComboBoxGioiTinh.Location = new System.Drawing.Point(334, 405);
             this.ComboBoxGioiTinh.Name = "ComboBoxGioiTinh";
-            this.ComboBoxGioiTinh.Size = new System.Drawing.Size(121, 29);
+            this.ComboBoxGioiTinh.Padding = new System.Windows.Forms.Padding(2);
+            this.ComboBoxGioiTinh.Size = new System.Drawing.Size(153, 33);
             this.ComboBoxGioiTinh.TabIndex = 9;
-            this.ComboBoxGioiTinh.Text = "  Giới tính";
+            this.ComboBoxGioiTinh.Texts = "  Giới tính";
             // 
             // LabelNgaySinh
             // 
             this.LabelNgaySinh.AutoSize = true;
             this.LabelNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNgaySinh.ForeColor = System.Drawing.Color.DimGray;
+            this.LabelNgaySinh.ForeColor = System.Drawing.Color.Black;
             this.LabelNgaySinh.Location = new System.Drawing.Point(579, 42);
             this.LabelNgaySinh.Name = "LabelNgaySinh";
             this.LabelNgaySinh.Size = new System.Drawing.Size(66, 17);
@@ -144,17 +150,17 @@
             // 
             // ctDatePicker1
             // 
-            this.ctDatePicker1.BorderColor = System.Drawing.Color.DimGray;
-            this.ctDatePicker1.BorderSize = 1;
+            this.ctDatePicker1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
+            this.ctDatePicker1.BorderSize = 2;
             this.ctDatePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.ctDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctDatePicker1.Location = new System.Drawing.Point(514, 53);
             this.ctDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
             this.ctDatePicker1.Name = "ctDatePicker1";
-            this.ctDatePicker1.Size = new System.Drawing.Size(210, 35);
+            this.ctDatePicker1.Size = new System.Drawing.Size(234, 35);
             this.ctDatePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.ctDatePicker1.TabIndex = 5;
-            this.ctDatePicker1.TextColor = System.Drawing.Color.DimGray;
+            this.ctDatePicker1.TextColor = System.Drawing.Color.Black;
             // 
             // pictureBox3
             // 
@@ -177,7 +183,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::HotelManagement.Properties.Resources.Gender;
-            this.pictureBox9.Location = new System.Drawing.Point(290, 408);
+            this.pictureBox9.Location = new System.Drawing.Point(298, 407);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(30, 30);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -207,7 +213,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::HotelManagement.Properties.Resources.CalendarPick;
-            this.pictureBox5.Location = new System.Drawing.Point(457, 53);
+            this.pictureBox5.Location = new System.Drawing.Point(457, 58);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(30, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -233,15 +239,15 @@
             this.ctTextBoxEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctTextBoxEmail.IsFocused = false;
             this.ctTextBoxEmail.Location = new System.Drawing.Point(514, 332);
-            this.ctTextBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctTextBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.ctTextBoxEmail.Multiline = false;
             this.ctTextBoxEmail.Name = "ctTextBoxEmail";
-            this.ctTextBoxEmail.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ctTextBoxEmail.Padding = new System.Windows.Forms.Padding(7);
             this.ctTextBoxEmail.PasswordChar = false;
             this.ctTextBoxEmail.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBoxEmail.PlaceholderText = "Nhập email";
             this.ctTextBoxEmail.ReadOnly = false;
-            this.ctTextBoxEmail.Size = new System.Drawing.Size(210, 35);
+            this.ctTextBoxEmail.Size = new System.Drawing.Size(234, 35);
             this.ctTextBoxEmail.TabIndex = 8;
             this.ctTextBoxEmail.Texts = "";
             this.ctTextBoxEmail.UnderlineedStyle = true;
@@ -256,15 +262,15 @@
             this.CTTextBoxDiaChi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxDiaChi.IsFocused = false;
             this.CTTextBoxDiaChi.Location = new System.Drawing.Point(514, 226);
-            this.CTTextBoxDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CTTextBoxDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxDiaChi.Multiline = false;
             this.CTTextBoxDiaChi.Name = "CTTextBoxDiaChi";
-            this.CTTextBoxDiaChi.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.CTTextBoxDiaChi.Padding = new System.Windows.Forms.Padding(7);
             this.CTTextBoxDiaChi.PasswordChar = false;
             this.CTTextBoxDiaChi.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxDiaChi.PlaceholderText = "Nhập địa chỉ";
             this.CTTextBoxDiaChi.ReadOnly = false;
-            this.CTTextBoxDiaChi.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxDiaChi.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxDiaChi.TabIndex = 7;
             this.CTTextBoxDiaChi.Texts = "";
             this.CTTextBoxDiaChi.UnderlineedStyle = true;
@@ -279,15 +285,15 @@
             this.CTTextBoxNhapCCCD.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxNhapCCCD.IsFocused = false;
             this.CTTextBoxNhapCCCD.Location = new System.Drawing.Point(514, 139);
-            this.CTTextBoxNhapCCCD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CTTextBoxNhapCCCD.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxNhapCCCD.Multiline = false;
             this.CTTextBoxNhapCCCD.Name = "CTTextBoxNhapCCCD";
-            this.CTTextBoxNhapCCCD.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.CTTextBoxNhapCCCD.Padding = new System.Windows.Forms.Padding(7);
             this.CTTextBoxNhapCCCD.PasswordChar = false;
             this.CTTextBoxNhapCCCD.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapCCCD.PlaceholderText = "Nhập số CCCD";
             this.CTTextBoxNhapCCCD.ReadOnly = false;
-            this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxNhapCCCD.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxNhapCCCD.TabIndex = 6;
             this.CTTextBoxNhapCCCD.Texts = "";
             this.CTTextBoxNhapCCCD.UnderlineedStyle = true;
@@ -303,15 +309,15 @@
             this.CTTextBoxNhapChucVu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxNhapChucVu.IsFocused = false;
             this.CTTextBoxNhapChucVu.Location = new System.Drawing.Point(107, 139);
-            this.CTTextBoxNhapChucVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CTTextBoxNhapChucVu.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxNhapChucVu.Multiline = false;
             this.CTTextBoxNhapChucVu.Name = "CTTextBoxNhapChucVu";
-            this.CTTextBoxNhapChucVu.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.CTTextBoxNhapChucVu.Padding = new System.Windows.Forms.Padding(7);
             this.CTTextBoxNhapChucVu.PasswordChar = false;
             this.CTTextBoxNhapChucVu.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapChucVu.PlaceholderText = "Nhập chức vụ";
             this.CTTextBoxNhapChucVu.ReadOnly = false;
-            this.CTTextBoxNhapChucVu.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxNhapChucVu.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxNhapChucVu.TabIndex = 2;
             this.CTTextBoxNhapChucVu.Texts = "";
             this.CTTextBoxNhapChucVu.UnderlineedStyle = true;
@@ -328,15 +334,15 @@
             this.CTTextBoxNhapHoTen.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxNhapHoTen.IsFocused = false;
             this.CTTextBoxNhapHoTen.Location = new System.Drawing.Point(107, 48);
-            this.CTTextBoxNhapHoTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CTTextBoxNhapHoTen.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxNhapHoTen.Multiline = false;
             this.CTTextBoxNhapHoTen.Name = "CTTextBoxNhapHoTen";
-            this.CTTextBoxNhapHoTen.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.CTTextBoxNhapHoTen.Padding = new System.Windows.Forms.Padding(7);
             this.CTTextBoxNhapHoTen.PasswordChar = false;
             this.CTTextBoxNhapHoTen.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxNhapHoTen.PlaceholderText = "Nhập họ tên nhân viên";
             this.CTTextBoxNhapHoTen.ReadOnly = false;
-            this.CTTextBoxNhapHoTen.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxNhapHoTen.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxNhapHoTen.TabIndex = 1;
             this.CTTextBoxNhapHoTen.Texts = "";
             this.CTTextBoxNhapHoTen.UnderlineedStyle = true;
@@ -372,15 +378,15 @@
             this.ctTextBoxSDT.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctTextBoxSDT.IsFocused = false;
             this.ctTextBoxSDT.Location = new System.Drawing.Point(107, 332);
-            this.ctTextBoxSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctTextBoxSDT.Margin = new System.Windows.Forms.Padding(4);
             this.ctTextBoxSDT.Multiline = false;
             this.ctTextBoxSDT.Name = "ctTextBoxSDT";
-            this.ctTextBoxSDT.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ctTextBoxSDT.Padding = new System.Windows.Forms.Padding(7);
             this.ctTextBoxSDT.PasswordChar = false;
             this.ctTextBoxSDT.PlaceholderColor = System.Drawing.Color.DimGray;
             this.ctTextBoxSDT.PlaceholderText = "Số điện thoại";
             this.ctTextBoxSDT.ReadOnly = false;
-            this.ctTextBoxSDT.Size = new System.Drawing.Size(210, 35);
+            this.ctTextBoxSDT.Size = new System.Drawing.Size(234, 35);
             this.ctTextBoxSDT.TabIndex = 4;
             this.ctTextBoxSDT.Texts = "";
             this.ctTextBoxSDT.UnderlineedStyle = true;
@@ -396,15 +402,15 @@
             this.CTTextBoxLuong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CTTextBoxLuong.IsFocused = false;
             this.CTTextBoxLuong.Location = new System.Drawing.Point(107, 231);
-            this.CTTextBoxLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CTTextBoxLuong.Margin = new System.Windows.Forms.Padding(4);
             this.CTTextBoxLuong.Multiline = false;
             this.CTTextBoxLuong.Name = "CTTextBoxLuong";
-            this.CTTextBoxLuong.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.CTTextBoxLuong.Padding = new System.Windows.Forms.Padding(7);
             this.CTTextBoxLuong.PasswordChar = false;
             this.CTTextBoxLuong.PlaceholderColor = System.Drawing.Color.DimGray;
             this.CTTextBoxLuong.PlaceholderText = "Lương";
             this.CTTextBoxLuong.ReadOnly = false;
-            this.CTTextBoxLuong.Size = new System.Drawing.Size(210, 35);
+            this.CTTextBoxLuong.Size = new System.Drawing.Size(234, 35);
             this.CTTextBoxLuong.TabIndex = 3;
             this.CTTextBoxLuong.Texts = "";
             this.CTTextBoxLuong.UnderlineedStyle = true;
@@ -493,7 +499,6 @@
         private System.Windows.Forms.Panel PanelBackground;
         private System.Windows.Forms.Label LabelSuaNhanVien;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox ComboBoxGioiTinh;
         private System.Windows.Forms.Label LabelNgaySinh;
         private CTControls.CTDatePicker ctDatePicker1;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -514,5 +519,6 @@
         private CTControls.CTTextBox CTTextBoxLuong;
         private CTControls.CTButton CTButtonThoat;
         private CTControls.CTButton CTButtonCapNhat;
+        private CTControls.CTComboBox ComboBoxGioiTinh;
     }
 }

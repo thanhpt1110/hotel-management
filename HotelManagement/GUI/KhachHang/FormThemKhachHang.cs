@@ -217,7 +217,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            if (this.ctTextBoxName.Texts != "" && this.ctTextBoxQuocTich.Texts != "" && this.ctTextBoxCMND.Texts != "" && this.comboBoxGioiTinh.Text != "  Giới tính")
+            if (this.ctTextBoxName.Texts != "" && this.ctTextBoxQuocTich.Texts != "" && this.ctTextBoxCMND.Texts != "" && this.comboBoxGioiTinh.Texts != "  Giới tính")
             {   
                 List<KhachHang> khachHangs = KhachHangBUS.Instance.GetKhachHangs();
                 foreach (KhachHang khachHang in khachHangs)
@@ -237,7 +237,7 @@ namespace HotelManagement.GUI
                     khachHang1.QuocTich = this.ctTextBoxQuocTich.Texts;
                     khachHang1.CCCD_Passport = this.ctTextBoxCMND.Texts;
                     khachHang1.SDT = this.ctTextBoxSDT.Texts;
-                    khachHang1.GioiTinh = this.comboBoxGioiTinh.Text.Trim(' ');
+                    khachHang1.GioiTinh = this.comboBoxGioiTinh.Texts.Trim(' ');
                     KhachHangBUS.Instance.UpdateOrAdd(khachHang1);
                 }
                 catch(Exception)

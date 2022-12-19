@@ -43,6 +43,10 @@ namespace HotelManagement.BUS
         public string getNextCTDPwithList(List<CTDP> list)
         {
             return CTDP_DAO.Instance.getNextCTDPwithList(list);
+        }
+        public void RemoveCTDP(CTDP cTDP)
+        {
+            CTDP_DAO.Instance.RemoveCTDP(cTDP);
         }    
     }
 }

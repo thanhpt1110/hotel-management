@@ -34,7 +34,7 @@
             this.ButtonThem = new HotelManagement.CTControls.CTButton();
             this.LabelThemCTTN = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ComboBoxTenTienNghi = new System.Windows.Forms.ComboBox();
+            this.ComboBoxTenTienNghi = new HotelManagement.CTControls.CTComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.CTTextBoxSoLuong = new HotelManagement.CTControls.CTTextBox();
@@ -157,17 +157,24 @@
             // ComboBoxTenTienNghi
             // 
             this.ComboBoxTenTienNghi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ComboBoxTenTienNghi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
+            this.ComboBoxTenTienNghi.BorderSize = 1;
+            this.ComboBoxTenTienNghi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxTenTienNghi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxTenTienNghi.ForeColor = System.Drawing.Color.Black;
-            this.ComboBoxTenTienNghi.FormattingEnabled = true;
+            this.ComboBoxTenTienNghi.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
             this.ComboBoxTenTienNghi.Items.AddRange(new object[] {
-            "  Nam",
-            "  Nữ"});
+            "  Admin",
+            "  Quản lý",
+            "  Lễ tân"});
+            this.ComboBoxTenTienNghi.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.ComboBoxTenTienNghi.ListTextColor = System.Drawing.Color.Black;
             this.ComboBoxTenTienNghi.Location = new System.Drawing.Point(122, 44);
             this.ComboBoxTenTienNghi.Name = "ComboBoxTenTienNghi";
-            this.ComboBoxTenTienNghi.Size = new System.Drawing.Size(249, 29);
-            this.ComboBoxTenTienNghi.TabIndex = 11;
-            this.ComboBoxTenTienNghi.Text = "  Tên tiện nghi";
+            this.ComboBoxTenTienNghi.Padding = new System.Windows.Forms.Padding(1);
+            this.ComboBoxTenTienNghi.Size = new System.Drawing.Size(249, 31);
+            this.ComboBoxTenTienNghi.TabIndex = 2;
+            this.ComboBoxTenTienNghi.Texts = "Tên tiện nghi";
             // 
             // pictureBox2
             // 
@@ -405,8 +412,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private CTControls.CTTextBox CTTextBoxSoLuong;
-        private CTControls.CTTextBox ctTextBoxGhiChu;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.ComboBox ComboBoxTenTienNghi;
+        private CTControls.CTTextBox ctTextBoxGhiChu;
+        private CTControls.CTComboBox ComboBoxTenTienNghi;
     }
 }

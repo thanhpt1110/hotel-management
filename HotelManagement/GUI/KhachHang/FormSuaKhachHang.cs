@@ -54,7 +54,7 @@ namespace HotelManagement.GUI
             this.ctTextBoxName.Texts = this.khachHang.TenKH;
             this.ctTextBoxQuocTich.Texts = this.khachHang.QuocTich;
             this.ctTextBoxCCCD.Texts = this.khachHang.CCCD_Passport;
-            this.comboBoxGioiTinh.Text = " " + this.khachHang.GioiTinh;
+            this.comboBoxGioiTinh.Texts = "  " + this.khachHang.GioiTinh;
             this.ctTextBoxSDT.Texts = this.khachHang.SDT;
         }
         //Control Box
@@ -265,7 +265,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            if (this.ctTextBoxName.Texts != "" && this.ctTextBoxQuocTich.Texts != "" && this.ctTextBoxCCCD.Texts != "" && this.comboBoxGioiTinh.Text != "  Giới tính")
+            if (this.ctTextBoxName.Texts != "" && this.ctTextBoxQuocTich.Texts != "" && this.ctTextBoxCCCD.Texts != "" && this.comboBoxGioiTinh.Texts != "  Giới tính")
             {
                     List<KhachHang> khachHangs = KhachHangBUS.Instance.GetKhachHangs();
                     foreach (KhachHang khachHang in khachHangs)
@@ -283,7 +283,7 @@ namespace HotelManagement.GUI
                         khachHang.QuocTich = this.ctTextBoxQuocTich.Texts;
                         khachHang.CCCD_Passport = this.ctTextBoxCCCD.Texts;
                         khachHang.SDT = this.ctTextBoxSDT.Texts;
-                        khachHang.GioiTinh = this.comboBoxGioiTinh.Text.Trim(' ');
+                        khachHang.GioiTinh = this.comboBoxGioiTinh.Texts.Trim(' ');
                         KhachHangBUS.Instance.UpdateOrAdd(khachHang);
                     }
                     catch (Exception)

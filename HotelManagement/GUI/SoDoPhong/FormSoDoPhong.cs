@@ -48,13 +48,14 @@ namespace HotelManagement.GUI
             SetAppear();
             //this.ctDatePicker1.Value = DateTime.Now;
             phongs = PhongBUS.Instance.GetAllPhong();
+            SetAppear();
             LoadPhong(phongs);
+         
 
         }
 
         private void LoadPhong(List<Phong> phongs)
         {
-            SetAppear();
             List<CTRoomDaDat> roomDaDats = new List<CTRoomDaDat>();
             List<CTRoomDangSuaChua> roomDangSuaChuas = new List<CTRoomDangSuaChua>();
             List<CTRoomDangThue> roomDangThues = new List<CTRoomDangThue>();
@@ -583,6 +584,7 @@ namespace HotelManagement.GUI
         private void CTRadioButtonPhongTrong_CheckedChanged(object sender, EventArgs e)
         {
             phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Texts);
+            SetAppear();
             LoadCheckBoxLoaiPhong();
             LoadCheckBoxTTDD();
             LoadPhong(phongs);
