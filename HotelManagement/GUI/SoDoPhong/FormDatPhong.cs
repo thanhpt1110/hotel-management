@@ -14,6 +14,7 @@ using HotelManagement.BUS;
 using HotelManagement.DTO;
 using ApplicationSettings;
 using HotelManagement.DAO;
+using System.Runtime.CompilerServices;
 
 namespace HotelManagement.GUI
 {
@@ -516,26 +517,22 @@ namespace HotelManagement.GUI
             textBox.MaxLength = 12;
             if (KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text) != null)
             {
-                DialogResult dialogresult = CTMessageBox.Show("Đã có số cccd hoặc passport này trong danh sách\r\n Bạn có muốn lấy lại thông tin đó?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogresult == DialogResult.Yes)
-                {
-                    CTTextBoxNhapSDT.RemovePlaceholder();
-                    CTTextBoxNhapDiaChi.RemovePlaceholder();
-                    CTTextBoxNhapHoTen.RemovePlaceholder();
-                    // CTTextBoxNhapCCCD.RemovePlaceholder();
+                CTMessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách.\r\nThông tin sẽ được tự động điền.", "Thông báo", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CTTextBoxNhapSDT.RemovePlaceholder();
+                CTTextBoxNhapDiaChi.RemovePlaceholder();
+                CTTextBoxNhapHoTen.RemovePlaceholder();
+                // CTTextBoxNhapCCCD.RemovePlaceholder();
 
 
-                    khachHang = KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text);
-                    CTTextBoxNhapSDT.Texts = khachHang.SDT;
-                    CTTextBoxNhapDiaChi.Texts = khachHang.QuocTich;
-                    ComboBoxGioiTinh.Texts = khachHang.GioiTinh;
-                    CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
-                    ComboBoxGioiTinh.Focus();
-                    flag = 1;
-                }
+                khachHang = KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text);
+                CTTextBoxNhapSDT.Texts = khachHang.SDT;
+                CTTextBoxNhapDiaChi.Texts = khachHang.QuocTich;
+                ComboBoxGioiTinh.Texts = khachHang.GioiTinh;
+                CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
+                ComboBoxGioiTinh.Focus();
+                flag = 1;
             }
         }
-
-  
     }
 }

@@ -138,7 +138,7 @@
             // 
             this.comboBoxMaNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.comboBoxMaNV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.comboBoxMaNV.BorderSize = 1;
+            this.comboBoxMaNV.BorderSize = 2;
             this.comboBoxMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.comboBoxMaNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMaNV.ForeColor = System.Drawing.Color.Black;
@@ -151,8 +151,8 @@
             this.comboBoxMaNV.ListTextColor = System.Drawing.Color.Black;
             this.comboBoxMaNV.Location = new System.Drawing.Point(106, 44);
             this.comboBoxMaNV.Name = "comboBoxMaNV";
-            this.comboBoxMaNV.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxMaNV.Size = new System.Drawing.Size(159, 31);
+            this.comboBoxMaNV.Padding = new System.Windows.Forms.Padding(2);
+            this.comboBoxMaNV.Size = new System.Drawing.Size(159, 33);
             this.comboBoxMaNV.TabIndex = 2;
             this.comboBoxMaNV.Texts = "  Mã nhân viên";
             // 
@@ -160,7 +160,7 @@
             // 
             this.comboBoxCapDoQuyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.comboBoxCapDoQuyen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
-            this.comboBoxCapDoQuyen.BorderSize = 1;
+            this.comboBoxCapDoQuyen.BorderSize = 2;
             this.comboBoxCapDoQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCapDoQuyen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCapDoQuyen.ForeColor = System.Drawing.Color.Black;
@@ -173,8 +173,8 @@
             this.comboBoxCapDoQuyen.ListTextColor = System.Drawing.Color.Black;
             this.comboBoxCapDoQuyen.Location = new System.Drawing.Point(106, 290);
             this.comboBoxCapDoQuyen.Name = "comboBoxCapDoQuyen";
-            this.comboBoxCapDoQuyen.Padding = new System.Windows.Forms.Padding(1);
-            this.comboBoxCapDoQuyen.Size = new System.Drawing.Size(159, 31);
+            this.comboBoxCapDoQuyen.Padding = new System.Windows.Forms.Padding(2);
+            this.comboBoxCapDoQuyen.Size = new System.Drawing.Size(159, 33);
             this.comboBoxCapDoQuyen.TabIndex = 5;
             this.comboBoxCapDoQuyen.Texts = "  Cấp độ quyền";
             // 
