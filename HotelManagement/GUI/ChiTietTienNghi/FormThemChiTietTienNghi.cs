@@ -237,7 +237,7 @@ namespace HotelManagement.GUI
         }    
         private void ButtonThem_Click(object sender, EventArgs e)
         {
-            string TenTN = ComboBoxTenTienNghi.Text;
+            string TenTN = ComboBoxTenTienNghi.Texts;
             string SL = CTTextBoxSoLuong.Texts; 
             string GhiChu = ctTextBoxGhiChu.Texts;
             if (TenTN == "  Tên tiện nghi" || SL == "" || GhiChu == "")
@@ -249,7 +249,7 @@ namespace HotelManagement.GUI
             try
             {
                 CTTN cTTN = new CTTN();
-                cTTN.MaTN = TienNghiBUS.Instance.GetTienNghis().Where(p => p.TenTN == this.ComboBoxTenTienNghi.Text).Single().MaTN;
+                cTTN.MaTN = TienNghiBUS.Instance.GetTienNghis().Where(p => p.TenTN == this.ComboBoxTenTienNghi.Texts).Single().MaTN;
                 cTTN.MaLPH = loaiPhong.MaLPH;
                 cTTN.SL = int.Parse(CTTextBoxSoLuong.Texts);
                 CTTN_BUS.Instance.UpdateOrInsert(cTTN);

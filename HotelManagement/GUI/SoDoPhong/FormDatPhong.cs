@@ -420,7 +420,7 @@ namespace HotelManagement.GUI
 
         private void CTButtonDatTruoc_Click(object sender, EventArgs e)
         {
-            if (this.CTTextBoxNhapCCCD.Texts != "" && this.CTTextBoxNhapDiaChi.Texts != "" && this.CTTextBoxNhapHoTen.Texts != "" && this.ComboBoxGioiTinh.Text != "  Giới tính")
+            if (this.CTTextBoxNhapCCCD.Texts != "" && this.CTTextBoxNhapDiaChi.Texts != "" && this.CTTextBoxNhapHoTen.Texts != "" && this.ComboBoxGioiTinh.Texts != "  Giới tính")
             {
                 try
                 {
@@ -459,7 +459,7 @@ namespace HotelManagement.GUI
             }
             khachHang.TenKH = CTTextBoxNhapHoTen.Texts;
             khachHang.CCCD_Passport = CTTextBoxNhapCCCD.Texts;
-            khachHang.GioiTinh = this.ComboBoxGioiTinh.Text;
+            khachHang.GioiTinh = this.ComboBoxGioiTinh.Texts;
             KhachHangBUS.Instance.UpdateOrAdd(khachHang);
         }
         private void CreatePhieuThue()
@@ -528,7 +528,7 @@ namespace HotelManagement.GUI
                     khachHang = KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text);
                     CTTextBoxNhapSDT.Texts = khachHang.SDT;
                     CTTextBoxNhapDiaChi.Texts = khachHang.QuocTich;
-                    ComboBoxGioiTinh.Text = khachHang.GioiTinh;
+                    ComboBoxGioiTinh.Texts = khachHang.GioiTinh;
                     CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
                     ComboBoxGioiTinh.Focus();
                     flag = 1;

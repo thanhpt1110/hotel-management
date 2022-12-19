@@ -51,15 +51,12 @@
             this.CTRadioButtonPhongDangThue = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDaDat = new HotelManagement.CTControls.CTRadioButton();
             this.PanelTitle = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ComboBoxPhut = new System.Windows.Forms.ComboBox();
-            this.ComboBoxGio = new System.Windows.Forms.ComboBox();
-            this.LabelChonGio = new System.Windows.Forms.Label();
-            this.ctBorderPanel1 = new HotelManagement.CTControls.CTBorderPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ctDatePicker2 = new HotelManagement.CTControls.CTDatePicker();
             this.LabelChonNgay = new System.Windows.Forms.Label();
+            this.ctDatePicker1 = new HotelManagement.CTControls.CTDatePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
-            this.ctDatePicker1 = new HotelManagement.CTControls.CTDatePicker();
             this.timerAppear = new System.Windows.Forms.Timer(this.components);
             this.panelSoDoPhong = new System.Windows.Forms.Panel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
@@ -401,126 +398,76 @@
             // 
             this.PanelTitle.AutoScroll = true;
             this.PanelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.PanelTitle.Controls.Add(this.label7);
-            this.PanelTitle.Controls.Add(this.ComboBoxPhut);
-            this.PanelTitle.Controls.Add(this.ComboBoxGio);
-            this.PanelTitle.Controls.Add(this.LabelChonGio);
-            this.PanelTitle.Controls.Add(this.ctBorderPanel1);
+            this.PanelTitle.Controls.Add(this.label6);
+            this.PanelTitle.Controls.Add(this.ctDatePicker2);
             this.PanelTitle.Controls.Add(this.LabelChonNgay);
+            this.PanelTitle.Controls.Add(this.ctDatePicker1);
             this.PanelTitle.Controls.Add(this.pictureBox1);
             this.PanelTitle.Controls.Add(this.ctTextBox1);
-            this.PanelTitle.Controls.Add(this.ctDatePicker1);
             this.PanelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTitle.Location = new System.Drawing.Point(237, 0);
             this.PanelTitle.Name = "PanelTitle";
             this.PanelTitle.Size = new System.Drawing.Size(1007, 53);
             this.PanelTitle.TabIndex = 3;
             // 
-            // label7
+            // label6
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(208, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 21);
-            this.label7.TabIndex = 38;
-            this.label7.Text = ":";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(303, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 15);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Chọn giờ";
             // 
-            // ComboBoxPhut
+            // ctDatePicker2
             // 
-            this.ComboBoxPhut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ComboBoxPhut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ComboBoxPhut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxPhut.FormattingEnabled = true;
-            this.ComboBoxPhut.Items.AddRange(new object[] {
-            " 00",
-            " 30"});
-            this.ComboBoxPhut.Location = new System.Drawing.Point(227, 16);
-            this.ComboBoxPhut.Name = "ComboBoxPhut";
-            this.ComboBoxPhut.Size = new System.Drawing.Size(50, 25);
-            this.ComboBoxPhut.TabIndex = 36;
-            this.ComboBoxPhut.Text = " mm";
-            // 
-            // ComboBoxGio
-            // 
-            this.ComboBoxGio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ComboBoxGio.DropDownHeight = 70;
-            this.ComboBoxGio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ComboBoxGio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBoxGio.FormattingEnabled = true;
-            this.ComboBoxGio.IntegralHeight = false;
-            this.ComboBoxGio.Items.AddRange(new object[] {
-            " 00",
-            " 01",
-            " 02",
-            " 03",
-            " 04",
-            " 05",
-            " 06",
-            " 07",
-            " 08",
-            " 09",
-            " 10",
-            " 11",
-            " 12",
-            " 13",
-            " 14",
-            " 15",
-            " 16",
-            " 17",
-            " 18",
-            " 19",
-            " 20",
-            " 21",
-            " 22",
-            " 23"});
-            this.ComboBoxGio.Location = new System.Drawing.Point(162, 17);
-            this.ComboBoxGio.Name = "ComboBoxGio";
-            this.ComboBoxGio.Size = new System.Drawing.Size(43, 25);
-            this.ComboBoxGio.TabIndex = 37;
-            this.ComboBoxGio.Text = " hh";
-            // 
-            // LabelChonGio
-            // 
-            this.LabelChonGio.AutoSize = true;
-            this.LabelChonGio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelChonGio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LabelChonGio.Location = new System.Drawing.Point(166, 1);
-            this.LabelChonGio.Name = "LabelChonGio";
-            this.LabelChonGio.Size = new System.Drawing.Size(56, 15);
-            this.LabelChonGio.TabIndex = 10;
-            this.LabelChonGio.Text = "Chọn giờ";
-            // 
-            // ctBorderPanel1
-            // 
-            this.ctBorderPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ctBorderPanel1.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ctBorderPanel1.BorderSize = 1;
-            this.ctBorderPanel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctBorderPanel1.Location = new System.Drawing.Point(155, 11);
-            this.ctBorderPanel1.MinimumSize = new System.Drawing.Size(0, 35);
-            this.ctBorderPanel1.Name = "ctBorderPanel1";
-            this.ctBorderPanel1.Size = new System.Drawing.Size(132, 36);
-            this.ctBorderPanel1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ctBorderPanel1.TabIndex = 34;
-            this.ctBorderPanel1.TextColor = System.Drawing.Color.Black;
+            this.ctDatePicker2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
+            this.ctDatePicker2.BorderSize = 2;
+            this.ctDatePicker2.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctDatePicker2.CustomFormat = "HH:mm:ss";
+            this.ctDatePicker2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctDatePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ctDatePicker2.Location = new System.Drawing.Point(262, 13);
+            this.ctDatePicker2.MinimumSize = new System.Drawing.Size(4, 35);
+            this.ctDatePicker2.Name = "ctDatePicker2";
+            this.ctDatePicker2.Size = new System.Drawing.Size(161, 35);
+            this.ctDatePicker2.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ctDatePicker2.TabIndex = 41;
+            this.ctDatePicker2.TextColor = System.Drawing.Color.Black;
             // 
             // LabelChonNgay
             // 
             this.LabelChonNgay.AutoSize = true;
             this.LabelChonNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelChonNgay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LabelChonNgay.Location = new System.Drawing.Point(19, 1);
+            this.LabelChonNgay.Location = new System.Drawing.Point(58, 5);
             this.LabelChonNgay.Name = "LabelChonNgay";
             this.LabelChonNgay.Size = new System.Drawing.Size(65, 15);
             this.LabelChonNgay.TabIndex = 10;
             this.LabelChonNgay.Text = "Chọn ngày";
             // 
+            // ctDatePicker1
+            // 
+            this.ctDatePicker1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(96)))), ((int)(((byte)(116)))));
+            this.ctDatePicker1.BorderSize = 2;
+            this.ctDatePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.ctDatePicker1.Location = new System.Drawing.Point(17, 14);
+            this.ctDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.ctDatePicker1.Name = "ctDatePicker1";
+            this.ctDatePicker1.Size = new System.Drawing.Size(234, 35);
+            this.ctDatePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.ctDatePicker1.TabIndex = 39;
+            this.ctDatePicker1.TextColor = System.Drawing.Color.Black;
+            this.ctDatePicker1.ValueChanged += new System.EventHandler(this.ctDatePicker1_ValueChanged);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(384, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(649, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 2;
@@ -536,37 +483,20 @@
             this.ctTextBox1.BorderSize = 1;
             this.ctTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctTextBox1.IsFocused = false;
-            this.ctTextBox1.Location = new System.Drawing.Point(379, 8);
+            this.ctTextBox1.Location = new System.Drawing.Point(643, 10);
             this.ctTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ctTextBox1.Multiline = false;
             this.ctTextBox1.Name = "ctTextBox1";
             this.ctTextBox1.Padding = new System.Windows.Forms.Padding(40, 7, 7, 7);
             this.ctTextBox1.PasswordChar = false;
             this.ctTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.ctTextBox1.PlaceholderText = "Tìm theo mã phòng";
+            this.ctTextBox1.PlaceholderText = "Nhập mã phòng cần tìm";
             this.ctTextBox1.ReadOnly = false;
-            this.ctTextBox1.Size = new System.Drawing.Size(216, 36);
+            this.ctTextBox1.Size = new System.Drawing.Size(235, 36);
             this.ctTextBox1.TabIndex = 1;
             this.ctTextBox1.Texts = "";
             this.ctTextBox1.UnderlineedStyle = false;
             this.ctTextBox1._TextChanged += new System.EventHandler(this.ctTextBox1__TextChanged);
-            // 
-            // ctDatePicker1
-            // 
-            this.ctDatePicker1.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ctDatePicker1.BorderSize = 1;
-            this.ctDatePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctDatePicker1.CustomFormat = "dd, MMM, yyyy";
-            this.ctDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctDatePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ctDatePicker1.Location = new System.Drawing.Point(9, 11);
-            this.ctDatePicker1.MinimumSize = new System.Drawing.Size(0, 35);
-            this.ctDatePicker1.Name = "ctDatePicker1";
-            this.ctDatePicker1.Size = new System.Drawing.Size(128, 35);
-            this.ctDatePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ctDatePicker1.TabIndex = 0;
-            this.ctDatePicker1.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ctDatePicker1.ValueChanged += new System.EventHandler(this.ctDatePicker1_ValueChanged);
             // 
             // timerAppear
             // 
@@ -808,9 +738,7 @@
         private CTControls.CTRadioButton CTRadioButtonDaDonDep;
         private CTControls.CTRadioButton CTRadioButtonChuaDonDep;
         private CTControls.CTTextBox ctTextBox1;
-        private CTControls.CTDatePicker ctDatePicker1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label LabelChonGio;
         private System.Windows.Forms.Label LabelChonNgay;
         private System.Windows.Forms.Timer timerAppear;
         private System.Windows.Forms.Panel panelSoDoPhong;
@@ -829,9 +757,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
-        private CTControls.CTBorderPanel ctBorderPanel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox ComboBoxPhut;
-        private System.Windows.Forms.ComboBox ComboBoxGio;
+        private CTControls.CTDatePicker ctDatePicker1;
+        private System.Windows.Forms.Label label6;
+        private CTControls.CTDatePicker ctDatePicker2;
     }
 }

@@ -103,7 +103,6 @@
     </Content>
     <Content Include="Database\HotelManagement_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>HotelManagement.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\calendardark.png" />
     <Content Include="Resources\calendarwhite.png" />

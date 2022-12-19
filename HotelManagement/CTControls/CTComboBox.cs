@@ -84,10 +84,10 @@ namespace HotelManagement.CTControls
         //Private methods
         private void AdjustComboBoxDimensions()
         {
-            cmbList.Width = lblText.Width;
+            cmbList.Width = lblText.Width + btnIcon.Width + 2;
             cmbList.Location = new Point()
             {
-                X = this.Width - this.Padding.Right - cmbList.Width,
+                X = this.Width - this.Padding.Right - cmbList.Width + 1,
                 Y = lblText.Bottom - cmbList.Height
             };
         }
