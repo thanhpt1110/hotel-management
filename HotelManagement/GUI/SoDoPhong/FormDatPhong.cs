@@ -397,11 +397,11 @@ namespace HotelManagement.GUI
         private void CTDatePickerNgayBD_ValueChanged(object sender, EventArgs e)
         {
             CTDatePicker cTDatePicker = sender as CTDatePicker;
-            if(cTDatePicker.Value<DateTime.Now)
+            /*if(cTDatePicker.Value<DateTime.Now)
             {
                 cTDatePicker.Value = DateTime.Now;
                 return;
-            }    
+            }    */
             LoadgridPhongTrong();
         }
 

@@ -413,14 +413,15 @@ namespace HotelManagement.GUI
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogresult == DialogResult.Yes)
             {
+                ctdp.ThanhTien = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
                 HoaDon hd = HoaDonBUS.Instance.GetHoaDons().Where(p => p.MaCTDP == ctdp.MaCTDP).SingleOrDefault();
                 try
                 {
                     hd.TriGia = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
-                    foreach(CTDV cTDV in CTDV_BUS.Instance.FindCTDV(hd.MaHD))
+                    foreach (CTDV cTDV in CTDV_BUS.Instance.FindCTDV(hd.MaHD))
                     {
                         hd.TriGia += cTDV.ThanhTien;
-                    }    
+                    }
                     ctdp.TrangThai = "Đã xong";
                     hd.TrangThai = "Đã thanh toán";
                     hd.NgHD = DateTime.Now;
