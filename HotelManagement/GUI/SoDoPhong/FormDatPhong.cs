@@ -14,6 +14,7 @@ using HotelManagement.BUS;
 using HotelManagement.DTO;
 using ApplicationSettings;
 using HotelManagement.DAO;
+using System.Runtime.CompilerServices;
 
 namespace HotelManagement.GUI
 {
@@ -30,6 +31,9 @@ namespace HotelManagement.GUI
         private int flag = 0;
         private TaiKhoan taiKhoan;
         private PhieuThue phieuThue = new PhieuThue();
+        private DateTime CheckIn = DateTime.Now;  // flag = 1
+        private DateTime CheckOut = DateTime.Now; // flag = 2
+
         //Constructor
         public FormDatPhong()
         {
@@ -223,6 +227,38 @@ namespace HotelManagement.GUI
             this.Close();
         }
         #endregion
+
+        private void setLoadComboBox()
+        {
+            DateTime datetime = DateTime.Now;
+            int iHour = datetime.Hour; string strHour = null;
+            int iMinute = datetime.Minute; string strMinute = null;
+            string letter = null;
+            if (iHour > 12)
+            {
+                iHour -= 12;
+                letter = "   PM";
+            }
+            else if (iHour == 12)
+                letter = "   PM";
+            else if (iHour < 12)
+            {
+                if (iHour == 0)
+                    iHour = 12;
+                letter = "   AM";
+            }
+            strHour = iHour.ToString();
+            strMinute = iMinute.ToString();
+            if (strMinute.Length == 1)
+                strMinute = "0" + strMinute;
+            if (strHour.Length == 1)
+                strHour = "0" + strHour;
+            cbBoxGioBatDau.Texts = strHour + ':' + strMinute;
+            cbBoxLetterBatDau.Texts = letter;
+            cbBoxGioKetThuc.Texts = strHour + ':' + strMinute;
+            cbBoxLetterKetThuc.Texts = letter;
+        }
+
         private void FormDatPhong_Load(object sender, EventArgs e)
         {
             this.ActiveControl = label1;
@@ -230,24 +266,17 @@ namespace HotelManagement.GUI
             DataGridView grid1 = gridPhongTrong;
             DataGridView grid2 = gridPhongDaChon;
             grid1.ColumnHeadersDefaultCellStyle.Font = new Font(grid1.Font, FontStyle.Bold);
-            grid2.ColumnHeadersDefaultCellStyle.Font = new Font(grid2.Font, FontStyle.Bold);
-
-            
-            /*grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });
-            grid1.Rows.Add(new object[] { "P101", "Phòng vip", this.Add });*/
             LoadgridPhongTrong();
-            /*grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
-            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
-            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });
-            grid2.Rows.Add(new object[] { "P101", "3", "11/10/2003 12:00:00", "11/10/2003 12:00:00", this.Del });*/
             LoadGridPhongDat();
             phieuThue.MaPT = PhieuThueBUS.Instance.GetMaPTNext();
-
+            setLoadComboBox();
         }
+
         private void LoadgridPhongTrong()
         {
             gridPhongTrong.Rows.Clear();
-            List<Phong> phongs = PhongBUS.Instance.FindPhongTrong(CTDatePickerNgayBD.Value, CTDatePickerNgayKT.Value, listPhongDaDat);
+            //List<Phong> phongs = PhongBUS.Instance.FindPhongTrong(CTDatePickerNgayBD.Value, CTDatePickerNgayKT.Value, listPhongDaDat);
+            List<Phong> phongs = PhongBUS.Instance.FindPhongTrong(this.CheckIn, this.CheckOut, listPhongDaDat);
             foreach (Phong phong in phongs)
             {
                 gridPhongTrong.Rows.Add(new object[] { phong.MaPH, phong.LoaiPhong.TenLPH, this.Add });
@@ -260,23 +289,37 @@ namespace HotelManagement.GUI
             {
                 foreach(CTDP room in listPhongDaDat)
                 {
-                    gridPhongDaChon.Rows.Add(room.MaPH, room.SoNguoi, room.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), room.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), this.Del);
+                    gridPhongDaChon.Rows.Add(room.MaPH, room.SoNguoi, room.CheckIn.ToString("dd/MM/yyyy HH:mm:ss"), room.CheckOut.ToString("dd/MM/yyyy HH:mm:ss"), this.Del);
                 }    
             }    
         }
+
         private void gridPhongTrong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int x = e.ColumnIndex, y = e.RowIndex;
             if (y >= 0 && x == 2)
             {
-                if (CTDatePickerNgayBD.Value < CTDatePickerNgayKT.Value)
+                //Set Date and Time for check in
+                setDate(CTDatePickerNgayBD.Value, 1);
+                setTime(cbBoxGioBatDau.Texts, cbBoxLetterBatDau.Texts, 1);
+
+                //Set Date and Time for check out
+                setDate(CTDatePickerNgayKT.Value, 2);
+                setTime(cbBoxGioKetThuc.Texts, cbBoxLetterKetThuc.Texts, 2);
+                if (this.CheckIn < DateTime.Now)
+                {
+                    CTMessageBox.Show("Thời gian bắt đầu không hợp lệ.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (this.CheckIn < this.CheckOut)
                 {
                     CTDP cTDP = new CTDP();
                     cTDP.MaCTDP = CTDP_BUS.Instance.getNextCTDPwithList(this.listPhongDaDat);
                     cTDP.MaPT = this.phieuThue.MaPT;
                     cTDP.DatCoc = 0;
-                    cTDP.CheckIn = CTDatePickerNgayBD.Value;
-                    cTDP.CheckOut = CTDatePickerNgayKT.Value;
+                    cTDP.CheckIn = this.CheckIn;
+                    cTDP.CheckOut = this.CheckOut;
                     cTDP.MaPH = gridPhongTrong.Rows[y].Cells[0].Value.ToString();
                     cTDP.Phong = PhongBUS.Instance.FindePhong(cTDP.MaPH);
                     cTDP.SoNguoi = cTDP.Phong.LoaiPhong.SoNguoiToiDa;
@@ -292,6 +335,7 @@ namespace HotelManagement.GUI
                 }    
             }
         }
+
         #region Remove Room
 
         private void SetMaCTDP(List<CTDP> list)
@@ -329,7 +373,7 @@ namespace HotelManagement.GUI
                     {
                         foreach (CTDP ctdp in this.listPhongDaDat)
                         {
-                            if (ctdp.CheckIn.ToString("dd/MM/yyyy hh:mm:ss") == gridPhongDaChon.Rows[y].Cells[2].Value.ToString() && ctdp.MaPH == gridPhongDaChon.Rows[y].Cells[0].Value.ToString())
+                            if (ctdp.CheckIn.ToString("dd/MM/yyyy HH:mm:ss") == gridPhongDaChon.Rows[y].Cells[2].Value.ToString() && ctdp.MaPH == gridPhongDaChon.Rows[y].Cells[0].Value.ToString())
                             {
                                 this.listPhongDaDat.Remove(ctdp);
                                 SetMaCTDP(listPhongDaDat);
@@ -349,6 +393,7 @@ namespace HotelManagement.GUI
             }         
         }
         #endregion
+
         #region UI Form
         private void gridPhongTrong_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -394,25 +439,78 @@ namespace HotelManagement.GUI
             grid.Cursor = Cursors.Default;
         }
         #endregion
+
+        #region Date and Time value changed
+        private void setDate(DateTime dateTime, int flag)
+        {
+            if (flag == 1)
+                this.CheckIn = dateTime.Date;
+            else
+                this.CheckOut = dateTime.Date;
+        }
+
+        private void setTime(string Time, string Letter, int flag)
+        {
+            Letter = Letter.Trim(' ');
+            string[] time = Time.Split(':');
+            int hour = int.Parse(time[0]);
+            int minute = int.Parse(time[1]);
+            if (Letter == "AM" && hour == 12 || Letter == "PM" && hour != 12)
+                hour += 12;
+
+            TimeSpan ts = new TimeSpan(hour, minute, 0);
+            if (flag == 1)
+                this.CheckIn += ts;
+            else
+                this.CheckOut += ts;
+        }
+
         private void CTDatePickerNgayBD_ValueChanged(object sender, EventArgs e)
         {
-            CTDatePicker cTDatePicker = sender as CTDatePicker;
-            if(cTDatePicker.Value<DateTime.Now)
-            {
-                cTDatePicker.Value = DateTime.Now;
-                return;
-            }    
+            setDate(CTDatePickerNgayBD.Value, 1);
+            setTime(cbBoxGioBatDau.Texts, cbBoxLetterBatDau.Texts, 1);
+            LoadgridPhongTrong();
+        }
+
+        private void cbBoxGioBatDau_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            setDate(CTDatePickerNgayBD.Value, 1);
+            setTime(cbBoxGioBatDau.Texts, cbBoxLetterBatDau.Texts, 1);
+            LoadgridPhongTrong();
+        }
+
+        private void cbBoxLetterBatDau_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            setDate(CTDatePickerNgayBD.Value, 1);
+            setTime(cbBoxGioBatDau.Texts, cbBoxLetterBatDau.Texts, 1);
             LoadgridPhongTrong();
         }
 
         private void CTDatePickerNgayKT_ValueChanged(object sender, EventArgs e)
         {
+            setDate(CTDatePickerNgayKT.Value, 2);
+            setTime(cbBoxGioKetThuc.Texts, cbBoxLetterKetThuc.Texts, 2);
             LoadgridPhongTrong();
         }
 
+        private void cbBoxGioKetThuc_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            setDate(CTDatePickerNgayKT.Value, 2);
+            setTime(cbBoxGioKetThuc.Texts, cbBoxLetterKetThuc.Texts, 2);
+            LoadgridPhongTrong();
+        }
+
+        private void cbBoxLetterKetThuc_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            setDate(CTDatePickerNgayKT.Value, 2);
+            setTime(cbBoxGioKetThuc.Texts, cbBoxLetterKetThuc.Texts, 2);
+            LoadgridPhongTrong();
+        }
+        #endregion
+
         private void CTButtonNhanPhong_Click(object sender, EventArgs e)
         {
-            if(DateTime.Now.Hour  == CTDatePickerNgayBD.Value.Hour)
+            if(DateTime.Now.Hour  == this.CheckIn.Hour)
             {
 
             }    
@@ -516,26 +614,22 @@ namespace HotelManagement.GUI
             textBox.MaxLength = 12;
             if (KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text) != null)
             {
-                DialogResult dialogresult = CTMessageBox.Show("Đã có số cccd hoặc passport này trong danh sách\r\n Bạn có muốn lấy lại thông tin đó?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogresult == DialogResult.Yes)
-                {
-                    CTTextBoxNhapSDT.RemovePlaceholder();
-                    CTTextBoxNhapDiaChi.RemovePlaceholder();
-                    CTTextBoxNhapHoTen.RemovePlaceholder();
-                    // CTTextBoxNhapCCCD.RemovePlaceholder();
+                CTMessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách.\r\nThông tin sẽ được tự động điền.", "Thông báo", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CTTextBoxNhapSDT.RemovePlaceholder();
+                CTTextBoxNhapDiaChi.RemovePlaceholder();
+                CTTextBoxNhapHoTen.RemovePlaceholder();
+                // CTTextBoxNhapCCCD.RemovePlaceholder();
 
 
-                    khachHang = KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text);
-                    CTTextBoxNhapSDT.Texts = khachHang.SDT;
-                    CTTextBoxNhapDiaChi.Texts = khachHang.QuocTich;
-                    ComboBoxGioiTinh.Texts = khachHang.GioiTinh;
-                    CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
-                    ComboBoxGioiTinh.Focus();
-                    flag = 1;
-                }
+                khachHang = KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text);
+                CTTextBoxNhapSDT.Texts = khachHang.SDT;
+                CTTextBoxNhapDiaChi.Texts = khachHang.QuocTich;
+                ComboBoxGioiTinh.Texts = khachHang.GioiTinh;
+                CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
+                ComboBoxGioiTinh.Focus();
+                flag = 1;
             }
         }
-
-  
     }
 }

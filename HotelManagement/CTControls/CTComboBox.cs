@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace HotelManagement.CTControls
 {
+    [DefaultEvent("OnSelectedIndexChanged")]
     public partial class CTComboBox : UserControl
     {
         //Fields
@@ -25,7 +26,7 @@ namespace HotelManagement.CTControls
         //Items
         private ComboBox cmbList;
         private Label lblText;
-        private Button btnIcon;
+        private Button btnIcon; 
 
         //Events
         public event EventHandler OnSelectedIndexChanged;//Default event
@@ -45,6 +46,7 @@ namespace HotelManagement.CTControls
             cmbList.ForeColor = listTextColor;
             cmbList.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged);//Default event
             cmbList.TextChanged += new EventHandler(ComboBox_TextChanged);//Refresh text
+            cmbList.DropDownHeight = 100;
 
             //Button: Icon
             btnIcon.Dock = DockStyle.Right;
@@ -110,7 +112,7 @@ namespace HotelManagement.CTControls
             cmbList.DroppedDown = true;
         }
         private void Surface_Click(object sender, EventArgs e)
-        {
+        {   
             //Attach label click to user control click
             this.OnClick(e);
             //Select combo box
