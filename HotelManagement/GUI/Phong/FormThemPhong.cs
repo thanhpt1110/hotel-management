@@ -221,9 +221,9 @@ namespace HotelManagement.GUI
             string DonDep = comboBoxDonDep.Texts;
             string LoaiPhong = comboBoxLoaiPhong.Texts;
             string GhiChu = ctTextBoxGhiChu.Texts;
-
+            int flag1 = 0;
             
-            if (TinhTrang == "    Tình trạng phòng" || DonDep == "  Tình trạng dọn dẹp" || LoaiPhong == "  Loại phòng" || GhiChu == "" || MaPH == "")
+            if (TinhTrang == "    Tình trạng phòng" || DonDep == "  Tình trạng dọn dẹp" || LoaiPhong == "  Loại phòng" || MaPH == "")
             {
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin phòng.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -234,12 +234,14 @@ namespace HotelManagement.GUI
                 if (ctTextBoxMaPH.Texts.Length != 4 && !ctTextBoxMaPH.Texts.StartsWith("P"))
                 {
                     CTMessageBox.Show("Mã phòng sai cú pháp\r\n Vui lòng nhập theo cú pháp P+ tầng + mã phòng VD: P100", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag1 = 1;
                     return;
                 }
                 int flag = 0;
                 for (int i = 1; i <= 5; i++)
                 {
-                    if (ctTextBoxMaPH.Texts[1] == (char)i)
+
+                    if (int.Parse(ctTextBoxMaPH.Texts[1]+"") == i)
                     {
                         flag = 1;
                         break;
@@ -248,7 +250,8 @@ namespace HotelManagement.GUI
                 if (flag == 0)
                 {
                     CTMessageBox.Show("Số tầng tối đa trong khách sạn chỉ là 5", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    flag1 = 1;
+                     return;
                 }
                 List<Phong> phongs = PhongBUS.Instance.GetAllPhong();
                 Phong phong = phongs.Where(p => p.MaPH == MaPH).SingleOrDefault();
@@ -256,6 +259,7 @@ namespace HotelManagement.GUI
                 {
                     string Maph1 = phongs.Where(p => p.MaPH.StartsWith("P" + MaPH[1])).LastOrDefault().MaPH;
                     CTMessageBox.Show("Đã tồn tại phòng này trên tầng \r\n Phòng tối đa trong tầng là: " + Maph1, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    flag1 = 1;
                     return;
                 }
                 Phong phong1 = new Phong();
@@ -286,12 +290,16 @@ namespace HotelManagement.GUI
             {
                 CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+                flag1 = 1;
             }
             finally
             {
-                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                if (flag1 == 0)
+                {
+                    CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                    this.Close();
+                }
             }
         }
     }

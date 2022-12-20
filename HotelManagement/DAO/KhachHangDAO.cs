@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagement.CTControls;
 
 namespace HotelManagement.DAO
 {
@@ -16,7 +17,7 @@ namespace HotelManagement.DAO
         private static KhachHangDAO instance;
         public static KhachHangDAO Instance
         {
-            get { if (instance == null) { instance = new KhachHangDAO();  } ; return instance; }
+            get { if (instance == null) { instance = new KhachHangDAO(); } ; return instance; }
             private set { instance = value; }
         }
 
@@ -41,16 +42,15 @@ namespace HotelManagement.DAO
         {
             try
             {
-
+                
                 khachHang.DaXoa = false;
-
                 db.KhachHangs.AddOrUpdate(khachHang);
                 db.SaveChanges();
+                instance = null;
             }
             catch(DbEntityValidationException ex)
             {
-                instance = null;
-                MessageBox.Show(ex.Message);
+                CTMessageBox.Show(ex.Message);
             }
             
         }

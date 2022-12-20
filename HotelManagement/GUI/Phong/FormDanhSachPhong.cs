@@ -159,14 +159,24 @@ namespace HotelManagement.GUI
                 }
                 if (x == 6)
                 {
+
                     // If click delete button
+                    int flag = 0;
                     DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dialogresult == DialogResult.Yes)
                     {
                         try
                         {
-                            // Function here
+                            List<CTDP> cTDPs = CTDP_BUS.Instance.GetCTDPs().Where(p => p.TrangThai == "Đang thuê" || p.TrangThai == "Đã đặt").ToList();
+                            if (cTDPs.Where(p => p.MaPH == grid.Rows[y].Cells[1].Value.ToString()).Any())
+                            {
+                                CTMessageBox.Show("Đã có khách đặt phòng này nên không thể xóa!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                flag = 1;
+                                return;
+                            }
+                            PhongBUS.Instance.RemovePhong(grid.Rows[y].Cells[1].Value.ToString());
                         }
                         catch (Exception)
                         {
@@ -175,9 +185,12 @@ namespace HotelManagement.GUI
                         }
                         finally
                         {
-                            this.LoadFullDataGrid();
-                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (flag == 0)
+                            {
+                                this.LoadFullDataGrid();
+                                CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                     }
 

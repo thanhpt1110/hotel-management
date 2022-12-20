@@ -308,7 +308,7 @@ namespace HotelManagement.GUI
         private void ctTextBoxSDT__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxSDT = sender as TextBox;
-            textBoxSDT.MaxLength = 11;
+            textBoxSDT.MaxLength = 10;
             textBoxSDT.KeyPress += TextBoxSDT_KeyPress;
         }
 

@@ -37,5 +37,9 @@ namespace HotelManagement.BUS
         {
             return PhongDAO.Instance.FindPhongTrong(Checkin, Checkout, DSPhongThem);   
         }
+        public void RemovePhong(string maPH)
+        {
+            PhongDAO.Instance.RemovePhong(maPH);
+        }
     }
 }

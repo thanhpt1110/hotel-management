@@ -46,13 +46,20 @@ namespace HotelManagement.DAO
                 db.SaveChanges();
             
         }
+        public void RemovePhong(string maPH)
+        {
+            Phong phong = db.Phongs.Find(maPH);
+            phong.DaXoa = true;
+            db.Phongs.AddOrUpdate(phong);
+            db.SaveChanges();
+        }
         public List<Phong> FindPhongTrong(DateTime Checkin, DateTime Checkout, List<CTDP> DSPhongThem)
         {
 
-                List<CTDP> cTDPs = CTDP_DAO.Instance.getCTDPonTime(Checkin, Checkout, DSPhongThem);
+                List<CTDP> cTDPs = CTDP_DAO.Instance.getCTDPonTime(Checkin, Checkout, DSPhongThem).Where(p=>p.TrangThai!="Đã hủy").ToList();
                 //List<Phong> PhongKhongTrong = new List<Phong>();
                 var MaPh = cTDPs.Select(p => p.Phong.MaPH).ToList();
-                List<Phong> phongs = db.Phongs.ToList();
+                List<Phong> phongs = db.Phongs.Where(p=>p.DaXoa==false).ToList();
                 List<Phong> phongtrong = new List<Phong>();
                 for (int i = 0; i < phongs.Count; i++)
                 {

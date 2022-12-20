@@ -50,7 +50,7 @@ namespace HotelManagement.DAO
         public CTDP FindCTDP(string MaPhong, DateTime currentTime)
         {
           //  CTMessageBox.Show(currentTime.ToString());
-                CTDP ctdp = db.CTDPs.Where(p => p.MaPH == MaPhong &&( (p.CheckIn <= currentTime &&  currentTime <= p.CheckOut)||p.CheckIn==currentTime) && p.TrangThai!="Đã xong").SingleOrDefault();
+                CTDP ctdp = db.CTDPs.Where(p => p.MaPH == MaPhong &&( (p.CheckIn <= currentTime &&  currentTime <= p.CheckOut)||p.CheckIn==currentTime) && p.TrangThai!="Đã xong" && p.TrangThai!= "Đã hủy").SingleOrDefault();
                 return ctdp;
             
         }
