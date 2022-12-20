@@ -12,31 +12,31 @@ using HotelManagement.BUS;
 using HotelManagement.CTControls;
 using HotelManagement.DAO;
 using System.Net.NetworkInformation;
-
-
+using System.Xml.Serialization;
 
 namespace HotelManagement.GUI
 {
     public partial class FormSoDoPhong : Form
     {
         private FormMain formMain;
-        List<Phong> phongs;
-        TaiKhoan taiKhoan;
+        private List<Phong> phongs;
+        private TaiKhoan taiKhoan;
+        private DateTime dateTime = DateTime.Now;
+
         public FormSoDoPhong()
         {
             InitializeComponent();
         }
+
         public FormSoDoPhong(FormMain formMain,TaiKhoan taiKhoan)
         {
             InitializeComponent();
             this.formMain = formMain;
-            this.ctDatePicker1.Value = DateTime.Now;
             this.taiKhoan = taiKhoan;
             LoadLanDau();
-
-
         }
-        #region Đặt phòng
+
+        #region Load sơ đồ phòng
         public void LoadAllPhong()
         {
             SetAppear();
@@ -70,7 +70,7 @@ namespace HotelManagement.GUI
 
             foreach (Phong phong in phongs)
             {
-                CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, this.ctDatePicker1.Value);
+                CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, this.dateTime);
                 if (phong.TTPH == "Bình thường" && ctdp != null)
                 {
                     if (ctdp.TrangThai == "Đang thuê")
@@ -212,7 +212,17 @@ namespace HotelManagement.GUI
 
         }
 
-        #region CheckBoxLoaiPhong
+        #region Process event radio button
+        private void CTRadioButtonPhongTrong_CheckedChanged(object sender, EventArgs e)
+        {
+            phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Texts);
+            SetAppear();
+            LoadCheckBoxLoaiPhong();
+            LoadCheckBoxTTDD();
+            LoadPhong(phongs);
+            LoadCheckBoxPhong();
+        }
+
         private void HideCheckBoxPhongThue()
         {
             foreach(Control control in flowLayoutPanel1.Controls)
@@ -472,7 +482,7 @@ namespace HotelManagement.GUI
                 }
             }    
         }
-        #endregion
+        #endregion              
 
         #region LoadLoaiPhong
 
@@ -530,7 +540,6 @@ namespace HotelManagement.GUI
 
         #endregion
 
-
         #region TTDD
         private void LoadPhongDaDonDep()
         {
@@ -559,15 +568,7 @@ namespace HotelManagement.GUI
                 }
             }
         }
-        private void ctDatePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            phongs = PhongBUS.Instance.GetAllPhong();
-            phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Texts);
-            LoadCheckBoxLoaiPhong();
-            LoadPhong(phongs);
-            LoadCheckBoxPhong();
-        }
-        #endregion
+
         private void SetAppear()
         {
             panelSoDoPhong.Dock = DockStyle.None;
@@ -580,15 +581,94 @@ namespace HotelManagement.GUI
             panelSoDoPhong.Dock = DockStyle.Fill;
                 timerAppear.Stop();
         }
+        #endregion
 
-        private void CTRadioButtonPhongTrong_CheckedChanged(object sender, EventArgs e)
+        #region Date and time value changed
+        private void setDate(DateTime dateTime)
         {
+            this.dateTime = dateTime.Date;
+        }
+
+        private void setTime(string Time, string Letter)
+        {
+            Letter = Letter.Trim(' ');
+            string[] time = Time.Split(':');
+            int hour = int.Parse(time[0]);
+            int minute = int.Parse(time[1]);
+            if (Letter == "AM" && hour == 12 || Letter == "PM" && hour != 12)
+                hour += 12;
+
+            TimeSpan ts = new TimeSpan(hour, minute, 0);
+            this.dateTime += ts;
+        }
+
+        private void cbBoxGio_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            setDate(ctDatePicker1.Value);
+            setTime(cbBoxGio.Texts, cbBoxLetter.Texts);
+            phongs = PhongBUS.Instance.GetAllPhong();
             phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Texts);
-            SetAppear();
             LoadCheckBoxLoaiPhong();
-            LoadCheckBoxTTDD();
             LoadPhong(phongs);
             LoadCheckBoxPhong();
+        }
+
+        private void cbBoxLetter_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            setDate(ctDatePicker1.Value);
+            setTime(cbBoxGio.Texts, cbBoxLetter.Texts);
+            phongs = PhongBUS.Instance.GetAllPhong();
+            phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Texts);
+            LoadCheckBoxLoaiPhong();
+            LoadPhong(phongs);
+            LoadCheckBoxPhong();
+        }
+
+        private void ctDatePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            setDate(ctDatePicker1.Value);
+            setTime(cbBoxGio.Texts, cbBoxLetter.Texts);
+            phongs = PhongBUS.Instance.GetAllPhong();
+            phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Texts);
+            LoadCheckBoxLoaiPhong();
+            LoadPhong(phongs);
+            LoadCheckBoxPhong();
+        }
+        #endregion
+
+        private void setLoadComboBox(DateTime datetime)
+        {
+            datetime = this.dateTime;
+            int iHour  = datetime.Hour; string strHour = null;
+            int iMinute = datetime.Minute; string strMinute = null;
+            string letter = null;
+            if (iHour > 12)
+            {
+                iHour -= 12;
+                letter = "   PM";
+            }
+            else if (iHour == 12)
+                letter = "   PM";
+            else if (iHour < 12)
+            {
+                if (iHour == 0)
+                    iHour = 12;
+                letter = "   AM";
+            }
+            strHour = iHour.ToString();
+            strMinute = iMinute.ToString();
+            if (strMinute.Length == 1) 
+                strMinute = "0" + strMinute;
+            if (strHour.Length == 1)
+                strHour = "0" + strHour;
+            cbBoxGio.Texts = strHour + ':' + strMinute;
+            cbBoxLetter.Texts = letter;
+        }
+
+        private void FormSoDoPhong_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = pictureBox1;
+            setLoadComboBox(dateTime);
         }
     }
 }

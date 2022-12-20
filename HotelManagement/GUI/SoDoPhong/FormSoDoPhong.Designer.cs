@@ -442,6 +442,7 @@
             this.cbBoxLetter.Size = new System.Drawing.Size(80, 35);
             this.cbBoxLetter.TabIndex = 43;
             this.cbBoxLetter.Texts = "   AM";
+            this.cbBoxLetter.OnSelectedIndexChanged += new System.EventHandler(this.cbBoxLetter_OnSelectedIndexChanged);
             // 
             // cbBoxGio
             // 
@@ -453,18 +454,30 @@
             this.cbBoxGio.ForeColor = System.Drawing.Color.Black;
             this.cbBoxGio.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
             this.cbBoxGio.Items.AddRange(new object[] {
-            "1:00",
-            "2:00",
-            "3:00",
-            "4:00",
-            "5:00",
-            "6:00",
-            "7:00",
-            "8:00",
-            "9:00",
+            "01:00",
+            "01:30",
+            "02:00",
+            "02:30",
+            "03:00",
+            "03:30",
+            "04:00",
+            "04:30",
+            "05:00",
+            "05:30",
+            "06:00",
+            "06:30",
+            "07:00",
+            "07:30",
+            "08:00",
+            "08:30",
+            "09:00",
+            "09:30",
             "10:00",
+            "10:30",
             "11:00",
-            "12:00"});
+            "11:30",
+            "12:00",
+            "12:30"});
             this.cbBoxGio.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.cbBoxGio.ListTextColor = System.Drawing.Color.Black;
             this.cbBoxGio.Location = new System.Drawing.Point(208, 15);
@@ -473,6 +486,7 @@
             this.cbBoxGio.Size = new System.Drawing.Size(80, 35);
             this.cbBoxGio.TabIndex = 42;
             this.cbBoxGio.Texts = "12:00";
+            this.cbBoxGio.OnSelectedIndexChanged += new System.EventHandler(this.cbBoxGio_OnSelectedIndexChanged);
             // 
             // LabelChonNgay
             // 
@@ -506,7 +520,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(649, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(641, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.TabIndex = 2;
@@ -522,7 +536,7 @@
             this.ctTextBox1.BorderSize = 1;
             this.ctTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctTextBox1.IsFocused = false;
-            this.ctTextBox1.Location = new System.Drawing.Point(643, 10);
+            this.ctTextBox1.Location = new System.Drawing.Point(635, 15);
             this.ctTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ctTextBox1.Multiline = false;
             this.ctTextBox1.Name = "ctTextBox1";
@@ -728,6 +742,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormSoDoPhong";
+            this.Load += new System.EventHandler(this.FormSoDoPhong_Load);
             this.PanelLocPhong.ResumeLayout(false);
             this.PanelTinhTrangPhong.ResumeLayout(false);
             this.PanelTinhTrangPhong.PerformLayout();
