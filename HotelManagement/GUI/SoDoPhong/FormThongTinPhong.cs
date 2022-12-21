@@ -401,10 +401,27 @@ namespace HotelManagement.GUI
 
         private void CTButtonDatPhongNay_Click(object sender, EventArgs e)
         {
-            using (FormDatPhong formDatPhong = new FormDatPhong(taiKhoan))
+            FormBackground formBackground = new FormBackground(formMain);
+            try
             {
+                using (FormDatPhong formDatPhong = new FormDatPhong(taiKhoan))
+                {
+                    formBackground.Owner = formMain;
+                    formBackground.Show();
+                    formDatPhong.Owner = formBackground;
+                    formDatPhong.ShowDialog();
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception)
+            {
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally 
+            { 
+                formBackground.Dispose();
                 this.Close();
-                formDatPhong.ShowDialog();
             }
         }
 
