@@ -631,5 +631,11 @@ namespace HotelManagement.GUI
                 flag = 1;
             }
         }
+
+        private void CTTextBoxNhapSDT__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            textBox.MaxLength = 10;
+        }
     }
 }

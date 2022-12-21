@@ -620,6 +620,7 @@
             this.CTTextBoxNhapSDT.TabIndex = 3;
             this.CTTextBoxNhapSDT.Texts = "";
             this.CTTextBoxNhapSDT.UnderlineedStyle = true;
+            this.CTTextBoxNhapSDT._TextChanged += new System.EventHandler(this.CTTextBoxNhapSDT__TextChanged);
             // 
             // CTTextBoxNhapCCCD
             // 

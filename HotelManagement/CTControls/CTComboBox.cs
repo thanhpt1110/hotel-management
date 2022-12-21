@@ -99,10 +99,10 @@ namespace HotelManagement.CTControls
         //-> Default event
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (OnSelectedIndexChanged != null)
-                OnSelectedIndexChanged.Invoke(sender, e);
             //Refresh text
             lblText.Text = cmbList.Text;
+            if (OnSelectedIndexChanged != null)
+                OnSelectedIndexChanged.Invoke(sender, e);
         }
         //-> Items actions
         private void Icon_Click(object sender, EventArgs e)

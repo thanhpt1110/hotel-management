@@ -47,10 +47,19 @@ namespace HotelManagement.DAO
         }    
         public List<HoaDon> FindHoaDonWith_CCCD(string cccd)
         {
-
-                return db.HoaDons.Where(p => p.CTDP.PhieuThue.KhachHang.CCCD_Passport == cccd).ToList();
-            
+            return db.HoaDons.Where(p => p.CTDP.PhieuThue.KhachHang.CCCD_Passport.StartsWith(cccd)).ToList();
         }
+        public List<HoaDon> FindHoaDonWith_Date(DateTime dateTime)
+        {
+            return db.HoaDons.Where(p => p.NgHD.Value.Month == dateTime.Month && p.NgHD.Value.Year == dateTime.Year && p.NgHD.Value.Day == dateTime.Day).ToList();
+        }
+
+        public List<HoaDon> FindHoaDonWith_DateAndCCCD(DateTime dateTime, string cccd)
+        {
+            return db.HoaDons.Where(p => p.NgHD.Value.Month == dateTime.Month && p.NgHD.Value.Year == dateTime.Year && p.NgHD.Value.Day == dateTime.Day
+                                    && p.CTDP.PhieuThue.KhachHang.CCCD_Passport.StartsWith(cccd)).ToList();
+        }
+
         public string getMaHDNext()
         {
 
