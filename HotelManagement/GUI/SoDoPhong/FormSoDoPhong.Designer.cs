@@ -75,7 +75,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.PanelLocPhong.SuspendLayout();
             this.PanelTinhTrangPhong.SuspendLayout();
             this.PanelLoaiPhong.SuspendLayout();
@@ -400,7 +399,6 @@
             // 
             this.PanelTitle.AutoScroll = true;
             this.PanelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.PanelTitle.Controls.Add(this.label6);
             this.PanelTitle.Controls.Add(this.label7);
             this.PanelTitle.Controls.Add(this.cbBoxLetter);
             this.PanelTitle.Controls.Add(this.cbBoxGio);
@@ -728,15 +726,6 @@
             this.label1.Text = "Tầng 1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(411, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 25);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "label6";
-            // 
             // FormSoDoPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -826,6 +815,5 @@
         private System.Windows.Forms.Label label7;
         private CTControls.CTComboBox cbBoxLetter;
         private CTControls.CTComboBox cbBoxGio;
-        private System.Windows.Forms.Label label6;
     }
 }

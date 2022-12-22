@@ -194,7 +194,7 @@
             this.LabelNgaySinh.AutoSize = true;
             this.LabelNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelNgaySinh.ForeColor = System.Drawing.Color.Black;
-            this.LabelNgaySinh.Location = new System.Drawing.Point(677, 22);
+            this.LabelNgaySinh.Location = new System.Drawing.Point(381, 19);
             this.LabelNgaySinh.Name = "LabelNgaySinh";
             this.LabelNgaySinh.Size = new System.Drawing.Size(70, 17);
             this.LabelNgaySinh.TabIndex = 34;
@@ -207,6 +207,7 @@
             this.buttonReset.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
             this.buttonReset.BorderRadius = 10;
             this.buttonReset.BorderSize = 0;
+            this.buttonReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonReset.FlatAppearance.BorderSize = 0;
             this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,7 +230,7 @@
             this.ctDatePicker1.CustomFormat = "dd/MM/yyyy";
             this.ctDatePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctDatePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ctDatePicker1.Location = new System.Drawing.Point(660, 34);
+            this.ctDatePicker1.Location = new System.Drawing.Point(360, 31);
             this.ctDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
             this.ctDatePicker1.Name = "ctDatePicker1";
             this.ctDatePicker1.Size = new System.Drawing.Size(165, 35);

@@ -611,7 +611,6 @@ namespace HotelManagement.GUI
             LoadCheckBoxLoaiPhong();
             LoadPhong(phongs);
             LoadCheckBoxPhong();
-            label6.Text = dateTime.ToString();
         }
 
         private void cbBoxLetter_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -623,7 +622,6 @@ namespace HotelManagement.GUI
             LoadCheckBoxLoaiPhong();
             LoadPhong(phongs);
             LoadCheckBoxPhong();
-            label6.Text = dateTime.ToString();
         }
 
         private void ctDatePicker1_ValueChanged(object sender, EventArgs e)
