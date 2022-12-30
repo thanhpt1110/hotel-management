@@ -330,6 +330,7 @@ namespace HotelManagement.GUI
         private void ctTextBoxSDT__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxOnlyNum = sender as TextBox;
+            textBoxOnlyNum.MaxLength = 10;
             textBoxOnlyNum.KeyPress += TextBoxOnlyNum_KeyPress;
         }
 
@@ -337,6 +338,18 @@ namespace HotelManagement.GUI
         {
             TextBoxType.Instance.TextBoxOnlyNumber(e);
 
+        }
+
+        private void CTTextBoxNhapCCCD_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctTextBoxCMND__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxOnlyNum = sender as TextBox;
+            textBoxOnlyNum.MaxLength = 12;
+            textBoxOnlyNum.KeyPress += TextBoxOnlyNum_KeyPress;
         }
     }
 }

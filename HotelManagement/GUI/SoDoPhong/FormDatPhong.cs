@@ -29,6 +29,7 @@ namespace HotelManagement.GUI
         private Image Del = Properties.Resources.delete1; // Image for Button Hủy
         private KhachHang khachHang = new KhachHang();
         private int flag = 0;
+        private int flagHoTen = 0;
         private TaiKhoan taiKhoan;
         private PhieuThue phieuThue = new PhieuThue();
         private DateTime CheckIn = DateTime.Now;  // flag = 1
@@ -547,17 +548,20 @@ namespace HotelManagement.GUI
         }
         private void CreateKH()
         {
-            khachHang.SDT = CTTextBoxNhapSDT.Texts;
-            khachHang.QuocTich = CTTextBoxNhapDiaChi.Texts;
-            if (flag == 0)
+            if (flagHoTen == 1)
             {
 
-                khachHang.MaKH = KhachHangBUS.Instance.GetMaKHNext();
+                khachHang.MaKH = this.khachHang.MaKH;
                 //CTMessageBox.Show("Thành cong");
             }
+            else
+            khachHang.MaKH = KhachHangBUS.Instance.GetMaKHNext();
+            khachHang.SDT = CTTextBoxNhapSDT.Texts;
+            khachHang.QuocTich = CTTextBoxNhapDiaChi.Texts;
             khachHang.TenKH = CTTextBoxNhapHoTen.Texts;
             khachHang.CCCD_Passport = CTTextBoxNhapCCCD.Texts;
-            khachHang.GioiTinh = this.ComboBoxGioiTinh.Texts;
+            khachHang.GioiTinh = this.ComboBoxGioiTinh.Texts.Trim(' ');
+           
             KhachHangBUS.Instance.UpdateOrAdd(khachHang);
         }
         private void CreatePhieuThue()
@@ -628,8 +632,20 @@ namespace HotelManagement.GUI
                 ComboBoxGioiTinh.Texts = khachHang.GioiTinh;
                 CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
                 ComboBoxGioiTinh.Focus();
-                flag = 1;
+                flagHoTen = 1;
             }
+        }
+
+        private void CTTextBoxNhapSDT__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxOnlyNumber = sender as TextBox;
+            textBoxOnlyNumber.MaxLength = 10;
+            textBoxOnlyNumber.KeyPress += TextBoxOnlyNumber_KeyPress;
+        }
+
+        private void TextBoxOnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
         }
     }
 }

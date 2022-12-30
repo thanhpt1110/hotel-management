@@ -297,7 +297,8 @@
             this.CTTextBoxNhapCCCD.TabIndex = 6;
             this.CTTextBoxNhapCCCD.Texts = "";
             this.CTTextBoxNhapCCCD.UnderlineedStyle = true;
-            this.CTTextBoxNhapCCCD._TextChanged += new System.EventHandler(this.ctTextBoxSDT__TextChanged);
+            this.CTTextBoxNhapCCCD._TextChanged += new System.EventHandler(this.ctTextBoxCMND__TextChanged);
+            this.CTTextBoxNhapCCCD.Load += new System.EventHandler(this.CTTextBoxNhapCCCD_Load);
             // 
             // CTTextBoxNhapChucVu
             // 

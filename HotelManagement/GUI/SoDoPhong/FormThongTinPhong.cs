@@ -393,6 +393,12 @@ namespace HotelManagement.GUI
 
         private void CTButtonNhanPhong_Click(object sender, EventArgs e)
         {
+            TimeSpan timeSpan = ctdp.CheckIn - DateTime.Now ;
+            if(timeSpan.Hours>2||timeSpan.Days>0)
+            {
+                CTMessageBox.Show("Không thể nhận phòng sớm hơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
             ctdp.TrangThai = "Đang thuê";
             CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
             this.Close();

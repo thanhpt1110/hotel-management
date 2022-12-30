@@ -240,7 +240,7 @@ namespace HotelManagement.GUI
         private void ctTextBoxSDT__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxOnlyNum = sender as TextBox;
-            textBoxOnlyNum.MaxLength = 10;
+
             textBoxOnlyNum.KeyPress += TextBoxOnlyNum_KeyPress;
         }
         private void ctTextBoxCCCD__TextChanged(object sender, EventArgs e)
@@ -321,6 +321,11 @@ namespace HotelManagement.GUI
                 CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ctTextBoxSDT_Load(object sender, EventArgs e)
+        {
+
         }
 
 

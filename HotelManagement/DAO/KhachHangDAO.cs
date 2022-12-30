@@ -24,7 +24,7 @@ namespace HotelManagement.DAO
 
 
 
-        private KhachHangDAO() { }
+        private KhachHangDAO() { db = new HotelDTO(); }
 
         public List<KhachHang> GetKhachHangs()
         {
@@ -42,13 +42,13 @@ namespace HotelManagement.DAO
         {
             try
             {
-                
                 khachHang.DaXoa = false;
                 db.KhachHangs.AddOrUpdate(khachHang);
-                db.SaveChanges();
+               db.SaveChanges();
                 instance = null;
+
             }
-            catch(DbEntityValidationException ex)
+            catch (DbEntityValidationException ex)
             {
                 CTMessageBox.Show(ex.Message);
             }

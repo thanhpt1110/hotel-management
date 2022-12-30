@@ -33,11 +33,10 @@ namespace HotelManagement.DAO
         {
             try
             {
-
+                HotelDTO db = new HotelDTO();
                 phieuThue.DaXoa = false;
                 phieuThue.NhanVien = db.NhanViens.Find(phieuThue.MaNV);
                 phieuThue.KhachHang = db.KhachHangs.Find(phieuThue.MaKH);
-
                 db.PhieuThues.AddOrUpdate(phieuThue);
                 db.SaveChanges();
 

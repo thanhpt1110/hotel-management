@@ -238,6 +238,7 @@
             this.ctTextBoxSDT.Texts = "";
             this.ctTextBoxSDT.UnderlineedStyle = true;
             this.ctTextBoxSDT._TextChanged += new System.EventHandler(this.ctTextBoxSDT__TextChanged);
+            this.ctTextBoxSDT.Load += new System.EventHandler(this.ctTextBoxSDT_Load);
             // 
             // ctTextBoxEmail
             // 
