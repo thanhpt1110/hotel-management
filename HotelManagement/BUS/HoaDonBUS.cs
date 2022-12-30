@@ -33,6 +33,10 @@ namespace HotelManagement.BUS
         {
             return HoaDonDAO.Instance.FindHoaDonWith_CCCD(cccd);
         }
+        public List<HoaDon> FindHoaDonWith_DateAndCCCD(DateTime dateTime, string cccd)
+        {
+            return HoaDonDAO.Instance.FindHoaDonWith_DateAndCCCD(dateTime, cccd);
+        }
         public string getMaHDNext()
         {
             return HoaDonDAO.Instance.getMaHDNext();
@@ -44,6 +48,10 @@ namespace HotelManagement.BUS
         public void RemoveHD(HoaDon hd)
         {
             HoaDonDAO.Instance.RemoveHD(hd);
+        }
+        public List<HoaDon> FindHoaDonWith_Date(DateTime dateTime)
+        {
+            return HoaDonDAO.Instance.FindHoaDonWith_Date(dateTime);
         }
     }
 }

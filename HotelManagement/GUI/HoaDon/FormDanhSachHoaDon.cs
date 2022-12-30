@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.BUS;
 using HotelManagement.DTO;
-
-
+using HotelManagement.DAO;
 
 namespace HotelManagement.GUI
 {
@@ -20,6 +19,11 @@ namespace HotelManagement.GUI
         private Image HD = Properties.Resources.HoaDon;
         private Image details = Properties.Resources.details;
         private FormMain formMain;
+        private List<HoaDon> hoaDons;
+        private bool reset = true;
+        private DateTime dateTime = DateTime.Now;
+        private string cccd = null;
+
         public FormDanhSachHoaDon()
         {
             InitializeComponent();
@@ -45,7 +49,7 @@ namespace HotelManagement.GUI
 
         public void LoadAllDataGrid()
         {
-            List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
+            hoaDons = HoaDonBUS.Instance.GetHoaDons();
             LoadDataGrid(hoaDons);
         }
         public void LoadDataGrid(List<HoaDon> hoaDons)
@@ -71,16 +75,17 @@ namespace HotelManagement.GUI
                         grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, hoadon.CTDP.PhieuThue.KhachHang.TenKH, hoadon.TriGia.ToString("#,#"), hoadon.TrangThai, details);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Load danh sách hóa đơn không thành công", "THÔNG BÁO");
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         void LoadGridWith_CCCD()
         {
-            List<HoaDon> hoaDons = HoaDonBUS.Instance.FindHoaDonWith_CCCD(this.CTTextBoxTimTheoCCCD.Texts);
+            cccd = this.CTTextBoxTimTheoCCCD.Texts;
+            hoaDons = HoaDonBUS.Instance.FindHoaDonWith_CCCD(cccd);
             LoadDataGrid(hoaDons);
-
         }
         private void buttonExport_Click(object sender, EventArgs e)
         {
@@ -174,39 +179,58 @@ namespace HotelManagement.GUI
             grid.Cursor = Cursors.Default;
         }
 
-        private void CTTextBoxTimTheoCCCD_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if (this.CTTextBoxTimTheoCCCD.Texts == "")
-            {
-                LoadAllDataGrid();
-            }
-            else
-                LoadGridWith_CCCD();
-        }
-
         private void CTTextBoxTimTheoCCCD__TextChanged(object sender, EventArgs e)
         {
-            TextBox text = sender as TextBox;
-            text.KeyDown += Text_KeyDown1;
-        }
-
-        private void Text_KeyDown1(object sender, KeyEventArgs e)
-        {
-            TextBox text = sender as TextBox;
-            if (e.KeyCode == Keys.Enter)
+            cccd = this.CTTextBoxTimTheoCCCD.Texts;
+            dateTime = this.ctDatePicker1.Value;
+            if (reset)
             {
-                if (this.CTTextBoxTimTheoCCCD.Texts == "")
+                if (cccd != String.Empty)
                 {
-                    LoadAllDataGrid();
+                    hoaDons = HoaDonBUS.Instance.FindHoaDonWith_CCCD(cccd);
+                    LoadDataGrid(hoaDons);
+                }
+            }
+            else
+            {
+                if (cccd == String.Empty)
+                {
+                    dateTime = this.ctDatePicker1.Value;
+                    hoaDons = HoaDonBUS.Instance.FindHoaDonWith_Date(dateTime);
+                    LoadDataGrid(hoaDons);
                 }
                 else
-                    LoadGridWith_CCCD();
+                {
+                    hoaDons = HoaDonBUS.Instance.FindHoaDonWith_DateAndCCCD(dateTime, cccd);
+                    LoadDataGrid(hoaDons);
+                }
             }
+        }
+
+        private void ctDatePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            reset = false;
+            dateTime = this.ctDatePicker1.Value;
+            cccd = this.CTTextBoxTimTheoCCCD.Texts;
+
+            if (this.CTTextBoxTimTheoCCCD.Texts == string.Empty)
+            {
+                hoaDons = HoaDonBUS.Instance.FindHoaDonWith_Date(dateTime);
+                LoadDataGrid(hoaDons);
+            }
+            else
+            {
+                hoaDons = HoaDonBUS.Instance.FindHoaDonWith_DateAndCCCD(dateTime, cccd);
+                LoadDataGrid(hoaDons);
+            }
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            ctDatePicker1.Value = DateTime.Now;
+            reset = true;
+            LoadAllDataGrid();
+            CTTextBoxTimTheoCCCD.Texts = string.Empty;
         }
     }
 }
