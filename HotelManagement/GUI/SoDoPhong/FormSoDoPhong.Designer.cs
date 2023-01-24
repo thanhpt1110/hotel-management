@@ -1,4 +1,6 @@
-﻿namespace HotelManagement.GUI
+﻿using System.Windows.Forms;
+
+namespace HotelManagement.GUI
 {
     partial class FormSoDoPhong
     {
@@ -6,6 +8,29 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        public class DoubleBufferPanel : Panel
+
+        {
+
+            public DoubleBufferPanel()
+
+            {
+
+                // Set the value of the double-buffering style bits to true.
+
+                this.DoubleBuffered = true;
+
+                this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+
+                ControlStyles.UserPaint |
+
+                ControlStyles.OptimizedDoubleBuffer, true);
+
+                UpdateStyles();
+
+            }
+
+        }
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,27 +55,27 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSoDoPhong));
-            this.PanelLocPhong = new System.Windows.Forms.Panel();
-            this.PanelTinhTrangPhong = new System.Windows.Forms.Panel();
+            this.PanelLocPhong = new  DoubleBufferPanel();
+            this.PanelTinhTrangPhong = new  DoubleBufferPanel();
             this.LabelTinhTrangDonDep = new System.Windows.Forms.Label();
             this.CTRadioButtonTatCa = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonDaDonDep = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonChuaDonDep = new HotelManagement.CTControls.CTRadioButton();
-            this.PanelLoaiPhong = new System.Windows.Forms.Panel();
+            this.PanelLoaiPhong = new  DoubleBufferPanel();
             this.LabelLoaiPhong = new System.Windows.Forms.Label();
             this.CTRadioButtonTatCaLoaiPhong = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongVIPDoi = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongThuongDon = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongVIPDon = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongThuongDoi = new HotelManagement.CTControls.CTRadioButton();
-            this.PanelRadioButtonTrangThaiPhong = new System.Windows.Forms.Panel();
+            this.PanelRadioButtonTrangThaiPhong = new  DoubleBufferPanel();
             this.LabelTrangThaiPhong = new System.Windows.Forms.Label();
             this.CTRadioButtonTatCaPhong = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDangSuaChua = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongTrong = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDangThue = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDaDat = new HotelManagement.CTControls.CTRadioButton();
-            this.PanelTitle = new System.Windows.Forms.Panel();
+            this.PanelTitle = new  DoubleBufferPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.cbBoxLetter = new HotelManagement.CTControls.CTComboBox();
             this.cbBoxGio = new HotelManagement.CTControls.CTComboBox();
@@ -59,22 +84,23 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
             this.timerAppear = new System.Windows.Forms.Timer(this.components);
-            this.panelSoDoPhong = new System.Windows.Forms.Panel();
+            this.panelSoDoPhong = new  DoubleBufferPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel5 = new  DoubleBufferPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel4 = new  DoubleBufferPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel3 = new  DoubleBufferPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel2 = new  DoubleBufferPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel6 = new  DoubleBufferPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.timerSearch = new System.Windows.Forms.Timer(this.components);
             this.PanelLocPhong.SuspendLayout();
             this.PanelTinhTrangPhong.SuspendLayout();
             this.PanelLoaiPhong.SuspendLayout();
@@ -726,6 +752,11 @@
             this.label1.Text = "Tầng 1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // timerSearch
+            // 
+            this.timerSearch.Interval = 1000;
+            this.timerSearch.Tick += new System.EventHandler(this.timerSearch_Tick);
+            // 
             // FormSoDoPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -815,5 +846,6 @@
         private System.Windows.Forms.Label label7;
         private CTControls.CTComboBox cbBoxLetter;
         private CTControls.CTComboBox cbBoxGio;
+        private System.Windows.Forms.Timer timerSearch;
     }
 }

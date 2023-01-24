@@ -10,11 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.GUI;
-using System.Net.NetworkInformation;
+
 
 namespace HotelManagement.CTControls
 {
-    public partial class CTRoomDaDat : UserControl
+    public partial class CTRoomDaDat : CTRoom
     {
         //Fields
         private int borderSize = 0;
@@ -24,43 +24,46 @@ namespace HotelManagement.CTControls
         FormSoDoPhong SoDoPhong;
         FormMain formMain;
         TaiKhoan taiKhoan;
-        public string getMaPhong()
+        public override string getMaPhong()
         {
             return this.LabelMaPhong.Text;
         }
-        public void setLoaiPhong(string LoaiPhong)
+        public override void setLoaiPhong(string LoaiPhong)
         {
             this.LabelLoaiPhong.Text = LoaiPhong;
         }
-        public void setMaPhong(string maPhong)
+        public override void setGhiChu(string ghiChu)
+        {
+        }
+        public override void setMaPhong(string maPhong)
         {
             this.LabelMaPhong.Text = maPhong;
         }
-        public void setTrangThai(string trangThai)
+        public override void setTrangThai(string trangThai)
         {
             this.LabelLoaiPhong.Text = trangThai;
             this.LabelTrangThaiLon.Text = trangThai;
         }
-        public void setThoiGianNone()
+        public override void setThoiGianNone()
         {
             LabelThoiGian.Text = "";
         }
-        public void setThoiGian(string thoiGian)
+        public override void setThoiGian(string thoiGian)
         {
             this.LabelThoiGian.Text = thoiGian;
         }
-        public void setPhongTrong()
+        public override void setPhongTrong()
         {
             setThoiGianNone();
             setTrangThai("Phòng trống");
             PictureBoxTrangThai.Image = Properties.Resources.Trong;
         }
-        public void setChuaDonDep()
+        public override void setChuaDonDep()
         {
             PictureBoxTrangThaiDonDep.Image = Properties.Resources.ChuaDonDep;
             LabelTrangThaiDonDep.Text = "Chưa dọn dẹp";
         }
-        public void setDaDonDep()
+        public override void setDaDonDep()
         {
             PictureBoxTrangThaiDonDep.Image = Properties.Resources.DaDonDep;
             LabelTrangThaiDonDep.Text = "Đã dọn dẹp";
@@ -124,6 +127,8 @@ namespace HotelManagement.CTControls
             InitializeComponent();
             this.formMain = formMain;
             this.taiKhoan = taiKhoan;
+            this.LoaiPhong = "DaDat";
+            this.MaPhong = cTDP.MaPH;
         }
         //Methods
         private void Button_Resize(object sender, EventArgs e)

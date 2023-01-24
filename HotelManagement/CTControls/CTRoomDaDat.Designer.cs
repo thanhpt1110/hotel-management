@@ -1,5 +1,30 @@
-﻿namespace HotelManagement.CTControls
+﻿using System.Windows.Forms;
+
+namespace HotelManagement.CTControls
 {
+    public class DoubleBufferPanel : Panel
+
+    {
+
+        public DoubleBufferPanel()
+
+        {
+
+            // Set the value of the double-buffering style bits to true.
+
+            this.DoubleBuffered = true;
+
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+
+            ControlStyles.UserPaint |
+
+            ControlStyles.OptimizedDoubleBuffer, true);
+
+            UpdateStyles();
+
+        }
+
+    }
     partial class CTRoomDaDat
     {
         /// <summary> 
@@ -28,7 +53,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.DoubleBuffered = true;
+            this.panel1 = new DoubleBufferPanel();
             this.PictureBoxTrangThai = new System.Windows.Forms.PictureBox();
             this.LabelTrangThaiLon = new System.Windows.Forms.Label();
             this.LabelCoc = new System.Windows.Forms.Label();

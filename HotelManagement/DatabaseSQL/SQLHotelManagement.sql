@@ -103,15 +103,70 @@ CREATE TABLE "DichVu"(
 
 );
 CREATE TABLE "CTDV"(
-    "MaHD" NVARCHAR(5) NOT NULL,
+    "MaCTDP" NVARCHAR(7) NOT NULL,
     "MaDV" NVARCHAR(5) NOT NULL,
 	"DonGia" MONEY NOT NULL,
     "SL" INT NOT NULL,
 	"DaXoa" BIT DEFAULT 0,
     "ThanhTien" MONEY DEFAULT 0,
-    CONSTRAINT PK_CTDV PRIMARY KEY(MaHD,MaDV,DonGia)
+    CONSTRAINT PK_CTDV PRIMARY KEY("MaCTDP",MaDV,DonGia)
 );
 -- Nhân viên
+	ALTER TABLE
+    "TaiKhoan" ADD CONSTRAINT "TaiKhoan_manv_foreign" FOREIGN KEY("MaNV") REFERENCES "NhanVien"("MaNV");
+ALTER TABLE
+    "HoaDon" ADD CONSTRAINT "hoadon_manv_foreign" FOREIGN KEY("MaNV") REFERENCES "NhanVien"("MaNV");
+ALTER TABLE
+	"HoaDon" ADD CONSTRAINT "hoadon_MaCTDP_foreign" FOREIGN KEY("MaCTDP") REFERENCES "CTDP"("MaCTDP");
+ALTER TABLE
+    "PhieuThue" ADD CONSTRAINT "phieuthue_makh_foreign" FOREIGN KEY("MaKH") REFERENCES "KhachHang"("MaKH");
+ALTER TABLE
+    "PhieuThue" ADD CONSTRAINT "phieuthue_manv_foreign" FOREIGN KEY("MaNV") REFERENCES "NhanVien"("MaNV");
+ALTER TABLE
+    "Phong" ADD CONSTRAINT "phong_malph_foreign" FOREIGN KEY("MaLPH") REFERENCES "LoaiPhong"("MaLPH");
+--ALTER TABLE 
+	--"CTDP" ADD CONSTRAINT "CTDP_MaPT_Forein" FOREIGN  KEY("MaPT") REFERENCES "PhieuThue"("MaPT")
+ALTER TABLE 
+	"CTDP" ADD CONSTRAINT "CTDP_MaPH_Forein" FOREIGN  KEY("MaPH") REFERENCES "Phong"("MaPH")
+
+ALTER TABLE 
+	"CTTN" ADD CONSTRAINT "CTTN_MaLPH_foreign" FOREIGN KEY ("MaLPH") REFERENCES LoaiPhong("MaLPH")
+ALTER TABLE 
+	"CTTN" ADD CONSTRAINT "CTTN_MaTN_foreign" FOREIGN KEY ("MaTN") REFERENCES TienNghi(MaTN)
+ALTER TABLE
+	"CTDV" ADD CONSTRAINT "CTDV_MaCTDP_foreign" FOREIGN KEY ("MaCTDP") REFERENCES CTDP("MaCTDP")
+ALTER TABLE 
+	"CTDV" ADD CONSTRAINT "CTDV_MaDV_foreign" FOREIGN KEY (MaDV) REFERENCES DichVu(MaDV)
+
+GO
+CREATE TRIGGER CapNhatGiaCTDP ON CTDP FOR INSERT,UPDATE
+AS
+BEGIN
+	DECLARE @MaPhong NVARCHAR(5)
+	SET @MaPhong = (SELECT MaPH FROM inserted)
+	DECLARE @MaCTDP NVARCHAR(7)
+	SET @MaCTDP = (SELECT MaCTDP FROM inserted)
+	DECLARE @GiaNgay MONEY
+	SET @GiaNgay = (SELECT  LoaiPhong.GiaNgay
+					FROM Phong JOIN LoaiPhong ON Phong.MaLPH=LoaiPhong.MaLPH
+					WHERE Phong.MaPH=@MaPhong
+					)
+	DECLARE @GiaGio MONEY
+	SET @GiaGio = (SELECT  LoaiPhong.GiaGio
+					FROM Phong JOIN LoaiPhong ON Phong.MaLPH=LoaiPhong.MaLPH
+					WHERE Phong.MaPH=@MaPhong
+					)
+	DECLARE @CheckIn SMALLDATETIME, @CheckOut SMALLDATETIME
+	SET @CheckIn = (SELECT CheckIn FROM inserted)
+	SET @CheckOut = (SELECT CheckOut FROM inserted)
+	IF DATEDIFF(@CheckOut,@CheckIn) < 1
+	Then
+		BEGIN 
+		END
+	UPDATE C
+	SET ThanhTien = 
+	WHERE 
+END
 
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('QL001',N'Nguyễn Phúc Bình', '30/09/2003', N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','40000000',N'Quản lý', '072000001212','0907219273','nguyen.phucbinh445@gmail.com',0)
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('QL002',N'Phan Tuấn Thành', '11/10/2003',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','45000000',N'Quản lý', '072000001213','071223431','21520455@gmail.com',0)
@@ -249,10 +304,22 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP004','PT003','P104','16/11/2022','20/11/2022',N'Đã xong',1200000,300000,2) -- Đã thuê xong
 	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP005','PT003','P204','01/12/2022','06/12/2022',N'Đã xong',1500000,300000,2) -- Đã thuê xong
 	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP006','PT004','P105','08/11/2022','10/12/2022',N'Đã xong',600000,300000,2) -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP007','PT004','P101','10/12/2022','20/12/2022',N'Đã xong',3000000,300000,2) -- Đang thuê
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP008','PT004','P301','17/12/2022','20/12/2022', N'Đã xong',900000,300000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP009','PT005','P201','17/12/2022','20/12/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
 
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP007','PT004','P101','10/12/2022','20/12/2022',N'Đang thuê',3000000,300000,2) -- Đang thuê
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP008','PT004','P301','17/12/2022','20/12/2022', N'Đã đặt',900000,300000,2) -- Đang đặt trước
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP009','PT005','P201','17/12/2022','20/12/2022', N'Đã đặt',1200000,400000,2) -- Đang đặt trước
+--CTDV
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP001','DV01','2','20000','10000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP001','DV02','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP001','DV06','1','100000','100000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP002','DV01','1','10000','10000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP002','DV04','1','20000','20000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP002','DV06','1','100000','100000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP003','DV04','1','20000','20000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP004','DV07','1','25000','25000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP005','DV04','2','40000','20000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP007','DV01','2','20000','10000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP007','DV02','2','30000','15000')
 
 -- HoaDon
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD001','15/11/2022','NV001','CTDP001',N'Đã thanh toán','1350000') -- Update Tri gia sau
@@ -262,50 +329,6 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD005','06/12/2022','NV001','CTDP004',N'Đã thanh toán','1540000') -- Update Tri gia sau
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD006','10/12/2022','NV001','CTDP004',N'Đã thanh toán','600000') -- Update Tri gia sau
 
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007','17/12/2022','NV001','CTDP005',N'Chưa thanh toán','0')
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD008','20/12/2022','NV001','CTDP006',N'Chưa thanh toán','0')
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD009','18/12/2022','NV001','CTDP007',N'Chưa thanh toán','0')
--- CTDV
-	
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD001','DV01','2','20000','10000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD001','DV02','2','30000','15000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD001','DV06','1','100000','100000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD002','DV01','1','10000','10000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD002','DV04','1','20000','20000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD002','DV06','1','100000','100000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD003','DV04','1','20000','20000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD004','DV07','1','25000','25000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD005','DV04','2','40000','20000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD007','DV01','2','20000','10000')
-	INSERT INTO CTDV("MaHD","MaDV","SL",ThanhTien,"DonGia") VALUES('HD007','DV02','2','30000','15000')
-	SELECT * FROM CTDV
-	ALTER TABLE
-    "TaiKhoan" ADD CONSTRAINT "TaiKhoan_manv_foreign" FOREIGN KEY("MaNV") REFERENCES "NhanVien"("MaNV");
-ALTER TABLE
-    "HoaDon" ADD CONSTRAINT "hoadon_manv_foreign" FOREIGN KEY("MaNV") REFERENCES "NhanVien"("MaNV");
-ALTER TABLE
-	"HoaDon" ADD CONSTRAINT "hoadon_MaCTDP_foreign" FOREIGN KEY("MaCTDP") REFERENCES "CTDP"("MaCTDP");
-ALTER TABLE
-    "PhieuThue" ADD CONSTRAINT "phieuthue_makh_foreign" FOREIGN KEY("MaKH") REFERENCES "KhachHang"("MaKH");
-ALTER TABLE
-    "PhieuThue" ADD CONSTRAINT "phieuthue_manv_foreign" FOREIGN KEY("MaNV") REFERENCES "NhanVien"("MaNV");
-ALTER TABLE
-    "Phong" ADD CONSTRAINT "phong_malph_foreign" FOREIGN KEY("MaLPH") REFERENCES "LoaiPhong"("MaLPH");
---ALTER TABLE 
-	--"CTDP" ADD CONSTRAINT "CTDP_MaPT_Forein" FOREIGN  KEY("MaPT") REFERENCES "PhieuThue"("MaPT")
-ALTER TABLE 
-	"CTDP" ADD CONSTRAINT "CTDP_MaPH_Forein" FOREIGN  KEY("MaPH") REFERENCES "Phong"("MaPH")
-
-ALTER TABLE 
-	"CTTN" ADD CONSTRAINT "CTTN_MaLPH_foreign" FOREIGN KEY ("MaLPH") REFERENCES LoaiPhong("MaLPH")
-ALTER TABLE 
-	"CTTN" ADD CONSTRAINT "CTTN_MaTN_foreign" FOREIGN KEY ("MaTN") REFERENCES TienNghi(MaTN)
-ALTER TABLE
-	"CTDV" ADD CONSTRAINT "CTDV_MaHD_foreign" FOREIGN KEY (MaHD) REFERENCES HoaDon(MaHD)
-ALTER TABLE 
-	"CTDV" ADD CONSTRAINT "CTDV_MaDV_foreign" FOREIGN KEY (MaDV) REFERENCES DichVu(MaDV)
-
-	
-
-
-SELECT * FROM DichVu
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007','17/12/2022','NV001','CTDP005',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD008','20/12/2022','NV001','CTDP006',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD009','18/12/2022','NV001','CTDP007',N'Đã thanh toán','0')

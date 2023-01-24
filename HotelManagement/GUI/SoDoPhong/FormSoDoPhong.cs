@@ -13,6 +13,7 @@ using HotelManagement.CTControls;
 using HotelManagement.DAO;
 using System.Net.NetworkInformation;
 using System.Xml.Serialization;
+using System.Runtime.CompilerServices;
 
 namespace HotelManagement.GUI
 {
@@ -56,10 +57,7 @@ namespace HotelManagement.GUI
 
         private void LoadPhong(List<Phong> phongs)
         {
-            List<CTRoomDaDat> roomDaDats = new List<CTRoomDaDat>();
-            List<CTRoomDangSuaChua> roomDangSuaChuas = new List<CTRoomDangSuaChua>();
-            List<CTRoomDangThue> roomDangThues = new List<CTRoomDangThue>();
-            List<CTRoomTrong> roomTrongs = new List<CTRoomTrong>();
+            List<CTRoom> DSPhong = new List<CTRoom>();
             this.flowLayoutPanel1.Controls.Clear();
             this.flowLayoutPanel2.Controls.Clear();
             this.flowLayoutPanel3.Controls.Clear();
@@ -73,10 +71,10 @@ namespace HotelManagement.GUI
                 CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, this.dateTime);
                 if (phong.TTPH == "Bình thường" && ctdp != null)
                 {
-                    if (ctdp.TrangThai == "Đang thuê")
+                    if (ctdp.TrangThai == "Đang thuê" && (this.CTRadioButtonPhongDangThue.Checked ||this.CTRadioButtonTatCaPhong.Checked))
                     {
                         CTRoomDangThue room = new CTRoomDangThue(ctdp, this, this.formMain);
-
+                        room.Name = "PhongSDangThue";
                         room.setThoiGian(CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " Ngày");
                         if (phong.TTDD == "Đã dọn dẹp")
                             room.setDaDonDep();
@@ -84,13 +82,13 @@ namespace HotelManagement.GUI
                             room.setChuaDonDep();
                         room.setMaPhong(phong.MaPH);
                         room.setLoaiPhong(phong.LoaiPhong.TenLPH);
-                        roomDangThues.Add(room);
+                        DSPhong.Add(room);
                     }
                 }
-                else if (phong.TTPH == "Đang sửa chữa")
+                else if (phong.TTPH == "Đang sửa chữa" && (this.CTRadioButtonPhongDangSuaChua.Checked || this.CTRadioButtonTatCaPhong.Checked))
                 {
                     CTRoomDangSuaChua room = new CTRoomDangSuaChua(phong, this, this.formMain);
-
+                    room.Name = "PhongSuaChua";
                     room.setMaPhong(phong.MaPH);
                     if (phong.TTDD == "Đã dọn dẹp")
                         room.setDaDonDep();
@@ -98,344 +96,304 @@ namespace HotelManagement.GUI
                         room.setChuaDonDep();
                     room.setGhiChu(phong.GhiChu);
                     room.setLoaiPhong(phong.LoaiPhong.TenLPH);
-                    roomDangSuaChuas.Add(room);
+                    DSPhong.Add(room);
 
                 }
 
                 if (phong.TTPH == "Bình thường" && ctdp != null)
                 {
-                    if (ctdp.TrangThai == "Đã đặt")
+                    if (ctdp.TrangThai == "Đã đặt" && (this.CTRadioButtonPhongDaDat.Checked || this.CTRadioButtonTatCaPhong.Checked))
                     {
                         CTRoomDaDat room = new CTRoomDaDat(ctdp, this, this.formMain,taiKhoan);
                         room.setThoiGian(CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " Ngày");
-
+                        room.Name = "PhongDaDat";
                         if (phong.TTDD == "Đã dọn dẹp")
                             room.setDaDonDep();
                         else
                             room.setChuaDonDep();
                         room.setMaPhong(phong.MaPH);
                         room.setLoaiPhong(phong.LoaiPhong.TenLPH);
-                        roomDaDats.Add(room);
+                        DSPhong.Add(room);
                     }
 
                 }
-                if (phong.TTPH == "Bình thường" && (ctdp == null || ctdp.TrangThai=="Đã xong"))
+                if (phong.TTPH == "Bình thường" && (ctdp == null || ctdp.TrangThai=="Đã xong") && (this.CTRadioButtonPhongTrong.Checked || this.CTRadioButtonTatCaPhong.Checked))
                 {
                     CTRoomTrong room = new CTRoomTrong(phong, this, this.formMain);
+                    room.Name = "PhongTrong";
                     if (phong.TTDD == "Đã dọn dẹp")
                         room.setDaDonDep();
                     else
                         room.setChuaDonDep();
                     room.setMaPhong(phong.MaPH);
                     room.setLoaiPhong(phong.LoaiPhong.TenLPH);
-                    roomTrongs.Add(room);
+                    DSPhong.Add(room);
                 }
             }
-            foreach (Phong phong in phongs)
+            foreach(CTRoom cTRoom in DSPhong)
             {
-                foreach (CTRoomDangThue room in roomDangThues)
+                
+                if(cTRoom.MaPhong.StartsWith("P1"))
                 {
-                    room.Name = "PhongDangThue";
-                    if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel1.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel2.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel3.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel4.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel5.Controls.Add(room);
+                    flowLayoutPanel1.Controls.Add(cTRoom);
                 }
-                foreach (CTRoomTrong room in roomTrongs)
+                else if (cTRoom.MaPhong.StartsWith("P2"))
                 {
-                    room.Name = "PhongTrong";
-                    if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel1.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel2.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel3.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel4.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel5.Controls.Add(room);
+                    flowLayoutPanel2.Controls.Add(cTRoom);
                 }
-                foreach (CTRoomDangSuaChua room in roomDangSuaChuas)
+                else if (cTRoom.MaPhong.StartsWith("P3"))
                 {
-                    room.Name = "PhongSuaChua";
-                    if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel1.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel2.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel3.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel4.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel5.Controls.Add(room);
+                    flowLayoutPanel3.Controls.Add(cTRoom);
                 }
-                foreach (CTRoomDaDat room in roomDaDats)
+                else if (cTRoom.MaPhong.StartsWith("P4"))
                 {
-                    room.Name = "PhongDaDat";
-
-                    if (room.getMaPhong().StartsWith("P1") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel1.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P2") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel2.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P3") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel3.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P4") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel4.Controls.Add(room);
-                    else if (room.getMaPhong().StartsWith("P5") && phong.MaPH == room.getMaPhong())
-                        this.flowLayoutPanel5.Controls.Add(room);
+                    flowLayoutPanel4.Controls.Add(cTRoom);
                 }
-            }
+                else if (cTRoom.MaPhong.StartsWith("P5"))
+                {
+                    flowLayoutPanel5.Controls.Add(cTRoom);
+                }
+            }    
         }
 
         #endregion
 
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            if (textBox.Text != "")
-            {
-                phongs = PhongBUS.Instance.FindPhongWithMaPH(textBox.Text);
-                LoadPhong(phongs);
-
-            }
-            else
-            {
-                LoadAllPhong();
-            }
-                LoadCheckBoxPhong();
-
+            ResetTimer(this.timerSearch);
         }
-
+        private static void ResetTimer(Timer timer)
+        {
+            timer.Stop();
+            timer.Start();         
+        }
         #region Process event radio button
         private void CTRadioButtonPhongTrong_CheckedChanged(object sender, EventArgs e)
         {
-            phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Texts);
-            SetAppear();
+            // SetAppear();
+            this.label1.Hide();
+            this.panelSoDoPhong.Hide();
+            LoadAddLoaiPhong();
             LoadCheckBoxLoaiPhong();
             LoadCheckBoxTTDD();
+            this.label1.Show();
+            this.panelSoDoPhong.Show();
             LoadPhong(phongs);
-            LoadCheckBoxPhong();
         }
 
-        private void HideCheckBoxPhongThue()
-        {
-            foreach(Control control in flowLayoutPanel1.Controls)
-            {
-                if(control.Name== "PhongDangThue")
-                {
-                    CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
-                    cTRoomDangThue.Hide();
-                }    
-               
-            }
-            foreach (Control control in flowLayoutPanel2.Controls)
-            {
-                if (control.Name == "PhongDangThue")
-                {
-                    CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
-                    cTRoomDangThue.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel3.Controls)
-            {
-                if (control.Name == "PhongDangThue")
-                {
-                    CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
-                    cTRoomDangThue.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel4.Controls)
-            {
-                if (control.Name == "PhongDangThue")
-                {
-                    CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
-                    cTRoomDangThue.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel5.Controls)
-            {
-                if (control.Name == "PhongDangThue")
-                {
-                    CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
-                    cTRoomDangThue.Hide();
-                }
-            }
-        }
+        /*       private void HideCheckBoxPhongThue()
+               {
+                   foreach(Control control in flowLayoutPanel1.Controls)
+                   {
+                       if(control.Name== "PhongDangThue")
+                       {
+                           CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
+                           cTRoomDangThue.Hide();
+                       }    
 
-        private void HideCheckBoxPhongTrong()
-        {
-            foreach (Control control in flowLayoutPanel1.Controls)
-            {
-                if (control.Name == "PhongTrong")
-                {
-                    /*CTRoomTrong cTRoomTrong = control as CTRoomTrong;
-                    cTRoomTrong.Hide();*/
-                    control.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel2.Controls)
-            {
-                if (control.Name == "PhongTrong")
-                {
-                    /*CTRoomTrong cTRoomTrong = control as CTRoomTrong;
-                    cTRoomTrong.Hide();*/
-                    control.Hide();
+                   }
+                   foreach (Control control in flowLayoutPanel2.Controls)
+                   {
+                       if (control.Name == "PhongDangThue")
+                       {
+                           CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
+                           cTRoomDangThue.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel3.Controls)
+                   {
+                       if (control.Name == "PhongDangThue")
+                       {
+                           CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
+                           cTRoomDangThue.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel4.Controls)
+                   {
+                       if (control.Name == "PhongDangThue")
+                       {
+                           CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
+                           cTRoomDangThue.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel5.Controls)
+                   {
+                       if (control.Name == "PhongDangThue")
+                       {
+                           CTRoomDangThue cTRoomDangThue = control as CTRoomDangThue;
+                           cTRoomDangThue.Hide();
+                       }
+                   }
+               }
 
-                }
-            }
-            foreach (Control control in flowLayoutPanel3.Controls)
-            {
-                if (control.Name == "PhongTrong")
-                {
-                    /* CTRoomTrong cTRoomTrong = control as CTRoomTrong;
-                     cTRoomTrong.Hide();*/
-                    control.Hide();
+               private void HideCheckBoxPhongTrong()
+               {
+                   foreach (Control control in flowLayoutPanel1.Controls)
+                   {
+                       if (control.Name == "PhongTrong")
+                       {
+                           *//*CTRoomTrong cTRoomTrong = control as CTRoomTrong;
+                           cTRoomTrong.Hide();*//*
+                           control.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel2.Controls)
+                   {
+                       if (control.Name == "PhongTrong")
+                       {
+                           *//*CTRoomTrong cTRoomTrong = control as CTRoomTrong;
+                           cTRoomTrong.Hide();*//*
+                           control.Hide();
 
-                }
-            }
-            foreach (Control control in flowLayoutPanel4.Controls)
-            {
-                if (control.Name == "PhongTrong")
-                {
-                    /*CTRoomTrong cTRoomTrong = control as CTRoomTrong;
-                    cTRoomTrong.Hide();*/
-                    control.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel3.Controls)
+                   {
+                       if (control.Name == "PhongTrong")
+                       {
+                           *//* CTRoomTrong cTRoomTrong = control as CTRoomTrong;
+                            cTRoomTrong.Hide();*//*
+                           control.Hide();
 
-                }
-            }
-            foreach (Control control in flowLayoutPanel5.Controls)
-            {
-                if (control.Name == "PhongTrong")
-                {
-                    /*CTRoomTrong cTRoomTrong = control as CTRoomTrong;
-                    cTRoomTrong.Hide();*/
-                    control.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel4.Controls)
+                   {
+                       if (control.Name == "PhongTrong")
+                       {
+                           *//*CTRoomTrong cTRoomTrong = control as CTRoomTrong;
+                           cTRoomTrong.Hide();*//*
+                           control.Hide();
 
-                }
-            }
-        }
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel5.Controls)
+                   {
+                       if (control.Name == "PhongTrong")
+                       {
+                           *//*CTRoomTrong cTRoomTrong = control as CTRoomTrong;
+                           cTRoomTrong.Hide();*//*
+                           control.Hide();
 
-        private void HideCheckBoxPhongSuaChua()
-        {
-            foreach(Control control in flowLayoutPanel1.Controls)
-            {
-                if (control.Name == "PhongSuaChua")
-                {
-                    CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
-                    cTRoomDangSuaChua.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel2.Controls)
-            {
-                if (control.Name == "PhongSuaChua")
-                {
-                    CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
-                    cTRoomDangSuaChua.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel3.Controls)
-            {
-                if (control.Name == "PhongSuaChua")
-                {
-                    CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
-                    cTRoomDangSuaChua.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel4.Controls)
-            {
-                if (control.Name == "PhongSuaChua")
-                {
-                    CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
-                    cTRoomDangSuaChua.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel5.Controls)
-            {
-                if (control.Name == "PhongSuaChua")
-                {
-                    CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
-                    cTRoomDangSuaChua.Hide();
-                }
-            }
-        }
+                       }
+                   }
+               }
 
-        private void HideCheckBoxPhongDaDat()
-        {
-            foreach (Control control in flowLayoutPanel1.Controls)
-            {
-                if (control.Name == "PhongDaDat")
-                {
-                    CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
-                    cTRoomDaDat.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel2.Controls)
-            {
-                if (control.Name == "PhongDaDat")
-                {
-                    CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
-                    cTRoomDaDat.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel3.Controls)
-            {
-                if (control.Name == "PhongDaDat")
-                {
-                    CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
-                    cTRoomDaDat.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel4.Controls)
-            {
-                if (control.Name == "PhongDaDat")
-                {
-                    CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
-                    cTRoomDaDat.Hide();
-                }
-            }
-            foreach (Control control in flowLayoutPanel5.Controls)
-            {
-                if (control.Name == "PhongDaDat")
-                {
-                    CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
-                    cTRoomDaDat.Hide();
-                }
-            }
-        }
+               private void HideCheckBoxPhongSuaChua()
+               {
+                   foreach(Control control in flowLayoutPanel1.Controls)
+                   {
+                       if (control.Name == "PhongSuaChua")
+                       {
+                           CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
+                           cTRoomDangSuaChua.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel2.Controls)
+                   {
+                       if (control.Name == "PhongSuaChua")
+                       {
+                           CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
+                           cTRoomDangSuaChua.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel3.Controls)
+                   {
+                       if (control.Name == "PhongSuaChua")
+                       {
+                           CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
+                           cTRoomDangSuaChua.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel4.Controls)
+                   {
+                       if (control.Name == "PhongSuaChua")
+                       {
+                           CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
+                           cTRoomDangSuaChua.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel5.Controls)
+                   {
+                       if (control.Name == "PhongSuaChua")
+                       {
+                           CTRoomDangSuaChua cTRoomDangSuaChua = control as CTRoomDangSuaChua;
+                           cTRoomDangSuaChua.Hide();
+                       }
+                   }
+               }
 
-        private void ShowCheckBoxAll()
-        {
-            foreach(Control control in flowLayoutPanel1.Controls)
-            {
-                control.Show();
-            }
-            foreach (Control control in flowLayoutPanel2.Controls)
-            {
-                control.Show();
-            }
-            foreach (Control control in flowLayoutPanel3.Controls)
-            {
-                control.Show();
-            }
-            foreach (Control control in flowLayoutPanel4.Controls)
-            {
-                control.Show();
-            }
-            foreach (Control control in flowLayoutPanel5.Controls)
-            {
-                control.Show();
-            }
-        }
+               private void HideCheckBoxPhongDaDat()
+               {
+                   foreach (Control control in flowLayoutPanel1.Controls)
+                   {
+                       if (control.Name == "PhongDaDat")
+                       {
+                           CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
+                           cTRoomDaDat.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel2.Controls)
+                   {
+                       if (control.Name == "PhongDaDat")
+                       {
+                           CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
+                           cTRoomDaDat.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel3.Controls)
+                   {
+                       if (control.Name == "PhongDaDat")
+                       {
+                           CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
+                           cTRoomDaDat.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel4.Controls)
+                   {
+                       if (control.Name == "PhongDaDat")
+                       {
+                           CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
+                           cTRoomDaDat.Hide();
+                       }
+                   }
+                   foreach (Control control in flowLayoutPanel5.Controls)
+                   {
+                       if (control.Name == "PhongDaDat")
+                       {
+                           CTRoomDaDat cTRoomDaDat = control as CTRoomDaDat;
+                           cTRoomDaDat.Hide();
+                       }
+                   }
+               }
+
+               private void ShowCheckBoxAll()
+               {
+                   foreach(Control control in flowLayoutPanel1.Controls)
+                   {
+                       control.Show();
+                   }
+                   foreach (Control control in flowLayoutPanel2.Controls)
+                   {
+                       control.Show();
+                   }
+                   foreach (Control control in flowLayoutPanel3.Controls)
+                   {
+                       control.Show();
+                   }
+                   foreach (Control control in flowLayoutPanel4.Controls)
+                   {
+                       control.Show();
+                   }
+                   foreach (Control control in flowLayoutPanel5.Controls)
+                   {
+                       control.Show();
+                   }
+               }*/
 
         private void LoadCheckBoxPhong()
         {
-            //CheckBox checkBox = null;
+         /*   //CheckBox checkBox = null;
 
             ShowCheckBoxAll();
 
@@ -480,7 +438,7 @@ namespace HotelManagement.GUI
                         ShowCheckBoxAll();
                     }
                 }
-            }    
+            }    */
         }
         #endregion              
 
@@ -669,6 +627,20 @@ namespace HotelManagement.GUI
         {
             this.ActiveControl = pictureBox1;
             setLoadComboBox(dateTime);
+        }
+
+        private void timerSearch_Tick(object sender, EventArgs e)
+        {
+            this.timerSearch.Stop();
+            this.label1.Hide();
+            this.panelSoDoPhong.Hide();
+            LoadAddLoaiPhong();
+            LoadCheckBoxLoaiPhong();
+            LoadCheckBoxTTDD();
+            this.label1.Show();
+            this.panelSoDoPhong.Show();
+            LoadPhong(phongs);
+
         }
     }
 }

@@ -13,7 +13,6 @@ namespace HotelManagement.DAO
 {
     internal class CTDP_DAO
     {
-        HotelDTO db = new HotelDTO();
         private static CTDP_DAO instance;
         public static CTDP_DAO Instance
         {
@@ -23,41 +22,43 @@ namespace HotelManagement.DAO
         private CTDP_DAO() { }
         public List<CTDP> GetCTDPs()
         {
-            using (HotelDTO db = new HotelDTO())
-            {
-
-                return db.CTDPs.ToList();
-            }
-        }
-
+            HotelDTO db = new HotelDTO();
+            return db.CTDPs.ToList();
+        }   
         public int getKhoangTG(string MaCTDP)
         {
+            CTDP ctdp;
             TimeSpan timeSpan = new TimeSpan();
-            using (HotelDTO db = new HotelDTO())
-            {
-                DateTime checkin = new DateTime();
+            HotelDTO db = new HotelDTO();
+            
+                ctdp = db.CTDPs.Find(MaCTDP);
+            
+            DateTime checkin = new DateTime();
                 DateTime checkout = new DateTime();
-                CTDP ctdp = db.CTDPs.Find(MaCTDP);
+               
                 if (ctdp != null)
                 {
                     checkin = ctdp.CheckIn;
                     checkout = ctdp.CheckOut;
                     timeSpan = checkout.Subtract(checkin);
                 }
-            }
-                return timeSpan.Days;
+              return timeSpan.Days;
         }
         public CTDP FindCTDP(string MaPhong, DateTime currentTime)
         {
-          //  CTMessageBox.Show(currentTime.ToString());
-                CTDP ctdp = db.CTDPs.Where(p => p.MaPH == MaPhong &&( (p.CheckIn <= currentTime &&  currentTime <= p.CheckOut)||p.CheckIn==currentTime) && p.TrangThai!="Đã xong" && p.TrangThai!= "Đã hủy").SingleOrDefault();
+                HotelDTO db = new HotelDTO();
+                CTDP ctdp;
+                ctdp = db.CTDPs.Where(p => p.MaPH == MaPhong && ((p.CheckIn <= currentTime && currentTime <= p.CheckOut) || p.CheckIn == currentTime) && p.TrangThai != "Đã xong" && p.TrangThai != "Đã hủy").SingleOrDefault();            
                 return ctdp;
             
         }
         public List<CTDP> getCTDPonTime(DateTime Checkin, DateTime Checkout, List<CTDP> DSPhongThem)
         {
-
-                List<CTDP> listCTDP = db.CTDPs.ToList();
+                
+                List<CTDP> listCTDP;
+                HotelDTO db = new HotelDTO();
+                listCTDP= db.CTDPs.ToList();
+                db.Dispose();
                 if (DSPhongThem != null)
                 {
                     foreach (var ctdp in DSPhongThem)
@@ -77,8 +78,9 @@ namespace HotelManagement.DAO
         }
         public string getNextCTDP()
         {
-
-                List<CTDP> cTDPs = db.CTDPs.ToList();
+                List<CTDP> cTDPs;
+                HotelDTO db = new HotelDTO();      
+                cTDPs = db.CTDPs.ToList();
                 string MaMax = cTDPs[cTDPs.Count - 1].MaCTDP.ToString();
                 MaMax = MaMax.Substring(MaMax.Length - 3, 3);
                 int max = int.Parse(MaMax);
@@ -98,29 +100,36 @@ namespace HotelManagement.DAO
         {
             try
             {
-                ctdp.PhieuThue = db.PhieuThues.Find(ctdp.MaPT);
-                ctdp.Phong = db.Phongs.Find(ctdp.MaPH);
-                ctdp.DaXoa = false;
-                db.CTDPs.AddOrUpdate(ctdp);
-                db.SaveChanges();
-                instance = null;
+                HotelDTO db = new HotelDTO();
+                
+                    ctdp.PhieuThue = db.PhieuThues.Find(ctdp.MaPT);
+                    ctdp.Phong = db.Phongs.Find(ctdp.MaPH);
+                    ctdp.DaXoa = false;
+                    db.CTDPs.AddOrUpdate(ctdp);
+                    db.SaveChanges();
+                    instance = null;
+
             }
-            catch(Exception)
+            catch (Exception)
             {
-                db.CTDPs.Remove(ctdp);
+               
             }
         }
         public void RemoveCTDP(CTDP cTDP)
         {
-            cTDP.DaXoa = true;
-            db.CTDPs.AddOrUpdate(cTDP);
-            db.SaveChanges();
+            HotelDTO db = new HotelDTO();
+            
+                cTDP.DaXoa = true;
+                db.CTDPs.AddOrUpdate(cTDP);
+                db.SaveChanges();
 
         }
         public string getNextCTDPwithList(List<CTDP> list)
         {
+            List<CTDP> cTDPs;
+            HotelDTO db = new HotelDTO();
 
-                List<CTDP> cTDPs = db.CTDPs.ToList();
+            cTDPs = db.CTDPs.ToList();       
                 if (list.Count > 0)
                 {
                     foreach (var ctdp in list)
