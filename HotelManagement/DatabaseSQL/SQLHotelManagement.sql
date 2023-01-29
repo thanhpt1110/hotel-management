@@ -54,7 +54,8 @@ CREATE TABLE "CTDP"(
     "TrangThai" NVARCHAR(20) NOT NULL,
 	"DonGia" MONEY,
     "ThanhTien" MONEY DEFAULT 0,
-	"DaXoa" BIT DEFAULT 0
+	"DaXoa" BIT DEFAULT 0,
+	"TheoGio" BIT DEFAULT 0
 );
 CREATE TABLE "PhieuThue"(
     "MaPT" NVARCHAR(5) NOT NULL PRIMARY KEY,
@@ -169,6 +170,9 @@ BEGIN
 			BEGIN
 				UPDATE CTDP
 				SET "ThanhTien"= @KhoangTGGio * @GiaGio
+				WHERE @MaCTDP = MaCTDP
+				UPDATE CTDP
+				SET "TheoGio"= 1
 				WHERE @MaCTDP = MaCTDP
 			END
 		ELSE
