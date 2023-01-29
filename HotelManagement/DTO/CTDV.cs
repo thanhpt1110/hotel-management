@@ -11,8 +11,8 @@ namespace HotelManagement.DTO
     {
         [Key]
         [Column(Order = 0)]
-        [StringLength(5)]
-        public string MaHD { get; set; }
+        [StringLength(7)]
+        public string MaCTDP { get; set; }
 
         [Key]
         [Column(Order = 1)]
@@ -37,7 +37,7 @@ namespace HotelManagement.DTO
             this.DonGia = a.DonGia;
             this.ThanhTien = a.ThanhTien;
             this.MaDV = a.MaDV;
-            this.MaHD = a.MaHD;
+            this.MaCTDP = a.MaCTDP;
         }
         public CTDV()
         { }    

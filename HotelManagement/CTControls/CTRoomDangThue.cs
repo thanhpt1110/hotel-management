@@ -24,6 +24,7 @@ namespace HotelManagement.CTControls
         private CTDP ctdp;
         private FormSoDoPhong formSoDoPhong;
         FormMain formMain;
+        TaiKhoan taiKhoan;
         public override string getMaPhong()
         {
             return this.LabelMaPhong.Text;
@@ -114,7 +115,7 @@ namespace HotelManagement.CTControls
             this.ForeColor = Color.White;
             InitializeComponent();
         }
-        public CTRoomDangThue(CTDP cTDP, FormSoDoPhong soDoPhong, FormMain formMain)
+        public CTRoomDangThue(CTDP cTDP, FormSoDoPhong soDoPhong, FormMain formMain,TaiKhoan taiKhoan)
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.Size = new Size(280, 155);
@@ -126,6 +127,7 @@ namespace HotelManagement.CTControls
             this.formMain = formMain;
             this.LoaiPhong = "DangThue";
             this.MaPhong = ctdp.MaPH;
+            this.taiKhoan = taiKhoan;
         }
         //Methods
         private void Button_Resize(object sender, EventArgs e)
@@ -227,7 +229,7 @@ namespace HotelManagement.CTControls
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
-                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, ctdp))
+                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, ctdp, null, taiKhoan))
                 {
                     formBackground.Owner = formMain;
                     formBackground.Show();

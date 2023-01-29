@@ -250,8 +250,7 @@ namespace HotelManagement.GUI
             this.ComboBoxTinhTrangPhong.Text = "Phòng đang thuê";
             this.PanelChuaButtonDatPhongNay.Hide();
             this.PanelChuaButtonNhanPhong.Hide();
-            List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
-            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(hoaDons.Where(p=>p.MaCTDP==ctdp.MaCTDP).Single().MaHD);
+            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(ctdp.MaCTDP);
             gridDichVu.Rows.Clear();
             if (cTDVs.Count > 0)
             {
@@ -410,7 +409,7 @@ namespace HotelManagement.GUI
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
-                using (FormDatPhong formDatPhong = new FormDatPhong(taiKhoan))
+                using (FormDatPhong formDatPhong = new FormDatPhong())
                 {
                     formBackground.Owner = formMain;
                     formBackground.Show();
@@ -419,9 +418,9 @@ namespace HotelManagement.GUI
                     formBackground.Dispose();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                CTMessageBox.Show(ex.Message, "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally 
@@ -438,15 +437,13 @@ namespace HotelManagement.GUI
             if (dialogresult == DialogResult.Yes)
             {
                 ctdp.ThanhTien = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
-                HoaDon hd = HoaDonBUS.Instance.GetHoaDons().Where(p => p.MaCTDP == ctdp.MaCTDP).SingleOrDefault();
+                HoaDon hd = new HoaDon();
                 try
                 {
-                    ctdp.ThanhTien = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
-                    hd.TriGia = ctdp.ThanhTien;
-                    foreach(CTDV cTDV in CTDV_BUS.Instance.FindCTDV(hd.MaHD))
-                    {
-                        hd.TriGia += cTDV.ThanhTien;
-                    }
+                    hd.MaHD = HoaDonBUS.Instance.getMaHDNext();
+                    hd.MaNV = taiKhoan.MaNV;
+                    hd.MaCTDP = ctdp.MaCTDP;
+                    hd.TriGia = 0;
                     ctdp.TrangThai = "Đã xong";
                     hd.TrangThai = "Đã thanh toán";
                     hd.NgHD = DateTime.Now;

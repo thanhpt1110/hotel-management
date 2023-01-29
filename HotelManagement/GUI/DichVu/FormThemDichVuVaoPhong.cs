@@ -25,7 +25,6 @@ namespace HotelManagement.GUI
         private List<CTDV> dichVusDaDat = new List<CTDV>();
         private List<int?> SLDVConLai = new List<int?>();
         private List<int> SLDVDaDat = new List<int>();
-        private HoaDon hoadon;
         /*        private List<CTDV> dichVusdadatBanDau = new List<CTDV>();
                 private List<DichVu> dichVusBanDau = new List<DichVu>();*/
         //Fields
@@ -65,9 +64,7 @@ namespace HotelManagement.GUI
             try
             {
                // this.hoadon = ctdp.HoaDons.Single();
-                List<HoaDon> hoaDons = HoaDonBUS.Instance.GetHoaDons();
-                this.hoadon = hoaDons.Where(p => p.MaCTDP == ctdp.MaCTDP).Single();
-                 List<CTDV>cTDVs = CTDV_BUS.Instance.FindCTDV(this.hoadon.MaHD);
+                 List<CTDV>cTDVs = CTDV_BUS.Instance.FindCTDV(this.ctdp.MaCTDP);
                 if (cTDVs != null)
                 {
                     foreach (CTDV cTDV in cTDVs)
@@ -337,7 +334,7 @@ namespace HotelManagement.GUI
                 cTDV1.DaXoa = false;
                 cTDV1.ThanhTien = dichVu.DonGia;
                 cTDV1.MaDV=dichVu.MaDV;
-                cTDV1.MaHD = hoadon.MaHD;
+                cTDV1.MaCTDP = ctdp.MaCTDP;
                 cTDV1.SL = 1;
                 dichVusDaDat.Add(cTDV1);
                 this.LoadGridDaChon();

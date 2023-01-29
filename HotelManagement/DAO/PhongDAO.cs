@@ -56,7 +56,7 @@ namespace HotelManagement.DAO
         public List<Phong> FindPhongTrong(DateTime Checkin, DateTime Checkout, List<CTDP> DSPhongThem)
         {
 
-                List<CTDP> cTDPs = CTDP_DAO.Instance.getCTDPonTime(Checkin, Checkout, DSPhongThem).Where(p=>p.TrangThai!="Đã hủy").ToList();
+                List<CTDP> cTDPs = CTDP_DAO.Instance.getCTDPonTime(Checkin, Checkout, DSPhongThem).Where(p=>p.TrangThai!= "Đã hủy" || p.TrangThai!="Đã xong").ToList();
                 //List<Phong> PhongKhongTrong = new List<Phong>();
                 var MaPh = cTDPs.Select(p => p.Phong.MaPH).ToList();
                 List<Phong> phongs = db.Phongs.Where(p=>p.DaXoa==false).ToList();

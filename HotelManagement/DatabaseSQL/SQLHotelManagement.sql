@@ -138,7 +138,9 @@ ALTER TABLE
 ALTER TABLE 
 	"CTDV" ADD CONSTRAINT "CTDV_MaDV_foreign" FOREIGN KEY (MaDV) REFERENCES DichVu(MaDV)
 
+
 GO
+-- Trigger Update Giá phòng
 CREATE TRIGGER CapNhatGiaCTDP ON CTDP FOR INSERT,UPDATE
 AS
 BEGIN
@@ -156,18 +158,67 @@ BEGIN
 					FROM Phong JOIN LoaiPhong ON Phong.MaLPH=LoaiPhong.MaLPH
 					WHERE Phong.MaPH=@MaPhong
 					)
-	DECLARE @CheckIn SMALLDATETIME, @CheckOut SMALLDATETIME
+	DECLARE @CheckIn SMALLDATETIME, @CheckOut SMALLDATETIME,@KhoangTGNgay INT, @KhoangTGGio INT
 	SET @CheckIn = (SELECT CheckIn FROM inserted)
 	SET @CheckOut = (SELECT CheckOut FROM inserted)
-	IF DATEDIFF(@CheckOut,@CheckIn) < 1
-	Then
-		BEGIN 
-		END
-	UPDATE C
-	SET ThanhTien = 
-	WHERE 
+	SET @KhoangTGNgay=  (SELECT DATEDIFF(DAY, @CheckIn, @CheckOut))
+	IF @KhoangTGNgay < 1
+	BEGIN
+	SET @KhoangTGGio=  (SELECT DATEDIFF(HOUR, @CheckIn, @CheckOut))		
+		IF @KhoangTGGio < 4
+			BEGIN
+				UPDATE CTDP
+				SET "ThanhTien"= @KhoangTGGio * @GiaGio
+				WHERE @MaCTDP = MaCTDP
+			END
+		ELSE
+			BEGIN
+				UPDATE CTDP
+				SET "ThanhTien"= @GiaNgay
+				WHERE @MaCTDP = MaCTDP
+			END
+	END
+	ELSE
+	BEGIN
+		UPDATE CTDP
+		SET "ThanhTien"= @KhoangTGNgay * @GiaNgay
+		WHERE @MaCTDP = MaCTDP
+	END
 END
-
+-- Trigger update Gia CTDV
+GO 
+CREATE TRIGGER CapNhatGiaDV ON CTDV FOR INSERT,UPDATE
+AS
+BEGIN
+	DECLARE @MaCTDP NVARCHAR(7), @MaDV NVARCHAR(5), @GiaTien MONEY, @SL INT
+	SET @MaCTDP = (SELECT MaCTDP FROM inserted)
+	SET @MaDV = (SELECT MaDV FROM inserted)
+	SET @GiaTien = (SELECT DonGia FROM DichVu WHERE DichVu.MaDV=@MaDV)
+	SET @SL = (SELECT SL FROM inserted)
+	UPDATE CTDV
+	SET ThanhTien= @SL * @GiaTien
+	WHERE "MaDV" = MaDV AND MaCTDP = @MaCTDP
+END
+-- TRIGGER udpate giá trị hóa đơn
+GO
+CREATE TRIGGER CapNhatGiaTriHoaDon ON HoaDon FOR INSERT,UPDATE
+AS
+BEGIN
+	DECLARE @MaHD NVARCHAR(5), @MaCTDP NVARCHAR(7), @TongTienHD MONEY, @TongTienDV MONEY, @TongTienPhong MONEY
+	SET @MaHD = (SELECT MaHD FROM inserted)
+	SET @MaCTDP = (SELECT MaCTDP FROM inserted)
+	SET @TongTienDV = 0
+	SET @TongTienDV = (SELECT SUM(ThanhTien) FROM CTDV WHERE MaCTDP = @MaCTDP GROUP BY MaCTDP)
+	SET @TongTienPhong = (SELECT ThanhTien FROM CTDP WHERE MaCTDP=@MaCTDP)
+	IF ( NOT EXISTS( SELECT * FROM CTDV WHERE MaCTDP = @MaCTDP))
+	BEGIN 
+		SET @TongTienDV = 0
+	END
+	UPDATE HoaDon
+	SET TriGia = @TongTienDV+@TongTienPhong
+	WHERE MaHD=@MaHD
+END
+GO
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('QL001',N'Nguyễn Phúc Bình', '30/09/2003', N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','40000000',N'Quản lý', '072000001212','0907219273','nguyen.phucbinh445@gmail.com',0)
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('QL002',N'Phan Tuấn Thành', '11/10/2003',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','45000000',N'Quản lý', '072000001213','071223431','21520455@gmail.com',0)
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('QL003',N'Lê Thanh Tuấn', '10/06/1989', N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','50000000',N'Quản lý', '072000001214','010311231','215205119@gmail.com',0)
@@ -326,9 +377,8 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD002','15/11/2022','NV001','CTDP002',N'Đã thanh toán','1730000') -- Update Tri gia sau
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD003','18/11/2022','NV001','CTDP003',N'Đã thanh toán','1730000') -- Update Tri gia sau
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD004','20/11/2022','NV001','CTDP004',N'Đã thanh toán','1225000') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD005','06/12/2022','NV001','CTDP004',N'Đã thanh toán','1540000') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD006','10/12/2022','NV001','CTDP004',N'Đã thanh toán','600000') -- Update Tri gia sau
-
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007','17/12/2022','NV001','CTDP005',N'Đã thanh toán','0')
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD008','20/12/2022','NV001','CTDP006',N'Đã thanh toán','0')
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD009','18/12/2022','NV001','CTDP007',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD005','06/12/2022','NV001','CTDP005',N'Đã thanh toán','1540000') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD006','10/12/2022','NV001','CTDP006',N'Đã thanh toán','600000') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007','17/12/2022','NV001','CTDP007',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD008','20/12/2022','NV001','CTDP008',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD009','18/12/2022','NV001','CTDP009',N'Đã thanh toán','0')

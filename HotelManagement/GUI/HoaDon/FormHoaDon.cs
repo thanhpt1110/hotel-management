@@ -53,15 +53,15 @@ namespace HotelManagement.GUI
                 int days = CTDP_BUS.Instance.getKhoangTG(HD.MaCTDP);
                 //decimal TongTienHD = 0;
                 this.TextBoxSoHD.Text = HD.MaHD;
-                this.TextBoxTenKH.Text = HD.CTDP.PhieuThue.KhachHang.TenKH;
+                this.TextBoxTenKH.Text = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaCTDP == HD.MaCTDP).Single().PhieuThue.KhachHang.TenKH;
                 this.TextBoxSoNgay.Text = days.ToString() + " ngày";
-                this.TextBoxMaPhong.Text = HD.CTDP.MaPH;
+                this.TextBoxMaPhong.Text = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaCTDP == HD.MaCTDP).Single().MaPH;
                 this.TextBoxTenNV.Text = HD.NhanVien.TenNV;
                 this.TextBoxNgayHD.Text = HD.NgHD.ToString();
-                Phong phong = PhongBUS.Instance.FindePhong(HD.CTDP.MaPH);
+                Phong phong = PhongBUS.Instance.FindePhong(TextBoxMaPhong.Text);
                 LoaiPhong loaiphong = LoaiPhongBUS.Instance.getLoaiPhong(phong.MaLPH);
                 this.TextBoxLoaiPhong.Text = loaiphong.TenLPH;
-                List<CTDV> ctdvs = CTDV_BUS.Instance.FindCTDV(HD.MaHD);
+                List<CTDV> ctdvs = CTDV_BUS.Instance.FindCTDV(HD.MaCTDP);
                 foreach (CTDV ctdv in ctdvs)
                 {
                     dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);

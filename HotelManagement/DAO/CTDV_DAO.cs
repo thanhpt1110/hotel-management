@@ -19,10 +19,10 @@ namespace HotelManagement.DAO
         }
         private CTDV_DAO() { }
 
-        public List<CTDV> FindCTDV(string MaHD)
+        public List<CTDV> FindCTDV(string MaCTDP)
         {
 
-                return db.CTDVs.Where(p => p.MaHD == MaHD && p.DaXoa == false).ToList();           
+                return db.CTDVs.Where(p => p.MaCTDP == MaCTDP && p.DaXoa == false).ToList();           
         } 
         
         public void InsertOrUpdateList(List<CTDV> cTDVs)
@@ -33,7 +33,7 @@ namespace HotelManagement.DAO
                     if (cTDV.SL != 0)
                     {
                         db.CTDVs.AddOrUpdate(cTDV);
-                        CTDV cTDV1 = db.CTDVs.Where(p => p.DonGia == cTDV.DonGia && p.MaDV == cTDV.MaDV && p.MaHD == cTDV.MaHD).SingleOrDefault();
+                        CTDV cTDV1 = db.CTDVs.Where(p => p.DonGia == cTDV.DonGia && p.MaDV == cTDV.MaDV && p.MaCTDP == cTDV.MaCTDP).SingleOrDefault();
                         if (cTDV.SL == 0 && cTDV1 != null)
                         {
                         

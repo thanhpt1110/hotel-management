@@ -57,8 +57,7 @@ namespace HotelManagement.DAO
                 
                 List<CTDP> listCTDP;
                 HotelDTO db = new HotelDTO();
-                listCTDP= db.CTDPs.ToList();
-                db.Dispose();
+                listCTDP= db.CTDPs.Where(p=>p.DaXoa==false).ToList();
                 if (DSPhongThem != null)
                 {
                     foreach (var ctdp in DSPhongThem)
@@ -66,7 +65,7 @@ namespace HotelManagement.DAO
                         listCTDP.Add(ctdp);
                     } 
                 }
-                var cTDPs = from p in listCTDP where (((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin <= p.CheckIn && Checkout >= p.CheckOut)) && p.TrangThai!="Đã xong") select p;
+                var cTDPs = from p in listCTDP where (((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin <= p.CheckIn && Checkout >= p.CheckOut)) && (p.TrangThai!="Đã xong" || p.TrangThai!="Đã hủy") ) select p;
 
                 List<CTDP> ctdpList = new List<CTDP>();
                 foreach (var ctdp in cTDPs)

@@ -42,6 +42,7 @@ namespace HotelManagement.GUI
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+            phieuThue.MaPT = PhieuThueBUS.Instance.GetMaPTNext();
         }
         public FormDatPhong(TaiKhoan taiKhoan)
         {
@@ -528,9 +529,9 @@ namespace HotelManagement.GUI
                     CreateCTDP();
                     CreateHoaDon();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                    CTMessageBox.Show(ex.Message, "Thông báo",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
@@ -581,24 +582,12 @@ namespace HotelManagement.GUI
                 ctdp.MaPT = phieuThue.MaPT;
                 ctdp.TrangThai = "Đã đặt";
                 ctdp.DaXoa = false;
-                
                 CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
             }
         }
 
         private void CreateHoaDon()
         {
-            foreach (CTDP ctdp in listPhongDaDat)
-            {
-                HoaDon hoadon = new HoaDon();
-                hoadon.MaHD = HoaDonBUS.Instance.getMaHDNext();
-                hoadon.MaCTDP = ctdp.MaCTDP;
-                hoadon.MaNV = "NV001";
-                hoadon.TriGia = 0;
-                hoadon.NgHD = DateTime.Now;
-                hoadon.TrangThai = "Chưa thanh toán";
-                HoaDonBUS.Instance.Update_Inserthd(hoadon);
-            }
         }
 
         private void CTTextBoxNhapHoTen__TextChanged(object sender, EventArgs e)

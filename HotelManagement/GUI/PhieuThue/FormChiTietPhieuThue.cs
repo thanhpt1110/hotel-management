@@ -281,8 +281,6 @@ namespace HotelManagement.GUI
                         cTDP.TrangThai = "Đã hủy";
                         cTDP.DaXoa = true;
                         CTDP_BUS.Instance.RemoveCTDP(cTDP);
-                        HoaDon hoadon = HoaDonBUS.Instance.GetHoaDons().Where(p => p.MaCTDP == cTDP.MaCTDP).Single();
-                        HoaDonBUS.Instance.RemoveHD(hoadon);
                         flag = 1;
 
                     }
