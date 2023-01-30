@@ -60,8 +60,9 @@ namespace HotelManagement.GUI
             {
                 foreach (HoaDon hoadon in hoaDons)
                 {
-                    int days = CTDP_BUS.Instance.getKhoangTG(hoadon.MaCTDP);
-                    Phong phong = PhongBUS.Instance.FindePhong(hoadon.CTDP.MaPH);
+                    //  int days = CTDP_BUS.Instance.getKhoangTGTheoNgay(hoadon.MaCTDP);
+                    CTDP ctdp = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaCTDP == hoadon.MaCTDP).Single();
+                    Phong phong = PhongBUS.Instance.FindePhong(ctdp.MaPH);
                     LoaiPhong loaiphong = LoaiPhongBUS.Instance.getLoaiPhong(phong.MaLPH);
                     string tennv = null;
                     List<CTDV> ctdvs = CTDV_BUS.Instance.FindCTDV(hoadon.MaHD);
@@ -71,8 +72,12 @@ namespace HotelManagement.GUI
                     }
                     if (hoadon.MaNV != null)
                         tennv = hoadon.NhanVien.TenNV;
-                    if(hoadon.TrangThai=="Đã thanh toán")
-                        grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, hoadon.CTDP.PhieuThue.KhachHang.TenKH, hoadon.TriGia.ToString("#,#"), hoadon.TrangThai, details);
+                    if (hoadon.TrangThai == "Đã thanh toán")
+                    {
+                        PhieuThue phieuThue = PhieuThueBUS.Instance.GetPhieuThue(ctdp.MaPT);
+                        KhachHang khachHang = KhachHangBUS.Instance.GetKhachHangs().Where(p => p.MaKH == phieuThue.MaKH).Single();
+                        grid.Rows.Add(HD, hoadon.MaHD, hoadon.NgHD, tennv, khachHang.TenKH, hoadon.TriGia.ToString("#,#"), hoadon.TrangThai, details);
+                    }
                 }
             }
             catch (Exception)

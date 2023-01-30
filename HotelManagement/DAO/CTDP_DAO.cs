@@ -25,7 +25,7 @@ namespace HotelManagement.DAO
             HotelDTO db = new HotelDTO();
             return db.CTDPs.ToList();
         }   
-        public int getKhoangTG(string MaCTDP)
+        public int getKhoangTGTheoNgay(string MaCTDP)
         {
             CTDP ctdp;
             TimeSpan timeSpan = new TimeSpan();
@@ -43,6 +43,25 @@ namespace HotelManagement.DAO
                     timeSpan = checkout.Subtract(checkin);
                 }
               return timeSpan.Days;
+        }
+        public int getKhoangTGTheoGio(string MaCTDP)
+        {
+            CTDP ctdp;
+            TimeSpan timeSpan = new TimeSpan();
+            HotelDTO db = new HotelDTO();
+
+            ctdp = db.CTDPs.Find(MaCTDP);
+
+            DateTime checkin = new DateTime();
+            DateTime checkout = new DateTime();
+
+            if (ctdp != null)
+            {
+                checkin = ctdp.CheckIn;
+                checkout = ctdp.CheckOut;
+                timeSpan = checkout.Subtract(checkin);
+            }
+            return timeSpan.Hours;
         }
         public CTDP FindCTDP(string MaPhong, DateTime currentTime)
         {
@@ -65,7 +84,7 @@ namespace HotelManagement.DAO
                         listCTDP.Add(ctdp);
                     } 
                 }
-                var cTDPs = from p in listCTDP where (((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin <= p.CheckIn && Checkout >= p.CheckOut)) && (p.TrangThai!="Đã xong" || p.TrangThai!="Đã hủy") ) select p;
+                var cTDPs = from p in listCTDP where (((Checkin >= p.CheckIn && Checkin <= p.CheckOut) || (p.CheckIn <= Checkout && Checkout <= p.CheckOut) || (Checkin <= p.CheckIn && Checkout >= p.CheckOut)) && (p.TrangThai!="Đã xong" &&  p.TrangThai!="Đã hủy") ) select p;
 
                 List<CTDP> ctdpList = new List<CTDP>();
                 foreach (var ctdp in cTDPs)
@@ -106,7 +125,9 @@ namespace HotelManagement.DAO
                     ctdp.DaXoa = false;
                     db.CTDPs.AddOrUpdate(ctdp);
                     db.SaveChanges();
+                
                     instance = null;
+                db.Dispose();
 
             }
             catch (Exception)

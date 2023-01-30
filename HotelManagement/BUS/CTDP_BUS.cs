@@ -20,9 +20,13 @@ namespace HotelManagement.BUS
         {
             return CTDP_DAO.Instance.GetCTDPs();
         }
-        public int getKhoangTG(string MaCTDP) // Lấy thời gian ở của khách hàng tại 1 phòng nào đó
+        public int getKhoangTGTheoNgay(string MaCTDP) // Lấy thời gian ở của khách hàng tại 1 phòng nào đó
         {
-            return CTDP_DAO.Instance.getKhoangTG(MaCTDP);
+            return CTDP_DAO.Instance.getKhoangTGTheoNgay(MaCTDP);
+        }
+        public int getKhoangTGTheoGio(string MaCTDP) // Lấy thời gian ở của khách hàng tại 1 phòng nào đó
+        {
+            return CTDP_DAO.Instance.getKhoangTGTheoGio(MaCTDP);
         }
         public CTDP FindCTDP(string MaPhong, DateTime currentTime) // Tìm Mã phòng theo 
         {

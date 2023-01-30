@@ -50,13 +50,13 @@ namespace HotelManagement.GUI
             try
             {
                 DichVu dichvu;
-                int days = CTDP_BUS.Instance.getKhoangTG(HD.MaCTDP);
+                CTDP cTDP = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaCTDP == HD.MaCTDP).Single();
+
                 //decimal TongTienHD = 0;
                 this.TextBoxSoHD.Text = HD.MaHD;
                 this.TextBoxTenKH.Text = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaCTDP == HD.MaCTDP).Single().PhieuThue.KhachHang.TenKH;
-                this.TextBoxSoNgay.Text = days.ToString() + " ngày";
                 this.TextBoxMaPhong.Text = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaCTDP == HD.MaCTDP).Single().MaPH;
-                this.TextBoxTenNV.Text = HD.NhanVien.TenNV;
+                this.TextBoxTenNV.Text = NhanVienBUS.Instance.GetNhanVien(HD.MaNV).TenNV;
                 this.TextBoxNgayHD.Text = HD.NgHD.ToString();
                 Phong phong = PhongBUS.Instance.FindePhong(TextBoxMaPhong.Text);
                 LoaiPhong loaiphong = LoaiPhongBUS.Instance.getLoaiPhong(phong.MaLPH);
@@ -67,8 +67,22 @@ namespace HotelManagement.GUI
                     dichvu = DichVuBUS.Instance.FindDichVu(ctdv.MaDV);
                     DataGridViewDichVu.Rows.Add(dichvu.TenDV, ctdv.DonGia.ToString("#,#"), ctdv.SL, ctdv.ThanhTien.ToString("#,#"));
                 }
-                decimal Tongtienphong = loaiphong.GiaNgay * days;
-                DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, loaiphong.GiaNgay.ToString("#,#"), days, Tongtienphong.ToString("#,#"));
+                decimal Tongtienphong = cTDP.ThanhTien;
+                string time = null;
+                if (cTDP.TheoGio == false)
+                {
+                    time  = CTDP_BUS.Instance.getKhoangTGTheoNgay(HD.MaCTDP).ToString();
+                    if (int.Parse(time) == 0)
+                        time = "1";
+                    this.TextBoxSoNgay.Text =  time + " ngày";
+                }
+                else
+                {
+                    time = CTDP_BUS.Instance.getKhoangTGTheoGio(HD.MaCTDP).ToString();
+                    this.TextBoxSoNgay.Text = CTDP_BUS.Instance.getKhoangTGTheoGio(HD.MaCTDP).ToString() + " giờ";
+                }
+                DataGridViewDichVu.Rows.Add(loaiphong.TenLPH, cTDP.DonGia.ToString("#,#"), int.Parse(time), Tongtienphong.ToString("#,#"));
+
                 //this.LabelTongTien.Text += HD.TriGia.ToString("#,#");
                 money = HD.TriGia.ToString("#,#");
             }

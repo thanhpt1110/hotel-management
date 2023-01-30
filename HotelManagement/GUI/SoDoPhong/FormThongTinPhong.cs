@@ -229,7 +229,10 @@ namespace HotelManagement.GUI
             this.LabelMaPhong.Text = ctdp.MaPH;
             this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
             this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
-            this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " ngày";
+            if(ctdp.TheoGio==false)
+                this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " ngày";
+            else
+                this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " giờ";
             this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
             this.ComboBoxTinhTrangPhong.Text = "Phòng đã đặt";
             this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
@@ -243,7 +246,10 @@ namespace HotelManagement.GUI
             this.LabelMaPhong.Text = ctdp.MaPH;
             this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
             this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
-            this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " ngày";
+            if (ctdp.TheoGio == false)
+                this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " ngày";
+            else
+                this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " giờ";
             this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
             this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
             this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
@@ -436,14 +442,12 @@ namespace HotelManagement.GUI
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogresult == DialogResult.Yes)
             {
-                ctdp.ThanhTien = ctdp.DonGia * CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP);
                 HoaDon hd = new HoaDon();
                 try
                 {
                     hd.MaHD = HoaDonBUS.Instance.getMaHDNext();
                     hd.MaNV = taiKhoan.MaNV;
                     hd.MaCTDP = ctdp.MaCTDP;
-                    hd.TriGia = 0;
                     ctdp.TrangThai = "Đã xong";
                     hd.TrangThai = "Đã thanh toán";
                     hd.NgHD = DateTime.Now;
@@ -460,7 +464,7 @@ namespace HotelManagement.GUI
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
-                        using (FormHoaDon formHoaDon = new FormHoaDon(hd))
+                        using (FormHoaDon formHoaDon = new FormHoaDon(HoaDonBUS.Instance.FindHD(hd.MaHD)))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();

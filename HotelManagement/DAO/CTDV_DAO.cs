@@ -27,8 +27,9 @@ namespace HotelManagement.DAO
         
         public void InsertOrUpdateList(List<CTDV> cTDVs)
         {
-           
-                foreach (CTDV cTDV in cTDVs)
+        HotelDTO db = new HotelDTO();
+
+            foreach (CTDV cTDV in cTDVs)
                 {
                     if (cTDV.SL != 0)
                     {
@@ -43,7 +44,7 @@ namespace HotelManagement.DAO
                             db.SaveChanges();
                     }
                 }
-            
+            db.Dispose();
             instance = null;
         }    
 

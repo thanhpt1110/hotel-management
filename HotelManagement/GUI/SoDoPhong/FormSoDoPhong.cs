@@ -108,7 +108,10 @@ namespace HotelManagement.GUI
                     if (ctdp.TrangThai == "Đã đặt" && (this.CTRadioButtonPhongDaDat.Checked || this.CTRadioButtonTatCaPhong.Checked))
                     {
                         CTRoomDaDat room = new CTRoomDaDat(ctdp, this, this.formMain,taiKhoan);
-                        room.setThoiGian(CTDP_BUS.Instance.getKhoangTG(ctdp.MaCTDP).ToString() + " Ngày");
+                        if (ctdp.TheoGio == false)
+                            room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " Ngày");
+                        else
+                            room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " Giờ");
                         room.Name = "PhongDaDat";
                         if (phong.TTDD == "Đã dọn dẹp")
                             room.setDaDonDep();

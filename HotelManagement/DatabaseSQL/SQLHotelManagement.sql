@@ -168,11 +168,16 @@ BEGIN
 	SET @KhoangTGGio=  (SELECT DATEDIFF(HOUR, @CheckIn, @CheckOut))		
 		IF @KhoangTGGio < 4
 			BEGIN
+				DECLARE @DonGia MONEY
+				SET @DonGia = (SELECT GiaGio FROM LoaiPhong JOIN Phong ON LoaiPhong.MaLPH = Phong.MaLPH JOIN CTDP ON CTDP.MaPH=Phong.MaPH WHERE CTDP.MaCTDP=@MaCTDP) 
 				UPDATE CTDP
 				SET "ThanhTien"= @KhoangTGGio * @GiaGio
 				WHERE @MaCTDP = MaCTDP
 				UPDATE CTDP
 				SET "TheoGio"= 1
+				WHERE @MaCTDP = MaCTDP
+				UPDATE CTDP
+				SET "DonGia"= @DonGia
 				WHERE @MaCTDP = MaCTDP
 			END
 		ELSE
@@ -223,7 +228,7 @@ BEGIN
 	WHERE MaHD=@MaHD
 END
 GO
-INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('QL001',N'Nguyễn Phúc Bình', '30/09/2003', N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','40000000',N'Quản lý', '072000001212','0907219273','nguyen.phucbinh445@gmail.com',0)
+INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa","AnhDaiDien") VALUES ('QL001',N'Nguyễn Phúc Bình', '30/09/2003', N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','40000000',N'Quản lý', '072000001212','0907219273','nguyen.phucbinh445@gmail.com',0,'/Avartar/QL_admin.png')
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('QL002',N'Phan Tuấn Thành', '11/10/2003',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','45000000',N'Quản lý', '072000001213','071223431','21520455@gmail.com',0)
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('QL003',N'Lê Thanh Tuấn', '10/06/1989', N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','50000000',N'Quản lý', '072000001214','010311231','215205119@gmail.com',0)
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('NV001',N'Phạm Thị A', '09/03/1995',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nữ','5500000',N'Tiếp tân', '072000001215','095411231','NV215235119@gmail.com',0)

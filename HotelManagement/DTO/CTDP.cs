@@ -46,6 +46,8 @@ namespace HotelManagement.DTO
         public decimal ThanhTien { get; set; }
         public bool? DaXoa { get; set; }
 
+        public bool TheoGio { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
         public virtual PhieuThue PhieuThue { get; set; }
