@@ -67,17 +67,9 @@ namespace HotelManagement.GUI
             {
                 this.ctTextBoxGhiChu.RemovePlaceholder();
             }    
-            this.comboBoxDonDep.Text = phong.TTDD;
-
-            this.comboBoxLoaiPhong.Text = phong.LoaiPhong.TenLPH;
-            this.comboBoxLoaiPhong.Items.Clear();
-            List<LoaiPhong> loaiPhongs = LoaiPhongBUS.Instance.GetLoaiPhongs();
-
-            foreach (LoaiPhong loaiPhong in loaiPhongs)
-            {
-                this.comboBoxLoaiPhong.Items.Add(loaiPhong.TenLPH);
-            }    
-            this.comboBoxTinhTrangPhong.Text = phong.TTPH;
+            this.comboBoxDonDep.Texts = phong.TTDD;
+            this.comboBoxLoaiPhong.Texts = phong.LoaiPhong.TenLPH;
+            this.comboBoxTinhTrangPhong.Texts = phong.TTPH;
             this.ctTextBoxGhiChu.Texts = phong.GhiChu;
         }
         private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
@@ -242,11 +234,11 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-            string TinhTrang = comboBoxTinhTrangPhong.Text; 
-            string DonDep = comboBoxDonDep.Text;
-            string LoaiPhong = comboBoxLoaiPhong.Text;
+            string TinhTrang = comboBoxTinhTrangPhong.Texts; 
+            string DonDep = comboBoxDonDep.Texts;
+            string LoaiPhong = comboBoxLoaiPhong.Texts;
             string GhiChu = ctTextBoxGhiChu.Texts;
-            if (TinhTrang == "    Tình trạng phòng" || DonDep == "  Tình trạng dọn dẹp" || LoaiPhong == "  Loại phòng" || GhiChu == "")
+            if (TinhTrang == "Tình trạng phòng" || DonDep == "Tình trạng dọn dẹp" || LoaiPhong == "Loại phòng" || GhiChu == "")
             {
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin phòng.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -254,17 +246,17 @@ namespace HotelManagement.GUI
             }
             try
             {
-                phong.TTDD = this.comboBoxDonDep.Text;
-                phong.GhiChu = this.ctTextBoxGhiChu.Texts;
-                if (this.comboBoxLoaiPhong.Text == "Thường đơn")
+                phong.TTDD = DonDep;
+                phong.GhiChu = GhiChu;
+                if (LoaiPhong == "Thường đơn")
                     phong.MaLPH = "NOR01";
-                else if (this.comboBoxLoaiPhong.Text == "Thường đôi")
+                else if (LoaiPhong == "Thường đôi")
                     phong.MaLPH = "NOR02";
-                else if (this.comboBoxLoaiPhong.Text == "Vip đơn")
+                else if (LoaiPhong == "Vip đơn")
                     phong.MaLPH = "VIP01";
                 else
                     phong.MaLPH = "VIP02";
-                phong.TTPH = this.comboBoxTinhTrangPhong.Text;
+                phong.TTPH = TinhTrang;
                 PhongBUS.Instance.UpdateOrAdd(phong);
             }
             catch (Exception)

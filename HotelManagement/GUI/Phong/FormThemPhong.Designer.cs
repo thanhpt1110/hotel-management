@@ -147,10 +147,10 @@
             this.comboBoxLoaiPhong.ForeColor = System.Drawing.Color.Black;
             this.comboBoxLoaiPhong.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
             this.comboBoxLoaiPhong.Items.AddRange(new object[] {
-            "Phòng đơn thường",
-            "Phòng đơn VIP",
-            "Phòng đôi thường",
-            "Phòng đôi VIP"});
+            "Thường đơn",
+            "Thường đôi",
+            "VIP đơn",
+            "VIP đôi"});
             this.comboBoxLoaiPhong.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.comboBoxLoaiPhong.ListTextColor = System.Drawing.Color.Black;
             this.comboBoxLoaiPhong.Location = new System.Drawing.Point(107, 253);

@@ -142,8 +142,10 @@
             this.comboBoxLoaiPhong.ForeColor = System.Drawing.Color.Black;
             this.comboBoxLoaiPhong.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
             this.comboBoxLoaiPhong.Items.AddRange(new object[] {
-            "  Nam",
-            "  Nữ"});
+            "Thường đơn",
+            "Thường đôi",
+            "VIP đơn",
+            "VIP đôi"});
             this.comboBoxLoaiPhong.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.comboBoxLoaiPhong.ListTextColor = System.Drawing.Color.Black;
             this.comboBoxLoaiPhong.Location = new System.Drawing.Point(107, 214);
@@ -164,7 +166,7 @@
             this.comboBoxDonDep.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
             this.comboBoxDonDep.Items.AddRange(new object[] {
             "Đã dọn dẹp",
-            "Đang dọn dẹp"});
+            "Chưa dọn dẹp"});
             this.comboBoxDonDep.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.comboBoxDonDep.ListTextColor = System.Drawing.Color.Black;
             this.comboBoxDonDep.Location = new System.Drawing.Point(107, 133);
@@ -184,10 +186,8 @@
             this.comboBoxTinhTrangPhong.ForeColor = System.Drawing.Color.Black;
             this.comboBoxTinhTrangPhong.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(145)))), ((int)(((byte)(175)))));
             this.comboBoxTinhTrangPhong.Items.AddRange(new object[] {
-            "Phòng trống",
-            "Đang sửa chữa",
-            "Đang thuê",
-            "Đã đặt"});
+            "Bình thường",
+            "Đang sửa chữa"});
             this.comboBoxTinhTrangPhong.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
             this.comboBoxTinhTrangPhong.ListTextColor = System.Drawing.Color.Black;
             this.comboBoxTinhTrangPhong.Location = new System.Drawing.Point(107, 55);
