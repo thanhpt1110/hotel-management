@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.BUS;
+using ApplicationSettings;
 
 namespace HotelManagement.GUI
 {
@@ -262,6 +263,26 @@ namespace HotelManagement.GUI
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
+        }
+
+        private void ctTextBoxGiaNgay__TextChanged(object sender, EventArgs e)
+        {
+            TextBoxType.Instance.CurrencyType(sender, e);
+        }
+
+        private void ctTextBoxGiaNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
+        }
+
+        private void ctTextBoxGiaGio__TextChanged(object sender, EventArgs e)
+        {
+            TextBoxType.Instance.CurrencyType(sender, e);
+        }
+
+        private void ctTextBoxGiaGio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
         }
     }
 }
