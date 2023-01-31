@@ -1,5 +1,6 @@
 ﻿using HotelManagement.BUS;
 using HotelManagement.CTControls;
+using HotelManagement.DAO;
 using HotelManagement.DTO;
 using HotelManagement.GUI.SoDoPhong;
 using System;
@@ -399,12 +400,14 @@ namespace HotelManagement.GUI
 
         private void CTButtonNhanPhong_Click(object sender, EventArgs e)
         {
-            TimeSpan timeSpan = ctdp.CheckIn - DateTime.Now ;
-            if(timeSpan.Hours>2||timeSpan.Days>0)
+            TimeSpan timeSpan = ctdp.CheckIn - DateTime.Now;
+            if (timeSpan.Hours > 2 || timeSpan.Days > 0)
             {
                 CTMessageBox.Show("Không thể nhận phòng sớm hơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }    
+            }
+            if (phong.TTDD == "Chưa dọn dẹp")
+                CTMessageBox.Show("Phòng chưa dọn dẹp xong.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             ctdp.TrangThai = "Đang thuê";
             CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
             this.Close();
@@ -445,6 +448,7 @@ namespace HotelManagement.GUI
                 HoaDon hd = new HoaDon();
                 try
                 {
+                    phong.TTDD = "Chưa dọn dẹp";
                     hd.MaHD = HoaDonBUS.Instance.getMaHDNext();
                     hd.MaNV = taiKhoan.MaNV;
                     hd.MaCTDP = ctdp.MaCTDP;
@@ -453,6 +457,7 @@ namespace HotelManagement.GUI
                     hd.NgHD = DateTime.Now;
                     HoaDonBUS.Instance.ThanhToanHD(hd);
                     CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
+                    PhongBUS.Instance.UpdateOrAdd(phong);
                 }
                 catch (Exception)
                 {
@@ -485,6 +490,7 @@ namespace HotelManagement.GUI
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.phong = ctdp.Phong;
                         this.phong.TTDD = "Chưa dọn dẹp";
+                        PhongBUS.Instance.UpdateOrAdd(phong);
                         this.LoadPhongTrong();
                         this.Close();
                     }

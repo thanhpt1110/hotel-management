@@ -67,9 +67,9 @@ namespace HotelManagement.GUI
             {
                 this.ctTextBoxGhiChu.RemovePlaceholder();
             }    
-            this.comboBoxDonDep.Text = phong.TTDD;
+            this.comboBoxDonDep.Texts = phong.TTDD;
 
-            this.comboBoxLoaiPhong.Text = phong.LoaiPhong.TenLPH;
+            this.comboBoxLoaiPhong.Texts = phong.LoaiPhong.TenLPH;
             this.comboBoxLoaiPhong.Items.Clear();
             List<LoaiPhong> loaiPhongs = LoaiPhongBUS.Instance.GetLoaiPhongs();
 

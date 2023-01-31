@@ -1,4 +1,6 @@
-﻿namespace HotelManagement
+﻿using System.Windows.Forms;
+
+namespace HotelManagement
 {
     partial class FormCustomDgv
     {

@@ -274,13 +274,13 @@ namespace HotelManagement.GUI
                     phong1.TTPH = "Bình thường";
                 else
                     phong1.TTPH = "Đang sửa chữa";
-                if (LoaiPhong == "Phòng thường đơn")
+                if (LoaiPhong == "Phòng đơn thường")
                 {
                     phong1.MaLPH = "NOR01";
                 }
-                else if (LoaiPhong == "Phòng thường đôi")
+                else if (LoaiPhong == "Phòng đôi thường")
                     phong1.MaLPH = "NOR02";
-                else if (LoaiPhong == "Phòng VIP đơn")
+                else if (LoaiPhong == "Phòng đơn VIP")
                     phong1.MaLPH = "VIP01";
                 else
                     phong1.MaLPH = "VIP02";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.DoubleBuffered = true;
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
             this.CTButtonCapNhat = new HotelManagement.CTControls.CTButton();

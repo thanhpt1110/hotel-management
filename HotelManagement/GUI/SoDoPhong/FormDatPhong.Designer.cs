@@ -1,4 +1,6 @@
-﻿namespace HotelManagement.GUI
+﻿using System.Windows.Forms;
+
+namespace HotelManagement.GUI
 {
     partial class FormDatPhong
     {
@@ -6,7 +8,29 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        public class DoubleBufferPanel : Panel
 
+        {
+
+            public DoubleBufferPanel()
+
+            {
+
+                // Set the value of the double-buffering style bits to true.
+
+                this.DoubleBuffered = true;
+
+                this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+
+                ControlStyles.UserPaint |
+
+                ControlStyles.OptimizedDoubleBuffer, true);
+
+                UpdateStyles();
+
+            }
+
+        }
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -34,7 +58,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new DoubleBufferPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.cbBoxLetterKetThuc = new HotelManagement.CTControls.CTComboBox();
             this.cbBoxGioKetThuc = new HotelManagement.CTControls.CTComboBox();
@@ -76,7 +100,7 @@
             this.CTDatePickerNgayBD = new HotelManagement.CTControls.CTDatePicker();
             this.LabelThongTinPhong = new System.Windows.Forms.Label();
             this.LabelDatPhong = new System.Windows.Forms.Label();
-            this.PanelBackground = new System.Windows.Forms.Panel();
+            this.PanelBackground = new DoubleBufferPanel();
             this.CTButtonHuy = new HotelManagement.CTControls.CTButton();
             this.CTButtonNhanPhong = new HotelManagement.CTControls.CTButton();
             this.CTButtonDatTruoc = new HotelManagement.CTControls.CTButton();

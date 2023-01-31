@@ -237,7 +237,7 @@ namespace HotelManagement.GUI
         private void LoadGrid()
         {
             grid.Rows.Clear();
-            List<CTDP> ctdps = CTDP_BUS.Instance.GetCTDPs().Where(p=>p.MaPT==phieuThue.MaPT).ToList();
+            List<CTDP> ctdps = CTDP_BUS.Instance.GetCTDPs().Where(p=>p.MaPT==phieuThue.MaPT && p.DaXoa==false).ToList();
             foreach(CTDP cTDP in ctdps)
             {
                 grid.Rows.Add(new object[] { cTDP.MaPH, cTDP.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.SoNguoi, this.delete }) ;
