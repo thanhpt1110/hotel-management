@@ -37,6 +37,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::HotelManagement.Properties.Resources.fixedYellowResize;
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.Name = "CTMinimize";
             this.Size = new System.Drawing.Size(15, 15);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.minimize_Paint);

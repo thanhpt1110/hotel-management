@@ -37,6 +37,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::HotelManagement.Properties.Resources.fixedRedResize;
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.Name = "CTClose";
             this.Size = new System.Drawing.Size(15, 15);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.close_Paint);

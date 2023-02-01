@@ -505,7 +505,7 @@ namespace HotelManagement.DAO
                     command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ngayKT;
                     command.CommandText = @"select TenDV, sum(CTDV.DonGia)*SL as GiaDV
                                             from CTDV inner join HoaDon
-                                            on CTDV.MaHD = HoaDon.MaHD
+                                            on CTDV.MaCTDP = HoaDon.MaCTDP
                                             inner join DichVu
                                             on DichVu.MaDV = CTDV.MaDV
                                             where NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
@@ -630,7 +630,7 @@ namespace HotelManagement.DAO
                     command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ngayKT;
                     command.CommandText = @"  select top 5 TenDV, SUM(SL) as SL
                                               from CTDV inner join HoaDon
-                                              on CTDV.MaHD = HoaDon.MaHD
+                                              on CTDV.MaCTDP = HoaDon.MaCTDP
                                               inner join DichVu
                                               on DichVu.MaDV = CTDV.MaDV
                                               where NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
@@ -693,7 +693,7 @@ namespace HotelManagement.DAO
                                               from DichVu inner join CTDV
                                               on DichVu.MaDV = CTDV.MaDV
                                               inner join HoaDon
-                                              on CTDV.MaHD = HoaDon.MaHD
+                                              on CTDV.MaCTDP = HoaDon.MaCTDP
                                               where NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
                                               group by TenDV, DichVu.MaDV, SL
                                               order by SUM(CTDV.DonGia)*SL asc";

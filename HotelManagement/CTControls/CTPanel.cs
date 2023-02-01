@@ -68,5 +68,17 @@ namespace CTPanel
                 this.Region = new Region(rectF);
             }
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // CTPanel
+            // 
+            this.DoubleBuffered = true;
+            this.Name = "CTPanel";
+            this.ResumeLayout(false);
+
+        }
     }
 }

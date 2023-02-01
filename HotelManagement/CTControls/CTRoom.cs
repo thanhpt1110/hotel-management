@@ -46,6 +46,7 @@ namespace HotelManagement.CTControls
             // 
             // CTRoom
             // 
+            this.DoubleBuffered = true;
             this.Name = "CTRoom";
             this.Load += new System.EventHandler(this.CTRoom_Load);
             this.ResumeLayout(false);

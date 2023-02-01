@@ -52,14 +52,14 @@ namespace HotelManagement.CTControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new DoubleBufferPanel();
+            this.panel1 = new HotelManagement.CTControls.CTRoomDangSuaChua.DoubleBufferPanel();
             this.LabelCoc = new System.Windows.Forms.Label();
+            this.PictureBoxTrangThai = new System.Windows.Forms.PictureBox();
             this.LabelTrangThaiLon = new System.Windows.Forms.Label();
             this.LabelLoaiPhong = new System.Windows.Forms.Label();
             this.LabelMaPhong = new System.Windows.Forms.Label();
             this.LabelThoiGian = new System.Windows.Forms.Label();
             this.LabelTrangThaiDonDep = new System.Windows.Forms.Label();
-            this.PictureBoxTrangThai = new System.Windows.Forms.PictureBox();
             this.PictureBoxTrangThaiDonDep = new System.Windows.Forms.PictureBox();
             this.PictureBoxThoiGian = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -96,6 +96,17 @@ namespace HotelManagement.CTControls
             this.LabelCoc.TabIndex = 9;
             this.LabelCoc.Text = "Hư điều hòa";
             this.LabelCoc.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
+            // 
+            // PictureBoxTrangThai
+            // 
+            this.PictureBoxTrangThai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxTrangThai.Image = global::HotelManagement.Properties.Resources.DangSuaChua;
+            this.PictureBoxTrangThai.Location = new System.Drawing.Point(25, 63);
+            this.PictureBoxTrangThai.Name = "PictureBoxTrangThai";
+            this.PictureBoxTrangThai.Size = new System.Drawing.Size(50, 50);
+            this.PictureBoxTrangThai.TabIndex = 8;
+            this.PictureBoxTrangThai.TabStop = false;
+            this.PictureBoxTrangThai.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
             // 
             // LabelTrangThaiLon
             // 
@@ -167,17 +178,6 @@ namespace HotelManagement.CTControls
             this.LabelTrangThaiDonDep.Text = "Đã dọn dẹp";
             this.LabelTrangThaiDonDep.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
             // 
-            // PictureBoxTrangThai
-            // 
-            this.PictureBoxTrangThai.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxTrangThai.Image = global::HotelManagement.Properties.Resources.DangSuaChua;
-            this.PictureBoxTrangThai.Location = new System.Drawing.Point(25, 63);
-            this.PictureBoxTrangThai.Name = "PictureBoxTrangThai";
-            this.PictureBoxTrangThai.Size = new System.Drawing.Size(50, 50);
-            this.PictureBoxTrangThai.TabIndex = 8;
-            this.PictureBoxTrangThai.TabStop = false;
-            this.PictureBoxTrangThai.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
-            // 
             // PictureBoxTrangThaiDonDep
             // 
             this.PictureBoxTrangThaiDonDep.BackColor = System.Drawing.Color.Transparent;
@@ -212,6 +212,7 @@ namespace HotelManagement.CTControls
             this.Controls.Add(this.LabelThoiGian);
             this.Controls.Add(this.PictureBoxThoiGian);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(15, 20, 0, 0);
             this.Name = "CTRoomDangSuaChua";
             this.Size = new System.Drawing.Size(280, 155);
@@ -229,8 +230,6 @@ namespace HotelManagement.CTControls
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox PictureBoxTrangThai;
         private System.Windows.Forms.Label LabelTrangThaiLon;
         private System.Windows.Forms.Label LabelLoaiPhong;
@@ -240,5 +239,6 @@ namespace HotelManagement.CTControls
         private System.Windows.Forms.PictureBox PictureBoxThoiGian;
         private System.Windows.Forms.Label LabelThoiGian;
         private System.Windows.Forms.Label LabelTrangThaiDonDep;
+        private DoubleBufferPanel panel1;
     }
 }
