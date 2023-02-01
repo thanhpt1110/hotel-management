@@ -52,7 +52,7 @@ namespace HotelManagement.CTControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new DoubleBufferPanel();
+            this.panel1 = new HotelManagement.CTControls.CTRoomDangThue.DoubleBufferPanel();
             this.PictureBoxTrangThai = new System.Windows.Forms.PictureBox();
             this.LabelTrangThaiLon = new System.Windows.Forms.Label();
             this.LabelLoaiPhong = new System.Windows.Forms.Label();
@@ -196,6 +196,7 @@ namespace HotelManagement.CTControls
             this.Controls.Add(this.PictureBoxThoiGian);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(15, 20, 0, 0);
             this.Name = "CTRoomDangThue";
             this.Size = new System.Drawing.Size(280, 155);
@@ -213,8 +214,6 @@ namespace HotelManagement.CTControls
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LabelMaPhong;
         private System.Windows.Forms.Label LabelLoaiPhong;
         private System.Windows.Forms.Label LabelTrangThaiLon;
@@ -223,5 +222,6 @@ namespace HotelManagement.CTControls
         private System.Windows.Forms.Label LabelThoiGian;
         private System.Windows.Forms.Label LabelTrangThaiDonDep;
         private System.Windows.Forms.PictureBox PictureBoxTrangThaiDonDep;
+        private DoubleBufferPanel panel1;
     }
 }

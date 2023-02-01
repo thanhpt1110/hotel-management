@@ -30,12 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // CTTimePicker
+            // CTBorderPanel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "CTTimePicker";
+            this.Name = "CTBorderPanel";
             this.Size = new System.Drawing.Size(134, 37);
             this.ResumeLayout(false);
 

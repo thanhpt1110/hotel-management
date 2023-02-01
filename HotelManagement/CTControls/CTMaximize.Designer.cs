@@ -37,6 +37,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::HotelManagement.Properties.Resources.fixedGreenResize;
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.Name = "CTMaximize";
             this.Size = new System.Drawing.Size(15, 15);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.maximize_Paint);
