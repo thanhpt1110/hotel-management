@@ -125,7 +125,7 @@ namespace HotelManagement.GUI
                 }
                 if (phong.TTPH == "Bình thường" && (ctdp == null || ctdp.TrangThai=="Đã xong") && (this.CTRadioButtonPhongTrong.Checked || this.CTRadioButtonTatCaPhong.Checked))
                 {
-                    CTRoomTrong room = new CTRoomTrong(phong, this, this.formMain);
+                    CTRoomTrong room = new CTRoomTrong(phong, this, this.formMain,taiKhoan);
                     room.Name = "PhongTrong";
                     if (phong.TTDD == "Đã dọn dẹp")
                         room.setDaDonDep();

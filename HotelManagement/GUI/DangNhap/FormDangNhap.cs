@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.CTControls;
+using HotelManagement.DTO;
 
 namespace HotelManagement.GUI
 {
@@ -31,8 +32,11 @@ namespace HotelManagement.GUI
         {
             if (TaiKhoanBUS.Instance.checkLogin(this.textBoxUsername.Texts, textBoxPassword.Texts))
             {
-                FormMain formMain = new FormMain(TaiKhoanBUS.Instance.GetTKDangNhap(textBoxUsername.Texts));
-                formLoginParent.Hide();
+                string account = textBoxUsername.Texts;
+                HotelDTO db = new HotelDTO();
+                TaiKhoan taiKhoan = db.TaiKhoans.Find(account);
+                FormMain formMain = new FormMain(taiKhoan);
+                formLoginParent.Hide(); 
                 formMain.ShowDialog();
                 formLoginParent.Close();
             }

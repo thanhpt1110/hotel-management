@@ -138,7 +138,7 @@ namespace HotelManagement.DAO
         public void RemoveCTDP(CTDP cTDP)
         {
             HotelDTO db = new HotelDTO();
-            
+                
                 cTDP.DaXoa = true;
                 db.CTDPs.AddOrUpdate(cTDP);
                 db.SaveChanges();

@@ -27,11 +27,11 @@ namespace HotelManagement.GUI
         private List<CTDP> listPhongDaDat = new List<CTDP>();
         private Image Add = Properties.Resources.Add; // Image for Button Thêm
         private Image Del = Properties.Resources.delete1; // Image for Button Hủy
-        private KhachHang khachHang = new KhachHang();
-        private int flag = 0;
+        private KhachHang khachHang;
+        private int caseForm = 0;
         private int flagHoTen = 0;
         private TaiKhoan taiKhoan;
-        private PhieuThue phieuThue = new PhieuThue();
+        private PhieuThue phieuThue;
         private DateTime CheckIn = DateTime.Now;  // flag = 1
         private DateTime CheckOut = DateTime.Now; // flag = 2
 
@@ -44,14 +44,15 @@ namespace HotelManagement.GUI
             InitializeComponent();
             phieuThue.MaPT = PhieuThueBUS.Instance.GetMaPTNext();
         }
-        public FormDatPhong(TaiKhoan taiKhoan)
+        public FormDatPhong(TaiKhoan taiKhoan,PhieuThue phieuThue = null)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             this.taiKhoan = taiKhoan;
+            this.phieuThue = phieuThue;
             InitializeComponent();
-            phieuThue.MaPT = PhieuThueBUS.Instance.GetMaPTNext();
+
         }
         //Control Box
 
@@ -229,7 +230,6 @@ namespace HotelManagement.GUI
             this.Close();
         }
         #endregion
-
         private void setLoadComboBox()
         {
             DateTime datetime = DateTime.Now;
@@ -270,10 +270,26 @@ namespace HotelManagement.GUI
             grid1.ColumnHeadersDefaultCellStyle.Font = new Font(grid1.Font, FontStyle.Bold);
             LoadgridPhongTrong();
             LoadGridPhongDat();
-            phieuThue.MaPT = PhieuThueBUS.Instance.GetMaPTNext();
             setLoadComboBox();
+            LoadTenKH();
         }
-
+        private void LoadTenKH()
+        {
+            if(this.phieuThue!=null)
+            {
+                caseForm = 1;
+                CTTextBoxNhapSDT.RemovePlaceholder();
+                CTTextBoxNhapDiaChi.RemovePlaceholder();
+                CTTextBoxNhapHoTen.RemovePlaceholder();
+                CTTextBoxNhapCCCD.RemovePlaceholder();
+                this.khachHang = KhachHangBUS.Instance.FindKhachHang(this.phieuThue.MaKH);
+                this.CTTextBoxNhapCCCD.Texts = khachHang.CCCD_Passport;
+                this.CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
+                this.CTTextBoxNhapSDT.Texts = khachHang.SDT;
+                this.ComboBoxGioiTinh.Texts ="  "+ khachHang.GioiTinh;
+                this.CTTextBoxNhapDiaChi.Texts = khachHang.QuocTich;
+            }
+        }
         private void LoadgridPhongTrong()
         {
             gridPhongTrong.Rows.Clear();
@@ -318,7 +334,6 @@ namespace HotelManagement.GUI
                 {
                     CTDP cTDP = new CTDP();
                     cTDP.MaCTDP = CTDP_BUS.Instance.getNextCTDPwithList(this.listPhongDaDat);
-                    cTDP.MaPT = this.phieuThue.MaPT;
                     cTDP.DatCoc = 0;
                     cTDP.CheckIn = this.CheckIn;
                     cTDP.CheckOut = this.CheckOut;
@@ -512,6 +527,13 @@ namespace HotelManagement.GUI
 
         private void CTButtonDatTruoc_Click(object sender, EventArgs e)
         {
+            int flag = 0;
+            if(listPhongDaDat.Count==0)
+            {
+                CTMessageBox.Show("Chưa thêm thông tin đặt phòng", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }    
             if (this.CTTextBoxNhapCCCD.Texts != "" && this.CTTextBoxNhapDiaChi.Texts != "" && this.CTTextBoxNhapHoTen.Texts != "" && this.ComboBoxGioiTinh.Texts != "  Giới tính")
             {
                 try
@@ -520,6 +542,7 @@ namespace HotelManagement.GUI
                     CreatePhieuThue();
                     CreateCTDP();
                     CreateHoaDon();
+                        flag = 1;
                 }
                 catch (Exception ex)
                 {
@@ -528,6 +551,7 @@ namespace HotelManagement.GUI
                 }
                 finally
                 {
+                        if(flag==1)
                     CTMessageBox.Show("Đặt phòng thành công.", "Thông báo",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
@@ -541,30 +565,38 @@ namespace HotelManagement.GUI
         }
         private void CreateKH()
         {
-            if (flagHoTen == 1)
+            if (phieuThue == null)
             {
+                khachHang = new KhachHang();
+                if (flagHoTen == 1)
+                {
 
-                khachHang.MaKH = this.khachHang.MaKH;
-                //CTMessageBox.Show("Thành cong");
+                    khachHang.MaKH = this.khachHang.MaKH;
+                    //CTMessageBox.Show("Thành cong");
+                }
+                else
+                    khachHang.MaKH = KhachHangBUS.Instance.GetMaKHNext();
+                khachHang.SDT = CTTextBoxNhapSDT.Texts;
+                khachHang.QuocTich = CTTextBoxNhapDiaChi.Texts;
+                khachHang.TenKH = CTTextBoxNhapHoTen.Texts;
+                khachHang.CCCD_Passport = CTTextBoxNhapCCCD.Texts;
+                khachHang.GioiTinh = this.ComboBoxGioiTinh.Texts.Trim(' ');
+
+                KhachHangBUS.Instance.UpdateOrAdd(khachHang);
             }
-            else
-            khachHang.MaKH = KhachHangBUS.Instance.GetMaKHNext();
-            khachHang.SDT = CTTextBoxNhapSDT.Texts;
-            khachHang.QuocTich = CTTextBoxNhapDiaChi.Texts;
-            khachHang.TenKH = CTTextBoxNhapHoTen.Texts;
-            khachHang.CCCD_Passport = CTTextBoxNhapCCCD.Texts;
-            khachHang.GioiTinh = this.ComboBoxGioiTinh.Texts.Trim(' ');
-           
-            KhachHangBUS.Instance.UpdateOrAdd(khachHang);
         }
         private void CreatePhieuThue()
         {
-            
-            phieuThue.MaNV = "NV001";
-            phieuThue.DaXoa = false;
-            phieuThue.MaKH = khachHang.MaKH;
-            phieuThue.NgPT = DateTime.Now;
-            PhieuThueBUS.Instance.AddOrUpdatePhieuThue(phieuThue);         
+            if (phieuThue == null)
+            {
+                phieuThue = new PhieuThue();
+                phieuThue.MaPT = PhieuThueBUS.Instance.GetMaPTNext();
+                phieuThue.MaNV = taiKhoan.MaNV;
+                phieuThue.DaXoa = false;
+                phieuThue.MaKH = khachHang.MaKH;
+                phieuThue.NgPT = DateTime.Now;
+                PhieuThueBUS.Instance.AddOrUpdatePhieuThue(phieuThue);
+            }
         }
 
         void CreateCTDP()
@@ -597,23 +629,26 @@ namespace HotelManagement.GUI
         {
             TextBox textBox = sender as TextBox;
             textBox.MaxLength = 12;
-            if (KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text) != null)
+            if (caseForm == 0)
             {
-                CTMessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách.\r\nThông tin sẽ được tự động điền.", "Thông báo", 
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CTTextBoxNhapSDT.RemovePlaceholder();
-                CTTextBoxNhapDiaChi.RemovePlaceholder();
-                CTTextBoxNhapHoTen.RemovePlaceholder();
-                // CTTextBoxNhapCCCD.RemovePlaceholder();
+                if (KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text) != null)
+                {
+                    CTMessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách.\r\nThông tin sẽ được tự động điền.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CTTextBoxNhapSDT.RemovePlaceholder();
+                    CTTextBoxNhapDiaChi.RemovePlaceholder();
+                    CTTextBoxNhapHoTen.RemovePlaceholder();
+                    // CTTextBoxNhapCCCD.RemovePlaceholder();
 
 
-                khachHang = KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text);
-                CTTextBoxNhapSDT.Texts = khachHang.SDT;
-                CTTextBoxNhapDiaChi.Texts = khachHang.QuocTich;
-                ComboBoxGioiTinh.Texts = khachHang.GioiTinh;
-                CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
-                ComboBoxGioiTinh.Focus();
-                flagHoTen = 1;
+                    khachHang = KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text);
+                    CTTextBoxNhapSDT.Texts = khachHang.SDT;
+                    CTTextBoxNhapDiaChi.Texts = khachHang.QuocTich;
+                    ComboBoxGioiTinh.Texts = khachHang.GioiTinh;
+                    CTTextBoxNhapHoTen.Texts = khachHang.TenKH;
+                    ComboBoxGioiTinh.Focus();
+                    flagHoTen = 1;
+                }
             }
         }
 

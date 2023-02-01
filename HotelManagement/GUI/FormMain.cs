@@ -213,12 +213,6 @@ namespace HotelManagement
             int time = 300;
             WinAPI.AnimateWindow(this.Handle, time, WinAPI.CENTER);
             this.LabelTenNguoiDung.Text = taiKhoan.NhanVien.TenNV;
-            if (taiKhoan.NhanVien.AnhDaiDien != null)
-            {
-                //Image image = Image.FromFile(@"\\HotelManagement\\Avatar\\QL001_admin.png");
-               // this.PictureBoxUser.Image = image;
-
-            }
         }
         private Form activeForm = null;
         public void openChildForm(Form childForm)

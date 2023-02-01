@@ -303,7 +303,22 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemPT_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (FormDatPhong formDatPhong = new FormDatPhong(null,this.phieuThue))
+                {
+                    formDatPhong.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                CTMessageBox.Show(ex.Message, "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.Close();
+            }
         }
 
         private void CTButtonOK_Click(object sender, EventArgs e)

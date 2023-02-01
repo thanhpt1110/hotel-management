@@ -418,7 +418,7 @@ namespace HotelManagement.GUI
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
-                using (FormDatPhong formDatPhong = new FormDatPhong())
+                using (FormDatPhong formDatPhong = new FormDatPhong(this.taiKhoan))
                 {
                     formBackground.Owner = formMain;
                     formBackground.Show();

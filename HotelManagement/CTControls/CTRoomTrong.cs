@@ -22,6 +22,7 @@ namespace HotelManagement.CTControls
         Phong phong = new Phong();
         FormSoDoPhong formSoDoPhong;
         FormMain formMain;
+        TaiKhoan taiKhoan;
         public override string getMaPhong()
         {
             return this.LabelMaPhong.Text;
@@ -132,7 +133,7 @@ namespace HotelManagement.CTControls
             this.ForeColor = Color.White;
             InitializeComponent();
         }
-        public CTRoomTrong(Phong phong, FormSoDoPhong soDoPhong, FormMain formMain)
+        public CTRoomTrong(Phong phong, FormSoDoPhong soDoPhong, FormMain formMain, TaiKhoan taiKhoan)
         {
             this.SetStyle(ControlStyles.UserPaint, true);
             this.Size = new Size(280, 155);
@@ -144,6 +145,7 @@ namespace HotelManagement.CTControls
             this.formMain = formMain;
             this.LoaiPhong = "PhongTrong";
             this.MaPhong = phong.MaPH;
+            this.taiKhoan = taiKhoan;
         }
 
 
@@ -278,7 +280,7 @@ namespace HotelManagement.CTControls
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
-                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, null, phong))
+                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, null, phong,taiKhoan))
                 {
                     formBackground.Owner = formMain;
                     formBackground.Show();

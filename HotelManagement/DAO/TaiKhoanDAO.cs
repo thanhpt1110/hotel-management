@@ -49,8 +49,10 @@ namespace HotelManagement.DAO
         }    
         public TaiKhoan GetTKDangNhap(string username)
         {
+            HotelDTO db = new HotelDTO();
+            TaiKhoan tk = db.TaiKhoans.Where(p => p.TenTK == username && p.DaXoa == false).SingleOrDefault();
 
-                return db.TaiKhoans.Where(p=>p.TenTK==username && p.DaXoa==false).SingleOrDefault();
+            return tk;
             
         }
         public void AddOrUpdateTK(TaiKhoan taiKhoan)
