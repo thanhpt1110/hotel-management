@@ -510,14 +510,6 @@ namespace HotelManagement.GUI
         }
         #endregion
 
-        private void CTButtonNhanPhong_Click(object sender, EventArgs e)
-        {
-            if(DateTime.Now.Hour  == this.CheckIn.Hour)
-            {
-
-            }    
-        }
-
         private void CTButtonDatTruoc_Click(object sender, EventArgs e)
         {
             if (this.CTTextBoxNhapCCCD.Texts != "" && this.CTTextBoxNhapDiaChi.Texts != "" && this.CTTextBoxNhapHoTen.Texts != "" && this.ComboBoxGioiTinh.Texts != "  Giới tính")
@@ -635,6 +627,11 @@ namespace HotelManagement.GUI
         private void TextBoxOnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBoxType.Instance.TextBoxOnlyNumber(e);
+        }
+
+        private void CTTextBoxNhapDiaChi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxNotNumber(e);
         }
     }
 }

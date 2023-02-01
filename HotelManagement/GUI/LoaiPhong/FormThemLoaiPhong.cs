@@ -234,5 +234,25 @@ namespace HotelManagement.GUI
                 this.Close();
             }
         }
+
+        private void ctTextBoxGiaGio__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctTextBoxGiaGio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void ctTextBoxGiaNgay__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctTextBoxGiaNgay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

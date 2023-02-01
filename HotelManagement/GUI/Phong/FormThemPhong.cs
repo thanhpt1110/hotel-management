@@ -223,7 +223,7 @@ namespace HotelManagement.GUI
             string GhiChu = ctTextBoxGhiChu.Texts;
             int flag1 = 0;
             
-            if (TinhTrang == "    Tình trạng phòng" || DonDep == "  Tình trạng dọn dẹp" || LoaiPhong == "  Loại phòng" || MaPH == "")
+            if (TinhTrang == "Tình trạng phòng" || DonDep == "Tình trạng dọn dẹp" || LoaiPhong == "Loại phòng" || MaPH == "")
             {
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin phòng.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -274,13 +274,11 @@ namespace HotelManagement.GUI
                     phong1.TTPH = "Bình thường";
                 else
                     phong1.TTPH = "Đang sửa chữa";
-                if (LoaiPhong == "Phòng đơn thường")
-                {
+                if (LoaiPhong == "Thường đơn")
                     phong1.MaLPH = "NOR01";
-                }
-                else if (LoaiPhong == "Phòng đôi thường")
+                else if (LoaiPhong == "Thường đôi")
                     phong1.MaLPH = "NOR02";
-                else if (LoaiPhong == "Phòng đơn VIP")
+                else if (LoaiPhong == "VIP đơn")
                     phong1.MaLPH = "VIP01";
                 else
                     phong1.MaLPH = "VIP02";

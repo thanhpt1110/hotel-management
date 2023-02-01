@@ -102,7 +102,6 @@ namespace HotelManagement.GUI
             this.LabelDatPhong = new System.Windows.Forms.Label();
             this.PanelBackground = new DoubleBufferPanel();
             this.CTButtonHuy = new HotelManagement.CTControls.CTButton();
-            this.CTButtonNhanPhong = new HotelManagement.CTControls.CTButton();
             this.CTButtonDatTruoc = new HotelManagement.CTControls.CTButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -621,6 +620,7 @@ namespace HotelManagement.GUI
             this.CTTextBoxNhapDiaChi.TabIndex = 4;
             this.CTTextBoxNhapDiaChi.Texts = "";
             this.CTTextBoxNhapDiaChi.UnderlineedStyle = true;
+            this.CTTextBoxNhapDiaChi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CTTextBoxNhapDiaChi_KeyPress);
             // 
             // CTTextBoxNhapSDT
             // 
@@ -832,7 +832,6 @@ namespace HotelManagement.GUI
             // 
             this.PanelBackground.BackColor = System.Drawing.Color.White;
             this.PanelBackground.Controls.Add(this.CTButtonHuy);
-            this.PanelBackground.Controls.Add(this.CTButtonNhanPhong);
             this.PanelBackground.Controls.Add(this.CTButtonDatTruoc);
             this.PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBackground.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -863,27 +862,6 @@ namespace HotelManagement.GUI
             this.CTButtonHuy.TextColor = System.Drawing.Color.White;
             this.CTButtonHuy.UseVisualStyleBackColor = false;
             this.CTButtonHuy.Click += new System.EventHandler(this.CTButtonHuy_Click);
-            // 
-            // CTButtonNhanPhong
-            // 
-            this.CTButtonNhanPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonNhanPhong.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonNhanPhong.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
-            this.CTButtonNhanPhong.BorderRadius = 10;
-            this.CTButtonNhanPhong.BorderSize = 0;
-            this.CTButtonNhanPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CTButtonNhanPhong.FlatAppearance.BorderSize = 0;
-            this.CTButtonNhanPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CTButtonNhanPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CTButtonNhanPhong.ForeColor = System.Drawing.Color.White;
-            this.CTButtonNhanPhong.Location = new System.Drawing.Point(458, 529);
-            this.CTButtonNhanPhong.Name = "CTButtonNhanPhong";
-            this.CTButtonNhanPhong.Size = new System.Drawing.Size(150, 40);
-            this.CTButtonNhanPhong.TabIndex = 15;
-            this.CTButtonNhanPhong.Text = "Nhận phòng";
-            this.CTButtonNhanPhong.TextColor = System.Drawing.Color.White;
-            this.CTButtonNhanPhong.UseVisualStyleBackColor = false;
-            this.CTButtonNhanPhong.Click += new System.EventHandler(this.CTButtonNhanPhong_Click);
             // 
             // CTButtonDatTruoc
             // 
@@ -958,7 +936,6 @@ namespace HotelManagement.GUI
         private System.Windows.Forms.Label label1;
         private CTControls.CTDatePicker CTDatePickerNgayKT;
         private CTControls.CTDatePicker CTDatePickerNgayBD;
-        private CTControls.CTButton CTButtonNhanPhong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox PictureBoxGioBD;
         private CTControls.CTButton CTButtonDatTruoc;

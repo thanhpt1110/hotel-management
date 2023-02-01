@@ -278,6 +278,8 @@
             this.ctTextBoxGiaGio.TabIndex = 8;
             this.ctTextBoxGiaGio.Texts = "";
             this.ctTextBoxGiaGio.UnderlineedStyle = true;
+            this.ctTextBoxGiaGio._TextChanged += new System.EventHandler(this.ctTextBoxGiaGio__TextChanged);
+            this.ctTextBoxGiaGio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ctTextBoxGiaGio_KeyPress);
             // 
             // ctTextBoxGiaNgay
             // 
@@ -301,6 +303,8 @@
             this.ctTextBoxGiaNgay.TabIndex = 7;
             this.ctTextBoxGiaNgay.Texts = "";
             this.ctTextBoxGiaNgay.UnderlineedStyle = true;
+            this.ctTextBoxGiaNgay._TextChanged += new System.EventHandler(this.ctTextBoxGiaNgay__TextChanged);
+            this.ctTextBoxGiaNgay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ctTextBoxGiaNgay_KeyPress);
             // 
             // FormSuaLoaiPhong
             // 
