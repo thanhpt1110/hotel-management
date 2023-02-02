@@ -27,7 +27,7 @@ namespace HotelManagement.GUI
         private List<CTDP> listPhongDaDat = new List<CTDP>();
         private Image Add = Properties.Resources.Add; // Image for Button Thêm
         private Image Del = Properties.Resources.delete1; // Image for Button Hủy
-        private KhachHang khachHang;
+        private KhachHang khachHang = new KhachHang();
         private int caseForm = 0;
         private int flagHoTen = 0;
         private TaiKhoan taiKhoan;
@@ -567,7 +567,7 @@ namespace HotelManagement.GUI
         {
             if (phieuThue == null)
             {
-                khachHang = new KhachHang();
+                
                 if (flagHoTen == 1)
                 {
 

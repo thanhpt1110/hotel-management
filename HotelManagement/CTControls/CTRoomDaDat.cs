@@ -230,7 +230,7 @@ namespace HotelManagement.CTControls
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
-                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, ctdp, null, taiKhoan))
+                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, ctdp, BUS.PhongBUS.Instance.FindePhong(ctdp.MaPH), taiKhoan))
                 {
                     formBackground.Owner = formMain;
                     formBackground.Show();

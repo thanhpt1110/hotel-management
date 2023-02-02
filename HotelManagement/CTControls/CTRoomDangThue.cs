@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.GUI;
+using HotelManagement.BUS;
+
 namespace HotelManagement.CTControls
 {
     public partial class CTRoomDangThue : CTRoom
@@ -229,7 +231,7 @@ namespace HotelManagement.CTControls
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
-                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, ctdp, null, taiKhoan))
+                using (FormThongTinPhong formThongTinPhong = new FormThongTinPhong(formMain, this.LabelTrangThaiLon.Text, ctdp, PhongBUS.Instance.FindePhong(ctdp.MaPH), taiKhoan))
                 {
                     formBackground.Owner = formMain;
                     formBackground.Show();
