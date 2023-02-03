@@ -20,6 +20,12 @@ namespace CTPanel
         // Constructor
         public CTPanel()
         {
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+
+ControlStyles.UserPaint |
+
+ControlStyles.OptimizedDoubleBuffer, true);
             this.BackColor = Color.White;
             this.ForeColor = Color.Black;
             this.Size = new Size(350, 200);

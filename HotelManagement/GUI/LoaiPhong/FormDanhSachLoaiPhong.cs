@@ -21,16 +21,18 @@ namespace HotelManagement.GUI
         private Image details = Properties.Resources.details;
         private List<LoaiPhong> loaiPhongs;
         private FormMain formMain;
+        private TaiKhoan taiKhoan1;
 
         public FormDanhSachLoaiPhong()
         {
             InitializeComponent();
         }
 
-        public FormDanhSachLoaiPhong(FormMain formMain)
+        public FormDanhSachLoaiPhong(FormMain formMain,TaiKhoan taiKhoan)
         {
             InitializeComponent();
             this.formMain = formMain;
+            this.taiKhoan1 = taiKhoan;
         }
 
         /*private void CTButtonThemLoaiPhong_Click(object sender, EventArgs e)
@@ -133,7 +135,7 @@ namespace HotelManagement.GUI
                     {
                         string MaLP = grid.Rows[y].Cells[1].Value.ToString();
                         string TenLP = grid.Rows[y].Cells[2].Value.ToString();
-                        using (FormDanhSachChiTietTienNghi formDanhSachChiTietTienNghi = new FormDanhSachChiTietTienNghi(MaLP, TenLP, formMain))
+                        using (FormDanhSachChiTietTienNghi formDanhSachChiTietTienNghi = new FormDanhSachChiTietTienNghi(MaLP, TenLP, formMain,this.taiKhoan1))
                         {
                             formBackground.Owner = formMain;
                             formBackground.Show();
@@ -153,6 +155,11 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 8)
                 {
+                    if (taiKhoan1.CapDoQuyen == 1)
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {

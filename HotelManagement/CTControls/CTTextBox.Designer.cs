@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.DoubleBuffered = true;
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 

@@ -76,7 +76,7 @@ namespace HotelManagement.GUI
             this.ctTextBoxSDT.Texts = this.nhanVien.SDT;
             this.CTTextBoxDiaChi.Texts = this.nhanVien.DiaChi;
             this.CTTextBoxNhapHoTen.Texts = this.nhanVien.TenNV;
-            this.CTTextBoxLuong.Texts = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C0}", this.nhanVien.Luong).Trim('$');
+            this.CTTextBoxLuong.Texts = this.nhanVien.Luong.ToString("#,#");
         }
         //Private Methods
         //Private Methods

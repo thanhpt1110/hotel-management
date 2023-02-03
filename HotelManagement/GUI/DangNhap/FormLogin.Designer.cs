@@ -1,4 +1,6 @@
-﻿namespace HotelManagement
+﻿using System.Windows.Forms;
+
+namespace HotelManagement
 {
     partial class FormLogin
     {
@@ -6,7 +8,29 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        public class DoubleBufferPanel : Panel
 
+        {
+
+            public DoubleBufferPanel()
+
+            {
+
+                // Set the value of the double-buffering style bits to true.
+
+                this.DoubleBuffered = true;
+
+                this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+
+                ControlStyles.UserPaint |
+
+                ControlStyles.OptimizedDoubleBuffer, true);
+
+                UpdateStyles();
+
+            }
+
+        }
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -28,11 +52,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.DoubleBuffered = true;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.panelBackground = new System.Windows.Forms.Panel();
-            this.panelLogin = new System.Windows.Forms.Panel();
-            this.PanelLoginContent = new System.Windows.Forms.Panel();
-            this.panelControlBox = new System.Windows.Forms.Panel();
+            this.panelBackground = new DoubleBufferPanel();
+            this.panelLogin = new DoubleBufferPanel();
+            this.PanelLoginContent = new DoubleBufferPanel();
+            this.panelControlBox = new DoubleBufferPanel();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();

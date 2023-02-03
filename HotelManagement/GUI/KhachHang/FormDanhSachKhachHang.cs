@@ -21,17 +21,19 @@ namespace HotelManagement.GUI
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         private FormMain formMain;
+        private TaiKhoan taiKhoan;
         public FormDanhSachKhachHang()
         {
             InitializeComponent();
             LoadAllGrid();
         }
 
-        public FormDanhSachKhachHang(FormMain formMain)
+        public FormDanhSachKhachHang(FormMain formMain,TaiKhoan taiKhoan)
         {
             InitializeComponent();
             LoadAllGrid();
             this.formMain = formMain;
+            this.taiKhoan = taiKhoan;
         }
 
         private void CTButtonThemKhachHang_Click(object sender, EventArgs e)
@@ -174,7 +176,12 @@ namespace HotelManagement.GUI
                 }
                 if (x == 8)
                 {
-                     //If click Delete button 
+                    if(taiKhoan.CapDoQuyen==1)
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }    
+                    //If click Delete button 
                     DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", 
                                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dialogresult == DialogResult.Yes)

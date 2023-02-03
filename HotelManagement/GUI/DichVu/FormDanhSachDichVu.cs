@@ -21,19 +21,26 @@ namespace HotelManagement.GUI
         private Image delete = Properties.Resources.delete;
         private List<DichVu> dichVus;
         private FormMain formMain;
+        private TaiKhoan taiKhoan;
         public FormDanhSachDichVu()
         {
             InitializeComponent();
         }
 
-        public FormDanhSachDichVu(FormMain formMain)
+        public FormDanhSachDichVu(FormMain formMain, TaiKhoan taiKhoan)
         {
             InitializeComponent();
             this.formMain = formMain;
+            this.taiKhoan = taiKhoan;
         }
 
         private void CTButtonThemDichVu_Click(object sender, EventArgs e)
         {
+            if (taiKhoan.CapDoQuyen == 1)
+            {
+                CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
@@ -143,6 +150,11 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 5)
                 {
+                    if (taiKhoan.CapDoQuyen == 1)
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
@@ -165,6 +177,11 @@ namespace HotelManagement.GUI
                 if (x == 6)
                 {
                     // If click Delete button 
+                    if (taiKhoan.CapDoQuyen == 1)
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
                                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dialogresult == DialogResult.Yes)

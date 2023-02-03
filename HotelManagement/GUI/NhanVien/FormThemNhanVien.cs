@@ -224,11 +224,6 @@ namespace HotelManagement.GUI
         {
             TextBox textBoxMoney = sender as TextBox;
             textBoxMoney.KeyPress += TextBoxMoney_KeyPress;
-            textBoxMoney.TextChanged += TextBoxMoney_TextChanged;
-        }
-
-        private void TextBoxMoney_TextChanged(object sender, EventArgs e)
-        {
             TextBoxType.Instance.CurrencyType(sender, e);
         }
 
@@ -302,6 +297,7 @@ namespace HotelManagement.GUI
                     nhanVien.SDT = SDT;
                     nhanVien.DiaChi = DiaChi;
                     nhanVien.TenNV = HoTen;
+                    nhanVien.Luong=decimal.Parse(Luong.Trim(','));
                     NhanVienBUS.Instance.UpdateOrInsert(nhanVien);
                 }
                 catch (Exception ex)

@@ -445,9 +445,8 @@
             this.LabelTenNguoiDung.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTenNguoiDung.Location = new System.Drawing.Point(46, 99);
             this.LabelTenNguoiDung.Name = "LabelTenNguoiDung";
-            this.LabelTenNguoiDung.Size = new System.Drawing.Size(161, 25);
+            this.LabelTenNguoiDung.Size = new System.Drawing.Size(0, 25);
             this.LabelTenNguoiDung.TabIndex = 1;
-            this.LabelTenNguoiDung.Text = "Nguyễn Tấn Toàn";
             // 
             // PictureBoxUser
             // 

@@ -23,6 +23,7 @@ namespace HotelManagement.GUI
         private Image delete = Properties.Resources.delete;
         private FormMain formMain;
         private string MaLPH, TenLP;
+        private TaiKhoan taiKhoan;
         //Constructor
         public FormDanhSachChiTietTienNghi()
         {
@@ -32,7 +33,7 @@ namespace HotelManagement.GUI
             InitializeComponent();
         }
 
-        public FormDanhSachChiTietTienNghi(string MaLPH, string TenLP, FormMain formMain)
+        public FormDanhSachChiTietTienNghi(string MaLPH, string TenLP, FormMain formMain,TaiKhoan taiKhoan)
         {
             this.DoubleBuffered = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -40,6 +41,7 @@ namespace HotelManagement.GUI
             this.MaLPH = MaLPH;
             this.TenLP = TenLP;
             this.formMain = formMain;
+            this.taiKhoan = taiKhoan;
             InitializeComponent();
         }
         //Fields
@@ -252,6 +254,11 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 3)
                 {
+                    if (taiKhoan.CapDoQuyen == 1)
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
@@ -282,6 +289,11 @@ namespace HotelManagement.GUI
                     // If click Delete button 
 
                     // If click delete button
+                    if (taiKhoan.CapDoQuyen == 1)
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
                                                                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dialogresult == DialogResult.Yes)
@@ -311,6 +323,11 @@ namespace HotelManagement.GUI
 
         private void CTButtonThemChiTietTienNghi_Click(object sender, EventArgs e)
         {
+            if (taiKhoan.CapDoQuyen == 1)
+            {
+                CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             FormBackground formBackground = new FormBackground(formMain);
             try
             {

@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.DTO;
 using HotelManagement.BUS;
+using System.Drawing.Design;
+
 namespace HotelManagement.GUI
 {
     public partial class FormDanhSachPhong : Form
@@ -19,19 +21,26 @@ namespace HotelManagement.GUI
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         private FormMain formMain;
+        private TaiKhoan taiKhoan;
         public FormDanhSachPhong()
         {
             InitializeComponent();
         }
 
-        public FormDanhSachPhong(FormMain formMain)
+        public FormDanhSachPhong(FormMain formMain,TaiKhoan taiKhoan)
         {
             InitializeComponent();
             this.formMain = formMain;
+            this.taiKhoan = taiKhoan;
         }
 
         private void CTButtonThemPhong_Click(object sender, EventArgs e)
         {
+            if (taiKhoan.CapDoQuyen == 1)
+            {
+                CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             FormBackground formBackground = new FormBackground(formMain);
             try
             {
@@ -132,6 +141,11 @@ namespace HotelManagement.GUI
                 // If click Update button 
                 if (x == 5)
                 {
+                    if (taiKhoan.CapDoQuyen == 1)
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
@@ -161,6 +175,11 @@ namespace HotelManagement.GUI
                 {
 
                     // If click delete button
+                    if (taiKhoan.CapDoQuyen == 1)
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     int flag = 0;
                     DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

@@ -20,17 +20,20 @@ namespace HotelManagement.GUI
         private Image edit = Properties.Resources.edit;
         private Image delete = Properties.Resources.delete;
         private FormMain formMain;
+        private TaiKhoan taiKhoan1;
         List<NhanVien> nhanViens;
         public FormDanhSachNhanVien()
         {
             InitializeComponent();
         }
 
-        public FormDanhSachNhanVien(FormMain formMain)
+        
+        public FormDanhSachNhanVien(FormMain formMain,TaiKhoan taiKhoan)
         {
             InitializeComponent();
             this.formMain = formMain;
-        }
+            this.taiKhoan1 = taiKhoan;
+        }   
 
         private void CTButtonThemNhanVien_Click(object sender, EventArgs e)
         {
@@ -70,7 +73,10 @@ namespace HotelManagement.GUI
         }
         public void LoadAllGrid()
         {
-            this.nhanViens = NhanVienBUS.Instance.GetNhanViens();
+            if(taiKhoan1.CapDoQuyen==2)
+                this.nhanViens = NhanVienBUS.Instance.GetNhanViens().Where(p=> !p.MaNV.StartsWith("AD")).ToList();
+            else
+                this.nhanViens = NhanVienBUS.Instance.GetNhanViens();
             LoadGrid();
         }
         private void LoadGrid()
@@ -139,8 +145,14 @@ namespace HotelManagement.GUI
             if (y >= 0)
             {
                 // If click Update button 
+                
                 if (x == 8)
                 {
+                    if (taiKhoan1.CapDoQuyen == 2 && this.grid.Rows[y].Cells[1].Value.ToString().StartsWith("QL"))
+                    {
+                        CTMessageBox.Show("Bạn không có quyền sửa thông tin này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
@@ -164,6 +176,11 @@ namespace HotelManagement.GUI
                 // If click delete
                 if (x == 9)
                 {
+                    if (taiKhoan1.CapDoQuyen == 2 && this.grid.Rows[y].Cells[1].Value.ToString().StartsWith("QL"))
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dialogresult == DialogResult.Yes)
@@ -189,6 +206,11 @@ namespace HotelManagement.GUI
                 if (x >= 0 && x <= 7)
                 {
                     // If click Info
+                    if (taiKhoan1.CapDoQuyen == 2 && this.grid.Rows[y].Cells[1].Value.ToString().StartsWith("QL"))
+                    {
+                        CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
@@ -230,21 +252,19 @@ namespace HotelManagement.GUI
         private void CTTextBoxTimTheoTenNhanVien__TextChanged(object sender, EventArgs e)
         {
             TextBox textBoxNhanVien = sender as TextBox;
-            textBoxNhanVien.TextChanged += TextBoxNhanVien_TextChanged;
-        }
-
-        private void TextBoxNhanVien_TextChanged(object sender, EventArgs e)
-        {
-            TextBox textBoxNhanVien = sender as TextBox;
 
             if (textBoxNhanVien.Focused == false)
             {
                 LoadAllGrid();
                 return;
             }
-            this.nhanViens = NhanVienBUS.Instance.GetNhanViensWithName(textBoxNhanVien.Text);
+            if(taiKhoan1.CapDoQuyen==2)
+                this.nhanViens = NhanVienBUS.Instance.GetNhanViensWithName(textBoxNhanVien.Text).Where(p=>!p.MaNV.StartsWith("AD")).ToList();
+            else
+                this.nhanViens = NhanVienBUS.Instance.GetNhanViensWithName(textBoxNhanVien.Text);
+
             LoadGrid();
-        } 
+        }
         private void grid_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             grid.Cursor = Cursors.Default;
