@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.DoubleBuffered = true;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.panelMainChildForm = new System.Windows.Forms.Panel();

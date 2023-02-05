@@ -231,7 +231,7 @@ namespace HotelManagement.GUI
             this.LabelNhanVienLapPhieu.Text = this.phieuThue.NhanVien.TenNV;
             this.LabelChiTietPhieuThueTieuDe.Text = this.phieuThue.MaPT;
             this.LabelTen.Text = this.phieuThue.KhachHang.TenKH;
-            this.LabelThoiGianLapPhieu.Text = this.phieuThue.NgPT.ToString("dd/MM/yyyy hh:mm:");
+            this.LabelThoiGianLapPhieu.Text = this.phieuThue.NgPT.ToString("dd/MM/yyyy hh:mm");
             LoadGrid();
         }
         private void LoadGrid()
@@ -271,7 +271,7 @@ namespace HotelManagement.GUI
                     try
                     {
 
-                        DateTime date = DateTime.ParseExact(grid.Rows[y].Cells[1].Value.ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+                        DateTime date = DateTime.ParseExact(grid.Rows[y].Cells[1].Value.ToString(), "dd-MM-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
                         CTDP cTDP = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaPT == phieuThue.MaPT).ToList()[y];
                         if(cTDP.TrangThai == "Đã xong" || cTDP.TrangThai =="Đang thuê")
                         {
@@ -286,9 +286,26 @@ namespace HotelManagement.GUI
                     }
                     catch (Exception ex)
                     {
-                        CTMessageBox.Show(ex.Message, "Thông báo",
+                        try
+                        {
+                            DateTime date = DateTime.ParseExact(grid.Rows[y].Cells[1].Value.ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+                            CTDP cTDP = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaPT == phieuThue.MaPT).ToList()[y];
+                            if (cTDP.TrangThai == "Đã xong" || cTDP.TrangThai == "Đang thuê")
+                            {
+                                CTMessageBox.Show("Thông tin đặt phòng này không hủy được do đang được thuê hoặc đã xong!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                            cTDP.TrangThai = "Đã hủy";
+                            cTDP.DaXoa = true;
+                            CTDP_BUS.Instance.RemoveCTDP(cTDP);
+                            flag = 1;
+                        }
+                        catch (Exception ex1)
+                        {
+                            CTMessageBox.Show(ex1.Message, "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                            return;
+                        }
                     }
                     finally
                     {

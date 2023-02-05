@@ -303,6 +303,7 @@ namespace HotelManagement.CTControls
             touchMouse = true;
             PanelTop.BackColor = Color.FromArgb(47, 109, 39);
             BackColor = Color.FromArgb(154, 148, 150);
+            this.PictureBoxThoiGian.BackColor = Color.FromArgb(154, 148, 150);
             this.Invalidate();
         }
 
@@ -310,6 +311,8 @@ namespace HotelManagement.CTControls
         {
             PanelTop.BackColor = Color.FromArgb(113, 201, 103);
             BackColor = Color.FromArgb(230, 222, 224);
+            this.PictureBoxThoiGian.BackColor = BackColor;
+
         }
     }
 }

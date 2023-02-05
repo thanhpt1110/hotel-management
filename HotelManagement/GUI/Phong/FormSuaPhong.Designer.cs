@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DoubleBuffered = true;
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.CTButtonThoat = new HotelManagement.CTControls.CTButton();
             this.CTButtonCapNhat = new HotelManagement.CTControls.CTButton();
@@ -268,6 +267,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(533, 535);
             this.Controls.Add(this.PanelBackground);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSuaPhong";

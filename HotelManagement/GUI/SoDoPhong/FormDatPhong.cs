@@ -536,7 +536,7 @@ namespace HotelManagement.GUI
             }    
             if (this.CTTextBoxNhapCCCD.Texts != "" && this.CTTextBoxNhapDiaChi.Texts != "" && this.CTTextBoxNhapHoTen.Texts != "" && this.ComboBoxGioiTinh.Texts != "  Giới tính")
             {
-                if (CTTextBoxNhapCCCD.Texts.Length != 12 && CTTextBoxNhapCCCD.Texts.Length != 7)
+/*                if (CTTextBoxNhapCCCD.Texts.Length != 12 && CTTextBoxNhapCCCD.Texts.Length != 7)
                 {
                     CTMessageBox.Show("Vui lòng nhập đầy đủ số CCCD/Passport.", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -547,7 +547,7 @@ namespace HotelManagement.GUI
                     CTMessageBox.Show("Vui lòng nhập đầy đủ SĐT.", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
-                }
+                }*/
                 try
                 {
                     CreateKH();

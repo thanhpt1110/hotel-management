@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +9,7 @@ using System.Drawing.Drawing2D;
 
 namespace HotelManagement.CTControls
 {
-    internal class CTButton: Button
+    internal class CTButton : Button
     {
         // Turn off focus
         protected override bool ShowFocusCues
