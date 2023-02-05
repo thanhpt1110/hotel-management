@@ -276,11 +276,15 @@ namespace HotelManagement.GUI
 
         private void CTTextBoxNhapMatKhau__TextChanged(object sender, EventArgs e)
         {
-            TextBox textBoxPasswordConfirm = sender as TextBox;
+            if (CTTextBoxNhapMatKhau.Texts.Length > 0 && ctEyePassword1.IsShow == false)
+            {
+                CTTextBoxNhapMatKhau.PasswordChar = true;
+            }
+            /*TextBox textBoxPasswordConfirm = sender as TextBox;
             if (textBoxPasswordConfirm.Focused == false)
                 textBoxPasswordConfirm.UseSystemPasswordChar = false;
             else
-                textBoxPasswordConfirm.UseSystemPasswordChar = true;
+                textBoxPasswordConfirm.UseSystemPasswordChar = true;*/
         }
 
         private void ctEyePassword1_Click(object sender, EventArgs e)

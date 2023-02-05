@@ -51,7 +51,7 @@ namespace HotelManagement.GUI
                 try
                 {
                     TaiKhoanBUS.Instance.AddOrUpdateTK(taiKhoan);
-                    CTMessageBox.Show("Đổi mật khẩu thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    CTMessageBox.Show("Đổi mật khẩu thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 catch (Exception ex)
@@ -65,25 +65,33 @@ namespace HotelManagement.GUI
 
         private void textBoxPassword__TextChanged(object sender, EventArgs e)
         {
-            TextBox textBoxPassword = sender as TextBox;
+            if (textBoxPassword.Texts.Length > 0 && ctEyePassword1.IsShow == false)
+            {
+                textBoxPassword.PasswordChar = true;
+            }
+            /*TextBox textBoxPassword = sender as TextBox;
             if (textBoxPassword.Focused == false)
             {
                 textBoxPassword.UseSystemPasswordChar = false;
             }
             else
-                textBoxPassword.UseSystemPasswordChar = true;
+                textBoxPassword.UseSystemPasswordChar = true;*/
         }
 
 
         private void textBoxPassConfirm__TextChanged(object sender, EventArgs e)
         {
-            TextBox textBoxPasswordConfirm = sender as TextBox;
+            if (textBoxPassConfirm.Texts.Length > 0 && ctEyePassword2.IsShow == false)
+            {
+                textBoxPassConfirm.PasswordChar = true;
+            }
+            /*TextBox textBoxPasswordConfirm = sender as TextBox;
             if (textBoxPasswordConfirm.Focused == false)
             {
                 textBoxPasswordConfirm.UseSystemPasswordChar = false;
             }
             else
-                textBoxPasswordConfirm.UseSystemPasswordChar = true;
+                textBoxPasswordConfirm.UseSystemPasswordChar = true;*/
         }
 
         private void ctEyePassword1_Click(object sender, EventArgs e)

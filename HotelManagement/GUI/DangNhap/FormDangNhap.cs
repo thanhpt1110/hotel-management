@@ -51,7 +51,10 @@ namespace HotelManagement.GUI
 
         private void textBoxPassword__TextChanged(object sender, EventArgs e)
         {
-
+            if(textBoxPassword.Texts.Length>0 && ctEyePassword1.IsShow == false)
+            {
+                textBoxPassword.PasswordChar = true;
+            }
         }
 
         private void ctEyePassword1_Click(object sender, EventArgs e)
