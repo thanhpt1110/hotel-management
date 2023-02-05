@@ -1,4 +1,5 @@
-﻿using HotelManagement.CTControls;
+﻿using ApplicationSettings;
+using HotelManagement.CTControls;
 using HotelManagement.DAO;
 using HotelManagement.DTO;
 using System;
@@ -253,6 +254,17 @@ namespace HotelManagement.GUI
                     this.Close();
                 }
             
+        }
+
+        private void CTTextBoxSoLuong__TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBoxOnlyNum = sender as TextBox;
+            textBoxOnlyNum.KeyPress += TextBoxOnlyNum_KeyPress;
+        }
+
+        private void TextBoxOnlyNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBoxType.Instance.TextBoxOnlyNumber(e);
         }
     }
 }

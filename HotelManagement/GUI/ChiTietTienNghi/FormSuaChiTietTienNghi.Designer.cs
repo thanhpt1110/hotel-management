@@ -169,6 +169,7 @@
             this.CTTextBoxSoLuong.TabIndex = 3;
             this.CTTextBoxSoLuong.Texts = "";
             this.CTTextBoxSoLuong.UnderlineedStyle = true;
+            this.CTTextBoxSoLuong._TextChanged += new System.EventHandler(this.CTTextBoxSoLuong__TextChanged);
             // 
             // ctTextBoxGhiChu
             // 

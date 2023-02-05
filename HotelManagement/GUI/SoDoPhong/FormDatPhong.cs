@@ -536,6 +536,18 @@ namespace HotelManagement.GUI
             }    
             if (this.CTTextBoxNhapCCCD.Texts != "" && this.CTTextBoxNhapDiaChi.Texts != "" && this.CTTextBoxNhapHoTen.Texts != "" && this.ComboBoxGioiTinh.Texts != "  Giới tính")
             {
+                if (CTTextBoxNhapCCCD.Texts.Length != 12 && CTTextBoxNhapCCCD.Texts.Length != 7)
+                {
+                    CTMessageBox.Show("Vui lòng nhập đầy đủ số CCCD/Passport.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (CTTextBoxNhapSDT.Texts.Length != 10)
+                {
+                    CTMessageBox.Show("Vui lòng nhập đầy đủ SĐT.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
                 try
                 {
                     CreateKH();
@@ -629,6 +641,7 @@ namespace HotelManagement.GUI
         {
             TextBox textBox = sender as TextBox;
             textBox.MaxLength = 12;
+            textBox.KeyPress += TextBoxOnlyNumber_KeyPress;
             if (caseForm == 0)
             {
                 if (KhachHangBUS.Instance.FindKHWithCCCD(textBox.Text) != null)

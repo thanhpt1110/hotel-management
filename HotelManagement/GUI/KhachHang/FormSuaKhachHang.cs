@@ -256,49 +256,58 @@ namespace HotelManagement.GUI
 
         private void TextBoxCCCD_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             TextBoxType.Instance.TextBoxOnlyNumber(e);
-
         }
-
-
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
             if (this.ctTextBoxName.Texts != "" && this.ctTextBoxQuocTich.Texts != "" && this.ctTextBoxCCCD.Texts != "" && this.comboBoxGioiTinh.Texts != "  Giới tính")
             {
-                    List<KhachHang> khachHangs = KhachHangBUS.Instance.GetKhachHangs();
-                    foreach (KhachHang khachHang in khachHangs)
+                if (ctTextBoxCCCD.Texts.Length != 12 && ctTextBoxCCCD.Texts.Length != 7)
+                {
+                    CTMessageBox.Show("Vui lòng nhập đầy đủ số CCCD/Passport.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (ctTextBoxSDT.Texts.Length != 10)
+                {
+                    CTMessageBox.Show("Vui lòng nhập đầy đủ SĐT.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                List<KhachHang> khachHangs = KhachHangBUS.Instance.GetKhachHangs();
+                foreach (KhachHang khachHang in khachHangs)
+                {
+                    if (khachHang.CCCD_Passport == this.ctTextBoxCCCD.Texts && this.khachHang.CCCD_Passport != this.ctTextBoxCCCD.Texts)
                     {
-                        if (khachHang.CCCD_Passport == this.ctTextBoxCCCD.Texts && this.khachHang.CCCD_Passport != this.ctTextBoxCCCD.Texts)
-                        {
-                            CTMessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách khách hàng! Vui lòng kiểm tra lại thông tin.", "Thông báo", 
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-                    try
-                    {
-                        khachHang.TenKH = this.ctTextBoxName.Texts;
-                        khachHang.QuocTich = this.ctTextBoxQuocTich.Texts;
-                        khachHang.CCCD_Passport = this.ctTextBoxCCCD.Texts;
-                        khachHang.SDT = this.ctTextBoxSDT.Texts;
-                        khachHang.GioiTinh = this.comboBoxGioiTinh.Texts.Trim(' ');
-                        KhachHangBUS.Instance.UpdateOrAdd(khachHang);
-                    }
-                    catch (Exception)
-                    {
-                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                        CTMessageBox.Show("Đã tồn tại số CCCD/Passport này trong danh sách khách hàng! Vui lòng kiểm tra lại thông tin.", "Thông báo", 
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
-                    finally
-                    {
-                        CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.formDanhSachKhachHang.LoadAllGrid();
-                        this.Close();
-                    }
-    
+                }
+                try
+                {
+                    khachHang.TenKH = this.ctTextBoxName.Texts;
+                    khachHang.QuocTich = this.ctTextBoxQuocTich.Texts;
+                    khachHang.CCCD_Passport = this.ctTextBoxCCCD.Texts;
+                    khachHang.SDT = this.ctTextBoxSDT.Texts;
+                    khachHang.GioiTinh = this.comboBoxGioiTinh.Texts.Trim(' ');
+                    KhachHangBUS.Instance.UpdateOrAdd(khachHang);
+
+                    CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.formDanhSachKhachHang.LoadAllGrid();
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                { 
+                }
             }
             else
                 CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng.", "Thông báo",

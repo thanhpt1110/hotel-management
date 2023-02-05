@@ -218,7 +218,20 @@ namespace HotelManagement.GUI
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
             if (this.ctTextBoxName.Texts != "" && this.ctTextBoxQuocTich.Texts != "" && this.ctTextBoxCMND.Texts != "" && this.comboBoxGioiTinh.Texts != "  Giới tính")
-            {   
+            {
+                if (ctTextBoxCMND.Texts.Length != 12 && ctTextBoxCMND.Texts.Length != 7 )
+                {
+                    CTMessageBox.Show("Vui lòng nhập đầy đủ số CCCD/Passport.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (ctTextBoxSDT.Texts.Length != 10)
+                {
+                    CTMessageBox.Show("Vui lòng nhập đầy đủ SĐT.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 List<KhachHang> khachHangs = KhachHangBUS.Instance.GetKhachHangs();
                 foreach (KhachHang khachHang in khachHangs)
                 {
@@ -239,6 +252,11 @@ namespace HotelManagement.GUI
                     khachHang1.SDT = this.ctTextBoxSDT.Texts;
                     khachHang1.GioiTinh = this.comboBoxGioiTinh.Texts.Trim(' ');
                     KhachHangBUS.Instance.UpdateOrAdd(khachHang1);
+
+                    this.formDanhSachKhachHang.LoadAllGrid();
+                    CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch(Exception)
                 {
@@ -247,10 +265,6 @@ namespace HotelManagement.GUI
                 }
                 finally
                 {
-                    this.formDanhSachKhachHang.LoadAllGrid();
-                    CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
                 }
             }
             else
@@ -277,19 +291,14 @@ namespace HotelManagement.GUI
 
         private void ctTextBoxCMND__TextChanged(object sender, EventArgs e)
         {
-            
             TextBox textBoxCCCD = sender as TextBox;
             textBoxCCCD.MaxLength = 12;
             textBoxCCCD.KeyPress += TextBoxCCCD_KeyPress;
-
         }
 
-
         private void TextBoxCCCD_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
+        {   
             TextBoxType.Instance.TextBoxOnlyNumber(e);
-
         }
 
         private void ctTextBoxSDT__TextChanged(object sender, EventArgs e)
@@ -314,7 +323,5 @@ namespace HotelManagement.GUI
         {
             TextBoxType.Instance.TextBoxNotNumber(e);
         }
-
-
     }
 }
