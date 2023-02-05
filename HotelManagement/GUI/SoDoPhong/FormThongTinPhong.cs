@@ -400,17 +400,25 @@ namespace HotelManagement.GUI
 
         private void CTButtonNhanPhong_Click(object sender, EventArgs e)
         {
-            TimeSpan timeSpan = ctdp.CheckIn - DateTime.Now;
-            if (timeSpan.Hours > 2 || timeSpan.Days > 0)
+            try
             {
-                CTMessageBox.Show("Không thể nhận phòng sớm hơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                TimeSpan timeSpan = ctdp.CheckIn - DateTime.Now;
+                if (timeSpan.Hours > 2 || timeSpan.Days > 0)
+                {
+                    CTMessageBox.Show("Không thể nhận phòng sớm hơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (phong.TTDD == "Chưa dọn dẹp")
+                    CTMessageBox.Show("Phòng chưa dọn dẹp xong.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ctdp.TrangThai = "Đang thuê";
+                CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
+                this.Close();
             }
-            if (phong.TTDD == "Chưa dọn dẹp")
-                CTMessageBox.Show("Phòng chưa dọn dẹp xong.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            ctdp.TrangThai = "Đang thuê";
-            CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
-            this.Close();
+            catch(Exception ex)
+            {
+                CTMessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void CTButtonDatPhongNay_Click(object sender, EventArgs e)

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DoubleBuffered = true;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDangNhap));
             this.buttonLogin = new HotelManagement.CTControls.CTButton();
             this.textBoxPassword = new HotelManagement.CTControls.CTTextBox();
             this.textBoxUsername = new HotelManagement.CTControls.CTTextBox();
             this.labelForgotPassword = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ctEyePassword1 = new HotelManagement.CTControls.CTEyePassword();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,17 +129,32 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // ctEyePassword1
+            // 
+            this.ctEyePassword1.BackColor = System.Drawing.Color.Transparent;
+            this.ctEyePassword1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctEyePassword1.BackgroundImage")));
+            this.ctEyePassword1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ctEyePassword1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctEyePassword1.IsShow = false;
+            this.ctEyePassword1.Location = new System.Drawing.Point(265, 262);
+            this.ctEyePassword1.Name = "ctEyePassword1";
+            this.ctEyePassword1.Size = new System.Drawing.Size(30, 26);
+            this.ctEyePassword1.TabIndex = 14;
+            this.ctEyePassword1.Click += new System.EventHandler(this.ctEyePassword1_Click);
+            // 
             // FormDangNhap
             // 
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 466);
+            this.Controls.Add(this.ctEyePassword1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelForgotPassword);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDangNhap";
             this.ShowIcon = false;
@@ -157,5 +173,6 @@
         private CTControls.CTTextBox textBoxUsername;
         private System.Windows.Forms.LinkLabel labelForgotPassword;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private CTControls.CTEyePassword ctEyePassword1;
     }
 }

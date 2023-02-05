@@ -282,5 +282,24 @@ namespace HotelManagement.GUI
             else
                 textBoxPasswordConfirm.UseSystemPasswordChar = true;
         }
+
+        private void ctEyePassword1_Click(object sender, EventArgs e)
+        {
+            if (ctEyePassword1.IsShow == false)
+            {
+                ctEyePassword1.IsShow = true;
+                CTTextBoxNhapMatKhau.PasswordChar = false;
+                ctEyePassword1.BackgroundImage = Properties.Resources.hide;
+            }
+            else
+            {
+                ctEyePassword1.IsShow = false;
+                if (CTTextBoxNhapMatKhau.Texts != "")
+                {
+                    CTTextBoxNhapMatKhau.PasswordChar = true;
+                }
+                ctEyePassword1.BackgroundImage = Properties.Resources.show;
+            }
+        }
     }
 }

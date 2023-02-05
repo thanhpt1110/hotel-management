@@ -89,7 +89,7 @@
             this.labelMessage.Padding = new System.Windows.Forms.Padding(5, 5, 10, 15);
             this.labelMessage.Size = new System.Drawing.Size(305, 56);
             this.labelMessage.TabIndex = 6;
-            this.labelMessage.Text = "UIT là truog dh top 1 mien nam";
+            this.labelMessage.Text = "Main Text";
             this.labelMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBoxIcon
@@ -241,9 +241,9 @@
             this.labelCaption.ForeColor = System.Drawing.Color.White;
             this.labelCaption.Location = new System.Drawing.Point(9, 8);
             this.labelCaption.Name = "labelCaption";
-            this.labelCaption.Size = new System.Drawing.Size(137, 20);
+            this.labelCaption.Size = new System.Drawing.Size(62, 20);
             this.labelCaption.TabIndex = 4;
-            this.labelCaption.Text = "Chọn đi bạn chẻ ơi";
+            this.labelCaption.Text = "Caption";
             // 
             // FormMessageBox
             // 

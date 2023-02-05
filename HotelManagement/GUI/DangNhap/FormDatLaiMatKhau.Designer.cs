@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDatLaiMatKhau));
             this.PictureBoxBack = new System.Windows.Forms.PictureBox();
             this.ButtonOK = new HotelManagement.CTControls.CTButton();
             this.textBoxPassConfirm = new HotelManagement.CTControls.CTTextBox();
             this.textBoxPassword = new HotelManagement.CTControls.CTTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ctEyePassword1 = new HotelManagement.CTControls.CTEyePassword();
+            this.ctEyePassword2 = new HotelManagement.CTControls.CTEyePassword();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -128,11 +131,39 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
+            // ctEyePassword1
+            // 
+            this.ctEyePassword1.BackColor = System.Drawing.Color.Transparent;
+            this.ctEyePassword1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctEyePassword1.BackgroundImage")));
+            this.ctEyePassword1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ctEyePassword1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctEyePassword1.IsShow = false;
+            this.ctEyePassword1.Location = new System.Drawing.Point(266, 186);
+            this.ctEyePassword1.Name = "ctEyePassword1";
+            this.ctEyePassword1.Size = new System.Drawing.Size(30, 26);
+            this.ctEyePassword1.TabIndex = 17;
+            this.ctEyePassword1.Click += new System.EventHandler(this.ctEyePassword1_Click);
+            // 
+            // ctEyePassword2
+            // 
+            this.ctEyePassword2.BackColor = System.Drawing.Color.Transparent;
+            this.ctEyePassword2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctEyePassword2.BackgroundImage")));
+            this.ctEyePassword2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ctEyePassword2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctEyePassword2.IsShow = false;
+            this.ctEyePassword2.Location = new System.Drawing.Point(266, 263);
+            this.ctEyePassword2.Name = "ctEyePassword2";
+            this.ctEyePassword2.Size = new System.Drawing.Size(30, 26);
+            this.ctEyePassword2.TabIndex = 18;
+            this.ctEyePassword2.Click += new System.EventHandler(this.ctEyePassword2_Click);
+            // 
             // FormDatLaiMatKhau
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 466);
+            this.Controls.Add(this.ctEyePassword2);
+            this.Controls.Add(this.ctEyePassword1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PictureBoxBack);
             this.Controls.Add(this.ButtonOK);
@@ -156,5 +187,7 @@
         private CTControls.CTTextBox textBoxPassConfirm;
         private System.Windows.Forms.PictureBox PictureBoxBack;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private CTControls.CTEyePassword ctEyePassword1;
+        private CTControls.CTEyePassword ctEyePassword2;
     }
 }

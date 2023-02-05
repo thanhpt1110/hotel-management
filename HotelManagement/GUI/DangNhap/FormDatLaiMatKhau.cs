@@ -86,5 +86,42 @@ namespace HotelManagement.GUI
                 textBoxPasswordConfirm.UseSystemPasswordChar = true;
         }
 
+        private void ctEyePassword1_Click(object sender, EventArgs e)
+        {
+            if (ctEyePassword1.IsShow == false)
+            {
+                ctEyePassword1.IsShow = true;
+                textBoxPassword.PasswordChar = false;
+                ctEyePassword1.BackgroundImage = Properties.Resources.hide;
+            }
+            else
+            {
+                ctEyePassword1.IsShow = false;
+                if (textBoxPassword.Texts != "")
+                {
+                    textBoxPassword.PasswordChar = true;
+                }
+                ctEyePassword1.BackgroundImage = Properties.Resources.show;
+            }
+        }
+
+        private void ctEyePassword2_Click(object sender, EventArgs e)
+        {
+            if (ctEyePassword2.IsShow == false)
+            {
+                ctEyePassword2.IsShow = true;
+                textBoxPassConfirm.PasswordChar = false;
+                ctEyePassword2.BackgroundImage = Properties.Resources.hide;
+            }
+            else
+            {
+                ctEyePassword2.IsShow = false;
+                if (textBoxPassConfirm.Texts != "")
+                {
+                    textBoxPassConfirm.PasswordChar = true;
+                }
+                ctEyePassword2.BackgroundImage = Properties.Resources.show;
+            }
+        }
     }
 }

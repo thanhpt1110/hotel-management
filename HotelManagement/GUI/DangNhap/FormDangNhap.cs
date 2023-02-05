@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.CTControls;
 using HotelManagement.DTO;
+using System.Security.Cryptography;
 
 namespace HotelManagement.GUI
 {
@@ -51,6 +52,25 @@ namespace HotelManagement.GUI
         private void textBoxPassword__TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ctEyePassword1_Click(object sender, EventArgs e)
+        {
+            if (ctEyePassword1.IsShow == false)
+            {
+                ctEyePassword1.IsShow = true;
+                textBoxPassword.PasswordChar = false;
+                ctEyePassword1.BackgroundImage = Properties.Resources.hide;
+            }
+            else
+            {
+                ctEyePassword1.IsShow = false;
+                if (textBoxPassword.Texts != "")
+                {
+                    textBoxPassword.PasswordChar = true;
+                }
+                ctEyePassword1.BackgroundImage = Properties.Resources.show;
+            }
         }
     }
 }

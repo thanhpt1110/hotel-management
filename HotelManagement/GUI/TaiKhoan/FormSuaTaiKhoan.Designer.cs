@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CTTextBoxNhapMatKhau = new HotelManagement.CTControls.CTTextBox();
             this.CTTextBoxNhapTenTaiKhoan = new HotelManagement.CTControls.CTTextBox();
+            this.ctEyePassword1 = new HotelManagement.CTControls.CTEyePassword();
             this.PanelBackground.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -121,6 +122,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(235)))), ((int)(((byte)(243)))));
+            this.panel1.Controls.Add(this.ctEyePassword1);
             this.panel1.Controls.Add(this.comboBoxCapDoQuyen);
             this.panel1.Controls.Add(this.ctTextBoxMaNV);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -262,6 +264,20 @@
             this.CTTextBoxNhapTenTaiKhoan.Texts = "";
             this.CTTextBoxNhapTenTaiKhoan.UnderlineedStyle = true;
             // 
+            // ctEyePassword1
+            // 
+            this.ctEyePassword1.BackColor = System.Drawing.Color.Transparent;
+            this.ctEyePassword1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ctEyePassword1.BackgroundImage")));
+            this.ctEyePassword1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ctEyePassword1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ctEyePassword1.IsShow = false;
+            this.ctEyePassword1.Location = new System.Drawing.Point(326, 208);
+            this.ctEyePassword1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctEyePassword1.Name = "ctEyePassword1";
+            this.ctEyePassword1.Size = new System.Drawing.Size(25, 20);
+            this.ctEyePassword1.TabIndex = 7;
+            this.ctEyePassword1.Click += new System.EventHandler(this.ctEyePassword1_Click);
+            // 
             // FormSuaTaiKhoan
             // 
             this.AcceptButton = this.CTButtonCapNhat;
@@ -307,5 +323,6 @@
         private CTControls.CTTextBox CTTextBoxNhapTenTaiKhoan;
         private CTControls.CTTextBox ctTextBoxMaNV;
         private CTControls.CTComboBox comboBoxCapDoQuyen;
+        private CTControls.CTEyePassword ctEyePassword1;
     }
 }

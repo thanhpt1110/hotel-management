@@ -482,6 +482,5 @@ namespace HotelManagement.CTControls
         {
             this.Close();
         }
-
     }
 }
