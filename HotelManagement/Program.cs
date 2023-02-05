@@ -18,8 +18,7 @@ namespace HotelManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
-            //Application.Run(new FormKetNoiCSDL());
+            Application.Run(new FormKetNoiCSDL());
         }
     }
 }

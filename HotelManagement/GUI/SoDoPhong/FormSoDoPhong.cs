@@ -14,6 +14,7 @@ using HotelManagement.DAO;
 using System.Net.NetworkInformation;
 using System.Xml.Serialization;
 using System.Runtime.CompilerServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HotelManagement.GUI
 {
@@ -35,6 +36,18 @@ namespace HotelManagement.GUI
             this.formMain = formMain;
             this.taiKhoan = taiKhoan;
             LoadLanDau();
+            textBox1.GotFocus += TextBox1_GotFocus;
+            textBox1.LostFocus += TextBox1_LostFocus;
+        }
+
+        private void TextBox1_LostFocus(object sender, EventArgs e)
+        {
+            flag1 = 1;
+        }
+
+        private void TextBox1_GotFocus(object sender, EventArgs e)
+        {
+            flag1 = 1;
         }
 
         #region Load sơ đồ phòng
@@ -168,8 +181,26 @@ namespace HotelManagement.GUI
         {
             ResetTimer(this.timerSearch);
         }
-        private static void ResetTimer(Timer timer)
+
+        private void CTTextBox_LostFocus(object sender, EventArgs e)
         {
+            flag1 = 1;
+
+        }
+
+        private int flag1 = 0;
+        private void CTTextBox_GotFocus(object sender, EventArgs e)
+        {
+            flag1 = 1;
+        }
+
+        private  void ResetTimer(Timer timer)
+        {
+            /*if(flag1==1)
+            {
+                flag1 = 0;
+                return;
+            }  */  
             timer.Stop();
             timer.Start();         
         }
@@ -326,9 +357,9 @@ namespace HotelManagement.GUI
 
         private void SetAppear()
         {
-            panelSoDoPhong.Dock = DockStyle.None;
+/*            panelSoDoPhong.Dock = DockStyle.None;
             panelSoDoPhong.Size = new Size(0, 0);
-            timerAppear.Start();
+            timerAppear.Start();*/
         }
 
         private void timerAppear_Tick(object sender, EventArgs e)
@@ -437,6 +468,11 @@ namespace HotelManagement.GUI
             this.label1.Show();
             this.panelSoDoPhong.Show();
             LoadPhong(phongs);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            ResetTimer(this.timerSearch);
 
         }
     }

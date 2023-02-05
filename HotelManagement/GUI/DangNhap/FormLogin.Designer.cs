@@ -52,17 +52,17 @@ namespace HotelManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.DoubleBuffered = true;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.panelBackground = new DoubleBufferPanel();
-            this.panelLogin = new DoubleBufferPanel();
-            this.PanelLoginContent = new DoubleBufferPanel();
-            this.panelControlBox = new DoubleBufferPanel();
+            this.panelBackground = new HotelManagement.FormLogin.DoubleBufferPanel();
+            this.panelLogin = new HotelManagement.FormLogin.DoubleBufferPanel();
+            this.PanelLoginContent = new HotelManagement.FormLogin.DoubleBufferPanel();
+            this.panelControlBox = new HotelManagement.FormLogin.DoubleBufferPanel();
             this.ctMaximize1 = new HotelManagement.CTControls.CTMaximize();
             this.ctMinimize1 = new HotelManagement.CTControls.CTMinimize();
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
             this.labelCorporation = new System.Windows.Forms.Label();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panelBackground.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.panelControlBox.SuspendLayout();
@@ -84,6 +84,7 @@ namespace HotelManagement
             // panelLogin
             // 
             this.panelLogin.BackColor = System.Drawing.Color.White;
+            this.panelLogin.Controls.Add(this.linkLabel1);
             this.panelLogin.Controls.Add(this.PanelLoginContent);
             this.panelLogin.Controls.Add(this.panelControlBox);
             this.panelLogin.Controls.Add(this.labelCorporation);
@@ -172,6 +173,17 @@ namespace HotelManagement
             this.pictureBoxIcon.TabStop = false;
             this.pictureBoxIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIcon_MouseDown);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(72, 11);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(65, 13);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Chuyển csdl";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // FormLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -201,16 +213,16 @@ namespace HotelManagement
             this.ResumeLayout(false);
 
         }
-
-        private System.Windows.Forms.Panel panelBackground;
         private System.Windows.Forms.PictureBox pictureBoxIcon;
-        private System.Windows.Forms.Panel panelLogin;
-        private System.Windows.Forms.Panel panelControlBox;
         private CTControls.CTMaximize ctMaximize1;
         private CTControls.CTMinimize ctMinimize1;
         private CTControls.CTClose ctClose1;
         private System.Windows.Forms.Label labelCorporation;
-        private System.Windows.Forms.Panel PanelLoginContent;
+        private LinkLabel linkLabel1;
+        private DoubleBufferPanel panelBackground;
+        private DoubleBufferPanel panelLogin;
+        private DoubleBufferPanel panelControlBox;
+        private DoubleBufferPanel PanelLoginContent;
 
         #endregion
         //private CTControl.CTButton ctButton1;

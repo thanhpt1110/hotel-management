@@ -37,6 +37,14 @@ namespace HotelManagement
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
+            this.linkLabel1.Hide();
+        }
+        public FormLogin(int lanDau)
+        {
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            InitializeComponent();
         }
         //Control Box
         private void panelControlBox_MouseHover(object sender, EventArgs e)
@@ -308,6 +316,15 @@ namespace HotelManagement
             panelControlBox.BringToFront();
             labelCorporation.BringToFront();
             
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormKetNoiCSDL formKetNoiCSDL = new FormKetNoiCSDL();
+            this.Hide();
+            formKetNoiCSDL.ShowDialog();
+            this.Close();
+
         }
     }
 }

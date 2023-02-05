@@ -124,9 +124,8 @@ namespace HotelManagement.CTControls
             this.LabelCoc.ForeColor = System.Drawing.Color.White;
             this.LabelCoc.Location = new System.Drawing.Point(164, 92);
             this.LabelCoc.Name = "LabelCoc";
-            this.LabelCoc.Size = new System.Drawing.Size(89, 17);
+            this.LabelCoc.Size = new System.Drawing.Size(0, 17);
             this.LabelCoc.TabIndex = 6;
-            this.LabelCoc.Text = "Cọc hay chưa";
             this.LabelCoc.Click += new System.EventHandler(this.CTRoomDaDat_Click);
             this.LabelCoc.MouseLeave += new System.EventHandler(this.CTRoomDaDat_MouseLeave);
             this.LabelCoc.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomDaDat_MouseMove);

@@ -55,27 +55,27 @@ namespace HotelManagement.GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSoDoPhong));
-            this.PanelLocPhong = new  DoubleBufferPanel();
-            this.PanelTinhTrangPhong = new  DoubleBufferPanel();
+            this.PanelLocPhong = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
+            this.PanelTinhTrangPhong = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.LabelTinhTrangDonDep = new System.Windows.Forms.Label();
             this.CTRadioButtonTatCa = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonDaDonDep = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonChuaDonDep = new HotelManagement.CTControls.CTRadioButton();
-            this.PanelLoaiPhong = new  DoubleBufferPanel();
+            this.PanelLoaiPhong = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.LabelLoaiPhong = new System.Windows.Forms.Label();
             this.CTRadioButtonTatCaLoaiPhong = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongVIPDoi = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongThuongDon = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongVIPDon = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongThuongDoi = new HotelManagement.CTControls.CTRadioButton();
-            this.PanelRadioButtonTrangThaiPhong = new  DoubleBufferPanel();
+            this.PanelRadioButtonTrangThaiPhong = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.LabelTrangThaiPhong = new System.Windows.Forms.Label();
             this.CTRadioButtonTatCaPhong = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDangSuaChua = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongTrong = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDangThue = new HotelManagement.CTControls.CTRadioButton();
             this.CTRadioButtonPhongDaDat = new HotelManagement.CTControls.CTRadioButton();
-            this.PanelTitle = new  DoubleBufferPanel();
+            this.PanelTitle = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.cbBoxLetter = new HotelManagement.CTControls.CTComboBox();
             this.cbBoxGio = new HotelManagement.CTControls.CTComboBox();
@@ -84,23 +84,24 @@ namespace HotelManagement.GUI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctTextBox1 = new HotelManagement.CTControls.CTTextBox();
             this.timerAppear = new System.Windows.Forms.Timer(this.components);
-            this.panelSoDoPhong = new  DoubleBufferPanel();
+            this.panelSoDoPhong = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel5 = new  DoubleBufferPanel();
+            this.panel5 = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new  DoubleBufferPanel();
+            this.panel4 = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new  DoubleBufferPanel();
+            this.panel3 = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new  DoubleBufferPanel();
+            this.panel2 = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel6 = new  DoubleBufferPanel();
+            this.panel6 = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.timerSearch = new System.Windows.Forms.Timer(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.PanelLocPhong.SuspendLayout();
             this.PanelTinhTrangPhong.SuspendLayout();
             this.PanelLoaiPhong.SuspendLayout();
@@ -425,6 +426,7 @@ namespace HotelManagement.GUI
             // 
             this.PanelTitle.AutoScroll = true;
             this.PanelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.PanelTitle.Controls.Add(this.textBox1);
             this.PanelTitle.Controls.Add(this.label7);
             this.PanelTitle.Controls.Add(this.cbBoxLetter);
             this.PanelTitle.Controls.Add(this.cbBoxGio);
@@ -573,6 +575,7 @@ namespace HotelManagement.GUI
             this.ctTextBox1.ReadOnly = false;
             this.ctTextBox1.Size = new System.Drawing.Size(235, 36);
             this.ctTextBox1.TabIndex = 1;
+            this.ctTextBox1.TabStop = false;
             this.ctTextBox1.Texts = "";
             this.ctTextBox1.UnderlineedStyle = false;
             this.ctTextBox1._TextChanged += new System.EventHandler(this.ctTextBox1__TextChanged);
@@ -757,6 +760,14 @@ namespace HotelManagement.GUI
             this.timerSearch.Interval = 1000;
             this.timerSearch.Tick += new System.EventHandler(this.timerSearch_Tick);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(390, 14);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 33);
+            this.textBox1.TabIndex = 44;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // FormSoDoPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -801,23 +812,18 @@ namespace HotelManagement.GUI
         }
 
         #endregion
-        private System.Windows.Forms.Panel PanelLocPhong;
-        private System.Windows.Forms.Panel PanelLoaiPhong;
         private System.Windows.Forms.Label LabelLoaiPhong;
         private CTControls.CTRadioButton CTRadioButtonTatCaLoaiPhong;
         private CTControls.CTRadioButton CTRadioButtonPhongVIPDoi;
         private CTControls.CTRadioButton CTRadioButtonPhongThuongDon;
         private CTControls.CTRadioButton CTRadioButtonPhongVIPDon;
         private CTControls.CTRadioButton CTRadioButtonPhongThuongDoi;
-        private System.Windows.Forms.Panel PanelRadioButtonTrangThaiPhong;
         private System.Windows.Forms.Label LabelTrangThaiPhong;
         private CTControls.CTRadioButton CTRadioButtonTatCaPhong;
         private CTControls.CTRadioButton CTRadioButtonPhongDangSuaChua;
         private CTControls.CTRadioButton CTRadioButtonPhongTrong;
         private CTControls.CTRadioButton CTRadioButtonPhongDangThue;
         private CTControls.CTRadioButton CTRadioButtonPhongDaDat;
-        private System.Windows.Forms.Panel PanelTitle;
-        private System.Windows.Forms.Panel PanelTinhTrangPhong;
         private System.Windows.Forms.Label LabelTinhTrangDonDep;
         private CTControls.CTRadioButton CTRadioButtonTatCa;
         private CTControls.CTRadioButton CTRadioButtonDaDonDep;
@@ -826,26 +832,32 @@ namespace HotelManagement.GUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LabelChonNgay;
         private System.Windows.Forms.Timer timerAppear;
-        private System.Windows.Forms.Panel panelSoDoPhong;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
         private CTControls.CTDatePicker ctDatePicker1;
         private System.Windows.Forms.Label label7;
         private CTControls.CTComboBox cbBoxLetter;
         private CTControls.CTComboBox cbBoxGio;
         private System.Windows.Forms.Timer timerSearch;
+        private DoubleBufferPanel PanelLocPhong;
+        private DoubleBufferPanel PanelLoaiPhong;
+        private DoubleBufferPanel PanelRadioButtonTrangThaiPhong;
+        private DoubleBufferPanel PanelTitle;
+        private DoubleBufferPanel PanelTinhTrangPhong;
+        private DoubleBufferPanel panelSoDoPhong;
+        private DoubleBufferPanel panel5;
+        private DoubleBufferPanel panel4;
+        private DoubleBufferPanel panel3;
+        private DoubleBufferPanel panel2;
+        private DoubleBufferPanel panel6;
+        private TextBox textBox1;
     }
 }
