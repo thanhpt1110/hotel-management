@@ -248,5 +248,17 @@ namespace HotelManagement.CTControls
             }
             finally { formBackground.Dispose(); }
         }
+
+        private void CTRoomDangThue_MouseMove(object sender, MouseEventArgs e)
+        {
+            PanelTop.BackColor = Color.FromArgb(147, 22, 19);
+            BackColor = Color.FromArgb(154, 148, 150);
+        }
+
+        private void CTRoomDangThue_MouseLeave(object sender, EventArgs e)
+        {
+            PanelTop.BackColor = Color.FromArgb(236, 107, 104);
+            BackColor = Color.FromArgb(230, 222, 224);
+        }
     }
 }

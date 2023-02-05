@@ -301,7 +301,15 @@ namespace HotelManagement.CTControls
         private void CTRoomTrong_MouseMove(object sender, MouseEventArgs e)
         {
             touchMouse = true;
+            PanelTop.BackColor = Color.FromArgb(47, 109, 39);
+            BackColor = Color.FromArgb(154, 148, 150);
             this.Invalidate();
+        }
+
+        private void CTRoomTrong_MouseLeave(object sender, EventArgs e)
+        {
+            PanelTop.BackColor = Color.FromArgb(113, 201, 103);
+            BackColor = Color.FromArgb(230, 222, 224);
         }
     }
 }

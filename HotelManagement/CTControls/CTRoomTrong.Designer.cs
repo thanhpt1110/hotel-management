@@ -54,8 +54,7 @@ namespace HotelManagement.CTControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.DoubleBuffered = true;
-            this.PanelTop = new DoubleBufferPanel();
+            this.PanelTop = new HotelManagement.CTControls.CTRoomTrong.DoubleBufferPanel();
             this.PictureBoxTrangThai = new System.Windows.Forms.PictureBox();
             this.LabelTrangThaiLon = new System.Windows.Forms.Label();
             this.LabelLoaiPhong = new System.Windows.Forms.Label();
@@ -85,6 +84,8 @@ namespace HotelManagement.CTControls
             this.PanelTop.Size = new System.Drawing.Size(277, 123);
             this.PanelTop.TabIndex = 10;
             this.PanelTop.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.PanelTop.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
+            this.PanelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             // 
             // PictureBoxTrangThai
             // 
@@ -98,6 +99,8 @@ namespace HotelManagement.CTControls
             this.PictureBoxTrangThai.TabIndex = 5;
             this.PictureBoxTrangThai.TabStop = false;
             this.PictureBoxTrangThai.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.PictureBoxTrangThai.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
+            this.PictureBoxTrangThai.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             // 
             // LabelTrangThaiLon
             // 
@@ -112,6 +115,8 @@ namespace HotelManagement.CTControls
             this.LabelTrangThaiLon.TabIndex = 4;
             this.LabelTrangThaiLon.Text = "Phòng trống";
             this.LabelTrangThaiLon.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.LabelTrangThaiLon.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
+            this.LabelTrangThaiLon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             // 
             // LabelLoaiPhong
             // 
@@ -126,6 +131,8 @@ namespace HotelManagement.CTControls
             this.LabelLoaiPhong.TabIndex = 3;
             this.LabelLoaiPhong.Text = "Loại phòng";
             this.LabelLoaiPhong.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.LabelLoaiPhong.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
+            this.LabelLoaiPhong.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             // 
             // LabelMaPhong
             // 
@@ -140,6 +147,8 @@ namespace HotelManagement.CTControls
             this.LabelMaPhong.TabIndex = 2;
             this.LabelMaPhong.Text = "P100";
             this.LabelMaPhong.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.LabelMaPhong.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
+            this.LabelMaPhong.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             // 
             // LabelTrangThaiDonDep
             // 
@@ -154,6 +163,8 @@ namespace HotelManagement.CTControls
             this.LabelTrangThaiDonDep.TabIndex = 14;
             this.LabelTrangThaiDonDep.Text = "Đã dọn dẹp";
             this.LabelTrangThaiDonDep.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.LabelTrangThaiDonDep.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
+            this.LabelTrangThaiDonDep.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             // 
             // LabelThoiGian
             // 
@@ -168,6 +179,8 @@ namespace HotelManagement.CTControls
             this.LabelThoiGian.TabIndex = 12;
             this.LabelThoiGian.Text = "0 giờ";
             this.LabelThoiGian.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.LabelThoiGian.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
+            this.LabelThoiGian.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             // 
             // PictureBoxTrangThaiDonDep
             // 
@@ -181,6 +194,8 @@ namespace HotelManagement.CTControls
             this.PictureBoxTrangThaiDonDep.TabIndex = 13;
             this.PictureBoxTrangThaiDonDep.TabStop = false;
             this.PictureBoxTrangThaiDonDep.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.PictureBoxTrangThaiDonDep.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
+            this.PictureBoxTrangThaiDonDep.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             // 
             // PictureBoxThoiGian
             // 
@@ -194,6 +209,8 @@ namespace HotelManagement.CTControls
             this.PictureBoxThoiGian.TabIndex = 11;
             this.PictureBoxThoiGian.TabStop = false;
             this.PictureBoxThoiGian.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.PictureBoxThoiGian.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
+            this.PictureBoxThoiGian.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             // 
             // CTRoomTrong
             // 
@@ -205,11 +222,13 @@ namespace HotelManagement.CTControls
             this.Controls.Add(this.LabelThoiGian);
             this.Controls.Add(this.PictureBoxThoiGian);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(15, 20, 0, 0);
             this.Name = "CTRoomTrong";
             this.Size = new System.Drawing.Size(280, 155);
             this.Load += new System.EventHandler(this.CTRoomPhongTrong_Load);
-            this.Click += new System.EventHandler(this.CTRoomPhongTrong_Click);
+            this.Click += new System.EventHandler(this.CTRoom_VisibleChanged);
+            this.MouseLeave += new System.EventHandler(this.CTRoomTrong_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomTrong_MouseMove);
             this.PanelTop.ResumeLayout(false);
             this.PanelTop.PerformLayout();
@@ -222,8 +241,6 @@ namespace HotelManagement.CTControls
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel PanelTop;
         private System.Windows.Forms.PictureBox PictureBoxTrangThai;
         private System.Windows.Forms.Label LabelTrangThaiLon;
         private System.Windows.Forms.Label LabelLoaiPhong;
@@ -232,5 +249,6 @@ namespace HotelManagement.CTControls
         private System.Windows.Forms.PictureBox PictureBoxTrangThaiDonDep;
         private System.Windows.Forms.Label LabelThoiGian;
         private System.Windows.Forms.PictureBox PictureBoxThoiGian;
+        private DoubleBufferPanel PanelTop;
     }
 }
