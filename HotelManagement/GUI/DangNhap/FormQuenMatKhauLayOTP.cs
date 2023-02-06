@@ -45,7 +45,7 @@ namespace HotelManagement.GUI
             }
             else
             {
-                CTMessageBox.Show("Email hoặc tài khoản đăng nhập của bạn bị sai", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show("Email hoặc tài khoản đăng nhập của bạn bị sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
                 
         }
