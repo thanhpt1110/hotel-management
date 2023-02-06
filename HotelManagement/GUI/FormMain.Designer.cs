@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DoubleBuffered = true;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.PanelBackground = new System.Windows.Forms.Panel();
             this.panelMainChildForm = new System.Windows.Forms.Panel();
@@ -482,6 +481,8 @@
             this.PictureBoxMenu.TabIndex = 21;
             this.PictureBoxMenu.TabStop = false;
             this.PictureBoxMenu.Click += new System.EventHandler(this.PictureBoxMenu_Click);
+            this.PictureBoxMenu.MouseLeave += new System.EventHandler(this.PictureBoxMenu_MouseLeave);
+            this.PictureBoxMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBoxMenu_MouseMove);
             // 
             // panelControlBox
             // 
@@ -551,6 +552,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1522, 934);
             this.Controls.Add(this.PanelBackground);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
