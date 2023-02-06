@@ -85,6 +85,10 @@ namespace HotelManagement.GUI
             {
                 formLoginParent.openChildForm(new FormDatLaiMatKhau(formLoginParent,this.taiKhoan));
             }
+            else
+            {
+                CTMessageBox.Show("Mã OTP bạn nhập chưa đúng. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void PictureBoxBack_Click(object sender, EventArgs e)

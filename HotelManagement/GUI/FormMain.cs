@@ -681,5 +681,15 @@ namespace HotelManagement
                 this.Close();
             }
         }
+
+        private void PictureBoxMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            PictureBoxMenu.BackColor = Color.FromArgb(58, 130, 137);
+        }
+
+        private void PictureBoxMenu_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBoxMenu.BackColor = Color.Transparent;
+        }
     }
 }

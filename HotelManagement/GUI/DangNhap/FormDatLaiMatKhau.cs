@@ -38,12 +38,12 @@ namespace HotelManagement.GUI
         {
             if(this.textBoxPassword.Texts == "" || this.textBoxPassConfirm.Texts=="")
             {
-                CTMessageBox.Show("Vui lòng nhập password", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show("Vui lòng nhập password", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }        
             if(this.textBoxPassword.Texts!=this.textBoxPassConfirm.Texts)
             {
-                CTMessageBox.Show("Vui lòng kiểm tra lại password của bạn", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CTMessageBox.Show("Vui lòng kiểm tra lại password của bạn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -51,12 +51,12 @@ namespace HotelManagement.GUI
                 try
                 {
                     TaiKhoanBUS.Instance.AddOrUpdateTK(taiKhoan);
-                    CTMessageBox.Show("Đổi mật khẩu thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CTMessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 catch (Exception ex)
                 {
-                    CTMessageBox.Show(ex.Message,"THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CTMessageBox.Show(ex.Message,"Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 formLoginParent.openChildForm(new FormDangNhap(formLoginParent));
 
