@@ -238,9 +238,17 @@ namespace HotelManagement.GUI
         {
             grid.Rows.Clear();
             List<CTDP> ctdps = CTDP_BUS.Instance.GetCTDPs().Where(p=>p.MaPT==phieuThue.MaPT && p.DaXoa==false).ToList();
+            
             foreach(CTDP cTDP in ctdps)
             {
-                grid.Rows.Add(new object[] { cTDP.MaPH, cTDP.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.SoNguoi, this.delete }) ;
+                string TrangThai;
+                if (cTDP.TrangThai == "Đang thuê")
+                    TrangThai = cTDP.TrangThai;
+                else if (cTDP.TrangThai == "Đã xong")
+                    TrangThai = "Hoàn thành";
+                else
+                    TrangThai = cTDP.TrangThai;
+                grid.Rows.Add(new object[] { cTDP.MaPH, cTDP.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), TrangThai, this.delete }) ;
             }    
         }    
         private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
@@ -273,11 +281,16 @@ namespace HotelManagement.GUI
 
                         DateTime date = DateTime.ParseExact(grid.Rows[y].Cells[1].Value.ToString(), "dd-MM-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
                         CTDP cTDP = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaPT == phieuThue.MaPT).ToList()[y];
-                        if(cTDP.TrangThai == "Đã xong" || cTDP.TrangThai =="Đang thuê")
+                        if(cTDP.TrangThai == "Đã xong" )
                         {
-                            CTMessageBox.Show("Thông tin đặt phòng này không hủy được do đang được thuê hoặc đã xong!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            CTMessageBox.Show("Thông tin đặt phòng này không hủy được do đã hoàn thành!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }    
+                        else if (cTDP.TrangThai == "Đang thuê")
+                        {
+                            CTMessageBox.Show("Thông tin đặt phòng này không hủy được do đang thuê!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         cTDP.TrangThai = "Đã hủy";
                         cTDP.DaXoa = true;
                         CTDP_BUS.Instance.RemoveCTDP(cTDP);

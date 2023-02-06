@@ -409,7 +409,10 @@ namespace HotelManagement.GUI
                     return;
                 }
                 if (phong.TTDD == "Chưa dọn dẹp")
+                {
                     CTMessageBox.Show("Phòng chưa dọn dẹp xong.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 ctdp.TrangThai = "Đang thuê";
                 CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
                 this.Close();

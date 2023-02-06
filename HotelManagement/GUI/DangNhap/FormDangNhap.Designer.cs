@@ -79,6 +79,7 @@
             this.textBoxPassword.ReadOnly = false;
             this.textBoxPassword.Size = new System.Drawing.Size(285, 45);
             this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.TabStop = false;
             this.textBoxPassword.Texts = "";
             this.textBoxPassword.UnderlineedStyle = false;
             this.textBoxPassword._TextChanged += new System.EventHandler(this.textBoxPassword__TextChanged);
@@ -115,7 +116,6 @@
             this.labelForgotPassword.Name = "labelForgotPassword";
             this.labelForgotPassword.Size = new System.Drawing.Size(126, 21);
             this.labelForgotPassword.TabIndex = 9;
-            this.labelForgotPassword.TabStop = true;
             this.labelForgotPassword.Text = "Quên mật khẩu?";
             this.labelForgotPassword.Click += new System.EventHandler(this.labelForgotPassword_Click);
             // 
