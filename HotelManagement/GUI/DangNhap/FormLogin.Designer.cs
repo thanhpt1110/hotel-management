@@ -62,7 +62,6 @@ namespace HotelManagement
             this.ctClose1 = new HotelManagement.CTControls.CTClose();
             this.labelCorporation = new System.Windows.Forms.Label();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panelBackground.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.panelControlBox.SuspendLayout();
@@ -84,7 +83,6 @@ namespace HotelManagement
             // panelLogin
             // 
             this.panelLogin.BackColor = System.Drawing.Color.White;
-            this.panelLogin.Controls.Add(this.linkLabel1);
             this.panelLogin.Controls.Add(this.PanelLoginContent);
             this.panelLogin.Controls.Add(this.panelControlBox);
             this.panelLogin.Controls.Add(this.labelCorporation);
@@ -173,17 +171,6 @@ namespace HotelManagement
             this.pictureBoxIcon.TabStop = false;
             this.pictureBoxIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIcon_MouseDown);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(72, 11);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(65, 13);
-            this.linkLabel1.TabIndex = 11;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Chuyển csdl";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // FormLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -218,7 +205,6 @@ namespace HotelManagement
         private CTControls.CTMinimize ctMinimize1;
         private CTControls.CTClose ctClose1;
         private System.Windows.Forms.Label labelCorporation;
-        private LinkLabel linkLabel1;
         private DoubleBufferPanel panelBackground;
         private DoubleBufferPanel panelLogin;
         private DoubleBufferPanel panelControlBox;

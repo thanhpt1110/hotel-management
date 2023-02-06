@@ -27,9 +27,6 @@ namespace HotelManagement.DTO
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CTDP>()
-                .Property(e => e.DatCoc)
-                .HasPrecision(19, 4);
 
             modelBuilder.Entity<CTDP>()
                 .HasMany(e => e.HoaDons)
@@ -84,10 +81,6 @@ namespace HotelManagement.DTO
             modelBuilder.Entity<NhanVien>()
                 .Property(e => e.CCCD)
                 .IsFixedLength();
-
-            modelBuilder.Entity<NhanVien>()
-                .Property(e => e.AnhDaiDien)
-                .IsUnicode(false);
 
             modelBuilder.Entity<NhanVien>()
                 .HasMany(e => e.PhieuThues)

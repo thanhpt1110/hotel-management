@@ -36,19 +36,9 @@ namespace HotelManagement.GUI
             this.formMain = formMain;
             this.taiKhoan = taiKhoan;
             LoadLanDau();
-            textBox1.GotFocus += TextBox1_GotFocus;
-            textBox1.LostFocus += TextBox1_LostFocus;
+
         }
 
-        private void TextBox1_LostFocus(object sender, EventArgs e)
-        {
-            flag1 = 1;
-        }
-
-        private void TextBox1_GotFocus(object sender, EventArgs e)
-        {
-            flag1 = 1;
-        }
 
         #region Load sơ đồ phòng
         public void LoadAllPhong()
@@ -180,18 +170,6 @@ namespace HotelManagement.GUI
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {
             ResetTimer(this.timerSearch);
-        }
-
-        private void CTTextBox_LostFocus(object sender, EventArgs e)
-        {
-            flag1 = 1;
-
-        }
-
-        private int flag1 = 0;
-        private void CTTextBox_GotFocus(object sender, EventArgs e)
-        {
-            flag1 = 1;
         }
 
         private  void ResetTimer(Timer timer)

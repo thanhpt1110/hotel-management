@@ -48,7 +48,7 @@ namespace HotelManagement.GUI
             this.formMain = formMain;
             InitializeComponent();
             LoadPage();
-
+            this.CTButtonCoc.Hide();
 
         }
 

@@ -335,12 +335,11 @@ namespace HotelManagement.GUI
                     connectDB.ReloadFileConfig("HotelDTO", connectionString);
 
                     CTMessageBox.Show("Kết nối cơ sở dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    using (FormLogin formLogin = new FormLogin())
-                    {
+                    FormLogin formLogin = new FormLogin();                    
                         this.Hide();
                         formLogin.ShowDialog();
                         this.Close();
-                    }
+                    
                 }
             }
             catch (Exception)

@@ -334,7 +334,6 @@ namespace HotelManagement.GUI
                 {
                     CTDP cTDP = new CTDP();
                     cTDP.MaCTDP = CTDP_BUS.Instance.getNextCTDPwithList(this.listPhongDaDat);
-                    cTDP.DatCoc = 0;
                     cTDP.CheckIn = this.CheckIn;
                     cTDP.CheckOut = this.CheckOut;
                     cTDP.MaPH = gridPhongTrong.Rows[y].Cells[0].Value.ToString();

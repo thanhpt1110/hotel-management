@@ -37,7 +37,6 @@ namespace HotelManagement
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             InitializeComponent();
-            this.linkLabel1.Hide();
         }
         public FormLogin(int lanDau)
         {

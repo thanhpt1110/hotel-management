@@ -53,7 +53,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(93, 356);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(146, 47);
-            this.buttonLogin.TabIndex = 4;
+            this.buttonLogin.TabIndex = 3;
             this.buttonLogin.Text = "Đăng nhập";
             this.buttonLogin.TextColor = System.Drawing.Color.White;
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -78,7 +78,7 @@
             this.textBoxPassword.PlaceholderText = "Mật khẩu";
             this.textBoxPassword.ReadOnly = false;
             this.textBoxPassword.Size = new System.Drawing.Size(285, 45);
-            this.textBoxPassword.TabIndex = 7;
+            this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.Texts = "";
             this.textBoxPassword.UnderlineedStyle = false;
             this.textBoxPassword._TextChanged += new System.EventHandler(this.textBoxPassword__TextChanged);
@@ -102,7 +102,7 @@
             this.textBoxUsername.PlaceholderText = "Tên tài khoản";
             this.textBoxUsername.ReadOnly = false;
             this.textBoxUsername.Size = new System.Drawing.Size(285, 45);
-            this.textBoxUsername.TabIndex = 5;
+            this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.Texts = "";
             this.textBoxUsername.UnderlineedStyle = false;
             // 

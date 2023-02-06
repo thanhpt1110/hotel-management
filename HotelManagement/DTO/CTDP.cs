@@ -37,9 +37,6 @@ namespace HotelManagement.DTO
         [Column(TypeName = "smalldatetime")]
         public DateTime CheckOut { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal? DatCoc { get; set; }
-
         [Required]
         [StringLength(20)]
         public string TrangThai { get; set; }

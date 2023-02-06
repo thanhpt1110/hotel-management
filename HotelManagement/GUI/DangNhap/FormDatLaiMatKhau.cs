@@ -36,7 +36,7 @@ namespace HotelManagement.GUI
         
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            if(this.textBoxPassword.Texts == "" && this.textBoxPassConfirm.Texts=="")
+            if(this.textBoxPassword.Texts == "" || this.textBoxPassConfirm.Texts=="")
             {
                 CTMessageBox.Show("Vui lòng nhập password", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

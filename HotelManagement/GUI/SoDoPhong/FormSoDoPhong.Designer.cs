@@ -101,7 +101,6 @@ namespace HotelManagement.GUI
             this.panel6 = new HotelManagement.GUI.FormSoDoPhong.DoubleBufferPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.timerSearch = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.PanelLocPhong.SuspendLayout();
             this.PanelTinhTrangPhong.SuspendLayout();
             this.PanelLoaiPhong.SuspendLayout();
@@ -426,7 +425,6 @@ namespace HotelManagement.GUI
             // 
             this.PanelTitle.AutoScroll = true;
             this.PanelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.PanelTitle.Controls.Add(this.textBox1);
             this.PanelTitle.Controls.Add(this.label7);
             this.PanelTitle.Controls.Add(this.cbBoxLetter);
             this.PanelTitle.Controls.Add(this.cbBoxGio);
@@ -760,14 +758,6 @@ namespace HotelManagement.GUI
             this.timerSearch.Interval = 1000;
             this.timerSearch.Tick += new System.EventHandler(this.timerSearch_Tick);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(390, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 33);
-            this.textBox1.TabIndex = 44;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // FormSoDoPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -858,6 +848,5 @@ namespace HotelManagement.GUI
         private DoubleBufferPanel panel3;
         private DoubleBufferPanel panel2;
         private DoubleBufferPanel panel6;
-        private TextBox textBox1;
     }
 }

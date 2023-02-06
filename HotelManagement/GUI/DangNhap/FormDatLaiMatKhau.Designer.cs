@@ -67,7 +67,7 @@
             this.ButtonOK.Location = new System.Drawing.Point(118, 356);
             this.ButtonOK.Name = "ButtonOK";
             this.ButtonOK.Size = new System.Drawing.Size(94, 47);
-            this.ButtonOK.TabIndex = 14;
+            this.ButtonOK.TabIndex = 3;
             this.ButtonOK.Text = "OK";
             this.ButtonOK.TextColor = System.Drawing.Color.White;
             this.ButtonOK.UseVisualStyleBackColor = false;
@@ -92,7 +92,7 @@
             this.textBoxPassConfirm.PlaceholderText = "Xác nhận lại mật khẩu";
             this.textBoxPassConfirm.ReadOnly = false;
             this.textBoxPassConfirm.Size = new System.Drawing.Size(286, 45);
-            this.textBoxPassConfirm.TabIndex = 12;
+            this.textBoxPassConfirm.TabIndex = 2;
             this.textBoxPassConfirm.Texts = "";
             this.textBoxPassConfirm.UnderlineedStyle = false;
             this.textBoxPassConfirm._TextChanged += new System.EventHandler(this.textBoxPassConfirm__TextChanged);
@@ -116,7 +116,7 @@
             this.textBoxPassword.PlaceholderText = "Mật khẩu mới";
             this.textBoxPassword.ReadOnly = false;
             this.textBoxPassword.Size = new System.Drawing.Size(286, 45);
-            this.textBoxPassword.TabIndex = 12;
+            this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.Texts = "";
             this.textBoxPassword.UnderlineedStyle = false;
             this.textBoxPassword._TextChanged += new System.EventHandler(this.textBoxPassword__TextChanged);
@@ -159,6 +159,7 @@
             // 
             // FormDatLaiMatKhau
             // 
+            this.AcceptButton = this.ButtonOK;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 466);

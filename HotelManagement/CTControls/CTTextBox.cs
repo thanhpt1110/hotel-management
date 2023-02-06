@@ -162,15 +162,22 @@ namespace HotelManagement.CTControls
 
         public void SetPlaceholder()
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
+            try
             {
-                isPlaceholder = true;
-                textBox1.Text = placeholderText;
-                textBox1.ForeColor = placeholderColor;
-                if (isPasswordChar)
+                if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
                 {
-                    textBox1.UseSystemPasswordChar = false;
+                    isPlaceholder = true;
+                    textBox1.Text = placeholderText;
+                    textBox1.ForeColor = placeholderColor;
+                    if (isPasswordChar)
+                    {
+                        textBox1.UseSystemPasswordChar = false;
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                CTMessageBox.Show(ex.Message, "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         public void RemovePlaceholder()
