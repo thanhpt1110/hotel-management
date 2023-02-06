@@ -177,19 +177,26 @@ namespace HotelManagement.CTControls
             }
             catch(Exception ex)
             {
-                CTMessageBox.Show(ex.Message, "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                CTMessageBox.Show("Bị lỗi", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         public void RemovePlaceholder()
         {
             if (isPlaceholder && placeholderText != "")
             {
-                isPlaceholder = false;
-                textBox1.Text = "";
-                textBox1.ForeColor = this.ForeColor;
-                if (isPasswordChar)
+                try
                 {
-                    textBox1.UseSystemPasswordChar = true;
+                    isPlaceholder = false;
+                    textBox1.Text = "";
+                    textBox1.ForeColor = this.ForeColor;
+                    if (isPasswordChar)
+                    {
+                        textBox1.UseSystemPasswordChar = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    CTMessageBox.Show("Bị lỗi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

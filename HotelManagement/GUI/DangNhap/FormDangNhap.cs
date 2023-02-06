@@ -51,9 +51,19 @@ namespace HotelManagement.GUI
 
         private void textBoxPassword__TextChanged(object sender, EventArgs e)
         {
+            TextBox textBox = sender as TextBox;
+            textBox.PreviewKeyDown += TextBox_PreviewKeyDown;
             if(textBoxPassword.Texts.Length>0 && ctEyePassword1.IsShow == false)
             {
                 textBoxPassword.PasswordChar = true;
+            }
+        }
+
+        private void TextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab && textBoxPassword.Texts.Length == 0)
+            {
+                e.IsInputKey = false;
             }
         }
 
