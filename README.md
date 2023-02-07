@@ -1,24 +1,60 @@
-# Một số lưu ý nho nhỏ :v
-1. Quy định đặt tên + Kiểu chữ
+# Hotel Management
 
-    * Viết dài ra hết từ đầy đủ cho dễ đọc (Nên xài tiếng ziệt cho dễ làm :v). À viết hoa chữ đầu thui nha ae.
+Ứng dụng Quản lý khách sạn cơ bản được xây dựng trên nền tảng WinForms với giao diện hiện đại.
 
-    * Đừng đặt kiểu gạch chân nha ae :((
+## Tính năng
 
-    * App mình xài font Segoe UI (10 hoặc 12) tùy lúc thui
+- Hiển thị trạng thái các phòng theo sơ đồ 1 cách trực quan.
+- Quản lý phòng.
+- Quản lý loại phòng.
+- Quản lý đặt phòng.
+- Quản lý hóa đơn.
+- Quản lý các loại dịch vụ.
+- Quản lý các loại tiện nghi.
+- Quản lý thông tin cơ bản nhân viên.
+- Quản lý thông tin cơ bản khách hàng.
+- Quản lý loại tài khoản sử dụng ứng dụng.
+- Thống kê doanh thu.
+- In hóa đơn.
+- Hỗ trợ lấy lại và thay đổi mất khẩu.
+- Xuất file Excel các loại danh sách.
+- Phân quyền cấp độ các loại tài khoản.
 
-2. Có ảnh mình cứ thêm vào thư mục database/img/ nha
+Ngôn ngữ: Tiếng Việt.
 
-3. Một vài nguồn tài liệu
+## Yêu cầu cài đặt
 
-    * Kênh dạy: https://www.youtube.com/c/RJCodeAdvanceEN. Vào đây mình search theo cái mình đang cần là có hết á :v
+- Môi trường chạy chương trình:
 
-    * Bộ icons: https://phosphoricons.com/ 
+   - Windows 8.1+.
+   - .NET Framework 4.7.2.
+   - Microsoft SQL Server 2021+.
 
-    * Web resize lại pixel (Do icon yêu cầu pxl nhỏ): https://www.img2go.com/resize-image
-        
-        > Thường là width, height = 25pxl với 20 DPI
+- Môi trường phát triển phần mềm:
 
-    * Color picker: https://annystudio.com/software/colorpicker/
+   - Microsoft Visual Studio 2022+.
+   - Microsoft SQL Server 2021+.
+
+## Hướng dẫn cài đặt
+
+1. Đầu tiên, chạy file hotel-management-setup.msi và cài đặt theo hướng dẫn bên trong.
+	
+2. Sau đó, mở ứng dụng "Microsoft SQL Server Management Studio" của bạn:
+	
+    	B1: Lấy Server name khi vừa khởi động ứng dụng này.	
+	
+    	B2: Chạy các câu lệnh và tạo tên Database tùy ý.
+	
+    **Đặc biệt chú ý sử dụng Authentication là Windows Authentication.**
+	
+3. Bây giờ, chạy ứng dụng "Hotel Management" đã cài đặt lúc nãy (Có thể nằm ngoài Desktop). Lúc này ứng dụng sẽ hỏi "Nhập tên server" (B1) và "Nhập tên Database" (B2) mà bạn đã có lúc nãy.
+
+> Để tiện việc sử dụng Demo, nhóm có tạo một CSDL mặc định. Bạn có thể dùng ngay CSDL tại đó.
+
+## Tác giả 
     
-> Chỉnh sửa lần cuối: 19:30 27/10/2022
+[Nguyễn Phúc Bình](https://github.com/leesoonduck3009)
+
+[Phan Tuấn Thành](https://github.com/thanhpt1110)
+
+[Lê Thanh Tuấn](https://github.com/thtuanlegithub)

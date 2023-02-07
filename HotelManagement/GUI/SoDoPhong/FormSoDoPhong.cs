@@ -36,7 +36,7 @@ namespace HotelManagement.GUI
             this.formMain = formMain;
             this.taiKhoan = taiKhoan;
             LoadLanDau();
-
+            this.ctTextBox1.Texts = "";
         }
 
 
@@ -187,7 +187,8 @@ namespace HotelManagement.GUI
 
         private void ctTextBox1__TextChanged(object sender, EventArgs e)
         {
-            ResetTimer(this.timerSearch);
+            if(this.ctTextBox1.Texts!=null)
+                ResetTimer(this.timerSearch);
         }
 
         private  void ResetTimer(Timer timer)
@@ -289,7 +290,7 @@ namespace HotelManagement.GUI
         }
         private void LoadAddLoaiPhong()
         {
-            phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Texts);
+            phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Text);
         }
 
         private void LoadCheckBoxLoaiPhong()
