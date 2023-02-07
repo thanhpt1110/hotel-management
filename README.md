@@ -50,7 +50,7 @@ Ngôn ngữ: Tiếng Việt.
 	
 3. Bây giờ, chạy ứng dụng "Hotel Management" đã cài đặt lúc nãy (Có thể nằm ngoài Desktop). Lúc này ứng dụng sẽ hỏi "Nhập tên server" (B1) và "Nhập tên Database" (B2) mà bạn đã có lúc nãy.
 
-> Để tiện việc sử dụng Demo, nhóm có tạo một CSDL mặc định. Bạn có thể dùng ngay CSDL tại đó.
+> Để tiện việc sử dụng Demo, nhóm có tạo một CSDL mặc định. Bạn có thể dùng ngay CSDL tại đó (Lưu ý: Nếu sử dụng CSDL mặc định thì khi tắt chương trình, dữ liệu sẽ không được lưu lại). 
 
 ## Tác giả 
     
