@@ -36,7 +36,6 @@ namespace HotelManagement.GUI
             this.formMain = formMain;
             this.taiKhoan = taiKhoan;
             LoadLanDau();
-            this.ctTextBox1.Texts = "";
         }
 
 
@@ -45,7 +44,6 @@ namespace HotelManagement.GUI
         {
             try
             {
-                SetAppear();
                 phongs = PhongBUS.Instance.GetAllPhong();
                 LoadPhong(phongs);
             }
@@ -59,10 +57,8 @@ namespace HotelManagement.GUI
         {
             try
             {
-                SetAppear();
                 //this.ctDatePicker1.Value = DateTime.Now;
                 phongs = PhongBUS.Instance.GetAllPhong();
-                SetAppear();
                 LoadPhong(phongs);
             }
             catch(Exception ex)
