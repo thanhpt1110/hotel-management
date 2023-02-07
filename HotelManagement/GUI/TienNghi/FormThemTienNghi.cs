@@ -214,6 +214,9 @@ namespace HotelManagement.GUI
                     tienNghi.MaTN = TienNghiBUS.Instance.GetMaTNNext();
                     tienNghi.TenTN = this.ctTextBoxName.Texts;
                     TienNghiBUS.Instance.InsertOrUpdate(tienNghi);
+                    CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch (Exception)
                 {
@@ -222,9 +225,6 @@ namespace HotelManagement.GUI
                 }
                 finally
                 {
-                    CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
                 }
             }
             else

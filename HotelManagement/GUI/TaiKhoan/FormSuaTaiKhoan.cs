@@ -260,6 +260,10 @@ namespace HotelManagement.GUI
                 else
                     taiKhoan.CapDoQuyen = 1;
                 TaiKhoanBUS.Instance.AddOrUpdateTK(taiKhoan);
+
+                CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception)
             {
@@ -268,9 +272,7 @@ namespace HotelManagement.GUI
             }
             finally 
             {
-                CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                
             }
         }
 

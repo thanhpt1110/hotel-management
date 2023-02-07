@@ -236,12 +236,19 @@ namespace HotelManagement.GUI
         }
         private void LoadGrid()
         {
-            grid.Rows.Clear();
-            List<CTDP> ctdps = CTDP_BUS.Instance.GetCTDPs().Where(p=>p.MaPT==phieuThue.MaPT && p.DaXoa==false).ToList();
-            foreach(CTDP cTDP in ctdps)
+            try
             {
-                grid.Rows.Add(new object[] { cTDP.MaPH, cTDP.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.SoNguoi, this.delete }) ;
-            }    
+                grid.Rows.Clear();
+                List<CTDP> ctdps = CTDP_BUS.Instance.GetCTDPs().Where(p=>p.MaPT==phieuThue.MaPT && p.DaXoa==false).ToList();
+                foreach(CTDP cTDP in ctdps)
+                {
+                    grid.Rows.Add(new object[] { cTDP.MaPH, cTDP.CheckIn.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.CheckOut.ToString("dd/MM/yyyy hh:mm:ss"), cTDP.SoNguoi, this.delete }) ;
+                }    
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }    
         private void grid_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -260,7 +267,6 @@ namespace HotelManagement.GUI
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int y = e.RowIndex, x = e.ColumnIndex;
-            int flag = 0;
             if (y >= 0 && x == 4)
             {
                 // If click Delete button
@@ -270,7 +276,6 @@ namespace HotelManagement.GUI
                 {
                     try
                     {
-
                         DateTime date = DateTime.ParseExact(grid.Rows[y].Cells[1].Value.ToString(), "dd-MM-yyyy HH:mm:ss", CultureInfo.InvariantCulture);
                         CTDP cTDP = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaPT == phieuThue.MaPT).ToList()[y];
                         if(cTDP.TrangThai == "Đã xong" || cTDP.TrangThai =="Đang thuê")
@@ -281,38 +286,17 @@ namespace HotelManagement.GUI
                         cTDP.TrangThai = "Đã hủy";
                         cTDP.DaXoa = true;
                         CTDP_BUS.Instance.RemoveCTDP(cTDP);
-                        flag = 1;
-
+                        this.LoadGrid();
+                        CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
-                        try
-                        {
-                            DateTime date = DateTime.ParseExact(grid.Rows[y].Cells[1].Value.ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
-                            CTDP cTDP = CTDP_BUS.Instance.GetCTDPs().Where(p => p.MaPT == phieuThue.MaPT).ToList()[y];
-                            if (cTDP.TrangThai == "Đã xong" || cTDP.TrangThai == "Đang thuê")
-                            {
-                                CTMessageBox.Show("Thông tin đặt phòng này không hủy được do đang được thuê hoặc đã xong!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                            cTDP.TrangThai = "Đã hủy";
-                            cTDP.DaXoa = true;
-                            CTDP_BUS.Instance.RemoveCTDP(cTDP);
-                            flag = 1;
-                        }
-                        catch (Exception ex1)
-                        {
-                            CTMessageBox.Show(ex1.Message, "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
+                       MessageBox.Show(ex.Message);
                     }
                     finally
                     {
-                        this.LoadGrid();
-                        if(flag==1)
-                        CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                     }
                 }
             }
@@ -334,7 +318,6 @@ namespace HotelManagement.GUI
             }
             finally
             {
-                this.Close();
             }
         }
 

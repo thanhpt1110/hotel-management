@@ -58,7 +58,6 @@ namespace HotelManagement.GUI
                 CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally { formBackground.Dispose(); }
         }
 
         private void FormDanhSachDichVu_Load(object sender, EventArgs e)
@@ -172,7 +171,6 @@ namespace HotelManagement.GUI
                         CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    finally { formBackground.Dispose(); }
                 }
                 if (x == 6)
                 {
@@ -189,17 +187,14 @@ namespace HotelManagement.GUI
                         try
                         {
                             DichVuBUS.Instance.RemoveDV(DichVuBUS.Instance.FindDichVu(grid.Rows[y].Cells[1].Value.ToString()));
+                            LoadALLDV();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception)
                         {
                             CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            LoadALLDV();
-                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
 

@@ -212,15 +212,22 @@ namespace HotelManagement.GUI
 
         private void LoadForm()
         {
-            this.comboBoxMaNV.Items.Clear();
-            List<TaiKhoan> taiKhoans = TaiKhoanBUS.Instance.GetTaiKhoans();
-            List<NhanVien> nhanViens = NhanVienBUS.Instance.GetNhanViens();
-            foreach(NhanVien nhanVien in nhanViens)
+            try
             {
-                if (taiKhoans.Where(p => p.MaNV == nhanVien.MaNV).Any())
-                    continue;
-                comboBoxMaNV.Items.Add("  " + nhanVien.MaNV);
-            }    
+                this.comboBoxMaNV.Items.Clear();
+                List<TaiKhoan> taiKhoans = TaiKhoanBUS.Instance.GetTaiKhoans();
+                List<NhanVien> nhanViens = NhanVienBUS.Instance.GetNhanViens();
+                foreach(NhanVien nhanVien in nhanViens)
+                {
+                    if (taiKhoans.Where(p => p.MaNV == nhanVien.MaNV).Any())
+                        continue;
+                    comboBoxMaNV.Items.Add("  " + nhanVien.MaNV);
+                }    
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
@@ -254,6 +261,10 @@ namespace HotelManagement.GUI
                 else
                     taiKhoan.CapDoQuyen = 1;
                 TaiKhoanBUS.Instance.AddOrUpdateTK(taiKhoan);
+
+                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception)
             {
@@ -262,9 +273,7 @@ namespace HotelManagement.GUI
             }
             finally
             {
-                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                
             }
         }
 

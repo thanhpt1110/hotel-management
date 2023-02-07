@@ -78,16 +78,30 @@ namespace HotelManagement.GUI
 
         public void LoadFullDataGrid()
         {
-            this.phongs = PhongBUS.Instance.GetAllPhong();
-            LoadDataGrid();
+            try
+            {
+                this.phongs = PhongBUS.Instance.GetAllPhong();
+                LoadDataGrid();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void LoadDataGrid()
         {
-            grid.Rows.Clear();
-            foreach (Phong phong in this.phongs)
+            try
             {
-                grid.Rows.Add(new object[] { PH, phong.MaPH, phong.TTPH, phong.TTDD, phong.LoaiPhong.TenLPH, edit, delete });
-            }    
+                grid.Rows.Clear();
+                foreach (Phong phong in this.phongs)
+                {
+                    grid.Rows.Add(new object[] { PH, phong.MaPH, phong.TTPH, phong.TTDD, phong.LoaiPhong.TenLPH, edit, delete });
+                }    
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void buttonExport_Click(object sender, EventArgs e)
         {
@@ -156,7 +170,6 @@ namespace HotelManagement.GUI
                             formBackground.Show();
                             formSuaPhong.Owner = formBackground;
                             formSuaPhong.ShowDialog();
-                            this.LoadFullDataGrid();
                             formBackground.Dispose();
                         }
                     }
@@ -180,7 +193,7 @@ namespace HotelManagement.GUI
                         CTMessageBox.Show("Bạn không có quyền thực hiện thao tác này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    int flag = 0;
+
                     DialogResult dialogresult = CTMessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dialogresult == DialogResult.Yes)
@@ -190,12 +203,13 @@ namespace HotelManagement.GUI
                             List<CTDP> cTDPs = CTDP_BUS.Instance.GetCTDPs().Where(p => p.TrangThai == "Đang thuê" || p.TrangThai == "Đã đặt").ToList();
                             if (cTDPs.Where(p => p.MaPH == grid.Rows[y].Cells[1].Value.ToString()).Any())
                             {
-                                CTMessageBox.Show("Đã có khách đặt phòng này nên không thể xóa!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                                flag = 1;
+                                CTMessageBox.Show("Đã có khách đặt phòng này nên không thể xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
                             PhongBUS.Instance.RemovePhong(grid.Rows[y].Cells[1].Value.ToString());
+                            this.LoadFullDataGrid();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception)
                         {
@@ -204,12 +218,6 @@ namespace HotelManagement.GUI
                         }
                         finally
                         {
-                            if (flag == 0)
-                            {
-                                this.LoadFullDataGrid();
-                                CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
                         }
                     }
 

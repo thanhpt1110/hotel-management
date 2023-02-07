@@ -244,19 +244,16 @@ namespace HotelManagement.GUI
                 this.dichVu.SLConLai = int.Parse(this.CTTextBoxSoLuong.Texts);
                 this.dichVu.DonGia = decimal.Parse(this.CTTextBoxDonGia.Texts.Trim(','));
                 dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
-                DichVuBUS.Instance.UpdateORAdd(dichVu);   
+                DichVuBUS.Instance.UpdateORAdd(dichVu);
+                CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.formDanhSachDichVu.LoadALLDV();
+                this.Close();
             }
             catch (Exception)
             {
                 CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.formDanhSachDichVu.LoadALLDV();
-                this.Close();
             }
         }
 

@@ -25,8 +25,15 @@ namespace HotelManagement.GUI
         
         private void labelForgotPassword_Click(object sender, EventArgs e)
         {
-            formLoginParent.openChildForm(new FormQuenMatKhauLayOTP(formLoginParent));
-            formLoginParent.bringControlBoxAndTBTLabelToFront();
+            try
+            {
+                formLoginParent.openChildForm(new FormQuenMatKhauLayOTP(formLoginParent));
+                formLoginParent.bringControlBoxAndTBTLabelToFront();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -46,7 +53,6 @@ namespace HotelManagement.GUI
                 CTMessageBox.Show("Sai thông tin đăng nhập! Vui lòng kiểm tra lại.", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
-
         }
 
         private void textBoxPassword__TextChanged(object sender, EventArgs e)

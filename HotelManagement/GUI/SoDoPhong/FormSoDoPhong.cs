@@ -43,45 +43,106 @@ namespace HotelManagement.GUI
         #region Load sơ đồ phòng
         public void LoadAllPhong()
         {
-            SetAppear();
-            phongs = PhongBUS.Instance.GetAllPhong();
-            LoadPhong(phongs);
+            try
+            {
+                SetAppear();
+                phongs = PhongBUS.Instance.GetAllPhong();
+                LoadPhong(phongs);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
         public void LoadLanDau()
         {
-            SetAppear();
-            //this.ctDatePicker1.Value = DateTime.Now;
-            phongs = PhongBUS.Instance.GetAllPhong();
-            SetAppear();
-            LoadPhong(phongs);
-         
-
+            try
+            {
+                SetAppear();
+                //this.ctDatePicker1.Value = DateTime.Now;
+                phongs = PhongBUS.Instance.GetAllPhong();
+                SetAppear();
+                LoadPhong(phongs);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void LoadPhong(List<Phong> phongs)
         {
-            List<CTRoom> DSPhong = new List<CTRoom>();
-            this.flowLayoutPanel1.Controls.Clear();
-            this.flowLayoutPanel2.Controls.Clear();
-            this.flowLayoutPanel3.Controls.Clear();
-            this.flowLayoutPanel4.Controls.Clear();
-            this.flowLayoutPanel5.Controls.Clear();
-
-
-
-            foreach (Phong phong in phongs)
+            try
             {
-                CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, this.dateTime);
-                if (phong.TTPH == "Bình thường" && ctdp != null)
+                List<CTRoom> DSPhong = new List<CTRoom>();
+                this.flowLayoutPanel1.Controls.Clear();
+                this.flowLayoutPanel2.Controls.Clear();
+                this.flowLayoutPanel3.Controls.Clear();
+                this.flowLayoutPanel4.Controls.Clear();
+                this.flowLayoutPanel5.Controls.Clear();
+
+                foreach (Phong phong in phongs)
                 {
-                    if (ctdp.TrangThai == "Đang thuê" && (this.CTRadioButtonPhongDangThue.Checked ||this.CTRadioButtonTatCaPhong.Checked))
+                    CTDP ctdp = CTDP_DAO.Instance.FindCTDP(phong.MaPH, this.dateTime);
+                    if (phong.TTPH == "Bình thường" && ctdp != null)
                     {
-                        CTRoomDangThue room = new CTRoomDangThue(ctdp, this, this.formMain,this.taiKhoan);
-                        room.Name = "PhongSDangThue";
-                        if(ctdp.TheoGio==false)
-                            room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " Ngày");
+                        if (ctdp.TrangThai == "Đang thuê" && (this.CTRadioButtonPhongDangThue.Checked || this.CTRadioButtonTatCaPhong.Checked))
+                        {
+                            CTRoomDangThue room = new CTRoomDangThue(ctdp, this, this.formMain, this.taiKhoan);
+                            room.Name = "PhongSDangThue";
+                            if (ctdp.TheoGio == false)
+                                room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " Ngày");
+                            else
+                                room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " Giờ");
+                            if (phong.TTDD == "Đã dọn dẹp")
+                                room.setDaDonDep();
+                            else
+                                room.setChuaDonDep();
+                            room.setMaPhong(phong.MaPH);
+                            room.setLoaiPhong(phong.LoaiPhong.TenLPH);
+                            DSPhong.Add(room);
+                        }
+                    }
+                    else if (phong.TTPH == "Đang sửa chữa" && (this.CTRadioButtonPhongDangSuaChua.Checked || this.CTRadioButtonTatCaPhong.Checked))
+                    {
+                        CTRoomDangSuaChua room = new CTRoomDangSuaChua(phong, this, this.formMain);
+                        room.Name = "PhongSuaChua";
+                        room.setMaPhong(phong.MaPH);
+                        if (phong.TTDD == "Đã dọn dẹp")
+                            room.setDaDonDep();
                         else
-                            room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " Giờ");
+                            room.setChuaDonDep();
+                        room.setGhiChu(phong.GhiChu);
+                        room.setLoaiPhong(phong.LoaiPhong.TenLPH);
+                        DSPhong.Add(room);
+
+                    }
+
+                    if (phong.TTPH == "Bình thường" && ctdp != null)
+                    {
+                        if (ctdp.TrangThai == "Đã đặt" && (this.CTRadioButtonPhongDaDat.Checked || this.CTRadioButtonTatCaPhong.Checked))
+                        {
+                            CTRoomDaDat room = new CTRoomDaDat(ctdp, this, this.formMain, taiKhoan);
+                            if (ctdp.TheoGio == false)
+                                room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " Ngày");
+                            else
+                                room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " Giờ");
+                            room.Name = "PhongDaDat";
+                            if (phong.TTDD == "Đã dọn dẹp")
+                                room.setDaDonDep();
+                            else
+                                room.setChuaDonDep();
+                            room.setMaPhong(phong.MaPH);
+                            room.setLoaiPhong(phong.LoaiPhong.TenLPH);
+                            DSPhong.Add(room);
+                        }
+
+                    }
+                    if (phong.TTPH == "Bình thường" && (ctdp == null || ctdp.TrangThai == "Đã xong") && (this.CTRadioButtonPhongTrong.Checked || this.CTRadioButtonTatCaPhong.Checked))
+                    {
+                        CTRoomTrong room = new CTRoomTrong(phong, this, this.formMain, taiKhoan);
+                        room.Name = "PhongTrong";
                         if (phong.TTDD == "Đã dọn dẹp")
                             room.setDaDonDep();
                         else
@@ -91,78 +152,35 @@ namespace HotelManagement.GUI
                         DSPhong.Add(room);
                     }
                 }
-                else if (phong.TTPH == "Đang sửa chữa" && (this.CTRadioButtonPhongDangSuaChua.Checked || this.CTRadioButtonTatCaPhong.Checked))
+                foreach (CTRoom cTRoom in DSPhong)
                 {
-                    CTRoomDangSuaChua room = new CTRoomDangSuaChua(phong, this, this.formMain);
-                    room.Name = "PhongSuaChua";
-                    room.setMaPhong(phong.MaPH);
-                    if (phong.TTDD == "Đã dọn dẹp")
-                        room.setDaDonDep();
-                    else
-                        room.setChuaDonDep();
-                    room.setGhiChu(phong.GhiChu);
-                    room.setLoaiPhong(phong.LoaiPhong.TenLPH);
-                    DSPhong.Add(room);
 
-                }
-
-                if (phong.TTPH == "Bình thường" && ctdp != null)
-                {
-                    if (ctdp.TrangThai == "Đã đặt" && (this.CTRadioButtonPhongDaDat.Checked || this.CTRadioButtonTatCaPhong.Checked))
+                    if (cTRoom.MaPhong.StartsWith("P1"))
                     {
-                        CTRoomDaDat room = new CTRoomDaDat(ctdp, this, this.formMain,taiKhoan);
-                        if (ctdp.TheoGio == false)
-                            room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " Ngày");
-                        else
-                            room.setThoiGian(CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " Giờ");
-                        room.Name = "PhongDaDat";
-                        if (phong.TTDD == "Đã dọn dẹp")
-                            room.setDaDonDep();
-                        else
-                            room.setChuaDonDep();
-                        room.setMaPhong(phong.MaPH);
-                        room.setLoaiPhong(phong.LoaiPhong.TenLPH);
-                        DSPhong.Add(room);
+                        flowLayoutPanel1.Controls.Add(cTRoom);
                     }
-
-                }
-                if (phong.TTPH == "Bình thường" && (ctdp == null || ctdp.TrangThai=="Đã xong") && (this.CTRadioButtonPhongTrong.Checked || this.CTRadioButtonTatCaPhong.Checked))
-                {
-                    CTRoomTrong room = new CTRoomTrong(phong, this, this.formMain,taiKhoan);
-                    room.Name = "PhongTrong";
-                    if (phong.TTDD == "Đã dọn dẹp")
-                        room.setDaDonDep();
-                    else
-                        room.setChuaDonDep();
-                    room.setMaPhong(phong.MaPH);
-                    room.setLoaiPhong(phong.LoaiPhong.TenLPH);
-                    DSPhong.Add(room);
+                    else if (cTRoom.MaPhong.StartsWith("P2"))
+                    {
+                        flowLayoutPanel2.Controls.Add(cTRoom);
+                    }
+                    else if (cTRoom.MaPhong.StartsWith("P3"))
+                    {
+                        flowLayoutPanel3.Controls.Add(cTRoom);
+                    }
+                    else if (cTRoom.MaPhong.StartsWith("P4"))
+                    {
+                        flowLayoutPanel4.Controls.Add(cTRoom);
+                    }
+                    else if (cTRoom.MaPhong.StartsWith("P5"))
+                    {
+                        flowLayoutPanel5.Controls.Add(cTRoom);
+                    }
                 }
             }
-            foreach(CTRoom cTRoom in DSPhong)
+            catch(Exception ex)
             {
-                
-                if(cTRoom.MaPhong.StartsWith("P1"))
-                {
-                    flowLayoutPanel1.Controls.Add(cTRoom);
-                }
-                else if (cTRoom.MaPhong.StartsWith("P2"))
-                {
-                    flowLayoutPanel2.Controls.Add(cTRoom);
-                }
-                else if (cTRoom.MaPhong.StartsWith("P3"))
-                {
-                    flowLayoutPanel3.Controls.Add(cTRoom);
-                }
-                else if (cTRoom.MaPhong.StartsWith("P4"))
-                {
-                    flowLayoutPanel4.Controls.Add(cTRoom);
-                }
-                else if (cTRoom.MaPhong.StartsWith("P5"))
-                {
-                    flowLayoutPanel5.Controls.Add(cTRoom);
-                }
-            }    
+                MessageBox.Show(ex.Message);
+            }
         }
 
         #endregion
@@ -276,29 +294,35 @@ namespace HotelManagement.GUI
 
         private void LoadCheckBoxLoaiPhong()
         {
-            foreach (Control control in this.PanelLoaiPhong.Controls)
+            try
             {
-
-                if (control.Name != "LabelLoaiPhong")
+                foreach (Control control in this.PanelLoaiPhong.Controls)
                 {
-                    CTRadioButton item = control as CTRadioButton;
-                    if(item.Checked && item.Name== "CTRadioButtonPhongThuongDon")
+                    if (control.Name != "LabelLoaiPhong")
                     {
-                        LoadPhongThuongDon();
-                    }    
-                    else if(item.Checked && item.Name == "CTRadioButtonPhongThuongDoi")
-                    {
-                        LoadPhongThuongDoi();
-                    }    
-                    else if(item.Checked && item.Name== "CTRadioButtonPhongVIPDon")
-                    {
-                        LoadPhongVipDon();
-                    }
-                    else if(item.Checked && item.Name == "CTRadioButtonPhongVIPDoi")
-                    {
-                        LoadPhongVipDoi();
+                        CTRadioButton item = control as CTRadioButton;
+                        if(item.Checked && item.Name== "CTRadioButtonPhongThuongDon")
+                        {
+                            LoadPhongThuongDon();
+                        }    
+                        else if(item.Checked && item.Name == "CTRadioButtonPhongThuongDoi")
+                        {
+                            LoadPhongThuongDoi();
+                        }    
+                        else if(item.Checked && item.Name== "CTRadioButtonPhongVIPDon")
+                        {
+                            LoadPhongVipDon();
+                        }
+                        else if(item.Checked && item.Name == "CTRadioButtonPhongVIPDoi")
+                        {
+                            LoadPhongVipDoi();
+                        }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -315,21 +339,28 @@ namespace HotelManagement.GUI
         }
         private void LoadCheckBoxTTDD()
         {
-            foreach (Control control in this.PanelTinhTrangPhong.Controls)
+            try
             {
-
-                if (control.Name != "LabelTinhTrangDonDep")
+                foreach (Control control in this.PanelTinhTrangPhong.Controls)
                 {
-                    CTRadioButton item = control as CTRadioButton;
-                    if(item.Checked && item.Name== "CTRadioButtonDaDonDep")
+
+                    if (control.Name != "LabelTinhTrangDonDep")
                     {
-                        LoadPhongDaDonDep();
-                    }    
-                    else if(item.Checked && item.Name == "CTRadioButtonChuaDonDep")
-                    {
-                        LoadPhongChuaDonDep();
+                        CTRadioButton item = control as CTRadioButton;
+                        if(item.Checked && item.Name== "CTRadioButtonDaDonDep")
+                        {
+                            LoadPhongDaDonDep();
+                        }    
+                        else if(item.Checked && item.Name == "CTRadioButtonChuaDonDep")
+                        {
+                            LoadPhongChuaDonDep();
+                        }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -448,10 +479,5 @@ namespace HotelManagement.GUI
             LoadPhong(phongs);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            ResetTimer(this.timerSearch);
-
-        }
     }
 }

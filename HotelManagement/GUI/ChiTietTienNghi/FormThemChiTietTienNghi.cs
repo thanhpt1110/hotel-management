@@ -222,18 +222,24 @@ namespace HotelManagement.GUI
 
         private void LoadForm()
         {
-            this.ComboBoxTenTienNghi.Items.Clear();
-            List<TienNghi> tienNghis = TienNghiBUS.Instance.GetTienNghis();
-            List<CTTN> cTTNs = CTTN_BUS.Instance.GetCTTNs().Where(p=>p.MaLPH==loaiPhong.MaLPH).ToList();
-            foreach (TienNghi tienNghi in tienNghis)
+            try
             {
-                if(cTTNs.Where(p=>p.MaTN==tienNghi.MaTN).Any())
+                this.ComboBoxTenTienNghi.Items.Clear();
+                List<TienNghi> tienNghis = TienNghiBUS.Instance.GetTienNghis();
+                List<CTTN> cTTNs = CTTN_BUS.Instance.GetCTTNs().Where(p=>p.MaLPH==loaiPhong.MaLPH).ToList();
+                foreach (TienNghi tienNghi in tienNghis)
                 {
-                    continue;
+                    if(cTTNs.Where(p=>p.MaTN==tienNghi.MaTN).Any())
+                    {
+                        continue;
+                    }
+                    this.ComboBoxTenTienNghi.Items.Add(tienNghi.TenTN);
                 }
-                this.ComboBoxTenTienNghi.Items.Add(tienNghi.TenTN);
             }
-            
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }    
         private void ButtonThem_Click(object sender, EventArgs e)
         {
@@ -253,17 +259,15 @@ namespace HotelManagement.GUI
                 cTTN.MaLPH = loaiPhong.MaLPH;
                 cTTN.SL = int.Parse(CTTextBoxSoLuong.Texts);
                 CTTN_BUS.Instance.UpdateOrInsert(cTTN);
+
+                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception)
             {
                 CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally 
-            {
-                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close(); 
             }
         }
 

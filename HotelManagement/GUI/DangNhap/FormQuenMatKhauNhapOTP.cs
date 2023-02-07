@@ -81,20 +81,26 @@ namespace HotelManagement.GUI
         }
         private void ButtonContinue_Click(object sender, EventArgs e)
         {
-            if (checkOTPCorrect())
+            try
             {
-                formLoginParent.openChildForm(new FormDatLaiMatKhau(formLoginParent,this.taiKhoan));
+                if (checkOTPCorrect())
+                {
+                    formLoginParent.openChildForm(new FormDatLaiMatKhau(formLoginParent,this.taiKhoan));
+                }
+                else
+                {
+                    CTMessageBox.Show("Mã OTP bạn nhập chưa đúng. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                CTMessageBox.Show("Mã OTP bạn nhập chưa đúng. Vui lòng kiểm tra lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void PictureBoxBack_Click(object sender, EventArgs e)
         {
             formLoginParent.openChildForm(new FormQuenMatKhauLayOTP(formLoginParent));
-            
         }
 
         private void ButtonResend_Click(object sender, EventArgs e)

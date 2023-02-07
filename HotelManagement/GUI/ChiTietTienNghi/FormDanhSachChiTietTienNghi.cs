@@ -232,19 +232,32 @@ namespace HotelManagement.GUI
 
         public void LoadAllForm()
         {
-            List<CTTN> cTTNs = CTTN_BUS.Instance.FindCTTN(this.MaLPH);
-            LoadForm(cTTNs);
+            try
+            {
+                List<CTTN> cTTNs = CTTN_BUS.Instance.FindCTTN(this.MaLPH);
+                LoadForm(cTTNs);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
         }
 
         private void LoadForm(List<CTTN> cTTNs)
         {
-            this.LabelTenLoaiPhong.Text = LoaiPhongBUS.Instance.getLoaiPhong(this.MaLPH).TenLPH;
-            grid.Rows.Clear();
-            foreach(CTTN cTTN in cTTNs)
+            try
             {
-                grid.Rows.Add(new object[] { cTTN.TienNghi.TenTN, cTTN.SL, "Sử dụng tốt", edit, delete });
-                
-            }    
+                this.LabelTenLoaiPhong.Text = LoaiPhongBUS.Instance.getLoaiPhong(this.MaLPH).TenLPH;
+                grid.Rows.Clear();
+                foreach (CTTN cTTN in cTTNs)
+                {
+                    grid.Rows.Add(new object[] { cTTN.TienNghi.TenTN, cTTN.SL, "Sử dụng tốt", edit, delete });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -269,9 +282,9 @@ namespace HotelManagement.GUI
                             formBackground.Show();
                             formSuaChiTietTienNghi.Owner = formBackground;
                             formSuaChiTietTienNghi.ShowDialog();
-                            this.LoadAllForm();
                             formBackground.Dispose();
                         }
+                        this.LoadAllForm();
                     }
                     catch (Exception)
                     {
@@ -279,15 +292,11 @@ namespace HotelManagement.GUI
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally 
-                    {
-                        LoadAllForm();
-                        formBackground.Dispose(); 
+                    { 
                     }
                 }
                 if (x == 4)
                 {
-                    // If click Delete button 
-
                     // If click delete button
                     if (taiKhoan.CapDoQuyen == 1)
                     {
@@ -302,21 +311,17 @@ namespace HotelManagement.GUI
                         {
                             CTTN cTTN = CTTN_BUS.Instance.GetCTTNs().Where(p => p.MaLPH == this.MaLPH && p.TienNghi.TenTN == grid.Rows[y].Cells[0].Value.ToString()).SingleOrDefault();
                             CTTN_DAO.Instance.RemoveCTTN(cTTN);
-                            this.LoadAllForm();
+
+                            LoadAllForm();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception)
                         {
                             CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                        finally
-                        {
-                            LoadAllForm();
-                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
                     }
-
                 }
             }
         }
@@ -339,16 +344,12 @@ namespace HotelManagement.GUI
                     formThemChiTietTienNghi.ShowDialog();
                     formBackground.Dispose();
                 }
+                LoadAllForm();
             }
             catch (Exception)
             {
                 CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally 
-            {
-                LoadAllForm();
-                formBackground.Dispose(); 
             }
         }
 

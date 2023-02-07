@@ -299,6 +299,10 @@ namespace HotelManagement.GUI
                     nhanVien.TenNV = HoTen;
                     nhanVien.Luong=decimal.Parse(Luong.Trim(','));
                     NhanVienBUS.Instance.UpdateOrInsert(nhanVien);
+
+                    CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -307,9 +311,7 @@ namespace HotelManagement.GUI
                 }
                 finally
                 {
-                    CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+
                 }
             }
             catch (Exception)
