@@ -43,7 +43,8 @@ Ngôn ngữ: Tiếng Việt.
 	
     	B1: Lấy Server name khi vừa khởi động ứng dụng này.	
 	
-    	B2: Chạy các câu lệnh và tạo tên Database tùy ý.
+    	B2: Chạy file SQLHotelManagement.sql và bạn có thể tạo tên của Database tùy ý.
+	    Mặc định là "HotelManagement"
 	
     **Đặc biệt chú ý sử dụng Authentication là Windows Authentication.**
 	
