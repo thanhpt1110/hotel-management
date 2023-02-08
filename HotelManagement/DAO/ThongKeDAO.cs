@@ -110,7 +110,7 @@ namespace HotelManagement.DAO
                                               on Phong.MaPH = CTDP.MaPH
                                               inner join LoaiPhong
                                               on LoaiPhong.MaLPH = Phong.MaLPH
-                                              where LoaiPhong.MaLPH = 'NOR01' and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
+                                              where HoaDon.DaXoa = 0 and LoaiPhong.MaLPH = 'NOR01' and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
                                               group by NgHD
                                               order by NgHD asc
                                             ";
@@ -209,7 +209,7 @@ namespace HotelManagement.DAO
                                               on Phong.MaPH = CTDP.MaPH
                                               inner join LoaiPhong
                                               on LoaiPhong.MaLPH = Phong.MaLPH
-                                              where LoaiPhong.MaLPH = 'NOR02' and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
+                                              where HoaDon.DaXoa = 0 and LoaiPhong.MaLPH = 'NOR02' and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
                                               group by NgHD, CTDP.CheckIn, CTDP.CheckOut
                                               order by NgHD asc
                                             ";
@@ -308,7 +308,7 @@ namespace HotelManagement.DAO
                                               on Phong.MaPH = CTDP.MaPH
                                               inner join LoaiPhong
                                               on LoaiPhong.MaLPH = Phong.MaLPH
-                                              where LoaiPhong.MaLPH = 'VIP01' and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán' 
+                                              where HoaDon.DaXoa = 0 and LoaiPhong.MaLPH = 'VIP01' and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán' 
                                               group by NgHD, CTDP.CheckIn, CTDP.CheckOut
                                               order by NgHD asc
                                             ";
@@ -407,7 +407,7 @@ namespace HotelManagement.DAO
                                               on Phong.MaPH = CTDP.MaPH
                                               inner join LoaiPhong
                                               on LoaiPhong.MaLPH = Phong.MaLPH
-                                              where LoaiPhong.MaLPH = 'VIP02' and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán' 
+                                              where HoaDon.DaXoa = 0 and LoaiPhong.MaLPH = 'VIP02' and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán' 
                                               group by NgHD, CTDP.CheckIn, CTDP.CheckOut
                                               order by NgHD asc
                                             ";
@@ -503,13 +503,13 @@ namespace HotelManagement.DAO
                     command.Connection = connection;
                     command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = ngayBD;
                     command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ngayKT;
-                    command.CommandText = @"select TenDV, sum(CTDV.DonGia)*SL as GiaDV
+                    command.CommandText = @"select TenDV, ThanhTien
                                             from CTDV inner join HoaDon
                                             on CTDV.MaCTDP = HoaDon.MaCTDP
                                             inner join DichVu
                                             on DichVu.MaDV = CTDV.MaDV
-                                            where NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
-                                            group by DichVu.MaDV, TenDV, SL, NgHD
+                                            where HoaDon.DaXoa = 0 and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
+                                            group by DichVu.MaDV, TenDV, NgHD, ThanhTien
                                             order by NgHD asc
                                             ";
                     SqlDataReader reader = command.ExecuteReader();
@@ -532,10 +532,11 @@ namespace HotelManagement.DAO
                     command.Connection = connection;
                     command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = ngayBD;
                     command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ngayKT;
-                    command.CommandText = @"  select NgPT, count(MaPT) as SoPhongDat
-                                              from PhieuThue
-                                              where NgPT between @fromDate and @toDate
-                                              group by NgPT, MaPT
+                    command.CommandText = @"  select NgPT, count(*) as SoPhongDat
+                                              from PhieuThue inner join CTDP
+                                              on CTDP.MaPT = PhieuThue.MaPT
+                                              where PhieuThue.DaXoa = 0 and NgPT between @fromDate and @toDate
+                                              group by NgPT, MaPH
                                               order by NgPT asc
                                             ";
                     SqlDataReader reader = command.ExecuteReader();
@@ -633,7 +634,7 @@ namespace HotelManagement.DAO
                                               on CTDV.MaCTDP = HoaDon.MaCTDP
                                               inner join DichVu
                                               on DichVu.MaDV = CTDV.MaDV
-                                              where NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
+                                              where HoaDon.DaXoa = 0 and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
                                               group by DichVu.MaDV, TenDV, SL, NgHD 
                                               order by NgHD asc";
                     reader = command.ExecuteReader();
@@ -657,16 +658,16 @@ namespace HotelManagement.DAO
                     //Get Top 5 Dich Vu
                     command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = ngayBD;
                     command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ngayKT;
-                    command.CommandText = @"  select top 1 TenLPH, SUM(GiaNgay)*DATEDIFF(day,CTDP.CheckIn,CTDP.CheckOut)
+                    command.CommandText = @"  select top 1 TenLPH, HoaDon.TriGia
 	                                          from HoaDon inner join CTDP
 	                                          on HoaDon.MaCTDP = CTDP.MaCTDP
 	                                          inner join Phong
 	                                          on Phong.MaPH = CTDP.MaPH
 	                                          inner join LoaiPhong
 	                                          on LoaiPhong.MaLPH = Phong.MaLPH
-                                              where NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
-	                                          group by LoaiPhong.MaLPH, TenLPH, CTDP.CheckIn,CTDP.CheckOut, NgHD
-                                              order by NgHD asc";
+                                              where HoaDon.DaXoa = 0 and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
+	                                          group by LoaiPhong.MaLPH, TenLPH, HoaDon.TriGia
+                                              order by TriGia desc";
                     reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -694,9 +695,9 @@ namespace HotelManagement.DAO
                                               on DichVu.MaDV = CTDV.MaDV
                                               inner join HoaDon
                                               on CTDV.MaCTDP = HoaDon.MaCTDP
-                                              where NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
+                                              where HoaDon.DaXoa = 0 and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
                                               group by TenDV, DichVu.MaDV, SL
-                                              order by SUM(CTDV.DonGia)*SL asc";
+                                              order by SUM(CTDV.DonGia)*SL desc";
                     reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -726,9 +727,9 @@ namespace HotelManagement.DAO
                                               on CTDP.MaPH = Phong.MaPH
                                               inner join LoaiPhong
                                               on LoaiPhong.MaLPH = Phong.MaLPH
-                                              where NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
+                                              where HoaDon.DaXoa = 0 and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
                                               group by TenLPH, LoaiPhong.MaLPH
-                                              order by COUNT(CTDP.MaCTDP) asc";
+                                              order by COUNT(CTDP.MaCTDP) desc";
                     reader = command.ExecuteReader();
                     while (reader.Read())
                     {

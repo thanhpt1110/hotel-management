@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.BUS;
+using HotelManagement.CTControls;
+
 namespace HotelManagement.GUI.ThongKe
 {
     public partial class FormThongKe : Form
@@ -164,7 +166,7 @@ namespace HotelManagement.GUI.ThongKe
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);    
+                CTMessageBox.Show(ex.Message,"Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);    
             }
         }
     }
