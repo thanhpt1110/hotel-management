@@ -48,12 +48,12 @@ namespace HotelManagement.DAO
         public decimal TongDoanhThuDichVu { get; set; }
         public int SoPhongDat { get; set; }
 
-        public string TenLoaiPhongDoanhThuCaoNhat;
-        public decimal DoanhThuLoaiPhongCaoNhat;
-        public string TenLoaiPhongDuocDatNhieuNhat;
-        public int SoLanLoaiPhongDatNhieuNhat;
-        public string TenDichVuDoanhThuCaoNhat;
-        public decimal DoanhThuDichVuCaoNhat;
+        public string TenLoaiPhongDoanhThuCaoNhat { get; set; }
+        public decimal DoanhThuLoaiPhongCaoNhat { get; set; }
+        public string TenLoaiPhongDuocDatNhieuNhat { get; set; }
+        public int SoLanLoaiPhongDatNhieuNhat { get; set; }
+        public string TenDichVuDoanhThuCaoNhat { get; set; }
+        public decimal DoanhThuDichVuCaoNhat { get; set; }
 
         public ThongKeDAO()
         {
@@ -202,7 +202,7 @@ namespace HotelManagement.DAO
                     command.Connection = connection;
                     command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = ngayBD;
                     command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ngayKT;
-                    command.CommandText = @"  select NgHD, SUM(GiaNgay)*(DATEDIFF(day,CTDP.CheckIn,CTDP.CheckOut)) AS TienThue
+                    command.CommandText = @"  select NgHD, SUM(ThanhTien)
                                               from HoaDon inner join CTDP
                                               on HoaDon.MaCTDP = CTDP.MaCTDP
                                               inner join Phong
@@ -301,7 +301,7 @@ namespace HotelManagement.DAO
                     command.Connection = connection;
                     command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = ngayBD;
                     command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ngayKT;
-                    command.CommandText = @"  select NgHD, SUM(GiaNgay)*(DATEDIFF(day,CTDP.CheckIn,CTDP.CheckOut)) AS TienThue
+                    command.CommandText = @"  select NgHD, SUM(ThanhTien)
                                               from HoaDon inner join CTDP
                                               on HoaDon.MaCTDP = CTDP.MaCTDP
                                               inner join Phong
@@ -400,7 +400,7 @@ namespace HotelManagement.DAO
                     command.Connection = connection;
                     command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = ngayBD;
                     command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ngayKT;
-                    command.CommandText = @"  select NgHD, SUM(GiaNgay)*(DATEDIFF(day,CTDP.CheckIn,CTDP.CheckOut)) AS TienThue
+                    command.CommandText = @"  select NgHD, SUM(ThanhTien)
                                               from HoaDon inner join CTDP
                                               on HoaDon.MaCTDP = CTDP.MaCTDP
                                               inner join Phong
@@ -503,13 +503,13 @@ namespace HotelManagement.DAO
                     command.Connection = connection;
                     command.Parameters.Add("@fromDate", System.Data.SqlDbType.DateTime).Value = ngayBD;
                     command.Parameters.Add("@toDate", System.Data.SqlDbType.DateTime).Value = ngayKT;
-                    command.CommandText = @"select TenDV, ThanhTien
+                    command.CommandText = @"select DichVu.MaDV, ThanhTien
                                             from CTDV inner join HoaDon
                                             on CTDV.MaCTDP = HoaDon.MaCTDP
                                             inner join DichVu
                                             on DichVu.MaDV = CTDV.MaDV
                                             where HoaDon.DaXoa = 0 and NgHD between @fromDate and @toDate and HoaDon.TrangThai = N'Đã thanh toán'
-                                            group by DichVu.MaDV, TenDV, NgHD, ThanhTien
+                                            group by DichVu.MaDV, NgHD, ThanhTien, HoaDon.MaHD
                                             order by NgHD asc
                                             ";
                     SqlDataReader reader = command.ExecuteReader();
@@ -648,6 +648,8 @@ namespace HotelManagement.DAO
         }
         private void GetLoaiPhongDoanhThuCaoNhat()
         {
+            TenLoaiPhongDoanhThuCaoNhat = "";
+            DoanhThuLoaiPhongCaoNhat = 0;
             using (var connection = GetConnection())
             {
                 connection.Open();
@@ -680,6 +682,8 @@ namespace HotelManagement.DAO
         }
         private void GetDichVuDoanhThuCaoNhat()
         {
+            TenDichVuDoanhThuCaoNhat = "";
+            DoanhThuDichVuCaoNhat = 0;
             using (var connection = GetConnection())
             {
                 connection.Open();
@@ -710,6 +714,8 @@ namespace HotelManagement.DAO
         }
         private void GetLoaiPhongDatNhieuNhat()
         {
+            TenLoaiPhongDuocDatNhieuNhat = "";
+            SoLanLoaiPhongDatNhieuNhat = 0;
             using (var connection = GetConnection())
             {
                 connection.Open();
