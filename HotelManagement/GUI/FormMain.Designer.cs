@@ -536,11 +536,11 @@
             // 
             this.labelTenKhachSan.AutoSize = true;
             this.labelTenKhachSan.BackColor = System.Drawing.Color.Transparent;
-            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.labelTenKhachSan.ForeColor = System.Drawing.Color.Coral;
-            this.labelTenKhachSan.Location = new System.Drawing.Point(82, 9);
+            this.labelTenKhachSan.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenKhachSan.ForeColor = System.Drawing.Color.LightSalmon;
+            this.labelTenKhachSan.Location = new System.Drawing.Point(68, 14);
             this.labelTenKhachSan.Name = "labelTenKhachSan";
-            this.labelTenKhachSan.Size = new System.Drawing.Size(214, 30);
+            this.labelTenKhachSan.Size = new System.Drawing.Size(227, 32);
             this.labelTenKhachSan.TabIndex = 2;
             this.labelTenKhachSan.Text = "Hotel Management";
             // 
