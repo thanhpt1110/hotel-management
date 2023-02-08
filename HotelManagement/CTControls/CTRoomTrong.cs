@@ -34,6 +34,7 @@ namespace HotelManagement.CTControls
         public override void setMaPhong(string maPhong)
         {
             this.LabelMaPhong.Text = maPhong;
+            this.MaPhong = maPhong;
         }
         public override void setTrangThai(string trangThai)
         {

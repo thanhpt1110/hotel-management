@@ -204,7 +204,7 @@ BEGIN
 	SET @SL = (SELECT SL FROM inserted)
 	UPDATE CTDV
 	SET ThanhTien= @SL * @GiaTien
-	WHERE "MaDV" = MaDV AND MaCTDP = @MaCTDP
+	WHERE "MaDV" = @MaDV AND MaCTDP = @MaCTDP
 END
 -- TRIGGER udpate giá trị hóa đơn
 GO
@@ -389,3 +389,4 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007','17/12/2022','NV001','CTDP007',N'Đã thanh toán','0')
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD008','20/12/2022','NV001','CTDP008',N'Đã thanh toán','0')
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD009','18/12/2022','NV001','CTDP009',N'Đã thanh toán','0')
+		
