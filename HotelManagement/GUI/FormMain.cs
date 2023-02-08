@@ -15,7 +15,7 @@ using ApplicationSettings;
 using HotelManagement.GUI.ThongKe;
 using HotelManagement.DTO;
 using System.IO;
-
+using HotelManagement.CTControls;
 namespace HotelManagement
 {
     public partial class FormMain : Form
@@ -431,10 +431,7 @@ namespace HotelManagement
         }
         private void ctMaximize1_Click(object sender, EventArgs e)
         {
-            if (this.WindowState != FormWindowState.Maximized)
-                this.WindowState = FormWindowState.Maximized;            
-            else
-                this.WindowState = FormWindowState.Normal;
+            CTMessageBox.Show("Ứng dụng chưa hỗ trợ kích thước toàn màn hình", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void panelControlBox_MouseHover(object sender, EventArgs e)
         {
