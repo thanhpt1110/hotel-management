@@ -247,17 +247,45 @@ namespace HotelManagement.CTControls
             }
             finally { formBackground.Dispose(); }
         }
-
+        private void setColorMove(Color colorTop, Color colorBack)
+        {
+            LabelMaPhong.BackColor
+                = LabelLoaiPhong.BackColor
+                = PictureBoxTrangThai.BackColor
+                = LabelTrangThaiLon.BackColor
+                = LabelGhiChu.BackColor
+                = PanelTop.BackColor = colorTop;
+            this.BackColor
+                = PictureBoxThoiGian.BackColor
+                = PictureBoxTrangThaiDonDep.BackColor
+                = LabelThoiGian.BackColor
+                = LabelTrangThaiDonDep.BackColor
+                = colorBack;
+        }
+        private void setColorLeave(Color colorTop, Color colorBack)
+        {
+            LabelMaPhong.BackColor
+                = LabelLoaiPhong.BackColor
+                = PictureBoxTrangThai.BackColor
+                = LabelTrangThaiLon.BackColor
+                = PanelTop.BackColor
+                = LabelGhiChu.BackColor
+                = colorTop;
+            this.BackColor
+                = PictureBoxThoiGian.BackColor
+                = PictureBoxTrangThaiDonDep.BackColor
+                = LabelThoiGian.BackColor
+                = LabelTrangThaiDonDep.BackColor
+                = colorBack;
+        }
         private void CTRoomDaDat_MouseLeave(object sender, EventArgs e)
         {
-            PanelTop.BackColor = Color.FromArgb(201, 167, 31);
-            BackColor = Color.FromArgb(230, 222, 224);
+            setColorLeave(Color.FromArgb(201, 167, 31), Color.FromArgb(230, 222, 224));
         }
 
         private void CTRoomDaDat_MouseMove(object sender, MouseEventArgs e)
         {
-            PanelTop.BackColor = Color.FromArgb(148, 122, 22);
-            BackColor = Color.FromArgb(154, 148, 150);
+            setColorMove(Color.FromArgb(148, 122, 22), Color.FromArgb(154, 148, 150));
         }
     }
 }

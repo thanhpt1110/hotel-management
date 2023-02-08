@@ -66,7 +66,7 @@ namespace HotelManagement.CTControls
         }
         public override void setGhiChu(string ghiChu)
         {
-            this.LabelCoc.Text = ghiChu;
+            this.LabelGhiChu.Text = ghiChu;
         }
 
         public int BorderSize
@@ -247,17 +247,45 @@ namespace HotelManagement.CTControls
             finally { formBackground.Dispose(); }
             
         }
-
+        private void setColorMove(Color colorTop, Color colorBack)
+        {
+            LabelMaPhong.BackColor
+                = LabelLoaiPhong.BackColor
+                = PictureBoxTrangThai.BackColor
+                = LabelTrangThaiLon.BackColor
+                = LabelGhiChu.BackColor
+                = PanelTop.BackColor = colorTop;
+            this.BackColor
+                = PictureBoxThoiGian.BackColor
+                = PictureBoxTrangThaiDonDep.BackColor
+                = LabelThoiGian.BackColor
+                = LabelTrangThaiDonDep.BackColor
+                = colorBack;
+        }
+        private void setColorLeave(Color colorTop, Color colorBack)
+        {
+            LabelMaPhong.BackColor
+                = LabelLoaiPhong.BackColor
+                = PictureBoxTrangThai.BackColor
+                = LabelTrangThaiLon.BackColor
+                = PanelTop.BackColor 
+                = LabelGhiChu.BackColor
+                = colorTop;
+            this.BackColor
+                = PictureBoxThoiGian.BackColor
+                = PictureBoxTrangThaiDonDep.BackColor
+                = LabelThoiGian.BackColor
+                = LabelTrangThaiDonDep.BackColor
+                = colorBack;
+        }
         private void CTRoomDangSuaChua_MouseLeave(object sender, EventArgs e)
         {
-            PanelTop.BackColor = Color.FromArgb(43, 183, 213);
-            BackColor = Color.FromArgb(230, 222, 224);
+            setColorLeave(Color.FromArgb(43, 183, 213), Color.FromArgb(230, 222, 224));
         }
 
         private void CTRoomDangSuaChua_MouseMove(object sender, MouseEventArgs e)
         {
-            PanelTop.BackColor = Color.FromArgb(33, 140, 163);
-            BackColor = Color.FromArgb(154, 148, 150);
+            setColorMove(Color.FromArgb(33, 140, 163), Color.FromArgb(154, 148, 150));
         }
     }
 }

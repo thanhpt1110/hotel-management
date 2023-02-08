@@ -53,7 +53,7 @@ namespace HotelManagement.CTControls
         private void InitializeComponent()
         {
             this.PanelTop = new HotelManagement.CTControls.CTRoomDangSuaChua.DoubleBufferPanel();
-            this.LabelCoc = new System.Windows.Forms.Label();
+            this.LabelGhiChu = new System.Windows.Forms.Label();
             this.PictureBoxTrangThai = new System.Windows.Forms.PictureBox();
             this.LabelTrangThaiLon = new System.Windows.Forms.Label();
             this.LabelLoaiPhong = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@ namespace HotelManagement.CTControls
             // PanelTop
             // 
             this.PanelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
-            this.PanelTop.Controls.Add(this.LabelCoc);
+            this.PanelTop.Controls.Add(this.LabelGhiChu);
             this.PanelTop.Controls.Add(this.PictureBoxTrangThai);
             this.PanelTop.Controls.Add(this.LabelTrangThaiLon);
             this.PanelTop.Controls.Add(this.LabelLoaiPhong);
@@ -85,24 +85,25 @@ namespace HotelManagement.CTControls
             this.PanelTop.MouseLeave += new System.EventHandler(this.CTRoomDangSuaChua_MouseLeave);
             this.PanelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomDangSuaChua_MouseMove);
             // 
-            // LabelCoc
+            // LabelGhiChu
             // 
-            this.LabelCoc.AutoSize = true;
-            this.LabelCoc.BackColor = System.Drawing.Color.Transparent;
-            this.LabelCoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LabelCoc.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelCoc.ForeColor = System.Drawing.Color.White;
-            this.LabelCoc.Location = new System.Drawing.Point(150, 92);
-            this.LabelCoc.Name = "LabelCoc";
-            this.LabelCoc.Size = new System.Drawing.Size(83, 17);
-            this.LabelCoc.TabIndex = 9;
-            this.LabelCoc.Text = "Hư điều hòa";
-            this.LabelCoc.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
-            this.LabelCoc.MouseLeave += new System.EventHandler(this.CTRoomDangSuaChua_MouseLeave);
-            this.LabelCoc.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomDangSuaChua_MouseMove);
+            this.LabelGhiChu.AutoSize = true;
+            this.LabelGhiChu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
+            this.LabelGhiChu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LabelGhiChu.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelGhiChu.ForeColor = System.Drawing.Color.White;
+            this.LabelGhiChu.Location = new System.Drawing.Point(150, 92);
+            this.LabelGhiChu.Name = "LabelGhiChu";
+            this.LabelGhiChu.Size = new System.Drawing.Size(83, 17);
+            this.LabelGhiChu.TabIndex = 9;
+            this.LabelGhiChu.Text = "Hư điều hòa";
+            this.LabelGhiChu.Click += new System.EventHandler(this.CTRoomDangSuaChua_Click);
+            this.LabelGhiChu.MouseLeave += new System.EventHandler(this.CTRoomDangSuaChua_MouseLeave);
+            this.LabelGhiChu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CTRoomDangSuaChua_MouseMove);
             // 
             // PictureBoxTrangThai
             // 
+            this.PictureBoxTrangThai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
             this.PictureBoxTrangThai.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureBoxTrangThai.Image = global::HotelManagement.Properties.Resources.DangSuaChua;
             this.PictureBoxTrangThai.Location = new System.Drawing.Point(25, 63);
@@ -117,7 +118,7 @@ namespace HotelManagement.CTControls
             // LabelTrangThaiLon
             // 
             this.LabelTrangThaiLon.AutoSize = true;
-            this.LabelTrangThaiLon.BackColor = System.Drawing.Color.Transparent;
+            this.LabelTrangThaiLon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
             this.LabelTrangThaiLon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LabelTrangThaiLon.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTrangThaiLon.ForeColor = System.Drawing.Color.White;
@@ -133,7 +134,7 @@ namespace HotelManagement.CTControls
             // LabelLoaiPhong
             // 
             this.LabelLoaiPhong.AutoSize = true;
-            this.LabelLoaiPhong.BackColor = System.Drawing.Color.Transparent;
+            this.LabelLoaiPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
             this.LabelLoaiPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LabelLoaiPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelLoaiPhong.ForeColor = System.Drawing.Color.White;
@@ -149,7 +150,7 @@ namespace HotelManagement.CTControls
             // LabelMaPhong
             // 
             this.LabelMaPhong.AutoSize = true;
-            this.LabelMaPhong.BackColor = System.Drawing.Color.Transparent;
+            this.LabelMaPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(183)))), ((int)(((byte)(213)))));
             this.LabelMaPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LabelMaPhong.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelMaPhong.ForeColor = System.Drawing.Color.White;
@@ -165,7 +166,7 @@ namespace HotelManagement.CTControls
             // LabelThoiGian
             // 
             this.LabelThoiGian.AutoSize = true;
-            this.LabelThoiGian.BackColor = System.Drawing.Color.Transparent;
+            this.LabelThoiGian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.LabelThoiGian.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LabelThoiGian.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelThoiGian.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -181,7 +182,7 @@ namespace HotelManagement.CTControls
             // LabelTrangThaiDonDep
             // 
             this.LabelTrangThaiDonDep.AutoSize = true;
-            this.LabelTrangThaiDonDep.BackColor = System.Drawing.Color.Transparent;
+            this.LabelTrangThaiDonDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.LabelTrangThaiDonDep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LabelTrangThaiDonDep.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTrangThaiDonDep.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -196,7 +197,7 @@ namespace HotelManagement.CTControls
             // 
             // PictureBoxTrangThaiDonDep
             // 
-            this.PictureBoxTrangThaiDonDep.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxTrangThaiDonDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.PictureBoxTrangThaiDonDep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureBoxTrangThaiDonDep.Image = global::HotelManagement.Properties.Resources.DaDonDep;
             this.PictureBoxTrangThaiDonDep.Location = new System.Drawing.Point(155, 132);
@@ -211,6 +212,7 @@ namespace HotelManagement.CTControls
             // 
             // PictureBoxThoiGian
             // 
+            this.PictureBoxThoiGian.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(222)))), ((int)(((byte)(224)))));
             this.PictureBoxThoiGian.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PictureBoxThoiGian.Image = global::HotelManagement.Properties.Resources.clock;
             this.PictureBoxThoiGian.Location = new System.Drawing.Point(28, 131);
@@ -257,7 +259,7 @@ namespace HotelManagement.CTControls
         private System.Windows.Forms.Label LabelLoaiPhong;
         private System.Windows.Forms.Label LabelMaPhong;
         private System.Windows.Forms.PictureBox PictureBoxTrangThaiDonDep;
-        private System.Windows.Forms.Label LabelCoc;
+        private System.Windows.Forms.Label LabelGhiChu;
         private System.Windows.Forms.PictureBox PictureBoxThoiGian;
         private System.Windows.Forms.Label LabelThoiGian;
         private System.Windows.Forms.Label LabelTrangThaiDonDep;

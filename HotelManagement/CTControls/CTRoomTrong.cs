@@ -297,35 +297,45 @@ namespace HotelManagement.CTControls
             }
             finally { formBackground.Dispose(); }
         }
-
+        private void setColorMove(Color colorTop, Color colorBack)
+        {
+            LabelMaPhong.BackColor
+                = LabelLoaiPhong.BackColor
+                = PictureBoxTrangThai.BackColor
+                = LabelTrangThaiLon.BackColor
+                = PanelTop.BackColor = colorTop;
+            this.BackColor
+                = PictureBoxThoiGian.BackColor
+                = PictureBoxTrangThaiDonDep.BackColor
+                = LabelThoiGian.BackColor
+                = LabelTrangThaiDonDep.BackColor
+                = colorBack;
+        }
+        private void setColorLeave(Color colorTop, Color colorBack)
+        {
+            LabelMaPhong.BackColor
+                = LabelLoaiPhong.BackColor
+                = PictureBoxTrangThai.BackColor
+                = LabelTrangThaiLon.BackColor
+                = PanelTop.BackColor
+                = colorTop;
+            this.BackColor
+                = PictureBoxThoiGian.BackColor
+                = PictureBoxTrangThaiDonDep.BackColor
+                = LabelThoiGian.BackColor
+                = LabelTrangThaiDonDep.BackColor
+                = colorBack;
+        }
         private void CTRoomTrong_MouseMove(object sender, MouseEventArgs e)
         {
             touchMouse = true;
-            PanelTop.BackColor = Color.FromArgb(47, 109, 39);
-            BackColor = Color.FromArgb(154, 148, 150);
-            this.PictureBoxThoiGian.BackColor = Color.FromArgb(154, 148, 150);
-            this.PictureBoxTrangThaiDonDep.BackColor = BackColor;
-            this.LabelTrangThaiDonDep.BackColor = BackColor;
-            this.LabelThoiGian.BackColor = BackColor;
-            this.PictureBoxTrangThai.BackColor = Color.FromArgb(47, 109, 39);
-            this.LabelTrangThaiLon.BackColor = Color.FromArgb(47, 109, 39);
-            this.LabelMaPhong.BackColor = Color.FromArgb(47, 109, 39);
-            this.LabelLoaiPhong.BackColor = Color.FromArgb(47, 109, 39);
+            setColorMove(Color.FromArgb(47, 109, 39), Color.FromArgb(154, 148, 150));
             this.Invalidate();
         }
 
         private void CTRoomTrong_MouseLeave(object sender, EventArgs e)
         {
-            PanelTop.BackColor = Color.FromArgb(113, 201, 103);
-            BackColor = Color.FromArgb(230, 222, 224);
-            this.PictureBoxThoiGian.BackColor = BackColor;
-            this.PictureBoxTrangThaiDonDep.BackColor = BackColor;
-            this.LabelTrangThaiDonDep.BackColor = BackColor;
-            this.LabelThoiGian.BackColor = BackColor;
-            this.PictureBoxTrangThai.BackColor = Color.FromArgb(113, 201, 103);
-            this.LabelTrangThaiLon.BackColor = Color.FromArgb(113, 201, 103);
-            this.LabelMaPhong.BackColor = Color.FromArgb(113, 201, 103);
-            this.LabelLoaiPhong.BackColor = Color.FromArgb(113, 201, 103);
+            setColorLeave(Color.FromArgb(113, 201, 103), Color.FromArgb(230, 222, 224));
         }
     }
 }
