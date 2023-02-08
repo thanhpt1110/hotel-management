@@ -79,6 +79,7 @@
             this.textBoxPassword.ReadOnly = false;
             this.textBoxPassword.Size = new System.Drawing.Size(285, 45);
             this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.TabStop = false;
             this.textBoxPassword.Texts = "";
             this.textBoxPassword.UnderlineedStyle = false;
             this.textBoxPassword._TextChanged += new System.EventHandler(this.textBoxPassword__TextChanged);
