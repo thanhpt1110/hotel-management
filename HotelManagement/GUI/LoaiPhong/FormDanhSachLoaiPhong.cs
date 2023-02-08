@@ -67,16 +67,31 @@ namespace HotelManagement.GUI
 
         public void LoadAllDataGrid()
         {
+            try
+            {
             this.loaiPhongs = LoaiPhongBUS.Instance.GetLoaiPhongs();
             LoadDataGrid();
-        }    
+            }    
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void LoadDataGrid()
         {
-            grid.Rows.Clear();
-            foreach(LoaiPhong loaiPhong in this.loaiPhongs)
+            try
             {
-                grid.Rows.Add(LP, loaiPhong.MaLPH, loaiPhong.TenLPH, loaiPhong.SoGiuong, loaiPhong.SoNguoiToiDa, loaiPhong.GiaNgay.ToString("#,#"), loaiPhong.GiaGio.ToString("#,#"), details, edit);
-            }    
+                grid.Rows.Clear();
+                foreach(LoaiPhong loaiPhong in this.loaiPhongs)
+                {
+                    grid.Rows.Add(LP, loaiPhong.MaLPH, loaiPhong.TenLPH, loaiPhong.SoGiuong, loaiPhong.SoNguoiToiDa, loaiPhong.GiaNgay.ToString("#,#"), loaiPhong.GiaGio.ToString("#,#"), details, edit);
+                }    
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }    
         private void buttonExport_Click(object sender, EventArgs e)
         {
@@ -171,6 +186,7 @@ namespace HotelManagement.GUI
                             formSuaLoaiPhong.ShowDialog();
                             formBackground.Dispose();
                         }
+                        LoadAllDataGrid();
                     }
                     catch (Exception)
                     {
@@ -179,7 +195,6 @@ namespace HotelManagement.GUI
                     }
                     finally 
                     {
-                        LoadAllDataGrid();
                         formBackground.Dispose(); 
                     }
                 }

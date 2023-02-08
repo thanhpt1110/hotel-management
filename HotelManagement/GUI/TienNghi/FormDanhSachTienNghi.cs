@@ -73,18 +73,33 @@ namespace HotelManagement.GUI
 
         public void LoadAllData()
         {
-            tienNghis = TienNghiBUS.Instance.GetTienNghis();
-            LoadData();
+            try
+            {
+                tienNghis = TienNghiBUS.Instance.GetTienNghis();
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void LoadData()
         {
-            grid.Rows.Clear();
-            foreach (TienNghi tienNghi in tienNghis)
+            try
             {
-                grid.Rows.Add(new object[] { TN, tienNghi.MaTN, tienNghi.TenTN, edit, delete });
+                grid.Rows.Clear();
+                foreach (TienNghi tienNghi in tienNghis)
+                {
+                    grid.Rows.Add(new object[] { TN, tienNghi.MaTN, tienNghi.TenTN, edit, delete });
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
+
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try
@@ -176,6 +191,9 @@ namespace HotelManagement.GUI
                         try
                         {
                             TienNghiBUS.Instance.RemoveTN(TienNghiBUS.Instance.FindTienNghi(grid.Rows[y].Cells[1].Value.ToString()));
+                            this.LoadAllData();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception)
                         {
@@ -184,9 +202,6 @@ namespace HotelManagement.GUI
                         }
                         finally
                         {
-                            this.LoadAllData();
-                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }

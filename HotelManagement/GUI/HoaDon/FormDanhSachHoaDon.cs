@@ -49,8 +49,15 @@ namespace HotelManagement.GUI
 
         public void LoadAllDataGrid()
         {
-            hoaDons = HoaDonBUS.Instance.GetHoaDons();
-            LoadDataGrid(hoaDons);
+            try
+            {
+                hoaDons = HoaDonBUS.Instance.GetHoaDons();
+                LoadDataGrid(hoaDons);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public void LoadDataGrid(List<HoaDon> hoaDons)
         {
@@ -88,9 +95,16 @@ namespace HotelManagement.GUI
         }
         void LoadGridWith_CCCD()
         {
-            cccd = this.CTTextBoxTimTheoCCCD.Texts;
-            hoaDons = HoaDonBUS.Instance.FindHoaDonWith_CCCD(cccd);
-            LoadDataGrid(hoaDons);
+            try
+            {
+                cccd = this.CTTextBoxTimTheoCCCD.Texts;
+                hoaDons = HoaDonBUS.Instance.FindHoaDonWith_CCCD(cccd);
+                LoadDataGrid(hoaDons);
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void buttonExport_Click(object sender, EventArgs e)
         {
@@ -142,25 +156,32 @@ namespace HotelManagement.GUI
             // If click details button
             if (x == 7 && y >= 0)
             {
-                string MaHD = grid.Rows[y].Cells[1].Value.ToString();
-                HoaDon HD = HoaDonBUS.Instance.FindHD(MaHD);
-                FormBackground formBackground = new FormBackground(formMain);
                 try
                 {
-                    using (FormHoaDon formHoaDon = new FormHoaDon(HD))
+                    string MaHD = grid.Rows[y].Cells[1].Value.ToString();
+                    HoaDon HD = HoaDonBUS.Instance.FindHD(MaHD);
+                    FormBackground formBackground = new FormBackground(formMain);
+                    try
                     {
-                        formBackground.Owner = formMain;
-                        formBackground.Show();
-                        formHoaDon.Owner = formBackground;
-                        formHoaDon.ShowDialog();
-                        formBackground.Dispose();
+                        using (FormHoaDon formHoaDon = new FormHoaDon(HD))
+                        {
+                            formBackground.Owner = formMain;
+                            formBackground.Show();
+                            formHoaDon.Owner = formBackground;
+                            formHoaDon.ShowDialog();
+                            formBackground.Dispose();
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally { formBackground.Dispose(); }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    MessageBox.Show(ex.Message);
                 }
-                finally { formBackground.Dispose(); }
             }
         }
 

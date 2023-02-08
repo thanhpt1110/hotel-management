@@ -755,7 +755,7 @@ namespace HotelManagement.GUI
             // 
             // timerSearch
             // 
-            this.timerSearch.Interval = 1000;
+            this.timerSearch.Interval = 300;
             this.timerSearch.Tick += new System.EventHandler(this.timerSearch_Tick);
             // 
             // FormSoDoPhong

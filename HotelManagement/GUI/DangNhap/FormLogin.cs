@@ -285,10 +285,6 @@ namespace HotelManagement
             this.Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
         Form activeForm = null;
         public void openChildForm(Form childForm)
         {
@@ -303,10 +299,6 @@ namespace HotelManagement
             childForm.BringToFront();
             childForm.Show();
         }
-        private void labelForgotPassword_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
@@ -314,16 +306,6 @@ namespace HotelManagement
             openChildForm(formDangNhap);
             panelControlBox.BringToFront();
             labelCorporation.BringToFront();
-            
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            FormKetNoiCSDL formKetNoiCSDL = new FormKetNoiCSDL();
-            this.Hide();
-            formKetNoiCSDL.ShowDialog();
-            this.Close();
-
         }
     }
 }

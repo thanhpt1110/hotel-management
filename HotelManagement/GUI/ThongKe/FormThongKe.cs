@@ -109,59 +109,63 @@ namespace HotelManagement.GUI.ThongKe
         
         private void LoadData()
         {
-
-            var refreshDate = thongKe.LoadData(dtpNgayBD.Value, dtpNgayKT.Value);
-            if (refreshDate == true)
+            try
             {
-                chartDoanhThuThue.Series[0].Points.Clear();
-                chartDoanhThuThue.Series[1].Points.Clear();
-                chartDoanhThuThue.Series[2].Points.Clear();
-                chartDoanhThuThue.Series[3].Points.Clear();
-                foreach(var item in thongKe.DoanhThuThuongDonList)
+                var refreshDate = thongKe.LoadData(dtpNgayBD.Value, dtpNgayKT.Value);
+                if (refreshDate == true)
                 {
-                    chartDoanhThuThue.Series[0].Points.AddXY(item.Date, item.TotalAmount);
+                    chartDoanhThuThue.Series[0].Points.Clear();
+                    chartDoanhThuThue.Series[1].Points.Clear();
+                    chartDoanhThuThue.Series[2].Points.Clear();
+                    chartDoanhThuThue.Series[3].Points.Clear();
+                    foreach (var item in thongKe.DoanhThuThuongDonList)
+                    {
+                        chartDoanhThuThue.Series[0].Points.AddXY(item.Date, item.TotalAmount);
+                    }
+                    foreach (var item in thongKe.DoanhThuThuongDoiList)
+                    {
+                        chartDoanhThuThue.Series[1].Points.AddXY(item.Date, item.TotalAmount);
+                    }
+                    foreach (var item in thongKe.DoanhThuVipDonList)
+                    {
+                        chartDoanhThuThue.Series[2].Points.AddXY(item.Date, item.TotalAmount);
+                    }
+                    foreach (var item in thongKe.DoanhThuVipDoiList)
+                    {
+                        chartDoanhThuThue.Series[3].Points.AddXY(item.Date, item.TotalAmount);
+                    }
+
+                    chartSoPhongDat.DataSource = thongKe.SoPhongDatList;
+                    chartSoPhongDat.Series[0].XValueMember = "Date";
+                    chartSoPhongDat.Series[0].YValueMembers = "TotalAmount";
+                    chartSoPhongDat.DataBind();
+
+                    chartDichVu.DataSource = thongKe.TopDichVuList;
+                    chartDichVu.Series[0].XValueMember = "Key";
+                    chartDichVu.Series[0].YValueMembers = "Value";
+                    chartDichVu.DataBind();
+
+                    DoanhThuThue.Text = thongKe.TongDoanhThuThue.ToString("#,#");
+                    DoanhThuDichVu.Text = thongKe.TongDoanhThuDichVu.ToString("#,#");
+                    SoPhongDat.Text = thongKe.SoPhongDat.ToString();
+
+                    TenLoaiPhongDoanhThuCaoNhat.Text = thongKe.TenLoaiPhongDoanhThuCaoNhat;
+                    DoanhThuLoaiPhongCaoNhat.Text = thongKe.DoanhThuLoaiPhongCaoNhat.ToString("#,#");
+                    TenLoaiPhongDatNhieuNhat.Text = thongKe.TenLoaiPhongDuocDatNhieuNhat;
+                    SoLanDatLoaiPhongNhieuNhat.Text = thongKe.SoLanLoaiPhongDatNhieuNhat.ToString();
+                    TenDichVuDoanhThuCaoNhat.Text = thongKe.TenDichVuDoanhThuCaoNhat;
+                    DoanhThuDichVuCaoNhat.Text = thongKe.DoanhThuDichVuCaoNhat.ToString("#,#");
+
                 }
-                foreach(var item in thongKe.DoanhThuThuongDoiList)
+                else
                 {
-                    chartDoanhThuThue.Series[1].Points.AddXY(item.Date, item.TotalAmount);
+                    Console.WriteLine("View not loaded, same query");
                 }
-                foreach (var item in thongKe.DoanhThuVipDonList)
-                {
-                    chartDoanhThuThue.Series[2].Points.AddXY(item.Date, item.TotalAmount);
-                }
-                foreach (var item in thongKe.DoanhThuVipDoiList)
-                {
-                    chartDoanhThuThue.Series[3].Points.AddXY(item.Date, item.TotalAmount);
-                }
-
-                chartSoPhongDat.DataSource = thongKe.SoPhongDatList;
-                chartSoPhongDat.Series[0].XValueMember = "Date";
-                chartSoPhongDat.Series[0].YValueMembers = "TotalAmount";
-                chartSoPhongDat.DataBind();
-
-                chartDichVu.DataSource = thongKe.TopDichVuList;
-                chartDichVu.Series[0].XValueMember = "Key";
-                chartDichVu.Series[0].YValueMembers = "Value";
-                chartDichVu.DataBind();
-
-                DoanhThuThue.Text = thongKe.TongDoanhThuThue.ToString("#,#");
-                DoanhThuDichVu.Text = thongKe.TongDoanhThuDichVu.ToString("#,#");
-                SoPhongDat.Text = thongKe.SoPhongDat.ToString();
-
-                TenLoaiPhongDoanhThuCaoNhat.Text = thongKe.TenLoaiPhongDoanhThuCaoNhat;
-                DoanhThuLoaiPhongCaoNhat.Text = thongKe.DoanhThuLoaiPhongCaoNhat.ToString("#,#");
-                TenLoaiPhongDatNhieuNhat.Text = thongKe.TenLoaiPhongDuocDatNhieuNhat;
-                SoLanDatLoaiPhongNhieuNhat.Text = thongKe.SoLanLoaiPhongDatNhieuNhat.ToString();
-                TenDichVuDoanhThuCaoNhat.Text = thongKe.TenDichVuDoanhThuCaoNhat;
-                DoanhThuDichVuCaoNhat.Text = thongKe.DoanhThuDichVuCaoNhat.ToString("#,#");
-
             }
-            else
+            catch(Exception ex)
             {
-                Console.WriteLine("View not loaded, same query");
+                MessageBox.Show(ex.Message);    
             }
         }
-
-
     }
 }

@@ -37,17 +37,22 @@ namespace HotelManagement.GUI
         }
         private void ButtonLayOTP_Click(object sender, EventArgs e)
         {
-            TaiKhoan taiKhoan = TaiKhoanBUS.Instance.CheckLegit(this.textBoxUsername.Texts, this.TextBoxEmail.Texts);
-            if (taiKhoan!=null)
+            try
             {
-                
-                formLoginParent.openChildForm(new FormQuenMatKhauNhapOTP(formLoginParent, this.TextBoxEmail.Texts, taiKhoan));
+                TaiKhoan taiKhoan = TaiKhoanBUS.Instance.CheckLegit(this.textBoxUsername.Texts, this.TextBoxEmail.Texts);
+                if (taiKhoan!=null)
+                {
+                    formLoginParent.openChildForm(new FormQuenMatKhauNhapOTP(formLoginParent, this.TextBoxEmail.Texts, taiKhoan));
+                }
+                else
+                {
+                    CTMessageBox.Show("Email hoặc tài khoản đăng nhập của bạn bị sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } 
             }
-            else
+            catch(Exception ex) 
             {
-                CTMessageBox.Show("Email hoặc tài khoản đăng nhập của bạn bị sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
-                
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

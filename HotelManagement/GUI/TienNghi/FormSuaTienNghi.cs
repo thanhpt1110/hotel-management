@@ -228,10 +228,13 @@ namespace HotelManagement.GUI
             }    
             else
             {
-                this.tienNghi.TenTN = ctTextBoxName.Texts;
                 try
                 {
+                    this.tienNghi.TenTN = ctTextBoxName.Texts;
                     TienNghiBUS.Instance.InsertOrUpdate(tienNghi);
+                    CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 catch (Exception)
                 {
@@ -240,9 +243,7 @@ namespace HotelManagement.GUI
                 }
                 finally
                 {
-                    CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                   
                 }
             }
         }

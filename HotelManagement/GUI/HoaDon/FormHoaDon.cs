@@ -88,7 +88,7 @@ namespace HotelManagement.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                MessageBox.Show(ex.Message);
             }
             /*
             

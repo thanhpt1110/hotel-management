@@ -50,7 +50,7 @@ namespace HotelManagement.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "THÔNG BÁO");
+                MessageBox.Show(ex.Message);
             }
             finally { formBackground.Dispose(); }
         }
@@ -69,17 +69,32 @@ namespace HotelManagement.GUI
 
         public void LoadFullDataGrid()
         {
-            phieuThues = PhieuThueBUS.Instance.GetPhieuThues();
-            LoadDataGrid();
+            try
+            {
+                phieuThues = PhieuThueBUS.Instance.GetPhieuThues();
+                LoadDataGrid();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }    
         public void LoadDataGrid()
         {
-            this.grid.Rows.Clear();
-            foreach (PhieuThue phieuThue in phieuThues)
+            try
             {
-                grid.Rows.Add(new object[] { PT, phieuThue.MaPT,phieuThue.KhachHang.TenKH,phieuThue.NgPT.ToString("dd/MM/yyyy"),phieuThue.NhanVien.TenNV,details});
+                this.grid.Rows.Clear();
+                foreach (PhieuThue phieuThue in phieuThues)
+                {
+                    grid.Rows.Add(new object[] { PT, phieuThue.MaPT,phieuThue.KhachHang.TenKH,phieuThue.NgPT.ToString("dd/MM/yyyy"),phieuThue.NhanVien.TenNV,details});
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }    
+
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try
@@ -140,11 +155,10 @@ namespace HotelManagement.GUI
                         formChiTietPhieuThue.ShowDialog();
                         formBackground.Dispose();
                     }
-                 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "THÔNG BÁO");
+                    MessageBox.Show(ex.Message);
                 }
                 finally { formBackground.Dispose(); }
             }

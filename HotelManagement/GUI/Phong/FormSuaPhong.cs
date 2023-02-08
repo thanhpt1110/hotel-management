@@ -258,6 +258,10 @@ namespace HotelManagement.GUI
                     phong.MaLPH = "VIP02";
                 phong.TTPH = TinhTrang;
                 PhongBUS.Instance.UpdateOrAdd(phong);
+
+                CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
+                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception)
             {
@@ -266,9 +270,7 @@ namespace HotelManagement.GUI
             }
             finally
             {
-                CTMessageBox.Show("Cập nhật thông tin thành công.", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+               
             }
         }
 

@@ -304,6 +304,13 @@ namespace HotelManagement.CTControls
             PanelTop.BackColor = Color.FromArgb(47, 109, 39);
             BackColor = Color.FromArgb(154, 148, 150);
             this.PictureBoxThoiGian.BackColor = Color.FromArgb(154, 148, 150);
+            this.PictureBoxTrangThaiDonDep.BackColor = BackColor;
+            this.LabelTrangThaiDonDep.BackColor = BackColor;
+            this.LabelThoiGian.BackColor = BackColor;
+            this.PictureBoxTrangThai.BackColor = Color.FromArgb(47, 109, 39);
+            this.LabelTrangThaiLon.BackColor = Color.FromArgb(47, 109, 39);
+            this.LabelMaPhong.BackColor = Color.FromArgb(47, 109, 39);
+            this.LabelLoaiPhong.BackColor = Color.FromArgb(47, 109, 39);
             this.Invalidate();
         }
 
@@ -312,7 +319,13 @@ namespace HotelManagement.CTControls
             PanelTop.BackColor = Color.FromArgb(113, 201, 103);
             BackColor = Color.FromArgb(230, 222, 224);
             this.PictureBoxThoiGian.BackColor = BackColor;
-
+            this.PictureBoxTrangThaiDonDep.BackColor = BackColor;
+            this.LabelTrangThaiDonDep.BackColor = BackColor;
+            this.LabelThoiGian.BackColor = BackColor;
+            this.PictureBoxTrangThai.BackColor = Color.FromArgb(113, 201, 103);
+            this.LabelTrangThaiLon.BackColor = Color.FromArgb(113, 201, 103);
+            this.LabelMaPhong.BackColor = Color.FromArgb(113, 201, 103);
+            this.LabelLoaiPhong.BackColor = Color.FromArgb(113, 201, 103);
         }
     }
 }

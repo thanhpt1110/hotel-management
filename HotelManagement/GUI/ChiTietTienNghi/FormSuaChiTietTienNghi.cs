@@ -43,10 +43,17 @@ namespace HotelManagement.GUI
 
         void LoadcTTN()
         {
-            this.ctTextBoxTenTienNghi.RemovePlaceholder();
-            this.CTTextBoxSoLuong.RemovePlaceholder();
-            this.ctTextBoxTenTienNghi.Texts = cTTN.TienNghi.TenTN;
-            this.CTTextBoxSoLuong.Texts = cTTN.SL.ToString();
+            try
+            {
+                this.ctTextBoxTenTienNghi.RemovePlaceholder();
+                this.CTTextBoxSoLuong.RemovePlaceholder();
+                this.ctTextBoxTenTienNghi.Texts = cTTN.TienNghi.TenTN;
+                this.CTTextBoxSoLuong.Texts = cTTN.SL.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
         }
         //Control Box
 
@@ -226,34 +233,29 @@ namespace HotelManagement.GUI
 
         private void CTButtonCapNhat_Click(object sender, EventArgs e)
         {
-      
-                
-                string TenTN = ctTextBoxTenTienNghi.Texts;
-                string SL = CTTextBoxSoLuong.Texts;
-                string GhiChu = ctTextBoxGhiChu.Texts;
-                if (TenTN == "" || SL == "" )
-                {
-                    CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin tiện nghi.", "Thông báo",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                try
-                {
-                    this.cTTN.SL = int.Parse(this.CTTextBoxSoLuong.Texts);
-                    CTTN_DAO.Instance.UpdateOrInsert(cTTN);
-                }
-                catch (Exception)
-                {
-                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+            string TenTN = ctTextBoxTenTienNghi.Texts;
+            string SL = CTTextBoxSoLuong.Texts;
+            string GhiChu = ctTextBoxGhiChu.Texts;
+            if (TenTN == "" || SL == "" )
+            {
+                CTMessageBox.Show("Vui lòng nhập đầy đủ thông tin tiện nghi.", "Thông báo",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    CTMessageBox.Show("Cập nh thông tin thành công.", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-            
+                return;
+            }
+            try
+            {
+                this.cTTN.SL = int.Parse(this.CTTextBoxSoLuong.Texts);
+                CTTN_DAO.Instance.UpdateOrInsert(cTTN);
+
+                CTMessageBox.Show("Cập nh thông tin thành công.", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception)
+            {
+                CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CTTextBoxSoLuong__TextChanged(object sender, EventArgs e)

@@ -123,8 +123,8 @@ ALTER TABLE
     "PhieuThue" ADD CONSTRAINT "phieuthue_manv_foreign" FOREIGN KEY("MaNV") REFERENCES "NhanVien"("MaNV");
 ALTER TABLE
     "Phong" ADD CONSTRAINT "phong_malph_foreign" FOREIGN KEY("MaLPH") REFERENCES "LoaiPhong"("MaLPH");
---ALTER TABLE 
-	--"CTDP" ADD CONSTRAINT "CTDP_MaPT_Forein" FOREIGN  KEY("MaPT") REFERENCES "PhieuThue"("MaPT")
+ALTER TABLE 
+	"CTDP" ADD CONSTRAINT "CTDP_MaPT_Forein" FOREIGN  KEY("MaPT") REFERENCES "PhieuThue"("MaPT")
 ALTER TABLE 
 	"CTDP" ADD CONSTRAINT "CTDP_MaPH_Forein" FOREIGN  KEY("MaPH") REFERENCES "Phong"("MaPH")
 
@@ -228,7 +228,7 @@ END
 GO
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('AD001',N'Nguyễn Phúc Bình', '30/09/2003', N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','40000000',N'Quản lý', '072000001212','0907219273','21520638@gm.uit.edu.vn',0)
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('AD002',N'Phan Tuấn Thành', '11/10/2003',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','45000000',N'Quản lý', '072000001213','071223431','21520455@gm.uit.edu.vn',0)
-INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('AD003',N'Lê Thanh Tuấn', '10/06/1989', N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','50000000',N'Quản lý', '072000001214','010311231','215205119@gm.uit.edu.vn',0)
+INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('AD003',N'Lê Thanh Tuấn', '10/06/1989', N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','50000000',N'Quản lý', '072000001214','010311231','21520519@gm.uit.edu.vn',0)
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('QL001',N'Phạm Thị A', '09/03/1995',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nữ','5500000',N'Tiếp tân', '072000001215','095411231','NV215235119@gmail.com',0)
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('NV001',N'Trần Thị B', '23/01/1993',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nữ','5500000',N'Tiếp tân', '072000001217','091311231','NV545205119@gmail.com',0)
 INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT,Email,"DaXoa") VALUES ('NV002',N'Nguyễn Phuc C ', '21/11/1986',N'Đường Hàn Thuyên, khu phố 6, Thủ Đức, Thành phố Hồ Chí Minh', N'Nam','5500000',N'Tiếp tân', '072000001220','092311231','NV6152051@gmail.com',0)

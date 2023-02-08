@@ -44,6 +44,7 @@ namespace HotelManagement.GUI
                     formThemTaiKhoan.ShowDialog();
                     formBackground.Dispose();
                 }
+                LoadAllGrid();
             }
             catch (Exception)
             {
@@ -52,7 +53,6 @@ namespace HotelManagement.GUI
             }
             finally
             {
-                LoadAllGrid();
                 formBackground.Dispose(); 
             }
         }
@@ -67,19 +67,36 @@ namespace HotelManagement.GUI
             grid.Rows.Add(new object[] { TK, "xyz123", "Phan Tuấn Thành", "3", edit, delete });
             grid.Rows.Add(new object[] { TK, "abc123", "Phan Tuấn Thành", "3", edit, delete });*/
         }
+
         public void LoadAllGrid()
         {
-            this.taiKhoans = TaiKhoanBUS.Instance.GetTaiKhoans();
-            LoadGrid();
+            try
+            {
+                this.taiKhoans = TaiKhoanBUS.Instance.GetTaiKhoans();
+                LoadGrid();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }   
+
         private void LoadGrid()
         {
-            grid.Rows.Clear();
-            foreach(TaiKhoan taiKhoan in this.taiKhoans)
+            try
             {
-                grid.Rows.Add(TK, taiKhoan.TenTK, taiKhoan.NhanVien.TenNV, taiKhoan.CapDoQuyen, edit, delete);
-            }    
+                grid.Rows.Clear();
+                foreach(TaiKhoan taiKhoan in this.taiKhoans)
+                {
+                    grid.Rows.Add(TK, taiKhoan.TenTK, taiKhoan.NhanVien.TenNV, taiKhoan.CapDoQuyen, edit, delete);
+                }    
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
         private void buttonExport_Click(object sender, EventArgs e)
         {
             try
@@ -164,6 +181,9 @@ namespace HotelManagement.GUI
                         {
                             TaiKhoan taiKhoan = TaiKhoanBUS.Instance.GetTKDangNhap(grid.Rows[y].Cells[1].Value.ToString());
                             TaiKhoanBUS.Instance.RemoveTk(taiKhoan);
+                            LoadAllGrid();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception)
                         {
@@ -172,9 +192,7 @@ namespace HotelManagement.GUI
                         }
                         finally
                         {
-                            LoadAllGrid();
-                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
                         }
                     }
 

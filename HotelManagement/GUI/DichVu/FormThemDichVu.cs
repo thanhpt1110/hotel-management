@@ -222,30 +222,26 @@ namespace HotelManagement.GUI
 
             try
             {
-                    DichVu dichVu = new DichVu();
-                    dichVu.TenDV = this.ctTextBoxTenDV.Texts;
+                DichVu dichVu = new DichVu();
+                dichVu.TenDV = this.ctTextBoxTenDV.Texts;
                 if (this.CTTextBoxSoLuong.Texts=="")
-                {
                     dichVu.SLConLai = -1;
-                }
                 else
                     dichVu.SLConLai = int.Parse(this.CTTextBoxSoLuong.Texts);
                     dichVu.DonGia = decimal.Parse(this.CTTextBoxDonGia.Texts);
                     dichVu.LoaiDV = this.ctTextBoxMoTa.Texts;
                     dichVu.MaDV = DichVuBUS.Instance.GetMaDVNext();
                     DichVuBUS.Instance.UpdateORAdd(dichVu);
+
+                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.formDanhSachDichVu.LoadALLDV();
+                this.Close();
             }
             catch (Exception)
             {
                 CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                CTMessageBox.Show("Thêm thông tin thành công.", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.formDanhSachDichVu.LoadALLDV();
-                this.Close();
             }
         }
 

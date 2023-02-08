@@ -43,13 +43,12 @@ namespace HotelManagement.GUI
             this.Padding = new Padding(borderSize);
             this.ctdp = cTDP;
             this.TTPhong = Case;
-            this.phong = phong;
+            this.phong = phong; 
             this.taiKhoan = taiKhoan;
             this.formMain = formMain;
             InitializeComponent();
             LoadPage();
             this.CTButtonCoc.Hide();
-
         }
 
         //Control Box
@@ -226,48 +225,64 @@ namespace HotelManagement.GUI
         #region Display room 
         private void LoadPhongDaDat()
         {
-            gridDichVu.Rows.Clear();
-            this.LabelMaPhong.Text = ctdp.MaPH;
-            this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
-            this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
-            if(ctdp.TheoGio==false)
-                this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " ngày";
-            else
-                this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " giờ";
-            this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
-            this.ComboBoxTinhTrangPhong.Text = "Phòng đã đặt";
-            this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
-            this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
-            this.PanelChuaButtonThemDichVu.Hide();
-            this.PanelChuaButtonDatPhongNay.Hide();
-            this.PanelChuaButtonThanhToan.Hide();
-        }
-        private void LoadPhongDangThue()
-        {
-            this.LabelMaPhong.Text = ctdp.MaPH;
-            this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
-            this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
-            if (ctdp.TheoGio == false)
-                this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " ngày";
-            else
-                this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " giờ";
-            this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
-            this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
-            this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
-            this.ComboBoxTinhTrangPhong.Text = "Phòng đang thuê";
-            this.PanelChuaButtonDatPhongNay.Hide();
-            this.PanelChuaButtonNhanPhong.Hide();
-            List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(ctdp.MaCTDP);
-            gridDichVu.Rows.Clear();
-            if (cTDVs.Count > 0)
+            try
             {
-                foreach (CTDV v in cTDVs)
-                {
-                    if (v.SL != 0)
-                        gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
-                }
+                gridDichVu.Rows.Clear();
+                this.LabelMaPhong.Text = ctdp.MaPH;
+                this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
+                this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
+                if(ctdp.TheoGio==false)
+                    this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " ngày";
+                else
+                    this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " giờ";
+                this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
+                this.ComboBoxTinhTrangPhong.Text = "Phòng đã đặt";
+                this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
+                this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
+                this.PanelChuaButtonThemDichVu.Hide();
+                this.PanelChuaButtonDatPhongNay.Hide();
+                this.PanelChuaButtonThanhToan.Hide();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
+
+        private void LoadPhongDangThue()
+        {
+            try
+            {
+                this.LabelMaPhong.Text = ctdp.MaPH;
+                this.LabelTen.Text = this.ctdp.PhieuThue.KhachHang.TenKH;
+                this.LabelNgayCheckin.Text = ctdp.CheckIn.ToString("dd/MM/yyyy");
+                if (ctdp.TheoGio == false)
+                    this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoNgay(ctdp.MaCTDP).ToString() + " ngày";
+                else
+                    this.LabelThoiGianThue.Text = CTDP_BUS.Instance.getKhoangTGTheoGio(ctdp.MaCTDP).ToString() + " giờ";
+                this.LabelSoNguoi.Text = ctdp.SoNguoi.ToString();
+                this.ComboBoxTinhTrangDonDep.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).TTDD;
+                this.TextBoxGhiChu.Text = PhongBUS.Instance.FindePhong(ctdp.MaPH).GhiChu;
+                this.ComboBoxTinhTrangPhong.Text = "Phòng đang thuê";
+                this.PanelChuaButtonDatPhongNay.Hide();
+                this.PanelChuaButtonNhanPhong.Hide();
+                List<CTDV> cTDVs = CTDV_BUS.Instance.FindCTDV(ctdp.MaCTDP);
+                gridDichVu.Rows.Clear();
+                if (cTDVs.Count > 0)
+                {
+                    foreach (CTDV v in cTDVs)
+                    {
+                        if (v.SL != 0)
+                            gridDichVu.Rows.Add(DichVuBUS.Instance.FindDichVu(v.MaDV).TenDV, v.SL, v.ThanhTien.ToString("#,#"));
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void LoadPhongDangSua()
         { 
             gridDichVu.Rows.Clear();
@@ -348,28 +363,33 @@ namespace HotelManagement.GUI
 
         private void CTButtonLuu_Click(object sender, EventArgs e)
         {
-            string TTPhong = this.ComboBoxTinhTrangPhong.Text;
-            if (TTPhong == "Phòng trống")
-                phong.TTPH = "Bình thường";
-            else if (TTPhong == "Đang sửa chữa")
-                phong.TTPH = TTPhong;
-            if (TTPhong == "Đang sửa chữa" || TTPhong == "Phòng trống")
+            try
             {
-                phong.GhiChu = this.TextBoxGhiChu.Text;
-                phong.TTDD = this.ComboBoxTinhTrangDonDep.Text;
+                string TTPhong = this.ComboBoxTinhTrangPhong.Text;
+                if (TTPhong == "Phòng trống")
+                    phong.TTPH = "Bình thường";
+                else if (TTPhong == "Đang sửa chữa")
+                    phong.TTPH = TTPhong;
+                if (TTPhong == "Đang sửa chữa" || TTPhong == "Phòng trống")
+                {
+                    phong.GhiChu = this.TextBoxGhiChu.Text;
+                    phong.TTDD = this.ComboBoxTinhTrangDonDep.Text;
                 
-                PhongBUS.Instance.UpdateOrAdd(phong);
+                    PhongBUS.Instance.UpdateOrAdd(phong);
+                }
+                else
+                {
+                    phong = PhongBUS.Instance.FindePhong(ctdp.MaPH);
+                    phong.TTDD = this.ComboBoxTinhTrangDonDep.Text;
+                    phong.GhiChu = this.TextBoxGhiChu.Text;
+                    PhongBUS.Instance.UpdateOrAdd(phong);
+                }
+                this.Close();
             }
-            else
+            catch(Exception ex)
             {
-                phong = PhongBUS.Instance.FindePhong(ctdp.MaPH);
-                phong.TTDD = this.ComboBoxTinhTrangDonDep.Text;
-                phong.GhiChu = this.TextBoxGhiChu.Text;
-                PhongBUS.Instance.UpdateOrAdd(phong);
+                MessageBox.Show(ex.Message);
             }
-
-            this.Close();
-
         }
 
         private void CTButtonThemDichVu_Click(object sender, EventArgs e)
@@ -409,7 +429,10 @@ namespace HotelManagement.GUI
                     return;
                 }
                 if (phong.TTDD == "Chưa dọn dẹp")
+                {
                     CTMessageBox.Show("Phòng chưa dọn dẹp xong.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 ctdp.TrangThai = "Đang thuê";
                 CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
                 this.Close();
@@ -466,14 +489,6 @@ namespace HotelManagement.GUI
                     HoaDonBUS.Instance.ThanhToanHD(hd);
                     CTDP_BUS.Instance.UpdateOrAddCTDP(ctdp);
                     PhongBUS.Instance.UpdateOrAdd(phong);
-                }
-                catch (Exception)
-                {
-                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
                     FormBackground formBackground = new FormBackground(formMain);
                     try
                     {
@@ -485,15 +500,6 @@ namespace HotelManagement.GUI
                             formHoaDon.ShowDialog();
                             formBackground.Dispose();
                         }
-                    }
-                    catch (Exception)
-                    {
-                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        formBackground.Dispose();
                         CTMessageBox.Show("Thanh toán thành công.", "Thông báo",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.phong = ctdp.Phong;
@@ -502,6 +508,20 @@ namespace HotelManagement.GUI
                         this.LoadPhongTrong();
                         this.Close();
                     }
+                    catch (Exception)
+                    {
+                        CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+                    CTMessageBox.Show("Đã xảy ra lỗi! Vui lòng thử lại.", "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    
                 }
             }
         }

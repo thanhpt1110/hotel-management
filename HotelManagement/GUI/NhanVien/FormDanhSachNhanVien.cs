@@ -48,6 +48,7 @@ namespace HotelManagement.GUI
                     formThemNhanVien.ShowDialog();
                     formBackground.Dispose();
                 }
+                LoadAllGrid();
             }
             catch (Exception)
             {
@@ -56,7 +57,6 @@ namespace HotelManagement.GUI
             }
             finally 
             {
-                LoadAllGrid();
                 formBackground.Dispose(); 
             }
         }
@@ -73,11 +73,18 @@ namespace HotelManagement.GUI
         }
         public void LoadAllGrid()
         {
-            if(taiKhoan1.CapDoQuyen==2)
-                this.nhanViens = NhanVienBUS.Instance.GetNhanViens().Where(p=> !p.MaNV.StartsWith("AD")).ToList();
-            else
-                this.nhanViens = NhanVienBUS.Instance.GetNhanViens();
-            LoadGrid();
+            try
+            {
+                if(taiKhoan1.CapDoQuyen==2)
+                    this.nhanViens = NhanVienBUS.Instance.GetNhanViens().Where(p=> !p.MaNV.StartsWith("AD")).ToList();
+                else
+                    this.nhanViens = NhanVienBUS.Instance.GetNhanViens();
+                LoadGrid();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void LoadGrid()
         {
@@ -188,6 +195,9 @@ namespace HotelManagement.GUI
                         try
                         {
                             NhanVienBUS.Instance.RemoveNhanVien(NhanVienBUS.Instance.GetNhanVien(grid.Rows[y].Cells[1].Value.ToString()));
+                            this.LoadAllGrid();
+                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         catch (Exception ex)
                         {
@@ -196,9 +206,6 @@ namespace HotelManagement.GUI
                         }
                         finally
                         {
-                            this.LoadAllGrid();
-                            CTMessageBox.Show("Xóa thông tin thành công.", "Thông báo",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
 
