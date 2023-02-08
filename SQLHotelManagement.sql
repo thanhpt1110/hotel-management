@@ -188,6 +188,9 @@ BEGIN
 	ELSE
 	BEGIN
 		UPDATE CTDP
+		SET "DonGia"= @GiaNgay
+		WHERE @MaCTDP = MaCTDP
+		UPDATE CTDP
 		SET "ThanhTien"= @KhoangTGNgay * @GiaNgay
 		WHERE @MaCTDP = MaCTDP
 	END
@@ -389,4 +392,3 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007','17/12/2022','NV001','CTDP007',N'Đã thanh toán','0')
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD008','20/12/2022','NV001','CTDP008',N'Đã thanh toán','0')
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD009','18/12/2022','NV001','CTDP009',N'Đã thanh toán','0')
-		
