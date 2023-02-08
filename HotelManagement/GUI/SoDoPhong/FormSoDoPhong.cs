@@ -72,11 +72,7 @@ namespace HotelManagement.GUI
             try
             {
                 List<CTRoom> DSPhong = new List<CTRoom>();
-                this.flowLayoutPanel1.Controls.Clear();
-                this.flowLayoutPanel2.Controls.Clear();
-                this.flowLayoutPanel3.Controls.Clear();
-                this.flowLayoutPanel4.Controls.Clear();
-                this.flowLayoutPanel5.Controls.Clear();
+
 
                 foreach (Phong phong in phongs)
                 {
@@ -148,9 +144,14 @@ namespace HotelManagement.GUI
                         DSPhong.Add(room);
                     }
                 }
+                this.flowLayoutPanel1.Controls.Clear();
+                this.flowLayoutPanel2.Controls.Clear();
+                this.flowLayoutPanel3.Controls.Clear();
+                this.flowLayoutPanel4.Controls.Clear();
+                this.flowLayoutPanel5.Controls.Clear();
                 foreach (CTRoom cTRoom in DSPhong)
                 {
-
+                        
                     if (cTRoom.MaPhong.StartsWith("P1"))
                     {
                         flowLayoutPanel1.Controls.Add(cTRoom);
@@ -286,7 +287,7 @@ namespace HotelManagement.GUI
         }
         private void LoadAddLoaiPhong()
         {
-            phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Text);
+            phongs = PhongBUS.Instance.FindPhongWithMaPH(ctTextBox1.Texts);
         }
 
         private void LoadCheckBoxLoaiPhong()
