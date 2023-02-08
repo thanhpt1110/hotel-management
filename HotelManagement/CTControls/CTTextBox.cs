@@ -381,14 +381,14 @@ namespace HotelManagement.CTControls
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            /*if (_TextChanged != null)
+            if (_TextChanged != null)
             {
                 _TextChanged.Invoke(sender, e);
             }
             else
             {
                 this.OnClick(e);
-            }*/
+            }
         }
 
         private void textBox1_Click(object sender, EventArgs e)
