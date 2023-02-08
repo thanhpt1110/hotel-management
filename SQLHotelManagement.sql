@@ -206,6 +206,9 @@ BEGIN
 	SET @GiaTien = (SELECT DonGia FROM DichVu WHERE DichVu.MaDV=@MaDV)
 	SET @SL = (SELECT SL FROM inserted)
 	UPDATE CTDV
+	SET DonGia=@GiaTien
+	WHERE "MaDV" = @MaDV AND MaCTDP = @MaCTDP
+	UPDATE CTDV
 	SET ThanhTien= @SL * @GiaTien
 	WHERE "MaDV" = @MaDV AND MaCTDP = @MaCTDP
 END
@@ -353,21 +356,59 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN011','2') -- Máy sấy tóc
 	INSERT INTO CTTN ("MaLPH","MaTN", "SL") VALUES ( 'VIP02','TN012','1') -- Máy nước nóng
 -- Phiếu Thuê
-	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT001', '10/11/2022','KH002','NV002') -- Đã thuê xong
-	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT002', '12/11/2022','KH004','QL001') -- Đã thuê xong
-	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT003', '15/11/2022','KH003','NV001') -- Đã thuê xong
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT001', '10/05/2022','KH002','NV002') -- Đã thuê xong
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT002', '12/06/2022','KH004','QL001') -- Đã thuê xong
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT003', '15/07/2022','KH003','NV001') -- Đã thuê xong
 	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT004', '28/11/2022','KH001','NV001') -- Đang thuê
-	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT005', '28/11/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT005', '28/08/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT006', '28/05/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT007', '28/03/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT008', '05/01/2023','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT009', '03/02/2023','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT010', '04/02/2023','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT011', '06/01/2023','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT012', '08/02/2023','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT013', '09/02/2023','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT014', '10/02/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT015', '28/12/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT016', '11/11/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT017', '15/10/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT018', '18/09/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT019', '30/08/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT020', '26/01/2023','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT021', '27/11/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT022', '11/06/2022','KH001','NV001') -- Đang thuê
+	INSERT INTO PhieuThue("MaPT","NgPT","MaKH","MaNV") VALUES ('PT023', '11/11/2022','KH001','NV001') -- Đang thuê
+
 -- CTDP
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP001','PT001','P101','11/11/2022','15/11/2022',N'Đã xong',1200000,300000,2) -- Đã thuê xong
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP002','PT001','P103','11/11/2022','15/11/2022',N'Đã xong',1600000,400000,2) -- Đã thuê xong
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP003','PT002','P201','15/11/2022','18/11/2022',N'Đã xong',1200000,400000,2) -- Đã thuê xong
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP004','PT003','P104','16/11/2022','20/11/2022',N'Đã xong',1200000,300000,2) -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP001','PT001','P101','11/05/2022','15/05/2022',N'Đã xong',1200000,300000,2) -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP002','PT001','P103','11/06/2022','15/06/2022',N'Đã xong',1600000,400000,2) -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP003','PT002','P201','15/07/2022','18/07/2022',N'Đã xong',1200000,400000,2) -- Đã thuê xong
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP004','PT003','P104','16/09/2022','20/09/2022',N'Đã xong',1200000,300000,2) -- Đã thuê xong
 	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP005','PT003','P204','01/12/2022','06/12/2022',N'Đã xong',1500000,300000,2) -- Đã thuê xong
 	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP006','PT004','P105','08/11/2022','10/12/2022',N'Đã xong',600000,300000,2) -- Đã thuê xong
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP007','PT004','P101','10/12/2022','20/12/2022',N'Đã xong',3000000,300000,2) -- Đang thuê
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP008','PT004','P301','17/12/2022','20/12/2022', N'Đã xong',900000,300000,2) -- Đang đặt trước
-	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP009','PT005','P201','17/12/2022','20/12/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP007','PT023','P101','10/12/2022','20/12/2022',N'Đã xong',3000000,300000,2) -- Đang thuê
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP008','PT022','P301','17/12/2022','20/12/2022', N'Đã xong',900000,300000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP009','PT005','P201','30/09/2022','05/10/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP010','PT006','P101','03/12/2022','20/12/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP011','PT007','P301','20/12/2022','25/12/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP012','PT008','P401','08/08/2022','15/08/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP013','PT008','P501','09/10/2022','11/10/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP014','PT009','P202','18/07/2022','20/07/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP015','PT010','P203','11/11/2022','20/11/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP016','PT011','P205','17/10/2022','20/10/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP017','PT012','P105','17/09/2022','21/09/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP018','PT013','P302','01/01/2023','03/01/2023', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP019','PT014','P303','15/12/2022','20/12/2022', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP020','PT015','P102','04/02/2023','07/02/2023', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP021','PT016','P101','03/02/2023','07/02/2023', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP022','PT017','P105','02/02/2023','08/02/2023', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP023','PT018','P202','03/02/2023','09/02/2023', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP024','PT019','P303','15/01/2023','17/01/2023', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP025','PT020','P401','17/01/2023','19/01/2023', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+	INSERT INTO CTDP("MaCTDP","MaPT","MaPH","CheckIn","CheckOut","TrangThai","ThanhTien","DonGia",SoNguoi) VALUES('CTDP026','PT021','P302','20/01/2023','25/01/2023', N'Đã xong',1200000,400000,2) -- Đang đặt trước
+
+
 
 --CTDV
 	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP001','DV01','2','20000','10000')
@@ -380,15 +421,57 @@ INSERT INTO NhanVien (MaNV,TenNV,NgaySinh,DiaChi, GioiTinh,Luong,ChucVu,CCCD,SDT
 	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP004','DV07','1','25000','25000')
 	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP005','DV04','2','40000','20000')
 	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP007','DV01','2','20000','10000')
-	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP007','DV02','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP008','DV02','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP008','DV03','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP009','DV01','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP010','DV05','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP011','DV04','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP012','DV02','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP013','DV07','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP014','DV02','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP015','DV06','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP017','DV02','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP018','DV03','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP015','DV01','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP019','DV06','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP020','DV05','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP021','DV04','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP022','DV02','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP023','DV05','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP024','DV03','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP025','DV02','2','30000','15000')
+	INSERT INTO CTDV("MaCTDP","MaDV","SL",ThanhTien,"DonGia") VALUES('CTDP025','DV01','2','30000','15000')
+
+
+
 
 -- HoaDon
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD001','15/11/2022','NV001','CTDP001',N'Đã thanh toán','1350000') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD002','15/11/2022','NV001','CTDP002',N'Đã thanh toán','1730000') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD003','18/11/2022','NV001','CTDP003',N'Đã thanh toán','1730000') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD004','20/11/2022','NV001','CTDP004',N'Đã thanh toán','1225000') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD001','15/05/2022','NV001','CTDP001',N'Đã thanh toán','1350000') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD002','15/06/2022','NV001','CTDP002',N'Đã thanh toán','1730000') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD003','18/07/2022','NV001','CTDP003',N'Đã thanh toán','1730000') -- Update Tri gia sau
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD004','20/09/2022','NV001','CTDP004',N'Đã thanh toán','1225000') -- Update Tri gia sau
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD005','06/12/2022','NV001','CTDP005',N'Đã thanh toán','1540000') -- Update Tri gia sau
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD006','10/12/2022','NV001','CTDP006',N'Đã thanh toán','600000') -- Update Tri gia sau
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007','17/12/2022','NV001','CTDP007',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD007','20/12/2022','NV001','CTDP007',N'Đã thanh toán','0')
 	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD008','20/12/2022','NV001','CTDP008',N'Đã thanh toán','0')
-	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD009','18/12/2022','NV001','CTDP009',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD009','05/10/2022','NV001','CTDP009',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD010','20/12/2022','NV001','CTDP010',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD011','25/12/2022','NV001','CTDP011',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD012','18/12/2022','NV001','CTDP012',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD013','15/08/2022','NV001','CTDP013',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD014','20/07/2022','NV001','CTDP014',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD015','20/11/2022','NV001','CTDP015',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD016','20/10/2022','NV001','CTDP016',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD017','21/09/2022','NV001','CTDP017',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD018','03/01/2023','NV001','CTDP018',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD019','20/12/2022','NV001','CTDP019',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD020','07/02/2023','NV001','CTDP020',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD021','07/02/2023','NV001','CTDP020',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD022','08/02/2023','NV001','CTDP020',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD023','09/02/2023','NV001','CTDP020',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD024','17/01/2023','NV001','CTDP020',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD025','19/01/2023','NV001','CTDP020',N'Đã thanh toán','0')
+	INSERT INTO HoaDon("MaHD","NgHD","MaNV","MaCTDP","TrangThai","TriGia") VALUES('HD026','25/01/2023','NV001','CTDP020',N'Đã thanh toán','0')
+
+
+
