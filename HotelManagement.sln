@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement", "HotelManagement\HotelManagement.csproj", "{CA7384AC-4ED5-4E16-9F15-EC823C9B275E}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Hotel-Management-Setup", "Hotel-Management-Setup\Hotel-Management-Setup.vdproj", "{7EE44D17-9AD3-40E3-9E39-AE5B35548387}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{CA7384AC-4ED5-4E16-9F15-EC823C9B275E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA7384AC-4ED5-4E16-9F15-EC823C9B275E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA7384AC-4ED5-4E16-9F15-EC823C9B275E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE44D17-9AD3-40E3-9E39-AE5B35548387}.Debug|Any CPU.ActiveCfg = Debug
+		{7EE44D17-9AD3-40E3-9E39-AE5B35548387}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
