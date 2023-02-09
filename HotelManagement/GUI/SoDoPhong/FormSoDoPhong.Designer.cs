@@ -544,7 +544,6 @@ namespace HotelManagement.GUI
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(641, 18);
             this.pictureBox1.Name = "pictureBox1";
@@ -554,7 +553,6 @@ namespace HotelManagement.GUI
             // 
             // ctTextBox1
             // 
-            this.ctTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ctTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ctTextBox1.BorderColor = System.Drawing.Color.DarkGray;
             this.ctTextBox1.BorderFocusColor = System.Drawing.Color.DimGray;

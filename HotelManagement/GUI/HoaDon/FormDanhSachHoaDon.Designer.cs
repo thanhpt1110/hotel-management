@@ -191,6 +191,7 @@
             // 
             // LabelNgaySinh
             // 
+            this.LabelNgaySinh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabelNgaySinh.AutoSize = true;
             this.LabelNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelNgaySinh.ForeColor = System.Drawing.Color.Black;
@@ -202,6 +203,7 @@
             // 
             // buttonReset
             // 
+            this.buttonReset.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
             this.buttonReset.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
             this.buttonReset.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(172)))), ((int)(((byte)(62)))));
