@@ -1,59 +1,59 @@
 # Hotel Management
 
-Ứng dụng Quản lý khách sạn cơ bản được xây dựng trên nền tảng WinForms với giao diện hiện đại.
+A basic Hotel Management application built on the WinForms platform with a modern user interface.
 
-## Tính năng
+## Features
 
-- Hiển thị trạng thái các phòng theo sơ đồ 1 cách trực quan.
-- Quản lý phòng.
-- Quản lý loại phòng.
-- Quản lý đặt phòng.
-- Quản lý hóa đơn.
-- Quản lý các loại dịch vụ.
-- Quản lý các loại tiện nghi.
-- Quản lý thông tin cơ bản nhân viên.
-- Quản lý thông tin cơ bản khách hàng.
-- Quản lý loại tài khoản sử dụng ứng dụng.
-- Thống kê doanh thu.
-- In hóa đơn.
-- Hỗ trợ lấy lại và thay đổi mất khẩu.
-- Xuất file Excel các loại danh sách.
-- Phân quyền cấp độ các loại tài khoản.
+- Display room statuses visually on a map.
+- Room management.
+- Room type management.
+- Reservation management.
+- Invoice management.
+- Management of various services.
+- Management of amenities.
+- Basic employee information management.
+- Basic customer information management.
+- Account type management for application users.
+- Revenue statistics.
+- Invoice printing.
+- Support for password recovery and change.
+- Export various lists to Excel files.
+- Role-based access control for different account types.
 
-Ngôn ngữ: Tiếng Việt.
+Language: Vietnamese.
 
-## Yêu cầu cài đặt
+## Requirements
 
-- Môi trường chạy chương trình:
+- Runtime environment:
 
    - Windows 8.1+.
    - .NET Framework 4.7.2.
    - Microsoft SQL Server 2021+.
    - Microsoft Visual Studio 2022+.
 
-- Môi trường phát triển phần mềm:
+- Development environment:
 
    - Microsoft Visual Studio 2022+.
    - Microsoft SQL Server 2021+.
 
-## Hướng dẫn cài đặt
+## Installation Guide
 
-1. Đầu tiên, khởi động ứng dụng Microsoft SQL Server Management Studio:
+1. First, launch Microsoft SQL Server Management Studio:
 
-    - B1: Lấy Server name khi vừa khởi động ứng dụng này.
+    - Step 1: Obtain the Server name when you start this application.
 
-    - B2: Chạy file SQLHotelManagement.sql và bạn có thể tạo tên của Database tùy ý. Mặc định là "HotelManagement".
+    - Step 2: Run the SQLHotelManagement.sql file, and you can create the Database name as you like. The default is "HotelManagement".
 
-    **Đặc biệt chú ý sử dụng Authentication là Windows Authentication.**
+    **Note: Use Windows Authentication for authentication.**
 
-2. Bây giờ, mở file HotelManagement.sln bằng Visual Studio.
+2. Now, open the HotelManagement.sln file using Visual Studio.
 
-3. Cài đặt hoàn tất, bạn đã có thể nhấn "Run" chạy chương trình (Phím tắt trong Visual Studio là F5). Lúc này ứng dụng sẽ hỏi "Nhập tên server" (B1) và "Nhập tên Database" (B2) mà bạn đã có lúc nãy.
+3. Installation is complete, and you can press "Run" to start the program (the shortcut key in Visual Studio is F5). At this point, the application will ask for the "Server name" (Step 1) and "Database name" (Step 2) that you set up earlier.
 
-> Để tiện việc sử dụng Demo, nhóm có tạo một CSDL mặc định. Bạn có thể dùng ngay CSDL tại đó. Tài khoản mặc định là admin, mật khẩu là 1234.
- (Lưu ý: Nếu sử dụng CSDL mặc định thì khi tắt chương trình, dữ liệu sẽ không được lưu lại).
+> For convenience, the team has created a default database. You can use it immediately. The default account is admin, and the password is 1234.
+(Note: If you use the default database, the data will not be saved when you close the program).
 
-## Tác giả
+## Authors
 
 [Nguyễn Phúc Bình](https://github.com/leesoonduck3009)
 
