@@ -22,7 +22,7 @@ A basic Hotel Management application built on the WinForms platform with a moder
 
 Language: Vietnamese.
 
-## Requirements
+## Technology Stack
 
 - Runtime environment:
 
@@ -52,6 +52,13 @@ Language: Vietnamese.
 
 > For convenience, the team has created a default database. You can use it immediately. The default account is admin, and the password is 1234.
 (Note: If you use the default database, the data will not be saved when you close the program).
+
+## User Interface
+![Room Map](/Demo%20UI/Room%20Map.PNG)
+![Booking Room](/Demo%20UI/Booking%20Room.PNG)
+![Invoice](/Demo%20UI/Invoice.png)
+![Statistic](/Demo%20UI/Statistic.PNG)
+
 
 ## Authors
 
